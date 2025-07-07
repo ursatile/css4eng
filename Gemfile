@@ -7,3 +7,4 @@ gem 'wdm', '>= 0.1.0' if Gem.win_platform? # Windows file watching
 
 gem "just-the-docs", "0.10.1" # pinned to the current release
 # gem "just-the-docs"        # always download the latest release
+gem 'jekyll-sass-converter', '~> 3.1.0'
