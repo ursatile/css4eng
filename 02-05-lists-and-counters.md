@@ -1,7 +1,7 @@
 ---
 title: "Lists and Counters (20m)"
 layout: home
-nav_order: 8
+nav_order: 10205
 ---
 
 # Lists and Counters (20m)

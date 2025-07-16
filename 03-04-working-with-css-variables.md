@@ -1,7 +1,7 @@
 ---
 title: "Working with CSS Variables (20m)"
 layout: home
-nav_order: 16
+nav_order: 10304
 ---
 
 # Working with CSS Variables (20m)

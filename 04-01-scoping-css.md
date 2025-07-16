@@ -1,7 +1,7 @@
 ---
 title: "Scoping CSS (20m)"
 layout: home
-nav_order: 19
+nav_order: 10401
 ---
 
 # Scoping CSS (20m)

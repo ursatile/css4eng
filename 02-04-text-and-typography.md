@@ -1,7 +1,7 @@
 ---
 title: "Text & Typography (20m)"
 layout: home
-nav_order: 7
+nav_order: 10204
 ---
 
 # Text & Typography (20m)
