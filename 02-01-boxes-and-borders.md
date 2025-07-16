@@ -1,5 +1,5 @@
 ---
-title: "Boxes & Borders (20m)"
+title: "Boxes & Borders"
 layout: home
 nav_order: 10201
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Using CSS Grid (30m)"
+title: "Using CSS Grid"
 layout: home
 nav_order: 10303
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Text & Typography (20m)"
+title: "Text & Typography"
 layout: home
 nav_order: 10204
 ---

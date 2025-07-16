@@ -1,5 +1,5 @@
 ---
-title: "Testing and Deployment (20m)"
+title: "Testing and Deployment"
 layout: home
 nav_order: 10402
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Fundamentals and Background (20m)"
+title: "Fundamentals and Background"
 layout: home
 nav_order: 10102
 ---

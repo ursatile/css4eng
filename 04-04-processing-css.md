@@ -1,5 +1,5 @@
 ---
-title: "Processing CSS (30m)"
+title: "Processing CSS"
 layout: home
 nav_order: 10404
 ---

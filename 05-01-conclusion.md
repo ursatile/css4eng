@@ -1,5 +1,5 @@
 ---
-title: "Conclusion (20m)"
+title: "Conclusion"
 layout: home
 nav_order: 10501
 ---

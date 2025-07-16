@@ -1,5 +1,5 @@
 ---
-title: "Advanced Visual Effects (30m)"
+title: "Advanced Visual Effects"
 layout: home
 nav_order: 10305
 ---

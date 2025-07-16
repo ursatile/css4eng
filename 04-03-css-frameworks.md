@@ -1,5 +1,5 @@
 ---
-title: "CSS Frameworks (30m)"
+title: "CSS Frameworks"
 layout: home
 nav_order: 10403
 ---

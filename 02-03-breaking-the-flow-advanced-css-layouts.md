@@ -1,5 +1,5 @@
 ---
-title: "Breaking the Flow: Advanced CSS Layouts (20m)"
+title: "Breaking the Flow: Advanced CSS Layouts"
 layout: home
 nav_order: 10203
 ---

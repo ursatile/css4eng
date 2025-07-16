@@ -1,5 +1,5 @@
 ---
-title: "Column-Based Layouts (20m)"
+title: "Column-Based Layouts"
 layout: home
 nav_order: 10208
 ---

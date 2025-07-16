@@ -1,5 +1,5 @@
 ---
-title: "Atoms, Molecules and Organisms (20m)"
+title: "Atoms, Molecules and Organisms"
 layout: home
 nav_order: 10301
 ---

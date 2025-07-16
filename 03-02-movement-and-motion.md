@@ -1,5 +1,5 @@
 ---
-title: "Movement and Motion (20m)"
+title: "Movement and Motion"
 layout: home
 nav_order: 10302
 ---

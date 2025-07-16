@@ -1,5 +1,5 @@
 ---
-title: "Introducing CSS Flexbox (20m)"
+title: "Introducing CSS Flexbox"
 layout: home
 nav_order: 10207
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Colors and Composition (20m)"
+title: "Colors and Composition"
 layout: home
 nav_order: 10206
 ---
