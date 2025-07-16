@@ -1,3 +1,8 @@
+---
+title: "Colors and Composition (20m)"
+layout: home
+---
+
 # Colors and Composition (20m)
 
 ## Course Content

@@ -1,3 +1,8 @@
+---
+title: "Introducing CSS Flexbox (20m)"
+layout: home
+---
+
 # Introducing CSS Flexbox (20m)
 
 ## Course Content

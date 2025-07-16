@@ -1,3 +1,8 @@
+---
+title: "Exercise: Building a Web Media Player"
+layout: home
+---
+
 # Exercise: Building a Web Media Player
 
 ## Course Content

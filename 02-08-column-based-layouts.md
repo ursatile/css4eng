@@ -1,3 +1,8 @@
+---
+title: "Column-Based Layouts (20m)"
+layout: home
+---
+
 # Column-Based Layouts (20m)
 
 ## Course Content

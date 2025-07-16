@@ -1,3 +1,8 @@
+---
+title: "Processing CSS (30m)"
+layout: home
+---
+
 # Processing CSS (30m)
 
 ## Course Content

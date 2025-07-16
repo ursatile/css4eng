@@ -1,3 +1,8 @@
+---
+title: "Using CSS Grid (30m)"
+layout: home
+---
+
 # Using CSS Grid (30m)
 
 ## Course Content

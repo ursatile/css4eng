@@ -1,3 +1,8 @@
+---
+title: "Working with CSS Variables (20m)"
+layout: home
+---
+
 # Working with CSS Variables (20m)
 
 ## Course Content

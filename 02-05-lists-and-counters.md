@@ -1,3 +1,8 @@
+---
+title: "Lists and Counters (20m)"
+layout: home
+---
+
 # Lists and Counters (20m)
 
 ## Course Content

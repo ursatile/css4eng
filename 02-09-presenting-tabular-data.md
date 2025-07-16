@@ -1,3 +1,8 @@
+---
+title: "Presenting Tabular Data (20m)"
+layout: home
+---
+
 # Presenting Tabular Data (20m)
 
 ## Course Content

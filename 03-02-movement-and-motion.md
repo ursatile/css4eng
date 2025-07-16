@@ -1,3 +1,8 @@
+---
+title: "Movement and Motion (20m)"
+layout: home
+---
+
 # Movement and Motion (20m)
 
 ## Course Content

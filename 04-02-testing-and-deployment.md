@@ -1,3 +1,8 @@
+---
+title: "Testing and Deployment (20m)"
+layout: home
+---
+
 # Testing and Deployment (20m)
 
 ## Course Content

@@ -1,3 +1,8 @@
+---
+title: "Advanced Visual Effects (30m)"
+layout: home
+---
+
 # Advanced Visual Effects (30m)
 
 ## Course Content

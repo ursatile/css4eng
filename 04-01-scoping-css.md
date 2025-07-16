@@ -1,3 +1,8 @@
+---
+title: "Scoping CSS (20m)"
+layout: home
+---
+
 # Scoping CSS (20m)
 
 ## Course Content

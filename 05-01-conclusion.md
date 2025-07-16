@@ -1,3 +1,8 @@
+---
+title: "Conclusion (20m)"
+layout: home
+---
+
 # Conclusion (20m)
 
 ## Course Content
