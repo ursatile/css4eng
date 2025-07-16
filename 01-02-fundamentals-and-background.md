@@ -40,13 +40,13 @@ Now, remember that the web is a moving target. At any given point, there's a bun
 
 Let's create a really simple web page, just to remind ourselves of the basics - and to establish a few conventions that we'll be using throughout the rest of the course. 
 
+```html
+{% include_relative examples/01-02-fundamentals-and-background/index.html %}
 ```
-<!DOCTYPE html>
 
-```
+Our page opens with a DOCTYPE declaration. This tells the browser that we're sending it modern HTML - it was introduced as part of HTML 5, and at the time, if you didn't include this DOCTYPE declaration, browsers would fall back to using a legacy rendering model sometimes known as "quirks mode", which meant they could include support for the latest features and standards - activated by the DOCTYPE - but still render older pages and sites. It's not such a big deal any more out on the open web, where the vast majority of sites use relatively modern code, but there's a lot of corporate intranets and embedded systems out there which still rely on quirks mode.
 
-
-
+Next up, HTML.
 
 
 
