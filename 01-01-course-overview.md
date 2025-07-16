@@ -1,6 +1,7 @@
 ---
 title: "Course Overview (5m)"
 layout: home
+nav_order: 1
 ---
 
 # Course Overview (5m)

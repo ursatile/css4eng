@@ -1,6 +1,7 @@
 ---
 title: "Tools and Workflows (20m)"
 layout: home
+nav_order: 3
 ---
 
 # Tools and Workflows (20m)

@@ -1,6 +1,7 @@
 ---
 title: "Testing and Deployment (20m)"
 layout: home
+nav_order: 20
 ---
 
 # Testing and Deployment (20m)

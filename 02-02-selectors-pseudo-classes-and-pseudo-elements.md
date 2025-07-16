@@ -1,6 +1,7 @@
 ---
 title: "Selectors, Pseudo-Classes and Pseudo-Elements (20m)"
 layout: home
+nav_order: 5
 ---
 
 # Selectors, Pseudo-Classes and Pseudo-Elements (20m)

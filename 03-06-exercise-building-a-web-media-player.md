@@ -1,6 +1,7 @@
 ---
 title: "Exercise: Building a Web Media Player"
 layout: home
+nav_order: 18
 ---
 
 # Exercise: Building a Web Media Player

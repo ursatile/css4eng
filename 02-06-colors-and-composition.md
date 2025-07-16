@@ -1,6 +1,7 @@
 ---
 title: "Colors and Composition (20m)"
 layout: home
+nav_order: 9
 ---
 
 # Colors and Composition (20m)

@@ -1,6 +1,7 @@
 ---
 title: "Fundamentals and Background (20m)"
 layout: home
+nav_order: 2
 ---
 
 # Fundamentals and Background (20m)

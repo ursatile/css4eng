@@ -1,6 +1,7 @@
 ---
 title: "Breaking the Flow: Advanced CSS Layouts (20m)"
 layout: home
+nav_order: 6
 ---
 
 # Breaking the Flow: Advanced CSS Layouts (20m)

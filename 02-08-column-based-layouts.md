@@ -1,6 +1,7 @@
 ---
 title: "Column-Based Layouts (20m)"
 layout: home
+nav_order: 11
 ---
 
 # Column-Based Layouts (20m)

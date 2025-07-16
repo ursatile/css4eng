@@ -1,6 +1,7 @@
 ---
 title: "Presenting Tabular Data (20m)"
 layout: home
+nav_order: 12
 ---
 
 # Presenting Tabular Data (20m)
