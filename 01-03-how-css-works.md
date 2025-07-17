@@ -28,6 +28,16 @@ Let's add a selector `p`, which matches any paragraph element, then open braces,
 
 You'll notice that the `em` and the `strong` elements there have also changed colour, but the text on the button hasn't. This is because of the C in CSS, which stands for `cascading`. What's actually happening here is that we've defined a rule saying "stuff in paragraphs should be purple", but the browser has a default rule that says "buttons should have black text on a grey background", and in this situation, the browser rule about buttons takes precedence over our new rule about paragraphs. We'll talk a lot more about this when we get to the part about `specificity`, because understanding how the browser decides which rules to apply, and which rules to ignore, is a vitally important part of understanding how CSS actually works.
 
+OK, so: inline styles? Great if you only need to use something once. Putting a style block in the header? Great if you only need to use styles on one page. But it turns out most web applications have more than one page - even the ones that call themselves single-page apps - and so what most sites do is to put all the CSS in a separate file and then import that using an HTML `link` tag
+
+Create a new file, `styles.css`, and move the contents of that `style` block into the new file. 
+
+```css
+{% include_relative examples/01-03-how-css-works/styles.css %}
+```
+
+Then 
+
 
 
 
