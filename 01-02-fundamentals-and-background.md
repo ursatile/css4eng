@@ -4,7 +4,7 @@ layout: home
 nav_order: 10102
 ---
 
-### Why Do So Many Developers Struggle With CSS?
+## Why Do So Many Developers Struggle With CSS?
 
 We're going to kick off with a question: why do so many developers struggle with CSS? I've worked with a lot of really talented, capable developers in my career, proper full stack developers who were as happy working with SQL databases as they were writing HTML, and over the years it's noticeable how many of them really didn't enjoy working with stylesheets. We'd be working through a new feature - database schema migrations, new classes, backend, HTML, JavaScript, all absolutely fine, and then when it comes to styling the frontend... that was always the bit that nobody wanted to pick up.
 
@@ -24,7 +24,7 @@ Now, if you're one of the folks for whom all of the above feels painfully true, 
 
 There is good news too, though - and the good news is that CSS is actually pretty awesome now. If, like a lot of developers, you learned a bit of CSS early on in your career and haven't really gone back to it, you're in for all kinds of fun. We've got grids and flexbox layouts, animations, keyframes, transformations... CSS even has variables now. A lot of layouts and designs that used to be really complicated are now fairly straightforward - and those new features also mean we can build all kinds of new interfaces and capabilities into our web applications. Sound good? Alright, let's kick things off.
 
-### HTML and Semantic Markup
+## Semantic HTML
 
 OK, first things first. As we've already seen, CSS, on its own, doesn't do anything. You can't build an application using only CSS; to understand how CSS works, you need to understand its relationship to HTML - the Hypertext Markup Language.
 
@@ -70,7 +70,9 @@ What's happening here is that the HTML is telling the browser "hey, this thing h
 
 This is **semantic HTML**. The HTML doesn't say "make this big, make this bold, make this blue" - it says "this is a heading, this bit needs emphasis, this is something the user can interact with"; the document structure is built around semantics - what things *mean* - rather than what they *look like*. A human being will glance at this page and go "oh, big bold heading - clearly that's what this document is all about." But something like a screen reader, or a search engine, or even an AI agent, can also tell just from looking at the markup that, yep, there's a single H1 heading on this page, so that's probably what the document is about. We'll be talking about semantic HTML a lot more as we explore various applications and layouts during the rest of the course.
 
-Now, something else to bear in mind as we get further into all this: not all browsers are the same. For a long while in the early days of the web, the two main browsers, Netscape and Internet Explorer, had a lot of fundamental incompatibilities, so for anything too complex you'd end up having to maintain two different versions of your JavaScript code. We called this the "browser wars" - and fortunately the browser wars are ancient history now; all of the mainstream web browsers out there these days have excellent support for modern web standards.
+## Introducing Web Accessibility
+
+Something else to bear in mind as we get further into all this: not all browsers are the same. For a long while in the early days of the web, the two main browsers, Netscape and Internet Explorer, had a lot of fundamental incompatibilities, so for anything too complex you'd end up having to maintain two different versions of your JavaScript code. We called this the "browser wars" - and fortunately the browser wars are ancient history now; all of the mainstream web browsers out there these days have excellent support for modern web standards.
 
 What we have seen, though, is a proliferation of devices. Somebody could be viewing your web page on a laptop, a mobile phone, a smartwatch, a desktop computer with a 52" ultrawide display - and so as we start to think about styling and layout, we've got to consider what'll happen to our pages across a whole range of screen layouts and sizes.
 
@@ -81,46 +83,3 @@ What actually ends up on your user's screen is going to be a compromise between 
 One thing I want to mention while we're here: for as long as I've been developing websites, people have been talking about using tags like `strong` and `em` - instead of just making text bold or italic - because, in theory, something like screen reader software could emphasise those elements. Sounds like a good idea, right? And nobody's going to argue *against* that... but, unfortunately, it isn't actually true. Let's add a couple more paragraphs to our example page here - let's have one that's just a regular paragraph, our existing one that uses the `em` tag, and a third one that uses a `strong` tag. Now I'm going to open up the NVDA screen reader software, and listen to how it reads out that content:
 
 That's not a case *against* semantic markup - in fact, using well-structured markup is an excellent starting point when it comes to making web content accessible. But the example of em tags and screen readers is so widespread that I thought it was worth mentioning.
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Fundamentals and Background (20m)
-
-## Course Content
-
-- Why do so many developers struggle with CSS?
-  - Approaches and methodologies
-- HTML and semantic markup
-- The structure of CSS: syntax, selectors, inheritance, cascading, nested CSS
-- Inline vs internal vs external
-- How browsers read CSS
-- Web Content Accessibility Guidelines (WCAG)
-
-## Notes
