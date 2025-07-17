@@ -2,6 +2,7 @@
 title: "Tools and Workflows"
 layout: home
 nav_order: 10104
+typora-copy-images-to: ./images
 ---
 
 In the previous section, we learned the rudiments of CSS syntax, and how to associate styles with our web content.
@@ -24,9 +25,17 @@ My favourite extension for this kind of development is called Live Preview:
 
 * [https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server)
 
-By default, Live Preview opens an embedded browser inside VS Code, and changes appear as you edit your source code - you don't even have to save the file. If you want to change that, open the VS Code Settings UI, search for "Live Preview"
+By default, Live Preview opens an embedded browser inside VS Code, and changes appear as you edit your source code - you don't even have to save the file. If you want to change that, open the VS Code Settings UI, search for "Live Preview", and you can tell it to only update when you save a file, to use an external browser (and which one to use), and a whole bunch of other settings:
 
+![image-20250717183649962](images/vs-code-live-preview-settings-screenshot)
 
+### VS Live Server
+
+There's another VS plugin called Live Server, which always uses an external browser and automatically reloads your content when you save a file:
+
+* [https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+
+and at the time I'm writing this, there's a beta version of Live Server ++ available on Github which supports live reload without saving the file, so if you like the sound of live reload and for whatever reason the Live Preview extension doesn't work for you, check that out.
 
 
 
