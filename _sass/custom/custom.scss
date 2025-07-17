@@ -22,8 +22,8 @@ figure.highlight {
 		background: var(--code-highlight-background-color);
 		padding-top: 3px;
 		padding-bottom: 3px;
-		// border-width: var(--code-highlight-border-width);
-		// border-style: solid;
+		border-width: var(--code-highlight-border-width) 0 var(--code-highlight-border-width) 0;
+		border-style: solid;
 		border-color: var(--code-highlight-border-color);
 
 
