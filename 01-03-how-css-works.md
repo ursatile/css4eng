@@ -20,11 +20,15 @@ And that rule gets applied to the H1 element because we've declared it inline, u
 
 Sure, we could add a `style` attribute to every paragraph... copy, paste, paste... but that's not ideal. There's a principle in software engineering called DRY - Don't Repeat Yourself; the idea that every decision about your application should be reflected in your code in exactly one place. We've decided to make our paragraphs purple - that's one decision - and at the moment, it's reflected in our code in three different places, which is bad.
 
+## Introducing Selectors
+
 Let's meet CSS selectors. Instead of putting our styles inline, we're going to add a `style` element to the `head` of our page. This lets us define rules that apply to everything on the page, but to do that, we need to add something called a `selector`, which tells the browser which element, or elements, each rule applies to.
 
 Let's add a selector `p`, which will match any paragraph element, then open braces, put in our rule - `color: purple` - and close braces. That's a CSS rule: paragraphs on this page should be purple.
 
-You'll notice that the `em` and the `strong` elements there have also changed colour. 
+You'll notice that the `em` and the `strong` elements there have also changed colour, but the text on the button hasn't. This is because of the C in CSS, which stands for `cascading`. 
+
+
 
 
 
