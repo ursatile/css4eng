@@ -1,12 +1,16 @@
 
-div.highlighter-rouge {
+div.highlighter-rouge, figure.highlight {
 	line-height: 1.0em;
 	border: 1px solid #999;
 	border-radius: 0;
 	font-size: 1.2rem;
+	span.hll {
+		display: block;
+		padding: 2px;
+	}
 }
 
-div.highlight, div.highlight pre {
+div.highlight, div.highlight pre, figure.highlight, figure.highlight pre {
 	background-color: #000;
 	tab-size: 1rem;
 	code {

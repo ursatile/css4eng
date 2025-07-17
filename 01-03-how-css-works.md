@@ -2,6 +2,7 @@
 title: "How CSS Works"
 layout: home
 nav_order: 10104
+examples: "examples/01-03-how-css-works"
 ---
 
 ## Properties and Values
@@ -33,28 +34,14 @@ OK, so: inline styles? Great if you only need to use something once. Putting a s
 Create a new file, `styles.css`, and move the contents of that `style` block into the new file. 
 
 ```css
-{% include_relative examples/01-03-how-css-works/styles.css %}
+{% include_relative {{ page.examples }}/styles.css %}
 ```
 
 Then remove the empty `style` element, and replace it with a `<link>` element:
 
-{{ page.path }}
-{{ page.slug }}
-{{ page.name }}
-
-{% highlight html mark_lines="5" %}
-{ include_relative examples/index.html }
+{% highlight html linenos mark_lines="5" %}
+{% include_relative {{ page.examples }}/index.html %}
 {% endhighlight %}
-
-there.
-
-
-
-
-
-
-
-
 
 * The structure of CSS: syntax, selectors, inheritance, cascading, nested CSS
 * Inline vs internal vs external
