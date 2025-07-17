@@ -1,29 +1,41 @@
+:root {
+	--code-highlight-border-width: 1px;
+	--code-highlight-border-color: #fff;
+}
 
-div.highlighter-rouge, figure.highlight {
+div.highlighter-rouge,
+figure.highlight {
 	line-height: 1.0em;
 	border: 1px solid #999;
 	border-radius: 0;
 	font-size: 1.2rem;
+
 	span.hll {
 		display: block;
 		background: #213 !important;
-		padding-top: 4px;
-		padding-bottom: 4px;
+		padding-top: 3px;
+		padding-bottom: 3px;
 		border-width: 1px 1px 0px 1px;
-		border-style: dashed;
+		border-style: solid;
 		border-color: white;
-	}
-	span.hll + span.hll {
-		border-top: none;
-	}
-	span.hll:has(+ span.hll) {
-		background-color: green;
+
+		&+span.hll {
+			border-top: none;
+		}
+
+		&:has(+ span:not(.hll)) {
+			border-bottom: 1px solid #fff;
+		}
 	}
 }
 
-div.highlight, div.highlight pre, figure.highlight, figure.highlight pre {
+div.highlight,
+div.highlight pre,
+figure.highlight,
+figure.highlight pre {
 	background-color: #000;
 	tab-size: 1rem;
+
 	code {
 		line-height: 1.0em;
 	}
