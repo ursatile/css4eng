@@ -43,7 +43,7 @@ Then remove the empty `style` element, and replace it with a `<link>` element:
 {% include_relative {{ page.examples }}/index.html %}
 {% endhighlight %}
 
-> Another historical quirk: you'll often see `<link type=""
+> Another historical quirk: you'll often see `link` elements include an extra attribute: `type="text/css"`. 
 
 * The structure of CSS: syntax, selectors, inheritance, cascading, nested CSS
 * Inline vs internal vs external
