@@ -1,5 +1,5 @@
 :root {
-	--code-highlight-border-width: 1px;
+	--code-highlight-border-width: 4px;
 	--code-highlight-border-color: #fff;
 }
 
@@ -15,17 +15,23 @@ figure.highlight {
 		background: #213 !important;
 		padding-top: 3px;
 		padding-bottom: 3px;
-		border-width: 1px 1px 0px 1px;
+		border-width: var(--code-highlight-border-width);
 		border-style: solid;
-		border-color: white;
+		border-color: var(--code-highlight-border-color);
+
+		&:has(+ span:not(.hll)) {
+			background-color: green !important;
+			border-bottom: var(--code-highlight-border-width)px solid var(--code-highlight-border-color) !important;
+		}
+
+		&:has(+ span.hll) {
+			border-bottom: none;
+		}
 
 		&+span.hll {
 			border-top: none;
 		}
 
-		&:has(+ span:not(.hll)) {
-			border-bottom: 1px solid #fff;
-		}
 	}
 }
 
