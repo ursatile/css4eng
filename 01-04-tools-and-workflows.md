@@ -37,6 +37,10 @@ and at the time I'm writing this, there's a beta version of Live Server ++ avail
 
 ## Using the Browser Dev Tools
 
+The next thing to check out is the dev tools built into your browser. Every modern browser includes a built-in toolkit for inspecting and debugging HTML, CSS and JavaScript; they have fairly similar feature sets, but vary slightly depending on which browser you're using.
+
+There are really only three browser engines that are still relevant in 2025. By far the most popular is an engine called Blink. This is the engine that's used in an open-source brosChromium, the open source project that most modern browsers are based on
+
 
 
 
