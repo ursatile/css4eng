@@ -1,26 +1,33 @@
 :root {
 	--code-highlight-border-width: 1px;
-	--code-highlight-border-color: #fff;
+	--code-highlight-border-color: #999;
+	--code-highlight-background-color: #111;
 }
 
 div.highlighter-rouge,
 figure.highlight {
-	line-height: 1.0em;
+	line-height: 1.2em;
 	border: 1px solid #999;
 	border-radius: 0;
 	font-size: 1.2rem;
 
 	span.hll {
+		&::before {
+			content: "🢂";
+			position: absolute;
+			left: -10px;
+			z-index: 10;
+		}
 		display: block;
-		background: #213 !important;
+		background: var(--code-highlight-background-color);
 		padding-top: 3px;
 		padding-bottom: 3px;
-		border-width: var(--code-highlight-border-width);
-		border-style: solid;
+		// border-width: var(--code-highlight-border-width);
+		// border-style: solid;
 		border-color: var(--code-highlight-border-color);
 
+
 		&:has(+ span:not(.hll)) {
-			background-color: green !important;
 			border-bottom: var(--code-highlight-border-width) solid var(--code-highlight-border-color) !important;
 		}
 
@@ -46,7 +53,7 @@ figure.highlight {
 
 		code {
 			display: block;
-			line-height: 1.0em;
+			line-height: 1.2em;
 			padding: 0.5em;
 		}
 	}
