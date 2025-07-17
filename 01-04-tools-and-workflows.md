@@ -12,7 +12,9 @@ Before we go any further, let's learn about some tools, tricks, and techniques w
 
 When you're writing CSS, the vast majority of your time will be spent checking that rules have done the right thing - which means reloading the page in your browser and seeing what's changed. The faster this feedback loop, the faster you'll be able to get things working properly.
 
-The 
+The ideal rendering model here is sometimes called "live refresh": you make a change in your editor, and it appears instantly in the browser window.
+
+We're going to be using Visual Studio Code as our code editor throughout this course; it's free, it's cross-platform, it has excellent support for working with CSS files, with plugins 
 
 
 
