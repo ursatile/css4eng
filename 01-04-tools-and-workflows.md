@@ -43,7 +43,11 @@ There are really only three browser engines that are still relevant in 2025. By 
 
 The two notable exceptions are Apple's Safari browser, used on macOS and iOS devices, which is based on Apple's Webkit rendering engine, and Firefox, which uses its own rendering engine, known as Gecko.
 
-If you're on a Chromium-based browser, you'll find the Developer Tools under 
+If you're on a Chromium-based browser, you'll find the Developer Tools under More Tools - or press Ctrl-Shift-I, or right-click an element on the page and choose "Inspect". Firefox is the same - More Tools, Ctrl-Shift-I, or right-click, Inspect; you can also right-click an element and press Q to open the inspector.
+
+
+
+
 
 - Debugging CSS with browser dev tools
 - Managing CSS - using a "kitchen sink" page
