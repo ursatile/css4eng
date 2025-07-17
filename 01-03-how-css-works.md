@@ -1,7 +1,7 @@
 ---
 title: "How CSS Works"
 layout: home
-nav_order: 10104
+nav_order: 10103
 examples: "examples/01-03-how-css-works"
 ---
 
@@ -43,6 +43,11 @@ Then remove the empty `style` element, and replace it with a `<link>` element:
 {% include_relative {{ page.examples }}/index.html %}
 {% endhighlight %}
 
+The `<link>` element has two attributes:
+
+* `rel` is short for *relationship* - in this case, `"stylesheet"` indicates it's CSS rules to apply to the page
+* `href` is the URL of the file to load.
+
 > Another historical quirk: you'll often see `link` elements include an extra attribute: `type="text/css"` - a relic of the days when servers would serve CSS files with the wrong MIME type and browsers weren't smart enough to ignore it.
 
 OK, let's recap:
@@ -52,9 +57,6 @@ OK, let's recap:
   * **properties** control which aspect of those elements we're modifying
   * **values** are what actually changes it.
 * CSS rules can be:
-  * **inline**, inside a `style` attribute that's part of the HTML tag
-  * 
-
-* Inline vs internal vs external
-* How browsers read CSS
-* Web Content Accessibility Guidelines (WCAG)
+  * **Inline**, inside a `style` attribute that's part of the HTML tag
+  * **Internal**, contained in a `<style>` element in the `<head>` of a document
+  * **External**, loaded from a separate file using a `<link>` element.
