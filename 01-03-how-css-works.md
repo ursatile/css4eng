@@ -38,25 +38,9 @@ Create a new file, `styles.css`, and move the contents of that `style` block int
 
 Then remove the empty `style` element, and replace it with a `<link>` element:
 
-{% highlight html linenos mark_lines="5" %}
-
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>Hello World</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-  <h1 style="color: green;">Hello World</h1>
-  <p>HTML is totally awesome.</p>
-  <p>HTML is <em>totally</em> awesome.</p>
-  <p>HTML is <strong>totally</strong> awesome.</p>
-  <p><input type="button" value="Click Me"></p>
-</body>
-
-</html>{% endhighlight %}
+{% highlight html mark_lines="5" %}
+{% include_relative examples/{{ page.slug }}/index.html %}
+{% endhighlight %}
 
 there.
 
