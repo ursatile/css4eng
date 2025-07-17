@@ -9,6 +9,15 @@ div.highlighter-rouge, figure.highlight {
 		background: #213 !important;
 		padding-top: 4px;
 		padding-bottom: 4px;
+		border-width: 1px 1px 0px 1px;
+		border-style: dashed;
+		border-color: white;
+	}
+	span.hll + span.hll {
+		border-top: none;
+	}
+	span.hll:has(+ span.hll) {
+		background-color: green;
 	}
 }
 
