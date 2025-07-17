@@ -43,9 +43,18 @@ Then remove the empty `style` element, and replace it with a `<link>` element:
 {% include_relative {{ page.examples }}/index.html %}
 {% endhighlight %}
 
-> Another historical quirk: you'll often see `link` elements include an extra attribute: `type="text/css"`. 
+> Another historical quirk: you'll often see `link` elements include an extra attribute: `type="text/css"` - a relic of the days when servers would serve CSS files with the wrong MIME type and browsers weren't smart enough to ignore it.
 
-* The structure of CSS: syntax, selectors, inheritance, cascading, nested CSS
+OK, let's recap:
+
+* CSS is built around three basic units of syntax:
+  * **selectors** control which elements are affected by a rule
+  * **properties** control which aspect of those elements we're modifying
+  * **values** are what actually changes it.
+* CSS rules can be:
+  * **inline**, inside a `style` attribute that's part of the HTML tag
+  * 
+
 * Inline vs internal vs external
 * How browsers read CSS
 * Web Content Accessibility Guidelines (WCAG)
