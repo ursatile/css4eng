@@ -1,5 +1,9 @@
 @import "./color_schemes/dark";
-@import "monokai";
+
+// Syntax highlighting theme for Rouge
+
+@import "pygments/monokai";
+// @import "pygments/fruity";
 
 $color-scheme: dark;
 $body-background-color: black;
