@@ -38,8 +38,12 @@ Create a new file, `styles.css`, and move the contents of that `style` block int
 
 Then remove the empty `style` element, and replace it with a `<link>` element:
 
+{{ page.path }}
+{{ page.slug }}
+{{ page.name }}
+
 {% highlight html mark_lines="5" %}
-{% include_relative examples/{{ page.slug }}/index.html %}
+{ include_relative examples/index.html }
 {% endhighlight %}
 
 there.
