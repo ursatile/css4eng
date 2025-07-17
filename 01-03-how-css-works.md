@@ -26,9 +26,7 @@ Let's meet CSS selectors. Instead of putting our styles inline, we're going to a
 
 Let's add a selector `p`, which will match any paragraph element, then open braces, put in our rule - `color: purple` - and close braces. That's a CSS rule: paragraphs on this page should be purple.
 
-You'll notice that the `em` and the `strong` elements there have also changed colour, but the text on the button hasn't. This is because of the C in CSS, which stands for `cascading`. 
-
-
+You'll notice that the `em` and the `strong` elements there have also changed colour, but the text on the button hasn't. This is because of the C in CSS, which stands for `cascading`. What's actually happening here is that we've defined a rule saying "stuff in paragraphs should be purple", but the browser has a default rule that says "buttons should have black text on a grey background", and in this situation, the browser rule about buttons is more important than our new rule about paragraphs. We'll talk a lot more about this when we get to the part about `specificity`, because understanding how the browser decides which rules to apply, and which rules to ignore, is a vitally important part of understanding how CSS actually works.
 
 
 
