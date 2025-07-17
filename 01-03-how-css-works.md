@@ -36,7 +36,13 @@ Create a new file, `styles.css`, and move the contents of that `style` block int
 {% include_relative examples/01-03-how-css-works/styles.css %}
 ```
 
-Then 
+Then remove the empty `style` element, and replace it with a `<link>` element:
+
+```html
+{% include_relative examples/01-03-how-css-works/index.html %}
+```
+
+
 
 
 
