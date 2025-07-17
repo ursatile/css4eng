@@ -21,7 +21,7 @@ figure.highlight {
 
 		&:has(+ span:not(.hll)) {
 			background-color: green !important;
-			border-bottom: var(--code-highlight-border-width)px solid var(--code-highlight-border-color) !important;
+			border-bottom: var(--code-highlight-border-width) solid var(--code-highlight-border-color) !important;
 		}
 
 		&:has(+ span.hll) {
