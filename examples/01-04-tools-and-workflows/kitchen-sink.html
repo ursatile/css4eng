@@ -140,21 +140,229 @@ console.log('Hello, world!');
 		</p>
 	</details>
 	<details name="examples">
-		<summary>System Requirements</summary>
-		<p>
-			Requires a computer running an operating system. The computer must have some
-			memory and ideally some kind of long-term storage. An input device as well
-			as some form of output device is recommended.
+		<summary>What's It Useful For?</summary>
+		<p>It's a built-in way to present content in an accordion style.
+			Associated elements can be linked using the <code>name</code> attribute 
+			on the &lt;details&gt; elements; only one linked element will be displayed
+			at a time.
 		</p>
 	</details>
 	<details name="examples">
-		<summary>Job Requirements</summary>
-		<p>
-			Requires knowledge of HTML, CSS, JavaScript, accessibility, web performance,
-			privacy, security, and internationalization, as well as a dislike of
-			broccoli.
-		</p>
+		<summary>Why's it called an "accordion"?</summary>
+		<p>I honestly have no idea. Maybe something to do with French café jazz?</p>
 	</details>
+</section>
+<section>
+		<h2>Forms</h2>
+		<section>
+	<h2>Forms</h2>
+	<h3>Input Types</h3>
+	<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input</a>
+	<hr />
+	<form action="#">
+			<div>
+				<label for="input-text">Name</label>
+			</div>
+			<div>
+				<input type="text" id="input-text" placeholder="what's your name?" />
+			</div>
+			<div>
+				<label for="color-input">Hair Colour</label>
+			</div>
+			<div>
+				<input type="color" id="hair-color-input" value="#ff3399" />
+			</div>
+			<div>
+				<label for="date-input">Date of Birth</label>
+			</div>
+			<div>
+				<input type="date" id="date-input" value="date" />
+			</div>
+			<div>
+				<label for="datetime-local-input">Audition Time</label>
+			</div>
+			<div>
+				<input type="datetime-local" id="datetime-local-input" value="datetime-local" />
+			</div>
+			<div>
+				<label for="email-input">Email Address</label>
+			</div>
+			<div>
+				<input type="email" id="email-input" value="email" />
+			</div>
+			<div>
+				<label for="file-input">Photograph</label>
+			</div>
+			<div>
+				<input type="file" id="file-input" value="file" />
+			</div>
+			<div>
+				<label for="number-input">Strings</label>
+			</div>
+			<div>
+				<input type="number" id="number-input" value="5" min="2" max="8" />
+			</div>
+			<div>
+				<label for="tel-input">Telephone</label>
+			</div>
+			<div>
+				<input type="tel" id="tel-input" value="tel" />
+			</div>
+			<div>
+				<label for="month-input">First concert?</label>
+			</div>
+			<div>
+				<input type="month" id="month-input" value="month" />
+			</div>
+			<div>
+				<label for="range-input">Volume</label>
+			</div>
+			<div>
+				<input type="range" id="range-input" value="range" min="2" max="20" />
+			</div>
+			<div>
+				<label for="password-input">Password</label>
+			</div>
+			<div>
+				<input type="password" id="password-input" value="password" />
+			</div>
+			<div>
+				<label for="search-input">search</label>
+			</div>
+			<div>
+				<input type="search" id="search-input" value="search" />
+			</div>
+			<div>
+				<label for="time-input">Show time</label>
+			</div>
+			<div>
+				<input type="time" id="time-input" value="time" />
+			</div>
+			<div>
+				<label for="url-input">Website</label>
+			</div>
+			<div>
+				<input type="url" id="url-input" value="url" />
+			</div>
+			<div>
+				<label for="week-input">Holiday Week</label>
+			</div>
+			<div>
+				<input type="week" id="week-input" value="week" />
+			</div>
+			<div>
+				<label>Instruments</label>
+			</div>
+			<div>
+				<label for="checkbox-input-guitar">
+					<input type="checkbox" id="checkbox-input-guitar" value="checkbox" />
+					Guitar
+				</label><br />
+				<label for="checkbox-input-bass">
+					<input type="checkbox" id="checkbox-input-bass" value="checkbox" />
+					Bass
+				</label><br />
+				<label for="checkbox-input-drums">
+					<input type="checkbox" id="checkbox-input-drums" value="checkbox" />
+					Drums
+				</label><br />
+			</div>
+			<div>
+				<label for="select-single">Instrument</label>
+			</div>
+			<div>
+				<select id="select-single">
+					<option>select...</option>
+					<option>Guitar</option>
+					<option>Bass</option>
+					<option>Drums</option>
+					<optgroup label="Horns">
+						<option>Trumpet</option>
+						<option>Trombone</option>
+						<option>Saxophone</option>
+					</optgroup>
+				</select>
+			</div>
+			<div>
+				Radio Station
+			</div>
+			<div>
+				<label for="radio-input-jazz-fm">
+					<input type="radio" id="radio-input-jazz-fm" name="radio" value="jazz-fm" />
+					Jazz FM
+				</label><br />
+				<label for="radio-input-knac">
+					<input type="radio" id="radio-input-knac" name="radio" value="knac-pure-rock" />
+					KNAC Pure Rock 105.5
+				</label><br />
+				<label for="radio-input-bbc-r2">
+					<input type="radio" id="radio-input-bbc-r2" name="radio" value="bbc-radio-2" />
+					BBC Radio 2
+				</label><br />
+			</div>
+			<div>
+				<label for="select-multiple">Select (multiple options)</label>
+			</div>
+			<div>
+				<select id="select-multiple" multiple="multiple">
+					<option>select...</option>
+					<option>Option 1</option>
+					<option>Option 2</option>
+					<option>Option 3</option>
+					<optgroup label="Special Options">
+						<option>Special Option A</option>
+						<option>Special Option B</option>
+						<option>Special Option C</option>
+					</optgroup>
+				</select>
+			</div>
+			<div>
+				<label for="textarea-comments">Comments</label>
+			</div>
+			<div>
+				<textarea id="textarea-comments" name="comments"></textarea>
+			</div>
+		</div>
+	</form>
+	<fieldset>
+		<legend>Music Genres</legend>
+		This is a set of checkboxes in fieldset element with a legend.
+		<br />
+		@foreach (var genre in new[] {
+		"Djent", "Mathcore", "Power Metal", "Fusion", "Synthwave", "Pirate Metal"
+		}) {
+			<label for="fieldset-checkbox-@genre">
+				<input type="checkbox" name="fieldset-checkbox" id="fieldset-checkbox-@genre" value="@genre" /> @genre
+			</label>
+		}
+	</fieldset>
+	<hr />
+	<h4>Buttons</h4>
+	<div>
+		<button type="button" class="btn btn-primary">Primary</button>
+		<button type="button" class="btn btn-secondary">Secondary</button>
+		<button type="button" class="btn btn-success">Success</button>
+		<button type="button" class="btn btn-danger">Danger</button>
+		<button type="button" class="btn btn-warning">Warning</button>
+		<button type="button" class="btn btn-info">Info</button>
+		<button type="button" class="btn btn-light">Light</button>
+		<button type="button" class="btn btn-light">Light</button>
+		<button type="button" class="btn btn-dark">Dark</button>
+		<button type="button" class="btn btn-link">Link</button>
+	</div>
+	<h4>Pseudobuttons</h4>
+	<div>
+		<a class="btn btn-primary" href="#" role="button">Link</a>
+		<button class="btn btn-primary" type="submit">Button</button>
+		<input class="btn btn-primary" type="button" value="Input">
+		<input class="btn btn-primary" type="submit" value="Submit">
+		<input class="btn btn-primary" type="reset" value="Reset">
+	</div>
+
+
+</section>
+
+
 	<footer>(footer)</footer>
 </body>
 
