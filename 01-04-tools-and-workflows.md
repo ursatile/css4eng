@@ -53,7 +53,9 @@ The inspector lets us inspect any element in our page, to see exactly where that
 
 What makes it particularly useful is that the inspector also shows us the HTML structure of our document, so we can either inspect an element by clicking on the rendered version - the web page - or by clicking on the source. As we learn about CSS properties like position and visibility, you'll discover there are all sorts of ways that an element can appear in a completely different place in the output than it does in the source code - or maybe even not appear at all.
 
-Use the inspector to look at the strong element that's 
+Let's inspect our heading 1. It's got a `element.style` that's setting `color` to `green`, and then everything else is being provided by what's called the *user agent stylesheet*.
+
+> The term **user agent** comes from RFC9110, the document which defines a lot of the terminology used when building tools like web browsers and servers. Strictly speaking, a user agent is any piece of software which makes network requests on behalf of a user. In this context, 
 
 
 
