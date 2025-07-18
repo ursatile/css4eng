@@ -11,13 +11,16 @@
 	<header>(header)</header>
 	<h1>The Kitchen Sink Page</h1>
 	<hr>
-	<p>(👆 that's a &lt;hr&gt; - horizontal rule!)</p>
+	<p>(👆 that's a <code>&lt;hr&gt;</code> - horizontal rule!)</p>
 	<nav>
-		This is a &lt;nav&gt; element.
+		This is a <code>&lt;nav&gt;</code> element.
 		<menu>
-			<li>This list is a &lt;menu&gt; containing &lt;li&gt; items</li>
+			<li>This list is a <code>&lt;menu&gt;</code> containing <code>&lt;li&gt;</code> items</li>
 			<li><a href="#text-and-typography">Text &amp; Typography</a></li>
-
+			<li><a href="#figures">Figures</a></li>
+			<li><a href="#forms-and-interaction">Forms &amp; Interaction</a></li>
+			<li><a href="#buttons-and-dialogs">Buttons &amp; Dialogs</a></li>
+			<li><a href="#search">Search</a></li>
 		</menu>
 	</nav>
 	<section>
@@ -55,109 +58,109 @@
 		<p>This paragraph contains examples of superscript (<var>x</var><sup>2</sup>),
 			subscript (H<sub>2</sub>SO<sub>4</sub>),
 			variables like <var>x</var>, <var>y</var> &amp; <var>z</var>,
-			<data value="42">an HTML &lt;data&gt; element</data>,
-			an &lt;time&gt; element (<time datetime="2024-06-01T14:30">June 1, 2024, 2:30 PM</time>).
+			<data value="42">an HTML <code>&lt;data&gt;</code> element</data>,
+			an <code>&lt;time&gt;</code> element (<time datetime="2024-06-01T14:30">June 1, 2024, 2:30 PM</time>).
 		</p>
 		<p>This one contains some <del>deleted text</del>, some <ins>inserted text</ins>, and
 			some <s>strikethrough</s> text.</p>
 		<p>
-			This paragraph contains a <code>snippet of code, inside a &lt;code&gt; element</code>.
-			You'll also see the &lt;kbd&gt; element used to <kbd>indicate user input (like this)</kbd>.
+			This paragraph contains a <code>snippet of code, inside a <code>&lt;code&gt;</code> element</code>.
+			You'll also see the <code>&lt;kbd&gt;</code> element used to <kbd>indicate user input (like this)</kbd>.
 		</p>
 	</section>
 	<article>
 		<section>
 			<h2>This heading 2 is part of a section inside an article.</h2>
 			<p>And here's a paragraph</p>
-			<aside>This is an &lt;aside&gt; element inside a section.</aside>
+			<aside>This is an <code>&lt;aside&gt;</code> element inside a section.</aside>
 		</section>
 	</article>
 	<section>
-	<h2>Lists</h2>
-	<h3>Unordered Lists</h3>
-	<ul>
-		<li>Unordered list item 1</li>
-		<li>Unordered list item 2</li>
-		<li>Unordered list item 3</li>
-	</ul>
-	<h3>Ordered Lists</h3>
-	<ol>
-		<li>Ordered list item 1</li>
-		<li>Ordered list item 2</li>
-		<li>Ordered list item 3
-			<ol>
-				<li>Ordered sub-list item 1</li>
-				<li>Ordered sub-list item 2</li>
-				<li>Ordered sub-list item 3</li>
-			</ol>
-		</li>
-	</ol>
-	<h3>Definition List</h3>
-	<dl>
-		<dt>Term</dt>
-		<dd>Definition</dd>
-		<dt>Selector</dt>
-		<dd>The part of a CSS rule used to identify the element or elements which should be affected by the rule.</dd>
-		<dt>Property</dt>
-		<dd>The part of a CSS rule indicating what's being modified</dd>
-		<dt>Value</dt>
-		<dd>The part of a CSS rule indicating what </dd>
-	</dl>
-	<h3>Blockquote</h3>
-	<blockquote>
-		This is a blockquote. It is used to indicate quoted text.
-	</blockquote>
-	<h3>Code and Preformatted Text</h3>
-	<pre>This is preformatted text, which preserves
+		<h2>Lists</h2>
+		<h3>Unordered Lists</h3>
+		<ul>
+			<li>Unordered list item 1</li>
+			<li>Unordered list item 2</li>
+			<li>Unordered list item 3</li>
+		</ul>
+		<h3>Ordered Lists</h3>
+		<ol>
+			<li>Ordered list item 1</li>
+			<li>Ordered list item 2</li>
+			<li>Ordered list item 3
+				<ol>
+					<li>Ordered sub-list item 1</li>
+					<li>Ordered sub-list item 2</li>
+					<li>Ordered sub-list item 3</li>
+				</ol>
+			</li>
+		</ol>
+		<h3>Definition List</h3>
+		<dl>
+			<dt>Term</dt>
+			<dd>Definition</dd>
+			<dt>Selector</dt>
+			<dd>The part of a CSS rule used to identify the element or elements which should be affected by the rule.</dd>
+			<dt>Property</dt>
+			<dd>The part of a CSS rule indicating what's being modified</dd>
+			<dt>Value</dt>
+			<dd>The part of a CSS rule indicating what </dd>
+		</dl>
+		<h3>Blockquote</h3>
+		<blockquote>
+			This is a blockquote. It is used to indicate quoted text.
+		</blockquote>
+		<h3>Code and Preformatted Text</h3>
+		<pre>This is preformatted text, which preserves
 		whitespace and line breaks.
 	</pre>
-	<pre><code>
-// This is a block of code, using the &lt;code&gt; tag inside a &lt;pre&gt; tag.
+		<pre><code>
+// This is a block of code, using the <code>&lt;code&gt;</code> tag inside a <code>&lt;pre&gt;</code> tag.
 
 console.log('Hello, world!');
 	</code></pre>
+		<h3>Details &amp; Summary</h3>
+		<details name="examples">
+			<summary>How It Works</summary>
+			<p>Using <code>&lt;details&gt;</code> creates a region which the user can expand
+				and collapse. When collapsed, the <code>&lt;summary&gt;</code> remains visible.
+			</p>
+		</details>
+		<details name="examples">
+			<summary>What's It Useful For?</summary>
+			<p>It's a built-in way to present content in an accordion style.
+				Associated elements can be linked using the <code>name</code> attribute
+				on the <code>&lt;details&gt;</code> elements; only one linked element will be displayed
+				at a time.
+			</p>
+		</details>
+		<details name="examples">
+			<summary>Why's it called an "accordion"?</summary>
+			<p>I honestly have no idea. Maybe something to do with French café jazz?</p>
+		</details>
 	</section>
-	<section>
-	<h2>Figures</h2>
-	<h4>Using &lt;figure&gt;to present a quotation:</h4>
-	<figure>
-		<blockquote>
-			<p>The dream behind the Web is of a common information space in which we communicate by sharing information. Its
-				universality is essential: the fact that a hypertext link can point to anything, be it personal, local or
-				global, be it draft or highly polished.</p>
-		</blockquote>
-		<figcaption>
-			<cite>- from <a href="https://www.w3.org/People/Berners-Lee/ShortHistory.html">The World Wide Web: A very short
-					personal history</a> by Tim Berners-Lee</cite>
-		</figcaption>
-	</figure>
-	<h4>Using &lt;figure&gt;to present an image:</h4>
-	<figure>
-		<img src="hornbill-360px.jpg" srcset="hornbill-720px.jpg 2x"
-			alt="A hornbill, a bird with a large red beak and a long black tail, sits on a dead tree branch.">
-		<figcaption>Hornbill in the Luangwa National Park, Zambia.</figcaption>
-	</figure>
-	<h3>Details &amp; Summary</h3>
-	<details name="examples">
-		<summary>How It Works</summary>
-		<p>Using &lt;details&gt; creates a region which the user can expand
-			and collapse. When collapsed, the &lt;summary&gt; remains visible.
-		</p>
-	</details>
-	<details name="examples">
-		<summary>What's It Useful For?</summary>
-		<p>It's a built-in way to present content in an accordion style.
-			Associated elements can be linked using the <code>name</code> attribute
-			on the &lt;details&gt; elements; only one linked element will be displayed
-			at a time.
-		</p>
-	</details>
-	<details name="examples">
-		<summary>Why's it called an "accordion"?</summary>
-		<p>I honestly have no idea. Maybe something to do with French café jazz?</p>
-	</details>
+	<section id="figures">
+		<h2>Figures</h2>
+		<h4>Using <code>&lt;figure&gt;</code>to present a quotation:</h4>
+		<figure>
+			<blockquote>
+				<p>The dream behind the Web is of a common information space in which we communicate by sharing information. Its
+					universality is essential: the fact that a hypertext link can point to anything, be it personal, local or
+					global, be it draft or highly polished.</p>
+			</blockquote>
+			<figcaption>
+				<cite>- from <a href="https://www.w3.org/People/Berners-Lee/ShortHistory.html">The World Wide Web: A very short
+						personal history</a> by Tim Berners-Lee</cite>
+			</figcaption>
+		</figure>
+		<h4>Using <code>&lt;figure&gt;</code>to present an image:</h4>
+		<figure>
+			<img src="hornbill-360px.jpg" srcset="hornbill-720px.jpg 2x"
+				alt="A hornbill, a bird with a large red beak and a long black tail, sits on a dead tree branch.">
+			<figcaption>Hornbill in the Luangwa National Park, Zambia.</figcaption>
+		</figure>
 	</section>
-	<section>
+	<section id="forms-and-interaction">
 		<h2>Forms and Interaction</h2>
 		<p><code>&lt;meter&gt;</code></p>
 		<p>Volume: <meter min="0" max="100" value="75">75%</meter></p>
@@ -338,7 +341,7 @@ console.log('Hello, world!');
 			</label>
 		</fieldset>
 	</section>
-	<section>
+	<section id="buttons-and-dialogs">
 		<h3>Buttons and Dialogs</h3>
 		<p>
 			<input type="button" value="Normal Button">
@@ -363,7 +366,7 @@ console.log('Hello, world!');
 		</p>
 		<p>
 			<output id="output">
-				this is an HTML &lt;output&gt; element.
+				this is an HTML <code>&lt;output&gt;</code> element.
 			</output>
 		</p>
 
@@ -376,14 +379,24 @@ console.log('Hello, world!');
 			</form>
 		</dialog>
 	</section>
-	<section>
+	<section id="search">
 		<h3>Search</h3>
 		<search>
 			<label for="search-input">Search</label>
 			<input type="search" id="search-input" value="search">
 		</search>
 	</section>
-	<footer>(footer)</footer>
+	<footer id="footer">
+		and this is the page <code>&lt;footer&gt;</code>, which often includes some
+		<small><code>&lt;small&gt;</code> text</small>.
+		<nav>
+			<menu>
+				<li><a href="#">footer</a></li>
+				<li><a href="#">nav</a></li>
+				<li><a href="#">links</a></li>
+			</menu>
+		</nav>
+	</footer>
 </body>
 
 
