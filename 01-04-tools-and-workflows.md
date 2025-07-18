@@ -3,7 +3,7 @@ title: "Tools and Workflows"
 layout: home
 nav_order: 10104
 examples: "examples/01-04-tools-and-workflows"
-typora-root-url: ./images
+typora-root-url: .
 typora-copy-images-to: ./images
 ---
 
@@ -65,11 +65,11 @@ If we take a look at the `em` element that's inside our paragraph, you'll see th
 
 Now, add another rule to `styles.css`:
 
-{% highlight html mark_lines="4 5 6" %}
-{% include_relative {{ page.examples }}/styles.html %}
+{% highlight css mark_lines="5 6 7" %}
+{% include_relative {{ page.examples }}/styles.css %}
 {% endhighlight %}
 
-When it comes to troubleshooting CSS, you'll be using this a lot. 
+![image-20250718155004640](./images/chrome-inspector-screenshot-with-em-styles)
 
 
 
