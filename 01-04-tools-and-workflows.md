@@ -77,7 +77,13 @@ We'll leave it there for now, but we'll be using the element inspector and the o
 
 ### Using a Kitchen Sink page
 
-Another reason why so many sites end up with messy, badly organised CSS is that it can be incredibly difficult to figure out what might be affected if you make a change to one of the CSS rules. You want to create a new kind
+Another reason why so many sites end up with messy, badly organised CSS is that it can be incredibly difficult to figure out what might be affected if you make a change to one of the CSS rules. You want to create a special kind of button... well, you could modify the existing button styles, but then you'd need to check every single button, on every single page of your site, to make sure your change doesn't introduce any weird bugs... and as the saying goes, ain't nobody got time for that.
+
+The best solution I've ever found to this is something I call a kitchen sink page - after an old English expression about "everything but the kitchen sink". Other folks call this a spec page, sample page, comp page, reference page, but I like kitchen sink, so that's what we're going to call it.
+
+The kitchen sink is one giant web page with every single element, component, widget, style, button, control... you name it; if it's used anywhere on your site - or even if it's just something you built 'cos you think you'll need it later - it should be included in the kitchen sink page.
+
+The kitchen sink should also be static HTML. Doesn't matter if your backend is built in nodeJS, .NET, Ruby on Rails, PHP - all those things have 
 
 
 
