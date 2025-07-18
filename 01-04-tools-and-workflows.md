@@ -37,9 +37,9 @@ and at the time I'm writing this, there's a beta version of Live Server ++ avail
 
 ## Using the Browser Dev Tools
 
-The next thing to check out is the dev tools built into your browser. Every modern browser includes a built-in toolkit for inspecting and debugging HTML, CSS and JavaScript; they have fairly similar feature sets, but vary slightly depending on which browser you're using.
+The next thing to check out is the dev tools built into your browser. Every modern browser includes a built-in toolkit for inspecting and debugging HTML, CSS and JavaScript; they have similar feature sets, but vary slightly depending on which browser you're using.
 
-There are really only three browser engines that are still relevant in 2025. By far the most popular is an engine called Blink: Google Chrome, Microsoft Edge, Opera, the Samsung Internet browser used on Samsung mobile devices, and the vast majority of boutique browsers like Brave and Vivaldi - they're all based on an open source browser project called Chromium, and Blink is the engine that runs Chromium.
+There are really only three browser engines that are still relevant in 2025. By far the most popular is an engine called Blink: Google Chrome, Microsoft Edge, Opera, the Samsung mobile browser, boutique browsers like Arc, Brave and Vivaldi - they're all based on an open source browser project called Chromium, and Blink is the engine that runs Chromium.
 
 The two notable exceptions are Apple's Safari browser, used on macOS and iOS devices, which is based on Apple's Webkit rendering engine, and Firefox, which uses its own rendering engine, known as Gecko.
 
