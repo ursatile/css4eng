@@ -204,10 +204,6 @@ console.log('Hello, world!');
 				<input type="password" id="password-input" value="password">
 			</p>
 			<p>
-				<label for="search-input">search</label>
-				<input type="search" id="search-input" value="search">
-			</p>
-			<p>
 				<label for="time-input">Show time</label>
 				<input type="time" id="time-input" value="time">
 			</p>
@@ -327,17 +323,36 @@ console.log('Hello, world!');
 		</p>
 		<p>
 			<button>This is an HTML <code>&lt;button&gt;</code> element.</button>
+		</p>
+		<p>
 			<button onclick="document.getElementById('dialog').showModal()">
 				Click this button to display a modal dialog
 			</button>
 		</p>
+		<p>
+			<button onclick="document.getElementById('output').innerHTML += ' Output!';">
+				Click this button to produce some output.
+			</button>
+		</p>
+		<p>
+			<output id="output">
+				this is an HTML &lt;output&gt; element.
+			</output>
+		</p>
+
+		</p>
 		<dialog id="dialog">
 			<h3>This is a modal dialog</h3>
+			<p>Yeah, HTML has modal dialogs now. Did you know that?</p>
 			<form method="dialog">
-				<input type="submit" value="OK">
-				<input type="reset" value="Cancel">
+				<input type="submit" value="Cool!">
 			</form>
 		</dialog>
+		<h3>Search</h3>
+		<search>
+				<label for="search-input">search</label>
+				<input type="search" id="search-input" value="search">
+		</search>
 
 	</section>
 
