@@ -83,7 +83,9 @@ The best solution I've ever found to this is something I call a kitchen sink pag
 
 The kitchen sink is one giant web page with every single element, component, widget, style, button, control... you name it; if it's used anywhere on your site - or even if it's just something you built 'cos you think you'll need it later - it should be included in the kitchen sink page.
 
-The kitchen sink should also be static HTML. Doesn't matter if your backend is built in nodeJS, .NET, Ruby on Rails, PHP - all those things have 
+The kitchen sink should also be static HTML. Doesn't matter if your backend is built in nodeJS, .NET, Ruby on Rails, PHP; the kitchen sink should be static. It doesn't run any code, it doesn't connect to a database - and that means you can reload it instantly, so you get the benefit of that feedback loop we talked about.
+
+
 
 
 
