@@ -53,7 +53,6 @@
 		<data value="42">an HTML &lt;data&gt; element</data>,
 		an &lt;time&gt; element (<time datetime="2024-06-01T14:30">June 1, 2024, 2:30 PM</time>).
 	</p>
-
 	<p>This one contains some <del>deleted text</del>, some <ins>inserted text</ins>, and
 		some <s>strikethrough</s> text.</p>
 	<p>
@@ -128,7 +127,8 @@ console.log('Hello, world!');
 	</figure>
 	<h4>Using &lt;figure&gt;to present an image:</h4>
 	<figure>
-		<img src="hornbill.jpg"
+		<img src="hornbill-360px.jpg"
+		  srcset="hornbill-720px.jpg 2x"
 			alt="A hornbill, a bird with a large red beak and a long black tail, sits on a dead tree branch.">
 		<figcaption>Hornbill in the Luangwa National Park, Zambia.</figcaption>
 	</figure>
