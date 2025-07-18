@@ -71,7 +71,7 @@ Now, add another rule to `styles.css`:
 
 ![image-20250718155004640](./images/chrome-inspector-screenshot-with-em-styles)
 
-
+When the page reloads, you can see in the inspector the new rule is being applied, that that rule is defined in styles.css, line 5 - and also that it **overrides** the existing rule which says paragraphs should be purple. This is happening because of something called *specificity*: when deciding what color to make that emphasis element, the teal rule is more *specific* than the purple rule, because the teal rule specifically targets the `em` element, whereas the purple rule is *inherited* from the paragraph. We'll talk way more about specificity 
 
 - Debugging CSS with browser dev tools
 - Managing CSS - using a "kitchen sink" page
