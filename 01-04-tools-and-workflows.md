@@ -55,7 +55,13 @@ What makes it particularly useful is that the inspector also shows us the HTML s
 
 Let's inspect our heading 1. It's got a `element.style` that's setting `color` to `green`, and then everything else is being provided by what's called the *user agent stylesheet*.
 
-> The term **user agent** comes from RFC9110, the document which defines a lot of the terminology used when building tools like web browsers and servers. Strictly speaking, a user agent is any piece of software which makes network requests on behalf of a user. In this context, 
+The term **user agent** comes from [RFC9110](https://httpwg.org/specs/rfc9110.html#user.agent), the document which defines many of the technical terms used to refer to web systems and standards. Strictly speaking, a user agent is any piece of software which makes network requests on behalf of a user. In this course, the user agent will almost always be a web browser - but user agents could also be bots, scripts, command-line tools; even something like a wifi-connected lightbulb that connects to a web API. 
+
+In this instance, the user agent is our web browser, and the user agent stylesheet is the set of default styles that the browser will use if we haven't overridden them with CSS rules.
+
+If we take a look at the `em` element that's inside our paragraph, you'll see that it's inheriting its color from the parent element - the paragraph - and the rest is defined by that user agent stylesheet.
+
+
 
 
 
