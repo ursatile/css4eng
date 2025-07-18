@@ -45,7 +45,19 @@ The two notable exceptions are Apple's Safari browser, used on macOS and iOS dev
 
 If you're on a Chromium-based browser, you'll find the Developer Tools under More Tools - or press Ctrl-Shift-I, or right-click an element on the page and choose "Inspect". Firefox is the same - More Tools, Ctrl-Shift-I, or right-click, Inspect; you can also right-click an element and press Q to open the inspector. On Safari on macOS, they're under the Develop menu, or Cmd-Option-I.
 
-I'm going to use the Chromium dev tools for most of the examples in this course, unless we're looking at something specific to Firefox or Safari. We'll start here, with the element inspector. This is 
+I'm going to use the Chromium dev tools for most of the examples in this course, unless we're looking at something specific to Firefox or Safari. We'll start here, with the element inspector.
+
+### Using the Element Inspector
+
+The inspector lets us inspect any element in our page, to see exactly where that element fits into the structure of the page, and which CSS rules the browser is applying to that element.
+
+What makes it particularly useful is that the inspector also shows us the HTML structure of our document, so we can either inspect an element by clicking on the rendered version - the web page - or by clicking on the source. As we learn about CSS properties like position and visibility, you'll discover there are all sorts of ways that an element can appear in a completely different place in the output than it does in the source code - or maybe even not appear at all.
+
+Use the inspector to look at the strong element that's 
+
+
+
+
 
 
 
