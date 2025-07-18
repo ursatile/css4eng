@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Kitchen Sink</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
 	<h1>The Kitchen Sink Page</h1>
-	<hr />		
+	<hr />
 	<nav>
 		<menu>
 			<li><a href="#text-and-typography">Text &amp; Typography</a></li>
@@ -25,13 +27,28 @@
 		<h2>Heading 2 inside an <code>&lt;hgroup&gt;</code></h2>
 	</hgroup>
 	<p>Here's a bunch of paragraphs, so we can see what paragraphs will look like on our site.</p>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod magna eu purus suscipit, vitae semper ligula efficitur. Suspendisse semper vel mauris id sollicitudin. Aliquam erat volutpat. Vivamus luctus est ligula, eu commodo metus ullamcorper id. Donec massa metus, cursus sit amet consequat sit amet, posuere vitae purus. Proin nec felis efficitur, scelerisque tortor quis, feugiat tellus. Sed imperdiet tincidunt dolor a molestie. Nullam tempus purus felis, quis efficitur turpis maximus et. Phasellus nec nibh commodo, elementum est ut, interdum odio. Aliquam cursus consequat tortor sit amet maximus. Fusce aliquam eleifend leo a laoreet. Donec nibh massa, lacinia sodales iaculis nec, finibus sed lorem. Etiam vitae tortor nec mi sodales malesuada.</p>
-	<p>Proin id metus eu enim varius lobortis. Mauris tortor turpis, varius vel consectetur vel, convallis nec nunc. Praesent porta nisi id dui pulvinar condimentum. Integer et est ultricies, eleifend justo id, interdum dolor. Duis eu iaculis orci. Sed finibus tellus nec aliquet fermentum. Sed mollis malesuada ullamcorper. Suspendisse sed est dui. Donec laoreet non odio ac faucibus. Aliquam in accumsan neque, vitae ultrices mi. </p>
-	<p>Let's make sure our site can handle Unicode properly. Це абзац українською мовою, тому ми можемо переконатися, що кирилиця відображатиметься правильно.</p>	
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod magna eu purus suscipit, vitae semper ligula
+		efficitur. Suspendisse semper vel mauris id sollicitudin. Aliquam erat volutpat. Vivamus luctus est ligula, eu
+		commodo metus ullamcorper id. Donec massa metus, cursus sit amet consequat sit amet, posuere vitae purus. Proin nec
+		felis efficitur, scelerisque tortor quis, feugiat tellus. Sed imperdiet tincidunt dolor a molestie. Nullam tempus
+		purus felis, quis efficitur turpis maximus et. Phasellus nec nibh commodo, elementum est ut, interdum odio. Aliquam
+		cursus consequat tortor sit amet maximus. Fusce aliquam eleifend leo a laoreet. Donec nibh massa, lacinia sodales
+		iaculis nec, finibus sed lorem. Etiam vitae tortor nec mi sodales malesuada.</p>
+	<p>Proin id metus eu enim varius lobortis. Mauris tortor turpis, varius vel consectetur vel, convallis nec nunc.
+		Praesent porta nisi id dui pulvinar condimentum. Integer et est ultricies, eleifend justo id, interdum dolor. Duis
+		eu iaculis orci. Sed finibus tellus nec aliquet fermentum. Sed mollis malesuada ullamcorper. Suspendisse sed est
+		dui. Donec laoreet non odio ac faucibus. Aliquam in accumsan neque, vitae ultrices mi. </p>
+	<p>Let's make sure our site can handle Unicode properly. Це абзац українською мовою, тому ми можемо переконатися, що
+		кирилиця відображатиметься правильно.</p>
 	<p dir="rtl">هذه فقرة عربية، لذا يمكننا التأكد من ظهور الأبجدية العربية بشكل صحيح.</p>
 	<p dir="rtl">פסקה זו היא בעברית, כדי שנוכל לבדוק שהאתר שלנו תומך בעברית כראוי.</p>
-	
-	<p>This is a paragraph demonstrating <strong>bold</strong>, <em>italic</em>, <u>underline</u>, and <mark>highlighted</mark> text.</p>
+	<p>Αυτή η παράγραφος είναι στα ελληνικά, ώστε να μπορούμε να ελέγξουμε ότι ο ιστότοπός μας υποστηρίζει σωστά τα
+		ελληνικά.</p>
+	<p></p>
+	<p>This is a paragraph demonstrating <strong>strong</strong>, <em>emphasised</em>, <u>underlined</u>, and
+		<mark>highlighted</mark> text.
+	</p>
+	<h2>Lists</h2>
 	<ul>
 		<li>Unordered list item 1</li>
 		<li>Unordered list item 2</li>
@@ -40,16 +57,24 @@
 	<ol>
 		<li>Ordered list item 1</li>
 		<li>Ordered list item 2</li>
-		<li>Ordered list item 3</li>
+		<li>Ordered list item 3
+			<ol>
+				<li>Ordered sub-list item 1</li>
+				<li>Ordered sub-list item 2</li>
+				<li>Ordered sub-list item 3</li>
+			</ol>
+		</li>
 	</ol>
 	<blockquote>
 		This is a blockquote. It is used to indicate quoted text.
 	</blockquote>
-	<pre>
-	Preformatted text preserves
+	<pre>This is preformatted text, which preserves
 		whitespace and line breaks.
 	</pre>
+	<p>Paragraphs might contain <code>snippets of code</code>.</p>
 	<code>
+	// This is a block of code, using the &lt;code&gt; tag.
+
 	console.log('Hello, world!');
 	</code>
 	<hr>
