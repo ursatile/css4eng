@@ -164,6 +164,22 @@ console.log('Hello, world!');
 				<input type="text" id="input-text" placeholder="what's your name?">
 			</p>
 			<p>
+				<label for="input-text-with-list">Favourite Band</label>
+				<input list="great-rock-bands" id="input-text-with-list" name="favourite-band">
+				<datalist id="great-rock-bands">
+					<option value="AC/DC">Australia's finest rock export</option>
+					<option value="Bon Jovi">The pride of New Jersey</option>
+					<option value="cinderella">Cinderella</option>
+					<option value="dire-straits">Dire Straits</option>
+					<option value="eagles">Eagles</option>
+					<option value="fleetwood-mac">Fleetwood Mac</option>
+					<option value="galahad">Galahad</option>
+					<option value="helloween">Helloween</option>
+					<option value="iron-maiden">Iron Maiden</option>
+				</datalist>
+
+			</p>
+			<p>
 				<label for="color-input">Hair Colour</label>
 				<input type="color" id="hair-color-input" value="#ff3399">
 			</p>
@@ -350,8 +366,8 @@ console.log('Hello, world!');
 		</dialog>
 		<h3>Search</h3>
 		<search>
-				<label for="search-input">search</label>
-				<input type="search" id="search-input" value="search">
+			<label for="search-input">search</label>
+			<input type="search" id="search-input" value="search">
 		</search>
 
 	</section>
