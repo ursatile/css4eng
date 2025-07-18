@@ -61,6 +61,12 @@ In this instance, the user agent is our web browser, and the user agent styleshe
 
 If we take a look at the `em` element that's inside our paragraph, you'll see that it's inheriting its color from the parent element - the paragraph - and the rest is defined by that user agent stylesheet.
 
+Now, add another rule to `styles.css`:
+
+{% highlight html mark_lines="6" %}
+{% include_relative {{ page.examples }}/styles2.html %}
+{% endhighlight %}
+
 
 
 
