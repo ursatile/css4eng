@@ -71,7 +71,15 @@ Now, add another rule to `styles.css`:
 
 ![image-20250718155004640](./images/chrome-inspector-screenshot-with-em-styles)
 
-When the page reloads, you can see in the inspector the new rule is being applied, that that rule is defined in styles.css, line 5 - and also that it **overrides** the existing rule which says paragraphs should be purple. This is happening because of something called *specificity*: when deciding what color to make that emphasis element, the teal rule is more *specific* than the purple rule, because the teal rule specifically targets the `em` element, whereas the purple rule is *inherited* from the paragraph. We'll talk way more about specificity 
+When the page reloads, you can see in the inspector the new rule is being applied, that that rule is defined in styles.css, line 5 - and also that it **overrides** the existing rule which says paragraphs should be purple. This is happening because of something called *specificity*: when deciding what color to make that emphasis element, the teal rule is more *specific* than the purple rule, because the teal rule specifically targets the `em` element, whereas the purple rule is *inherited* from the paragraph. 
+
+We'll leave it there for now, but we'll be using the element inspector and the other dev tools throughout the rest of the course. There's also an entire section coming up on selectors and  specificity, because it's one of the most important concepts to grasp if you want to understand how CSS works - and confusion about specificity has led to all sorts of bizarre layout and rendering bugs I've seen over the years.
+
+### Using a Kitchen Sink page
+
+Another reason why so many sites end up with messy, badly organised CSS is that it can be incredibly difficult to figure out what might be affected if you make a change to one of the CSS rules. You want to create a new kind
+
+
 
 - Debugging CSS with browser dev tools
 - Managing CSS - using a "kitchen sink" page
