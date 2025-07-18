@@ -46,7 +46,7 @@
 	<p dir="rtl">פסקה זו היא בעברית, כדי שנוכל לבדוק שהאתר שלנו תומך בעברית כראוי.</p>
 	<p>This is a paragraph demonstrating <strong>strong</strong>, <em>emphasised</em>, <u>underlined</u>, and
 		<mark>highlighted</mark> text. <q>It also contains a quotation</q>, says
-	</p>	
+	</p>
 	<p>This paragraph contains examples of superscript (<var>x</var><sup>2</sup>),
 		subscript (H<sub>2</sub>SO<sub>4</sub>),
 		variables like <var>x</var>, <var>y</var> &amp; <var>z</var>,
@@ -55,7 +55,7 @@
 	</p>
 
 	<p>This one contains some <del>deleted text</del>, some <ins>inserted text</ins>, and
-	some <s>strikethrough</s> text.</p>
+		some <s>strikethrough</s> text.</p>
 	<p>
 		This paragraph contains a <code>snippet of code, inside a &lt;code&gt; element</code>.
 		You'll also see the &lt;kbd&gt; element used to <kbd>indicate user input (like this)</kbd>.
@@ -117,41 +117,44 @@ console.log('Hello, world!');
 	<h4>Using &lt;figure&gt;to present a quotation:</h4>
 	<figure>
 		<blockquote>
-			<p>The dream behind the Web is of a common information space in which we communicate by sharing information. Its universality is essential: the fact that a hypertext link can point to anything, be it personal, local or global, be it draft or highly polished.</p>
+			<p>The dream behind the Web is of a common information space in which we communicate by sharing information. Its
+				universality is essential: the fact that a hypertext link can point to anything, be it personal, local or
+				global, be it draft or highly polished.</p>
 		</blockquote>
 		<figcaption>
-			<cite>- from <a href="https://www.w3.org/People/Berners-Lee/ShortHistory.html">The World Wide Web: A very short personal history</a> by Tim Berners-Lee</cite>
+			<cite>- from <a href="https://www.w3.org/People/Berners-Lee/ShortHistory.html">The World Wide Web: A very short
+					personal history</a> by Tim Berners-Lee</cite>
 		</figcaption>
 	</figure>
 	<h4>Using &lt;figure&gt;to present an image:</h4>
 	<figure>
-		<img src="hornbill.jpg" alt="A hornbill, a bird with a large red beak and a long black tail, sits on a dead tree branch." />
+		<img src="hornbill.jpg"
+			alt="A hornbill, a bird with a large red beak and a long black tail, sits on a dead tree branch." />
 		<figcaption>Hornbill in the Luangwa National Park, Zambia.</figcaption>
 	</figure>
 	<h3>Details &amp; Summary</h3>
-	<details name="requirements">
-  <summary>Graduation Requirements</summary>
-  <p>
-    Requires 40 credits, including a passing grade in health, geography,
-    history, economics, and wood shop.
-  </p>
-</details>
-<details name="requirements">
-  <summary>System Requirements</summary>
-  <p>
-    Requires a computer running an operating system. The computer must have some
-    memory and ideally some kind of long-term storage. An input device as well
-    as some form of output device is recommended.
-  </p>
-</details>
-<details name="requirements">
-  <summary>Job Requirements</summary>
-  <p>
-    Requires knowledge of HTML, CSS, JavaScript, accessibility, web performance,
-    privacy, security, and internationalization, as well as a dislike of
-    broccoli.
-  </p>
-</details>
+	<details name="examples">
+		<summary>How It Works</summary>
+		<p>Using &lt;details&gt; creates a region which the user can expand
+			and collapse. When collapsed, the &lt;summary&gt; remains visible.
+		</p>
+	</details>
+	<details name="examples">
+		<summary>System Requirements</summary>
+		<p>
+			Requires a computer running an operating system. The computer must have some
+			memory and ideally some kind of long-term storage. An input device as well
+			as some form of output device is recommended.
+		</p>
+	</details>
+	<details name="examples">
+		<summary>Job Requirements</summary>
+		<p>
+			Requires knowledge of HTML, CSS, JavaScript, accessibility, web performance,
+			privacy, security, and internationalization, as well as a dislike of
+			broccoli.
+		</p>
+	</details>
 	<footer>(footer)</footer>
 </body>
 
