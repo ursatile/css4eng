@@ -21,6 +21,7 @@
 			<li><a href="#forms-and-interaction">Forms &amp; Interaction</a></li>
 			<li><a href="#buttons-and-dialogs">Buttons &amp; Dialogs</a></li>
 			<li><a href="#search">Search</a></li>
+			<li><a href="#footer">Footer</a></li>
 		</menu>
 	</nav>
 	<section>
@@ -53,7 +54,8 @@
 		<p dir="rtl">هذه فقرة عربية، لذا يمكننا التأكد من ظهور الأبجدية العربية بشكل صحيح.</p>
 		<p dir="rtl">פסקה זו היא בעברית, כדי שנוכל לבדוק שהאתר שלנו תומך בעברית כראוי.</p>
 		<p>This is a paragraph demonstrating <strong>strong</strong>, <em>emphasised</em>, <u>underlined</u>, and
-			<mark>highlighted</mark> text. <q>It also contains a quotation</q>, says
+			<mark>highlighted</mark> text. It also contains a <q>quotation, denoted
+				by a <code>&lt;q&gt;</code> element</q>.
 		</p>
 		<p>This paragraph contains examples of superscript (<var>x</var><sup>2</sup>),
 			subscript (H<sub>2</sub>SO<sub>4</sub>),
@@ -75,7 +77,7 @@
 			<aside>This is an <code>&lt;aside&gt;</code> element inside a section.</aside>
 		</section>
 	</article>
-	<section>
+	<section id="lists">
 		<h2>Lists</h2>
 		<h3>Unordered Lists</h3>
 		<ul>
@@ -159,6 +161,51 @@ console.log('Hello, world!');
 				alt="A hornbill, a bird with a large red beak and a long black tail, sits on a dead tree branch.">
 			<figcaption>Hornbill in the Luangwa National Park, Zambia.</figcaption>
 		</figure>
+	</section>
+	<section id="tables">
+		<h2>Tables</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Band Name</th>
+					<th>Year Formed</th>
+					<th>Total Record Sales (Millions)</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>The Beatles</td>
+					<td>1960</td>
+					<td>600</td>
+				</tr>
+				<tr>
+					<td>The Rolling Stones</td>
+					<td>1962</td>
+					<td>240</td>
+				</tr>
+				<tr>
+					<td>Led Zeppelin</td>
+					<td>1968</td>
+					<td>200</td>
+				</tr>
+				<tr>
+					<td>Pink Floyd</td>
+					<td>1965</td>
+					<td>250</td>
+				</tr>
+				<tr>
+					<td>Queen</td>
+					<td>1970</td>
+					<td>300</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="2"><strong>Total Combined Sales</strong></td>
+					<td><strong>1,590</strong></td>
+				</tr>
+			</tfoot>
+		</table>
 	</section>
 	<section id="forms-and-interaction">
 		<h2>Forms and Interaction</h2>
