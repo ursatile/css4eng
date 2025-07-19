@@ -140,7 +140,11 @@ Of course, it doesn't matter how widely supported a feature is if your biggest c
 
 ## Review & Recap
 
-
+* **Live Reload Tools:** Tools like *Live Preview* and *Live Server* for VS Code help create a fast feedback loop by automatically reloading your site when CSS changes are made.
+* **Browser Dev Tools:** Built-in developer tools allow us to inspect elements, view applied styles, and understand how the browser interprets our CSS.
+* **Use a Kitchen Sink Page:** A static HTML page with every UI component used on your site helps quickly detect style conflicts and serves as a reference for existing styles and elements.
+* **CSS Debugging Techniques:** Use `outline` and `background-color` for visual debugging without affecting the site's layout — a CSS equivalent of `console.log()`.
+* **Feature Compatibility:** Use [caniuse.com](https://caniuse.com) to check browser support for CSS features, especially important when working with cutting-edge or experimental properties.
 
 
 

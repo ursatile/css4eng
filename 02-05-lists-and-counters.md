@@ -8,6 +8,7 @@ nav_order: 10205
 
 ## Course Content
 
+- Lists! All the lists.
 - Understanding CSS counters
 - Modifying counters with `counter-reset` and `counter-increment`
 - Using counters in `content`
