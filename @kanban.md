@@ -6,9 +6,6 @@ kanban-plugin: board
 
 ## Backlog
 
-- [ ] [01-02-fundamentals-and-background](01-02-fundamentals-and-background.md)
-- [ ] [01-03-how-css-works](01-03-how-css-works.md)
-- [ ] [01-04-tools-and-workflows](01-04-tools-and-workflows.md)
 - [ ] [02-01-boxes-and-borders](02-01-boxes-and-borders.md)
 - [ ] [02-02-selectors-pseudo-classes-and-pseudo-elements](02-02-selectors-pseudo-classes-and-pseudo-elements.md)
 - [ ] [02-03-breaking-the-flow-advanced-css-layouts](02-03-breaking-the-flow-advanced-css-layouts.md)
@@ -24,6 +21,7 @@ kanban-plugin: board
 - [ ] [03-04-working-with-css-variables](03-04-working-with-css-variables.md)
 - [ ] [03-05-advanced-visual-effects](03-05-advanced-visual-effects.md)
 - [ ] [03-06-exercise-building-a-web-media-player](03-06-exercise-building-a-web-media-player.md)
+- [ ] [05-01-conclusion](05-01-conclusion.md)
 - [ ] [04-04-processing-css](04-04-processing-css.md)
 - [ ] [04-03-css-frameworks](04-03-css-frameworks.md)
 - [ ] [04-02-testing-and-deployment](04-02-testing-and-deployment.md)
@@ -36,6 +34,9 @@ kanban-plugin: board
 
 ## Code Complete
 
+- [ ] [01-02-fundamentals-and-background](01-02-fundamentals-and-background.md)
+- [ ] [01-03-how-css-works](01-03-how-css-works.md)
+- [ ] [01-04-tools-and-workflows](01-04-tools-and-workflows.md)
 
 
 ## Recorded
