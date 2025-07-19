@@ -89,7 +89,7 @@ Here's an example of a kitchen sink page; you can find the code at [kitchen-sink
 
 <iframe src="examples/01-04-tools-and-workflows/kitchen-sink.html"></iframe>
 
-
+This page includes examples of *almost* every element that's part of the current WHATWG HTML standard. 
 
 
 
