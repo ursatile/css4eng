@@ -14,7 +14,7 @@ If you've ever worked with wood, or fabric, you'll know that these materials hav
 
 The web also has a grain; a natural direction and flow, derived from the printing and typesetting conventions used in many Western countries. Text starts at the top left corner of the page, every line reads left to right. If a line's too wide for the screen, it'll wrap - but if a paragraph is too tall for the screen, it'll scroll.
 
-That might sound obvious, but it's the key to understanding how the browser lays out elements on a page - 
+That might sound obvious, but it's the key to understanding how the browser lays out elements on a page - and to what we'll need to do if we don't want 
 
 
 
