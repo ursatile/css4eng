@@ -45,10 +45,12 @@ Then remove the empty `style` element, and replace it with a `<link>` element:
 
 The `<link>` element has two attributes:
 
-* `rel` is short for *relationship* - in this case, `"stylesheet"` indicates it's CSS rules to apply to the page
+* `rel` is short for *relationship* - in this case, `"stylesheet"` indicates that the linked file contains CSS rules to apply to the page
 * `href` is the URL of the file to load.
 
 > Another historical quirk: you'll often see `link` elements include an extra attribute: `type="text/css"` - a relic of the days when servers would serve CSS files with the wrong MIME type and browsers weren't smart enough to ignore it.
+
+We've now got a page which will load CSS rules from a separate file - and that's a big deal, because we can have many pages which load their CSS rules from that same file, and so our CSS is now reusable. We're not writing stylesheet rules for each page, we're building a stylesheet that applies to our entire website.
 
 ## Review & Recap
 
