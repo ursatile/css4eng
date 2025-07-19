@@ -66,7 +66,7 @@ p {
 }
 ```
 
-Remember, the point of comments in CSS - and in any language - isn't to tell us *what* the code does. We can figure that out by reading it. Here's an example of a bad comment:
+Remember, the point of comments in CSS - and in any language - isn't to tell us what the code does. We can figure that out by reading it. Here's an example of a bad comment:
 
 ```css
 /* Make all paragraphs large */
@@ -75,15 +75,15 @@ p {
 }
 ```
 
-...we can tell that's going to make paragraphs large, because we can read the CSS rule! A good comment tells the next person to read the code something useful which they can't infer from reading the code: 
+...we can tell that's going to make paragraphs large, because we can read the CSS rule! A good comment tells the next person to read the code something useful which they can't infer just from reading it:
 
 ```css
 h1 {
-    /* Se
+    /* Using actual black here causes weirdness with dark mode, so we use
+    a very, very dark grey color instead. */
+    color: #010101;
 }
 ```
-
-
 
 ## Review & Recap
 
