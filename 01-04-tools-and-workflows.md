@@ -89,7 +89,13 @@ Here's an example of a kitchen sink page; you can find the code at [kitchen-sink
 
 <iframe src="examples/01-04-tools-and-workflows/kitchen-sink.html"></iframe>
 
-This page includes examples of *almost* every element that's part of the current WHATWG HTML standard. It doesn't include deprecated tags like `<center>`, `<marquee>`, and `<blink>` - many of these deprecated tags will still actually work in modern browsers, but if you do need to centre text, or make it blink, or move, there are much better ways to accomplish this using CSS.
+This page includes examples of *almost* every element that's part of the current WHATWG HTML standard. It's got examples of typography, different Unicode character sets, emoji, lists, tables, figures, images, audio, video. It includes all of the input types supported in modern HTML, from the familiar text and select lists, to more esoteric input types like the colour picker   It doesn't include deprecated tags like `<center>`, `<marquee>`, or `<blink>` - many of these deprecated tags will still actually work in modern browsers, but if you do need to centre text, or make it blink, or move, there are much better ways to accomplish this using CSS.
+
+Whenever you a new HTML or CSS feature to your site, add it to the kitchen sink page first. It'll give you a faster development cycle, and it'll show you right away if one of your new CSS rules is conflicting with something that's already used elsewhere on your site.
+
+More important than that, though: as your site evolves and grows over time, the kitchen sink page forms a living reference document for all the styles, rules and components you've created. If you, or another developer, needs to add 
+
+
 
 - Debugging CSS with browser dev tools
 - Managing CSS - using a "kitchen sink" page
