@@ -126,9 +126,13 @@ There's one more tool I want to share with you all, before we start diving into 
 
 ## caniuse.com
 
-HTML and CSS are constantly evolving. Proposals evolve into recommendations, various browsers roll out pre-release implementations based on those recommendations, and, eventually, they become standards. That process can take years, though, which means that if you want to use something that's relatively new, it might not be supported 
+HTML and CSS are constantly evolving. Proposals evolve into recommendations, various browsers roll out pre-release implementations based on those recommendations, and, eventually, they become standards. That process can take years, though, which means that if you want to use something that's relatively new, it might not be supported across all the browser you're developing for.
 
+The best site to check the current status of a given feature, rule or property is [caniuse.com](https://caniuse.com/):
 
+![image-20250719130401482](./images/caniuse-dot-com-support-for-css-has-slotted)
+
+Here's an example of a particularly obscure CSS selector, which is part of the Web Components system which we'll talk about later in the 
 
 
 
