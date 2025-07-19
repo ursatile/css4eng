@@ -91,7 +91,7 @@ Here's an example of a kitchen sink page; you can find the code at [kitchen-sink
 
 This page includes examples of *almost* every element that's part of the current WHATWG HTML standard. It doesn't include:
 
-* Deprecated tags like `<marquee>`, `<blink>` 
+* Deprecated tags like `<center>`, `<marquee>`, and `<blink>`  - although these tags still work in many browsers, they're not part of modern HTML, and if you do need to center text, or make it 
 
 
 
