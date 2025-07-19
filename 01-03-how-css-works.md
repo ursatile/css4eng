@@ -9,11 +9,17 @@ examples: "examples/01-03-how-css-works"
 
 CSS, fundamentally, allows us to do three things:
 
-1. Select an element, or elements, on a web page
-2. Identify a property that is relevant to that element
-3. Give that property to a value, which controls how the browser will display it.
+1. Select an element, or elements, on a web page.
+2. Choose a property which is relevant to that element.
+3. Assign that property to a value, which controls how the browser will display it.
 
-The simplest way to do this is what's called `inline CSS`. We're going to find an element on our page - say, that heading 1 - and we're going to add a `style` attribute containing a property - `color` - and a value - `green`. You can probably figure out what that means, right? Yep, draw that heading using the color green.
+The simplest way to do this is what's called `inline CSS`. We're going to find an element on our page - say, that heading 1 - and we're going to add a `style` attribute containing a property - `color` - and a value - `green`. You can probably figure out what that means, right? Yep, draw that heading using the colour green.
+
+> I'm British. I say *colour*, with a *u*. 
+>
+> Despite being invented in Switzerland by [Håkon Wium Lie](https://en.wikipedia.org/wiki/Håkon_Wium_Lie), who is Norwegian, and [Bert Bos](https://en.wikipedia.org/wiki/Bert_Bos), who is Dutch, and being heavily influenced by HTML created by Tim Berners-Lee, who is also British. CSS uses the American spelling `color`, without a `u`
+>
+> 
 
 The keyword `color` is one of literally hundreds of properties defined by the CSS language. There are properties for colors, fonts, size, layout, position, animation - and we're going to meet just about all of them in this course. The value `green` is one of the 148 named colours defined in the current CSS specification -- and as we'll see later, named colours is just one of several different colour systems supported by CSS.
 
