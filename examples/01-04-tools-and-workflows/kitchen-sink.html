@@ -304,6 +304,7 @@ console.log('Hello, world!');
 				Drums
 			</label><br>
 			</p>
+			<h4>Simple Select</h4>
 			<p>
 				<label for="select-single">Main Instrument</label><br />
 				<select id="select-single">
@@ -318,6 +319,42 @@ console.log('Hello, world!');
 					</optgroup>
 				</select>
 			</p>
+			<h4>Select with Nested Markup</h4>
+				<label for="instrument-select">Instrument:</label>
+				<select id="instrument-select">
+					<button>
+						<selectedcontent></selectedcontent>
+					</button>
+
+					<option value="">Please select an instrument</option>
+					<option value="guitar">
+						<span class="icon" aria-hidden="true">🎸</span
+						><span class="option-label">Guitar</span>
+					</option>
+					<option value="piano">
+						<span class="icon" aria-hidden="true">🎹</span
+						><span class="option-label">Piano</span>
+					</option>
+					<option value="vocals">
+						<span class="icon" aria-hidden="true">🎤</span
+						><span class="option-label">Vocals</span>
+					</option>
+					<option value="chicken">
+						<span class="icon" aria-hidden="true">🐔</span
+						><span class="option-label">Chicken</span>
+					</option>
+					<option value="drums">
+						<span class="icon" aria-hidden="true">🥁</span
+						><span class="option-label">Drums</span>
+					</option>
+					<option value="trumpet">
+						<span class="icon" aria-hidden="true">🎺</span
+						><span class="option-label">Trumpet</span>
+					</option>
+				</select>
+			</p>
+		</form>
+
 			<p>
 				Radio Station
 			</p>
