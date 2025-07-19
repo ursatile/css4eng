@@ -95,7 +95,9 @@ It doesn't include deprecated tags like `<center>`, `<marquee>`, or `<blink>` - 
 
 Whenever you a new HTML or CSS feature to your site, add it to the kitchen sink page first. It'll give you a faster development cycle, and it'll show you right away if one of your new CSS rules is conflicting with something that's already used elsewhere on your site.
 
-More important than that, though: as your site evolves and grows over time, the kitchen sink page forms a living reference document for all the styles, rules and components you've created. If you, or another developer, needs a date picker, or a special kind of button, you can check the kitchen sink page to see if somebody's already created one.
+More important than that, though: as your site evolves and grows over time, the kitchen sink page forms a living reference document for all the styles, rules and components you've created. If you, or another developer, needs a date picker, or a search box, or a particular kind of button, you can check the kitchen sink page to see if somebody's already created one.
+
+
 
 
 
