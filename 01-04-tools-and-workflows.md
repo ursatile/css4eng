@@ -89,11 +89,7 @@ Here's an example of a kitchen sink page; you can find the code at [kitchen-sink
 
 <iframe src="examples/01-04-tools-and-workflows/kitchen-sink.html"></iframe>
 
-This page includes examples of *almost* every element that's part of the current WHATWG HTML standard. It doesn't include:
-
-* Deprecated tags like `<center>`, `<marquee>`, and `<blink>`  - although these tags still work in many browsers, they're not part of modern HTML, and if you do need to center text, or make it 
-
-
+This page includes examples of *almost* every element that's part of the current WHATWG HTML standard. It doesn't include deprecated tags like `<center>`, `<marquee>`, and `<blink>` - many of these deprecated tags will still actually work in modern browsers, but if you do need to centre text, or make it blink, or move, there are much better ways to accomplish this using CSS.
 
 - Debugging CSS with browser dev tools
 - Managing CSS - using a "kitchen sink" page
