@@ -130,9 +130,11 @@ HTML and CSS are constantly evolving. Proposals evolve into recommendations, var
 
 The best site to check the current status of a given feature, rule or property is [caniuse.com](https://caniuse.com/):
 
-![image-20250719130401482](./images/caniuse-dot-com-support-for-css-has-slotted)
+![image-20250719131116457](./images/caniuse-dot-com-support-for-css-has-slotted.png)
 
-Here's an example of a particularly obscure CSS selector, which is part of the Web Components system which we'll talk about later in the 
+Here's an example of a particularly obscure CSS selector, [`has-slotted`](https://caniuse.com/mdn-css_selectors_has-slotted), which is part of the Web Components system which we'll talk about later in the course; I've picked this example because at the time I'm writing this, that selector isn't yet supported by any version of Safari. The colour-coded tiles correspond to browser version numbers; green indicates full support, red means no support - and hover over a specific version to see exactly what it and isn't supported.
+
+Of course, it doesn't matter how widely supported a feature is if your 
 
 
 
