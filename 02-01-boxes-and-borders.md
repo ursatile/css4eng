@@ -4,6 +4,8 @@ layout: home
 nav_order: 10201
 ---
 
+So far, we've learned about the building blocks of the CSS language - selectors, properties, and values - and the tools and techniques we can use 
+
 # Boxes & Borders (20m)
 
 ## Course Content

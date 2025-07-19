@@ -9,7 +9,7 @@ examples: "examples/01-03-how-css-works"
 
 CSS, fundamentally, allows us to do three things:
 
-1. Select an element, or elements, on our page
+1. Select an element, or elements, on a web page
 2. Identify a property that is relevant to that element
 3. Give that property to a value, which controls how the browser will display it.
 
