@@ -11,7 +11,7 @@
 	<header>(This is a <code>&lt;header&gt;</code> element, often used at the top of a page or section)</header>
 	<h1>The Kitchen Sink Page</h1>
 	<hr>
-	<p>(👆 that's a <code>&lt;hr&gt;</code> - horizontal rule!)</p>
+	<p>(👆 that’s a <code>&lt;hr&gt;</code> - horizontal rule!)</p>
 	<nav>
 		This is a <code>&lt;nav&gt;</code> element.
 		<menu>
@@ -38,9 +38,9 @@
 			<h1>Heading 1 inside an <code>&lt;hgroup&gt;</code></h1>
 			<h2>Heading 2 inside an <code>&lt;hgroup&gt;</code></h2>
 		</hgroup>
-		<p>Here's a bunch of paragraphs, so we can see what paragraphs will look like on our site.</p>
+		<p>Here’s a bunch of paragraphs, so we can see what paragraphs will look like on our site.</p>
 		<p>The <code>&lt;dfn&gt;</code> element indicates a <dfn>term to be defined</dfn>, usually by
-			the enclosing paragraph. There's also the <code>&lt;abbr&gt;</code> element,
+			the enclosing paragraph. There’s also the <code>&lt;abbr&gt;</code> element,
 			used in <abbr>HTML</abbr> (Hypertext Markup Language) to indicate an abbreviation.
 		</p>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod magna eu purus suscipit, vitae semper
@@ -70,15 +70,17 @@
 			You'll also see the <code>&lt;kbd&gt;</code> element used to <kbd>indicate user input (like this)</kbd>.
 		</p>
 		<h3>Unicode and Emoji</h3>
+		<p>Let’s check our page doesn’t blow up if somebody renders content in Ukrainian, Greek,
+			Arabic or Hebrew:</p>
 		<p>Це абзац українською мовою, тому ми можемо переконатися, що
 			кирилиця відображатиметься правильно.</p>
 		<p>Αυτή η παράγραφος είναι στα ελληνικά, ώστε να μπορούμε να ελέγξουμε ότι ο ιστότοπός μας υποστηρίζει σωστά τα
 			ελληνικά.</p>
 		<p dir="rtl">هذه فقرة عربية، لذا يمكننا التأكد من ظهور الأبجدية العربية بشكل صحيح.</p>
 		<p dir="rtl">פסקה זו היא בעברית, כדי שנוכל לבדוק שהאתר שלנו תומך בעברית כראוי.</p>
-		<p>The <code>&lt;ruby&gt;</code> element, and the associated
+		<p>There’s also the <code>&lt;ruby&gt;</code> element, and the associated
 			<code>&lt;rt&gt;</code> and <code>&lt;rp&gt;</code> elements,
-			are used to add pronunciation hints for text rendered
+			which are used to add pronunciation hints for text rendered
 			in Japanese and East Asian character sets, such as:
 			<ruby>
 				漢 <rp>(</rp>
@@ -93,7 +95,7 @@
 				<rp>)</rp>
 			</ruby>
 		</p>
-
+		<p>Special characters: £ &pound; & &amp; &lt; &gt;</p>
 		<p>Pictorial Emoji: 😀🎸🎤🦕👩🏿‍🚀</p>
 		<p>Pictoral Flags: 🏁🚩🎌🏴🏳️🏳️‍🌈🏳️‍⚧️🏴‍☠️🇺🇳</p>
 		<p>Regional Flags: 🇿🇼 🇺🇸 🇬🇧 🇦🇶 🏴󠁧󠁢󠁷󠁬󠁳󠁿</p>
@@ -101,7 +103,7 @@
 	<article>
 		<section>
 			<h2>This heading 2 is part of a section inside an article.</h2>
-			<p>And here's a paragraph</p>
+			<p>And here’s a paragraph</p>
 			<aside>This is an <code>&lt;aside&gt;</code> element inside a section.</aside>
 		</section>
 	</article>
@@ -135,7 +137,7 @@
 			<dt>Selector</dt>
 			<dd>The part of a CSS rule used to identify the element or elements which should be affected by the rule.</dd>
 			<dt>Property</dt>
-			<dd>The part of a CSS rule indicating what's being modified</dd>
+			<dd>The part of a CSS rule indicating what’s being modified</dd>
 			<dt>Value</dt>
 			<dd>The part of a CSS rule indicating what </dd>
 		</dl>
@@ -160,15 +162,15 @@ console.log('Hello, world!');
 			</p>
 		</details>
 		<details name="examples">
-			<summary>What's It Useful For?</summary>
-			<p>It's a built-in way to present content in an accordion style.
+			<summary>What’s It Useful For?</summary>
+			<p>It’s a built-in way to present content in an accordion style.
 				Associated elements can be linked using the <code>name</code> attribute
 				on the <code>&lt;details&gt;</code> elements; only one linked element will be displayed
 				at a time.
 			</p>
 		</details>
 		<details name="examples">
-			<summary>Why's it called an "accordion"?</summary>
+			<summary>Why’s it called an "accordion"?</summary>
 			<p>I honestly have no idea. Maybe something to do with French café jazz?</p>
 		</details>
 	</section>
@@ -263,7 +265,7 @@ console.log('Hello, world!');
 		<form action="#">
 			<p>
 				<label for="input-text">Name</label>
-				<input type="text" id="input-text" placeholder="what's your name?">
+				<input type="text" id="input-text" placeholder="what’s your name?">
 			</p>
 			<p>
 				<label for="country">Favourite Drink</label>
@@ -467,7 +469,7 @@ console.log('Hello, world!');
 			<input type="reset" value="Reset Button">
 		</p>
 		<p>
-			<input type="image" src="blue-button.png" title="Click me! I'm blue!" alt="a blue button with a sort of X on it">
+			<input type="image" src="blue-button.png" title="Click me! I’m blue!" alt="a blue button with a sort of X on it">
 		</p>
 		<p>
 			<button>This is an HTML <code>&lt;button&gt;</code> element.</button>
