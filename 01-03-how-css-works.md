@@ -50,7 +50,9 @@ The `<link>` element has two attributes:
 
 > Another historical quirk: you'll often see `link` elements include an extra attribute: `type="text/css"` - a relic of the days when servers would serve CSS files with the wrong MIME type and browsers weren't smart enough to ignore it.
 
-OK, let's recap:
+## Review & Recap
+
+In this section, we learned about the core structure of CSS, how the CSS language actually works, and how browsers read CSS rules when they're rendering a web page.
 
 * CSS is built around three basic units of syntax:
   * **selectors** control which elements are affected by a rule

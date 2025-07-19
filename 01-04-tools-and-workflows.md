@@ -134,27 +134,5 @@ The best site to check the current status of a given feature, rule or property i
 
 Here's an example of a particularly obscure CSS selector, [`has-slotted`](https://caniuse.com/mdn-css_selectors_has-slotted), which is part of the Web Components system which we'll talk about later in the course; I've picked this example because at the time I'm writing this, that selector isn't yet supported by any version of Safari. The colour-coded tiles correspond to browser version numbers; green indicates full support, red means no support - and hover over a specific version to see exactly what it and isn't supported.
 
-Of course, it doesn't matter how widely supported a feature is if your 
+Of course, it doesn't matter how widely supported a feature is if your biggest customer - or your boss - is stuck using an older browser which doesn't support it. It's up to you and your team to make sure you know who's going to be using your site, what devices and software they're going to be using, and how soon they're likely to upgrade; if you're building applications for a corporate intranet in a highly secure industry, like healthcare or aviation, you'll probably end up targeting a very different set of client devices than if you're building a public-facing promo site for a fast food restaurant.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- Debugging CSS with browser dev tools
-- Managing CSS - using a "kitchen sink" page
-- Using CSS rules for debugging: background-color and outline
-- Checking CSS support at caniuse.com
-
-## Notes

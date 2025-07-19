@@ -83,3 +83,7 @@ What actually ends up on your user's screen is going to be a compromise between 
 One thing I want to mention while we're here: for as long as I've been developing websites, people have been talking about using tags like `strong` and `em` - instead of just making text bold or italic - because, in theory, something like screen reader software could emphasise those elements. Sounds like a good idea, right? And nobody's going to argue *against* that... but, unfortunately, it isn't actually true. Let's add a couple more paragraphs to our example page here - let's have one that's just a regular paragraph, our existing one that uses the `em` tag, and a third one that uses a `strong` tag. Now I'm going to open up the NVDA screen reader software, and listen to how it reads out that content:
 
 That's not a case *against* semantic markup - in fact, using well-structured markup is an excellent starting point when it comes to making web content accessible. But the example of em tags and screen readers is so widespread that I thought it was worth mentioning.
+
+## Review & Recap
+
+In this section, we've discussed why CSS is
