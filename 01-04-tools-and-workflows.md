@@ -108,15 +108,21 @@ Open up the kitchen sink page, and right at the top, inside the `<head>` element
 ```css
 <style>
     * {
-        outline: 1px solid #f0f;
+        outline: 1px solid magenta;
     }
     p {
-        background-color: #ff0;
+        background-color: yellow;
     }
 </style>
 ```
 
-The first ru
+The first rule there? The selector is a star - that says "match every single element on this page". And then we're setting the `outline` property to 1 pixel, solid, magenta. The second rule is targeting paragraph elements, and setting their `background-color` property to `yellow`.
+
+Now, when the page reloads: every single element has a magenta outline, and all the paragraphs have yellow backgrounds, so you can see at a glance how those elements affect the layout and structure of the page, and which ones are paragraph elements.
+
+The reason why `outline` and `background-color` are so useful for this is that they don't affect the layout of the page. If we make an element larger, or draw a CSS `border` around it - we'll learn about borders in the next section - that actually changes the size of that element; the browser then has to adapt the layout, and in some cases that can actually make the bug you're looking for disappear completely.
+
+
 
 
 
