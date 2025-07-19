@@ -4,7 +4,17 @@ layout: home
 nav_order: 10201
 ---
 
-So far, we've learned about the building blocks of the CSS language - selectors, properties, and values - and the tools and techniques we can use 
+So far, we've learned about the building blocks of the CSS language - selectors, properties, and values - and the tools and techniques we can use to inspect and manipulate those properties.
+
+Time to dive into how CSS actually works, and why.
+
+## The Grain of the Web
+
+If you've ever worked with wood, or fabric, 
+
+
+
+
 
 # Boxes & Borders (20m)
 
