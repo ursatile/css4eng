@@ -124,7 +124,7 @@ The reason why `outline` and `background-color` are so useful for this is that t
 
 ## caniuse.com
 
-HTML and CSS are constantly evolving, and as new elements and properties are added to the
+HTML and CSS are constantly evolving, 
 
 
 
