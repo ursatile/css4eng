@@ -126,7 +126,7 @@ There's one more tool I want to share with you all, before we start diving into 
 
 ## caniuse.com
 
-HTML and CSS are constantly evolving. Proposals evolve into recommendations, recommendations get implemented in pre-
+HTML and CSS are constantly evolving. Proposals evolve into recommendations, various browsers roll out pre-release implementations based on those recommendations, and, eventually, they become standards. That process can take years, though, which means that if you want to use something that's relatively new, it might not be supported 
 
 
 
