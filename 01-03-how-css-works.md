@@ -15,7 +15,7 @@ CSS, fundamentally, allows us to do three things:
 
 The simplest way to do this is what's called `inline CSS`. We're going to find an element on our page - say, that heading 1 - and we're going to add a `style` attribute containing a property - `color` - and a value - `green`. You can probably figure out what that means, right? Yep, draw that heading using the color green.
 
-`color` here is one of literally hundreds of properties defined by the CSS language. There are properties for colors, fonts, size, layout, position, animation - and we're going to meet just about all of them in this course. The value `green` here is one of the 148 named colours defined in the current CSS specification -- and as we'll see later, named colours is just one of several different colour systems supported by CSS.
+The keyword `color` is one of literally hundreds of properties defined by the CSS language. There are properties for colors, fonts, size, layout, position, animation - and we're going to meet just about all of them in this course. The value `green` is one of the 148 named colours defined in the current CSS specification -- and as we'll see later, named colours is just one of several different colour systems supported by CSS.
 
 And that rule gets applied to the H1 element because we've declared it inline, using the `style` attribute. So far, so good. But what if we wanted all our paragraphs to be purple?
 
