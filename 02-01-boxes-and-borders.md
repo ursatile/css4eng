@@ -12,13 +12,13 @@ Time to dive into how CSS actually works, and why.
 
 If you've ever worked with wood, or fabric, you'll know that these materials have a *grain*; an intrinsic structure that's aligned in a particular direction. Experienced crafters know how to work *with* the grain of the material, because it yields better results; working against, or across, the grain, and you'll end up with all sorts of problems.
 
-The web also has a grain; a natural direction and flow, derived from typesetting conventions used in many Western countries. Text starts at the top left corner of the page; lines read left to right, with each new line starting back at the left
+The web also has a grain; a natural direction and flow, derived from the printing and typesetting conventions used in many Western countries. Text starts at the top left corner of the page, every line reads left to right. If a line's too wide for the screen, it'll wrap - but if a paragraph is too tall for the screen, it'll scroll.
+
+That might sound obvious, but it's the key to understanding how the browser lays out elements on a page - 
 
 
 
-
-
-# Boxes & Borders (20m)
+Boxes & Borders (20m)
 
 ## Course Content
 
