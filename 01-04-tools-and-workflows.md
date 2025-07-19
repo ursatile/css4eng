@@ -97,6 +97,20 @@ Whenever you a new HTML or CSS feature to your site, add it to the kitchen sink 
 
 More important than that, though: as your site evolves and grows over time, the kitchen sink page forms a living reference document for all the styles, rules and components you've created. If you, or another developer, needs a date picker, or a search box, or a particular kind of button, you can check the kitchen sink page to see if somebody's already created one.
 
+## Bare-Bones Debugging
+
+If you've spent any time at all writing software, at some point you'll have got stuck tracking down a bug, and so you've gone through your code sprinkling it with print statements so that it'll show you what's actually happening - whether that's lots of `Console.WriteLine()` in C#, or `console.log()` in JavaScript.
+
+As we've already learned, CSS doesn't work like that. It's declarative, not procedural - so the idea of logging really doesn't make sense. 
+
+
+
+
+
+
+
+
+
 
 
 
