@@ -120,7 +120,13 @@ The first rule there? The selector is a star - that says "match every single ele
 
 Now, when the page reloads: every single element has a magenta outline, and all the paragraphs have yellow backgrounds, so you can see at a glance how those elements affect the layout and structure of the page, and which ones are paragraph elements.
 
-The reason why `outline` and `background-color` are so useful for this is that they don't affect the layout of the page. If we make an element larger, or draw a CSS `border` around it - we'll learn about borders in the next section - that actually changes the size of that element; the browser then has to adapt the layout, and in some cases that can actually make the bug you're looking for disappear completely.
+The reason why `outline` and `background-color` are so useful for this is that they don't affect the layout of the page. If we make an element larger, or draw a CSS `border` around it - we'll learn about borders in the next section - that actually changes the size of that element; the browser then has to adapt the layout, and in some cases that can actually make the bug you're looking for disappear completely. Stick to `outline` and `background-color`, and the layout doesn't change; it just gets easier to see where it's all coming from.
+
+## caniuse.com
+
+HTML and CSS are constantly evolving, and as new elements and properties are added to the
+
+
 
 
 
