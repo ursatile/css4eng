@@ -52,6 +52,39 @@ The `<link>` element has two attributes:
 
 We've now got a page which will load CSS rules from a separate file - and that's a big deal, because we can have many pages which load their CSS rules from that same file, and so our CSS is now reusable. We're not writing stylesheet rules for each page, we're building a stylesheet that applies to our entire website.
 
+## CSS Comments
+
+Like most programming languages, CSS lets us put comments in our code - either to explain what's going on, or to temporarily disable a particular rule or selector.
+
+CSS only has a single style of comment - a comment starts with `/*` and ends with `*/`, and comments can't be nested.
+
+```css
+/* An example of a CSS comment */
+p {
+    color: green;
+    /* font-size: 200%; */
+}
+```
+
+Remember, the point of comments in CSS - and in any language - isn't to tell us *what* the code does. We can figure that out by reading it. Here's an example of a bad comment:
+
+```css
+/* Make all paragraphs large */
+p {
+    font-size: large;
+}
+```
+
+...we can tell that's going to make paragraphs large, because we can read the CSS rule! A good comment tells the next person to read the code something useful which they can't infer from reading the code: 
+
+```css
+h1 {
+    /* Se
+}
+```
+
+
+
 ## Review & Recap
 
 In this section, we learned about the core structure of CSS, how the CSS language actually works, and how browsers read CSS rules when they're rendering a web page.
