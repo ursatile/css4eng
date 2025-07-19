@@ -99,9 +99,26 @@ More important than that, though: as your site evolves and grows over time, the 
 
 ## Bare-Bones Debugging
 
-If you've spent any time at all writing software, at some point you'll have got stuck tracking down a bug, and so you've gone through your code sprinkling it with print statements so that it'll show you what's actually happening - whether that's lots of `Console.WriteLine()` in C#, or `console.log()` in JavaScript.
+Modern IDEs have fantastic debugging capabilities: breakpoints, traces, memory analysers, all sorts of really clever tools to help you figure out what your code's actually doing, but if you've spent much time writing software, at some point you'll have got so stuck tracking down a bug that you've gone through your code sprinkling print statements everywhere so that you can see what's actually happening - whether that's lots of `Console.WriteLine()` in C#, or `console.log()` in JavaScript.
 
-As we've already learned, CSS doesn't work like that. It's declarative, not procedural - so the idea of logging really doesn't make sense. 
+As we've already learned, CSS doesn't work like that. It's declarative, not procedural - so the idea of logging anything to the console doesn't really doesn't make sense. And, sure, we've got the browser Dev Tools we can use to inspect elements and analyse CSS rules, but sometimes, what I really want is the CSS equivalent of console logging, and for me, that's always been background-color and outline.
+
+Open up the kitchen sink page, and right at the top, inside the `<head>` element, we're going to add a `<style>` element with two rules:
+
+```css
+<style>
+    * {
+        outline: 1px solid #f0f;
+    }
+    p {
+        background-color: #ff0;
+    }
+</style>
+```
+
+The first ru
+
+
 
 
 
