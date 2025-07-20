@@ -2,6 +2,7 @@
 title: "Boxes & Borders"
 layout: home
 nav_order: 10201
+examples: examples/02-01-boxes-and-borders
 ---
 
 So far, we've learned about the building blocks of the CSS language - selectors, properties, and values - and the tools and techniques we can use to inspect and manipulate those properties.
@@ -24,7 +25,7 @@ Let's start here, with an empty web page.
 {% include_relative {{ page.examples }}/index.html %}
 ```
 
-
+Anything we add to that page - even just 
 
 
 
