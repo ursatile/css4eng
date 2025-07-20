@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        letter-spacing: -.08em;
+      }
+
+      .cls-3 {
+        stroke-dasharray: 12.03 12.03;
+      }
+
+      .cls-3, .cls-4, .cls-5 {
+        fill: none;
+        stroke: red;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-4 {
+        stroke-dasharray: 12.08 12.08;
+      }
+
+      .cls-6 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-7 {
+        font-family: TimesNewRomanPSMT, 'Times New Roman';
+        font-size: 168.78px;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" x=".5" y="-.5" width="1279" height="720"/>
+  <text class="cls-7" transform="translate(196 404.25)"><tspan x="0" y="0">Hello</tspan><tspan class="cls-6" x="374.98" y="0"> </tspan><tspan class="cls-2" x="414.12" y="0">W</tspan><tspan x="559.91" y="0">orld!</tspan></text>
+  <g>
+    <polyline class="cls-5" points="1065.2 401.39 1065.2 407.39 1059.2 407.39"/>
+    <line class="cls-3" x1="1047.17" y1="407.39" x2="211.23" y2="407.39"/>
+    <polyline class="cls-5" points="205.22 407.39 199.22 407.39 199.22 401.39"/>
+    <line class="cls-4" x1="199.22" y1="389.31" x2="199.22" y2="298.69"/>
+    <polyline class="cls-5" points="199.22 292.64 199.22 286.64 205.22 286.64"/>
+    <line class="cls-3" x1="217.25" y1="286.64" x2="1053.19" y2="286.64"/>
+    <polyline class="cls-5" points="1059.2 286.64 1065.2 286.64 1065.2 292.64"/>
+    <line class="cls-4" x1="1065.2" y1="304.73" x2="1065.2" y2="395.35"/>
+  </g>
+</svg>

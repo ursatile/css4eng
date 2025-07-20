@@ -13,3 +13,6 @@ nav_order: 10204
 - Working with web fonts
 
 ## Notes
+
+https://opentype.js.org/font-inspector.html
+
