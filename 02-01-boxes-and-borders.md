@@ -18,6 +18,18 @@ That might sound obvious, but it's the key to understanding how the browser lays
 
 ## Inline and Block Elements
 
+Let's start here, with an empty web page.
+
+```html
+{% include_relative {{ page.examples }}/index.html %}
+```
+
+
+
+
+
+
+
 
 
 
