@@ -25,7 +25,7 @@ Let's start here, with an empty web page.
 {% include_relative {{ page.examples }}/index.html %}
 ```
 
-Anything we add to that page - even just 
+Anything we add to that page is going to appear in the top left corner. Doesn't even need to be inside an HTML element - if we just write “hello world”
 
 
 
