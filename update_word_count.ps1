@@ -1,5 +1,5 @@
-git add .
-git commit -m "Snapshot of everything before running update_word_count.ps1"
+# git add .
+# git commit -m "Snapshot of everything before running update_word_count.ps1"
 $totalWordCount = 0
 Get-ChildItem -Path . -Filter *.md | ForEach-Object {
 	$file = $_.FullName
