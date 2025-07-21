@@ -12,6 +12,11 @@ word_count: 77
 '.md'" | where_exp: "page", "page.title != 'Home'" | sort: "nav_order" %}
 
 <table>
+	<tr>
+		<th>Section</th>
+		<th>Words</th>
+		<th>Duration</th>
+	</tr>
 	{% for page in sorted_pages %}
 	{% if page.title and page.nav_order %}
 	<tr style="vertical-align: top;">

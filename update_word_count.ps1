@@ -1,5 +1,5 @@
-# git add .
-# git commit -m "Snapshot of everything before running update_word_count.ps1"
+git add .
+git commit -m "Snapshot of everything before running update_word_count.ps1"
 $totalWordCount = 0
 Get-ChildItem -Path . -Filter *.md | ForEach-Object {
 	$file = $_.FullName
@@ -17,9 +17,7 @@ Get-ChildItem -Path . -Filter *.md | ForEach-Object {
 		} else {
 			$newFrontMatter = $frontMatter + "`nword_count: $wordCount"
 		}
-
 		$totalWordCount += $wordCount
-
 		$newContent = "---`r`n$newFrontMatter`r`n---`r`n$body"
 		Set-Content -NoNewline -Path $file -Value $newContent
 		Write-Host "Updated word count for $($_.Name)"
