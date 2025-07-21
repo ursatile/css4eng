@@ -1,4 +1,4 @@
-git add .
+git add --renormalize .
 git commit -m "Snapshot of everything before running update_word_count.ps1"
 $totalWordCount = 0
 Get-ChildItem -Path . -Filter *.md | ForEach-Object {
