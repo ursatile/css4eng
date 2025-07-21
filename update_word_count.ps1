@@ -25,7 +25,7 @@ Get-ChildItem -Path . -Filter *.md | ForEach-Object {
 
 		Write-Host "Updated word count for $($_.Name)"
 	} else {
-		Write-Host "No front matter found in $file.Name"
+		Write-Host "No front matter found in $($_.Name)"
 	}
 }
 
