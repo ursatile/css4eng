@@ -2,8 +2,8 @@
 title: "Working with CSS Variables"
 layout: home
 nav_order: 10304
+word_count: 23
 ---
-
 # Working with CSS Variables (20m)
 
 ## Course Content
@@ -14,3 +14,5 @@ nav_order: 10304
 - Environment variables with `env()`
 
 ## Notes
+
+

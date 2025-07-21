@@ -2,8 +2,8 @@
 title: "Colors and Composition"
 layout: home
 nav_order: 10206
+word_count: 46
 ---
-
 # Colors and Composition (20m)
 
 ## Course Content
@@ -15,3 +15,5 @@ nav_order: 10206
 - Using css `filter`: `blur()`, `brightness()`, `contrast()`, `drop-shadow()`, `grayscale()`, `hue-rotate()`, `invert()`, `opacity()`, `saturate()`, `sepia()`
 
 ## Notes
+
+

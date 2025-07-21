@@ -2,9 +2,8 @@
 title: "Fundamentals and Background"
 layout: home
 nav_order: 10102
-word_count: 3440
+word_count: 3419
 ---
-
 ## Why Do So Many Developers Struggle With CSS?
 
 We're going to kick off with a question: why do so many developers struggle with CSS? I've worked with a lot of really talented, capable developers in my career, proper full stack developers who were as happy working with SQL databases as they were writing HTML, and over the years it's noticeable how many of them really didn't enjoy working with stylesheets. We'd be working through a new feature - database schema migrations, new classes, backend, HTML, JavaScript, all absolutely fine, and then when it comes to styling the frontend... that was always the bit that nobody wanted to pick up.
@@ -93,4 +92,6 @@ In this section, we've discussed why CSS is so unpopular with developers:
 * CSS is closely associated with visual design, and so books and training material often treat CSS as part of a design toolkit rather than an engineering capability
 * CSS is hard to test; bugs and regressions will often go unnoticed until somebody complains that "the website is broken"
 * There's a lot of very bad CSS code in the wild; many of us have ended up having to work with it at some point in our career, and that contributes a lot of negativity to developers' perception of CSS as a language.
+
+
 

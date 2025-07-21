@@ -1,9 +1,7 @@
 ---
-
 kanban-plugin: board
-
+word_count: 31
 ---
-
 ## Backlog
 
 - [ ] [02-01-boxes-and-borders](02-01-boxes-and-borders.md)
@@ -54,3 +52,4 @@ kanban-plugin: board
 {"kanban-plugin":"board","list-collapse":[false,false,false,false,false]}
 ```
 %%
+

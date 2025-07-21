@@ -2,8 +2,8 @@
 title: "Using CSS Grid"
 layout: home
 nav_order: 10303
+word_count: 37
 ---
-
 # Using CSS Grid (30m)
 
 ## Course Content
@@ -18,3 +18,5 @@ nav_order: 10303
 - auto grids - flow, columns and rows
 
 ## Notes
+
+

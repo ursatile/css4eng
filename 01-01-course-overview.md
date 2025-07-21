@@ -2,8 +2,8 @@
 title: "Course Overview"
 layout: home
 nav_order: 10101
+word_count: 23
 ---
-
 # Course Overview (5m)
 
 ## Course Content
@@ -13,3 +13,4 @@ nav_order: 10101
 - Prerequisites: what should you already know?
 
 ## Notes
+

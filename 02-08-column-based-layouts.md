@@ -2,8 +2,8 @@
 title: "Column-Based Layouts"
 layout: home
 nav_order: 10208
+word_count: 34
 ---
-
 # Column-Based Layouts (20m)
 
 ## Course Content
@@ -14,3 +14,5 @@ nav_order: 10208
 - Exercise: responsive registration form
 
 ## Notes
+
+

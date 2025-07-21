@@ -3,14 +3,15 @@ title: "Basic CSS Selectors"
 layout: home
 nav_order: 10201
 examples: examples/02-01-basic-css-selectors
-word_count: 1450
+word_count: 1432
 ---
-
 So far, we've learned about the building blocks of the CSS language - selectors, properties, and values - and the tools and techniques we can use to inspect and manipulate those properties.
 
 In the last section, we saw that we can use properties like `outline` and `background-color` to highlight specific elements in our document, making it easier to debug and troubleshoot our CSS layouts - but so far, we've only created rules that target a specific element: h1, paragraph, emphasis.
 
 CSS selectors give us an incredibly powerful mechanism to control which elements are affected by our stylesheet rules, but they do have a bit of a learning curve. Let's start by talking about what selectors actually do.
+
+## The House Party Dress Code
 
 Imagine there's a whole bunch of people at a house party, and our job is to make sure they're all properly dressed. It's a very special party - everybody here is either a pilot, a lawyer, a doctor, or a musician. Every guest has exactly one job, and there's a very specific dress code for this party:
 
@@ -38,6 +39,8 @@ Now, students of rock'n'roll trivia will know that Freddie Mercury is also a mus
 `<musician id="freddie-mercury" class="cat-owner">`
 
 and when we apply all our CSS rules, Freddie gets blue jeans because everybody gets blue jeans, a black T-shirt 'cos he's a musician, a purple cat because he's a cat lover, and a yellow jacket because he's Freddie Mercury.
+
+## Wildcards, Elements, Classes and IDs
 
 Switching from house parties back to HTML, let's take a look at an example of a page that uses all of these concepts:
 
@@ -69,7 +72,9 @@ We're going to come back to selectors shortly, because they are phenomenally pow
 
 For now, there are two more combinations I want to show you before we move on.
 
-First, you can have a rule with multiple selectors by separating them with commas. Here's a rule that'll apply to every heading style in a document:
+## Grouped and Nested Selectors
+
+First, you can have a rule with multiple selectors by separating them with commas, known as a *list selector* or *selector group*. Here's a rule that'll apply to every heading style in a document:
 
 ```css
 h1, h2, h3, h4, h5, h6 {
@@ -77,7 +82,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 ```
 
-Second: CSS has also always supported something called *descendant* selectors: say we want a rule that says emphasis tags are red, paragraphs are blue, but emphasis tags which are inside paragraphs should be green:
+Second: CSS has also always supported something called *descendant combinators*: say we want a rule that says emphasis tags are red, paragraphs are blue, but emphasis tags which are inside paragraphs should be green:
 
 ```css
 p {
@@ -119,65 +124,24 @@ p {
 
 According to [caniuse.com/css-nesting](https://caniuse.com/css-nesting), nesting is fully or partially supported on over 91% of browsers, so despite being a relatively recent addition to the CSS standard, we're going to use nested selectors wherever they make sense throughout the rest of this course.
 
+## Review & Recap
+
+* CSS selectors target the element, or elements, on the page to which our rules should be applied
+* The wildcard selector `*` matches **every element on the page, individually**
+* Element selectors match HTML elements based on their tag name
+* Class selectors match elements based on their `class` attribute
+  * One element can have zero, one, or many classes.
+  * A page can contain multiple elements with the same class.
+* ID selectors match elements based on their `id` attribute
+  * Elements cannot have more than one ID
+  * A specific ID should never appear more than once on the same page.
+* Grouped and nested selectors allow us to target elements based on their *ancestry*
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Let's learn about a few of the other selectors we can use to target elements on our pages.
-
-### The Wildcard Selector `*`
-
-The `*` character means "match everything". To give every single element on our page a red outline, we can say:
-
-```css
-* {
-    outline: 1px solid red;
-}
-```
-
-### Element Selectors
-
-As we've already seen, if a selector exactly matches an HTML element's tag name, it'll target all elements of that type:
-
-```css
-p { /* applies to all paragraphs */
-    color: blue;
-}
-h1 { /* applies to all level 1 headings */
-    color: red;
-}
-```
-
-### Class Selectors
-
-HTML supports the `class` attribute, which we can add to any element on the page. Elements can have multiple classes, and CSS can target elements based on their class attribute using the `.className` syntax:
-
-```html
-```
 
 
 
@@ -186,5 +150,6 @@ HTML supports the `class` attribute, which we can add to any element on the page
 
 
 - Basic selectors:`*`, element, className, id
-- Combinators: `A B`, `A > B`, `A + B`, `A ~ B`, `A || B` *(draft)*
+- Combinators: `A B`
 - nested selectors
+

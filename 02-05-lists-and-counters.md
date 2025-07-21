@@ -2,8 +2,8 @@
 title: "Lists and Counters"
 layout: home
 nav_order: 10205
+word_count: 24
 ---
-
 # Lists and Counters (20m)
 
 ## Course Content
@@ -14,3 +14,5 @@ nav_order: 10205
 - Using counters in `content`
 
 ## Notes
+
+

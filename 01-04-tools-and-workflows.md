@@ -5,9 +5,8 @@ nav_order: 10104
 examples: "examples/01-04-tools-and-workflows"
 typora-root-url: .
 typora-copy-images-to: ./images]
-word_count: 2385
+word_count: 2428
 ---
-
 In the previous section, we learned the rudiments of CSS syntax, and how to associate styles with our web content.
 
 Before we go any further, let's learn about some tools, tricks, and techniques we'll be using during the rest of the course, to help us develop, test, and debug CSS rules.
@@ -146,6 +145,8 @@ Of course, it doesn't matter how widely supported a feature is if your biggest c
 * **Use a Kitchen Sink Page:** A static HTML page with every UI component used on your site helps quickly detect style conflicts and serves as a reference for existing styles and elements.
 * **CSS Debugging Techniques:** Use `outline` and `background-color` for visual debugging without affecting the site's layout — a CSS equivalent of `console.log()`.
 * **Feature Compatibility:** Use [caniuse.com](https://caniuse.com) to check browser support for CSS features, especially important when working with cutting-edge or experimental properties.
+
+
 
 
 

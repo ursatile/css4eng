@@ -2,8 +2,8 @@
 title: "Presenting Tabular Data"
 layout: home
 nav_order: 10209
+word_count: 31
 ---
-
 # Presenting Tabular Data (20m)
 
 ## Course Content
@@ -14,3 +14,5 @@ nav_order: 10209
 - Exercise: building a data grid
 
 ## Notes
+
+

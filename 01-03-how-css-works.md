@@ -3,9 +3,8 @@ title: "How CSS Works"
 layout: home
 nav_order: 10103
 examples: "examples/01-03-how-css-works"
-word_count: 1133
+word_count: 1104
 ---
-
 ## Properties and Values
 
 CSS, fundamentally, allows us to do three things:
@@ -102,3 +101,5 @@ In this section, we learned about the core structure of CSS, how the CSS languag
   * **Inline**, inside a `style` attribute that's part of the HTML tag
   * **Internal**, contained in a `<style>` element in the `<head>` of a document
   * **External**, loaded from a separate file using a `<link>` element.
+
+

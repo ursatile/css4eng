@@ -2,8 +2,8 @@
 title: "Text & Typography"
 layout: home
 nav_order: 10204
+word_count: 20
 ---
-
 # Text & Typography (20m)
 
 ## Course Content
@@ -15,4 +15,6 @@ nav_order: 10204
 ## Notes
 
 https://opentype.js.org/font-inspector.html
+
+
 

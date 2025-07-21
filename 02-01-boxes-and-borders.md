@@ -3,8 +3,8 @@ title: "Boxes & Borders"
 layout: home
 nav_order: 10201
 examples: examples/02-01-boxes-and-borders
+word_count: 1350
 ---
-
 So far, we've learned about the building blocks of the CSS language - selectors, properties, and values - and the tools and techniques we can use to inspect and manipulate those properties.
 
 Time to dive into how CSS actually works, and why.
@@ -222,3 +222,5 @@ Boxes & Borders (20m)
 - Exercise: laying out a news site article
 
 ## Notes
+
+

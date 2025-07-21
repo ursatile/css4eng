@@ -2,8 +2,8 @@
 title: "Movement and Motion"
 layout: home
 nav_order: 10302
+word_count: 26
 ---
-
 # Movement and Motion (20m)
 
 ## Course Content
@@ -14,3 +14,5 @@ nav_order: 10302
 - Exercise: animated airline departure board grid
 
 ## Notes
+
+

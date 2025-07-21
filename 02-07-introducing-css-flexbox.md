@@ -2,8 +2,8 @@
 title: "Introducing CSS Flexbox"
 layout: home
 nav_order: 10207
+word_count: 34
 ---
-
 # Introducing CSS Flexbox (20m)
 
 ## Course Content
@@ -14,3 +14,5 @@ nav_order: 10207
 - Exercise: building a flexbox image gallery
 
 ## Notes
+
+

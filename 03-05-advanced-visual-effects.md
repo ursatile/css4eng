@@ -2,8 +2,8 @@
 title: "Advanced Visual Effects"
 layout: home
 nav_order: 10305
+word_count: 31
 ---
-
 # Advanced Visual Effects (30m)
 
 ## Course Content
@@ -14,3 +14,5 @@ nav_order: 10305
 - CSS color calculations and color spaces
 
 ## Notes
+
+

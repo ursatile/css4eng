@@ -2,8 +2,8 @@
 title: "Atoms, Molecules and Organisms"
 layout: home
 nav_order: 10301
+word_count: 29
 ---
-
 # Atoms, Molecules and Organisms (20m)
 
 ## Course Content
@@ -12,3 +12,5 @@ nav_order: 10301
 - Exercise: building a CSS control bar for a media player
 
 ## Notes
+
+

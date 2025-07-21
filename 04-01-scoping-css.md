@@ -2,8 +2,8 @@
 title: "Scoping CSS"
 layout: home
 nav_order: 10401
+word_count: 16
 ---
-
 # Scoping CSS (20m)
 
 ## Course Content
@@ -12,3 +12,5 @@ nav_order: 10401
 - Working with scoped CSS
 
 ## Notes
+
+

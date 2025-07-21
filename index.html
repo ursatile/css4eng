@@ -1,0 +1,65 @@
+---
+title: Home
+layout: home
+word_count: 77
+---
+
+# CSS for Engineers Course
+
+## Course Modules
+
+{% assign sorted_pages = site.pages | where_exp: "page", "page.path contains
+'.md'" | where_exp: "page", "page.title != 'Home'" | sort: "nav_order" %}
+
+<table>
+	{% for page in sorted_pages %}
+	{% if page.title and page.nav_order %}
+	<tr style="vertical-align: top;">
+		<td>
+			<a href="{{ page.url | relative_url }}">{{ page.path }}</a>
+			{% assign headings = page.content | newline_to_br | split: "<br />" | where_exp: "line", "line contains '## ' or line contains '<h2'" %}
+			<ul>
+				{% for heading in headings %}
+					<li>
+						{% if heading contains '## ' %}
+							{{ heading | remove: '## ' | strip_html  }}
+						{% elsif heading contains '<h2' %}
+							{{ heading | replace: '<h2>', '' | replace: '</h2>', '' | strip_html  }}
+						{% endif %}
+					</li>
+				{% endfor %}
+			</ul>
+		</td>
+		<td style="text-align: right;">
+			{% if page.word_count %}
+			{{ page.word_count | number_with_delimiter: "," }}
+			{% endif %}
+		</td>
+		<td style="text-align: right;">
+			{% if page.word_count %}
+			{{ page.word_count | divided_by: 200 }} minutes
+			{% endif %}
+			<br />
+			<div style="background-color: #ff0; width: {{ page.word_count | divided_by: 50 }}px; height: 10px; float: right;"></div>
+
+		</td>
+
+	</tr>
+	{% endif %}
+	{% endfor %}
+</table>
+
+## Course Statistics
+
+<div class="course-stats">
+	{% assign total_words = 0 %}
+	{% assign module_count = 0 %}
+	{% for page in sorted_pages %}
+	{% if page.word_count and page.nav_order %}
+	{% assign total_words = total_words | plus: page.word_count %}
+	{% assign module_count = module_count | plus: 1 %}
+	{% endif %}
+	{% endfor %}
+	<p><strong>Total Modules:</strong> {{ module_count }}</p>
+	<p><strong>Total Word Count:</strong> {{ total_words }}</p>
+</div>
