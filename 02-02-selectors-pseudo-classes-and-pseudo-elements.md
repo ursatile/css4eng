@@ -2,7 +2,7 @@
 title: "Selectors, Pseudo-Classes and Pseudo-Elements"
 layout: home
 nav_order: 10202
-word_count: 53
+word_count: 63
 ---
 # Selectors, Pseudo-Classes and Pseudo-Elements (20m)
 
@@ -18,4 +18,5 @@ word_count: 53
 - Exercise: Building a CSS mosaic
 
 ## Notes
+
 
