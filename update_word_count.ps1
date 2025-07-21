@@ -1,4 +1,4 @@
-git add --renormalize .
+git add .
 git commit -m "Snapshot of everything before running update_word_count.ps1"
 $totalWordCount = 0
 Get-ChildItem -Path . -Filter *.md | ForEach-Object {
@@ -20,7 +20,7 @@ Get-ChildItem -Path . -Filter *.md | ForEach-Object {
 
 		$totalWordCount += $wordCount
 
-		$newContent = "---`n$newFrontMatter`n---`n$body"
+		$newContent = "---`r`n$newFrontMatter`r`n---`r`n$body"
 		Set-Content -Path $file -Value $newContent
 
 		Write-Host "Updated word count for $($_.Name)"
