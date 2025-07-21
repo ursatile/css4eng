@@ -2,6 +2,7 @@
 title: "Fundamentals and Background"
 layout: home
 nav_order: 10102
+word_count: 3440
 ---
 
 ## Why Do So Many Developers Struggle With CSS?
