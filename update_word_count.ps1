@@ -21,8 +21,7 @@ Get-ChildItem -Path . -Filter *.md | ForEach-Object {
 		$totalWordCount += $wordCount
 
 		$newContent = "---`r`n$newFrontMatter`r`n---`r`n$body"
-		Set-Content -Path $file -Value $newContent
-
+		Set-Content -NoNewline -Path $file -Value $newContent
 		Write-Host "Updated word count for $($_.Name)"
 	} else {
 		Write-Host "No front matter found in $($_.Name)"
