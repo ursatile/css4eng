@@ -44,11 +44,15 @@ word_count: 77
 		</td>
 		<td style="text-align: right;">
 			{% if page.word_count %}
-			{{ page.word_count | divided_by: 200 }} minutes
+			{% assign duration = page.word_count | divided_by: 200 %}
+			{{ duration }} minutes
 			{% endif %}
 			<br />
 			<div style="background-color: #ff0; width: {{ page.word_count | divided_by: 50 }}px; height: 10px; float: right;"></div>
-
+		</td>
+		<td style="text-align: right;">
+			{% assign total_duration = total_duration | plus: duration %}
+			{{ total_duration }}
 		</td>
 
 	</tr>
