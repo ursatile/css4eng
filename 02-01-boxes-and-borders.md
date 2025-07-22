@@ -217,6 +217,12 @@ A `rem` is an `em` but it's relative to the *root font size* - so it'll give you
 
 Let's get to know another couple of CSS properties: `width` and `height`. These ones do pretty much what you'd expect them to do:
 
+```css
+{% include_relative {{ page.examples }}/width-and-height.css %}
+```
+
+<iframe src="width-and-height.html" style="height: 10em;"></iframe>
+
 
 
 
