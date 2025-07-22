@@ -11,44 +11,24 @@ word_count: 77
 {% assign sorted_pages = site.pages | where_exp: "page", "page.path contains
 '.md'" | where_exp: "page", "page.title != 'Home'" | sort: "nav_order" %}
 
-<table>
-	<tr>
-		<th>Section</th>
-		<th>Words</th>
-		<th>Duration</th>
-		<th>Running Total</th>
-	</tr>
-	{% assign total_duration = 0 %}
-	{% for page in sorted_pages %}
-	{% if page.title and page.nav_order %}
-	<tr style="vertical-align: top;">
-		<td>
+{% assign total_duration = 0 %}
+{% for page in sorted_pages %}
+{% if page.title and page.nav_order %}
+<div>
 			<a href="{{ page.url | relative_url }}">{{ page.path }}</a>
-			{% assign headings = page.content | newline_to_br | split: "<br />" | where_exp: "line", "line contains '## ' or line contains '<h2'" %}
-			<ul>
-				{% for heading in headings %}
-					<li>
-						{% if heading contains '## ' %}
-							{{ heading | remove: '## ' | strip_html  }}
-						{% elsif heading contains '<h2' %}
-							{{ heading | replace: '<h2>', '' | replace: '</h2>', '' | strip_html  }}
-						{% endif %}
-					</li>
-				{% endfor %}
-			</ul>
-		</td>
-		<td style="text-align: right;">
-			{% if page.word_count %}
+			({% if page.word_count %}
 			{{ page.word_count | number_with_delimiter: "," }}
-			{% endif %}
-		</td>
-		<td style="text-align: right;">
-			{% if page.word_count %}
-			{% assign duration = page.word_count | divided_by: 200 %}
-			{{ duration }} minutes
-			{% endif %}
-			<br />
-			<div style="background-color: #ff0; width: {{ page.word_count | divided_by: 50 }}px; height: 10px; float: right;"></div>
+			{% endif %})
+
+{% if page.word_count %}
+{% assign duration = page.word_count | divided_by: 200 %}
+
+<div style="width: {{ page.target_minutes | times: 10 }}px; border: 1px solid #fff; background-color: #333; float: right; height: 16px;">
+			<div style="background-color: #ff0; width: {{ duration | times: 10 }}px; height: 14px; float: right;"></div>
+</div>
+
+{{ duration }} minutes
+{% endif %}
 		</td>
 		<td style="text-align: right;">
 			{% assign total_duration = total_duration | plus: duration %}
