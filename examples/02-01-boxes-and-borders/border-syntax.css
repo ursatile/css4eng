@@ -3,20 +3,24 @@ p {
 	margin: 15px;
 }
 
-p#alpha {
+p#example1 {
 	border-width: 5px 10px 15px 20px;
 	border-style: double dotted dashed groove;
 	border-color: red green yellow blue;
 }
 
-p#bravo {
+p#example2 {
 	border-top: 2px solid green;
 	border-right: 4px dotted red;
 	border-bottom: 6px dashed blue;
 	border-left: 8px groove yellow;
 }
-p#charlie {
-	border-width: 2px 5px;
-	border-style: groove;
+p#example3 {
+	border-width: 10px 5px;
+	border-style: double;
 	border-color: grey;
+}
+p#example4 {
+	border: 5px outset lightgrey;
+	background: lightgrey;
 }

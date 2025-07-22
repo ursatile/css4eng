@@ -159,9 +159,11 @@ When it comes to borders, there's a whole bunch of ways we can combine the vario
 {% include_relative {{ page.examples}}/border-syntax.css %}
 ```
 
-<iframe style="height: 10em;" src="{{ page.examples }}/border-syntax.html"></iframe>
+<iframe src="{{ page.examples }}/border-syntax.html"></iframe>
 
+## Introducing CSS Units
 
+Every example we've seen so far has used 
 
 
 
