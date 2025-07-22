@@ -4,10 +4,7 @@ layout: home
 word_count: 77
 ---
 
-# CSS for Engineers Course
-
-## Course Modules
-
+<h2>Dylan's Dometrain Progress Tracker</h2>
 {% assign sorted_pages = site.pages | where_exp: "page", "page.path contains
 '.md'" | where_exp: "page", "page.title != 'Home'" | sort: "nav_order" %}
 
@@ -15,42 +12,37 @@ word_count: 77
 {% for page in sorted_pages %}
 {% if page.title and page.nav_order %}
 <div>
-			<a href="{{ page.url | relative_url }}">{{ page.path }}</a>
-			({% if page.word_count %}
-			{{ page.word_count | number_with_delimiter: "," }}
-			{% endif %})
+	<a href="{{ page.url | relative_url }}">{{ page.path }}</a> ({{ page.target_minutes}}m)
+	<!-- {% if page.word_count %}
+	{{ page.word_count | number_with_delimiter: "," }}
+	{% endif %} -->
 
-{% if page.word_count %}
-{% assign duration = page.word_count | divided_by: 200 %}
+	{% if page.word_count %}
+	{% assign duration = page.word_count | divided_by: 200 %}
 
-<div style="width: {{ page.target_minutes | times: 10 }}px; border: 1px solid #fff; background-color: #333; float: right; height: 16px;">
-			<div style="background-color: #ff0; width: {{ duration | times: 10 }}px; height: 14px; float: right;"></div>
-</div>
-
-{{ duration }} minutes
-{% endif %}
-		</td>
-		<td style="text-align: right;">
-			{% assign total_duration = total_duration | plus: duration %}
-			{{ total_duration }}
-		</td>
-
-	</tr>
+	<div
+		style="width: {{ page.target_minutes | times: 10 }}px; border: 1px solid #fff; background-color: #333; float: right; height: 18px; padding: 2px 0;">
+		<div
+			style="background-color: #ff0; width: {{ duration | times: 10 }}px; height: 12px; float: right;">
+		</div>
+	</div>
+	{% endif %}
+	{% assign total_duration = total_duration | plus: duration %}
 	{% endif %}
 	{% endfor %}
-</table>
 
-## Course Statistics
 
-<div class="course-stats">
-	{% assign total_words = 0 %}
-	{% assign module_count = 0 %}
-	{% for page in sorted_pages %}
-	{% if page.word_count and page.nav_order %}
-	{% assign total_words = total_words | plus: page.word_count %}
-	{% assign module_count = module_count | plus: 1 %}
-	{% endif %}
-	{% endfor %}
-	<p><strong>Total Modules:</strong> {{ module_count }}</p>
-	<p><strong>Total Word Count:</strong> {{ total_words }}</p>
-</div>
+	## Course Statistics
+
+	<div class="course-stats">
+		{% assign total_words = 0 %}
+		{% assign module_count = 0 %}
+		{% for page in sorted_pages %}
+		{% if page.word_count and page.nav_order %}
+		{% assign total_words = total_words | plus: page.word_count %}
+		{% assign module_count = module_count | plus: 1 %}
+		{% endif %}
+		{% endfor %}
+		<p><strong>Total Modules:</strong> {{ module_count }}</p>
+		<p><strong>Total Word Count:</strong> {{ total_words }}</p>
+	</div>
