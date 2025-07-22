@@ -1,0 +1,12 @@
+h1 {
+	width: 50%;
+	background-color: purple;		
+}
+h2 {
+	width: 0.5vh;
+	background-color: teal;
+}
+p {
+	height: 0.2vw;
+	background-color: yellow;
+}

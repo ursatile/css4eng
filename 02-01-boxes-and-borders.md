@@ -218,10 +218,20 @@ A `rem` is an `em` but it's relative to the *root font size* - so it'll give you
 Let's get to know another couple of CSS properties: `width` and `height`. These ones do pretty much what you'd expect them to do:
 
 ```css
-{% include_relative {{ page.examples }}/width-and-height.css %}
+{% include_relative {{ page.examples }}/width-and-height-absolute.css %}
 ```
 
-<iframe src="width-and-height.html" style="height: 10em;"></iframe>
+<iframe src="{{ page.examples }}/width-and-height.html" style="height: 10em;"></iframe>
+
+Note how elements with a `width` are aligned to the left edge of the page. Also notice how, if you resize the browser window, these elements don't change size, because their width and height are specified in *absolute units*.
+
+Now, change the CSS to this:
+
+```css
+{% include_relative {{ page.examples}}/width-and-height-relative.css %}
+```
+
+
 
 
 
