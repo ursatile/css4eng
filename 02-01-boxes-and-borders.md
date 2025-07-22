@@ -167,6 +167,16 @@ Now, another reason I wanted to talk about borders nice and early is that they'r
 
 Every example we've looked so far has specified the border width, padding, margin, etc. in *pixels*, but CSS has a remarkably flexible systems of units and measurements.
 
+The most common measurement you'll find in CSS is *length*, and 
+
+
+
+### Absolute Units
+
+Absolute units are fixed. 
+
+
+
 
 
 
