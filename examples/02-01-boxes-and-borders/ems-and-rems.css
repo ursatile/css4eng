@@ -1,7 +1,5 @@
-p.small-print {
-	font-size: 50%;
-}
-
-body * {
-	border-bottom: 1em solid red;
+body {
+	* {
+		border-bottom: 1em solid red;
+	}
 }

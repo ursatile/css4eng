@@ -195,7 +195,11 @@ An `em` is another unit from the days of mechanical typesetting - and has nothin
 
 Lines and columns of printing type would be set using cast metal blocks, one for each letter; the capital letter M was usually the largest shape - or glyph - in a particular typeface. Typesetters used a tool called a *composing stick* to set the width of a column of type; if the column had to be 24 ems wide, they'd use 24 capital M blocks to set the width - and because desktop publishing and digital typesetting adopted many terms and units from mechanical typesetting, one `em` became a unit as wide as a capital letter M *in the currently selected font*.
 
-By the way, computers tend to use the terms font and typeface interchangeably, but in typesetting, they're 
+By the way, in computing, we use the terms *font* and *typeface* interchangeably, but in typesetting, a *font* is a specific *typeface* at a specific *size* and *weight*. So Arial is a *typeface*, Arial 20pt bold is a *font*. 
+
+Here's an example page, where we've given every element on the page 
+
+
 
 
 
