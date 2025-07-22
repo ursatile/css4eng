@@ -243,21 +243,17 @@ Now, this is a great example of a stupid demo. You will never, ever, *ever* buil
 
 Even if a block-level element has a defined `width`, the browser's layout engine still allocates a full page width of space for that element --- and by default, the element is drawn flush with the left edge of the page, and the next element is drawn starting underneath it.
 
-The CSS `float` property lets us pull an element out of the regular document flow and float it to the left or right edge of its container - check out [floats.html]({{ page.examples }}/floats.html) to see it in action.
+The CSS `float` property lets us pull an element out of the regular document flow and float it to the left or right edge of its container. - check out [floats.html]({{ page.examples }}/floats.html) to see it in action.
 
-{% highlight html mark_lines="8 17" %}
+{% highlight html mark_lines="7 15 24" %}
 {% include_relative {{ page.examples }}/floats.html %}
 {% endhighlight %}
-
-
-
-
-
-
 
 CSS Box Sizing
 
 Take a look at this example:
+
+
 
 
 

@@ -2,5 +2,7 @@ section {
 	div {		
 		width: 50%;
 		float: left;
+		background-color: goldenrod;
+		padding: 20px;
 	}
 }
