@@ -290,6 +290,8 @@ Let's get to know another couple of CSS properties: `width` and `height`. These 
 
 
 
+
+
 Boxes & Borders (20m)
 
 ## Course Content
