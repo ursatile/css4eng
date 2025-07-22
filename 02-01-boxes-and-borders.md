@@ -197,9 +197,27 @@ Lines and columns of printing type would be set using cast metal blocks, one for
 
 By the way, in computing, we use the terms *font* and *typeface* interchangeably, but in typesetting, a *font* is a specific *typeface* at a specific *size* and *weight*. So Arial is a *typeface*, Arial 20pt bold is a *font*. 
 
-Here's an example page, where we've given every element on the page a bottom border that's one em thick - you see how the Heading 1 has a much bigger border, because the browser renders it in a larger font and the border size is relative to the font size? If you zoom in close and crop things around a bit, you can actually see how the border in each case matches the width of the letter ‘M’ in that element:
+Here's an example page:
+
+* [ems-and-rems.html](/examples/02-01-boxes-and-borders/ems-and-rems.html)
+
+We've given every element on the page a bottom border that's `1em` thick:
+
+```css
+{% include_relative examples/02-01-boxes-and-borders/ems-and-rems.css %}
+```
+
+See how the Heading 1 has a much bigger border, because the browser renders it in a larger font and the border size is relative to the font size? If you zoom in close and crop things around a bit, you can actually see how the border in each case matches the width of the letter ‘M’ in that element:
 
 ![image-20250722134601891](./images/em-border.png)
+
+A `rem` is an `em` but it's relative to the *root font size* - so it'll give you a consistent unit which doesn't vary between headings, paragraphs, etc., but which *does* reflect changes to the document's --- or the browser's --- default font size.
+
+## Percentages
+
+Let's get to know another couple of CSS properties: `width` and `height`. These ones do pretty much what you'd expect them to do:
+
+
 
 
 
