@@ -1,8 +1,23 @@
 section {
-	div {		
-		width: 50%;
-		float: left;
+	margin: 1em 0;
+	overflow: auto;
+}
+
+div {		
+	width: 50%;
+	float: left;
+	padding: 10px;
+	border: 2px solid black;				
+}
+
+section#example1 {
+	div {
+		background-color: hotpink;
+	}
+}
+section#example2 {
+	div {
 		background-color: goldenrod;
-		padding: 20px;
+		box-sizing: border-box;
 	}
 }
