@@ -3,6 +3,7 @@ title: "Fundamentals and Background"
 layout: home
 nav_order: 10102
 word_count: 3419
+target_minutes: 10
 ---
 ## Why Do So Many Developers Struggle With CSS?
 
@@ -92,7 +93,6 @@ In this section, we've discussed why CSS is so unpopular with developers:
 * CSS is closely associated with visual design, and so books and training material often treat CSS as part of a design toolkit rather than an engineering capability
 * CSS is hard to test; bugs and regressions will often go unnoticed until somebody complains that "the website is broken"
 * There's a lot of very bad CSS code in the wild; many of us have ended up having to work with it at some point in our career, and that contributes a lot of negativity to developers' perception of CSS as a language.
-
 
 
 

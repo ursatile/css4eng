@@ -1,10 +1,10 @@
 ---
-title: "Boxes & Borders"
+title: "The CSS Colour Model"
 layout: home
 nav_order: 10201
-examples: examples/02-01-boxes-and-borders
+examples: examples/02-01-the-css-colour-model
 word_count: 2631
-target_minutes: 20
+target_minutes: 10
 ---
 So far, we've learned about the building blocks of the CSS language - selectors, properties, and values - and the tools and techniques we can use to inspect and manipulate those properties.
 

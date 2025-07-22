@@ -3,7 +3,8 @@ title: "Basic CSS Selectors"
 layout: home
 nav_order: 10201
 examples: examples/02-01-basic-css-selectors
-word_count: 1538
+word_count: 1432
+target_minutes: 10
 ---
 So far, we've learned about the building blocks of the CSS language - selectors, properties, and values - and the tools and techniques we can use to inspect and manipulate those properties.
 
