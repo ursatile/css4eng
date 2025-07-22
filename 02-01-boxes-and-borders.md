@@ -161,9 +161,13 @@ When it comes to borders, there's a whole bunch of ways we can combine the vario
 
 <iframe src="{{ page.examples }}/border-syntax.html"></iframe>
 
+Now, another reason I wanted to talk about borders nice and early is that they're a great way to introduce two more fundamental CSS concepts: colours and units.
+
 ## Introducing CSS Units
 
-Every example we've seen so far has used 
+Every example we've looked so far has s
+
+
 
 
 
