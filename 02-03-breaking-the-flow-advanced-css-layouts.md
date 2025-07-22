@@ -3,6 +3,7 @@ title: "Breaking the Flow: Advanced CSS Layouts"
 layout: home
 nav_order: 10203
 word_count: 30
+target_minutes: 20
 ---
 # Breaking the Flow: Advanced CSS Layouts (20m)
 

@@ -3,6 +3,7 @@ title: "Exercise: Building a Web Media Player"
 layout: home
 nav_order: 10306
 word_count: 32
+target_minutes: 20
 ---
 # Exercise: Building a Web Media Player
 

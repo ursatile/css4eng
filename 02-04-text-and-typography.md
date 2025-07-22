@@ -3,6 +3,7 @@ title: "Text & Typography"
 layout: home
 nav_order: 10204
 word_count: 20
+target_minutes: 20
 ---
 # Text & Typography (20m)
 
@@ -15,7 +16,6 @@ word_count: 20
 ## Notes
 
 https://opentype.js.org/font-inspector.html
-
 
 
 

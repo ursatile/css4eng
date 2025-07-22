@@ -3,6 +3,7 @@ title: "Movement and Motion"
 layout: home
 nav_order: 10302
 word_count: 26
+target_minutes: 20
 ---
 # Movement and Motion (20m)
 

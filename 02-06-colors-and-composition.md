@@ -3,6 +3,7 @@ title: "Colors and Composition"
 layout: home
 nav_order: 10206
 word_count: 46
+target_minutes: 20
 ---
 # Colors and Composition (20m)
 

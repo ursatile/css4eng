@@ -3,6 +3,7 @@ title: "Processing CSS"
 layout: home
 nav_order: 10404
 word_count: 11
+target_minutes: 30
 ---
 # Processing CSS (30m)
 

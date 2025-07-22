@@ -3,6 +3,7 @@ title: "Working with CSS Variables"
 layout: home
 nav_order: 10304
 word_count: 23
+target_minutes: 20
 ---
 # Working with CSS Variables (20m)
 

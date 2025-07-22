@@ -3,6 +3,7 @@ title: "Lists and Counters"
 layout: home
 nav_order: 10205
 word_count: 24
+target_minutes: 20
 ---
 # Lists and Counters (20m)
 

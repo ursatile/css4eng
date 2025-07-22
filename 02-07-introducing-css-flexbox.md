@@ -3,6 +3,7 @@ title: "Introducing CSS Flexbox"
 layout: home
 nav_order: 10207
 word_count: 34
+target_minutes: 20
 ---
 # Introducing CSS Flexbox (20m)
 
