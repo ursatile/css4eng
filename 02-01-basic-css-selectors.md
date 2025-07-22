@@ -68,7 +68,7 @@ body {
 
 The page looks the same - except those "warning" and "caution" elements are white now. The reason is **cascading**. We've said "everything in the body should be navy", and that rule cascades down... but then when we get to the warning paragraph, that sets a rule that everything should be white, and that second rule wins. The first rule has to cascade from the body element, to the warning paragraph element, to the strong element; the second rule only has to cascade from the warning paragraph to the strong, and shorter cascades are more specific, and therefore have a higher precedence.
 
-We're going to come back to selectors shortly, because they are phenomenally powerful. To go back to house party example: we could have a rule for anybody who's standing in the kitchen, a different rule for somebody standing in the kitchen who has a cat, a rule for anybody who's standing next to Freddie Mercury, a rule for what Freddie Mercury should wear if he's standing in the garden and there's somebody stood next to him who has a cat... we can combine selectors in all sorts of combinations and permutations.
+We're going to come back to selectors shortly, because they are phenomenally powerful. To go back to house party example: we could have a rule for anybody who's standing in the kitchen, a different rule for somebody standing in the kitchen who has a cat, a rule that only applies to a pilot who is standing next to a doctor, a rule that only applies to the first doctor in a room... we can combine selectors in all sorts of combinations and permutations.
 
 For now, there are two more combinations I want to show you before we move on.
 
@@ -82,7 +82,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 ```
 
-Second: CSS has also always supported something called *descendant combinators*: say we want a rule that says emphasis tags are red, paragraphs are blue, but emphasis tags which are inside paragraphs should be green:
+Second: CSS has also always supported something called *descendant combinators*. The relationships between elements on a page are often described using terms from genealogy; take a look at this example:
+
+```html
+<article>
+    <h1>This is a heading</h1>
+    <h2>This is a sub-heading</h2>
+    <p>This is a paragraph containing a <a>link</a></p>
+</article>
+```
+
+We say that the `<h1>`, `<h2>` and `<p>` elements are children of the `<article>` -- and so, conversely, the `<article>` is their `parent`. The `<a>` is a *child* of the `<p>`, and a  *descendant* of the `<article>`; the `<article>` is an *ancestor* of the `<a>`; the `<h1>`, `<h2>` and  `<p>` are *siblings*, because they have the same parent; `<h1>` and `<h2>` are *adjacent siblings* because there's nothing between them.
+
+We can use these relationships in our selectors. Say we want a rule that says emphasis tags are red, paragraphs are blue, but emphasis tags which are inside paragraphs should be green:
 
 ```css
 p {
@@ -93,7 +105,7 @@ em {
     color: red;
 }
 
-p em {
+p em { /* target em elements which are children of p elements */
     color: green;
 }
 ```
@@ -116,8 +128,8 @@ em {
 }
 p {
     color: blue;
-    em { /* Target em elements which are children of p elements */
-        color: green;        
+    em { /* target em elements which are children of p elements */
+        color: green;
     }
 }
 ```
@@ -135,32 +147,4 @@ According to [caniuse.com/css-nesting](https://caniuse.com/css-nesting), nesting
 * ID selectors match elements based on their `id` attribute
   * Elements cannot have more than one ID
   * A specific ID should never appear more than once on the same page.
-* Grouped and nested selectors allow us to target elements based on their *ancestry*
-
-
-
-
-
-
-
-
-
-
-
-
-
-- Basic selectors:`*`, element, className, id
-- Combinators: `A B`
-- nested selectors
-
-
-
-
-
-
-
-
-
-
-
-
+* Grouped and nested selectors allow us to target elements based on their *ancestry*, where 
