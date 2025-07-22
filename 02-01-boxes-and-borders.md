@@ -197,7 +197,9 @@ Lines and columns of printing type would be set using cast metal blocks, one for
 
 By the way, in computing, we use the terms *font* and *typeface* interchangeably, but in typesetting, a *font* is a specific *typeface* at a specific *size* and *weight*. So Arial is a *typeface*, Arial 20pt bold is a *font*. 
 
-Here's an example page, where we've given every element on the page 
+Here's an example page, where we've given every element on the page a bottom border that's one em thick - you see how the Heading 1 has a much bigger border, because the browser renders it in a larger font and the border size is relative to the font size? If you zoom in close and crop things around a bit, you can actually see how the border in each case matches the width of the letter ‘M’ in that element:
+
+![image-20250722134601891](./images/em-border.png)
 
 
 
