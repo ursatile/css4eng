@@ -245,7 +245,9 @@ Even if a block-level element has a defined `width`, the browser's layout engine
 
 The CSS `float` property lets us pull an element out of the regular document flow and float it to the left or right edge of its container:
 
-
+{% highlight css mark_lines="5 6 7" %}
+{% include_relative {{ page.examples }}/floats.html %}
+{% endhighlight %}
 
 
 
