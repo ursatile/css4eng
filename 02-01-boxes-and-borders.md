@@ -249,9 +249,11 @@ The CSS `float` property lets us pull an element out of the regular document flo
 {% include_relative {{ page.examples }}/floats.html %}
 {% endhighlight %}
 
-CSS Box Sizing
+## CSS Box Sizing
 
-Take a look at this example:
+Take a look at the code in [box-sizing.html]({{ page.examples }}/box-sizing.html):
+
+<iframe src="{{ page.examples }}/box-sizing.html"></iframe>
 
 
 
