@@ -187,7 +187,13 @@ Absolute units are useful for creating pixel-perfect layouts, but that's not alw
 
 ### Relative Units
 
-Relative units are how CSS lets us specify things like "make this half the width "
+Relative units are how CSS lets us specify things like "make this half the height of the current window", or "this should take up two-thirds of its container", or "bigger text should have a thicker border."
+
+### ems and rems
+
+An `em` is another unit from the days of mechanical typesetting. The capital letter M was usually the largest 
+
+
 
 
 
