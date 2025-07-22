@@ -191,7 +191,7 @@ Relative units are how CSS lets us specify things like "make this half the heigh
 
 ### ems and rems
 
-An `em` is another unit from the days of mechanical typesetting. The capital letter M was usually the largest 
+An `em` is another unit from the days of mechanical typesetting. Lines and columns of printing type would be set using cast metal blocks, one for each letter; The capital letter M was usually the largest shape - or glyph - in a particular typeface; 
 
 
 
