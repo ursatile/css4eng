@@ -239,85 +239,23 @@ The `<h2>` has its `width` set to `50vh`. `vh` is a CSS unit equal to one-hundre
 
 Now, this is a great example of a stupid demo. You will never, ever, *ever* build a real web page or application in which a heading changes width based on the height of the window --- well, maybe if you were building some sort of bizarre online puzzle game --- but it does demonstrate really clearly what units like `vw` and `vh` actually do.
 
+## Float Like A Butterfly...
+
+Even if a block-level element has a defined `width`, the browser's layout engine still allocates a full page width of space for that element --- and by default, the element is drawn flush with the left edge of the page, and the next element is drawn starting underneath it.
+
+The CSS `float` property lets us pull an element out of the regular document f
+
+
+
+
+
 CSS Box Sizing
 
 Take a look at this example:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+___
 
 
 
