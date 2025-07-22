@@ -155,9 +155,11 @@ p {
 
 When it comes to borders, there's a whole bunch of ways we can combine the various properties. Each edge of the element can have a border-width, a border-style, and a border-color - and any of these properties can use any of the shorthand syntaxes above:
 
+```css
+{% include_relative {{ page.examples}}/border-syntax.css %}
 ```
 
-```
+<iframe src="{{ page.examples }}/border-syntax.html"></iframe>
 
 
 
