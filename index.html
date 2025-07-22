@@ -16,7 +16,9 @@ word_count: 77
 		<th>Section</th>
 		<th>Words</th>
 		<th>Duration</th>
+		<th>Running Total</th>
 	</tr>
+	{% assign total_duration = 0 %}
 	{% for page in sorted_pages %}
 	{% if page.title and page.nav_order %}
 	<tr style="vertical-align: top;">

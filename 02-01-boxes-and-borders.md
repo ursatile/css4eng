@@ -3,7 +3,7 @@ title: "Boxes & Borders"
 layout: home
 nav_order: 10201
 examples: examples/02-01-boxes-and-borders
-word_count: 1350
+word_count: 2631
 ---
 So far, we've learned about the building blocks of the CSS language - selectors, properties, and values - and the tools and techniques we can use to inspect and manipulate those properties.
 
