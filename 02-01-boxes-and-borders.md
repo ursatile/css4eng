@@ -165,7 +165,11 @@ Now, another reason I wanted to talk about borders nice and early is that they'r
 
 ## Introducing CSS Units
 
-Every example we've looked so far has s
+Every example we've looked so far has specified the border width, padding, margin, etc. in *pixels*. Which is fine
+
+
+
+
 
 
 
