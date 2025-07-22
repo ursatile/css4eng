@@ -231,7 +231,13 @@ Now, change the CSS to this:
 {% include_relative {{ page.examples}}/width-and-height-relative.css %}
 ```
 
+Now, watch what happens if you change the size of your browser window. 
 
+The `<h1>`? That's 50% of the width of its parent element --- in this case the document `<body>` - and so always takes up half the width of the screen.
+
+The `<h2>` has its `width` set to `50vh`. `vh` is a CSS unit equal to one-hundredth of the *viewport height* - so as we change the height of the window, the width of the `<h2>` element changes so that it's always half of the window height. And the 
+
+This is a great example of a *stupid demo*: 
 
 
 
