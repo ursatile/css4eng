@@ -165,15 +165,15 @@ Now, another reason I wanted to talk about borders nice and early is that they'r
 
 ## Introducing CSS Units
 
-Every example we've looked so far has specified the border width, padding, margin, etc. in *pixels*, but CSS has a remarkably flexible systems of units and measurements.
-
-The most common measurement you'll find in CSS is *length*, and 
-
-
+Every example we've looked so far has specified the border width, padding, margin, etc. in *pixels*, but CSS has a remarkably flexible systems of units and measurements. The most common measurement you'll find in CSS is *length*, and lengths in CSS come in two varieties: absolute and relative.
 
 ### Absolute Units
 
-Absolute units are fixed. 
+Absolute units are, well, absolute: they don't depend on anything else. If we specify something has a 10px border, that border will always be 10 pixels.
+
+> OK, that's *sort of* true. Way back when CSS was first developed, pixels referred to actual physical device pixels - if your screen resolution was 800x600, and you drew a box that was 400 pixels wide and 300 pixels high, it would fill exactly a quarter of your screen space.
+>
+> Two quite important things have happened since then. First: just about every browser now has a *page zoom* feature, which makes everything bigger - and it does this by changing how many *physical* pixels are used to draw a *logical* pixel. If you have a line that's 10 pixels thick, and you crank the browser's page zoom up to 200%, that line will now be 20 pixels thick.
 
 
 
