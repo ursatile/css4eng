@@ -232,7 +232,9 @@ Now, change the CSS to this:
 {% include_relative {{ page.examples}}/width-and-height-relative.css %}
 ```
 
-Now, watch what happens if you change the size of your browser window. 
+➡️ [width-and-height-relative.html]({{ page.examples }}/width-and-height-relative.html)
+
+Now watch what happens if you change the size of your browser window.
 
 The `<h1>`? That's 50% of the width of its parent element --- in this case the document `<body>` - and so always takes up half the width of the screen.
 
@@ -255,6 +257,19 @@ The CSS `float` property lets us pull an element out of the regular document flo
 Take a look at the code in [box-sizing.html]({{ page.examples }}/box-sizing.html):
 
 <iframe src="{{ page.examples }}/box-sizing.html"></iframe>
+
+There's a `<section>` containing two `<div>` elements; there's a rule saying `<div>` elements have `width: 50%` and `float: left` - so the first one should take up half of the `section` and leave space for the second one alongside it... right?
+
+Welcome to another historical quirk of CSS: *box sizing*. CSS uses two different sizing models --- `border-box` and `content-box`. 
+
+* With `content-box` sizing, the element's *content* is drawn at the specified width and height, and then the padding and border are drawn *outside* the content.
+* With `border-box` sizing, the width and height are applied to the *outside of the border*, 
+
+
+
+
+
+![box-sizing](./images/box-sizing.png)
 
 
 

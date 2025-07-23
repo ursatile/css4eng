@@ -2,17 +2,6 @@ div {
 	width: 50%;
 	float: left;
 	padding: 10px;
-	border: 2px solid black;				
-}
-
-section#example1 {
-	div {
+	border: 2px solid black;
 		background-color: hotpink;
-	}
-}
-section#example2 {
-	div {
-		background-color: goldenrod;
-		box-sizing: border-box;
-	}
 }
