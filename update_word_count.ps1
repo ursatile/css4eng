@@ -29,3 +29,7 @@ Get-ChildItem -Path . -Filter *.md | ForEach-Object {
 Write-Host "Total word count: $totalWordCount"
 Write-Host "Total duration: $($totalWordCount / 200) minutes"
 
+git add .
+git commit -m "Word count: $totalWordCount"
+
+
