@@ -18,7 +18,7 @@ target_minutes: 20
 
 
 
-
+{% example foo.html %}
 
 
 

@@ -256,9 +256,9 @@ One more relative unit that's remarkably useful in CSS is `auto`. Most of the ti
 
 One extremely useful, but slightly counter-intuitive, application of `auto` is that if you give an element a fixed width and then set the left and right `margin` of that element to `auto`, the browser will centre the element horizontally.
 
-{% example html mark_lines="10" %}
-{% include_relative {{page.examples}}/auto-margins.html %}
-{% endexample %}
+ example html mark_lines="10" 
+ include_relative {{page.examples}}/auto-margins.html 
+ endexample
 
 ## Float Like A Butterfly...
 

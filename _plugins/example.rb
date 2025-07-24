@@ -4,133 +4,128 @@ module Jekyll
   module Tags
     class ExampleTag < Liquid::Tag
       include Liquid::StandardFilters
-				def initialize(_tag_name, markup, _parse_context)
-					super
-					@markup = markup.strip
-				end
 
-	def render(context)
-		page = context.registers[:page]
-		parts = @markup.split(' ', 2)
-#		p parts[0]
-		expanded_path = Liquid::Template.parse(parts[0].strip).render(context)
-		page_filename = File.basename(page['path'], '.*')
-		root_path = File.expand_path(context.registers[:site].config['source'])
-		file_path = File.join(root_path, 'examples', page_filename, expanded_path)
-		attributes = parts.length > 1 ? parts[1] : "all"
-#		puts file_path
-#		p file_path
-# bare_filename = File.basename(expanded_path)
-#<a href="#{expanded_path}">#{bare_filename}</a>:
-	  <<-ROCKSTAR
-{: data-controls="#{attributes}" }
-```rockstar
-#{read_file(file_path, context)}
-```
-ROCKSTAR
-	end
-
-	def read_file(path, context)
-	  file_read_opts = context.registers[:site].file_read_opts
-	  File.read(path, **file_read_opts)
-	end
-  end
-
-			
-
-      SYNTAX = %r!^([a-zA-Z0-9.+#_-]+)((\s+\w+(=(\w+|"([0-9]+\s)*[0-9]+"))?)*)$!.freeze
-
-				def initialize(_tag_name, markup, _parse_context)
-					super
-					@markup = markup.strip
-				end
-			
-
-      def initialize(tag_name, markup, tokens)
+      def initialize(_tag_name, markup, _parse_context)
         super
-        if markup.strip =~ SYNTAX
-          @lang = Regexp.last_match(1).downcase
-          @highlight_options = parse_options(Regexp.last_match(2))
-        else
-          raise SyntaxError, <<~MSG
-            Syntax Error in tag 'highlight' while parsing the following markup:
-
-            #{markup}
-
-            Valid syntax: highlight <lang> [linenos] [mark_lines="3 4 5"]
-
-            See https://jekyllrb.com/docs/liquid/tags/#code-snippet-highlighting for more details.
-          MSG
-        end
+        @markup = markup.strip
       end
-
-      LEADING_OR_TRAILING_LINE_TERMINATORS = %r!\A(\n|\r)+|(\n|\r)+\z!.freeze
 
       def render(context)
-        prefix = context["highlighter_prefix"] || ""
-        suffix = context["highlighter_suffix"] || ""
-        code = super.to_s.gsub(LEADING_OR_TRAILING_LINE_TERMINATORS, "")
-        output = render_rouge(code)
-        rendered_output = add_code_tag(output)
-        prefix + rendered_output + suffix
+        page = context.registers[:page]
+        parts = @markup.split(" ", 2)
+        expanded_path = Liquid::Template.parse(parts[0].strip).render(context)
+        page_filename = File.basename(page["path"], ".*")
+        root_path = File.expand_path(context.registers[:site].config["source"])
+        file_path = File.join(root_path, "examples", page_filename, expanded_path)
+        attributes = parts.length > 1 ? parts[1] : "all"
+        <<-CONTENT
+----
+#{markup}
+----
+#{read_file(file_path, context)}
+----
+CONTENT
       end
 
-      private
-
-      OPTIONS_REGEX = %r!(?:\w="[^"]*"|\w=\w|\w)+!.freeze
-
-      def parse_options(input)
-        options = {}
-        return options if input.empty?
-
-        # Split along 3 possible forms -- key="<quoted list>", key=value, or key
-        input.scan(OPTIONS_REGEX) do |opt|
-          key, value = opt.split("=")
-          # If a quoted list, convert to array
-          if value&.include?('"')
-            value.delete!('"')
-            value = value.split
-          end
-          options[key.to_sym] = value || true
-        end
-
-        options[:linenos] = "inline" if options[:linenos] == true
-        options
-      end
-
-      def render_rouge(code)
-        require "rouge"
-        formatter = Rouge::Formatters::HTML.new
-        formatter = line_highlighter_formatter(formatter) if @highlight_options[:mark_lines]
-        lexer = Rouge::Lexer.find_fancy(@lang, code) || Rouge::Lexers::PlainText
-        formatter.format(lexer.lex(code))
-      end
-
-      def line_highlighter_formatter(formatter)
-        Rouge::Formatters::HTMLLineHighlighter.new(
-          formatter,
-          :highlight_lines => mark_lines
-        )
-      end
-
-      def mark_lines
-        value = @highlight_options[:mark_lines]
-        return value.map(&:to_i) if value.is_a?(Array)
-
-        raise SyntaxError, "Syntax Error for mark_lines declaration. Expected a " \
-                           "double-quoted list of integers."
-      end
-
-      def render_codehighlighter(code)
-        h(code).strip
-      end
-
-      def add_code_tag(code)
-        code_attrs = %(class="language-#{@lang.tr("+", "-")}" data-lang="#{@lang}")
-        %(<figure class="highlight"><pre><code #{code_attrs}>#{code.chomp}</code></pre></figure>)
+      def read_file(path, context)
+        file_read_opts = context.registers[:site].file_read_opts
+        return "File not found: #{path}" unless File.exist?(path)
+        File.read(path, **file_read_opts)
       end
     end
+
+    #   SYNTAX = %r!^([a-zA-Z0-9.+#_-]+)((\s+\w+(=(\w+|"([0-9]+\s)*[0-9]+"))?)*)$!.freeze
+
+    #   def initialize(_tag_name, markup, _parse_context)
+    #     super
+    #     @markup = markup.strip
+    #   end
+
+    #   def initialize(tag_name, markup, tokens)
+    #     super
+    #     if markup.strip =~ SYNTAX
+    #       @lang = Regexp.last_match(1).downcase
+    #       @highlight_options = parse_options(Regexp.last_match(2))
+    #     else
+    #       raise SyntaxError, <<~MSG
+    #               Syntax Error in tag 'highlight' while parsing the following markup:
+
+    #               #{markup}
+
+    #               Valid syntax: highlight <lang> [linenos] [mark_lines="3 4 5"]
+
+    #               See https://jekyllrb.com/docs/liquid/tags/#code-snippet-highlighting for more details.
+    #             MSG
+    #     end
+    #   end
+
+    #   LEADING_OR_TRAILING_LINE_TERMINATORS = %r!\A(\n|\r)+|(\n|\r)+\z!.freeze
+
+    #   def render(context)
+    #     prefix = context["highlighter_prefix"] || ""
+    #     suffix = context["highlighter_suffix"] || ""
+    #     code = super.to_s.gsub(LEADING_OR_TRAILING_LINE_TERMINATORS, "")
+    #     output = render_rouge(code)
+    #     rendered_output = add_code_tag(output)
+    #     prefix + rendered_output + suffix
+    #   end
+
+    #   private
+
+    #   OPTIONS_REGEX = %r!(?:\w="[^"]*"|\w=\w|\w)+!.freeze
+
+    #   def parse_options(input)
+    #     options = {}
+    #     return options if input.empty?
+
+    #     # Split along 3 possible forms -- key="<quoted list>", key=value, or key
+    #     input.scan(OPTIONS_REGEX) do |opt|
+    #       key, value = opt.split("=")
+    #       # If a quoted list, convert to array
+    #       if value&.include?('"')
+    #         value.delete!('"')
+    #         value = value.split
+    #       end
+    #       options[key.to_sym] = value || true
+    #     end
+
+    #     options[:linenos] = "inline" if options[:linenos] == true
+    #     options
+    #   end
+
+    #   def render_rouge(code)
+    #     require "rouge"
+    #     formatter = Rouge::Formatters::HTML.new
+    #     formatter = line_highlighter_formatter(formatter) if @highlight_options[:mark_lines]
+    #     lexer = Rouge::Lexer.find_fancy(@lang, code) || Rouge::Lexers::PlainText
+    #     formatter.format(lexer.lex(code))
+    #   end
+
+    #   def line_highlighter_formatter(formatter)
+    #     Rouge::Formatters::HTMLLineHighlighter.new(
+    #       formatter,
+    #       :highlight_lines => mark_lines,
+    #     )
+    #   end
+
+    #   def mark_lines
+    #     value = @highlight_options[:mark_lines]
+    #     return value.map(&:to_i) if value.is_a?(Array)
+
+    #     raise SyntaxError, "Syntax Error for mark_lines declaration. Expected a " \
+    #                        "double-quoted list of integers."
+    #   end
+
+    #   def render_codehighlighter(code)
+    #     h(code).strip
+    #   end
+
+    #   def add_code_tag(code)
+    #     code_attrs = %(class="language-#{@lang.tr("+", "-")}" data-lang="#{@lang}")
+    #     %(<figure class="highlight"><pre><code #{code_attrs}>#{code.chomp}</code></pre></figure>)
+    #   end
+    # end
   end
 end
 
-Liquid::Template.register_tag("example", Jekyll::Tags::ExampleBlock)
+Liquid::Template.register_tag("example", Jekyll::Tags::ExampleTag)
