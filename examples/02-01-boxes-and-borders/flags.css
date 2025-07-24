@@ -1,0 +1,18 @@
+div {
+	margin: 20px;
+}
+
+div#flag-ro {
+	width: 300px;
+	height: 200px;
+	background-color: gold;
+	border-left: 100px solid navy;
+	border-right: 100px solid crimson;
+	box-sizing: border-box;
+}
+
+div#flag-mu {
+	width: 300px;
+	height: 200px;
+	background-color: gold;
+}
