@@ -290,31 +290,15 @@ We'll wrap it up there for now - in the next section we're going to work through
 
 * Elements on a page are either **block-level** or **inline** elements
 * **Block-level elements** (e.g., `<p>`, `<div>`) start on a new line and occupy the full width of the page.
-* **Inline elements** (e.g., `<em>`, `<span>`) flow within text and take only as much space .
+* **Inline elements** (e.g., `<em>`, `<span>`) flow within text and take only as much space as their content.
+* Elements have a **content box**, surrounded by **padding**, then **border**, and then a **margin** - this is known as the **CSS box model**
+* Margins of adjacent elements will **collapse**
+* Padding, border and margin width are specified using CSS units, in the order top, right, bottom, left - it's clockwise from the top, or you can use the mnemonic *trouble* to remember the order.
+* CSS units are **absolute** -- `px`, `cm`, `pt` -- or **relative** - `em` (relative to the current font size), `rem` (relative to the document's root font size), `vw` and `vh` (relative to the viewport width and height), or a percentage `%` of the parent element.
+* `float: left/right` pulls elements out of normal flow, allowing text or other elements to wrap around them.
+* `box-sizing` controls whether an element's width `content-box` (default)**: Width/height exclude padding/border.
 
-1. **The CSS Box Model**
-   - Every element is a box with:
-     - **Content** (text, images)
-     - **Padding** (space inside, around content)
-     - **Border** (visible edge around padding)
-     - **Margin** (space outside, between elements)
-   - **`outline`** is non-layout (overlays content).
-2. **Margin Collapse**
-   - Adjacent vertical margins combine (e.g., a 20px top margin + 10px bottom margin = 20px gap, not 30px).
-3. **Borders & Shorthand Syntax**
-   - Borders can be styled per edge (top/right/bottom/left) with shorthand like `border: 1px solid red`.
-   - Padding/margin use TRBL shorthand (e.g., `margin: 10px 0 20px 0`).
-4. **CSS Units**
-   - **Absolute** (e.g., `px`, `cm`): Fixed sizes.
-   - **Relative**:
-     - **`em`**: Relative to element’s font size.
-     - **`rem`**: Relative to root (`<html>`) font size.
-     - **Viewport units** (`vw`, `vh`): Percentage of window size.
-5. **Floats**
-   - `float: left/right` pulls elements out of normal flow, allowing text or other elements to wrap around them.
-6. **Box Sizing**
-   - **`content-box` (default)**: Width/height exclude padding/border.
-   - **`border-box`**: Width/height include padding/border (more intuitive).
+1. - **`border-box`**: Width/height include padding/border (more intuitive).
 
 #### **Practical Takeaways:**
 
