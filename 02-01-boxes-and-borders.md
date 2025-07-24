@@ -308,5 +308,15 @@ We'll wrap it up there for now - in the next section we're going to work through
 
 ## Exercises
 
+### CSS Flags
+
+In this exercise, you'll use CSS to recreate some country flags.
+
+
+
+
+
+
+
 
 
