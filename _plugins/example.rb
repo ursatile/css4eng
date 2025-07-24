@@ -12,7 +12,7 @@ module Jekyll
           @highlight_options = parse_options(Regexp.last_match(2))
         else
           raise SyntaxError, <<~MSG
-                  Syntax Error in tag 'highlight' while parsing the following markup:
+                  Syntax Error in tag 'example' while parsing the following markup:
 
                   #{markup}
 
@@ -20,23 +20,6 @@ module Jekyll
 
                 MSG
         end
-      end
-
-      def render(context)
-        page = context.registers[:page]
-        parts = @markup.split(" ", 2)
-        expanded_path = Liquid::Template.parse(parts[0].strip).render(context)
-        page_filename = File.basename(page["path"], ".*")
-        root_path = File.expand_path(context.registers[:site].config["source"])
-        file_path = File.join(root_path, "examples", page_filename, expanded_path)
-        attributes = parts.length > 1 ? parts[1] : "all"
-        <<-CONTENT
-----
-#{@markup}
-----
-#{read_file(file_path, context)}
-----
-CONTENT
       end
 
       def read_file(path, context)
@@ -47,21 +30,25 @@ CONTENT
 
       SYNTAX = %r!^([a-zA-Z0-9.+#_-]+)((\s+\w+(=(\w+|"([0-9]+\s)*[0-9]+"))?)*)$!.freeze
 
-      #   def initialize(_tag_name, markup, _parse_context)
-      #     super
-      #     @markup = markup.strip
-      #   end
-
       LEADING_OR_TRAILING_LINE_TERMINATORS = %r!\A(\n|\r)+|(\n|\r)+\z!.freeze
 
-      #   def render(context)
-      #     prefix = context["highlighter_prefix"] || ""
-      #     suffix = context["highlighter_suffix"] || ""
-      #     code = super.to_s.gsub(LEADING_OR_TRAILING_LINE_TERMINATORS, "")
-      #     output = render_rouge(code)
-      #     rendered_output = add_code_tag(output)
-      #     prefix + rendered_output + suffix
-      #   end
+      def render(context)
+        prefix = context["highlighter_prefix"] || ""
+        suffix = context["highlighter_suffix"] || ""
+
+        page = context.registers[:page]
+        parts = @markup.split(" ", 2)
+        expanded_path = Liquid::Template.parse(parts[0].strip).render(context)
+        page_filename = File.basename(page["path"], ".*")
+        root_path = File.expand_path(context.registers[:site].config["source"])
+        file_path = File.join(root_path, "examples", page_filename, expanded_path)
+        attributes = parts.length > 1 ? parts[1] : "all"
+        code = read_file(file_path, context)
+        @lang = File.extname(file_path).delete_prefix(".")
+        output = render_rouge(code)
+        rendered_output = add_code_tag(output)
+        prefix + rendered_output + suffix
+      end
 
       private
 
