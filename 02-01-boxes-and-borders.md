@@ -165,7 +165,7 @@ When it comes to borders, there's a whole bunch of ways we can combine the vario
 The `border-style` property must take one of the values defined in the CSS spec:
 
 * `none`: no border
-* 
+* `hidden`: no border
 
 ```
 border-style: none;
