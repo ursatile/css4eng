@@ -288,30 +288,31 @@ We'll wrap it up there for now - in the next section we're going to work through
 
 ## Review & Recap
 
-1. **Inline vs. Block Elements**
-   - **Block-level elements** (e.g., `<p>`, `<div>`) start on a new line and take full width.
-   - **Inline elements** (e.g., `<em>`, `<span>`) flow within text and take only necessary space.
-2. **The CSS Box Model**
+* Elements on a page are either **block-level** or **inline** elements
+* **Block-level elements** (e.g., `<p>`, `<div>`) start on a new line and occupy the full width of the page.
+* **Inline elements** (e.g., `<em>`, `<span>`) flow within text and take only as much space .
+
+1. **The CSS Box Model**
    - Every element is a box with:
      - **Content** (text, images)
      - **Padding** (space inside, around content)
      - **Border** (visible edge around padding)
      - **Margin** (space outside, between elements)
    - **`outline`** is non-layout (overlays content).
-3. **Margin Collapse**
+2. **Margin Collapse**
    - Adjacent vertical margins combine (e.g., a 20px top margin + 10px bottom margin = 20px gap, not 30px).
-4. **Borders & Shorthand Syntax**
+3. **Borders & Shorthand Syntax**
    - Borders can be styled per edge (top/right/bottom/left) with shorthand like `border: 1px solid red`.
    - Padding/margin use TRBL shorthand (e.g., `margin: 10px 0 20px 0`).
-5. **CSS Units**
+4. **CSS Units**
    - **Absolute** (e.g., `px`, `cm`): Fixed sizes.
    - **Relative**:
      - **`em`**: Relative to element’s font size.
      - **`rem`**: Relative to root (`<html>`) font size.
      - **Viewport units** (`vw`, `vh`): Percentage of window size.
-6. **Floats**
+5. **Floats**
    - `float: left/right` pulls elements out of normal flow, allowing text or other elements to wrap around them.
-7. **Box Sizing**
+6. **Box Sizing**
    - **`content-box` (default)**: Width/height exclude padding/border.
    - **`border-box`**: Width/height include padding/border (more intuitive).
 
