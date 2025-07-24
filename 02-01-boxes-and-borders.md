@@ -310,13 +310,10 @@ We'll wrap it up there for now - in the next section we're going to work through
 
 ### CSS Flags
 
-In this exercise, you'll use CSS to recreate some country flags.
+You're going to use the CSS properties we've learned about so far to recreate some country flags.
 
+<figure>
+    <img src="./images/box-model/css-flags.png">
+</figure>
 
-
-
-
-
-
-
-
+You'll find the HTML code in [flags.html](examples/02-010)
