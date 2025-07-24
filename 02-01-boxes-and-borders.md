@@ -308,7 +308,7 @@ We'll wrap it up there for now - in the next section we're going to work through
 
 ## Exercises
 
-### CSS Flags
+### Boxes & Borders Exercise 1: CSS Flags
 
 You're going to use the CSS properties we've learned about so far to recreate some country flags.
 
@@ -316,4 +316,21 @@ You're going to use the CSS properties we've learned about so far to recreate so
     <img src="./images/box-model/css-flags.png">
 </figure>
 
-You'll find the HTML code in [flags.html](examples/02-010)
+The specification for each flag is above, or you can find a PDF version here:
+
+* **[css-flags.pdf](./images/box-model/css-flags.pdf)**
+
+You'll find the HTML code in [flags.html](examples/02-01-boxes-and-borders/flags.html), and the linked stylesheet in [flags.css]({{page.examples}}/flags.css)
+
+```html
+{% include_relative {{ page.examples }}/flags.html %}
+```
+
+**Do not edit the HTML.** Your task is to turn the provided HTML into the four flags of the countries above using **pure CSS**.
+
+### Boxes and Borders Exercise: News Article
+
+
+
+  
+
