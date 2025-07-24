@@ -5,21 +5,22 @@
 	<title>Border Styles Example</title>
 	<style>
 		body {
-			flex-wrap: wrap;
-			justify-content: center;
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+			grid-row-gap: 20px;
+			justify-items: center;
 			align-items: center;
 			height: 100vh;
-			display: flex;
-			gap: 16px;			
 		}
 		div {
+			font-family: Consolas;
 			background-color: white;
-			width: 200px;
-			height: 50px;
+			width: 120px;
+			height: auto;
 			display: flex;
 			align-items: center;
 			justify-content: center;
-
 		}
 	</style>
 </head>
