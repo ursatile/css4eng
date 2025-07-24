@@ -276,8 +276,13 @@ In 25 years of web development, I have never, ever encountered a situation where
 
 If we modify our example CSS to override the default:
 
-```
-```
+{% highlight css mark_lines="7" %}
+{% include_relative {{ page.examples }}/border-box.css %}
+{% endhighlight %}
+
+we can get our `<div>` elements to render side-by-side:
+
+<iframe src="{{ page.examples}}/border-box.html" style="height: 10em;"></iframe>
 
 
 

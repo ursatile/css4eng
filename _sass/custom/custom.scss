@@ -1,7 +1,7 @@
 :root {
 	--code-highlight-border-width: 1px;
-	--code-highlight-border-color: #333;
-	--code-highlight-background-color: #222;
+	--code-highlight-border-color: #666;
+	--code-highlight-background-color: #444;
 }
 
 div.highlighter-rouge,
@@ -12,15 +12,15 @@ figure.highlight {
 	font-size: 1.2rem;
 
 	span.hll {
-		&::before {
-			content: "➡️";
-			font-weight: bold;
-			font-size: 160%;
-			position: absolute;
-			left: 0px;
-			margin-top: 1px;
-			z-index: 10;
-		}
+		// &::before {
+		// 	content: "➡️";
+		// 	font-weight: bold;
+		// 	font-size: 100%;
+		// 	position: absolute;
+		// 	left: 0px;
+		// 	margin-top: 1px;
+		// 	z-index: 10;
+		// }
 		display: block;
 		background: var(--code-highlight-background-color);
 		// padding-top: 3px;

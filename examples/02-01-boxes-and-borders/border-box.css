@@ -4,4 +4,5 @@ div {
 	padding: 10px;
 	border: 2px solid black;
 	background-color: hotpink;
+	box-sizing: border-box;
 }
