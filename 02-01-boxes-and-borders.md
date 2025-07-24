@@ -154,7 +154,7 @@ p {
 }
 ```
 
-When it comes to borders, there's a whole bunch of ways we can combine the various properties. Each edge of the element can have a border-width, a border-style, and a border-color - and any of these properties can use any of the shorthand syntaxes above:
+When it comes to borders, there's a whole bunch of ways we can combine the various properties. Each edge of the element can have a `border-width`, a `border-style`, and a `border-color` - and any of these properties can use any of the shorthand syntaxes above:
 
 ```css
 {% include_relative {{ page.examples}}/border-syntax.css %}
@@ -162,7 +162,23 @@ When it comes to borders, there's a whole bunch of ways we can combine the vario
 
 <iframe src="{{ page.examples }}/border-syntax.html"></iframe>
 
-Now, another reason I wanted to talk about borders nice and early is that they're a great way to introduce two more fundamental CSS concepts: colours and units.
+The `border-style` property must take one of the values defined in the CSS spec:
+
+* `none`: no border
+* 
+
+```
+border-style: none;
+border-style: hidden;
+border-style: dotted;
+border-style: dashed;
+border-style: solid;
+border-style: double;
+border-style: groove;
+border-style: ridge;
+border-style: inset;
+border-style: outset;
+```
 
 ## Introducing CSS Units
 
@@ -293,27 +309,7 @@ We'll wrap it up there for now - in the next section we're going to work through
 * **Inline elements** (e.g., `<em>`, `<span>`) flow within text and take only as much space as their content.
 * Elements have a **content box**, surrounded by **padding**, then **border**, and then a **margin** - this is known as the **CSS box model**
 * Margins of adjacent elements will **collapse**
-* Padding, border and margin width are specified using CSS units, in the order top, right, bottom, left - it's clockwise from the top, or you can use the mnemonic *trouble* to remember the order.
-* CSS units are **absolute** -- `px`, `cm`, `pt` -- or **relative** - `em` (relative to the current font size), `rem` (relative to the document's root font size), `vw` and `vh` (relative to the viewport width and height), or a percentage `%` of the parent element.
-* `float: left/right` pulls elements out of normal flow, allowing text or other elements to wrap around them.
-* `box-sizing` controls whether an element's width `content-box` (default)**: Width/height exclude padding/border.
-
-1. - **`border-box`**: Width/height include padding/border (more intuitive).
-
-#### **Practical Takeaways:**
-
-- Use `border-box` universally for predictable layouts:
-
-  css
-
-  ```
-  * { box-sizing: border-box; }
-  ```
-
-- Prefer relative units (`rem`, `%`, `vw/vh`) for responsive designs.
-
-- Margins collapse vertically; adjust with padding if needed.
-
-- Floats require clearing (e.g., `clear: both`) to prevent layout issues.
-
-This foundation explains how CSS handles layout, spacing, and sizing—key for building modern, adaptable UIs.
+* The `padding`, `border` and `margin` width are specified using CSS units, in the order top, right, bottom, left - it's clockwise from the top, or you can use the mnemonic *trouble* to remember the order.
+* CSS units are **absolute** (`px`, `cm`, `pt`) or **relative**. Relative units include `em` (relative to the current font size), `rem` (relative to the document's root font size), `vw` and `vh` (relative to the viewport width and height), or a percentage `%` of the parent element.
+* The `float` property will pull an element out of normal flow, allowing text or other elements to wrap around it.
+* The `box-sizing` property controls whether an element's width *includes* padding and border (`border-box`)  or the padding and border are *added* to the specified width (`content-box`). `border-box` is far more useful and intuitive, but for historical reasons `content-box` is the default.
