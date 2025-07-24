@@ -19,7 +19,9 @@ Second: I think our industry has, historically, not done a great job teaching CS
 
 Third: CSS is hard to test. It doesn't crash. It usually doesn't produce error messages. If you accidentally change a heading from being 100 pixels high to being 10 pixels high, it's not going to break the build; your code still works, it just looks wrong - and unless you pick it up during manual testing, you're not going to know about that until somebody files a bug saying "the website looks weird".
 
-Fourth: many parts of CSS are wildly 
+Fourth: many parts of CSS are inconsistent, and some bits of it are just plain wrong. There's a wonderful page up on the CSS working group's wiki called "[Incomplete List of Mistakes in the Design of CSS](https://wiki.csswg.org/ideas/mistakes)" that documents a whole bunch of things which, with the benefit of hindsight, should probably h
+
+ --- but because CSS is so widely used, as soon as something's part of the spec, there will be real websites out there in the real world that rely on it. 
 
 And finally, and probably because of all the reasons we just talked about: most CSS you'll find in the wild is terrible. Development teams focus on features, data, performance; the CSS gets bolted on as an afterthought, hacked around using increasingly complex rules until it sort of mostly looks good enough... then the next developer comes along, can't make any sense of what's already there, and every time they modify it somebody complains that it's broken something on a completely different part of the website, so instead of being evolved and maintained over time, we just keep adding new layers on top of everything that's already there, until you've got a site with ten different kinds of buttons on it and nobody knows what'll break if you change one.
 
