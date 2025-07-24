@@ -284,4 +284,51 @@ we can get our `<div>` elements to render side-by-side:
 
 <iframe src="{{ page.examples}}/border-box.html" style="height: 10em;"></iframe>
 
+We'll wrap it up there for now - in the next section we're going to work through a couple of exercises that'll give you a chance to try out the CSS box formatting model.
 
+## Review & Recap
+
+1. **Inline vs. Block Elements**
+   - **Block-level elements** (e.g., `<p>`, `<div>`) start on a new line and take full width.
+   - **Inline elements** (e.g., `<em>`, `<span>`) flow within text and take only necessary space.
+2. **The CSS Box Model**
+   - Every element is a box with:
+     - **Content** (text, images)
+     - **Padding** (space inside, around content)
+     - **Border** (visible edge around padding)
+     - **Margin** (space outside, between elements)
+   - **`outline`** is non-layout (overlays content).
+3. **Margin Collapse**
+   - Adjacent vertical margins combine (e.g., a 20px top margin + 10px bottom margin = 20px gap, not 30px).
+4. **Borders & Shorthand Syntax**
+   - Borders can be styled per edge (top/right/bottom/left) with shorthand like `border: 1px solid red`.
+   - Padding/margin use TRBL shorthand (e.g., `margin: 10px 0 20px 0`).
+5. **CSS Units**
+   - **Absolute** (e.g., `px`, `cm`): Fixed sizes.
+   - **Relative**:
+     - **`em`**: Relative to element’s font size.
+     - **`rem`**: Relative to root (`<html>`) font size.
+     - **Viewport units** (`vw`, `vh`): Percentage of window size.
+6. **Floats**
+   - `float: left/right` pulls elements out of normal flow, allowing text or other elements to wrap around them.
+7. **Box Sizing**
+   - **`content-box` (default)**: Width/height exclude padding/border.
+   - **`border-box`**: Width/height include padding/border (more intuitive).
+
+#### **Practical Takeaways:**
+
+- Use `border-box` universally for predictable layouts:
+
+  css
+
+  ```
+  * { box-sizing: border-box; }
+  ```
+
+- Prefer relative units (`rem`, `%`, `vw/vh`) for responsive designs.
+
+- Margins collapse vertically; adjust with padding if needed.
+
+- Floats require clearing (e.g., `clear: both`) to prevent layout issues.
+
+This foundation explains how CSS handles layout, spacing, and sizing—key for building modern, adaptable UIs.
