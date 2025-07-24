@@ -164,25 +164,13 @@ When it comes to borders, there's a whole bunch of ways we can combine the vario
 
 The `border-style` property must take one of the values defined in the CSS spec:
 
-<iframe src="{{ page.examples }}/border-styles.html"></iframe>
+<figure>
+<iframe style="height: 16em;" src="{{ page.examples }}/border-styles.html"></iframe>
+<figcaption>CSS border styles</figcaption>
+</figure>
+> Wondering why `none` and `hidden` do the same thing? It's all to with *border collapse*, which we'll meet in a later section, but the short answer is: if you combine a `solid` border with a `none` border, the `solid` border wins. If you combine a `solid` border with `hidden` border, the `hidden` wins.
 
-
-
-* `none`: no border
-* `hidden`: no border
-
-```
-border-style: none;
-border-style: hidden;
-border-style: dotted;
-border-style: dashed;
-border-style: solid;
-border-style: double;
-border-style: groove;
-border-style: ridge;
-border-style: inset;
-border-style: outset;
-```
+The `border-color` can be any CSS color --- we'll learn all about those in the section on colors and composition a little later --- and the `border-siz
 
 ## Introducing CSS Units
 
