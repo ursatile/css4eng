@@ -194,11 +194,11 @@ There's one more absolute measurement we should mention here, and that's zero. Z
 
 Absolute units are useful for creating pixel-perfect layouts, but that's not always a good idea, because there's a bunch of things you can't control. You have no control over how wide, or how tall, your user's browser window is; over what sort of device they're viewing your pages on, or whether they've adjusted their default font size. For all these reasons, it's generally a much better idea to create responsive layouts by using relative units.
 
-## Relative Units
+### Relative Units
 
 Relative units are how CSS lets us specify things like "make this half the height of the current window", or "this should take up two-thirds of its container", or "bigger text should have a thicker border."
 
-### ems and rems
+#### ems and rems
 
 An `em` is another unit from the days of mechanical typesetting - and has nothing to do with the HTML `<em>` element we've seen; it's just bad luck that we're only just getting warmed up and we've already got two completely different things that are both called `em`.
 
@@ -222,7 +222,7 @@ See how the Heading 1 has a much bigger border, because the browser renders it i
 
 A `rem` is an `em` but it's relative to the *root font size* - so it'll give you a consistent unit which doesn't vary between headings, paragraphs, etc., but which *does* reflect changes to the document's --- or the browser's --- default font size.
 
-## Percentages
+#### Percentages
 
 Let's get to know another couple of CSS properties: `width` and `height`. These ones do pretty much what you'd expect them to do:
 
@@ -249,6 +249,16 @@ The `<h1>`? That's 50% of the width of its parent element --- in this case the d
 The `<h2>` has its `width` set to `50vh`. `vh` is a CSS unit equal to one-hundredth of the *viewport height* - so as we change the height of the window, the width of the `<h2>` element changes so that it's always half of the window height. And the `<p>` element has its `height` set based on `vw` - the *viewport width*
 
 Now, this is a great example of a stupid demo. You will never, ever, *ever* build a real web page or application in which a heading changes width based on the height of the window --- well, maybe if you were building some sort of bizarre online puzzle game --- but it does demonstrate really clearly what units like `vw` and `vh` actually do.
+
+### Auto
+
+One more relative unit that's remarkably useful in CSS is `auto`. Most of the time, `auto` happens automatically --- the height of a paragraph will be automatically set to the size of its content, for example.
+
+One incredibly useful, but slightly counter-intuitive, application of `auto` is that if you give an element a fixed width and then set the left and right `margin` of that element to `auto`, the browser will centre the element horizontally.
+
+<iframe src="{{page.examples}}/auto-margins.html"></iframe>
+
+
 
 ## Float Like A Butterfly...
 
