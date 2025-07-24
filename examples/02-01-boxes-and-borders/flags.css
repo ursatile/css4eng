@@ -35,12 +35,22 @@ div#flag-se {
 	background-color: royalblue;
 	width: 300px;
 	height: 200px;
-	#flag-se-nw {
-		background: royalblue;
+	span {
+		display: block;
 		width: 100px;
 		height: 80px;
-		border-width: 0 40px 40px 0;
+		border-width: 0 40px 0 0;
 		border-color: gold;
 		border-style: solid;
 	}
+	div {
+		height: 40px;
+		background-color: gold;
+	}
+}
+
+div#flag-no {
+	width: 275px;
+	height: 200px;
+	background: navy;
 }
