@@ -2,7 +2,7 @@
 
 module Jekyll
   module Tags
-    class ExampleBlock < Liquid::Block
+    class ExampleTag < Liquid::Tag
       include Liquid::StandardFilters
 
       # The regular expression syntax checker. Start with the language specifier.
@@ -68,8 +68,6 @@ module Jekyll
         require "rouge"
         formatter = Rouge::Formatters::HTML.new
         formatter = line_highlighter_formatter(formatter) if @highlight_options[:mark_lines]
-        formatter = table_formatter(formatter) if @highlight_options[:linenos]
-
         lexer = Rouge::Lexer.find_fancy(@lang, code) || Rouge::Lexers::PlainText
         formatter.format(lexer.lex(code))
       end
@@ -87,15 +85,6 @@ module Jekyll
 
         raise SyntaxError, "Syntax Error for mark_lines declaration. Expected a " \
                            "double-quoted list of integers."
-      end
-
-      def table_formatter(formatter)
-        Rouge::Formatters::HTMLTable.new(
-          formatter,
-          :css_class    => "highlight",
-          :gutter_class => "gutter",
-          :code_class   => "code"
-        )
       end
 
       def render_codehighlighter(code)
