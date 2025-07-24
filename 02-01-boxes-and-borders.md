@@ -254,11 +254,11 @@ Now, this is a great example of a stupid demo. You will never, ever, *ever* buil
 
 One more relative unit that's remarkably useful in CSS is `auto`. Most of the time, `auto` happens automatically --- the height of a paragraph will be automatically set to the size of its content, for example.
 
-One incredibly useful, but slightly counter-intuitive, application of `auto` is that if you give an element a fixed width and then set the left and right `margin` of that element to `auto`, the browser will centre the element horizontally.
+One extremely useful, but slightly counter-intuitive, application of `auto` is that if you give an element a fixed width and then set the left and right `margin` of that element to `auto`, the browser will centre the element horizontally.
 
-<iframe src="{{page.examples}}/auto-margins.html"></iframe>
-
-
+{% highlight html mark_lines="10" %}
+{% include_relative {{page.examples}}/auto-margins.html %}
+{% endhighlight %}
 
 ## Float Like A Butterfly...
 
