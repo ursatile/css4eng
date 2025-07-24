@@ -53,4 +53,30 @@ div#flag-no {
 	width: 275px;
 	height: 200px;
 	background: navy;
+	div {
+		background: crimson;
+		border-style: solid;
+		border-color: white;
+		border-width: 0;
+		height: 75px;
+		padding: 0;
+		margin: 0;
+	}		
+	div.north {
+		border-bottom-width: 12px;
+	}
+	div.south {
+		margin-top: 26px;
+		border-top-width: 12px;
+	}
+	div.west {
+		width: 75px;
+		border-right-width: 12px;
+		float: left;
+	}
+	div.east {
+		width: 150px;
+		border-left-width: 12px;
+		float: right;
+	}
 }
