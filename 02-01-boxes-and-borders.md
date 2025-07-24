@@ -262,14 +262,19 @@ There's a `<section>` containing two `<div>` elements; there's a rule saying `<d
 
 Welcome to another historical quirk of CSS: *box sizing*. CSS uses two different sizing models --- `border-box` and `content-box`. 
 
+<figure>
+    <img src="./images/box-sizing.png" alt="a visual illustration of the difference between CSS box sizing models" />
+    <figcaption>
+        CSS box sizing models compared: <code>content-box</code> vs <code>border-box</code>
+    </figcaption>
+</figure>
+
 * With `content-box` sizing, the element's *content* is drawn at the specified width and height, and then the padding and border are drawn *outside* the content.
 * With `border-box` sizing, the width and height are applied to the *outside of the border*, so if you say something's 50% wide, that element, including its padding and border, will be half the width of its container.
 
 In 25 years of web development, I have never, ever encountered a situation where `content-box` solved my problem; it's `border-box` every single time. Except... `content-box` is the default. It shouldn't be the default, but it is.
 
-![box-sizing](./images/box-sizing.png)
-
-
+If we modify our example CSS to speify 
 
 
 
