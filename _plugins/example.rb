@@ -46,9 +46,8 @@ module Jekyll
         code = read_file(file_path, context)
         @lang = File.extname(file_path).delete_prefix(".")
         output = render_rouge(code)
-        rendered_output = add_code_tag(output)
-
-        prefix + rendered_output + suffix + "fooo!"
+        rendered_output = add_code_tag(output, expanded_path, "examples/#{page_filename}/#{expanded_path}")
+        prefix + rendered_output + suffix
       end
 
       private
@@ -101,10 +100,10 @@ module Jekyll
         h(code).strip
       end
 
-      def add_code_tag(code)
+      def add_code_tag(code, name, href)
         code_attrs = %(class="language-#{@lang.tr("+", "-")}" data-lang="#{@lang}")
         %(<figure class="highlight"><pre><code #{code_attrs}>#{code.chomp}</code></pre>
-				<figcaption><a href="foo.html">foo.html</a></figcaption></figure>)
+				<figcaption><a href="#{href}">#{name}</a></figcaption></figure>)
       end
     end
   end

@@ -7,7 +7,6 @@
 div.highlighter-rouge,
 figure.highlight {
 	line-height: 1.2em;
-	border: 1px solid #999;
 	border-radius: 0;
 	font-size: 1.2rem;
 
@@ -48,10 +47,24 @@ figure.highlight {
 div.highlighter-rouge div.highlight,
 figure.highlight {
 
+	pre {
+		border: 1px solid #999;
+	}
+	figcaption {
+		font-size: 0.65em;
+		text-align: right;
+		a {
+			text-decoration: none;
+			&::after {
+				content: "➡️ ";
+			}
+		}
+	}
+
 	&,
 	pre {
 		padding: 0;
-		background-color: #000;
+		background-color: #000;		
 		tab-size: 1rem;
 
 		code {
