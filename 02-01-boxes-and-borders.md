@@ -274,7 +274,12 @@ Welcome to another historical quirk of CSS: *box sizing*. CSS uses two different
 
 In 25 years of web development, I have never, ever encountered a situation where `content-box` solved my problem; it's `border-box` every single time. Except... `content-box` is the default. It shouldn't be the default, but it is.
 
-If we modify our example CSS to speify 
+If we modify our example CSS to override the default:
+
+```
+```
+
+
 
 
 
