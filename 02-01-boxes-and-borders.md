@@ -164,6 +164,10 @@ When it comes to borders, there's a whole bunch of ways we can combine the vario
 
 The `border-style` property must take one of the values defined in the CSS spec:
 
+<iframe src="{{ page.examples }}/border-styles.html"></iframe>
+
+
+
 * `none`: no border
 * `hidden`: no border
 
