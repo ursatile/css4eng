@@ -170,7 +170,7 @@ The `border-style` property must take one of the values defined in the CSS spec:
 </figure>
 > Wondering why `none` and `hidden` do the same thing? It's all to with *border collapse*, which we'll meet in a later section, but the short answer is: if you combine a `solid` border with a `none` border, the `solid` border wins. If you combine a `solid` border with `hidden` border, the `hidden` wins.
 
-The `border-color` can be any CSS color --- we'll learn all about those in the section on colors and composition a little later --- and the `border-siz
+The `border-color` can be any CSS color --- we'll learn all about those in the section on colors and composition a little later --- and the `border-width` can be any CSS length unit, so now's probably a great time to learn about CSS units and how they work.
 
 ## Introducing CSS Units
 
@@ -305,3 +305,8 @@ We'll wrap it up there for now - in the next section we're going to work through
 * CSS units are **absolute** (`px`, `cm`, `pt`) or **relative**. Relative units include `em` (relative to the current font size), `rem` (relative to the document's root font size), `vw` and `vh` (relative to the viewport width and height), or a percentage `%` of the parent element.
 * The `float` property will pull an element out of normal flow, allowing text or other elements to wrap around it.
 * The `box-sizing` property controls whether an element's width *includes* padding and border (`border-box`)  or the padding and border are *added* to the specified width (`content-box`). `border-box` is far more useful and intuitive, but for historical reasons `content-box` is the default.
+
+## Exercises
+
+
+
