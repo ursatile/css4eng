@@ -8,35 +8,39 @@
 			margin: 1em;
 		}
 
-		a, input {			
+		a,
+		input {
 			display: block;
 			width: 100%;
 			box-sizing: border-box;
 			margin: 1em;
 			text-decoration: none;
-			border: 20px solid silver;			
+			border: 20px solid silver;
 			padding: 1em;
 		}
 
-		:link {
+		a:link {
 			border-left-color: crimson;
 		}
 
-		:visited {
+		a:visited {
 			border-right-color: purple;
 		}
 
-		:hover {
-			border-bottom-color: royalblue;
-		}
+		a,
+		input {
+			&:hover {
+				border-bottom-color: royalblue;
+			}
 
-		:active {
-			background-color: gold;
-		}
+			&:active {
+				background-color: gold;
+			}
 
-		:focus {
-			border-top-color: forestgreen;
-			outline: none;		
+			&:focus {
+				border-top-color: forestgreen;
+				outline: none;
+			}
 		}
 	</style>
 </head>
