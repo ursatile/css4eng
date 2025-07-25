@@ -3,9 +3,9 @@
 <head>
 	<title>Combinators</title>
 	<style>
-		div {
+		div, h1 {
 			padding: 1em;
-			border: 1px solid black;
+			border: 1px solid white;
 			margin: 1em;
 		}
 
@@ -14,23 +14,28 @@
 		}
 
 		div > div {
-			background-color: royalblue;
+			background-color: navy;
+			color: white;
 		}
 		
 		div ~ div {
 			background-color: gold;
+			color: black;
 		}
 
 		div + div {
-			background-color: green;
+			background-color: indigo;
+			color: white;
 		}		
 	</style>
 </head>
 <body>
 	<div>
-		<div>
-			I'm a DIV whose parent is a DIV. I should be blue.
-			<h1>I'm a H1 whose parent is a DIV. I should be blue.</h1>
+		I'm a <code>&lt;div&gt;</code>. My parent is a <code>&lt;body&gt;</code>
+		<div>			
+			I'm a <code>&lt;div&gt;</code> whose parent is a <code>&lt;div&gt;</code>. I should be blue.
+			<div>I'm a DIV. I should be blue.</div>
+			<p>I'm a H1 whose parent is a DIV. I should be blue.</p>
 			<div>I'm a DIV whose adjacent sibling is a H1. I should be green.</div>
 			<div>I'm a DIV whose older sibling is a H1. I should be yellow.</div>
 		</div>
