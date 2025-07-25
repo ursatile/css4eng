@@ -14,42 +14,43 @@
 			background-color: crimson;
 		}
 
-		article > div {
+		article>div {
 			background-color: royalblue;
 		}
 
-		div div {
-			background-color: forestgreen;
-		}
-
-		div>div {
-			background-color: royalblue;
-			color: white;
-		}
-
-
-
-		div~div {
+		article p {
 			background-color: gold;
-			color: black;
 		}
 
-		div+div {
+		p~div {
 			background-color: indigo;
 			color: white;
+		}
+
+		p+div {
+			background-color: green;
+			color: white;
+		}
+		article p span { 
+			background-color: orange;
 		}
 	</style>
 </head>
 <body>
 	<article>
 		<div>
-			I'm a <code>&lt;div&gt;</code> whose parent is an
-			<code>&lt;article&gt;</code>. I should be blue.
-			<div>I'm a <code>&lt;div&gt;</code>. My ancestor is an <code>&lt;article&gt;</code>. I should be blue.</div>
+			I'm a div. My parent is an article. I should be blue.
+			<div>I'm a div. My grandparent is an article, but my parent is not, so I
+				should be crimson</div>
 		</div>
-		<p>I'm a <code>&lt;p&gt;</code> whose parent is an <code>&lt;article&gt;</code>. I should be blue.</p>
-		<div>I'm a DIV whose adjacent sibling is a H1. I should be green.</div>
-		<div>I'm a DIV whose older sibling is a H1. I should be yellow.</div>
+		<p>I'm a paragraph. My parent is an article. I should be gold.
+			<span>(and I'm a span, my parent is a paragraph, and my grandparent is an article,
+				so I should be orange)
+			</span>
+
+		</p>
+		<div>I'm a div whose adjacent sibling is a paragraph. I should be green.</div>
+		<div>I'm a div whose older sibling is a paragraph. I should be indigo.</div>
 	</article>
 </body>
 </html>
