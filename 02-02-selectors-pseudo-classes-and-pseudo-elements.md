@@ -59,7 +59,15 @@ There are four more combinators you should know about.
 
 Web pages are interactive. Users click on links, fill out forms --- even just moving the mouse around the screen can be a form of interaction.
 
-Now, in theory, this is all nice & simple. Everything's a `:link` until something happens. When you hover over it, it gets the `:hover` pseudo-class, 
+Now, in theory, this is all nice & simple. Everything's a `:link` until something happens. If you move the focus to that element - e.g. using the <kbd>Tab</kbd> key on your keyboard - it gets the `:focus` pseudo-class. When you hover over it, it gets the `:hover` pseudo-class; when you're actually clicking it, it gets the `:active` pseudo-class, and then any link to a page you've visited before gets the `:visited` pseudo-class.
+
+In practice... it's way more complicated than that. 
+
+
+
+
+
+
 
 {% example state-selectors.html %}
 
