@@ -5,6 +5,8 @@ nav_order: 10202
 word_count: 63
 target_minutes: 20
 ---
+One of the most important principles in software engineering is known as the *seperation of concerns*
+
 # Selectors, Pseudo-Classes and Pseudo-Elements (20m)
 
 ## Course Content
