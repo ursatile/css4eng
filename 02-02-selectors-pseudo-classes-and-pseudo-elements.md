@@ -31,7 +31,21 @@ Compare that to this:
 
 {% example less-bad-html.html %}
 
-The class names here aren't based on what the element should *look like*, they're based on where that element appears in the structure - and then the CSS uses that 
+The class names here aren't based on what the element should *look like*, they're based on where that element appears in the structure - and then the CSS uses that information to style them according to our requirements.
+
+But, other than the `section` being given the `promotion` class, most of the class names here aren't actually communicating anything that we can't infer  from the document structure itself. The browser can't tell that this page is some sort of product promotion unless we add a class name, but it can absolutely tell that this `h1` is the first element in a section, that there's a series of paragraphs immediately after it, and so on.
+
+Using modern CSS, we can target elements based on their relationships without having to use extraneous class names. Let's find out how.
+
+The DOM Family Tree
+
+Browsers render HTML and CSS by constructing something called the **document object model**, usually just called the DOM. To understand how the DOM 
+
+## Combinators
+
+
+
+
 
 
 
