@@ -9,33 +9,30 @@
 			margin: 1em;
 		}
 
-		/* div {
+		div {
 			background-color: red;
 		}
 
 		div > div {
 			background-color: royalblue;
-		} */
+		}
 		
 		div ~ div {
 			background-color: gold;
 		}
-		
+
 		div + div {
 			background-color: green;
-		}
-
-		
-		
+		}		
 	</style>
 </head>
 <body>
 	<div>
 		<div>
 			I'm a DIV whose parent is a DIV. I should be blue.
-			<div>I'm a DIV whose parent is a DIV. I should be blue.</div>
-			<div>I'm a DIV whose adjacent sibling is a DIV. I should be green.</div>
-			<div>I'm a DIV whose older sibling is a DIV. I should be yellow.</div>
+			<h1>I'm a H1 whose parent is a DIV. I should be blue.</h1>
+			<div>I'm a DIV whose adjacent sibling is a H1. I should be green.</div>
+			<div>I'm a DIV whose older sibling is a H1. I should be yellow.</div>
 		</div>
 		<div></div>
 		<div></div>
