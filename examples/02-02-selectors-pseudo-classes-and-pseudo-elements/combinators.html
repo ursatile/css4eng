@@ -3,33 +3,49 @@
 <head>
 	<title>Combinators</title>
 	<style>
-		article section {
-			background-color: indigo;
+		div {
+			padding: 1em;
+			border: 1px solid black;
+			margin: 1em;
 		}
+
+		div {
+			background-color: red;
+		}
+
+		div > div {
+			background-color: royalblue;
+		}
+		
+		div ~ div {
+			background-color: gold;
+		}
+		
+		div + div {
+			background-color: green;
+		}
+
+		
 	</style>
 </head>
 <body>
-	<div class="anakin">
-		<div class="luke"></div>
-		<div class="leia">
-			<div class="ben"></div>
+	<div>
+		<div>
+			I'm a DIV whose parent is a DIV. I should be blue.
+			<div>I'm a DIV whose parent is a DIV. I should be blue.</div>
+			<div>I'm a DIV whose older sibling is a DIV. I should be yellow.</div>
+			<div>I'm a DIV whose older sibling is a DIV. I should be yellow.</div>
 		</div>
+		<div></div>
+		<div></div>
+		<div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<div></div>
+		<div></div>
+		<div></div>
 	</div>
-	<article>
-		<section>
-			<h1>I'm H1!</h1>
-			<p>I'm the first paragraph after the H1. I should be purple.</p>
-			<p>I'm another paragraph! I should be white because I'm in the first
-				section, which has a dark background.</p>
-			<p>I'm also a paragraph!</p>
-		</section>
-		<section>
-			<h1>I'm H1!</h1>
-			<p>I'm the first paragraph after the H1. I should be purple.</p>
-			<p>I'm another paragraph! I should be white because I'm in the first
-				section, which has a dark background.</p>
-			<p>I'm also a paragraph!</p>
-		</section>
-	</article>
 </body>
 </html>
