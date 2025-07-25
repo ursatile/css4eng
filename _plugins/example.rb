@@ -22,7 +22,28 @@ module Jekyll
         end
       end
 
-      def read_file(path, context)
+      def read_or_create_file(path, context)
+        unless File.exist?(path)
+          title = File.basename(path, ".html").tr("_-", " ").split.map(&:capitalize).join(" ")
+          if path.downcase.end_with?(".html")
+            puts "#{path} not found - creating with HTML boilerplate"
+            File.write(path, <<~HTML)
+              <!DOCTYPE html>
+              <html lang="en">
+              <head>
+                <title>#{title}</title>
+              </head>
+              <body>
+              </body>
+              </html>
+            HTML
+          elsif path.downcase.end_with?(".css")
+            puts "#{path} not found - creating with CSS boilerplate"
+            File.write(path, "html { }")
+          else
+            File.write(path, "")
+          end
+        end
         file_read_opts = context.registers[:site].file_read_opts
         File.read(path, **file_read_opts)
       end
@@ -43,8 +64,9 @@ module Jekyll
           root_path = File.expand_path(context.registers[:site].config["source"])
           file_path = File.join(root_path, "examples", page_filename, expanded_path)
           attributes = parts.length > 1 ? parts[1] : "all"
-
-          code = read_file(file_path, context)
+          dir = File.dirname(file_path)
+          FileUtils.mkdir_p(dir) unless Dir.exist?(dir)
+          code = read_or_create_file(file_path, context)
           @lang = File.extname(file_path).delete_prefix(".")
           output = render_rouge(code)
           rendered_output = add_code_tag(output, expanded_path, "examples/#{page_filename}/#{expanded_path}")
