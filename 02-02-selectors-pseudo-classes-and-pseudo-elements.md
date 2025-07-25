@@ -59,13 +59,27 @@ There are four more combinators you should know about.
 
 Web pages are interactive. Users click on links, fill out forms --- even just moving the mouse around the screen can be a form of interaction.
 
-Using **state selectors**, CSS can target elements based on what's happening to them right now. State selectors are usually applied to elements like `<a>` and `<button>`
+### How Interaction Works
 
-* `:link` 
-
-
+To understand state selectors, you need to understand how a browser handles user interactions. 
 
 
+
+
+
+
+
+Using **state selectors**, CSS can target elements based on what's happening to them right now. State selectors are usually applied to elements we're expecting the user to click on, like `<a>` and `<button>`
+
+* `:hover` matches an element the user's pointer is hovering over. 
+
+  **Watch out for touchscreen devices.** If you're building interaction for smartphones or tablets, don't rely on `:hover` to do anything important.
+
+* `:active` matches an element that's actually being clicked on right now.
+
+* `:visited` matches an element that's previously been clicked
+
+* `:focus` matches an element that has the *focus*
 
 # Selectors, Pseudo-Classes and Pseudo-Elements (20m)
 
