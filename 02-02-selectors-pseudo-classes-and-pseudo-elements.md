@@ -104,7 +104,16 @@ We'll start with the useful ones.
 
 But hang on - that last link there, to the TV Tropes page about Wikipedia? That link's `href` attribute is `"https://tvtropes.org/pmwiki/pmwiki.php/Website/Wikipedia"`, which definitely contains `"wikipedia"`, so why is it red rather than blue?
 
-Two reasons. First: attribute selectors 
+Two reasons. First: attribute selectors, like class names and IDs, are *case sensitive* - so that's not going to match because our CSS rule is looking for `"wikipedia"` but the actual `href` is `"https://tvtropes.org/pmwiki/pmwiki.php/Website/Wikipedia"` --- capital “W” ---  so it won't match. Good news is that's an easy fix - add an `i` inside the `[ ]` for the selector rule:
+
+```css
+a[href*="wikipedia" i] {
+    background-color: blue;
+    color: white;
+}
+```
+
+Now, we have two rules: one says if the `href` starts with `"https://t"
 
 
 
