@@ -63,7 +63,7 @@ Web pages are interactive. Users click on links, fill out forms --- even just mo
 
 {% example state-selectors.html %}
 
-
+Let's start with the easy one: `active`
 
 
 
