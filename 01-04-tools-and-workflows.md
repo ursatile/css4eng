@@ -123,6 +123,10 @@ Now, when the page reloads: every single element has a magenta outline, and all 
 
 The reason why `outline` and `background-color` are so useful for this is that they don't affect the layout of the page. If we make an element larger, or draw a CSS `border` around it - we'll learn about borders in the next section - that actually changes the size of that element; the browser then has to adapt the layout, and in some cases that can actually make the bug you're looking for disappear completely. Stick to `outline` and `background-color`, and the layout doesn't change; it just gets easier to see where it's all coming from.
 
+## Testing Pages on a Mobile Device
+
+TODO: write this! - Google QR code sharing, etc, etc.
+
 There's one more tool I want to share with you all, before we start diving into the mechanics of CSS itself, that's caniuse.com
 
 ## caniuse.com

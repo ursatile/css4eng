@@ -69,7 +69,11 @@ In this example, each side of the border responds to a different pseudo-class, a
 
 If we tab around using the keyboard, you'll see the focus move to each link in turn; if we move the mouse over an element, we get the hover pseudoclass; if we click on it, it goes active, and then when we come back to the page, it doesn't have the `:link` pseudo-class any more, it has the `:visited` pseudo-class.
 
-If you open the same page on something like an iPhone, 
+Now, let's open that same page on a smartphone. You'll notice that links 
+
+
+
+
 
 
 
