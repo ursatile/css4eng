@@ -11,14 +11,14 @@ module Jekyll
           @filename = Regexp.last_match(1).downcase
           @highlight_options = parse_options(Regexp.last_match(2))
         else
-          raise SyntaxError, <<~MSG
-                  Syntax Error in tag 'example' while parsing the following markup:
+          @syntax_error = <<~MSG
+            Syntax Error in tag 'example' while parsing the following markup:
 
-                  #{markup}
+            #{markup}
 
-                  Valid syntax: example <filename> [mark_lines="3 4 5"]
+            Valid syntax: example <filename> [mark_lines="3 4 5"]
 
-                MSG
+          MSG
         end
       end
 
@@ -53,6 +53,7 @@ module Jekyll
       LEADING_OR_TRAILING_LINE_TERMINATORS = %r!\A(\n|\r)+|(\n|\r)+\z!.freeze
 
       def render(context)
+				if @syntax_error return @syntax_error
         begin
           prefix = context["highlighter_prefix"] || ""
           suffix = context["highlighter_suffix"] || ""
@@ -70,9 +71,11 @@ module Jekyll
           @lang = File.extname(file_path).delete_prefix(".")
           output = render_rouge(code)
           rendered_output = add_code_tag(output, expanded_path, "examples/#{page_filename}/#{expanded_path}")
-          prefix + rendered_output + suffix
+          output = prefix + rendered_output + suffix
+          if @highlight_options[:iframe]
+            output += %(<iframe src="https://www.google.co.uk/"></iframe>)
+          end
         rescue => e
-          line_number = @options && @options[:line_number] ? @options[:line_number] : "unknown"
           %(<div style="background-color: red; color: white; padding: 10px; border: 2px solid white;">
           <div>⚠️ #{page["path"]}</div>
           #{h(e.class.name + ": " + e.message)}

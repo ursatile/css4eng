@@ -53,13 +53,7 @@ There are four more combinators you should know about.
 
 > CSS also supports the **column combinator** `||`, which we'll talk about in the section about styling tables and tabular data.
 
-{% example combinators.html %}
-
-{% example delete-me.html %}
-
-
-
-
+{% example combinators.html iframe %}
 
 
 
