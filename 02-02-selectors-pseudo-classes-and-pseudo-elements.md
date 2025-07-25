@@ -57,13 +57,13 @@ There are four more combinators you should know about.
 
 ## State Selectors
 
-Web pages are interactive. Users click on links, fill out forms --- even just moving the mouse around the screen can be a form of interaction.
-
-### How Interaction Works
+Web pages are interactive. Users click on links, fill out forms --- even just moving the mouse around the screen can be a form of interaction. 
 
 {% example state-selectors.html %}
 
-Let's start with the easy one: `active`
+Let's start with the easy one: `:active`
+
+
 
 
 
