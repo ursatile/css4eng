@@ -14,10 +14,9 @@ module Jekyll
           @syntax_error = <<~MSG
             Syntax Error in tag 'example' while parsing the following markup:
 
-            #{markup}
+            <pre>#{markup}</pre>
 
-            Valid syntax: example <filename> [mark_lines="3 4 5"]
-
+            Valid syntax: example <filename> [mark_lines="3 4 5"] [iframe_style[="height: 10em;"]]
           MSG
         end
       end
@@ -53,7 +52,9 @@ module Jekyll
       LEADING_OR_TRAILING_LINE_TERMINATORS = %r!\A(\n|\r)+|(\n|\r)+\z!.freeze
 
       def render(context)
-				if @syntax_error return @syntax_error
+        if @syntax_error
+          return %(<div style="background-color: red; color: white; padding: 10px; border: 2px solid white;">#{@syntax_error}</div>)
+        end
         begin
           prefix = context["highlighter_prefix"] || ""
           suffix = context["highlighter_suffix"] || ""
@@ -73,7 +74,7 @@ module Jekyll
           rendered_output = add_code_tag(output, expanded_path, "examples/#{page_filename}/#{expanded_path}")
           output = prefix + rendered_output + suffix
           if @highlight_options[:iframe]
-            output += %(<iframe src="https://www.google.co.uk/"></iframe>)
+            output += %(<iframe src="./examples/#{page_filename}/#{expanded_path}" style="#{highlight_options[:iframe]}"></iframe>)
           end
         rescue => e
           %(<div style="background-color: red; color: white; padding: 10px; border: 2px solid white;">
