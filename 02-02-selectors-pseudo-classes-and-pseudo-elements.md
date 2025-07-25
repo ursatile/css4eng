@@ -91,13 +91,16 @@ Say we've got a page containing a bunch of links, and we want all the links that
 
 Attribute selectors give us a way to target elements based on the contents of their HTML attribute values.
 
+We'll start with the useful ones.
+
 |      | Syntax                            | Matches                                                      |
 | ---- | --------------------------------- | ------------------------------------------------------------ |
 |      | `a[title]`                        | Any `a` element with a `title` attribute (even if it's empty!) |
 | `=`  | `a[href="https://google.com"]`    | Any `a` element whose `href` attribute **exactly matches** `"https://google.com"` |
 | `*=` | `a[href*="wikipedia"]`            | Any `a` element whose `href` attribute contains `"wikipedia"` |
 | `^=` | `a[href^="https://tvtropes.org"]` | Any `a` element whose `href` starts with `"https://tvtropes.org"` |
-| `~=` |                                   |                                                              |
+
+{% example attribute-selectors-1.html iframe_style="" %}
 
 
 
