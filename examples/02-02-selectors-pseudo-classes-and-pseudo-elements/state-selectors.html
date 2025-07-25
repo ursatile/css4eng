@@ -8,31 +8,33 @@
 			margin: 1em;
 		}
 
-		a {
+		a, input {			
 			display: block;
+			width: 100%;
+			box-sizing: border-box;
 			margin: 1em;
 			text-decoration: none;
 			border: 20px solid silver;			
 			padding: 1em;
 		}
 
-		a:link {
+		:link {
 			border-left-color: crimson;
 		}
 
-		a:visited {
+		:visited {
 			border-right-color: purple;
 		}
 
-		a:hover {
+		:hover {
 			border-bottom-color: royalblue;
 		}
 
-		a:active {
+		:active {
 			background-color: gold;
 		}
 
-		a:focus {
+		:focus {
 			border-top-color: forestgreen;
 			outline: none;		
 		}
@@ -44,7 +46,7 @@
 		<a href="https://kagi.com/">Kagi</a>
 		<a href="https://bing.com/">Bing</a>
 		<a href="https://yahoo.com/">Yahoo!</a>
-		<input>
+		<input placeholder="I’m an input field - you can focus me on a smartphone">
 	</nav>
 </body>
 </html>
