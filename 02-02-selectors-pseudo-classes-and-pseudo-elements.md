@@ -53,7 +53,7 @@ There are four more combinators you should know about.
 
 > CSS also supports the **column combinator** `||`, which we'll talk about in the section about styling tables and tabular data.
 
-{% example combinators.html iframe_class=shallow %}
+{% example combinators.html mark_lines="3,5,7,9" iframe_style="height: 10em;" %}
 
 
 

@@ -95,13 +95,11 @@ module Jekyll
         # Split along 3 possible forms -- key="<quoted list>", key=value, or key
         input.scan(OPTIONS_REGEX) do |opt|
           key, value = opt.split("=")
+          puts key
           if value&.include?('"')
             value.delete!('"')
-            if value.include?(",")
-              value = value.split(",").map(&:strip)
-            else
-              value = value.strip
-            end
+            value = value.include?(",") ? value.split(",").map(&:strip) : value.strip
+            puts value
           end
           options[key.to_sym] = value || true
         end
