@@ -113,7 +113,9 @@ a[href*="wikipedia" i] {
 }
 ```
 
-Now, we have two rules: one says if the `href` starts with `"https://t"
+Now, we have two rules: one says if the `href` starts with `"https://tvtropes.org"`, the link is red; the other says if the `href` contains `"wikipedia"` -- case insensitive -- the link is blue. So which rule wins?
+
+Well, 
 
 
 
