@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bad HTML</title>
+	<style>
+		section.red {
+			color: red;
+		}
+
+
+		h1.green {
+			color: green;
+		}
+
+		h1.large {
+			font-size: 400%;
+		}
+
+		p.italic {
+			font-style: italic;
+		}
+
+		p.navy-blue {
+			color: navy;
+		}
+
+		p.bottom-border {
+			padding-bottom: 1em;
+			border-bottom: 2px solid purple;
+		}
+	</style>
+</head>
+<body>
+	<section class="red">
+		<h1 class="green large">The first H1 in a section should be big, and green.
+		</h1>
+		<p class="italic navy-blue">The first paragraph after an H1 should be navy
+			blue, and in italics.</p>
+		<p>This a normal paragraph.</p>
+		<p>This a normal paragraph.</p>
+		<p class="bottom-border">The last paragraph in a series of paragraphs should
+			have a purple bottom border.</p>
+		<h1>Other H1 tags should NOT be green or super-large.</h1>
+		<p>This a normal paragraph.</p>
+		<p>This a normal paragraph.</p>
+	</section>
+</body>
+</html>
