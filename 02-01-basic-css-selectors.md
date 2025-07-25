@@ -55,7 +55,7 @@ First up, we've got a wildcard rule here to make everything on the page navy.
 
 Next, we target the heading level 1 with an element rule, to give it white text on a navy background. We've got a `warning` class that makes things white on a red background, a `disclaimer` class that turns text `gainsboro` - a very, very pale shade of grey - and finally an ID selector: exactly one element on this page will be the `features` panel for our toaster, and we'd like to draw that in dark green on a pale green background.
 
-> ℹ️ HTML is generally case-insensitive, but CSS class names and IDs are not: your class names and element IDs have to exactly match your CSS selectors, including their case. An element with `<p
+> ℹ️ HTML is generally case-insensitive, but CSS class names and IDs are not: your class names and element IDs have to exactly match your CSS selectors, including their case. An element with `<p class="Disclaimer"></p>` won’t match a rule `p.disclaimer {}`, so be careful. My own preferred solution to this is to stick to lowercase ASCII for class names and element IDs - lowercase letters a-z, numbers 0-9, and the `-` 
 
 Now, you see how the word "warning" and "caution" is in navy blue here, despite being part of a warning paragraph? We actually have two conflicting rules here. One is the wildcard rule - hey, everything on this page should be navy blue, unless something overrides it. The other is saying “hey, stuff inside warning paragraphs should be white with a red background”.
 
