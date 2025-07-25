@@ -5,6 +5,9 @@ module Jekyll
     class ExampleTag < Liquid::Tag
       include Liquid::StandardFilters
 
+      # SYNTAX = %r!^([a-zA-Z0-9.+#_-]+)((\s+\w+(=(\w+|"([0-9]+\s)*[0-9]+"))?)*)$!.freeze
+      SYNTAX = %r!^([a-zA-Z0-9.+#_-]+)((\s+\w+(=(\w+|"[^"]*"))?)*)$!.freeze
+
       def initialize(tag_name, markup, tokens)
         super
         if markup.strip =~ SYNTAX
@@ -47,8 +50,6 @@ module Jekyll
         File.read(path, **file_read_opts)
       end
 
-      SYNTAX = %r!^([a-zA-Z0-9.+#_-]+)((\s+\w+(=(\w+|"([0-9]+\s)*[0-9]+"))?)*)$!.freeze
-
       LEADING_OR_TRAILING_LINE_TERMINATORS = %r!\A(\n|\r)+|(\n|\r)+\z!.freeze
 
       def render(context)
@@ -73,9 +74,10 @@ module Jekyll
           output = render_rouge(code)
           rendered_output = add_code_tag(output, expanded_path, "examples/#{page_filename}/#{expanded_path}")
           output = prefix + rendered_output + suffix
-          if @highlight_options[:iframe_class]
-            output += %(<iframe src="./examples/#{page_filename}/#{expanded_path}" class="#{@highlight_options[:iframe_class]}"></iframe>)
+          if @highlight_options[:iframe_style]
+            output += %(<iframe src="./examples/#{page_filename}/#{expanded_path}" style="#{@highlight_options[:iframe_style]}"></iframe>)
           end
+          return output
         rescue => e
           %(<div style="background-color: red; color: white; padding: 10px; border: 2px solid white;">
           <div>⚠️ #{page["path"]}</div>

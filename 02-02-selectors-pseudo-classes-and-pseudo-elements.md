@@ -53,7 +53,15 @@ There are four more combinators you should know about.
 
 > CSS also supports the **column combinator** `||`, which we'll talk about in the section about styling tables and tabular data.
 
-{% example combinators.html mark_lines="3,5,7,9"  %}
+{% example combinators.html mark_lines="3,5,7,9" iframe_style="height: 18em;"  %}
+
+## State Selectors
+
+Web pages are interactive. Users click on links, fill out forms --- even just moving the mouse around the screen can be a form of interaction.
+
+Using **state selectors**, CSS can target elements based on what's happening to them right now. State selectors are usually applied to elements like `<a>` and `<button>`
+
+* `:link` 
 
 
 
