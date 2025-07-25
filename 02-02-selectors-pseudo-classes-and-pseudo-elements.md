@@ -77,37 +77,29 @@ URLs can contain what's known as a `fragment`; it always appears right at the en
 
 * [`https://developer.mozilla.org/en-US/docs/Web/CSS/:target#description`](`https://developer.mozilla.org/en-US/docs/Web/CSS/:target#description`)
 
-{% example target-pseudo-class.html iframe_style="" %}
+Using the `:target` pseudo-class, we can apply specific styles to the element that matches the current URL fragment, which can be really useful for navigation, or for highlighting a user's journey through some kind of step-by-step process:
+
+{% example target-pseudo-class.html %}
+
+## Attribute Selectors
+
+If you've ever used XSLT to transform XML documents, then (1) you have my sympathies, and (2) you're going to find this next part very familiar.
+
+Let's learn about CSS attribute selectors.
+
+Say we've got a page containing a bunch of links, and we want all the links that go to Wikipedia to be highlighted in blue, and all the links to TV Tropes to be highlighted in red so we know not to click them or we'll end up browsing TV Tropes for the rest of the day. Any other links can stay plain blue on white.
+
+Attribute selectors give us a way to target elements based on the contents of their HTML attribute values.
+
+| Selector | Syntax |      |
+| -------- | ------ | ---- |
+|          |        |      |
+|          |        |      |
+|          |        |      |
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Using **state selectors**, CSS can target elements based on what's happening to them right now. State selectors are usually applied to elements we're expecting the user to click on, like `<a>` and `<button>`
-
-* `:hover` matches an element the user's pointer is hovering over. 
-
-  **Watch out for touchscreen devices.** If you're building interaction for smartphones or tablets, don't rely on `:hover` to do anything important.
-
-* `:active` matches an element that's actually being clicked on right now.
-
-* `:visited` matches an element that's previously been clicked
-
-* `:focus` matches an element that has the *focus*. 
 
 # Selectors, Pseudo-Classes and Pseudo-Elements (20m)
 
