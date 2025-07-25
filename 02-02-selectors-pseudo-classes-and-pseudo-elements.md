@@ -27,6 +27,10 @@ h1.green {
 
 ...and now you've got a rule on your website that says all the green headings should be purple. Great work.
 
+Compare that to this:
+
+{% example less-bad-html.html %}
+
 
 
 
