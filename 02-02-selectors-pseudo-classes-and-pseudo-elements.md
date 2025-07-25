@@ -45,7 +45,15 @@ We've already met the *descendant combinator*, which is just a space between two
 * `main .highlight { }` - matches any element with a `highlight` class which is a descendant of a `main` element
 * `.promo #call-to-action` - matches the element with the ID `call-to-action`, but only when that element is a descendant of an element with a `promo` class.
 
-There are 
+There are four more combinators you should know about.
+
+* **Child combinator**, indicated by a greater-than character `>`. `p > a` matches any `a` element which is a *direct child* of a `p` element
+* **Subsequent sibling combinator** indicated by a tilde `~`. `h3 ~ p` matches *every* paragraph that occurs anywhere following an `h3` element, as long as they share a parent.
+* **Next-sibling combinator** indicated by a plus `+`. `h3 + p` matches a single `p` which is immediately preceded by an `h3`, and shares the same parent.
+
+> CSS also supports the **column combinator** `||`, which we'll talk about in the section about styling tables and tabular data.
+
+{% example }
 
 
 
