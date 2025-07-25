@@ -125,6 +125,7 @@ module Jekyll
 
       def mark_lines
         value = @highlight_options[:mark_lines]
+        value = [value] if value.is_a?(String) && value =~ /^\d+$/
         return value.map(&:to_i) if value.is_a?(Array)
 
         raise SyntaxError, "Syntax Error for mark_lines declaration. Expected a " \
