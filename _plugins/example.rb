@@ -24,7 +24,6 @@ module Jekyll
 
       def read_file(path, context)
         file_read_opts = context.registers[:site].file_read_opts
-        return "File not found: #{path}" unless File.exist?(path)
         File.read(path, **file_read_opts)
       end
 
@@ -33,21 +32,30 @@ module Jekyll
       LEADING_OR_TRAILING_LINE_TERMINATORS = %r!\A(\n|\r)+|(\n|\r)+\z!.freeze
 
       def render(context)
-        prefix = context["highlighter_prefix"] || ""
-        suffix = context["highlighter_suffix"] || ""
+        begin
+          prefix = context["highlighter_prefix"] || ""
+          suffix = context["highlighter_suffix"] || ""
 
-        page = context.registers[:page]
-        parts = @markup.split(" ", 2)
-        expanded_path = Liquid::Template.parse(parts[0].strip).render(context)
-        page_filename = File.basename(page["path"], ".*")
-        root_path = File.expand_path(context.registers[:site].config["source"])
-        file_path = File.join(root_path, "examples", page_filename, expanded_path)
-        attributes = parts.length > 1 ? parts[1] : "all"
-        code = read_file(file_path, context)
-        @lang = File.extname(file_path).delete_prefix(".")
-        output = render_rouge(code)
-        rendered_output = add_code_tag(output, expanded_path, "examples/#{page_filename}/#{expanded_path}")
-        prefix + rendered_output + suffix
+          page = context.registers[:page]
+          parts = @markup.split(" ", 2)
+          expanded_path = Liquid::Template.parse(parts[0].strip).render(context)
+          page_filename = File.basename(page["path"], ".*")
+          root_path = File.expand_path(context.registers[:site].config["source"])
+          file_path = File.join(root_path, "examples", page_filename, expanded_path)
+          attributes = parts.length > 1 ? parts[1] : "all"
+
+          code = read_file(file_path, context)
+          @lang = File.extname(file_path).delete_prefix(".")
+          output = render_rouge(code)
+          rendered_output = add_code_tag(output, expanded_path, "examples/#{page_filename}/#{expanded_path}")
+          prefix + rendered_output + suffix
+        rescue => e
+          line_number = @options && @options[:line_number] ? @options[:line_number] : "unknown"
+          %(<div style="background-color: red; color: white; padding: 10px; border: 2px solid white;">
+          <div>⚠️ #{page_filename} line #{line_number}</div>
+          #{h(e.class.name + ": " + e.message)}
+          </div>)
+        end
       end
 
       private
