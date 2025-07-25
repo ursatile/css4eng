@@ -17,9 +17,19 @@ Here's some bad HTML:
 
 {% example bad-html.html %}
 
-It's not *wrong* - there aren't any syntax errors or invalid tags - but I don't like it at all.
+It's not *wrong* - there aren't any syntax errors or invalid tags - but I don't like it at all. Class names are based on what we want the element to *look like*, not on what it *means*. Imagine a ticket comes in asking you to change all the green headings to be purple... you *could* go trawling through the code doing a global search & replace, replace `green` with `purple`, but it's easier --- and safer --- to just rewrite the rule...
 
-* Class names are based on what we want the element to *look like*, not on w
+```css
+h1.green {
+	color: purple;
+}
+```
+
+...and now you've got a rule on your website that says all the green headings should be purple. Great work.
+
+
+
+
 
 # Selectors, Pseudo-Classes and Pseudo-Elements (20m)
 
