@@ -55,6 +55,8 @@ There are four more combinators you should know about.
 
 {% example combinators.html %}
 
+{% example delete-me.html %}
+
 
 
 
