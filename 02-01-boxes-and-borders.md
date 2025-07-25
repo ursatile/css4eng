@@ -48,11 +48,7 @@ Modern HTML provides two elements specifically for those scenarios: `div` and `s
 
 Let's throw a few `div`s and `span`s into our page to see what happens:
 
-{% highlight html %}
-{% include_relative {{ page.examples }}/divs-and-spans.html %}
-{% endhighlight %}
-
-<iframe style="height: 20rem;" src="{{ page.examples }}/divs-and-spans.html"></iframe>
+{% example divs-and-spans.html iframe_style="height: 20rem;" %}
 
 You'll notice two differences here. One: the emphasis tags are in italics, whereas the span tags are just regular text. Two: there's vertical spacing between the paragraphs, but no vertical spacing between the div elements.
 
@@ -102,11 +98,7 @@ Margins in CSS behave a little differently to borders and padding because of som
 
 Take a look at this example:
 
-{% highlight html %}
-{% include_relative {{ page.examples }}/collapse.html %}
-{% endhighlight %}
-
-<iframe style="height: 10rem;" src="{{ page.examples }}/collapse.html"></iframe>
+{% example collapse.html iframe_style="height: 20rem;" %}
 
 If you modify the rule to give the `h1` element a 20 pixel margin, you'll get this:
 
@@ -264,9 +256,7 @@ Even if a block-level element has a defined `width`, the browser's layout engine
 
 The CSS `float` property lets us pull an element out of the regular document flow and float it to the left or right edge of its container. - check out [floats.html]({{ page.examples }}/floats.html) to see it in action.
 
-{% highlight html mark_lines="7 15 24" %}
-{% include_relative {{ page.examples }}/floats.html %}
-{% endhighlight %}
+{% example floats.html mark_lines="7,15,24" %}
 
 ## CSS Box Sizing
 
@@ -292,9 +282,7 @@ In 25 years of web development, I have never, ever encountered a situation where
 
 If we modify our example CSS to override the default:
 
-{% highlight css mark_lines="7" %}
-{% include_relative {{ page.examples }}/border-box.css %}
-{% endhighlight %}
+{% example border-box.css mark_lines="7" %}
 
 we can get our `<div>` elements to render side-by-side:
 

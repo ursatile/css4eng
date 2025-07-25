@@ -44,9 +44,7 @@ Create a new file, `styles.css`, and move the contents of that `style` block int
 
 Then remove the empty `style` element, and replace it with a `<link>` element:
 
-{% highlight html mark_lines="6" %}
-{% include_relative {{ page.examples }}/index.html %}
-{% endhighlight %}
+{% example index.html mark_lines="6" %}
 
 The `<link>` element has two attributes:
 

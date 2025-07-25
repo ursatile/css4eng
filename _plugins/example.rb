@@ -19,7 +19,7 @@ module Jekyll
 
             <pre>#{markup}</pre>
 
-            Valid syntax: example <filename> [mark_lines="3 4 5"] [iframe_style[="height: 10em;"]]
+            Valid syntax: example <filename> [mark_lines="3, 4, 5"] [iframe_style[="height: 10em;"]]
           MSG
         end
       end
@@ -97,11 +97,9 @@ module Jekyll
         # Split along 3 possible forms -- key="<quoted list>", key=value, or key
         input.scan(OPTIONS_REGEX) do |opt|
           key, value = opt.split("=")
-          puts key
           if value&.include?('"')
             value.delete!('"')
             value = value.include?(",") ? value.split(",").map(&:strip) : value.strip
-            puts value
           end
           options[key.to_sym] = value || true
         end
