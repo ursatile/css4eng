@@ -31,7 +31,7 @@ Compare that to this:
 
 {% example less-bad-html.html %}
 
-
+The class names here aren't based on what the element should *look like*, they're based on where that element appears in the structure - and then the CSS uses that 
 
 
 
