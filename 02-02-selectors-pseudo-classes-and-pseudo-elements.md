@@ -77,7 +77,7 @@ URLs can contain what's known as a `fragment`; it always appears right at the en
 
 * [`https://developer.mozilla.org/en-US/docs/Web/CSS/:target#description`](`https://developer.mozilla.org/en-US/docs/Web/CSS/:target#description`)
 
-{% example target-pseudo-class.html %}
+{% example target-pseudo-class.html iframe_style="" %}
 
 
 
