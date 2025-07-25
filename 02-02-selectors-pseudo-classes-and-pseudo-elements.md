@@ -57,11 +57,13 @@ There are four more combinators you should know about.
 
 ## State Selectors
 
-Web pages are interactive. Users click on links, fill out forms --- even just moving the mouse around the screen can be a form of interaction. 
+Web pages are interactive. Users click on links, fill out forms --- even just moving the mouse around the screen can be a form of interaction.
+
+Now, in theory, this is all nice & simple. Everything's a `:link` until something happens. When you hover over it, it gets the `:hover` pseudo-class, 
 
 {% example state-selectors.html %}
 
-Let's start with the easy one: `:active`
+
 
 
 
