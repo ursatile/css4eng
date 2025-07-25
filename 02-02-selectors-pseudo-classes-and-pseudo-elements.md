@@ -37,11 +37,15 @@ But, other than the `section` being given the `promotion` class, most of the cla
 
 Using modern CSS, we can target elements based on their relationships without having to use extraneous class names. Let's find out how.
 
-The DOM Family Tree
-
-Browsers render HTML and CSS by constructing something called the **document object model**, usually just called the DOM. To understand how the DOM 
-
 ## Combinators
+
+We've already met the *descendant combinator*, which is just a space between two selectors:
+
+* `p a { }` - match any `a` element which is a descendant of a `p` element.
+* `main .highlight { }` - matches any element with a `highlight` class which is a descendant of a `main` element
+* `.promo #call-to-action` - matches the element with the ID `call-to-action`, but only when that element is a descendant of an element with a `promo` class.
+
+There are 
 
 
 
