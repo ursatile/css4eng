@@ -61,13 +61,9 @@ Web pages are interactive. Users click on links, fill out forms --- even just mo
 
 Now, in theory, this is all nice & simple. Everything's a `:link` until something happens. If you move the focus to that element - e.g. using the <kbd>Tab</kbd> key on your keyboard - it gets the `:focus` pseudo-class. When you hover over it, it gets the `:hover` pseudo-class; when you're actually clicking it, it gets the `:active` pseudo-class, and then any link to a page you've visited before gets the `:visited` pseudo-class.
 
-In practice... it's way more complicated than that. Hover states work great on devices with a mouse pointer, but on touchscreen devices like smartphone and tablets, you can't hover over an element without actually touching it - and when you touch it, it gets the hover, focus, and active states. 
+In practice... it's way more complicated than that. Hover states work great on devices with a mouse pointer, but on touchscreen devices like smartphone and tablets, you can't hover or focus an element - you're either touching it, or you're not.
 
-
-
-
-
-
+In this example, each side of the border responds to a different pseudo-class, and the background-color responds to the `:active` state:		
 
 {% example state-selectors.html %}
 
