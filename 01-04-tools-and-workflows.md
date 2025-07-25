@@ -5,7 +5,7 @@ nav_order: 10104
 examples: "examples/01-04-tools-and-workflows"
 typora-root-url: .
 typora-copy-images-to: ./images]
-word_count: 2428
+word_count: 2437
 target_minutes: 15
 ---
 In the previous section, we learned the rudiments of CSS syntax, and how to associate styles with our web content.

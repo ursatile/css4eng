@@ -3,7 +3,7 @@ title: "How CSS Works"
 layout: home
 nav_order: 10103
 examples: "examples/01-03-how-css-works"
-word_count: 1104
+word_count: 1100
 target_minutes: 10
 ---
 ## Properties and Values

@@ -2,7 +2,7 @@
 title: "Conclusion"
 layout: home
 nav_order: 10501
-word_count: 16
+word_count: 18
 target_minutes: 20
 ---
 # Conclusion (20m)
