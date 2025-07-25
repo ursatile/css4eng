@@ -53,7 +53,9 @@ Switching from house parties back to HTML, let's take a look at an example of a 
 
 First up, we've got a wildcard rule here to make everything on the page navy.
 
-Next, we target the heading level 1 with an element rule, to give it white text on a navy background. We've got a warning class that makes things white on a red background, a disclaimer class that turns text `gainsboro` - a very, very pale shade of grey - and finally an ID selector: exactly one element on this page will be the **features** panel for our toaster, and we'd like to draw that in dark green on a pale green background.
+Next, we target the heading level 1 with an element rule, to give it white text on a navy background. We've got a `warning` class that makes things white on a red background, a `disclaimer` class that turns text `gainsboro` - a very, very pale shade of grey - and finally an ID selector: exactly one element on this page will be the `features` panel for our toaster, and we'd like to draw that in dark green on a pale green background.
+
+> ℹ️ HTML is generally case-insensitive, but CSS class names and IDs are not: your class names and element IDs have to exactly match your CSS selectors, including their case. An element with `<p
 
 Now, you see how the word "warning" and "caution" is in navy blue here, despite being part of a warning paragraph? We actually have two conflicting rules here. One is the wildcard rule - hey, everything on this page should be navy blue, unless something overrides it. The other is saying “hey, stuff inside warning paragraphs should be white with a red background”.
 
@@ -68,6 +70,8 @@ body {
 ```
 
 The page looks the same - except those "warning" and "caution" elements are white now. The reason is **cascading**. We've said "everything in the body should be navy", and that rule cascades down... but then when we get to the warning paragraph, that sets a rule that everything should be white, and that second rule wins. The first rule has to cascade from the body element, to the warning paragraph element, to the strong element; the second rule only has to cascade from the warning paragraph to the strong, and shorter cascades are more specific, and therefore have a higher precedence.
+
+
 
 We're going to come back to selectors shortly, because they are phenomenally powerful. To go back to house party example: we could have a rule for anybody who's standing in the kitchen, a different rule for somebody standing in the kitchen who has a cat, a rule that only applies to a pilot who is standing next to a doctor, a rule that only applies to the first doctor in a room... we can combine selectors in all sorts of combinations and permutations.
 
