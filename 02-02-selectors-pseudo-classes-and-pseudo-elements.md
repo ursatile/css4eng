@@ -61,7 +61,7 @@ Web pages are interactive. Users click on links, fill out forms --- even just mo
 
 ### How Interaction Works
 
-To understand state selectors, you need to understand how a browser handles user interactions. 
+{% example state-selectors.html %}
 
 
 
@@ -79,7 +79,7 @@ Using **state selectors**, CSS can target elements based on what's happening to 
 
 * `:visited` matches an element that's previously been clicked
 
-* `:focus` matches an element that has the *focus*
+* `:focus` matches an element that has the *focus*. 
 
 # Selectors, Pseudo-Classes and Pseudo-Elements (20m)
 
