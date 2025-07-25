@@ -55,7 +55,7 @@ There are four more combinators you should know about.
 
 {% example combinators.html mark_lines="3,5,7,9" iframe_style="height: 18em;"  %}
 
-## State Selectors
+## Location Pseudo-classes
 
 Web pages are interactive. Users click on links, fill out forms --- even just moving the mouse around the screen can be a form of interaction.
 
@@ -67,9 +67,21 @@ In this example, each side of the border responds to a different pseudo-class, a
 
 {% example state-selectors.html %}
 
-If we tab around using the keyboard, you'll see the focus move to each link in turn; if we move the mouse over an element, we get the hover pseudoclass; if we click on it, it goes active, and then when we come back to the page, it doesn't have the `:link` pseudo-class any more, it has the `:visited` pseudo-class.
+If we tab around using the keyboard, you'll see the focus move to each link in turn; if we move the mouse over an element, we get the hover pseudo-class; if we click on it, it goes active, and then when we come back to the page, it doesn't have the `:link` pseudo-class any more, it has the `:visited` pseudo-class.
 
-Now, let's open that same page on a smartphone. You'll notice that links on a mobile device never get the focus, although we can focus the `<input>` element by 
+Now, let's open that same page on a smartphone. You'll notice that links on a mobile device never get the focus, although we can focus the `<input>` element; elements will briefly get the `active` state when we click them, but because by that point we're already navigating away, there's not a whole lot you can do with it.
+
+There are a whole bunch more pseudo-classes which only apply to inputs and form elements, which we'll learn about in part 3, but one more location pseudo-class that's worth knowing about is the `:target` selector.
+
+URLs can contain what's known as a `fragment`
+
+`https://developer.mozilla.org/en-US/docs/Web/CSS/:target#description`
+
+
+
+
+
+
 
 
 
