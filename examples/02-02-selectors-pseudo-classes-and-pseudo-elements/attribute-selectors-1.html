@@ -2,8 +2,24 @@
 <html lang="en">
 <head>
 	<title>Attribute Selectors 1</title>
+	<style>
+		a {
+			padding: 2px;
+		}
+
+		a[href^="https://tvtropes.org/"] {
+			background-color: red;
+			color: white;
+		}
+
+		a[href*="wikipedia"] {
+			background-color: blue;
+			color: white;
+		}
+	</style>
 </head>
 <body>
+	<h2>TV Time!</h2>
 	<p>Hey! Let's learn about awesome 1980s TV shows. We'll start with
 		<a href="https://en.wikipedia.org/wiki/Knight_Rider_(1982_TV_series)">Knight
 			Rider</a>,
@@ -14,7 +30,7 @@
 		<a href="https://tvtropes.org/pmwiki/pmwiki.php/Series/MagnumPI">Magnum
 			P.I.</a>,
 		<a href="https://en.wikipedia.org/wiki/The_Bionic_Woman">the
-			Bionic Woman</a>,
+			Bionic Woman</a>, and
 		<a href="https://tvtropes.org/pmwiki/pmwiki.php/Series/Automan">Automan</a>.
 		Then we'll learn about some of the more obscure shows like
 		<a href="https://en.wikipedia.org/wiki/Manimal">Manimal</a>,
@@ -27,6 +43,14 @@
 			href="https://tvtropes.org/pmwiki/pmwiki.php/Series/StarTrekTheNextGeneration">Star
 			Trek: The Next Generation</a>.
 	</p>
+	<p>Be careful - some of these link to Wikipedia, but some of them link to TV
+		Tropes, and we all know that if you end up on TV Tropes you'll be there all
+		day. Incidentally, did you know that there's a <a
+			href="https://en.wikipedia.org/wiki/TV_Tropes">Wikipedia page for TV
+			Tropes</a> and a <a
+			href="https://tvtropes.org/pmwiki/pmwiki.php/Website/Wikipedia">TV Tropes
+			page for Wikipedia</a>? </p>
 	</p>
+
 </body>
 </html>

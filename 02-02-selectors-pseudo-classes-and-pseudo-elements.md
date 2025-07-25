@@ -100,7 +100,7 @@ We'll start with the useful ones.
 | `*=` | `a[href*="wikipedia"]`            | Any `a` element whose `href` attribute contains `"wikipedia"` |
 | `^=` | `a[href^="https://tvtropes.org"]` | Any `a` element whose `href` starts with `"https://tvtropes.org"` |
 
-{% example attribute-selectors-1.html iframe_style="" %}
+{% example attribute-selectors-1.html iframe_style="height: 15em;" %}
 
 
 
