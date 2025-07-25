@@ -91,11 +91,13 @@ Say we've got a page containing a bunch of links, and we want all the links that
 
 Attribute selectors give us a way to target elements based on the contents of their HTML attribute values.
 
-| Selector | Syntax |      |
-| -------- | ------ | ---- |
-|          |        |      |
-|          |        |      |
-|          |        |      |
+|      | Selector                        | Syntax                                                       |
+| ---- | ------------------------------- | ------------------------------------------------------------ |
+|      | `a[title]`                      | Match any `a` element with a `title` attribute (even if it's empty!) |
+| `=`  | `a[href="https://google.com"]`  | Match any `a` element whose `href` attribute **exactly matches** `"https://google.com"` |
+| `*=` | `a[href*="wikipedia" i]`        | Match any `a` element whose `href` attribute contains `"tvtropes"`, case-insensitive |
+| `^=` | a[href^="https://tvtropes.org"] |                                                              |
+| `~=` |                                 |                                                              |
 
 
 
