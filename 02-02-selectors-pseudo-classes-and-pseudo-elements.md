@@ -102,7 +102,9 @@ We'll start with the useful ones.
 
 {% example attribute-selectors-1.html iframe_style="height: 15em;" %}
 
+But hang on - that last link there, to the TV Tropes page about Wikipedia? That link's `href` attribute is `"https://tvtropes.org/pmwiki/pmwiki.php/Website/Wikipedia"`, which definitely contains `"wikipedia"`, so why is it red rather than blue?
 
+Two reasons. First: attribute selectors 
 
 
 
