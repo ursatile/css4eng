@@ -17,13 +17,9 @@ Here's some bad HTML:
 
 {% example bad-html.html %}
 
+It's not *wrong* - there aren't any syntax errors or invalid tags - but I don't like it at all.
 
-
-
-
-
-
-
+* Class names are based on what we want the element to *look like*, not on w
 
 # Selectors, Pseudo-Classes and Pseudo-Elements (20m)
 

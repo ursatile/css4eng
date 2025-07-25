@@ -52,7 +52,7 @@ module Jekyll
         rescue => e
           line_number = @options && @options[:line_number] ? @options[:line_number] : "unknown"
           %(<div style="background-color: red; color: white; padding: 10px; border: 2px solid white;">
-          <div>⚠️ #{page_filename} line #{line_number}</div>
+          <div>⚠️ #{page["path"]}</div>
           #{h(e.class.name + ": " + e.message)}
           </div>)
         end
