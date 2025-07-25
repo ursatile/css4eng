@@ -73,11 +73,11 @@ Now, let's open that same page on a smartphone. You'll notice that links on a mo
 
 There are a whole bunch more pseudo-classes which only apply to inputs and form elements, which we'll learn about in part 3, but one more location pseudo-class that's worth knowing about is the `:target` selector.
 
-URLs can contain what's known as a `fragment`
+URLs can contain what's known as a `fragment`; it always appears right at the end of the URL, preceded by a `#` character, and it says to the browser "hey, load this page, and once it's loaded, please find the element with this ID, and scroll it into view". For example, this URL will open the MDN documentation for the `:target` pseudo-class, and jump to the **Description** section:
 
-`https://developer.mozilla.org/en-US/docs/Web/CSS/:target#description`
+* [`https://developer.mozilla.org/en-US/docs/Web/CSS/:target#description`](`https://developer.mozilla.org/en-US/docs/Web/CSS/:target#description`)
 
-
+{% example target-pseudo-class.html %}
 
 
 
