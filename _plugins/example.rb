@@ -73,8 +73,8 @@ module Jekyll
           output = render_rouge(code)
           rendered_output = add_code_tag(output, expanded_path, "examples/#{page_filename}/#{expanded_path}")
           output = prefix + rendered_output + suffix
-          if @highlight_options[:iframe]
-            output += %(<iframe src="./examples/#{page_filename}/#{expanded_path}" style="#{highlight_options[:iframe]}"></iframe>)
+          if @highlight_options[:iframe_class]
+            output += %(<iframe src="./examples/#{page_filename}/#{expanded_path}" class="#{@highlight_options[:iframe_class]}"></iframe>)
           end
         rescue => e
           %(<div style="background-color: red; color: white; padding: 10px; border: 2px solid white;">
