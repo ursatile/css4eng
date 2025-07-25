@@ -336,11 +336,7 @@ You'll find the HTML code in [flags.html](examples/02-01-boxes-and-borders/flags
 
 **Do not edit the HTML.** Your task is to turn the provided HTML into the four flags of the countries above using **pure CSS**.
 
-### Exercise 2: News Article
-
-
-
-
+### Boxes and Borders Exercise: News Article
 
 
 

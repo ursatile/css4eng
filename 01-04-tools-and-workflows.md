@@ -68,7 +68,7 @@ If we take a look at the `em` element that's inside our paragraph, you'll see th
 
 Now, add another rule to `styles.css`:
 
-{% highlight css mark_lines="5 6 7" %}
+{% highlight css mark_lines="5,6,7" %}
 {% include_relative {{ page.examples }}/styles.css %}
 {% endhighlight %}
 
