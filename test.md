@@ -10,6 +10,13 @@ word_count: 6
 
 How to Structure Things
 
-The course is in PARTS
+The course is in **parts**. Each **part** is in **modules**
 
-each PART is 
+Filenames include the **part** and **module** number
+
+
+
+ 
+
+
+
