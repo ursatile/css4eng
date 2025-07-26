@@ -21,9 +21,7 @@ That might sound obvious, but it's the key to understanding how the browser lays
 
 Let's start here, with an empty web page.
 
-```html
-{% exampleindex.html %}
-```
+{% example index.html %}
 
 Anything we add to that page is going to appear in the top left corner. Let's add a paragraph that just says “Hello World!”:
 
@@ -147,11 +145,7 @@ p {
 
 When it comes to borders, there's a whole bunch of ways we can combine the various properties. Each edge of the element can have a `border-width`, a `border-style`, and a `border-color` - and any of these properties can use any of the shorthand syntaxes above:
 
-```css
-{% include_relative {{ page.examples}}/border-syntax.css %}
-```
-
-<iframe src="{{ page.examples }}/border-syntax.html"></iframe>
+{% example border-syntax.css iframe_style="" %}
 
 The `border-style` property must take one of the values defined in the CSS spec:
 
@@ -203,9 +197,7 @@ Here's an example page:
 
 We've given every element on the page a bottom border that's `1em` thick:
 
-```css
-{% include_relative examples/02-01-boxes-and-borders/ems-and-rems.css %}
-```
+{% example ems-and-rems.css %}
 
 See how the Heading 1 has a much bigger border, because the browser renders it in a larger font and the border size is relative to the font size? If you zoom in close and crop things around a bit, you can actually see how the border in each case matches the width of the letter ‘M’ in that element:
 
@@ -217,9 +209,7 @@ A `rem` is an `em` but it's relative to the *root font size* - so it'll give you
 
 Let's get to know another couple of CSS properties: `width` and `height`. These ones do pretty much what you'd expect them to do:
 
-```css
-{% examplewidth-and-height-absolute.css %}
-```
+{% example width-and-height-absolute.css %}
 
 <iframe src="{{ page.examples }}/width-and-height.html" style="height: 10em;"></iframe>
 
@@ -227,9 +217,7 @@ Note how elements with a `width` are aligned to the left edge of the page. Also 
 
 Now, change the CSS to this:
 
-```css
-{% include_relative {{ page.examples}}/width-and-height-relative.css %}
-```
+{% example width-and-height-relative.css %}
 
 ➡️ [width-and-height-relative.html]({{ page.examples }}/width-and-height-relative.html)
 
@@ -317,9 +305,7 @@ The specification for each flag is above, or you can find a PDF version here:
 
 You'll find the HTML code in [flags.html](examples/02-01-boxes-and-borders/flags.html), and the linked stylesheet in [flags.css]({{page.examples}}/flags.css)
 
-```html
-{% exampleflags.html %}
-```
+{% example flags.html %}
 
 **Do not edit the HTML.** Your task is to turn the provided HTML into the four flags of the countries above using **pure CSS**.
 
