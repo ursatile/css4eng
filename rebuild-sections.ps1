@@ -15,6 +15,8 @@ Get-ChildItem -Path . -Filter *.md | Sort-Object Name | ForEach-Object {
 		}
 		$title = $matches[3]
 		$newFileName = "{0}{1:00}-$title.md" -f [int]$newPartNumber, [int]$newSectionNumber
+		Rename-Item -Path $oldFilename -NewName $newFileName
+		Rename-Item -Path "examples\$oldFilename" -NewName "examples\$newFileName"
 		Write-Host "$oldFileName > $newFileName"
 	} else {
 		Write-Host "Filename does not match expected pattern: $($_.Name)"
