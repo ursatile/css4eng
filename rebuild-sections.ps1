@@ -2,7 +2,15 @@
 # git commit -m "Snapshot of everything before running rebuild-sections.ps1"
 
 Get-ChildItem -Path . -Filter *.md | Sort-Object Name | ForEach-Object {
-	Write-Host $_
+	$oldFilename = $_.Name	
+	if ($oldFilename.Name -match '^(\d+)-(\d+)-(.*)\.md$') {
+		$partNumber = $matches[1]
+		$sectionNumber = $matches[2]
+		$title = $matches[3]
+		Write-Host "Part: $partNumber, Section: $sectionNumber, Remainder: $title"
+	} else {
+		Write-Host "Filename does not match expected pattern: $($_.Name)"
+	}
 	# $file = $_.FullName
 	# $content = Get-Content $file -Raw
 	# if ($content -match "(?s)^---\s*(.*?)\s*---\s*(.*)") {
