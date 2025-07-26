@@ -8,23 +8,24 @@ word_count: 77
 {% assign sorted_pages = site.pages | where_exp: "page", "page.path contains
 '.md'" | where_exp: "page", "page.title != 'Home'" | sort: "nav_order" %}
 
-{% assign total_duration = 0 %}
+{% assign total_actual_minutes = 0 %}
+{% assign total_target_minutes = 0 %}
 {% for page in sorted_pages %}
 {% if page.title and page.nav_order %}
 <div>
 	<a href="{{ page.url | relative_url }}">{{ page.path }}</a>
 	({{ page.target_minutes }}m)
 	{% if page.word_count %}
-	{% assign duration = page.word_count | divided_by: 200 %}
+	{% assign actual_minutes = page.word_count | divided_by: 200 %}
 	<div
 		style="width: {{ page.target_minutes | times: 10 }}px; border: 1px solid #fff; background-color: #333; float: right; height: 18px; padding: 2px 0;">
 		<div
-			style="background-color: #ff0; width: {{ duration | times: 10 }}px; height: 12px; float: right;">
+			style="background-color: #ff0; width: {{ actual_minutes | times: 10 }}px; height: 12px; float: right;">
 		</div>
 	</div>
 	{% endif %}
-	{{ duration }}
-	{% assign total_duration = total_duration | plus: duration %}
+	{% assign total_actual_minutes = total_actual_minutes | plus: actual_minutes %}
+	{% assign total_target_minutes = total_target_minutes | plus: page.target_minutes %} 
 	{% endif %}
 	{% endfor %}
 </div>
@@ -41,6 +42,7 @@ word_count: 77
 	{% endif %}
 	{% endfor %}
 	<p><strong>Total Modules:</strong> {{ module_count }}</p>
-	{{ total_duration }}
 	<p><strong>Total Word Count:</strong> {{ total_words }}</p>
+	<p><strong>Actual: </strong><code>{{ total_actual_minutes | divided_by: 60 }}h {{ total_actual_minutes | modulo: 60 }}m</code></p>		
+	<p><strong>Target: </strong><code>{{ total_target_minutes | divided_by: 60 }}h {{ total_target_minutes | modulo: 60 }}m</code></p>
 </div>
