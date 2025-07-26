@@ -5,17 +5,16 @@ $oldPartNumber = 0
 
 Get-ChildItem -Path . -Filter *.md | Sort-Object Name | ForEach-Object {
 	$oldFilename = $_.Name	
-	if ($oldFilename -match '^(\d+)-(\d+)-(.*)\.md$') {
+	if ($oldFilename -match '^(\d+)-(\d+)[a-z]?-(.*)\.md$') {
 		$newPartNumber = $matches[1]
 		if ($newPartNumber -eq $oldPartNumber) {
-			$newSectionNumber = $newSectionNumber + 10
+			$newSectionNumber = $newSectionNumber + 1
 		} else {
-			$newPartNumber = $oldPartNumber + 10
 			$oldPartNumber = $newPartNumber
-			$newSectionNumber = 10
+			$newSectionNumber = 1
 		}
 		$title = $matches[3]
-		$newFileName = "{0:000}-{1:000}-$title.md" -f [int]$newPartNumber, [int]$newSectionNumber
+		$newFileName = "{0}{1:00}-$title.md" -f [int]$newPartNumber, [int]$newSectionNumber
 		Write-Host "$oldFileName > $newFileName"
 	} else {
 		Write-Host "Filename does not match expected pattern: $($_.Name)"
