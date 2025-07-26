@@ -1,7 +1,7 @@
 ---
 title: "Basic CSS Selectors"
 layout: home
-nav_order: 10201
+nav_order: 201
 examples: examples/02-01-basic-css-selectors
 word_count: 1538
 target_minutes: 10

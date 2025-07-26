@@ -1,7 +1,7 @@
 ---
 title: "Course Overview"
 layout: home
-nav_order: 10101
+nav_order: 101
 word_count: 23
 ---
 # Course Overview (5m)
