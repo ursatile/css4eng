@@ -4,6 +4,7 @@ layout: home
 nav_order: 103
 examples: examples/103-how-css-works 1100
 target_minutes: 10
+word_count: 1098
 ---
 ## Properties and Values
 

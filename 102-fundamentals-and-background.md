@@ -2,7 +2,7 @@
 title: "Fundamentals and Background"
 layout: home
 nav_order: 102
-word_count: 3624
+word_count: 3623
 target_minutes: 10
 examples: examples/102-fundamentals-and-background
 ---
