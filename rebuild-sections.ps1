@@ -1,6 +1,3 @@
-# git add .
-# git commit -m "Snapshot of everything before running rebuild-sections.ps1"
-
 $oldPartNumber = 0
 
 Get-ChildItem -Path . -Filter *.md | Sort-Object Name | ForEach-Object {

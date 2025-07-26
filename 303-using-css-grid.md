@@ -1,7 +1,7 @@
 ---
 title: "Using CSS Grid"
 layout: home
-nav_order: 10303
+nav_order: 303
 word_count: 37
 target_minutes: 20
 ---

@@ -48,7 +48,7 @@ Switching from house parties back to HTML, let's take a look at an example of a 
 * [ToastMaster 9000 Instruction Manual]({{ page.examples }}/toastmaster-9000.html)
 
 ```html
-{% include_relative {{ page.examples }}/toastmaster-9000.html %}
+{% exampletoastmaster-9000.html %}
 ```
 
 First up, we've got a wildcard rule here to make everything on the page navy.

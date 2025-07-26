@@ -1,7 +1,7 @@
 ---
 title: "Selectors, Pseudo-Classes and Pseudo-Elements"
 layout: home
-nav_order: 10202
+nav_order: 204
 word_count: 63
 target_minutes: 20
 ---

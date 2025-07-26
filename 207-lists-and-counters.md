@@ -1,7 +1,7 @@
 ---
 title: "Lists and Counters"
 layout: home
-nav_order: 10205
+nav_order: 207
 word_count: 24
 target_minutes: 20
 ---

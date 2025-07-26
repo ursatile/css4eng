@@ -1,9 +1,8 @@
 Get-ChildItem -Path . -Filter *.md | ForEach-Object {
-	$file = $_.FullName
-	if ($file -match '^(\d+)-(.*)$') {
+	if ($_.Name -match '^(\d+)-(.*)$') {
+		$filePath = $_.FullName
 		$navOrder = $matches[1]
-		$content = Get-Content $file -Raw
-		Write-Host $content
+		$content = Get-Content $filePath -Raw
 		if ($content -match "(?s)^---\s*(.*?)\s*---\s*(.*)") {
 			$frontMatter = $matches[1]
 			$body = $matches[2]
@@ -13,8 +12,8 @@ Get-ChildItem -Path . -Filter *.md | ForEach-Object {
 				$newFrontMatter = $frontMatter + "`nav_order: $navOrder"
 			}
 			$newContent = "---`r`n$newFrontMatter`r`n---`r`n$body"
-			Set-Content -NoNewline -Path $file -Value $newContent
-			Write-Host "Updated nav_order for $file to $navOrder"
+			Set-Content -NoNewline -Path $filePath -Value $newContent
+			Write-Host "Updated nav_order for $filePath to $navOrder"
 		}	else {
 			Write-Host "No front matter found in $($_.Name)"
 		}

@@ -1,7 +1,7 @@
 ---
 title: "Scoping CSS"
 layout: home
-nav_order: 10401
+nav_order: 401
 word_count: 16
 target_minutes: 20
 ---

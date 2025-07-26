@@ -38,9 +38,7 @@ OK, so: inline styles? Great if you only need to use something once. Putting a s
 
 Create a new file, `styles.css`, and move the contents of that `style` block into the new file. 
 
-```css
-{% include_relative {{ page.examples }}/styles.css %}
-```
+{% example styles.css %}
 
 Then remove the empty `style` element, and replace it with a `<link>` element:
 

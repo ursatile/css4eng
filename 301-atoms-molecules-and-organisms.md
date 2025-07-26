@@ -1,7 +1,7 @@
 ---
 title: "Atoms, Molecules and Organisms"
 layout: home
-nav_order: 10301
+nav_order: 301
 word_count: 29
 target_minutes: 20
 ---

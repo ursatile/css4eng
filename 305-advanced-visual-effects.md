@@ -1,7 +1,7 @@
 ---
 title: "Advanced Visual Effects"
 layout: home
-nav_order: 10305
+nav_order: 305
 word_count: 31
 target_minutes: 30
 ---

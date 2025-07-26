@@ -1,7 +1,7 @@
 ---
 title: "Boxes & Borders"
 layout: home
-nav_order: 10201
+nav_order: 202
 examples: examples/02-01-boxes-and-borders
 word_count: 3283
 target_minutes: 20
@@ -23,10 +23,10 @@ That might sound obvious, but it's the key to understanding how the browser lays
 Let's start here, with an empty web page.
 
 ```html
-{% include_relative {{ page.examples }}/index.html %}
+{% example index.html %}
 ```
 
-Anything we add to that page is going to appear in the top left corner. Let's add a paragraph that just says “Hello World!”:
+Anything we add to that page is going to appear in the top left corner. Let's add a paragraph that just says “Hello World!”
 
 <iframe style="height: 10rem;" src="{{ page.examples }}/hello-world.html"></iframe>
 
@@ -219,7 +219,7 @@ A `rem` is an `em` but it's relative to the *root font size* - so it'll give you
 Let's get to know another couple of CSS properties: `width` and `height`. These ones do pretty much what you'd expect them to do:
 
 ```css
-{% include_relative {{ page.examples }}/width-and-height-absolute.css %}
+{% example width-and-height-absolute.css %}
 ```
 
 <iframe src="{{ page.examples }}/width-and-height.html" style="height: 10em;"></iframe>
@@ -319,7 +319,7 @@ The specification for each flag is above, or you can find a PDF version here:
 You'll find the HTML code in [flags.html](examples/02-01-boxes-and-borders/flags.html), and the linked stylesheet in [flags.css]({{page.examples}}/flags.css)
 
 ```html
-{% include_relative {{ page.examples }}/flags.html %}
+{% example flags.html %}
 ```
 
 **Do not edit the HTML.** Your task is to turn the provided HTML into the four flags of the countries above using **pure CSS**.
