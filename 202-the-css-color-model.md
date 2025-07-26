@@ -9,4 +9,7 @@ word_count: 0
 
 In the last section, we looked at some examples of CSS selectors, using foregroudn and background colors to visualize the effects of different selectors, but so far the only colors we've seen are *named colors*.
 
-CSS 
+## Named Colors
+
+CSS originally shipped with a palette of 
+
