@@ -1,13 +1,22 @@
 # git add .
 # git commit -m "Snapshot of everything before running rebuild-sections.ps1"
 
+$oldPartNumber = -1
+
 Get-ChildItem -Path . -Filter *.md | Sort-Object Name | ForEach-Object {
 	$oldFilename = $_.Name	
-	if ($oldFilename.Name -match '^(\d+)-(\d+)-(.*)\.md$') {
-		$partNumber = $matches[1]
-		$sectionNumber = $matches[2]
+	if ($oldFilename -match '^(\d+)-(\d+)-(.*)\.md$') {
+		$newPartNumber = $matches[1]
+		if ($newPartNumber -eq $oldPartNumber) {
+			$newSectionNumber = $newSectionNumber + 10
+		} else {
+			$oldPartNumber = $newPartNumber
+			$newSectionNumber = 10
+		}
+		$oldSectionNumber = $matches[2]
 		$title = $matches[3]
-		Write-Host "Part: $partNumber, Section: $sectionNumber, Remainder: $title"
+		Write-Host "Part $oldPartNumber Section $oldSectionNumber : $title"
+		Write-Host "      change to $newPartNumber $newSectionNumber"
 	} else {
 		Write-Host "Filename does not match expected pattern: $($_.Name)"
 	}
