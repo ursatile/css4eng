@@ -43,6 +43,6 @@ word_count: 77
 	{% endfor %}
 	<p><strong>Total Modules:</strong> {{ module_count }}</p>
 	<p><strong>Total Word Count:</strong> {{ total_words }}</p>
-	<p><strong>Actual: </strong><code>{{ total_actual_minutes | divided_by: 60 }}h {{ total_actual_minutes | modulo: 60 }}m</code></p>		
-	<p><strong>Target: </strong><code>{{ total_target_minutes | divided_by: 60 }}h {{ total_target_minutes | modulo: 60 }}m</code></p>
+	<p><strong>Actual: </strong> {{ total_actual_minutes | divided_by: 60 }}h {{ total_actual_minutes | modulo: 60 }}m</p>		
+	<p><strong>Target: </strong> {{ total_target_minutes | divided_by: 60 }}h {{ total_target_minutes | modulo: 60 }}m</p>
 </div>
