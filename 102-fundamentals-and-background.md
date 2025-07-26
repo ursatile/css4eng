@@ -4,6 +4,7 @@ layout: home
 nav_order: 102
 word_count: 3624
 target_minutes: 10
+examples: examples/102-fundamentals-and-background
 ---
 ## Why Do So Many Developers Struggle With CSS?
 

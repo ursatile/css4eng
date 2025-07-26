@@ -4,6 +4,7 @@ layout: home
 nav_order: 304
 word_count: 23
 target_minutes: 20
+examples: examples/304-working-with-css-variables
 ---
 # Working with CSS Variables (20m)
 

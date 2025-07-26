@@ -3,6 +3,7 @@ title: "Course Overview"
 layout: home
 nav_order: 101
 word_count: 23
+examples: examples/101-course-overview
 ---
 # Course Overview (5m)
 

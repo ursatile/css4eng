@@ -4,6 +4,7 @@ layout: home
 nav_order: 208
 word_count: 46
 target_minutes: 20
+examples: examples/208-colors-and-composition
 ---
 # Colors and Composition (20m)
 

@@ -4,6 +4,7 @@ layout: home
 nav_order: 302
 word_count: 26
 target_minutes: 20
+examples: examples/302-movement-and-motion
 ---
 # Movement and Motion (20m)
 

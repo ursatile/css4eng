@@ -4,6 +4,7 @@ layout: home
 nav_order: 501
 word_count: 18
 target_minutes: 20
+examples: examples/501-conclusion
 ---
 # Conclusion (20m)
 

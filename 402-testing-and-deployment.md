@@ -4,6 +4,7 @@ layout: home
 nav_order: 402
 word_count: 26
 target_minutes: 20
+examples: examples/402-testing-and-deployment
 ---
 # Testing and Deployment (20m)
 

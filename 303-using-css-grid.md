@@ -4,6 +4,7 @@ layout: home
 nav_order: 303
 word_count: 37
 target_minutes: 20
+examples: examples/303-using-css-grid
 ---
 # Using CSS Grid (30m)
 

@@ -4,6 +4,7 @@ layout: home
 nav_order: 207
 word_count: 24
 target_minutes: 20
+examples: examples/207-lists-and-counters
 ---
 # Lists and Counters (20m)
 

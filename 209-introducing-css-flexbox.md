@@ -4,6 +4,7 @@ layout: home
 nav_order: 209
 word_count: 34
 target_minutes: 20
+examples: examples/209-introducing-css-flexbox
 ---
 # Introducing CSS Flexbox (20m)
 

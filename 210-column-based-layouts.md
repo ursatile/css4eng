@@ -4,6 +4,7 @@ layout: home
 nav_order: 210
 word_count: 34
 target_minutes: 20
+examples: examples/210-column-based-layouts
 ---
 # Column-Based Layouts (20m)
 
