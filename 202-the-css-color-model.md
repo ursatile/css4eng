@@ -17,7 +17,7 @@ Back in the days of Netscape Navigator, HTML 3.0 defined a palette of sixteen na
 
 Over time, CSS has also adopted named colours from various sources, including the X Windows System. MDN notes that “about 150 other colours have a keyword associated to them”:
 
-{%  include_relative snippets/all-colors.html %}
+<iframe src="snippets/named-color-wheel.html" style="height: 720px;"></iframe>
 
 
 
