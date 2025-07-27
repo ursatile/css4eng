@@ -67,7 +67,9 @@ Here's what web accessibility looks like done badly.
 
 All we're changing here is the colours; we haven't messed with font size, element visibility, interactions. And yet we've got text you can't read, links you can't find, and buttons you can hardly see - not to mention a chunk of red-on-green text which is going to appear brown-on-brown for over 10% of our website users.
 
-Accessibility is important, but if you approach it right, it's not complicated and it's not expensive. Web standards are full of techniques and technology we can use to make our apps inclusive 
+Accessibility is important, but if you approach it right, it's not complicated and it's not expensive. 
+
+
 
 
 
