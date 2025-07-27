@@ -23,7 +23,9 @@ If you're curious how that works, the [code is available on Github](https://gith
 
 There are some interesting historical details hidden in the CSS named color system... for example, there's a color called `darkgrey`, which is actually lighter than the color called `grey` - because `grey` came from the original 16-color VGA palette, and `darkgrey` was already defined by X Windows as a lighter shade than that. Many colours have two names - the hot-pink color beloved of CGA computer games and synthwave artists is called `magenta` and `fuchsia`, and you can spell `grey` with either an "a" or an "e" wherever it appears in a colour name.
 
-The most recent addition to the CSS color palette is `rebeccapurple`, which actually has a heartbreaking story behind it: it's a memorial to Rebecca Meyer, the daughter of web standards 
+The named color `orange` was 
+
+The most recent addition to the CSS color palette has a sad and beautiful story behind it. It was added in 2014 as a memorial to Eric Meyer's daughter Rebecca. Eric is a tireless advocate for web standards, particularly CSS, and after Rebecca tragically died of brain cancer on her sixth birthday, her favourite color was added to the CSS specification as `rebeccapurple`. 
 
 
 
