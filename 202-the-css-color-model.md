@@ -25,7 +25,9 @@ There are some interesting historical details hidden in the CSS named color syst
 
 The color `orange` was added to the CSS version 2 specification, after it turned out that Eric Meyer, the web standards advocate who created the official test suites for CSS verison 1, had used orange for many of his examples... it worked, and was widely supported by browsers at the time, but wasn't actually part of the CSS  specification, which meant all Eric's test suites were technically invalid.
 
-The most recent addition to the CSS color palette has a sad and beautiful story behind it. It was added in 2014 in memory of Eric's daughter Rebecca, who tragically died of brain cancer on her sixth birthday, 
+The most recent addition to the CSS named color palette has a sad and beautiful story behind it. It's called `rebeccapurple`, and it was added to CSS in 2014 in memory of Eric's daughter Rebecca, who tragically died of brain cancer on her sixth birthday.
+
+That's just one of the many, many ways that named colors have ended up in CSS, including 
 
 
 
