@@ -37,7 +37,11 @@ CSS also defines a set of names for *system colours* --- the colours used by the
 
 If you're viewing this on the web, the example above is live --- so what you're seeing there is based on your own system settings. Here's an image of how that looks on my Windows 11 machine when I have the desktop in *dark mode*:
 
-![image-20250727233100550](./images/system-colors-dark-mode)
+<img src="{{ page.examples}}/system-colors-dark-mode.png"
+onmouseover="this.src='{{page.examples}}/system-colors-light-mode.png';"
+onmouseout="this.src='{{page.examples}}/system-colors-dark-mode.png';">
+
+![System Colors in Windows 11 - Dark Mode]({{page.examples}}/system-colors-dark-mode.png)
 
 Named colours are human. They have character, and history, and they're easy to read --- as long as you know that `gainsboro` is a light grey and `peru` is a sort of pale brown color. But, as you saw with the Swedish flag exercise in the last section: if the color you want doesn't have a name, you're out of luck.
 
