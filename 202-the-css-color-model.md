@@ -53,9 +53,15 @@ System colours can be really useful for building sites and apps which respect yo
 
 ## Colour and Accessibility
 
-Colour and contrast is one of the most important considerations when it comes to making web content accessible. Here's what it looks like done badly.
+Colour and contrast is one of the most important considerations when it comes to making web content accessible. 
 
-{% example color-and-accessibility.html iframe_style="height: 10em;" %}
+> It's a common misconception that accessibility is about 
+
+Here's what it looks like done badly.
+
+{% example color-and-accessibility.html iframe_style="height: 16em;" %}
+
+
 
 
 
