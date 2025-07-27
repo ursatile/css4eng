@@ -90,10 +90,10 @@ div.color-swatches {
 	flex-wrap: wrap;
 	align-content: stretch;
 	justify-content: space-between;
-	gap: 0.5rem;
+	gap: 0.2rem;
 
 	span {
-		padding: 4px;
+		padding: 2px;
 		font-size: 0.8em;
 		font-family: monospace;
 		text-align: center;
@@ -101,34 +101,35 @@ div.color-swatches {
 	}
 
 	span[style*="background-color: black;"],
-	span[style*="background-color: darkslategray;"],
-	span[style*="background-color: maroon;"],
-	span[style*="background-color: navy;"],
-	span[style*="background-color: darkred;"],
-	span[style*="background-color: darkblue;"],
+	span[style*="background-color: blue;"],
 	span[style*="background-color: brown;"],
+	span[style*="background-color: crimson;"],
+	span[style*="background-color: darkblue;"],
+	span[style*="background-color: darkcyan;"],
+	span[style*="background-color: darkgoldenrod;"],
 	span[style*="background-color: darkgreen;"],
+	span[style*="background-color: darkkhaki;"],
 	span[style*="background-color: darkmagenta;"],
-	span[style*="background-color: purple;"],
-	span[style*="background-color: indigo;"],
-	span[style*="background-color: saddlebrown;"],
 	span[style*="background-color: darkolivegreen;"],
+	span[style*="background-color: darkorange;"],
+	span[style*="background-color: darkorchid;"],
+	span[style*="background-color: darkred;"],
 	span[style*="background-color: darkslateblue;"],
-	span[style*="background-color: mediumblue;"],
-	span[style*="background-color: midnightblue;"],
+	span[style*="background-color: darkslategray;"],
+	span[style*="background-color: darkviolet;"],
 	span[style*="background-color: firebrick;"],
 	span[style*="background-color: forestgreen;"],
-	span[style*="background-color: darkorchid;"],
-	span[style*="background-color: darkviolet;"],
-	span[style*="background-color: crimson;"],
-	span[style*="background-color: rebeccapurple;"],
-	span[style*="background-color: darkcyan;"],
-	span[style*="background-color: teal;"],
-	span[style*="background-color: darkgoldenrod;"],
+	span[style*="background-color: indigo;"],
+	span[style*="background-color: maroon;"],
+	span[style*="background-color: mediumblue;"],
 	span[style*="background-color: mediumvioletred;"],
-	span[style*="background-color: darkorange;"],
-	span[style*="background-color: darkkhaki;"],
-	span[style*="background-color: olive;"] {
+	span[style*="background-color: midnightblue;"],
+	span[style*="background-color: navy;"],
+	span[style*="background-color: olive;"],
+	span[style*="background-color: purple;"],
+	span[style*="background-color: rebeccapurple;"],
+	span[style*="background-color: saddlebrown;"],
+	span[style*="background-color: teal;"] {
 		color: white;
 	}
 
