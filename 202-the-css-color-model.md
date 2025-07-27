@@ -29,13 +29,17 @@ The most recent addition to the CSS named colour palette has a sad story behind 
 
 CSS has borrowed named colours from all kinds of places, going way back to a couple of Unix developers, Paul Ravelling and John C. Thomas, sitting down in the late 1980s, one with a Sinclair Paints catalogue, the other with a big box of Crayola crayons, and programming colour names like Dodger Blue, Aquamarine and Orchid into the X Windows colour system.
 
-Named colours are human. They have character, and history, and they're easy to read --- as long as you know that `gainsboro` is a light grey and `peru` is a sort of pale brown color.
+### Named System Colours
 
-But, as you saw with the Swedish flag exercise in the last section: if the color you want doesn't have a name, you're out of luck.
+The 
+
+
+
+Named colours are human. They have character, and history, and they're easy to read --- as long as you know that `gainsboro` is a light grey and `peru` is a sort of pale brown color. But, as you saw with the Swedish flag exercise in the last section: if the color you want doesn't have a name, you're out of luck.
 
 Fortunately, named colours isn't the only way to specify colour values in CSS.
 
-The RGB Colour Model
+## The RGB Colour Model
 
 Inside every computer screen are millions of tiny pixels, and every pixel is made up of three elements - one red, one green, one blue. If you zoom in really close with a magnifying glass or something, you can see the individual RGB components of each pixel, but in everyday use, they're so tiny, and so close together, that your eyes just kinda smush the elements together. If they're all dark, that pixel looks black. If they're all lit up as bright as they can, that pixel looks white.
 
@@ -50,6 +54,14 @@ Next question, then: how do you specify that? Most modern computers use 24-bit c
 That gives us sixteen million, seven hundred and seventy seven thousand, two hundred and sixteen different possible colours. That sounds like a lot, but there's actually some applications where that's not enough: professional video editing systems often use 30-bit color - 10 bits per channel - and many of the effects in Adobe applications like Photoshop use 48-bit color internally, with 16 bits per channel, so that color precision doesn't get lost if, say, you put a darken filter on top of a brighten filter. I'm not sure why you'd do that... but if you did, Photoshop's got your back.
 
 For the web, though, 8 bits per channel is plenty.
+
+### Opacity and Alpha
+
+
+
+
+
+
 
 The most readable way to work with CSS RGB color values is to use the `rgb` function, which takes three decimal numbers for the red, green, and blue components, respectively:
 
