@@ -31,7 +31,7 @@ CSS has borrowed named colours from all kinds of places, going way back to a cou
 
 ### Named System Colours
 
-The 
+CSS also defines a set of names for *system colours* --- the colours used by the rest of the user's operating system. The idea is that you can say “hey, make the buttons on my web page the same colour as all the other buttons on that person's computer” so you can build web apps that 
 
 
 
@@ -65,11 +65,11 @@ For the web, though, 8 bits per channel is plenty.
 
 The most readable way to work with CSS RGB color values is to use the `rgb` function, which takes three decimal numbers for the red, green, and blue components, respectively:
 
-{% example rgb-colors.html iframe_style="height: 262px;" %}
+{% example rgb-colors.html iframe_style="height: 230px;" %}
 
 You can also write rgb colours with each component as a percentage:
 
-
+{% example rgb-colors-percentages.html iframe_style="height: 230px;" %}
 
 By far the most common way to write RGB colors on the web, though, is to use something called hexadecimal notation, often shortened to `hex`.
 
