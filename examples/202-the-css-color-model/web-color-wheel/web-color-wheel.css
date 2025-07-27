@@ -3,6 +3,18 @@ body {
 	overflow: hidden;
 }
 
+small {
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color: #666;
+	a {
+		color: #666;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
 div#named-color-wheel-wrapper {
 	text-align: center;
 
