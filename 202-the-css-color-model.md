@@ -43,6 +43,8 @@ This is the additive color model, and it works because of how human eyes work...
 
 By the way, you might have learned in school that the primary colours are red, yellow and blue... that's true when you're mixing paint, or printer ink, because when you're working with paint or ink you're starting with a bright white surface, like a blank sheet of paper, and then making it darker. This is known as a subtractive color model; children mixing paint in school tend to use red, yellow and blue, while printer ink mixes cyan, magenta, and yellow. Screens and projectors use an *additive* colour model: you start with black and make it brighter by adding different colours of light until you get the colour you want.
 
+So... you can get pretty much any colour you like on a computer screen, by specifying how much red, how much green, and how much blue.
+
 
 
 
