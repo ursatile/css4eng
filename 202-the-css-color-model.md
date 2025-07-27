@@ -55,7 +55,9 @@ The most readable way to work with CSS RGB color values is to use the `rgb` func
 
 {% example rgb-colors.html iframe_style="height: 262px;" %}
 
-You can also write 
+You can also write rgb colours with each component as a percentage:
+
+
 
 By far the most common way to write RGB colors on the web, though, is to use something called hexadecimal notation, often shortened to `hex`.
 
