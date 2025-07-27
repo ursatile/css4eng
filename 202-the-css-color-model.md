@@ -55,7 +55,7 @@ System colours can be really useful for building sites and apps which respect yo
 
 Colour and contrast is one of the most important considerations when it comes to making web content accessible. 
 
-> It's a common misconception that accessibility is about 
+> It's a common misconception that accessibility is about making special adaptations for people with recognised disabilities. It's not. Accessibility and inclusive design are about creating content and experiences that don't *require* special adaptations --- and "disability" isn't boolean. One of the most insightful resources I've seen on the subject of inclusive design is Microsoft's [Inclusive 101 Guidebook](https://inclusive.microsoft.design/tools-and-activities/Inclusive101Guidebook.pdf), and in particular 
 
 Here's what it looks like done badly.
 
