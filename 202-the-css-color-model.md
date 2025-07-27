@@ -21,7 +21,7 @@ Over time, CSS has also adopted named colours from various sources, including th
 
 If you're curious how that works, the [code is available on Github](https://github.com/arantius/web-color-wheel) under an MIT license, and huge thanks to Anthony for creating that; I think it's fantastic.
 
-The CSS nam
+There are some interesting historical details hidden in the CSS named color system... for example, there's a color called `darkgrey`, which is actually lighter than the color called `grey`, 
 
 
 
