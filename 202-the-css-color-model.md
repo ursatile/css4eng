@@ -35,6 +35,8 @@ CSS also defines a set of names for *system colours* --- the colours used by the
 
 {% include_relative {{page.examples}}/system-colors.html %}
 
+If you're viewing this on the web, the example above is live --- so what you're seeing there is based on your own system settings, and 
+
 Named colours are human. They have character, and history, and they're easy to read --- as long as you know that `gainsboro` is a light grey and `peru` is a sort of pale brown color. But, as you saw with the Swedish flag exercise in the last section: if the color you want doesn't have a name, you're out of luck.
 
 Fortunately, named colours isn't the only way to specify colour values in CSS.
