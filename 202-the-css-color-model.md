@@ -63,7 +63,13 @@ I'm going to give a very short explanation, but if you're still not clear on it,
 
 Short version: humans have ten digits, because we have ten digits. We have the numerals zero, one, two, three, four, five, six, seven, eight, nine, we have ten fingers --- well, eight fingers and two thumbs --- on our hands, and we count in base ten. We don't have a numeral for ten; we get as far as nine, then we stick a one in the tens column and the units goes back to zero. And when we get to ninety-ine, stick a one in the hundreds column and the others go back to zero.
 
-Hexadecimal - which gets its name after the greek word for six, `hex`, and the latin word for tenth, `decimal`
+Hexadecimal --- which gets its name after the greek word for six, `hex`, and the latin word for tenth, `decimal`, because English is a messed-up language --- is base sixteen. When we get past nine, we don't move to the tens... we count a, b, c, d, e, f, and THEN add a column. So zero through nine are the same as decimal numbers. a in hexadecimal is ten of something, b is eleven, c is twelve, f is fifteen, and then one-zero is sixteen.
+
+A CSS hex color code looks like `#0369cf`
+
+The hash `#` indicates it's a colour code, and then there
+
+
 
 
 
