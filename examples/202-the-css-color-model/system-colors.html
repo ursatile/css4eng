@@ -1,48 +1,121 @@
-<div class="color-swatches">
-	<span><span style="background-color: AccentColor;"
-			title="Background of accented user interface controls."></span>
-		AccentColor</span>
-	<span><span style="background-color: AccentColorText;"
-			title="Text of accented user interface controls."></span>
-		AccentColorText</span>
-	<span><span style="background-color: ActiveText;"
-			title="Text of active links."></span> ActiveText</span>
-	<span><span style="background-color: ButtonBorder;"
-			title="Base border color of controls."></span> ButtonBorder</span>
-	<span><span style="background-color: ButtonFace;"
-			title="Background color of controls."></span> ButtonFace</span>
-	<span><span style="background-color: ButtonText;"
-			title="Text color of controls."></span> ButtonText</span>
-	<span><span style="background-color: Canvas;"
-			title="Background of application content or documents."></span>
-		Canvas</span>
-	<span><span style="background-color: CanvasText;"
-			title="Text color in application content or documents."></span>
-		CanvasText</span>
-	<span><span style="background-color: Field;"
-			title="Background of input fields."></span> Field</span>
-	<span><span style="background-color: FieldText;"
-			title="Text in input fields."></span> FieldText</span>
-	<span><span style="background-color: GrayText;"
-			title="Text color for disabled items (for example, a disabled control)."></span>
-		GrayText</span>
-	<span><span style="background-color: Highlight;"
-			title="Background of selected items."></span> Highlight</span>
-	<span><span style="background-color: HighlightText;"
-			title="Text color of selected items."></span> HighlightText</span>
-	<span><span style="background-color: LinkText;"
-			title="Text of non-active, non-visited links."></span> LinkText</span>
-	<span><span style="background-color: Mark;"
-			title="Background of text that has been specially marked (such as by the HTML mark element)."></span>
-		Mark</span>
-	<span><span style="background-color: MarkText;"
-			title="Text that has been specially marked (such as by the HTML mark element)."></span>
-		MarkText</span>
-	<span><span style="background-color: SelectedItem;"
-			title="Background of selected items, for example, a selected checkbox."></span>
-		SelectedItem</span>
-	<span><span style="background-color: SelectedItemText;"
-			title="Text of selected items."></span> SelectedItemText</span>
-	<span><span style="background-color: VisitedText;"
-			title="Text of visited links."></span> VisitedText</span>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+
+	</title>
+	<style>
+		div.color-swatches {
+			color: black;
+			display: flex;
+			flex-wrap: wrap;
+			align-content: stretch;
+			justify-content: space-between;
+			gap: 0.2rem;
+
+			span {
+				display: flex;
+				gap: 4px;
+				background-color: white;
+				padding: 4px;
+				font-size: 0.8em;
+				font-family: monospace;
+				text-align: center;
+				border-radius: 4px;
+
+				span {
+					outline: 1px solid black;
+					width: 2em;
+					height: 2em;
+					display: inline-block;
+				}
+			}
+
+			span[style*="background-color: black;"],
+			span[style*="background-color: blue;"],
+			span[style*="background-color: brown;"],
+			span[style*="background-color: crimson;"],
+			span[style*="background-color: darkblue;"],
+			span[style*="background-color: darkcyan;"],
+			span[style*="background-color: darkgoldenrod;"],
+			span[style*="background-color: darkgreen;"],
+			span[style*="background-color: darkkhaki;"],
+			span[style*="background-color: darkmagenta;"],
+			span[style*="background-color: darkolivegreen;"],
+			span[style*="background-color: darkorange;"],
+			span[style*="background-color: darkorchid;"],
+			span[style*="background-color: darkred;"],
+			span[style*="background-color: darkslateblue;"],
+			span[style*="background-color: darkslategray;"],
+			span[style*="background-color: darkviolet;"],
+			span[style*="background-color: firebrick;"],
+			span[style*="background-color: forestgreen;"],
+			span[style*="background-color: indigo;"],
+			span[style*="background-color: maroon;"],
+			span[style*="background-color: mediumblue;"],
+			span[style*="background-color: mediumvioletred;"],
+			span[style*="background-color: midnightblue;"],
+			span[style*="background-color: navy;"],
+			span[style*="background-color: olive;"],
+			span[style*="background-color: purple;"],
+			span[style*="background-color: rebeccapurple;"],
+			span[style*="background-color: saddlebrown;"],
+			span[style*="background-color: teal;"] {
+				color: white;
+			}
+
+		}
+	</style>
+</head>
+<body>
+
+	<div class="color-swatches">
+		<span><span style="background-color: AccentColor;"
+				title="Background of accented user interface controls."></span>
+			AccentColor</span>
+		<span><span style="background-color: AccentColorText;"
+				title="Text of accented user interface controls."></span>
+			AccentColorText</span>
+		<span><span style="background-color: ActiveText;"
+				title="Text of active links."></span> ActiveText</span>
+		<span><span style="background-color: ButtonBorder;"
+				title="Base border color of controls."></span> ButtonBorder</span>
+		<span><span style="background-color: ButtonFace;"
+				title="Background color of controls."></span> ButtonFace</span>
+		<span><span style="background-color: ButtonText;"
+				title="Text color of controls."></span> ButtonText</span>
+		<span><span style="background-color: Canvas;"
+				title="Background of application content or documents."></span>
+			Canvas</span>
+		<span><span style="background-color: CanvasText;"
+				title="Text color in application content or documents."></span>
+			CanvasText</span>
+		<span><span style="background-color: Field;"
+				title="Background of input fields."></span> Field</span>
+		<span><span style="background-color: FieldText;"
+				title="Text in input fields."></span> FieldText</span>
+		<span><span style="background-color: GrayText;"
+				title="Text color for disabled items (for example, a disabled control)."></span>
+			GrayText</span>
+		<span><span style="background-color: Highlight;"
+				title="Background of selected items."></span> Highlight</span>
+		<span><span style="background-color: HighlightText;"
+				title="Text color of selected items."></span> HighlightText</span>
+		<span><span style="background-color: LinkText;"
+				title="Text of non-active, non-visited links."></span> LinkText</span>
+		<span><span style="background-color: Mark;"
+				title="Background of text that has been specially marked (such as by the HTML mark element)."></span>
+			Mark</span>
+		<span><span style="background-color: MarkText;"
+				title="Text that has been specially marked (such as by the HTML mark element)."></span>
+			MarkText</span>
+		<span><span style="background-color: SelectedItem;"
+				title="Background of selected items, for example, a selected checkbox."></span>
+			SelectedItem</span>
+		<span><span style="background-color: SelectedItemText;"
+				title="Text of selected items."></span> SelectedItemText</span>
+		<span><span style="background-color: VisitedText;"
+				title="Text of visited links."></span> VisitedText</span>
+	</div>
+</body>
+</html>
