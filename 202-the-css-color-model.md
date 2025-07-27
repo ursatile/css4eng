@@ -55,6 +55,8 @@ The most readable way to work with CSS RGB color values is to use the `rgb` func
 
 {% example rgb-colors.html iframe_style="height: 262px;" %}
 
+You can also write 
+
 By far the most common way to write RGB colors on the web, though, is to use something called hexadecimal notation, often shortened to `hex`.
 
 Now, if your background is in computer science, you've worked with languages like C or done any systems programming, you've probably seen hex before - in which case you might want to skip ahead a few minutes. But if you've found your way into web development via graphic design, or art, or publishing --- as many, many people have --- hex codes are one of those things that might make you stop and go "hold on... what?"
@@ -74,6 +76,8 @@ The hash `#` indicates it's a colour code, and it's followed by six hexadecimal 
 * `ac` in decimal is 172, which is quite a lot of blue
 
 so that colour is <span style="background-color: #0246ac; padding: 4px;">a rich, vivid blue with a touch of green in it.</span> (see?)
+
+You'll also occasionally see hex codes written with three digits instead of six - `#fff` instead of `#ffffff`. 
 
 There are some developers out there who can glance at a colour and make a pretty good guess at the RGB values - and hex codes - for that colour, and who can glance at a hex code and know exactly what tint and shade it is. I am not one of those developers. I can spot the easy ones - `#00ff00` is obviously bright green, a colour code like `#252525`, where all three digits are the same, is obviously a shade of grey - but fortunately, editors like VS Code have fantastic support for editing CSS colour codes.
 
