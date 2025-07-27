@@ -221,10 +221,10 @@ function renderPreview(color) {
   }
   let [r, g, b] = colors[color];
   document.getElementById('named-color-wheel-preview').innerHTML = `
-      ${color}
        <span class="swatch"
           style="background-color: ${rgbToHex(r, g, b)};">&nbsp;</span>
-      ${rgbToHex(r, g, b).toUpperCase()}
+      <span class="color-code">${rgbToHex(r, g, b).toUpperCase()}</span>
+      <span class="color-name">${color}</span>
       `;
 }
 

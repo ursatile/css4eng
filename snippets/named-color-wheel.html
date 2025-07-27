@@ -22,9 +22,22 @@
 			div#named-color-wheel-preview {
 				outline: 1px solid #f0f;
 				margin: 0 auto;
-				width: 300px;
-				display: flex;
+				width: 440px;
+				display: grid;
+				color: #000;
+				background-color: #999;
+				grid-template-columns: 2em 8em 1fr;
+								justify-content: center;
+				align-items: center;
+				gap: 0.5em;
 				color: #fff;
+				font-family: system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif, "Segoe UI Emoji";
+				span.color-name {
+					text-align: left;
+				}
+				span.color-code {
+					text-align: center;
+				}
 
 				.swatch {
 					width: 2em;
