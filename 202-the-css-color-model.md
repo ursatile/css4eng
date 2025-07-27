@@ -59,6 +59,14 @@ By far the most common way to write RGB colors on the web, though, is to use som
 
 Now, if your background is in computer science, you've worked with languages like C or done any systems programming, you've probably seen hex before - in which case you might want to skip ahead a few minutes. But if you've found your way into web development via graphic design, or art, or publishing --- as many, many people have --- hex codes are one of those things that might make you stop and go "hold on... what?"
 
+I'm going to give a very short explanation, but if you're still not clear on it, by all means go away and read up on it before coming back to this course; this next section is going make way more sense if you're happy reading and writing hexadecimal numbers.
+
+Short version: humans have ten digits, because we have ten digits. We have the numerals zero, one, two, three, four, five, six, seven, eight, nine, we have ten fingers --- well, eight fingers and two thumbs --- on our hands, and we count in base ten. We don't have a numeral for ten; we get as far as nine, then we stick a one in the tens column and the units goes back to zero. And when we get to ninety-ine, stick a one in the hundreds column and the others go back to zero.
+
+Hexadecimal - which gets its name after the greek word for six, `hex`, and the latin word for tenth, `decimal`
+
+
+
 
 
 
