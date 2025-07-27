@@ -75,7 +75,9 @@ The hash `#` indicates it's a colour code, and it's followed by six hexadecimal 
 
 so that colour is <span style="background-color: #0246ac; padding: 4px;">a rich, vivid blue with a touch of green in it.</span> (see?)
 
-Reading and wre
+There are some developers out there who can glance at a colour and make a pretty good guess at the RGB values - and hex codes - for that colour, and who can glance at a hex code and know exactly what tint and shade it is. I am not one of those developers. I can spot the easy ones - `#00ff00` is obviously bright green, a colour code like `#252525`, where all three digits are the same, is obviously a shade of grey - but fortunately, editors like VS Code have fantastic support for editing CSS colour codes.
+
+
 
 
 
