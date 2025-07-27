@@ -47,7 +47,17 @@ So... you can get pretty much any colour you like on a computer screen, by speci
 
 Next question, then: how do you specify that? Most modern computers use 24-bit colour; we get eight bits for each of the red, green and blue channels, and eight bits is enough to count from zero up to two hundred and fifty five.
 
-That gives us sixteen million, seven hundred and seventy seven thousand, two hundred and sixteen different possible colours. That sounds like a lot, but there's actually some applications where that's not enough: professional video editing systems often use 30-bit color - 10 bits per channel - and many of the effects in Adobe applications like Photoshop use 48-bit color internally 
+That gives us sixteen million, seven hundred and seventy seven thousand, two hundred and sixteen different possible colours. That sounds like a lot, but there's actually some applications where that's not enough: professional video editing systems often use 30-bit color - 10 bits per channel - and many of the effects in Adobe applications like Photoshop use 48-bit color internally, with 16 bits per channel, so that color precision doesn't get lost if, say, you put a darken filter on top of a brighten filter. I'm not sure why you'd do that... but if you did, Photoshop's got your back.
+
+For the web, though, 8 bits per channel is plenty.
+
+The most readable way to work with CSS RGB color values is to use the rgb function.
+
+{% example rgb-colors.html %}
+
+
+
+
 
 
 
