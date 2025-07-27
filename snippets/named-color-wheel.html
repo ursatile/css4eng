@@ -1,25 +1,38 @@
 <style>
-	svg#named-color-wheel {
-		clip-path: circle(300px at center);
+	div#named-color-wheel-wrapper {
+		text-align: center;
 
-		polygon {
-			stroke-width: 1px;
+		svg#named-color-wheel {
+			clip-path: circle(300px at center);
+
+			polygon {
+				stroke-width: 1px;
+			}
 		}
 
-		.swatch {
-			border: 8px outset white;
-			border-bottom-color: black;
-			border-left-color: gray;
+
+		div#named-color-wheel-preview {
+			outline: 1px solid #f0f;
+			margin: 0 auto;
+			width: auto;
 			display: inline-block;
-			min-width: 5em;
+
+			.swatch {
+				width: 2em;
+				height: 2em;
+				border-radius: 0.5em;
+				display: inline-block;
+			}
 		}
 	}
 </style>
+<div id="named-color-wheel-wrapper">
+	<svg id="named-color-wheel" baseProfile="full" height="600" version="1.1"
+		viewbox="0 0 1024 1024" width="600"
+		xmlns="http://www.w3.org/2000/svg"></svg>
 
-<svg id="named-color-wheel" baseProfile="full" height="600" version="1.1"
-	viewbox="0 0 1024 1024" width="600" xmlns="http://www.w3.org/2000/svg"></svg>
+	<script src="rhill-voronoi-core.min.js"></script>
+	<script src="named-color-wheel.js"></script>
 
-<script src="rhill-voronoi-core.min.js"></script>
-<script src="named-color-wheel.js"></script>
-
-<h1 id="preview"></h1>
+	<div id="named-color-wheel-preview"></div>
+</div>

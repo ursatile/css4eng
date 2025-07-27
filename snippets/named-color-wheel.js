@@ -216,11 +216,11 @@ function rgbToHex(r, g, b) {
 let previewLocked = false;
 function renderPreview(color) {
   if (!color) {
-    document.getElementById('preview').innerHTML = '';
+    document.getElementById('named-color-wheel-preview').innerHTML = '';
     return;
   }
   let [r, g, b] = colors[color];
-  document.getElementById('preview').innerHTML = `
+  document.getElementById('named-color-wheel-preview').innerHTML = `
       ${color}
        <span class="swatch"
           style="background-color: ${rgbToHex(r, g, b)};">&nbsp;</span>
@@ -245,7 +245,7 @@ svg.addEventListener('mouseout', e => {
 });
 document.body.addEventListener('click', e => {
   let el = e.target;
-  if (document.getElementById('preview').contains(el)) return;
+  if (document.getElementById('named-color-wheel-preview').contains(el)) return;
   document.querySelectorAll('polygon[style]').forEach(el =>  el.removeAttribute('style'));
 
   if (el.tagName != 'polygon') {
