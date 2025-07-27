@@ -53,7 +53,7 @@ For the web, though, 8 bits per channel is plenty.
 
 The most readable way to work with CSS RGB color values is to use the rgb function.
 
-{% example rgb-colors.html %}
+{% example rgb-colors.html iframe_style="height: 18em;" %}
 
 
 
