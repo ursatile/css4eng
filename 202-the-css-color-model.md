@@ -65,9 +65,23 @@ Short version: humans have ten digits, because we have ten digits. We have the n
 
 Hexadecimal --- which gets its name after the greek word for six, `hex`, and the latin word for tenth, `decimal`, because English is a messed-up language --- is base sixteen. When we get past nine, we don't move to the tens... we count a, b, c, d, e, f, and THEN add a column. So zero through nine are the same as decimal numbers. a in hexadecimal is ten of something, b is eleven, c is twelve, f is fifteen, and then one-zero is sixteen.
 
-A CSS hex color code looks like `#0369cf`
+A CSS hex color code looks like `#0246ac`
 
-The hash `#` indicates it's a colour code, and then there
+The hash `#` indicates it's a colour code, and it's followed by six hexadecimal digits , `02`, `46`, then `ac`.
+
+* `02` in decimal is 2, which is practically zero, so our colour has almost no red in it.
+* `46` in decimal is 70, which is very roughly a quarter of 255, so we've got a bit of green.#
+* `ac` in decimal is 172, which is quite a lot, 
+
+
+
+
+
+
+
+
+
+
 
 
 
