@@ -39,7 +39,7 @@ The RGB Colour Model
 
 Inside every computer screen are millions of tiny pixels, and every pixel is made up of three elements - one red, one green, one blue. If you zoom in really close with a magnifying glass or something, you can see the individual RGB components of each pixel, but in everyday use, they're so tiny, and so close together, that your eyes just kinda smush the elements together. If they're all dark, that pixel looks black. If they're all lit up as bright as they can, that pixel looks white.
 
-This is the additive color model.
+This is the additive color model, and it works because of how human eyes work... inside our eyes are two different kinds of photosensitive cells. The cells called rods are sensitive to light and shade; we've got about a hundred million of those, they work great in dim light, they're great at perceiving fine detail, but they can't detect  the cells called cones are sensitive to colour, and  
 
 
 
