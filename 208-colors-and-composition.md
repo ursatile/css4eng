@@ -11,6 +11,7 @@ examples: examples/208-colors-and-composition
 ## Course Content
 
 - The CSS Color Model:  named colors, hex codes, `rgba()`, `hls`
+- DARK MODE
 - Beyond boxes: border-radius and backgrounds: `color`, `image`, `origin`, `size`, `position`
 - Understanding stacking contexts
 - Compositing multiple backgrounds

@@ -35,13 +35,23 @@ CSS also defines a set of names for *system colours* --- the colours used by the
 
 {% include_relative {{page.examples}}/system-colors.html %}
 
-If you're viewing this on the web, the example above is live --- so what you're seeing there is based on your own system settings. Here's an image of how that looks on my Windows 11 machine when I have the desktop in *dark mode*:
+If you're viewing this on the web, the example above is live --- so what you're seeing there is based on your own system settings. For comparison, here's two screenshots showing what that preview looks like for me running Windows 11 - first in **dark mode**:
 
 <img src="{{ page.examples}}/system-colors-dark-mode.png"
 onmouseover="this.src='{{page.examples}}/system-colors-light-mode.png';"
 onmouseout="this.src='{{page.examples}}/system-colors-dark-mode.png';">
 
-![System Colors in Windows 11 - Dark Mode]({{page.examples}}/system-colors-dark-mode.png)
+and then in **light mode**:
+
+<img src="{{ page.examples}}/system-colors-light-mode.png"
+onmouseover="this.src='{{page.examples}}/system-colors-dark-mode.png';"
+onmouseout="this.src='{{page.examples}}/system-colors-light-mode.png';">
+
+Look closely at `ButtonFace` and `ButtonText` --- you see how in dark mode, `ButtonFace` is a dark grey and `ButtonText` is white, because dark mode has white text on dark buttons, but in light mode it's black text on pale grey buttons?
+
+
+
+
 
 Named colours are human. They have character, and history, and they're easy to read --- as long as you know that `gainsboro` is a light grey and `peru` is a sort of pale brown color. But, as you saw with the Swedish flag exercise in the last section: if the color you want doesn't have a name, you're out of luck.
 
