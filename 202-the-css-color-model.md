@@ -51,11 +51,13 @@ That gives us sixteen million, seven hundred and seventy seven thousand, two hun
 
 For the web, though, 8 bits per channel is plenty.
 
-The most readable way to work with CSS RGB color values is to use the rgb function.
+The most readable way to work with CSS RGB color values is to use the `rgb` function, which takes three decimal numbers for the red, green, and blue components, respectively:
 
-{% example rgb-colors.html iframe_style="height: 18em;" %}
+{% example rgb-colors.html iframe_style="height: 262px;" %}
 
+By far the most common way to write RGB colors on the web, though, is to use something called hexadecimal notation, often shortened to `hex`.
 
+Now, if your background is in computer science, you've worked with languages like C or done any systems programming, you've probably seen hex before - in which case you might want to skip ahead a few minutes. But if you've found your way into web development via graphic design, or art, or publishing --- as many, many people have --- hex codes are one of those things that might make you stop and go "hold on... what?"
 
 
 
