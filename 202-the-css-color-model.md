@@ -31,9 +31,9 @@ CSS has borrowed named colours from all kinds of places, going way back to a cou
 
 ### Named System Colours
 
-CSS also defines a set of names for *system colours* --- the colours used by the rest of the user's operating system. The idea is that you can say “hey, make the buttons on my web page the same colour as all the other buttons on that person's computer” so you can build web apps that 
+CSS also defines a set of names for *system colours* --- the colours used by the rest of the user's operating system. The idea is that you can say “hey, make the buttons on my web page the same colour as all the other buttons on that person's computer” so you can build web apps that reflect their desktop colour scheme and preferences.
 
-
+{% include_relative {{page.examples}}/system-colors.html %}
 
 Named colours are human. They have character, and history, and they're easy to read --- as long as you know that `gainsboro` is a light grey and `peru` is a sort of pale brown color. But, as you saw with the Swedish flag exercise in the last section: if the color you want doesn't have a name, you're out of luck.
 
