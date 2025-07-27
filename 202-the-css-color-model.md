@@ -35,6 +35,12 @@ But, as you saw with the Swedish flag exercise in the last section: if the color
 
 Fortunately, named colours isn't the only way to specify colour values in CSS.
 
+The RGB Colour Model
+
+Inside every computer screen are millions of tiny pixels, and every pixel is made up of three elements - 
+
+
+
 
 
 
