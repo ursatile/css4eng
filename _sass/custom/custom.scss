@@ -80,3 +80,16 @@ iframe {
 	border: 1px solid #000;
 	height: 480px;
 }
+
+div#sixteen-color-palette {
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	gap: 0.5rem;
+	span {
+		padding: 8px;
+		font-family: monospace;
+		text-align: center;
+		border-radius: 4px;
+	}	
+}
