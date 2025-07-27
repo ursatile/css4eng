@@ -21,7 +21,9 @@ Over time, CSS has also adopted named colours from various sources, including th
 
 If you're curious how that works, the [code is available on Github](https://github.com/arantius/web-color-wheel) under an MIT license, and huge thanks to Anthony for creating that; I think it's fantastic.
 
-There are some interesting historical details hidden in the CSS named color system... for example, there's a color called `darkgrey`, which is actually lighter than the color called `grey`, 
+There are some interesting historical details hidden in the CSS named color system... for example, there's a color called `darkgrey`, which is actually lighter than the color called `grey` - because `grey` came from the original 16-color VGA palette, and `darkgrey` was already defined by X Windows as a lighter shade than that. Many colours have two names - the hot-pink color beloved of CGA computer games and synthwave artists is called `magenta` and `fuchsia`, and you can spell `grey` with either an "a" or an "e" wherever it appears in a colour name.
+
+The most recent addition to the CSS color palette is `rebeccapurple`, which actually has a heartbreaking story behind it: it's a memorial to Rebecca Meyer, the daughter of web standards 
 
 
 
