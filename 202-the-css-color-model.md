@@ -61,11 +61,13 @@ Colour and contrast is one of the most important considerations when it comes to
 >
 > I have pretty good eyesight, but every time I find myself using my phone outside on a bright sunny day, it becomes instantly apparent how much difference colour, size and contrast can make when it comes to trying to read what's on the screen in less than ideal conditions.
 
-Here's what web accessibility looks like done badly. All we're changing here is the colours; 
+Here's what web accessibility looks like done badly. 
 
 {% example color-and-accessibility.html iframe_style="height: 16em;" %}
 
+All we're changing here is the colours; we haven't messed with font size, element visibility, interactions. And yet we've got text you can't read, links you can't find, and buttons you can hardly see - not to mention a chunk of red-on-green text which is going to appear brown-on-brown for over 10% of our website users.
 
+Accessibility is important, but if you approach it right, it's not complicated and it's not expensive. Web standards are full of techniques and technology we can use to make our apps inclusive 
 
 
 
