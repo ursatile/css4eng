@@ -55,9 +55,13 @@ System colours can be really useful for building sites and apps which respect yo
 
 Colour and contrast is one of the most important considerations when it comes to making web content accessible. 
 
-> It's a common misconception that accessibility is about making special adaptations for people with recognised disabilities. It's not. Accessibility and inclusive design are about creating content and experiences that don't *require* special adaptations --- and "disability" isn't boolean. One of the most insightful resources I've seen on the subject of inclusive design is Microsoft's [Inclusive 101 Guidebook](https://inclusive.microsoft.design/tools-and-activities/Inclusive101Guidebook.pdf), and in particular 
+> It's a common misconception that accessibility is about making special adaptations for people with specific disabilities. It's not. Accessibility and inclusive design are about creating content and experiences that don't *require* special adaptations --- and "disability" isn't boolean. One of the most insightful resources I've seen on the subject of inclusive design is Microsoft's [Inclusive 101 Guidebook](https://inclusive.microsoft.design/tools-and-activities/Inclusive101Guidebook.pdf), and in particular something called the Persona Spectrum:
+>
+> ![image-20250728001812102](./images/microsoft-inclusive-persona-spectrum.png)
+>
+> I have pretty good eyesight, but every time I find myself using my phone outside on a bright sunny day, it becomes instantly apparent how much difference colour, size and contrast can make when it comes to trying to read what's on the screen in less than ideal conditions.
 
-Here's what it looks like done badly.
+Here's what web accessibility looks like done badly. All we're changing here is the colours; 
 
 {% example color-and-accessibility.html iframe_style="height: 16em;" %}
 
