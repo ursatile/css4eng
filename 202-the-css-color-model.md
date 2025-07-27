@@ -29,7 +29,13 @@ The most recent addition to the CSS named color palette has a sad and beautiful 
 
 That's just one of the many, many ways that named colors have ended up in CSS, going way back to a Unix developer sitting down in the late 1980s with a box of Crayola crayons and programming colors like aquamarine and orchid into the X Windows color system.
 
-Named colors are human. They have character, and history, and they're easy to read --- as long as you know that `gainsboro` is a light grey and 
+Named colors are human. They have character, and history, and they're easy to read --- as long as you know that `gainsboro` is a light grey and `peru` is a sort of pale brown color.
+
+But, as you saw with the Swedish flag exercise in the last section: if the color you want doesn't have a name, you're out of luck.
+
+Fortunately, named colours isn't the only way to specify colour values in CSS.
+
+
 
 
 
