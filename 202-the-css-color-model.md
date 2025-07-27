@@ -27,9 +27,9 @@ The color `orange` was added to the CSS version 2 specification, after it turned
 
 The most recent addition to the CSS named colour palette has a sad story behind it. It's called `rebeccapurple`, and it was added to CSS in 2014 in memory of Eric's daughter Rebecca, who tragically died of brain cancer on her sixth birthday. It's a beautiful memorial, and perhaps, a reminder that behind all the elements and attributes, technology like CSS matters because the real value of the open web is the beautiful, fragile, and very human connections which it makes possible.
 
-CSS has borrowed named colours from al, going way back to a Unix developer sitting down in the late 1980s with a box of Crayola crayons and programming colors like aquamarine and orchid into the X Windows color system.
+CSS has borrowed named colours from all kinds of places, going way back to a couple of Unix developers, Paul Ravelling and John C. Thomas, sitting down in the late 1980s, one with a Sinclair Paints catalogue, the other with a big box of Crayola crayons, and programming colour names like Dodger Blue, Aquamarine and Orchid into the X Windows colour system.
 
-Named colors are human. They have character, and history, and they're easy to read --- as long as you know that `gainsboro` is a light grey and `peru` is a sort of pale brown color.
+Named colours are human. They have character, and history, and they're easy to read --- as long as you know that `gainsboro` is a light grey and `peru` is a sort of pale brown color.
 
 But, as you saw with the Swedish flag exercise in the last section: if the color you want doesn't have a name, you're out of luck.
 
@@ -63,9 +63,9 @@ I'm going to give a very short explanation, but if you're still not clear on it,
 
 Short version: humans have ten digits, because we have ten digits. We have the numerals zero, one, two, three, four, five, six, seven, eight, nine, we have ten fingers --- well, eight fingers and two thumbs --- on our hands, and we count in base ten. We don't have a numeral for ten; we get as far as nine, then we stick a one in the tens column and the units goes back to zero. And when we get to ninety-ine, stick a one in the hundreds column and the others go back to zero.
 
-Hexadecimal --- which gets its name after the greek word for six, `hex`, and the latin word for tenth, `decimal`, because English is a messed-up language --- is base sixteen. When we get past nine, we don't move to the tens... we count a, b, c, d, e, f, and THEN add a column. So zero through nine are the same as decimal numbers. a in hexadecimal is ten of something, b is eleven, c is twelve, f is fifteen, and then one-zero is sixteen.
+Hexadecimal --- which gets its name from the Greek word for six, `hex`, and the Latin word for tenth, `decimal`, because English is a messed-up language --- is base sixteen. When we get past nine, we don't move to the tens... we count a, b, c, d, e, f, and THEN add a column. So zero through nine are the same as decimal numbers. a in hexadecimal is ten of something, b is eleven, c is twelve, f is fifteen, and then one-zero is sixteen.
 
-A CSS hex color code looks like `#0246ac`
+A CSS hex colour code looks like `#0246ac`
 
 The hash `#` indicates it's a colour code, and it's followed by six hexadecimal digits , `02`, `46`, then `ac`.
 
@@ -73,7 +73,11 @@ The hash `#` indicates it's a colour code, and it's followed by six hexadecimal 
 * `46` in decimal is 70, which is very roughly a quarter of 255, so we've got a bit of green.
 * `ac` in decimal is 172, which is quite a lot of blue
 
-so that 
+so that colour is <span style="background-color: #0246ac; padding: 4px;">a rich, vivid blue with a touch of green in it.</span> (see?)
+
+Reading and wre
+
+
 
 
 
