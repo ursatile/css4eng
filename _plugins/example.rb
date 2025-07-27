@@ -42,7 +42,8 @@ module Jekyll
           elsif path.downcase.end_with?(".css")
             puts "#{path} not found - creating with CSS boilerplate"
             File.write(path, "html { }")
-          else
+          elsif File.extname(path).length >= 3
+            puts "#{path} not found - creating empty file"
             File.write(path, "")
           end
         end

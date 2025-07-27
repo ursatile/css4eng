@@ -49,7 +49,19 @@ onmouseout="this.src='{{page.examples}}/system-colors-light-mode.png';">
 
 Look closely at `ButtonFace` and `ButtonText` --- you see how in dark mode, `ButtonFace` is a dark grey and `ButtonText` is white, because dark mode has white text on dark buttons, but in light mode it's black text on pale grey buttons?
 
-System colours can be really useful for building sites and apps which respect your user's colour preferences, but be really careful to always use them in matching pairs. If you're setting an element's `background-color` to `Canvas`, you *must* set that element's `color` property to `CanvasText`, otherwise you risk ending up with black text 
+System colours can be really useful for building sites and apps which respect your user's colour preferences, but be really careful to always use them in matching pairs. If you're setting an element's `background-color` to `Canvas`, you *must* set that element's `color` property to `CanvasText`, otherwise you risk ending up with black-on-black, or white-on-white.
+
+## Colour and Accessibility
+
+Colour and contrast is one of the most important considerations when it comes to making web content accessible. Here's what it looks like done badly.
+
+{% example color-and-accessibility.html iframe_style="height: 10em;" %}
+
+
+
+
+
+
 
 
 
