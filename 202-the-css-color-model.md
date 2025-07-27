@@ -27,7 +27,9 @@ The color `orange` was added to the CSS version 2 specification, after it turned
 
 The most recent addition to the CSS named color palette has a sad and beautiful story behind it. It's called `rebeccapurple`, and it was added to CSS in 2014 in memory of Eric's daughter Rebecca, who tragically died of brain cancer on her sixth birthday.
 
-That's just one of the many, many ways that named colors have ended up in CSS, including 
+That's just one of the many, many ways that named colors have ended up in CSS, going way back to a Unix developer sitting down in the late 1980s with a box of Crayola crayons and programming colors like aquamarine and orchid into the X Windows color system.
+
+Named colors are human. They have character, and history, and they're easy to read --- as long as you know that `gainsboro` is a light grey and 
 
 
 
