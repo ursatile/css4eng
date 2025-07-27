@@ -1,0 +1,51 @@
+body {
+	background: black;
+	overflow: hidden;
+}
+
+div#named-color-wheel-wrapper {
+	text-align: center;
+
+	svg#named-color-wheel {
+		clip-path: circle(300px at center);
+
+		polygon {
+			stroke-width: 1px;
+		}
+	}
+
+
+	div#named-color-wheel-preview {
+		margin: 0 auto;
+		width: 360px;
+		display: grid;
+		font-weight: bold;
+		padding: 8px;
+		height: 2em;
+
+		border-radius: 12px;
+		grid-template-columns: 1fr 2em 1fr;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5em;
+		color: #fff;
+		font-family: system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif, "Segoe UI Emoji";
+
+		span.color-name {
+			font-family: Consolas, monospaced !important;
+			text-align: left;
+		}
+
+		span.color-code {
+			font-family: Consolas, monospaced !important;
+			text-align: right;
+		}
+
+		.swatch {
+			width: 2em;
+			height: 2em;
+			border-radius: 0.5em;
+			display: inline-block;
+		}
+	}
+}
