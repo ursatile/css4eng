@@ -70,8 +70,10 @@ A CSS hex color code looks like `#0246ac`
 The hash `#` indicates it's a colour code, and it's followed by six hexadecimal digits , `02`, `46`, then `ac`.
 
 * `02` in decimal is 2, which is practically zero, so our colour has almost no red in it.
-* `46` in decimal is 70, which is very roughly a quarter of 255, so we've got a bit of green.#
-* `ac` in decimal is 172, which is quite a lot, 
+* `46` in decimal is 70, which is very roughly a quarter of 255, so we've got a bit of green.
+* `ac` in decimal is 172, which is quite a lot of blue
+
+so that 
 
 
 
