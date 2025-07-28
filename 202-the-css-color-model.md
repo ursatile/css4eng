@@ -20,7 +20,11 @@ It's a common misconception that accessibility is about making special adaptatio
 
 When it comes to colour... well, I have pretty good eyesight, but every time I find myself using my phone outside on a bright sunny day, it becomes instantly apparent how much difference colour, size and contrast can make when it comes to trying to read what's on the screen in less than ideal conditions. I also have a wonderful gadget called a Boox, which is an Android tablet with a monochrome e-ink display. Fantastic for reading books and taking notes, and it runs Google Chrome, but browsing the web on it is a real hit-and-miss experience because of the number of sites that degrade to the point of being unusable on a monochrome display.
 
-Here's what web accessibility looks like done badly. 
+The W3C publishes Web Content Accessibility Guidelines - WCAG, or sometimes wuh-cag, or even wee-cag - as part of their Web Accessibility Initiative, along with a really useful collection of what they call the "Understanding Docs", designed to help you understand and implement those guidelines.
+
+
+
+Here's what web accessibility looks like done badly.
 
 {% example color-and-accessibility.html iframe_style="height: 16em;" %}
 
