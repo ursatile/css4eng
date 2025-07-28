@@ -8,13 +8,41 @@ word_count: 2124
 ---
 In the last section, we looked at some examples of CSS selectors, using foreground and background colours to visualize the effects of different selectors, but so far the only colours we've seen are *named colours*.
 
+## Colour and Accessibility
+
+Before we dive into the details of the various web colour models, I'd like to take a moment to put all this in context when it comes to accessibility and inclusive design. 
+
+Colour and contrast is one of the most important considerations when it comes to making web content accessible. 
+
+It's a common misconception that accessibility is about making special adaptations for people with specific disabilities. It's not. Accessibility and inclusive design are about creating content and experiences that don't *require* special adaptations --- and "disability" isn't boolean. One of the most insightful resources I've seen on the subject of inclusive design is Microsoft's [Inclusive 101 Guidebook](https://inclusive.microsoft.design/tools-and-activities/Inclusive101Guidebook.pdf), and in particular something called the Persona Spectrum:
+
+![image-20250728001812102](./images/microsoft-inclusive-persona-spectrum.png)
+
+When it comes to colour... well, I have pretty good eyesight, but every time I find myself using my phone outside on a bright sunny day, it becomes instantly apparent how much difference colour, size and contrast can make when it comes to trying to read what's on the screen in less than ideal conditions. I also have a wonderful gadget called a Boox, which is an Android tablet with a monochrome e-ink display. Fantastic for reading books and taking notes, and it runs Google Chrome, but browsing the web on it is a real hit-and-miss experience because of the number of sites that degrade to the point of being unusable on a monochrome display.
+
+Here's what web accessibility looks like done badly. 
+
+{% example color-and-accessibility.html iframe_style="height: 16em;" %}
+
+All we're changing here is the colours; we haven't messed with font size, element visibility, interactions. And yet we've got text you can't read, links you can't find, and buttons you can hardly see - not to mention a chunk of red-on-green text which is going to appear brown-on-brown for over 10% of our website users.
+
+Accessibility is important, but if you approach it right, it's not complicated and it's not expensive. 
+
+
+
+
+
+
+
+
+
 ## Named Colors
 
 Back in the days of Netscape Navigator, HTML 3.0 defined a palette of sixteen named colours - the same colors supported by the Microsoft Windows VGA palette:
 
 {% include_relative {{ page.examples }}/16-colors.html %}
 
-Over time, CSS has also adopted named colours from various sources, including the X Windows System. MDN notes that “about 150 other colours have a keyword associated to them”; Anthony Lieuallen has created this excellent color wheel visualisation which you can use to explore them all:
+Over time, CSS has also adopted named colours from various sources, including the X Windows System. MDN notes that “about 150 other colours have a keyword associated to them”; [Anthony Lieuallen](https://arantius.com/anthony-lieuallen) has created this ingenious colour-wheel visualisation which you can use to explore them all:
 
 <iframe src="{{ page.examples }}/web-color-wheel/index.html" style="height: 680px;"></iframe>
 
@@ -47,30 +75,6 @@ onmouseout="this.src='{{page.examples}}/system-colors-light-mode.png';">
 Look closely at `ButtonFace` and `ButtonText` --- you see how in dark mode, `ButtonFace` is a dark grey and `ButtonText` is white, because dark mode has white text on dark buttons, but in light mode it's black text on pale grey buttons?
 
 System colours can be really useful for building sites and apps which respect your user's colour preferences, but be really careful to always use them in matching pairs. If you're setting an element's `background-color` to `Canvas`, you *must* set that element's `color` property to `CanvasText`, otherwise you risk ending up with black-on-black, or white-on-white.
-
-## Colour and Accessibility
-
-Colour and contrast is one of the most important considerations when it comes to making web content accessible. 
-
-> It's a common misconception that accessibility is about making special adaptations for people with specific disabilities. It's not. Accessibility and inclusive design are about creating content and experiences that don't *require* special adaptations --- and "disability" isn't boolean. One of the most insightful resources I've seen on the subject of inclusive design is Microsoft's [Inclusive 101 Guidebook](https://inclusive.microsoft.design/tools-and-activities/Inclusive101Guidebook.pdf), and in particular something called the Persona Spectrum:
->
-> ![image-20250728001812102](./images/microsoft-inclusive-persona-spectrum.png)
->
-> I have pretty good eyesight, but every time I find myself using my phone outside on a bright sunny day, it becomes instantly apparent how much difference colour, size and contrast can make when it comes to trying to read what's on the screen in less than ideal conditions.
-
-Here's what web accessibility looks like done badly. 
-
-{% example color-and-accessibility.html iframe_style="height: 16em;" %}
-
-All we're changing here is the colours; we haven't messed with font size, element visibility, interactions. And yet we've got text you can't read, links you can't find, and buttons you can hardly see - not to mention a chunk of red-on-green text which is going to appear brown-on-brown for over 10% of our website users.
-
-Accessibility is important, but if you approach it right, it's not complicated and it's not expensive. 
-
-
-
-
-
-
 
 
 
