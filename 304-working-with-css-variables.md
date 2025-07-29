@@ -14,6 +14,7 @@ examples: examples/304-working-with-css-variables
 - Variables and fallbacks
 - Using variables in calculations
 - Environment variables with `env()`
+- colors and `from`
 
 ## Notes
 

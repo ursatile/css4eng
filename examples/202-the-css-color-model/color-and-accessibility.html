@@ -14,17 +14,26 @@
 		}
 
 		body {
-			color: red;
-			background-color: green;
+			color: firebrick;
+			background-color: forestgreen;
 		}
+
 		a {
-			color: red;
+			color: firebrick;
 			text-decoration: none;
 		}
-		button {
-			background-color: green;
-			color: forestgreen;
-			border: none;
+
+		form {
+			background-color: black;
+			padding: 8px;
+
+			input#confirm {
+				background-color: forestgreen;
+			}
+
+			input#delete {
+				background-color: crimson;
+			}
 		}
 	</style>
 </head>
@@ -37,6 +46,13 @@
 		reds, greens, and related shades. Everyday tasks—like reading colour-coded
 		charts or traffic lights—can be challenging, but accessible design can
 		greatly improve usability. </p>
-		<button>OK</button>
+	<form>
+		<p>Click the green button to confirm your order. Click the red button to
+		delete all your files.</p>
+		<p>
+			<input type="button" id="confirm" value="Click Me!">
+			<input type="button" id="delete" value="Click Me!">
+		</p>
+	</form>
 </body>
 </html>

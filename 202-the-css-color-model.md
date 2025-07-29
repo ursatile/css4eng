@@ -18,27 +18,37 @@ It's a common misconception that accessibility is about making special adaptatio
 
 ![image-20250728001812102](./images/microsoft-inclusive-persona-spectrum.png)
 
-When it comes to colour... well, I have pretty good eyesight, but every time I find myself using my phone outside on a bright sunny day, it becomes instantly apparent how much difference colour, size and contrast can make when it comes to trying to read what's on the screen in less than ideal conditions. I also have a wonderful gadget called a Boox, which is an Android tablet with a monochrome e-ink display. Fantastic for reading books and taking notes, and it runs Google Chrome, but browsing the web on it is a real hit-and-miss experience because of the number of sites that degrade to the point of being unusable on a monochrome display.
+When it comes to colour... well, I have pretty good eyesight, but every time I find myself using my phone outside on a bright sunny day, it becomes instantly apparent how much difference colour, size and contrast can make when it comes to trying to read what's on the screen in less than ideal conditions. I also have a wonderful gadget called a Boox, which is an Android tablet with a monochrome e-ink display. Fantastic for reading books and taking notes, and it runs Google Chrome, but browsing the web on it is a real hit-and-miss experience because of the number of sites that degrade to the point of being unusable when they're rendered in monochrome.
 
-The W3C publishes Web Content Accessibility Guidelines - WCAG, or sometimes wuh-cag, or even wee-cag - as part of their Web Accessibility Initiative, along with a really useful collection of what they call the "Understanding Docs", designed to help you understand and implement those guidelines.
+The W3C publishes Web Content Accessibility Guidelines --- WCAG, or "wuh-cag", or sometimes "wee-cag" --- as part of their Web Accessibility Initiative, along with a really useful collection of what they call the "Understanding Docs", designed to help you understand and implement those guidelines.
 
+WCAG Understanding Doc SC 1.4.1 covers use of colour:
 
+* [https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html)
 
-Here's what web accessibility looks like done badly.
+Take a moment to read through that --- it's only a few pages. Then take a look at this example of colour accessibility done really badly. How many issues can you spot?
 
-{% example color-and-accessibility.html iframe_style="height: 16em;" %}
+{% iframe color-and-accessibility.html style="height: 18em;" %}
 
-All we're changing here is the colours; we haven't messed with font size, element visibility, interactions. And yet we've got text you can't read, links you can't find, and buttons you can hardly see - not to mention a chunk of red-on-green text which is going to appear brown-on-brown for over 10% of our website users.
+### Simulating Visual Deficiency with Browser DevTools
 
-Accessibility is important, but if you approach it right, it's not complicated and it's not expensive. 
+Open that page in a new browser window, then open the browser dev tools (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd>), find the **Quick View** panel --- press <kbd>Esc</kbd> if you can't see it --- and open the <kbd>⋮</kbd> menu. There's an option in there called *Rendering*, which includes a feature to emulate various kinds of vision deficiency. Try it out.
 
+![image-20250728133616887](./images/dev-tools-rendering-emulate-vision-deficiency.png)
 
+Here's that page with simulated deuteranopia, a common form of red/green colour-blindness:
 
+![image-20250728133841176](./images/red-green-simulated-deuteranopia.png)
 
+There's two buttons there: one will confirm your order, one will delete all your files. To quote Dirty Harry: “You’ve got to ask yourself one question; ‘Do I feel lucky?’ Well, do you?”
 
+We're ignoring some very basic rules of web accessibility here.
 
+* There isn't enough contrast between text and background, making some elements impossible to read - even for users with perfect vision under ideal conditions.
+* Red text on a green background is a bad idea, because it relies on the colour *hue* for contrast. Contrast should use *lightness* as well as hue, so that the distinction is still apparent to users who don't perceive colour.
+* We have two buttons that can only be distinguished by colour. These kinds of elements should always use an additional form of distinction - labels, positions, or some kind of icon or image.
 
-
+Accessibility is important, but if you approach it right, it's not complicated and it's not expensive.
 
 ## Named Colors
 
@@ -78,13 +88,21 @@ onmouseout="this.src='{{page.examples}}/system-colors-light-mode.png';">
 
 Look closely at `ButtonFace` and `ButtonText` --- you see how in dark mode, `ButtonFace` is a dark grey and `ButtonText` is white, because dark mode has white text on dark buttons, but in light mode it's black text on pale grey buttons?
 
-System colours can be really useful for building sites and apps which respect your user's colour preferences, but be really careful to always use them in matching pairs. If you're setting an element's `background-color` to `Canvas`, you *must* set that element's `color` property to `CanvasText`, otherwise you risk ending up with black-on-black, or white-on-white.
+System colours can be really useful for building sites and apps which respect your user's colour preferences, but be really careful to always use them in matching pairs. If you're setting an element's `background-color` to `Canvas`, you *must* set that element's `color` property to `CanvasText`, otherwise you risk ending up with black-on-black, or white-on-white text, or all sorts of other dreadful scenarios.
 
+### color: transparent
 
+`transparent` is actually a valid colour name in CSS; it's usually used when we've, say, created a rule to style every paragraph on a page with a background colour, but then we've got one particular paragraph that *shouldn't* have a background colour:
 
+{% example transparent-background.html iframe_style="height: 14em;" %}
 
+### currentcolor
 
+The final named colour to know about is `currentcolor`, which will always evaluate to the `color` property of the current element -- useful if you want to, say set a border colour which matches the colour of the element's text:
 
+{% example currentcolor.html iframe_style="height: 10em;" %}
+
+> If you haven't seen `margin`, `border` and `padding` before, don't worry - we'll cover those in the next section.
 
 Named colours are human. They have character, and history, and they're easy to read --- as long as you know that `gainsboro` is a light grey and `peru` is a sort of pale brown color. But, as you saw with the Swedish flag exercise in the last section: if the color you want doesn't have a name, you're out of luck.
 
@@ -108,19 +126,49 @@ For the web, though, 8 bits per channel is plenty.
 
 ### Opacity and Alpha
 
+The real world is full of transparent colours -- think about stained glass in a church window, or the dark lenses in a pair of sunglasses. The technical term for this is *opacity*, and it's normally expressed as a percentage: a piece of perfectly transparent glass is zero percent opaque, something like a sheet of thick cardboard is one hundred percent opaque. You'll also see it referred to as *alpha*; several of the pioneering research papers on using transparency in computer graphics used the Greek letter alpha to represent opacity, and the folks who wrote those papers --- Alvy Ray Smith, Ed Catmull, Thomas Porter, and Tom Duff --- they went on to found Pixar Animation Studios and make movies like Toy Story and Monsters Inc, so I think we can safely assume they knew what they were doing.
+
+CSS allows us to do all sorts of interesting things with opacity. We'll learn later on about how to create transparent elements, and how to combine and compose transparent elements to create some really neat visual effects. For now, though, we're focusing on colours - and yes, CSS has transparent colours.
+
+## Specifying Colors with rgb() and rgba()
+
+The most readable way to work with CSS RGB colour values is to use the `rgb` function, but for historical reasons, `rgb` supports a baffling array of different syntaxes and formats. There's a *modern* syntax, which separates components with a space -- `(r g b)` -- and *legacy* syntax, which uses a comma -- `(r, g, b)`; the components `r`, `g` and `b` can be decimal numbers `0 - 255` or percentages `0% - 100%`, and an optional alpha component can either be a decimal fraction between 0 and 1, or a percentage.
+
+```css
+/* modern rgb() syntax - separated by spaces */
+rgb(255 0 127); /* decimals separated by spaces */
+rgb(50% 0% 25%); /* percentages separated by spaces */
+
+/* modern rgb() syntax with transparency */
+rgb(127 0 255 / 50%); /* decimals, with opacity 0% < a < 100% */
+rgb(127 0 255 / 0.5); /* decimals, with opacity 0 < a < 1 */
+rgb(50% 25% 0% / 50%); /* ALL the percentages */
+rgb(50% 25% 0% / 0.5); /* percentage RGB, decimal transparency */
+
+/* legacy rgb() syntax - seperated by commas */
+rgb(200, 0, 100);
+rgb(50%, 0%, 25%);
+
+/* if rgb() legacy syntax has a fourth parameter, it's alpha */
+rgb(200, 0, 100, 0.5);
+rgb(200, 0, 100, 50%);
+```
 
 
 
 
 
+{% example rgb-formats.html iframe_style="height: 230px;" %}
 
-The most readable way to work with CSS RGB color values is to use the `rgb` function, which takes three decimal numbers for the red, green, and blue components, respectively:
+which takes three decimal numbers for the red, green, and blue components, respectively:
 
 {% example rgb-colors.html iframe_style="height: 230px;" %}
 
 You can also write rgb colours with each component as a percentage:
 
 {% example rgb-colors-percentages.html iframe_style="height: 230px;" %}
+
+
 
 By far the most common way to write RGB colors on the web, though, is to use something called hexadecimal notation, often shortened to `hex`.
 
