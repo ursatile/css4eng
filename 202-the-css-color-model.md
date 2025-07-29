@@ -114,7 +114,7 @@ Inside every computer screen are millions of tiny pixels, and every pixel is mad
 
 This is the additive color model, and it works because of how human eyes work... inside our eyes are two different kinds of photosensitive cells. One set of cells, known as *rods*, are sensitive to light and shade; we've got about a hundred million of those, they work great in dim light, they're great at perceiving fine detail, but they can't detect colour. The other set are called *cones*, and there are three types of cones: some are sensitive to red light, some to green, some to blue. Say you go outside on a bright sunny day and look at a yellow car. Sunlight is white - it's a mixture of all visible frequencies. Everything turned all the way up. Sunlight bounces off the car, which absorbs most of that light, but one particular frequency bounces off the car and into your eye. You don't have a receptor for yellow light; what actually happens is that light activates the red and green cone cells, but not the blue one - and, because it's bright, it activates the rods as well, and then your brain kinda mashes those inputs all together and goes "oh, hey, bright yellow!"
 
-By the way, you might have learned in school that the primary colours are red, yellow and blue... that's true when you're mixing paint, or printer ink, because when you're working with paint or ink you're starting with a bright white surface, like a blank sheet of paper, and then making it darker. This is known as a subtractive color model; children mixing paint in school tend to use red, yellow and blue, while printer ink mixes cyan, magenta, and yellow. Screens and projectors use an *additive* colour model: you start with black and make it brighter by adding different colours of light until you get the colour you want.
+By the way, you might have learned in school that the primary colours are red, yellow and blue... that's true when you're mixing paint, or printer ink, because when you're working with paint or ink you're starting with a bright white surface, like a blank sheet of paper, and then making it darker. This is known as a *subtractive* color model; artists mixing paint use red, blue, and yellow, while printer ink mixes cyan, magenta, and yellow. Screens and projectors use an *additive* colour model: you start with black and make it brighter by adding different colours of light until you get the colour you want.
 
 So... you can get pretty much any colour you like on a computer screen, by specifying how much red, how much green, and how much blue to mix together.
 
@@ -136,14 +136,14 @@ The most readable way to work with CSS RGB colour values is to use the `rgb` fun
 
 ```css
 /* modern rgb() syntax - separated by spaces */
-rgb(255 0 127); /* decimals separated by spaces */
-rgb(50% 0% 25%); /* percentages separated by spaces */
+rgb(127 0 255); /* decimals */
+rgb(50% 0% 100%); /* percentages */
 
 /* modern rgb() syntax with transparency */
 rgb(127 0 255 / 50%); /* decimals, with opacity 0% < a < 100% */
 rgb(127 0 255 / 0.5); /* decimals, with opacity 0 < a < 1 */
-rgb(50% 25% 0% / 50%); /* ALL the percentages */
-rgb(50% 25% 0% / 0.5); /* percentage RGB, decimal transparency */
+rgb(50% 0% 100% / 50%); /* ALL the percentages */
+rgb(50% 0% 100% / 0.5); /* percentage RGB, decimal transparency */
 
 /* legacy rgb() syntax - seperated by commas */
 rgb(200, 0, 100);
@@ -152,6 +152,8 @@ rgb(50%, 0%, 25%);
 /* if rgb() legacy syntax has a fourth parameter, it's alpha */
 rgb(200, 0, 100, 0.5);
 rgb(200, 0, 100, 50%);
+
+
 ```
 
 
