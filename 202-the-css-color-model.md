@@ -234,7 +234,9 @@ You can specify a colour in CSS using:
 
 * Named colours, like `black`, `aliceblue` and `goldenrod`
 * Named system colours, which represent elements of the user's operating system 
-* 
+* The special names `transparent` and `currentcolor`
+* The `rgb` function, which takes red, green, and blue values, and an optional alpha component
+* Hexadecimal codes, such as `#0033
 
 
 
