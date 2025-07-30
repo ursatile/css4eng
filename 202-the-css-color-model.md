@@ -224,13 +224,17 @@ As with `rgb`, `hsl` colors can have an alpha component:
 >
 > I can't imagine any scenario in real life where you'd want to specify a CSS colour hue in gradians, but I can imagine it's the kind of thing somebody might throw at you in a job interview or an exam.
 
-And, as with rgb, hsl colours support the legacy syntax - `hsl(90deg, 50%, 50%)`
+And, as with `rgb()`, `hsl()` supports the legacy colour syntax - `hsl(90deg, 50%, 50%)` - and the `hsla()` alias for specifying alpha - `hsla(90deg, 50%, 50%, 0.5)`.
 
-We're going to come back to the other CSS colour models later, when we talk about colour and composition.
+That covers everything we'll need for the next few modules. We'll come back to CSS a little later, when we talk about colour and composition.
 
+## Review & Recap
 
+You can specify a colour in CSS using:
 
-
+* Named colours, like `black`, `aliceblue` and `goldenrod`
+* Named system colours, which represent elements of the user's operating system 
+* 
 
 
 
