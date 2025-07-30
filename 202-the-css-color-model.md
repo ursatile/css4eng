@@ -136,11 +136,20 @@ OK, listen up, because this is where it gets a bit gnarly. Modern CSS has nine d
 
 You can specify the red, green and blue components, either using the `rgb` function - that's two - or by using hexadecimal digits - that's three. There's the hue, saturation, and lightness model - that's four; there's hue, whiteness and blackness - that's five - and then there are two colour systems based on industrial printing and publishing standards: LAB colour - six- and LCH colour - seven - and finally, eight and nine are two variants on this systems, created as recently as 2020 and explicitly designed to look OK on computer screens, hence they're called Oklab and Oklch.
 
-
-
-
+You notice I said "modern CSS" there... there's also a thing called legacy syntax, which, of course, still works, because of the countless millions of websites that were built that way back when it wasn't legacy syntax, it was just how CSS worked.
 
 ## Specifying Colors with rgb() and rgba()
+
+Let's start with `rgb`. The `rgb()` function creates a colour based on red, green, and blue values - which can either be a percentage, or a decimal number between 0 and 255, with values separated using spaces:
+
+```css
+color: rgb(100% 0% 0%);
+color: rgb(255 0 0);
+```
+
+If you want to make it 
+
+
 
 The most readable way to work with CSS RGB colour values is to use the `rgb` function, but for historical reasons, `rgb` supports a baffling array of different syntaxes and formats. There's a *modern* syntax, which separates components with a space -- `(r g b)` -- and *legacy* syntax, which uses a comma -- `(r, g, b)`; the components `r`, `g` and `b` can be decimal numbers `0 - 255` or percentages `0% - 100%`, and an optional alpha component can either be a decimal fraction between 0 and 1, or a percentage.
 
