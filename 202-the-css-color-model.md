@@ -130,6 +130,12 @@ The real world is full of transparent colours -- think about stained glass in a 
 
 CSS allows us to do all sorts of interesting things with opacity. We'll learn later on about how to create transparent elements, and how to combine and compose transparent elements to create some really neat visual effects. For now, though, we're focusing on colours - and yes, CSS has transparent colours.
 
+## CSS Colour Models
+
+OK, listen up, because this is where it gets a bit gnarly. Modern CSS has nine different models you can use to specify a colour. We've already seen named colours - that's one.
+
+You can specify the red, green and blue components, either using hexadecimal digits - that's two - or using the `rgb` function - that's three. 
+
 ## Specifying Colors with rgb() and rgba()
 
 The most readable way to work with CSS RGB colour values is to use the `rgb` function, but for historical reasons, `rgb` supports a baffling array of different syntaxes and formats. There's a *modern* syntax, which separates components with a space -- `(r g b)` -- and *legacy* syntax, which uses a comma -- `(r, g, b)`; the components `r`, `g` and `b` can be decimal numbers `0 - 255` or percentages `0% - 100%`, and an optional alpha component can either be a decimal fraction between 0 and 1, or a percentage.
