@@ -169,61 +169,21 @@ color: rgba(100%, 0, 0, 0.5);
 color: rgba(100%, 0, 0, 50%);
 ```
 
+This still works in every mainstream browser, and it won't be going away any time soon, but it's been officially designed as "legacy" syntax.
 
+## Hex Codes
 
+By far the most common way to write RGB colors on the web, though, is to use something called hexadecimal notation, often known as a hex code.
 
-
-The most readable way to work with CSS RGB colour values is to use the `rgb` function, but for historical reasons, `rgb` supports a baffling array of different syntaxes and formats. There's a *modern* syntax, which separates components with a space -- `(r g b)` -- and *legacy* syntax, which uses a comma -- `(r, g, b)`; the components `r`, `g` and `b` can be decimal numbers `0 - 255` or percentages `0% - 100%`, and an optional alpha component can either be a decimal fraction between 0 and 1, or a percentage.
-
-```css
-/* modern rgb() syntax - separated by spaces */
-rgb(127 0 255); /* decimals */
-rgb(50% 0% 100%); /* percentages */
-
-/* modern rgb() syntax with transparency */
-rgb(127 0 255 / 50%); /* decimals, with opacity 0% < a < 100% */
-rgb(127 0 255 / 0.5); /* decimals, with opacity 0 < a < 1 */
-rgb(50% 0% 100% / 50%); /* ALL the percentages */
-rgb(50% 0% 100% / 0.5); /* percentage RGB, decimal transparency */
-
-/* legacy rgb() syntax - seperated by commas */
-rgb(200, 0, 100);
-rgb(50%, 0%, 25%);
-
-/* if rgb() legacy syntax has a fourth parameter, it's alpha */
-rgb(200, 0, 100, 0.5);
-rgb(200, 0, 100, 50%);
-
-
-```
-
-
-
-
-
-{% example rgb-formats.html iframe_style="height: 230px;" %}
-
-which takes three decimal numbers for the red, green, and blue components, respectively:
-
-{% example rgb-colors.html iframe_style="height: 230px;" %}
-
-You can also write rgb colours with each component as a percentage:
-
-{% example rgb-colors-percentages.html iframe_style="height: 230px;" %}
-
-
-
-By far the most common way to write RGB colors on the web, though, is to use something called hexadecimal notation, often shortened to `hex`.
-
-Now, if your background is in computer science, you've worked with languages like C or done any systems programming, you've probably seen hex before - in which case you might want to skip ahead a few minutes. But if you've found your way into web development via graphic design, or art, or publishing --- as many, many people have --- hex codes are one of those things that might make you stop and go "hold on... what?"
+Now, if your background is in computer science, you've worked with languages like C or done any systems programming, you've probably seen hexadecimal before - in which case you might want to skip ahead a few minutes. But if you've found your way into web development via graphic design, or art, or publishing --- as many, many people have --- hex codes are one of those things that might make you stop and go "hold on... what?"
 
 I'm going to give a very short explanation, but if you're still not clear on it, by all means go away and read up on it before coming back to this course; this next section is going make way more sense if you're happy reading and writing hexadecimal numbers.
 
-Short version: humans have ten digits, because we have ten digits. We have the numerals zero, one, two, three, four, five, six, seven, eight, nine, we have ten fingers --- well, eight fingers and two thumbs --- on our hands, and we count in base ten. We don't have a numeral for ten; we get as far as nine, then we stick a one in the tens column and the units goes back to zero. And when we get to ninety-ine, stick a one in the hundreds column and the others go back to zero.
+Short version: humans have ten digits, because we have ten digits. We have the numerals zero, one, two, three, four, five, six, seven, eight, nine, we have ten fingers --- well, eight fingers and two thumbs --- on our hands, and we count in base ten. We don't have a numeral for ten; we get as far as nine, then we stick a one in the tens column and the units goes back to zero. And when we get to ninety-nine, stick a one in the hundreds column and the others go back to zero.
 
 Hexadecimal --- which gets its name from the Greek word for six, `hex`, and the Latin word for tenth, `decimal`, because English is a messed-up language --- is base sixteen. When we get past nine, we don't move to the tens... we count a, b, c, d, e, f, and THEN add a column. So zero through nine are the same as decimal numbers. a in hexadecimal is ten of something, b is eleven, c is twelve, f is fifteen, and then one-zero is sixteen.
 
-A CSS hex colour code looks like `#0246ac`
+A CSS hex colour code looks like `#2b02ac`
 
 The hash `#` indicates it's a colour code, and it's followed by six hexadecimal digits , `02`, `46`, then `ac`.
 
