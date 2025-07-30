@@ -234,11 +234,33 @@ Well, here's how I look at it. If you're working on an existing project, follow 
 
 As we'll see later, one of the advantages of the HSL and other perceptual colour models is that you can do some very clever things with colour manipulation... but at that point, you're not just using colours any more, you're choosing them, and that's definitely straying from engineering into visual design.
 
+Also bear in mind that whatever model you use, 1) it'll get translated into RGB because that's how computer screens actually work, and 2) you have absolutely no control over the device your end users will be using to view your site. Display settings like brightness, contrast, colour temperature -- they all affect how a specific colour actually gets displayed, so the best you can hope for set up your own device to use typical values, and make sure it looks good on your machine.
+
 Short answer: probably nobody ever fired for copy & pasting hexadecimal colour codes from Photoshop.
 
 OK. That's enough colour theory for now. We'll come back to colours later, when we talk about colour and composition; let's do a quick recap of the stuff we've covered in this section.
 
 ## Review & Recap
+
+* **Accessibility & Colour**: Colour and contrast are vital for web accessibility. Good design doesn't just accommodate disabilities — it avoids creating unnecessary barriers for anyone.
+* **Inclusive Design**: Tools like Microsoft's *Inclusive 101 Guidebook* show how diverse user needs (like bright sunlight or monochrome screens) impact colour perception and usability.
+* **WCAG Guidelines**: The Web Content Accessibility Guidelines stress that colour alone should not convey important information; use contrast and alternative cues.
+
+You can specify col
+
+* **Named Colours**: CSS supports around 150 named colours, many with quirky origins (e.g. `rebeccapurple` as a tribute, `darkgrey` being lighter than `grey`).
+
+**System Colours**: CSS includes system-dependent colour names (like `ButtonFace`) to align web apps with users’ OS preferences, especially in light/dark mode.
+
+**CSS Colour Models**: CSS supports nine colour models, including `rgb`, `hex`, `hsl`, `lab`, and `oklab`, offering different ways to describe and manipulate colour.
+
+**rgb() and rgba()**: These functions define colour via red, green, blue (0–255 or %) and optional alpha for opacity.
+
+**Hex Codes**: The most common colour syntax in CSS. Uses base-16 (0–9, a–f) to encode RGB values, optionally with alpha.
+
+**HSL Model**: Hue, Saturation, and Lightness mimic how humans think about colour. It’s intuitive for designers and supports angles for hue.
+
+**Best Practices**: Follow project conventions. Hex codes are widely supported and reliable, but perceptual models like HSL are great for design manipulation.
 
 You can specify a colour in CSS using:
 
@@ -249,38 +271,6 @@ You can specify a colour in CSS using:
 * Hexadecimal codes, such as `#003366`
 * The `hsl` function, which takes hue, saturation, and lightness values
 * Various specialist colour functions that we'll meet in a later section.
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
