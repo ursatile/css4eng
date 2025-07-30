@@ -218,9 +218,9 @@ Saturation specifies how intense, how rich, the colour is --- zero saturation is
 
 As with `rgb`, `hsl` colors can have an alpha component:
 
-{% example hsl-colors-alpha.html iframe_style="height: 24em;" %}
+{% example hsl-colors-alpha.html iframe_style="height: 11em;" %}
 
-
+> The `hue` component of an HSL colour is specified as an *angle*. Angles in CSS are usually used for geometric transformations, like rotating elements 
 
 
 
