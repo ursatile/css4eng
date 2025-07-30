@@ -169,7 +169,7 @@ color: rgba(100%, 0, 0, 0.5);
 color: rgba(100%, 0, 0, 50%);
 ```
 
-This still works in every mainstream browser, and it won't be going away any time soon, but it's been officially designed as "legacy" syntax.
+This still works in every mainstream browser, and it won't be going away any time soon, but it's been officially designed as "legacy" syntax; all the stuff that used to work still works, but as new colour functions and models are added to the CSS standard, they only support the modern syntax with values separated by spaces.
 
 ## Hex Codes
 
@@ -195,9 +195,13 @@ So... half red, very little green, lots of blue -- that's going to give us a <sp
 
 You'll also occasionally see hex codes written with three digits instead of six - `#abc`, which the parser expands to `#aabbcc`. 
 
-If a hex code has four or eight digits, it includes transparency; ` #00f8` is a transparent blue, and 
+If a hex code has four or eight digits, it includes transparency; ` #00f8` is a transparent blue, and `#00ff0088` is a transparent green.
 
 There are some developers out there who can glance at a colour and make a pretty good guess at the RGB values - and hex codes - for that colour, and who can glance at a hex code and know exactly what tint and shade it is. I am not one of those developers. I can spot the easy ones - `#00ff00` is obviously bright green, a colour code like `#252525`, where all three digits are the same, is obviously a shade of grey - but fortunately, editors like VS Code have fantastic support for editing CSS colour codes.
+
+## Hue, Saturation and Lightness
+
+Hang out in a store that sells paint for a while, and you'll overhear people talking about what colour they want to paint their living room --- and they don't talk about rgb values. They'll say things like "that colour's nice but it's a bit too dark", "I like this one but it's a bit too pastel", "this one's the right intensity but it's too purple - I want something a bit more blue"
 
 
 
