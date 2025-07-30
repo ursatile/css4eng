@@ -205,18 +205,24 @@ Hang out in a store that sells paint for a while, and you'll overhear people tal
 
 Humans - at least, humans who aren't software developers - tend to think about colour in terms of hue, saturation, and lightness. 
 
-Hue specifies whether the colour is red, yellow, blue, purple... it's based on the idea of angles around a colour wheel, where red is at the top - zero degrees - and you turn clockwise through yellow, green, cyan, blue, purple, magenta, and back to re
+Hue specifies whether the colour is red, yellow, blue, purple... it's based on the idea of angles around a colour wheel, where red is at the top - zero degrees - and you turn clockwise through yellow, green, cyan, blue, purple, magenta, and finally around to red again.
 
 <figure>
     <img src="images/hsl-color-wheel.svg" style="background-color: white;">
     <figcaption>The HSL colour wheel</figcaption>
 </figure>
 
-
-
-Saturation: how intense is the colour? Zero saturation is grayscale; full saturation is rich, bold colours. And lightness - how bright is it? Zero lightness is black - doesn't matter what the hue and saturation are; black is always black.
+Saturation specifies how intense, how rich, the colour is --- zero saturation is grayscale --- and lightness specifies how bright is it? Zero lightness is always black, regardless of the hue and saturation.
 
 {% example hsl-colors.html iframe_style="height: 24em;" %}
+
+As with `rgb`, `hsl` colors can have an alpha component:
+
+{% example hsl-colors-alpha.html iframe_style="height: 24em;" %}
+
+
+
+
 
 
 
