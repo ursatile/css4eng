@@ -228,17 +228,15 @@ And, as with `rgb()`, `hsl()` supports the legacy colour syntax - `hsl(90deg, 50
 
 ## Which Colour System Should I Use?
 
-With so many different models and syntaxes to choose from, the obvious question is... which one should I u
+With so many different models and syntaxes to choose from, the obvious question is... which one should I use?
 
+Well, here's how I look at it. If you're working on an existing project, follow that project's conventions; don't be the person who starts sprinkling `hsl()` colours into a project where everything else is hex codes. If the project doesn't *have* any conventions, or if you're working on a completely greenfield project, you should probably stick to hex codes.
 
+As we'll see later, one of the advantages of the HSL and other perceptual colour models is that you can do some very clever things with colour manipulation... but at that point, you're not just using colours any more, you're choosing them, and that's definitely straying from engineering into visual design.
 
+Short answer: probably nobody ever fired for copy & pasting hexadecimal colour codes from Photoshop.
 
-
-That covers everything we'll need for the next few modules. We'll come back to colours later, when we talk about colour and composition.
-
-
-
-
+OK. That's enough colour theory for now. We'll come back to colours later, when we talk about colour and composition; let's do a quick recap of the stuff we've covered in this section.
 
 ## Review & Recap
 
