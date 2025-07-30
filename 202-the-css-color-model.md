@@ -147,7 +147,29 @@ color: rgb(100% 0% 0%);
 color: rgb(255 0 0);
 ```
 
-If you want to make it 
+If you want to include alpha transparency, add a fourth component separated by a forward slash - and the alpha is either a percentage, or a value between zero and one. Remember, `0` (or `0%`) is fully transparent; `1` (or `100%`) is fully opaque:
+
+```css
+color: rgb(100% 0 0 / 50%);
+color: rgb(100% 0 0 / 0.5);
+```
+
+### Legacy RGB Syntax
+
+Historically, the `rgb()` function took three values separated by commas, with a separate `rgba()` function took a fourth value for alpha:
+
+```css
+color: rgb(255, 0, 0);
+color: rgb(100%, 0, 0);
+
+color: rgba(255, 0, 0, 0.5);
+color: rgba(255, 0, 0, 50%);
+
+color: rgba(100%, 0, 0, 0.5);
+color: rgba(100%, 0, 0, 50%);
+```
+
+
 
 
 
