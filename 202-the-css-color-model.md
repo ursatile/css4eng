@@ -220,7 +220,13 @@ As with `rgb`, `hsl` colors can have an alpha component:
 
 {% example hsl-colors-alpha.html iframe_style="height: 11em;" %}
 
-> The `hue` component of an HSL colour is specified as an *angle*. Angles in CSS are usually used for geometric transformations, like rotating elements 
+> The `hue` component of an HSL colour is specified as an *angle*. Angles in CSS are usually used for geometric transformations, like rotation, which we'll learn about later, but because the HSL color module uses the same parser as the geometry module, you can specify a hue using any valid CSS angle syntax. A decimal number on its own - `150` - is interpreted as an angle in degrees, but you can also specify hue in explicit degrees (`150deg`), radians (`3.5rad`), gradians (`4.2grad`), or turns (`0.4turn`, where `1turn` is a full turn around the wheel.)
+>
+> I can't imagine any scenario in real life where you'd want to specify a CSS colour hue in gradians, but I can imagine it's the kind of thing somebody might throw at you in a job interview or an exam.
+
+And, as with rgb, hsl colours support the legacy syntax - `hsl(90deg, 50%, 50%)`
+
+We're going to come back to the other CSS colour models later, when we talk about colour and composition.
 
 
 
