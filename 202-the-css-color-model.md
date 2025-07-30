@@ -226,7 +226,19 @@ As with `rgb`, `hsl` colors can have an alpha component:
 
 And, as with `rgb()`, `hsl()` supports the legacy colour syntax - `hsl(90deg, 50%, 50%)` - and the `hsla()` alias for specifying alpha - `hsla(90deg, 50%, 50%, 0.5)`.
 
-That covers everything we'll need for the next few modules. We'll come back to CSS a little later, when we talk about colour and composition.
+## Which Colour System Should I Use?
+
+With so many different models and syntaxes to choose from, the obvious question is... which one should I u
+
+
+
+
+
+That covers everything we'll need for the next few modules. We'll come back to colours later, when we talk about colour and composition.
+
+
+
+
 
 ## Review & Recap
 
@@ -236,7 +248,15 @@ You can specify a colour in CSS using:
 * Named system colours, which represent elements of the user's operating system 
 * The special names `transparent` and `currentcolor`
 * The `rgb` function, which takes red, green, and blue values, and an optional alpha component
-* Hexadecimal codes, such as `#0033
+* Hexadecimal codes, such as `#003366`
+* The `hsl` function, which takes hue, saturation, and lightness values
+* Various specialist colour functions that we'll meet in a later section.
+
+
+
+
+
+ 
 
 
 
