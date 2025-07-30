@@ -205,7 +205,7 @@ Hang out in a store that sells paint for a while, and you'll overhear people tal
 
 Humans - at least, humans who aren't software developers - tend to think about colour in terms of hue, saturation, and lightness. Hue - what actual colour is it? Red, orange, purple, green, blue? Saturation: how intense is the colour? Zero saturation is grayscale; full saturation is rich, bold colours. And lightness - how bright is it? Zero lightness is black - doesn't matter what the hue and saturation are; black is always black.
 
-{% example hsl-colors.html iframe_style="height: 10em;" %}
+{% example hsl-colors.html iframe_style="height: 24em;" %}
 
 
 
