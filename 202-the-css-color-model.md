@@ -183,17 +183,19 @@ Short version: humans have ten digits, because we have ten digits. We have the n
 
 Hexadecimal --- which gets its name from the Greek word for six, `hex`, and the Latin word for tenth, `decimal`, because English is a messed-up language --- is base sixteen. When we get past nine, we don't move to the tens... we count a, b, c, d, e, f, and THEN add a column. So zero through nine are the same as decimal numbers. a in hexadecimal is ten of something, b is eleven, c is twelve, f is fifteen, and then one-zero is sixteen.
 
-A CSS hex colour code looks like `#2b02ac`
+A CSS hex colour code looks like `#7a0bdc`
 
-The hash `#` indicates it's a colour code, and it's followed by six hexadecimal digits , `02`, `46`, then `ac`.
+The hash `#` indicates it's a colour code, and it's followed by six hexadecimal numbers  `7a` `0b` `dc`.
 
-* `02` in decimal is 2, which is practically zero, so our colour has almost no red in it.
-* `46` in decimal is 70, which is very roughly a quarter of 255, so we've got a bit of green.
-* `ac` in decimal is 172, which is quite a lot of blue
+* `7b` in decimal is 122 - so 122/255ths, or about 50%, of the maximum amount of red
+* `0b` in decimal is 11, and 11/255ths is quite close to zero, so there's not a lot of green
+* `dc` in decimal is 220, and 220/255ths is quite close to one, so our colour has a lot of blue in it
 
-so that colour is <span style="background-color: #0246ac; padding: 4px;">a rich, vivid blue with a touch of green in it.</span> (see?)
+So... half red, very little green, lots of blue -- that's going to give us a <span style="background-color: #7a0bdc;">sort of bright purple color</span>
 
-You'll also occasionally see hex codes written with three digits instead of six - `#fff` instead of `#ffffff`. 
+You'll also occasionally see hex codes written with three digits instead of six - `#abc`, which the parser expands to `#aabbcc`. 
+
+If a hex code has four or eight digits, it includes transparency; ` #00f8` is a transparent blue, and 
 
 There are some developers out there who can glance at a colour and make a pretty good guess at the RGB values - and hex codes - for that colour, and who can glance at a hex code and know exactly what tint and shade it is. I am not one of those developers. I can spot the easy ones - `#00ff00` is obviously bright green, a colour code like `#252525`, where all three digits are the same, is obviously a shade of grey - but fortunately, editors like VS Code have fantastic support for editing CSS colour codes.
 
