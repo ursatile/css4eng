@@ -134,7 +134,9 @@ CSS allows us to do all sorts of interesting things with opacity. We'll learn la
 
 OK, listen up, because this is where it gets a bit gnarly. Modern CSS has nine different models you can use to specify a colour. We've already seen named colours - that's one.
 
-You can specify the red, green and blue components, either using hexadecimal digits - that's two - or using the `rgb` function - that's three. 
+You can specify the red, green and blue components, either using the `rgb` function - that's two - or by using hexadecimal digits - that's three. There's the hue, saturation, and lightness model - that's five; there's hue, whiteness and blackness - that's six - and then there are two colour systems based on industrial printing and publishing standards: LAB colour and LCH colour, and then two variants on this systems designed to look OK on computer screens, and so they're called Oklab and Oklch.
+
+ 
 
 ## Specifying Colors with rgb() and rgba()
 
