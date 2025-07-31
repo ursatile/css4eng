@@ -9,7 +9,8 @@
 		section :first-child {
 			color: green;
 		}
-
+		li:only-child { color: royalblue; }
+		li:nth-child(2n-1) { background-color: gold; }
 	</style>
 </head>
 <body>
@@ -21,5 +22,18 @@
 			<p>I'm the first child of a <code>section</code>, so I should be green.</p>
 		</section>
 	</article>
+	<ul>
+		<li>I'm the only child of a list, so I should be royal blue.</li>
+	</ul>
+	<ul>
+		<li>Highlight every alternate item in this list.</li>
+		<li>Highlight every alternate item in this list.</li>
+		<li>Highlight every alternate item in this list.</li>
+		<li>Highlight every alternate item in this list.</li>
+		<li>Highlight every alternate item in this list.</li>
+		<li>Highlight every alternate item in this list.</li>
+	</ul>
+
+
 </body>
 </html>
