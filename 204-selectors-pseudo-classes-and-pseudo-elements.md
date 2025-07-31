@@ -163,7 +163,15 @@ Finally, there's the `|=` operator. This one's even more specialised: it'll matc
 
 Structural selectors match elements based on the structure of the document. Hence the name.
 
-You want to highlight the first element in a list? Or the last element?
+You want to highlight the first item in a list? Use the `:first-child` selector:
+
+
+
+
+
+
+
+} Or the last element?
 
 
 
