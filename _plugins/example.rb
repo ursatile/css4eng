@@ -19,7 +19,7 @@ module Jekyll
 
             <pre>#{markup}</pre>
 
-            Valid syntax: example <filename> [mark_lines="3, 4, 5"] [iframe_style[="height: 10em;"]]
+            Valid syntax: example <filename> [mark_lines="3, 4, 5"] [iframe_style[="height: 10em;"]] [only_lines="4-6"]
           MSG
         end
       end
@@ -71,6 +71,12 @@ module Jekyll
           dir = File.dirname(file_path)
           FileUtils.mkdir_p(dir) unless Dir.exist?(dir)
           code = read_or_create_file(file_path, context)
+          
+          # Apply only_lines filter if specified
+          if @highlight_options[:only_lines]
+            code = filter_lines(code, @highlight_options[:only_lines])
+          end
+          
           @lang = File.extname(file_path).delete_prefix(".")
           output = render_rouge(code)
           rendered_output = add_code_tag(output, expanded_path, "examples/#{page_filename}/#{expanded_path}")
@@ -131,6 +137,27 @@ module Jekyll
 
         raise SyntaxError, "Syntax Error for mark_lines declaration. Expected a " \
                            "double-quoted list of integers."
+      end
+
+      def filter_lines(code, line_range)
+        lines = code.lines
+        
+        if line_range =~ /^(\d+)-(\d+)$/
+          start_line = Regexp.last_match(1).to_i
+          end_line = Regexp.last_match(2).to_i
+          
+          # Convert to 0-based indexing and ensure valid range
+          start_index = [start_line - 1, 0].max
+          end_index = [end_line - 1, lines.length - 1].min
+          
+          if start_index > end_index || start_index >= lines.length
+            return "# No lines found in specified range\n"
+          end
+          
+          return lines[start_index..end_index].join
+        else
+          raise SyntaxError, "Syntax Error for only_lines declaration. Expected format: \"start-end\" (e.g., \"4-6\")"
+        end
       end
 
       def render_codehighlighter(code)
