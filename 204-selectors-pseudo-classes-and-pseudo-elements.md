@@ -227,7 +227,7 @@ At a glance, `:is()` looks kinda useless:
 }
 ```
 
-but what makes it so powerful is being able to build rules that use multiple selectors as part of a composite selector. For example, say we want `h1` and `h2` elements to be purple, but only if they are the first child element of a section, or an article, or a main element.
+but what makes it so powerful is being able to build rules that use multiple selectors as part of a composite selector. For example, say we want `h1` and `h2` elements to be purple, with a red bottom border, but *only if they are the first child element of a section, or an article, or a main element.*
 
 Using normal selectors, we'd have to write a rule like:
 
@@ -244,9 +244,11 @@ main h2:first-child {
 
 Using the `:is()` selector, we can write the same rule much more succinctly:
 
-{% example is-selector.html iframe_style="height: 20em;" %}
+{% example is-selector.html iframe_style="height: 20em;" start_after="<style>" end_before="</style>" %}
 
+`:where()` has exactly the same behaviour as `:is()`, apart from one very important distinction: it doesn't affect the specificity of the rule.
 
+{% example where-vs-is.html %}
 
 - Match selectors: `:not()`, `:is()`, `:where()`, `:has()`
 - Pseudo-elements: `::first-line`, `::first-letter`, `::before`, `::after`, `::placeholder`, `::marker`, `::selection`
