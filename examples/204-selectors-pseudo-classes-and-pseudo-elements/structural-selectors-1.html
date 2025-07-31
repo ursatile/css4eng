@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Structural Selectors 1</title>
+	<style>
+		p:first-child {
+			color: purple;
+		}
+		section :first-child {
+			color: green;
+		}
+
+	</style>
+</head>
+<body>
+	<p>I'm the first child of the <code>body</code>, so I'm purple!</p>
+	<p>I'm just a paragraph. I'm not special.</p>
+	<article>
+		<p>I'm the first child of a <code>article</code>, so I'm also purple!</p>
+		<section>
+			<p>I'm the first child of a <code>section</code>, so I should be green.</p>
+		</section>
+	</article>
+</body>
+</html>
