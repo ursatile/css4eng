@@ -2,13 +2,17 @@
 <html lang="en">
 <head>
   <title>Attribute Selectors: ISO Language Codes</title>
-	<style></style>
+	<style>
+		p[lang|="en"] { color: red; }
+		p[lang|="fr"] { color: blue; }
+	</style>
 </head>
 <body>
-	<p lang="en">This paragraph is in English.</p>
+	<p>This paragraph does not specify a language.</p>
+	<p lang="en">This paragraph is in English but does not specify a region.</p>
 	<p lang="en-gb">This paragraph is in British English. Hello there.</p>
 	<p lang="en-au">This paragraph is in Australian English. G'day mate.</p>
+	<p lang="fr-FR">Ce paragraphe est en français. Il fait très froid aujourd’hui.</p>
 	<p lang="fr-CA">Ce paragraphe est en Québecois. Y fait frette en maudit aujourd’hui.</p>
-	<p lang="fr-FR">Il fait très froid aujourd’hui.</p>
 </body>
 </html>
