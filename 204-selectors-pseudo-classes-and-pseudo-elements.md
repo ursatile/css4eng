@@ -191,7 +191,7 @@ One scenario I've encountered countless times in my own career is *zebra stripin
 
 The classic zebra-stripe table example:
 
-{% example zebra-stripes.html iframe_height="20em" only_lines="6-8" iframe_style="height: 15em;" %} 
+{% example zebra-stripes.html iframe_height="20em" only_lines="7-9" iframe_style="height: 15em;" %} 
 
 
 
