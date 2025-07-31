@@ -181,7 +181,9 @@ Say we wanted to put a bottom border on every paragraph except the last one in a
 
 > Notice that we've used a nested CSS rule there, and the actual selector syntax is `&:last-child`? The `&` there is used to combine the enclosing rule with an additional selector - the rule says "hey, apply these rules to *all* paragraphs -- and if one of those paragraphs is a last-child, then also apply these extra rules"
 
-There's also the 
+There's also the `:only-child` selector, which you can use to find lonely elements with no brothers and sisters:
+
+{% example only-child.html iframe_height="20em" %}
 
 
 
