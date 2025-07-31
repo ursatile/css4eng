@@ -103,7 +103,7 @@ We'll start with the useful ones.
 
 {% example attribute-selectors-1.html iframe_style="height: 15em;" %}
 
-Hang on, though... there's a link to the TV Tropes page for Mysterious Cities of Gold there, and it's not red. We might click it by mistake... but take a close look at that link, and you'll se that the domain name is uppercase. Somebody's linked to `TVTROPES.ORG` instead of `tvtropes.org` --- and attribute selectors, like class names and IDs, are *case sensitive*. Good news is that's an easy fix - add an `i` (for *insensitive) inside* the `[ ]` for the selector rule:
+Hang on, though... there's a link to the TV Tropes page for Mysterious Cities of Gold there, and it's not red. We might click it by mistake... but take a close look at that link, and you'll se that the domain name is uppercase. Somebody's linked to `TVTROPES.ORG` instead of `tvtropes.org` --- and the `href` attribute value in HTML is *case sensitive*. Fortunately, there's an easy fix - add an `i` (for *insensitive) inside* the `[ ]` for the selector rule:
 
 ```css
 a[href*="https://tvtropes.org" i] {
@@ -112,7 +112,7 @@ a[href*="https://tvtropes.org" i] {
 }
 ```
 
-
+> Case sensitivity for attribute selectors is complicated. The type selector - the element name - and the attribute name are always case-insensitive, but the attribute value in HTML is case sensitive, *unless* it's one of the special c
 
 # Selectors, Pseudo-Classes and Pseudo-Elements (20m)
 
