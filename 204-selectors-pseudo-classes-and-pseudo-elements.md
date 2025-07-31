@@ -163,7 +163,21 @@ Finally, there's the `|=` operator. This one's even more specialised: it'll matc
 
 Structural selectors match elements based on the structure of the document. Hence the name.
 
-You want to highlight the first item in a list? Use the `:first-child` selector:
+You want to highlight the first item in a list? Use the `:first-child` selector.
+
+```css
+ul :first-child { color: royalblue; }
+```
+
+You want to highlight the first element in a section, but only if it's a heading 2? Combine type selectors with structural selectors:
+
+```css
+section h2:first-child { color: red; }
+```
+
+
+
+
 
 
 
