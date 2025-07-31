@@ -4,7 +4,7 @@
 	<title>:of-type</title>
 	<style>
 		body {
-			max-width: 400px;
+			max-width: 480px;
 			margin: 1em auto;
 			text-align: justify;
 		}
@@ -17,49 +17,35 @@
 			overflow: auto;
 			border-bottom: 2px solid black;
 			clear: both;
-		}
 
-		section img {
-			margin-bottom: 1em;
-		}
+			img {
+				margin-bottom: 1em;
+			}
 
-		section img:nth-of-type(odd) {
-			float: right;
-			margin-left: 1em;
-		}
+			/* begin examples of of-type selectors */
+			img:nth-of-type(odd) {
+				float: right;
+				margin-left: 1em;
+			}
 
-		section img:nth-of-type(even) {
-			float: left;
-			margin-right: 1em;
-		}
+			img:nth-of-type(even) {
+				float: left;
+				margin-right: 1em;
+			}
 
-		section img:only-of-type {
-			display: block;
-			width: 100%;
-			margin: 0;
-			float: none;
-		}
-
-		footer {
-			margin-top: 2em;
-			padding-top: 1em;
-			border-top: 2px solid black;
-			font-size: 0.9em;
-		}
-
-		footer ul {
-			list-style-type: none;
-			padding-left: 0;
-		}
-
-		footer li {
-			margin-bottom: 0.5em;
+			img:only-of-type {
+				display: block;
+				width: 100%;
+				margin: 0;
+				float: none;
+			}
+			/* end examples of of-type selectors */
 		}
 	</style>
 </head>
 <body>
 	<section>
-	<h1>Cats of Unsplash</h1>
+		<h1>Cats of Unsplash</h1>
 		<p>This section includes three cats</p>
 		<img src="cats/alex-meier-KGiQFgF7dkc-unsplash.jpg"
 			alt="Cat by Alex Meier on Unsplash">
@@ -126,25 +112,30 @@
 			environment.</p>
 		<img src="cats/timo-volz-mrTydVjg04o-unsplash.jpg"
 			alt="Cat by Timo Volz on Unsplash">
-		<p>Timo Volz captures this remarkable feline in a moment of pure
-			tranquility, showing how cats can seamlessly transition from active
-			hunters to peaceful companions. The image highlights the serene confidence
+		<p>Timo Volz captures this ginger cat proudly sitting in his favourite
+			cardboard box. The image highlights the serene confidence
 			that defines these magnificent creatures.</p>
 	</section>
 	<footer>
 		<h2>Image Credits</h2>
-		<p>All cat images are from Unsplash. Original URLs:</p>
-		<ul>
-			<li><a href="https://unsplash.com/photos/KGiQFgF7dkc">Cat by Alex Meier</a></li>
-			<li><a href="https://unsplash.com/photos/75715CVEJhI">Cat by Amber Kipp</a></li>
-			<li><a href="https://unsplash.com/photos/7AIDE8PrvA0">Cat by Loan</a></li>
-			<li><a href="https://unsplash.com/photos/gKXKBY-C-Dk">Cat by Manja Vitolic</a></li>
-			<li><a href="https://unsplash.com/photos/uhnbTZC7N9k">Cat by Zoe Gayah Jonker</a></li>
-			<li><a href="https://unsplash.com/photos/ofNMMuTD3kE">Cat by Bofu Shaw</a></li>
-			<li><a href="https://unsplash.com/photos/doyAAwH2AyQ">Cat by Kevin Knezic</a></li>
-			<li><a href="https://unsplash.com/photos/o6RbK3y7mK4">Cat by Paul Hanaoka</a></li>
-			<li><a href="https://unsplash.com/photos/mrTydVjg04o">Cat by Timo Volz</a></li>
-		</ul>
+		<p>All cat images are from Unsplash. Credit to:
+			<a href="https://unsplash.com/photos/KGiQFgF7dkc">Alex Meier</a>
+			&bull;
+			<a href="https://unsplash.com/photos/75715CVEJhI">Amber Kipp</a>
+			&bull;
+			<a href="https://unsplash.com/photos/7AIDE8PrvA0">Loan</a> &bull;
+			<a href="https://unsplash.com/photos/gKXKBY-C-Dk">Manja Vitolic</a>
+			&bull;
+			<a href="https://unsplash.com/photos/uhnbTZC7N9k">Zoe Gayah
+				Jonker</a> &bull;
+			<a href="https://unsplash.com/photos/ofNMMuTD3kE">Bofu Shaw</a>
+			&bull;
+			<a href="https://unsplash.com/photos/doyAAwH2AyQ">Kevin Knezic</a>
+			&bull;
+			<a href="https://unsplash.com/photos/o6RbK3y7mK4">Paul Hanaoka</a>
+			&bull;
+			<a href="https://unsplash.com/photos/mrTydVjg04o">Timo Volz</a>
+		</p>
 	</footer>
 </body>
 </html>

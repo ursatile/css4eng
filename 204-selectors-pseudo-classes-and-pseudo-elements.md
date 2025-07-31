@@ -201,7 +201,7 @@ OK, but what if you want to target the first image in a section, even if it isn'
 
 That's what the `of-type` selectors are for.
 
-{% example of-type.html iframe_height="20em" start_after="<style>" end_before="</style>" iframe_style="height: 15em;" %} 
+{% example of-type.html iframe_height="20em" start_after="/* begin examples of of-type selectors */" end_before="/* end examples of of-type selectors */" iframe_style="height: 15em;" %} 
 
 Combinators: `A > B`, `A + B`, `A ~ B`, `A || B` *(draft)*
 
