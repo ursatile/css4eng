@@ -197,7 +197,7 @@ but you can also stripe `:nth-child(3n)` to target every third row, `:nth-last-c
 
 ### of-type selectors
 
-OK, but what if you want to target the first image in a section, even if it isn't actually the first child? Or you want a special rule to apply to an image if it's the only image in that section, even if the section also includes paragraphs and lists and other elements?
+OK, but what if you want to, say alternate the images in a section, so they float left, then right, then left, even if there are other elements between them? Or you want a special rule to apply to an image if it's the only image in that section, even if the section also includes paragraphs and lists and other elements?
 
 That's what the `of-type` selectors are for.
 
