@@ -57,11 +57,11 @@ Next, we target the heading level 1 with an element rule, to give it white text 
 
 Now, you see how the word "warning" and "caution" is in navy blue here, despite being part of a warning paragraph? We actually have two conflicting rules here. One is the wildcard rule - hey, everything on this page should be navy blue, unless something overrides it. The other is saying “hey, stuff inside warning paragraphs should be white with a red background”.
 
-Welcome to the wonderful world of CSS specificity.
+Those strong tags pick up the red background, because there's no other rule that would affect their background colour - but the wildcard rule here applies **directly** to **every element**, and so it takes precedence over the white text rule, which is inherited from the warning paragraph.
 
-Those strong tags pick up the red background, because there's no other rule that would affect their background colour - but the wildcard rule here applies to **every element**, and so it takes precedence over the white text rule, which is inherited from the warning paragraph. 
+CSS makes it trivially easy to end up with multiple -- and potentially conflicting -- rules that apply to the same element. We've just learned our first rule about how browsers resolve these conflicts: direct selectors always take precedence over inherited selectors. We'll come back to this when we talk about CSS specificity a little later. 
 
-So, let's change it. Edit that rule so instead of the wildcard selector, it targets the HTML `<body>` element:
+For now, though, let's fix our warning paragraphs. Edit that rule so instead of the wildcard selector, it targets the HTML `<body>` element:
 
 ```css
 body {
