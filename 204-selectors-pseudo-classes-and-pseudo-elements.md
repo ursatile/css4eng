@@ -203,11 +203,16 @@ That's what the `of-type` selectors are for.
 
 {% example of-type.html iframe_height="20em" start_after="/* begin examples of of-type selectors */" end_before="/* end examples of of-type selectors */" iframe_style="height: 15em;" %} 
 
-Combinators: `A > B`, `A + B`, `A ~ B`, `A || B` *(draft)*
+The final structure selector is `:empty`, which -- you guessed it -- matches an element with no content. The only scenario I've seen this used in is a content management system - CMS - based on Markdown, which would translate empty lines into empty paragraphs, so you'd end up with a bunch of empty paragraphs on the page; by using an `:empty` selector , we could set them to `display: none` so they'd disappear completely:
 
-- State selectors: `:link`, `:visited`, `:active`, `:hover`, `:focus`
-- Attribute selectors: `=-=`, `~=`, `|=`, `^=`, `$=`, `*=`
-- Structural selectors: `:first-child`, `:last-child`, `:only-child`, `:nth-child(n)`, `:nth-last-child(n)`, `:first-of-type`, `:last-of-type`, `:only-of-type`, `:nth-of-type(n)`, `:nth-last-of-type(n)`, `:empty`
+{% example empty.html iframe_height="20em" start_after="/* begin examples of of-type selectors */" end_before="/* end examples of of-type selectors */" iframe_style="height: 8em;" %} 
+
+## Match Selectors
+
+
+
+
+
 - Match selectors: `:not()`, `:is()`, `:where()`, `:has()`
 - Pseudo-elements: `::first-line`, `::first-letter`, `::before`, `::after`, `::placeholder`, `::marker`, `::selection`
 - using `attr()` in `content`
