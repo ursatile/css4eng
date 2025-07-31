@@ -103,22 +103,14 @@ We'll start with the useful ones.
 
 {% example attribute-selectors-1.html iframe_style="height: 15em;" %}
 
-But hang on - that last link there, to the TV Tropes page about Wikipedia? That link's `href` attribute is `"https://tvtropes.org/pmwiki/pmwiki.php/Website/Wikipedia"`, which definitely contains `"wikipedia"`, so why is it red rather than blue?
-
-Two reasons. First: attribute selectors, like class names and IDs, are *case sensitive* - so that's not going to match because our CSS rule is looking for `"wikipedia"` but the actual `href` is `"https://tvtropes.org/pmwiki/pmwiki.php/Website/Wikipedia"` --- capital “W” ---  so it won't match. Good news is that's an easy fix - add an `i` inside the `[ ]` for the selector rule:
+Hang on, though... there's a link to the TV Tropes page for Mysterious Cities of Gold there, and it's not red. We might click it by mistake... but take a close look at that link, and you'll se that the domain name is uppercase. Somebody's linked to `TVTROPES.ORG` instead of `tvtropes.org` --- and attribute selectors, like class names and IDs, are *case sensitive*. Good news is that's an easy fix - add an `i` (for *insensitive) inside* the `[ ]` for the selector rule:
 
 ```css
-a[href*="wikipedia" i] {
-    background-color: blue;
+a[href*="https://tvtropes.org" i] {
+    background-color: red;
     color: white;
 }
 ```
-
-Now, we have two rules: one says if the `href` starts with `"https://tvtropes.org"`, the link is red; the other says if the `href` contains `"wikipedia"` -- case insensitive -- the link is blue. So which rule wins?
-
-
-
-
 
 
 
