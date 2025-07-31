@@ -1,8 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Is Selector</title>
+	<title>Is Selector</title>
+	<style>
+		:is(main, article, section) :is(h1, h2):first-child {
+			color: purple;
+		}
+	</style>
 </head>
 <body>
+	<main>
+		<h1>This <code>&lt;h1&gt;</code> is the first child of <code>&lt;main&gt;</code></h1>
+		<p>A paragraph.</p>
+		<article>
+			<h2>This <code>&lt;h1&gt;</code> is the first child of an <code>&lt;article&gt;</code></h2>
+			<p>This is another paragraph</p>
+			<section>
+				<h2>This <code>&lt;h2&gt;</code> is the first child of a <code>&lt;section&gt;</code>
+				</h2>
+				<p>This is another paragraph</p>
+				<h2>Another <code>&lt;h2&gt;</code></h2>
+				<p>👆🏼 <em>that</em> <code>&lt;h2&gt;</code> shouldn't have any special styling applied.</p>
+			</section>
+			<h2>Another <code>&lt;h2&gt;</code> that shouldn't have any special style.</h2>
+			<p>And another paragraph.</p>
+			<section>
+				<p>This section starts with a paragraph, so the headings here don't 
+					get any special style because none of them matches the <code>:first-child</code>
+					selector.
+				</p>
+				<h2>(you see?)</h2>
+			</section>
+		</article>
+	</main>
 </body>
 </html>
