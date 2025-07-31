@@ -19,7 +19,7 @@ module Jekyll
 
             <pre>#{markup}</pre>
 
-            Valid syntax: example <filename> [mark_lines="3, 4, 5"] [iframe_style[="height: 10em;"]] [only_lines="4-6"]
+            Valid syntax: example <filename> [mark_lines="3, 4, 5"] [iframe_style[="height: 10em;"]] [only_lines="4-6"] [from="<style>" end="</style>"]
           MSG
         end
       end
@@ -71,7 +71,12 @@ module Jekyll
           dir = File.dirname(file_path)
           FileUtils.mkdir_p(dir) unless Dir.exist?(dir)
           code = read_or_create_file(file_path, context)
-
+          
+          # Apply pattern-based filtering if specified
+          if @highlight_options[:from] && @highlight_options[:end]
+            code = filter_by_patterns(code, @highlight_options[:from], @highlight_options[:end])
+          end
+          
           @lang = File.extname(file_path).delete_prefix(".")
           output = render_rouge(code)
 
