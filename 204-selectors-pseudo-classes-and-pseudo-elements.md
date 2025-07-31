@@ -64,7 +64,7 @@ Now, in theory, this is all nice & simple. Everything's a `:link` until somethin
 
 In practice... it's way more complicated than that. Hover states work great on devices with a mouse pointer, but on touchscreen devices like smartphone and tablets, you can't hover or focus an element - you're either touching it, or you're not.
 
-In this example, each side of the border responds to a different pseudo-class, and the background-color responds to the `:active` state:		
+In this example, each side of the border responds to a different pseudo-class, and the background-colour responds to the `:active` state:		
 
 {% example state-selectors.html %}
 
@@ -157,39 +157,19 @@ Next up, there's the `~=` operator, which will match any word that appears in th
 
 Finally, there's the `|=` operator. This one's even more specialised: it'll match any attribute value, or the first part of an attribute value if the value's followed by a hyphen. It's designed specifically to match ISO language codes, as in this example:
 
-{% example attribute-iso-lang-codes.html iframe_style="height: 10em;" %}
+{% example attribute-iso-lang-codes.html iframe_style="height: 20em;" %}
+
+## Structural Selectors
+
+Structural selectors match elements based on the structure of the document. Hence the name.
+
+You want to highlight the first element in a list? Or the last element?
 
 
 
 
 
-
-
- the `~=` operator will match a single word within an attribute value, and `|=` will either the entire value or a hyphenated prefix at the start of a value.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Selectors, Pseudo-Classes and Pseudo-Elements (20m)
-
-## Course Content
+----
 
 - Combinators: `A > B`, `A + B`, `A ~ B`, `A || B` *(draft)*
 - State selectors: `:link`, `:visited`, `:active`, `:hover`, `:focus`
