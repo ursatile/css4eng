@@ -179,27 +179,14 @@ Say we wanted to put a bottom border on every paragraph except the last one in a
 
 {% example last-child.html iframe_height="20em" %}
 
+> Notice that we've used a nested CSS rule there, and the actual selector syntax is `&:last-child`? The `&` there is used to combine the enclosing rule with an additional selector - the rule says "hey, apply these rules to *all* paragraphs -- and if one of those paragraphs is a last-child, then also apply these extra rules"
+
+There's also the 
 
 
 
+Combinators: `A > B`, `A + B`, `A ~ B`, `A || B` *(draft)*
 
-{% example structural-selectors-1.html iframe_style="height: 20em" %}
-
-
-
-
-
-
-
-} Or the last element?
-
-
-
-
-
-----
-
-- Combinators: `A > B`, `A + B`, `A ~ B`, `A || B` *(draft)*
 - State selectors: `:link`, `:visited`, `:active`, `:hover`, `:focus`
 - Attribute selectors: `=-=`, `~=`, `|=`, `^=`, `$=`, `*=`
 - Structural selectors: `:first-child`, `:last-child`, `:only-child`, `:nth-child(n)`, `:nth-last-child(n)`, `:first-of-type`, `:last-of-type`, `:only-of-type`, `:nth-of-type(n)`, `:nth-last-of-type(n)`, `:empty`
