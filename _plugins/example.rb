@@ -19,7 +19,7 @@ module Jekyll
 
             <pre>#{markup}</pre>
 
-            Valid syntax: example <filename> [mark_lines="3, 4, 5"] [iframe_style[="height: 10em;"]] [only_lines="4-6"] [from="<style>" end="</style>"]
+            Valid syntax: example <filename> [mark_lines="3, 4, 5"] [iframe_style[="height: 10em;"]] [only_lines="4-6"] [start_after="<style>" end_before="</style>"]
           MSG
         end
       end
@@ -71,12 +71,12 @@ module Jekyll
           dir = File.dirname(file_path)
           FileUtils.mkdir_p(dir) unless Dir.exist?(dir)
           code = read_or_create_file(file_path, context)
-          
+
           # Apply pattern-based filtering if specified
-          if @highlight_options[:from] && @highlight_options[:end]
-            code = filter_by_patterns(code, @highlight_options[:from], @highlight_options[:end])
+          if @highlight_options[:start_after] && @highlight_options[:end_before]
+            code = filter_by_patterns(code, @highlight_options[:start_after], @highlight_options[:end_before])
           end
-          
+
           @lang = File.extname(file_path).delete_prefix(".")
           output = render_rouge(code)
 
@@ -166,6 +166,41 @@ module Jekyll
           return lines[start_index..end_index].join
         else
           raise SyntaxError, "Syntax Error for only_lines declaration. Expected format: \"start-end\" (e.g., \"4-6\")"
+        end
+      end
+
+      def filter_by_patterns(code, start_pattern, end_pattern)
+        lines = code.lines
+        start_index = nil
+        end_index = nil
+
+        # Find the start pattern
+        lines.each_with_index do |line, index|
+          if line.include?(start_pattern)
+            start_index = index + 1 # Start from the line AFTER the pattern
+            break
+          end
+        end
+
+        # If start pattern not found, return empty
+        return "# Start pattern '#{start_pattern}' not found\n" if start_index.nil?
+
+        # Find the end pattern starting from after the start
+        lines[start_index..-1].each_with_index do |line, relative_index|
+          if line.include?(end_pattern)
+            end_index = start_index + relative_index - 1 # Stop BEFORE the end pattern
+            break
+          end
+        end
+
+        # If end pattern not found, go to end of file
+        end_index = lines.length - 1 if end_index.nil?
+
+        # Extract the lines between patterns
+        if start_index <= end_index
+          lines[start_index..end_index].join
+        else
+          "# No content found between patterns\n"
         end
       end
 
