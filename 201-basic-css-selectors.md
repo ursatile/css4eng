@@ -69,22 +69,6 @@ body {
 
 The page looks the same - except those "warning" and "caution" elements are white now. The reason is **cascading**. We've said "everything in the body should be navy", and that rule cascades down... but then when we get to the warning paragraph, that sets a rule that everything should be white, and that second rule wins. The first rule has to cascade from the body element, to the warning paragraph element, to the strong element; the second rule only has to cascade from the warning paragraph to the strong, and shorter cascades are more specific, and therefore have a higher precedence.
 
-## CSS Specificity and !important
-
-Imagine for a second that the dress code for our party was:
-
-* All guests wear blue hats
-* Musicians wear green hats
-* Freddie Mercury wears a purple hat
-
-Freddie's Freddie, but he's also a musician, and he's also one of our guests... so what colour hat is Freddie going to wear?
-
-In  CSS, it's easy to end up with multiple rules that appear to target the same element:
-
-{% example css-specificity.html %}
-
-
-
 We're going to come back to selectors shortly, because they are phenomenally powerful. To go back to house party example: we could have a rule for anybody who's standing in the kitchen, a different rule for somebody standing in the kitchen who has a cat, a rule that only applies to a pilot who is standing next to a doctor, a rule that only applies to the first doctor in a room... we can combine selectors in all sorts of combinations and permutations.
 
 For now, there are two more combinations I want to show you before we move on.
