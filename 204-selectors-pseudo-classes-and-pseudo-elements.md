@@ -90,13 +90,12 @@ Let's learn about CSS attribute selectors.
 
 Attribute selectors give us a way to target elements based on the contents of their HTML attribute values.
 
-Let's say we've got a page containing a bunch of links, and we want to highlight links based on where they go.
+Let's say we've got a page about TV shows, containing a bunch of links, and we want to highlight links based on where they go.
 
-* 
-* Links that go to Wikipedia should be highlighted in green
-* Links to any page on TV Tropes should be highlighted in red
+* Links to https://startrek.com/ should be highlighted in blue.
+* Links that go to Wikipedia should be highlighted in green.
+* Links to any page on TV Tropes should be highlighted in red.
 * Links with a title attribute should have a dotted underline
-* 
 
 {% example attribute-selectors-1.html iframe_style="height: 15em;" %}
 
