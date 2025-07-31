@@ -169,13 +169,15 @@ You want to highlight the first item in a list? Use the `:first-child` selector.
 ul :first-child { color: royalblue; }
 ```
 
-You want to highlight the first element in a section, but only if it's a heading 2? Combine type selectors with structural selectors:
+You want to highlight the first element in a `section`, but only if it's an `h2`? You can combine type selectors with structural selectors:
 
 ```css
 section h2:first-child { color: red; }
 ```
 
+Say we wanted to put a bottom border on every paragraph except the last one in a section - with structural selectors, that's easy; we put a bottom border on every paragraph, and then use the `:last-child` selector to remove it from the last one:
 
+{% example last-child.html iframe_height="20em" %}
 
 
 
