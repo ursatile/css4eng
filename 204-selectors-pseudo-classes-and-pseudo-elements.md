@@ -185,6 +185,16 @@ There's also the `:only-child` selector, which you can use to find lonely elemen
 
 {% example only-child.html iframe_height="20em" only_lines="6-8" iframe_style="height: 15em;" %}
 
+### nth-child selectors
+
+One scenario I've encountered countless times in my own career is *zebra striping* - shading alternate rows of a table to improve readability. The CSS nth-child selectors make this kind of thing really straightforward: they'll target elements based on their index, and they support various formulae you can use to target repeating elements.
+
+The classic zebra-stripe table example:
+
+{% example zebra-stripes.html iframe_height="20em" only_lines="6-8" iframe_style="height: 15em;" %} 
+
+
+
 
 
 Combinators: `A > B`, `A + B`, `A ~ B`, `A || B` *(draft)*
