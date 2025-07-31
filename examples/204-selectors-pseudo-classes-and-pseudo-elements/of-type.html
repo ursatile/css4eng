@@ -3,11 +3,28 @@
 <head>
 	<title>:of-type</title>
 	<style>
+		img { width: 100px; }
 		section {
+			outline: 1px solid red;
+			overflow: auto;
+			border-bottom: 2px solid black;
+			clear: both;
+			
 			img:only-of-type {
 				display: block;
+				outline: 5px solid blue;
+			}
+			img:nth-of-type(odd) {
+				float: right;
+			}
+			img:nth-of-type(even) {
+				float: right;
 			}
 			img:first-of-type {
+				outline: 5px solid lime;
+				float: left;
+				margin-right: 1em;
+				margin-bottom: 1em;
 			}
 	</style>
 </head>
