@@ -189,9 +189,13 @@ There's also the `:only-child` selector, which you can use to find lonely elemen
 
 One scenario I've encountered countless times in my own career is *zebra striping* - shading alternate rows of a table to improve readability. The CSS nth-child selectors make this kind of thing really straightforward: they'll target elements based on their index, and they support various formulae you can use to target repeating elements.
 
-The classic zebra-stripe table example:
+The classic zebra-stripe table example uses `:nth-child(even)`:
 
 {% example zebra-stripes.html iframe_height="20em" start_after="<style>" end_before="</style>" iframe_style="height: 15em;" %} 
+
+but you can also stripe `:nth-child(3n)` to target every third row, `:nth-last-child(odd)` to target odd-numbered rows starting from the end and working backwards, `:nth-child(3n+7)` to target the seventh row and every third row thereafter...
+
+### of-type selectors
 
 
 

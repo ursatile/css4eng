@@ -74,8 +74,8 @@ module Jekyll
 
           # Determine line range from patterns if specified
           line_range = nil
-          if @highlight_options[:from] && @highlight_options[:end]
-            line_range = get_line_range_from_patterns(code, @highlight_options[:from], @highlight_options[:end])
+          if @highlight_options[:start_after] && @highlight_options[:end_before]
+            line_range = get_line_range_from_patterns(code, @highlight_options[:start_after], @highlight_options[:end_before])
           end
 
           @lang = File.extname(file_path).delete_prefix(".")
