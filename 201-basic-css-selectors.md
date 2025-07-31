@@ -3,6 +3,7 @@ title: "Basic CSS Selectors"
 layout: home
 nav_order: 201
 examples: examples/201-basic-css-selectors 
+target_minutes: 20
 word_count: 1603
 ---
 So far, we've learned about the building blocks of the CSS language - selectors, properties, and values - and the tools and techniques we can use to inspect and manipulate those properties.
@@ -55,6 +56,8 @@ Next, we target the heading level 1 with an element rule, to give it white text 
 > ℹ️ HTML is generally case-insensitive, but CSS class names and IDs are not: your class names and element IDs have to exactly match your CSS selectors, including their case. An element with `<p class="Disclaimer"></p>` won’t match a rule `p.disclaimer {}`, so be careful. My own preferred solution to this is to stick to lowercase ASCII for class names and element IDs - lowercase letters a-z, numbers 0-9, and the `-` 
 
 Now, you see how the word "warning" and "caution" is in navy blue here, despite being part of a warning paragraph? We actually have two conflicting rules here. One is the wildcard rule - hey, everything on this page should be navy blue, unless something overrides it. The other is saying “hey, stuff inside warning paragraphs should be white with a red background”.
+
+Welcome to the wonderful world of CSS specificity.
 
 Those strong tags pick up the red background, because there's no other rule that would affect their background colour - but the wildcard rule here applies to **every element**, and so it takes precedence over the white text rule, which is inherited from the warning paragraph. 
 
