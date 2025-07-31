@@ -155,6 +155,10 @@ Next up, there's the `~=` operator, which will match any word that appears in th
 
 {% example attribute-job-roles.html iframe_style="height: 10em;" %}
 
+Finally, there's the `|=` operator. This one's even more specialised: it'll match any attribute value, or the first part of an attribute value if the value's followed by a hyphen. It's designed specifically to match ISO language codes, as in this example:
+
+{% example attribute-iso-lang-codes.html iframe_style="height: 10em;" %}
+
 
 
 
