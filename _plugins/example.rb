@@ -80,6 +80,9 @@ module Jekyll
             output = filter_highlighted_lines(output, @highlight_options[:only_lines])
           end
 
+          # Remove common indentation from the filtered output
+          output = remove_common_indentation(output)
+
           rendered_output = add_code_tag(output, expanded_path, "examples/#{page_filename}/#{expanded_path}")
           output = prefix + rendered_output + suffix
           if @highlight_options[:iframe_style]
@@ -181,6 +184,79 @@ module Jekyll
         else
           raise SyntaxError, "Syntax Error for only_lines declaration. Expected format: \"start-end\" (e.g., \"4-6\")"
         end
+      end
+
+      def remove_common_indentation(highlighted_html)
+        # Split into lines while preserving HTML structure
+        lines = highlighted_html.split(/(?<=\n)/)
+        return highlighted_html if lines.empty?
+
+        # Find the minimum indentation by looking at non-empty lines
+        # We need to extract text content from HTML to measure indentation
+        min_indent = nil
+
+        lines.each do |line|
+          # Skip empty lines (just whitespace and newlines)
+          next if line.strip.empty?
+
+          # Extract text content from HTML to measure leading whitespace
+          text_content = line.gsub(/<[^>]*>/, "")
+          leading_whitespace = text_content.match(/^(\s*)/)[1]
+          indent_count = leading_whitespace.length
+
+          min_indent = indent_count if min_indent.nil? || indent_count < min_indent
+        end
+
+        # If no indentation found, return as-is
+        return highlighted_html if min_indent.nil? || min_indent == 0
+
+        # Remove the common indentation from each line
+        dedented_lines = lines.map do |line|
+          if line.strip.empty?
+            line
+          else
+            # Remove the minimum indentation from the beginning of the line
+            # We need to be careful with HTML tags at the start
+            remove_leading_whitespace(line, min_indent)
+          end
+        end
+
+        dedented_lines.join
+      end
+
+      def remove_leading_whitespace(html_line, spaces_to_remove)
+        return html_line if spaces_to_remove <= 0
+
+        # Track how many spaces we've removed
+        removed = 0
+        result = html_line.dup
+
+        # Process character by character from the beginning
+        i = 0
+        while i < result.length && removed < spaces_to_remove
+          char = result[i]
+
+          if char == "<"
+            # Skip over HTML tags
+            tag_end = result.index(">", i)
+            if tag_end
+              i = tag_end + 1
+              next
+            else
+              break
+            end
+          elsif char == " " || char == "\t"
+            # Remove whitespace character
+            result[i] = ""
+            removed += (char == "\t" ? 8 : 1) # Treat tab as 8 spaces
+            # Don't increment i since we removed a character
+          else
+            # Hit non-whitespace, stop removing
+            break
+          end
+        end
+
+        result
       end
 
       def render_codehighlighter(code)
