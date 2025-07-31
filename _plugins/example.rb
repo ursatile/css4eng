@@ -72,13 +72,19 @@ module Jekyll
           FileUtils.mkdir_p(dir) unless Dir.exist?(dir)
           code = read_or_create_file(file_path, context)
 
-          # Apply pattern-based filtering if specified
-          if @highlight_options[:start_after] && @highlight_options[:end_before]
-            code = filter_by_patterns(code, @highlight_options[:start_after], @highlight_options[:end_before])
+          # Determine line range from patterns if specified
+          line_range = nil
+          if @highlight_options[:from] && @highlight_options[:end]
+            line_range = get_line_range_from_patterns(code, @highlight_options[:from], @highlight_options[:end])
           end
 
           @lang = File.extname(file_path).delete_prefix(".")
           output = render_rouge(code)
+
+          # Apply pattern-based line filtering if we found a range
+          if line_range
+            output = filter_highlighted_lines(output, line_range)
+          end
 
           # Apply only_lines filter after syntax highlighting if specified
           if @highlight_options[:only_lines]
@@ -201,6 +207,41 @@ module Jekyll
           lines[start_index..end_index].join
         else
           "# No content found between patterns\n"
+        end
+      end
+
+      def get_line_range_from_patterns(code, start_pattern, end_pattern)
+        lines = code.lines
+        start_index = nil
+        end_index = nil
+
+        # Find the start pattern
+        lines.each_with_index do |line, index|
+          if line.include?(start_pattern)
+            start_index = index + 2 # Start from the line AFTER the pattern (1-based for filter_highlighted_lines)
+            break
+          end
+        end
+
+        # If start pattern not found, return nil
+        return nil if start_index.nil?
+
+        # Find the end pattern starting from after the start
+        lines[(start_index - 1)..-1].each_with_index do |line, relative_index|
+          if line.include?(end_pattern)
+            end_index = start_index + relative_index - 1 # Stop BEFORE the end pattern (1-based)
+            break
+          end
+        end
+
+        # If end pattern not found, go to end of file
+        end_index = lines.length if end_index.nil?
+
+        # Return the range in the format expected by filter_highlighted_lines
+        if start_index <= end_index
+          "#{start_index}-#{end_index}"
+        else
+          nil
         end
       end
 
