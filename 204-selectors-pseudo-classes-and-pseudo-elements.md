@@ -149,7 +149,7 @@ We need three more attribute selectors to collect the whole set.
 
 First, the `$=` operator, which will match the *end* of an attribute value. Say we want to add a `background-color` property to any image on our site which is in `.png` format:
 
-
+{% example attribute-match-pngs.html %}
 
  
 
