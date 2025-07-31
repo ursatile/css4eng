@@ -2,7 +2,7 @@
 title: "Colors and Composition"
 layout: home
 nav_order: 208
-word_count: 48
+word_count: 49
 target_minutes: 20
 examples: examples/208-colors-and-composition
 ---
