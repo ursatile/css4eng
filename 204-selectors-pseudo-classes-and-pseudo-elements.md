@@ -147,7 +147,11 @@ Case sensitivity for attribute selectors is complicated. The type selector - the
 
 We need three more attribute selectors to collect the whole set.
 
-First, the `$=` operator, which will match the *end* of an attribute value. Say we want to highlight any link that points to a .org 
+First, the `$=` operator, which will match the *end* of an attribute value. Say we want to add a `background-color` property to any image on our site which is in `.png` format:
+
+
+
+ 
 
 
 
