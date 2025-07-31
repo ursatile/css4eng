@@ -72,13 +72,14 @@ module Jekyll
           FileUtils.mkdir_p(dir) unless Dir.exist?(dir)
           code = read_or_create_file(file_path, context)
           
-          # Apply only_lines filter if specified
-          if @highlight_options[:only_lines]
-            code = filter_lines(code, @highlight_options[:only_lines])
-          end
-          
           @lang = File.extname(file_path).delete_prefix(".")
           output = render_rouge(code)
+          
+          # Apply only_lines filter after syntax highlighting if specified
+          if @highlight_options[:only_lines]
+            output = filter_highlighted_lines(output, @highlight_options[:only_lines])
+          end
+          
           rendered_output = add_code_tag(output, expanded_path, "examples/#{page_filename}/#{expanded_path}")
           output = prefix + rendered_output + suffix
           if @highlight_options[:iframe_style]
@@ -141,19 +142,19 @@ module Jekyll
 
       def filter_lines(code, line_range)
         lines = code.lines
-        
+
         if line_range =~ /^(\d+)-(\d+)$/
           start_line = Regexp.last_match(1).to_i
           end_line = Regexp.last_match(2).to_i
-          
+
           # Convert to 0-based indexing and ensure valid range
           start_index = [start_line - 1, 0].max
           end_index = [end_line - 1, lines.length - 1].min
-          
+
           if start_index > end_index || start_index >= lines.length
             return "# No lines found in specified range\n"
           end
-          
+
           return lines[start_index..end_index].join
         else
           raise SyntaxError, "Syntax Error for only_lines declaration. Expected format: \"start-end\" (e.g., \"4-6\")"

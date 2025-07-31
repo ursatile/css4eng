@@ -183,7 +183,7 @@ Say we wanted to put a bottom border on every paragraph except the last one in a
 
 There's also the `:only-child` selector, which you can use to find lonely elements with no brothers and sisters:
 
-{% example only-child.html iframe_height="20em" %}
+{% example only-child.html iframe_height="20em" only_lines="6-8" %}
 
 
 
