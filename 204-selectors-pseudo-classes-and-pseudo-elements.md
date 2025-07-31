@@ -92,14 +92,28 @@ Attribute selectors give us a way to target elements based on the contents of th
 
 Let's say we've got a page about TV shows, containing a bunch of links, and we want to highlight links based on where they go.
 
+{% example attribute-selectors-1.html %}
 
+The requirements are:
 
 * Links with a title attribute should be in italics
-* Links to https://startrek.com/ should be highlighted in `skyblue`
-* Links that go to Wikipedia should be highlighted in `palegreen`
+* Links to the exact URL `"https://startrek.com/"` should be highlighted in `skyblue`
 * Links to any page on TV Tropes should be highlighted in `pink`
+* Links that go to Wikipedia should be highlighted in `palegreen`
 
-{% example attribute-selectors-1.html iframe_style="height: 15em;" %}
+First, plug in a rule that'll match any link with a title attribute:
+
+```css
+a[title] { font-style: italic; }
+```
+
+Next, a rule that'll match the `href` property exactly:
+
+```css
+a[href="https://startrek.com/"] { background-color: skyblue; }
+```
+
+Match any link whose url *starts with* 
 
 Hang on, though... there's a link to the TV Tropes page for Mysterious Cities of Gold there, and it's not red. We might click it by mistake... but take a close look at that link, and you'll se that the domain name is uppercase. Somebody's linked to `TVTROPES.ORG` instead of `tvtropes.org` --- and the `href` attribute value in HTML is *case sensitive*. Fortunately, there's an easy fix - add an `i` (for *insensitive) inside* the `[ ]` for the selector rule:
 

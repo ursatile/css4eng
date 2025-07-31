@@ -1,0 +1,19 @@
+		a {
+			padding: 2px;
+		}
+
+		a[href="https://startrek.com/"] {
+			background-color: skyblue;
+		}
+
+		a[href^="https://tvtropes.org/"] {
+			background-color: pink;
+		}
+
+		a[href*="wikipedia"] {
+			background-color: palegreen;
+		}
+
+		a[title] {
+			font-style: italic;
+		}
