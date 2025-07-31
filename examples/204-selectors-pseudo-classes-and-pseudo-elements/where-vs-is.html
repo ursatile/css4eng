@@ -3,17 +3,18 @@
 <head>
 	<title>Where Vs Is</title>
 	<style>
-		p:is(.alpha) {
-			color: green;
-		}
-
 		p.stanza {
 			color: purple;
 		}
 
+		p:is(.alpha) {
+			color: green;
+			text-decoration: underline;
+		}
 
 		p:where(.bravo) {
 			color: blue;
+			font-style: italic;
 		}
 	</style>
 </head>
