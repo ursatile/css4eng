@@ -120,29 +120,48 @@ a[href="https://startrek.com/"] {
 Match any link whose `href` attribute *starts with* `"https://tvtropes.org/"` - if you know regular expressions, you'll recognise the caret `^` meaning "match the start":
 
 ```css
-a[href^="https://tvtropes.org"] { background-color: pink; }
+a[href^="https://tvtropes.org"] { 
+    background-color: pink;
+}
 ```
 
 And finally, any link whose `href` *contains* the text `"wikipedia"`:
 
 ```css
-a[href*="wikipedia"] { background-color: palegreen; }
+a[href*="wikipedia"] { 
+    background-color: palegreen; 
+}
 ```
 
-{% iframe attribute-selectors-1-complete.html %}
+{% iframe attribute-selectors-1-complete.html style="height: 200px;" %}
 
-Hang on, though... there's a link to the TV Tropes page for Mysterious Cities of Gold there, and it's not red. We might click it by mistake... but take a close look at that link, and you'll se that the domain name is uppercase. Somebody's linked to `TVTROPES.ORG` instead of `tvtropes.org` --- and the `href` attribute value in HTML is *case sensitive*. Fortunately, there's an easy fix - add an `i` (for *insensitive) inside* the `[ ]` for the selector rule:
+Hang on, though... there's a link to the TV Tropes page for Mysterious Cities of Gold there, and it's not pink. We might click it by mistake! But - if you take a close look at that link, and you'll se that the domain name is uppercase. Somebody's linked to `TVTROPES.ORG` instead of `tvtropes.org` --- and the `href` attribute value in HTML is *case sensitive*. Fortunately, there's an easy fix - add an `i` (for *insensitive) inside* the `[ ]` for the selector rule:
 
 ```css
-a[href*="https://tvtropes.org" i] {
-    background-color: red;
-    color: white;
+a[href^="https://tvtropes.org" i] {
+    background-color: pink;
 }
 ```
 
 Case sensitivity for attribute selectors is complicated. The type selector - the element name - and the attribute name are always case-insensitive, but the attribute value in HTML is case sensitive, *unless* it's one of the [46 special cases defined in the HTML living standard](https://html.spec.whatwg.org/multipage/semantics-other.html#case-sensitivity-of-selectors). As we just learned, if you need to make a rule case-insensitive, you can add an `i` to the selector rule, and if you need to override the default for one of those 46 special cases, you can add an `s` to the selector rule.
 
-Let's 
+We need three more attribute selectors to collect the whole set.
+
+First, the `$=` operator, which will match the *end* of an attribute value. Say we want to highlight any link that points to a .org 
+
+
+
+
+
+ the `~=` operator will match a single word within an attribute value, and `|=` will either the entire value or a hyphenated prefix at the start of a value.
+
+
+
+
+
+
+
+
 
 
 
