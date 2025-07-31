@@ -2,9 +2,7 @@
 title: "Basic CSS Selectors"
 layout: home
 nav_order: 201
-examples: examples/201-basic-css-selectors
-target_minutes: 10
-word_count: 1655
+examples: examples/201-basic-css-selectors 1655
 ---
 So far, we've learned about the building blocks of the CSS language - selectors, properties, and values - and the tools and techniques we can use to inspect and manipulate those properties.
 
@@ -57,7 +55,7 @@ Next, we target the heading level 1 with an element rule, to give it white text 
 
 Now, you see how the word "warning" and "caution" is in navy blue here, despite being part of a warning paragraph? We actually have two conflicting rules here. One is the wildcard rule - hey, everything on this page should be navy blue, unless something overrides it. The other is saying “hey, stuff inside warning paragraphs should be white with a red background”.
 
-Those strong tags pick up the red background, because there's no other rule that would affect their background colour - but the wildcard rule here applies to **every element**, and so it takes precedence over the white text rule, which is inherited from the warning paragraph.
+Those strong tags pick up the red background, because there's no other rule that would affect their background colour - but the wildcard rule here applies to **every element**, and so it takes precedence over the white text rule, which is inherited from the warning paragraph. 
 
 So, let's change it. Edit that rule so instead of the wildcard selector, it targets the HTML `<body>` element:
 
@@ -115,7 +113,7 @@ This syntax has caused a great deal of confusion over the years, particularly wh
 
 ```css
 body.news-article header nav menu li#promo a {
-    /* TODO: special style fpr  the link inside the promo 
+    /* TODO: special style for the link inside the promo 
       list item in the menu that's part of the nav inside the 
       header on any page whose body has the news-article class.
 }

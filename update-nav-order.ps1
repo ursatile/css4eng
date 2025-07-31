@@ -21,8 +21,8 @@ Get-ChildItem -Path . -Filter *.md | ForEach-Object {
 			}
 			$newContent = "---`r`n$newFrontMatter`r`n---`r`n$body"
 			Set-Content -NoNewline -Path $filePath -Value $newContent
-			Write-Host "Updated nav_order for $filePath to $navOrder"
-			WRite-Host "Updated examples for $filePath to examples/$baseName"
+			Write-Host "Updated nav_order for $baseName to $navOrder"
+			WRite-Host "Updated examples for $baseName to examples/$baseName"
 		}
 		else {
 			Write-Host "No front matter found in $($_.Name)"
