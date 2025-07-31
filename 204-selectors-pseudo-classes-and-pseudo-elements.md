@@ -112,7 +112,15 @@ a[href*="https://tvtropes.org" i] {
 }
 ```
 
-> Case sensitivity for attribute selectors is complicated. The type selector - the element name - and the attribute name are always case-insensitive, but the attribute value in HTML is case sensitive, *unless* it's one of the [46 special cases defined in the HTML living spec](https://html.spec.whatwg.org/multipage/semantics-other.html#case-sensitivity-of-selectors). 
+Case sensitivity for attribute selectors is complicated. The type selector - the element name - and the attribute name are always case-insensitive, but the attribute value in HTML is case sensitive, *unless* it's one of the [46 special cases defined in the HTML living standard](https://html.spec.whatwg.org/multipage/semantics-other.html#case-sensitivity-of-selectors). If you need to make a rule case-insensitive, add an `i`; if you need to make a rule case sensitive, you can add an `s` to the selector rule.
+
+
+
+
+
+
+
+
 
 # Selectors, Pseudo-Classes and Pseudo-Elements (20m)
 
