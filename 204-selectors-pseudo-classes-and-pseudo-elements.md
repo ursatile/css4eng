@@ -88,11 +88,9 @@ If you've ever used XSLT to transform XML documents, then (1) you have my sympat
 
 Let's learn about CSS attribute selectors.
 
-Say we've got a page containing a bunch of links, and we want all the links that go to Wikipedia to be highlighted in blue, and all the links to TV Tropes to be highlighted in red so we know not to click them or we'll end up browsing TV Tropes for the rest of the day. Any other links can stay plain blue on white.
+
 
 Attribute selectors give us a way to target elements based on the contents of their HTML attribute values.
-
-We'll start with the useful ones.
 
 |      | Syntax                            | Matches                                                      |
 | ---- | --------------------------------- | ------------------------------------------------------------ |
@@ -100,6 +98,9 @@ We'll start with the useful ones.
 | `=`  | `a[href="https://google.com"]`    | Any `a` element whose `href` attribute **exactly matches** `"https://google.com"` |
 | `*=` | `a[href*="wikipedia"]`            | Any `a` element whose `href` attribute contains `"wikipedia"` |
 | `^=` | `a[href^="https://tvtropes.org"]` | Any `a` element whose `href` starts with `"https://tvtropes.org"` |
+| `~=` |                                   |                                                              |
+
+Say we've got a page containing a bunch of links, and we want all the links that go to Wikipedia to be highlighted in blue, and all the links to TV Tropes to be highlighted in red so we know not to click them or we'll end up browsing TV Tropes for the rest of the day. Any other links can stay plain blue on white.
 
 {% example attribute-selectors-1.html iframe_style="height: 15em;" %}
 
@@ -113,6 +114,8 @@ a[href*="https://tvtropes.org" i] {
 ```
 
 Case sensitivity for attribute selectors is complicated. The type selector - the element name - and the attribute name are always case-insensitive, but the attribute value in HTML is case sensitive, *unless* it's one of the [46 special cases defined in the HTML living standard](https://html.spec.whatwg.org/multipage/semantics-other.html#case-sensitivity-of-selectors). As we just learned, if you need to make a rule case-insensitive, you can add an `i` to the selector rule, and if you need to override the default for one of those 46 special cases, you can add an `s` to the selector rule.
+
+There are two more 
 
 
 
