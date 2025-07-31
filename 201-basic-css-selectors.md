@@ -69,7 +69,7 @@ body {
 
 The page looks the same - except those "warning" and "caution" elements are white now. The reason is **cascading**. We've said "everything in the body should be navy", and that rule cascades down... but then when we get to the warning paragraph, that sets a rule that everything should be white, and that second rule wins. The first rule has to cascade from the body element, to the warning paragraph element, to the strong element; the second rule only has to cascade from the warning paragraph to the strong, and shorter cascades are more specific, and therefore have a higher precedence.
 
-## CSS Specificity
+## CSS Specificity and !important
 
 Imagine for a second that the dress code for our party was:
 
@@ -78,6 +78,18 @@ Imagine for a second that the dress code for our party was:
 * Freddie Mercury wears a purple hat
 
 Freddie's Freddie, but he's also a musician, and he's also one of our guests... so what colour hat is Freddie going to wear?
+
+In  CSS, it's easy to end up with multiple rules that appear to target the same element:
+
+```css
+p { color: blue; }
+p.musician { colour: green; }
+p#freddie { colour: purple; }
+```
+
+
+
+
 
 
 
