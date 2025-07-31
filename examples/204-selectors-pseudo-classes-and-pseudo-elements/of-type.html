@@ -3,33 +3,47 @@
 <head>
 	<title>:of-type</title>
 	<style>
-		img { width: 100px; }
+		body {
+			max-width: 400px;
+			margin: 1em auto;
+			text-align: justify;
+		}
+
+		img {
+			width: 100px;
+		}
+
 		section {
-			outline: 1px solid red;
 			overflow: auto;
 			border-bottom: 2px solid black;
 			clear: both;
-			
-			img:only-of-type {
-				display: block;
-				outline: 5px solid blue;
+
+			img {
+				margin-bottom: 1em;
 			}
+
 			img:nth-of-type(odd) {
 				float: right;
+				margin-left: 1em;
 			}
+
 			img:nth-of-type(even) {
-				float: right;
-			}
-			img:first-of-type {
-				outline: 5px solid lime;
 				float: left;
 				margin-right: 1em;
-				margin-bottom: 1em;
+			}
+
+			img:only-of-type {
+				display: block;
+				width: 300px;
+				margin: 1em auto;
+				outline: 5px solid blue;
+				float: none;
 			}
 	</style>
 </head>
 <body>
 	<section>
+	<h1>Cats of Unsplash</h1>
 		<p>This section includes three cats</p>
 		<img src="cats/alex-meier-KGiQFgF7dkc-unsplash.jpg"
 			alt="Cat by Alex Meier on Unsplash">
@@ -47,6 +61,17 @@
 			excellent
 			hunters even in low-light conditions.</p>
 		<img src="cats/loan-7AIDE8PrvA0-unsplash.jpg" alt="Cat by Loan on Unsplash">
+		<p>In a groundbreaking experiment, Google researchers trained a massive
+			neural network using 10 million randomly selected YouTube video thumbnails
+			without any human labeling or guidance. The network, consisting of over 1
+			billion connections, was left to identify patterns on its own. Remarkably,
+			one of the first concepts it learned to recognize was cats - developing
+			what researchers called a "cat neuron" that activated specifically when
+			feline features were detected. This unsupervised learning breakthrough
+			demonstrated that artificial neural networks could spontaneously develop
+			the ability to identify and categorize objects in much the same way
+			biological brains do, marking a significant milestone in machine learning
+			and computer vision.</p>
 	</section>
 	<section>
 		<p>There's only one cat in this section.</p>
@@ -60,35 +85,35 @@
 	</section>
 	<section>
 		<p>This section includes five cats.</p>
+		<img src="cats/zoe-gayah-jonker-uhnbTZC7N9k-unsplash.jpg"
+			alt="Cat by Zoe Gayah Jonker on Unsplash">
 		<p>Meet this elegant feline captured by Zoe Gayah Jonker, showcasing the
 			natural grace and poise that cats are renowned for. The lighting perfectly
 			highlights the cat's distinctive features and alert expression.</p>
-		<img src="cats/zoe-gayah-jonker-uhnbTZC7N9k-unsplash.jpg"
-			alt="Cat by Zoe Gayah Jonker on Unsplash">
+		<img src="cats/bofu-shaw-ofNMMuTD3kE-unsplash.jpg"
+			alt="Cat by Bofu Shaw on Unsplash">
 		<p>Bofu Shaw's stunning photograph captures a cat in its natural
 			environment, demonstrating the perfect balance between wild instincts and
 			domestic comfort. The composition beautifully frames the cat's curious and
 			intelligent gaze.</p>
-		<img src="cats/bofu-shaw-ofNMMuTD3kE-unsplash.jpg"
-			alt="Cat by Bofu Shaw on Unsplash">
+		<img src="cats/kevin-knezic-doyAAwH2AyQ-unsplash.jpg"
+			alt="Cat by Kevin Knezic on Unsplash">
 		<p>Kevin Knezic presents this magnificent cat with incredible attention to
 			detail, showcasing the intricate patterns of its fur and the intensity of
 			its piercing eyes. This image perfectly captures the mysterious allure
 			that makes cats so captivating.</p>
-		<img src="cats/kevin-knezic-doyAAwH2AyQ-unsplash.jpg"
-			alt="Cat by Kevin Knezic on Unsplash">
+		<img src="cats/paul-hanaoka-o6RbK3y7mK4-unsplash.jpg"
+			alt="Cat by Paul Hanaoka on Unsplash">
 		<p>Paul Hanaoka's artistic vision brings out the playful yet dignified
 			nature of this beautiful cat. The photograph emphasizes the cat's natural
 			athleticism and the graceful way it carries itself through any
 			environment.</p>
-		<img src="cats/paul-hanaoka-o6RbK3y7mK4-unsplash.jpg"
-			alt="Cat by Paul Hanaoka on Unsplash">
+		<img src="cats/timo-volz-mrTydVjg04o-unsplash.jpg"
+			alt="Cat by Timo Volz on Unsplash">
 		<p>Timo Volz captures this remarkable feline in a moment of pure
 			tranquility, showing how cats can seamlessly transition from active
 			hunters to peaceful companions. The image highlights the serene confidence
 			that defines these magnificent creatures.</p>
-		<img src="cats/timo-volz-mrTydVjg04o-unsplash.jpg"
-			alt="Cat by Timo Volz on Unsplash">
 	</section>
 </body>
 </html>
