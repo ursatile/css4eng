@@ -217,6 +217,35 @@ Let's meet a new selector: `:has()`
 
 {% example selector-has.html iframe_style="height: 20em;" %}
 
+`:has()` is one of the CSS *match selectors*, along with `:is()`, `:where()` and `:not()`
+
+At a glance, `:is()` looks kinda useless:
+
+```css
+:is(p) {
+    /* style for paragraph */
+}
+```
+
+but what makes it so powerful is being able to build rules that use multiple selectors as part of a composite selector. For example, say we want `h1` and `h2` elements to be purple, but only if they are the first child element of a section, or an article, or a main element.
+
+Using normal selectors, we'd have to write a rule like:
+
+```css 
+section h1:first-child, 
+section h2:first-child,
+article h1:first-child,
+article h2:first-child,
+main h1:first-child,
+main h2:first-child {
+    color: purple;
+}
+```
+
+Using the `:is()` selector, we can write the same rule much more succinctly:
+
+{% example is-selector.html iframe_style="height: 20em;" %}
+
 
 
 - Match selectors: `:not()`, `:is()`, `:where()`, `:has()`
