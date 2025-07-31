@@ -14,11 +14,14 @@ Get-ChildItem -Path . -Filter *.md | ForEach-Object {
 				$newFrontMatter = $frontMatter + "`nav_order: $navOrder"
 			}
 			if ($newFrontMatter -match "examples: [^ ]+") {
-				$newFrontMatter = $newFrontMatter -replace "examples: [^ ]+", "examples: examples/$baseName"
+				$newFrontMatter = $newFrontMatter -replace "examples: [^ ]+$", "examples: examples/$baseName"
 			}
 			else {
 				$newFrontMatter = $newFrontMatter + "`nexamples: examples/$baseName"
 			}
+			Write-Host "========================================================"
+			Write-Host $newFrontMatter
+
 			$newContent = "---`r`n$newFrontMatter`r`n---`r`n$body"
 			Set-Content -NoNewline -Path $filePath -Value $newContent
 			Write-Host "Updated nav_order for $baseName to $navOrder"
