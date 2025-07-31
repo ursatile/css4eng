@@ -209,7 +209,13 @@ The final structure selector is `:empty`, which -- you guessed it -- matches an 
 
 ## Match Selectors
 
-OK, scenario: 
+OK, scenario - we want to put a border around any section which contains exactly one image. If a section contains more than one image? No border. If a section contains no images? No border.
+
+None of the selectors we've seen so far can do this - we can find the *image*, sure, but then we don't have any way to step back up the DOM tree and apply a style to the parent element.
+
+Let's meet a new selector: `:has()`
+
+{% example selector-has.html %}
 
 
 
