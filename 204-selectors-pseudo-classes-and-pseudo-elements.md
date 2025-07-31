@@ -147,11 +147,15 @@ Case sensitivity for attribute selectors is complicated. The type selector - the
 
 We need three more attribute selectors to collect the whole set.
 
-First, the `$=` operator, which will match the *end* of an attribute value. Say we want to add a `background-color` property to any image on our site which is in `.png` format:
+First, the `$=` operator, which will match the *end* of an attribute value. For example, we could use this to add a `background-color` property to any image on our site which is in `.png` format:
 
 {% example attribute-match-pngs.html iframe_style="height: 10em;" %}
 
- 
+Next up, there's the `~=` operator, which will match any word that appears in the attribute value. This one's a little more esoteric, but say we had a list of employees on our intranet, and each employee's element had an HTML `data-job-roles` attribute listing all the things that employee's qualified to do, and we wanted to highlight the people with First Aid training:
+
+{% example attribute-job-roles.html iframe_style="height: 10em;" %}
+
+
 
 
 
