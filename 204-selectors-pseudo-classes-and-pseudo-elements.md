@@ -215,7 +215,7 @@ None of the selectors we've seen so far can do this - we can find the *image*, s
 
 Let's meet a new selector: `:has()`
 
-{% example selector-has.html %}
+{% example selector-has.html iframe_style="height: 20em;" %}
 
 
 
