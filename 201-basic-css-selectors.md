@@ -81,17 +81,7 @@ Freddie's Freddie, but he's also a musician, and he's also one of our guests... 
 
 In  CSS, it's easy to end up with multiple rules that appear to target the same element:
 
-```css
-p { color: blue; }
-p.musician { colour: green; }
-p#freddie { colour: purple; }
-```
-
-
-
-
-
-
+{% example css-specificity.html %}
 
 We're going to come back to selectors shortly, because they are phenomenally powerful. To go back to house party example: we could have a rule for anybody who's standing in the kitchen, a different rule for somebody standing in the kitchen who has a cat, a rule that only applies to a pilot who is standing next to a doctor, a rule that only applies to the first doctor in a room... we can combine selectors in all sorts of combinations and permutations.
 
