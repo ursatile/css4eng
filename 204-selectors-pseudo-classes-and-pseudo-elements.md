@@ -101,19 +101,35 @@ The requirements are:
 * Links to any page on TV Tropes should be highlighted in `pink`
 * Links that go to Wikipedia should be highlighted in `palegreen`
 
-First, plug in a rule that'll match any link with a title attribute:
+First, create in a rule that'll match any link with a title attribute:
 
 ```css
-a[title] { font-style: italic; }
+a[title] { 
+    font-style: italic; 
+}
 ```
 
 Next, a rule that'll match the `href` property exactly:
 
 ```css
-a[href="https://startrek.com/"] { background-color: skyblue; }
+a[href="https://startrek.com/"] { 
+    background-color: skyblue;
+}
 ```
 
-Match any link whose url *starts with* 
+Match any link whose `href` attribute *starts with* `"https://tvtropes.org/"` - if you know regular expressions, you'll recognise the caret `^` meaning "match the start":
+
+```css
+a[href^="https://tvtropes.org"] { background-color: pink; }
+```
+
+And finally, any link whose `href` *contains* the text `"wikipedia"`:
+
+```css
+a[href*="wikipedia"] { background-color: palegreen; }
+```
+
+{% iframe attribute-selectors-1-complete.html %}
 
 Hang on, though... there's a link to the TV Tropes page for Mysterious Cities of Gold there, and it's not red. We might click it by mistake... but take a close look at that link, and you'll se that the domain name is uppercase. Somebody's linked to `TVTROPES.ORG` instead of `tvtropes.org` --- and the `href` attribute value in HTML is *case sensitive*. Fortunately, there's an easy fix - add an `i` (for *insensitive) inside* the `[ ]` for the selector rule:
 

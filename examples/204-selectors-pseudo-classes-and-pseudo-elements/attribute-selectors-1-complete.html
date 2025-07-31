@@ -3,7 +3,21 @@
 <head>
 	<title>Attribute Selectors 1</title>
 	<style>
-		/* TODO: highlight links based on where they go */
+		a[href="https://startrek.com/"] {
+			background-color: skyblue;
+		}
+
+		a[href^="https://tvtropes.org/"] {
+			background-color: pink;
+		}
+
+		a[href*="wikipedia"] {
+			background-color: palegreen;
+		}
+
+		a[title] {
+			font-style: italic;
+		}
 	</style>
 </head>
 <body>
