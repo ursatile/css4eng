@@ -272,7 +272,26 @@ You can also write completely nonsensical rules using `:not()`. `p:not(p)` match
 
 {% example not-foo.html %}
 
-- Match selectors: `:not()`, `:is()`, `:where()`, `:has()`
+## Selector Strategies
+
+One of the most powerful principles in software engineering is to do the simplest thing that solves the problem you have right now. The road to development hell is paved with good ideas, abstractions, frameworks, and things which looked like they might be useful later.
+
+As far as CSS selectors are concerned: try to use the fewest, simplest selector rules you possibly can. Target HTML elements based on document structure, rather than adding classes and IDs just so you can target something with a CSS rule. If your site's basic CSS is built around types and structural selectors, you're going to find it much easier when you have to implement a special case.
+
+If you need to style different kinds of page within the same application, see if you can do it using a single class on the `<html>` or the `<body>` element, and building rules which cascade down from there, instead of adding classes all over the page.
+
+We'll come back to selector strategies and the architecture of CSS in part 3 of the course, when we talk about building complex interactive applications for the web.
+
+## CSS Pseudo-Elements
+
+Pseudo-elements give us a way to target a specific part of an element's content. The classic example is using `::first-line` and ``:first-letter` to style up a paragraph of text with a decorative capital initial:
+
+{% example first-letter-first-line.html %}
+
+
+
+
+
 - Pseudo-elements: `::first-line`, `::first-letter`, `::before`, `::after`, `::placeholder`, `::marker`, `::selection`
 - using `attr()` in `content`
 - Exercise: Building a CSS mosaic
