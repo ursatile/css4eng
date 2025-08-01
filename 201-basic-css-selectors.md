@@ -159,13 +159,13 @@ The first column is the **ID column** column. Every ID selector, like `#example`
 
 Here's how I think about this. Each rule is an army, made up of highly trained fighting animals, and they're going to have a battle to see who wins.
 
-The ID column? That's how many dragons 🐉 you're bringing to the fight. The class column is how many tigers 🐅 you've got, and the third column is how many geese 🪿. 
+The ID column? That's how many tyrannosaurus rexes 🦖 you're bringing to the fight. The class column is how many tigers 🐅 you've got, and the third column is how many geese 🪿. 
 
-You see, if one side has a tiger, it doesn't matter how many geese the other side's got - the tiger's gonna win. If both sides have a tiger, then the geese get involved - but if you bring a tiger, and the other side's got a dragon? Yeah. Their dragon's going to beat your tiger. You got five tigers? Ten tigers? A hundred tigers? Dragon's still going to win. Only way to beat a dragon is to bring another dragon... and if they've got two dragons and four tigers and ten geese, but you've got two dragons and four tigers and eleven geese? Well, you're almost evenly matched, but you got one more goose than them - and that one extra goose is going to bring you victory.
+You see, if one side has a tiger, it doesn't matter how many geese the other side's got - the tiger's gonna win. If both sides have a tiger, then the geese get involved - but if you bring a tiger, and the other side's got a T-rex? Yeah. Their T-rex is going to beat your tiger. You got five tigers? Ten tigers? A hundred tigers? T-rex is still going to win. Only way to beat a T-rex is to bring another T-rex... and if they've got two T-rexes and four tigers and ten geese, but you've got two T-rexes and four tigers and eleven geese? Well, you're almost evenly matched, but you got one more goose than them - and that one extra goose is going to bring you victory.
 
 Let's flip that into some CSS rules:
 
-{% include_relative {{page.examples}}/dragons-tigers-geese-oh-my.html %}
+{% include_relative {{page.examples}}/t-rexes-tigers-geese-oh-my.html %}
 
 In the current CSS standard, and in all modern browsers, type selectors will never override class selectors, and class selectors will never override ID selectors. Or, to put it another way, even if it's a million geese against one tiger, the tiger's still going to win.
 
