@@ -3,14 +3,14 @@
 # Test specifically for the elements="style,body" bug fix
 
 # Load the extraction code
-require_relative 'test_elements_simple.rb'
+require_relative "test_elements_simple.rb"
 
 puts "Testing the specific bug fix for elements=\"style,body\":"
 puts "=" * 60
 
 # Test HTML with style and body
 html_content = <<~HTML
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Test</title>

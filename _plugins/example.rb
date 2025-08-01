@@ -78,32 +78,34 @@ module Jekyll
         # Step 1: Determine which lines to keep from the original code (before highlighting)
         lines_to_keep = nil
 
-        # Check for element filtering first - this needs special handling
+        # Step 1: Determine which lines to keep from the original code (before highlighting)
+        lines_to_keep = nil
+
+        # Check for element filtering first
         if @highlight_options[:elements] && @lang == "html"
-          # For elements, we need to extract each element separately and combine them
-          output = render_elements_separately(code, @highlight_options[:elements])
-        else
-          # Check for pattern-based filtering if no element filtering was applied
-          if @highlight_options[:start_after] && @highlight_options[:end_before]
-            lines_to_keep = get_line_range_from_patterns(code, @highlight_options[:start_after], @highlight_options[:end_before])
-          end
-
-          # Check for only_lines filtering if no other filtering was applied
-          if !lines_to_keep && @highlight_options[:only_lines]
-            lines_to_keep = @highlight_options[:only_lines]
-          end
-
-          # Step 2: Apply syntax highlighting to the ENTIRE code
-          output = render_rouge(code)
-
-          # Step 3: Extract only the lines we determined in step 1
-          if lines_to_keep
-            output = filter_highlighted_lines(output, lines_to_keep)
-          end
-
-          # Remove common indentation from the filtered output (only for non-elements case)
-          output = remove_common_indentation(output)
+          lines_to_keep = get_line_ranges_from_elements(code, @highlight_options[:elements])
         end
+
+        # Check for pattern-based filtering if no element filtering was applied
+        if !lines_to_keep && @highlight_options[:start_after] && @highlight_options[:end_before]
+          lines_to_keep = get_line_range_from_patterns(code, @highlight_options[:start_after], @highlight_options[:end_before])
+        end
+
+        # Check for only_lines filtering if no other filtering was applied
+        if !lines_to_keep && @highlight_options[:only_lines]
+          lines_to_keep = @highlight_options[:only_lines]
+        end
+
+        # Step 2: Apply syntax highlighting to the ENTIRE code
+        output = render_rouge(code)
+
+        # Step 3: Extract only the lines we determined in step 1
+        if lines_to_keep
+          output = filter_highlighted_lines_for_elements(output, lines_to_keep)
+        end
+
+        # Remove common indentation from the filtered output
+        output = remove_common_indentation(output)
 
         rendered_output = add_code_tag(output, expanded_path, "examples/#{page_filename}/#{expanded_path}")
         output = prefix + rendered_output + suffix
@@ -283,28 +285,50 @@ module Jekyll
         lines[(start_line - 1)..(end_line - 1)].join
       end
 
-      def render_elements_separately(code, elements_spec)
+      def get_line_ranges_from_elements(code, elements_spec)
         # Handle both string and array inputs
         selectors = elements_spec.is_a?(Array) ? elements_spec : elements_spec.split(",").map(&:strip)
 
-        # Extract content for each element separately
-        element_contents = []
+        # Find all matching elements and their line numbers
+        matching_ranges = []
 
         selectors.each do |selector|
-          element_content = extract_element_by_selector(code, selector.strip)
-          if element_content
-            # Apply syntax highlighting to this individual element's content
-            highlighted_content = render_rouge(element_content)
-            # Remove common indentation from this element
-            highlighted_content = remove_common_indentation(highlighted_content)
-            element_contents << highlighted_content
+          range = find_element_line_range_by_selector(code, selector.strip)
+          matching_ranges << range if range  # Only add non-nil ranges
+        end
+
+        return nil if matching_ranges.empty?
+
+        # Return array of ranges instead of single combined range
+        matching_ranges
+      end
+
+      def filter_highlighted_lines_for_elements(highlighted_html, line_ranges)
+        return highlighted_html unless line_ranges.is_a?(Array)
+
+        # Split the highlighted HTML by lines, preserving HTML tags
+        lines = highlighted_html.split(/(?<=\n)/)
+        
+        # Extract content for each range and combine with blank lines
+        extracted_content = []
+
+        line_ranges.each do |range|
+          if range =~ /^(\d+)-(\d+)$/
+            start_line = Regexp.last_match(1).to_i
+            end_line = Regexp.last_match(2).to_i
+
+            # Convert to 0-based indexing and ensure valid range
+            start_index = [start_line - 1, 0].max
+            end_index = [end_line - 1, lines.length - 1].min
+
+            if start_index <= end_index && start_index < lines.length
+              extracted_content << lines[start_index..end_index].join
+            end
           end
         end
 
-        return "" if element_contents.empty?
-
-        # Join all highlighted element contents with blank lines
-        element_contents.join("\n")
+        return extracted_content.join("\n") unless extracted_content.empty?
+        "<span class=\"c1\"># No content found for specified elements</span>\n"
       end
 
       def get_line_range_from_elements(code, elements_spec)
