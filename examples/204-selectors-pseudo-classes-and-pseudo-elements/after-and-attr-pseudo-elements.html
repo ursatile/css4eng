@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>After And Attr Pseudo Elements</title>
+	<style>
+		p a::after {
+			text-decoration: none;
+			color: red;
+			content: ' [' attr(href) ']';			
+		}
+	</style>
+</head>
+<body>
+	<p>
+		Dylan Beattie is a software developer, speaker, and musician known for his
+		entertaining and educational presentations about software engineering. He's
+		particularly famous for his programming-themed parody songs and talks that
+		blend humor with technical expertise. You can find his content on
+		<a href="https://youtube.com/@dylanbeattie">YouTube</a>,
+		check out his code on <a href="https://github.com/dylanbeattie">GitHub</a>,
+		connect with him professionally on <a
+			href="https://linkedin.com/in/dylanbeattie">LinkedIn</a>,
+		and follow him on <a
+			href="https://bsky.app/profile/dylanbeattie.net">Bluesky</a>.
+	</p>
+</body>
+</html>

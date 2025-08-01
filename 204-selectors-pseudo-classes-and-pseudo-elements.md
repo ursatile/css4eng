@@ -304,6 +304,16 @@ But... CSS defines a property called `content`, which we can use to inject conte
 
 {% example before-and-after-pseudo-elements.html elements="style, body" iframe_style="height: 10em;" %}
 
+One incredibly useful application of the `::after` pseudo-selector involves another CSS function we haven't seen yet: the `attr()` function. 
+
+Let's say we want to add a note to every link on the page showing the web address which that link is pointing to, and we'll include logo images for a handful of popular websites.
+
+{% example after-and-attr-pseudo-elements.html iframe_style="height: 10em;" elements="style,body" %}
+
+
+
+`attr()` lets us extract the content from one of an element's HTML attributes, which we can then combine with `::after`
+
 - Pseudo-elements: `::before`, `::after`, `::placeholder`, `::marker`, `::selection`
 - using `attr()` in `content`
 - Exercise: Building a CSS mosaic
