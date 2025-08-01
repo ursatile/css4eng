@@ -182,9 +182,17 @@ Let's be clear: this was an edge case nobody was ever expected to find, because 
 
 ![image-20250801110506354](./images/chatgpt-4o-css-specificity-example.png)
 
-It's trivially easy to try this out for yourself.
+It's trivially easy to try this out for yourself. Take a look at [css-specificity-with-256-rules.html]({{page.examples}}/css-specificity-with-256-rules.html) - that's a page in which some elements have 256 separate CSS classes, from `c001` through to `c256`, and other elements are nested inside 256 `<em><em><em>...` tags.
 
-{% example css-specificity-with-256-rules.html %}
+For now, and hopefully for the foreseeable future, ID selectors win over classes, and classes win over types. A dragon always beats any number of tigers, and a tiger always beats any number of geese.
+
+If two rules end up with the EXACT same weighting, then the browser applies something called the *proximity rule*, which is a fancy way of saying the last one wins.
+
+{% example proximity-rule.html iframe_style="height: 10em" %}
+
+
+
+
 
 
 
