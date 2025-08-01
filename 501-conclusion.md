@@ -15,6 +15,12 @@ examples: examples/501-conclusion
 - FAQ (20m)
 - Thank you
 
+The Future of CSS
+
+https://daverupert.com/2025/07/sci-fi-rectangles-with-corner-shape/
+
+https://frontendmasters.com/blog/understanding-css-corner-shape-and-the-power-of-the-superellipse/
+
 ## Notes
 
 
