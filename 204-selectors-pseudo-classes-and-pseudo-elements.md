@@ -250,6 +250,12 @@ Using the `:is()` selector, we can write the same rule much more succinctly:
 
 {% example where-vs-is.html %}
 
+Finally, there's the `:not()` selector, sometimes called the *negation pseudoclass*. This one can be really useful, but it can also do all kinds of weird stuff.
+
+Earlier, we saw an example of using the `:last-child` selector to remove a border from the last paragraph on a page --- but a much nicer way to achieve the same thing is to use a `:not()` selector so that the border never gets applied in the first place:
+
+{% example not-selector.html iframe_height="20em" %}
+
 - Match selectors: `:not()`, `:is()`, `:where()`, `:has()`
 - Pseudo-elements: `::first-line`, `::first-letter`, `::before`, `::after`, `::placeholder`, `::marker`, `::selection`
 - using `attr()` in `content`
