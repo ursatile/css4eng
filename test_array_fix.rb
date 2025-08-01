@@ -9,7 +9,7 @@ class TestArrayFix
     puts "Elements spec: #{elements_spec.inspect}"
     puts "Selectors: #{selectors.inspect}"
     puts "Selectors type: #{selectors.class}"
-    
+
     # Just return a dummy result for testing
     "5-11"
   end

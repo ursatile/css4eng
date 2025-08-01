@@ -78,31 +78,32 @@ module Jekyll
         # Step 1: Determine which lines to keep from the original code (before highlighting)
         lines_to_keep = nil
 
-        # Check for element filtering first
+        # Check for element filtering first - this needs special handling
         if @highlight_options[:elements] && @lang == "html"
-          lines_to_keep = get_line_range_from_elements(code, @highlight_options[:elements])
+          # For elements, we need to extract each element separately and combine them
+          output = render_elements_separately(code, @highlight_options[:elements])
+        else
+          # Check for pattern-based filtering if no element filtering was applied
+          if @highlight_options[:start_after] && @highlight_options[:end_before]
+            lines_to_keep = get_line_range_from_patterns(code, @highlight_options[:start_after], @highlight_options[:end_before])
+          end
+
+          # Check for only_lines filtering if no other filtering was applied
+          if !lines_to_keep && @highlight_options[:only_lines]
+            lines_to_keep = @highlight_options[:only_lines]
+          end
+
+          # Step 2: Apply syntax highlighting to the ENTIRE code
+          output = render_rouge(code)
+
+          # Step 3: Extract only the lines we determined in step 1
+          if lines_to_keep
+            output = filter_highlighted_lines(output, lines_to_keep)
+          end
+
+          # Remove common indentation from the filtered output (only for non-elements case)
+          output = remove_common_indentation(output)
         end
-
-        # Check for pattern-based filtering if no element filtering was applied
-        if !lines_to_keep && @highlight_options[:start_after] && @highlight_options[:end_before]
-          lines_to_keep = get_line_range_from_patterns(code, @highlight_options[:start_after], @highlight_options[:end_before])
-        end
-
-        # Check for only_lines filtering if no other filtering was applied
-        if !lines_to_keep && @highlight_options[:only_lines]
-          lines_to_keep = @highlight_options[:only_lines]
-        end
-
-        # Step 2: Apply syntax highlighting to the ENTIRE code
-        output = render_rouge(code)
-
-        # Step 3: Extract only the lines we determined in step 1
-        if lines_to_keep
-          output = filter_highlighted_lines(output, lines_to_keep)
-        end
-
-        # Remove common indentation from the filtered output
-        output = remove_common_indentation(output)
 
         rendered_output = add_code_tag(output, expanded_path, "examples/#{page_filename}/#{expanded_path}")
         output = prefix + rendered_output + suffix
@@ -280,6 +281,30 @@ module Jekyll
 
         start_line, end_line = range.split("-").map(&:to_i)
         lines[(start_line)..(end_line - 1)].join
+      end
+
+      def render_elements_separately(code, elements_spec)
+        # Handle both string and array inputs
+        selectors = elements_spec.is_a?(Array) ? elements_spec : elements_spec.split(",").map(&:strip)
+
+        # Extract content for each element separately
+        element_contents = []
+
+        selectors.each do |selector|
+          element_content = extract_element_by_selector(code, selector.strip)
+          if element_content
+            # Apply syntax highlighting to this individual element's content
+            highlighted_content = render_rouge(element_content)
+            # Remove common indentation from this element
+            highlighted_content = remove_common_indentation(highlighted_content)
+            element_contents << highlighted_content
+          end
+        end
+
+        return "" if element_contents.empty?
+
+        # Join all highlighted element contents with blank lines
+        element_contents.join("\n")
       end
 
       def get_line_range_from_elements(code, elements_spec)
