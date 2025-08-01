@@ -8,21 +8,28 @@
 			max-width: 28em;
 			margin: 8px auto;
 			text-align: justify;
+			line-height: 1.4em;
 		}
-		h1, h2 { text-align: center; }
+
+		h1,
+		h2 {
+			text-align: center;
+		}
 
 		p::first-letter {
 			font-size: 250%;
 		}
+
 		p::first-line {
 			font-size: 150%;
 			font-weight: bold;
-		}	
-		::selection {
-			text-decoration: underline;
-			background-color: orange;
 		}
 
+		::selection {
+			background-color: transparent;
+			text-decoration: underline wavy green;
+
+		}
 	</style>
 </head>
 
