@@ -75,28 +75,30 @@ module Jekyll
           # Determine the file language first
           @lang = File.extname(file_path).delete_prefix(".")
 
-          # Apply element filtering if specified (before syntax highlighting)
+          # Step 1: Determine which lines to keep from the original code (before highlighting)
+          lines_to_keep = nil
+
+          # Check for element filtering first
           if @highlight_options[:elements] && @lang == "html"
-            filtered_code = filter_by_elements(code, @highlight_options[:elements])
-            code = filtered_code if filtered_code
+            lines_to_keep = get_line_range_from_elements(code, @highlight_options[:elements])
           end
 
-          # Determine line range from patterns if specified
-          line_range = nil
-          if @highlight_options[:start_after] && @highlight_options[:end_before]
-            line_range = get_line_range_from_patterns(code, @highlight_options[:start_after], @highlight_options[:end_before])
+          # Check for pattern-based filtering if no element filtering was applied
+          if !lines_to_keep && @highlight_options[:start_after] && @highlight_options[:end_before]
+            lines_to_keep = get_line_range_from_patterns(code, @highlight_options[:start_after], @highlight_options[:end_before])
           end
 
+          # Check for only_lines filtering if no other filtering was applied
+          if !lines_to_keep && @highlight_options[:only_lines]
+            lines_to_keep = @highlight_options[:only_lines]
+          end
+
+          # Step 2: Apply syntax highlighting to the ENTIRE code
           output = render_rouge(code)
 
-          # Apply pattern-based line filtering if we found a range
-          if line_range
-            output = filter_highlighted_lines(output, line_range)
-          end
-
-          # Apply only_lines filter after syntax highlighting if specified
-          if @highlight_options[:only_lines]
-            output = filter_highlighted_lines(output, @highlight_options[:only_lines])
+          # Step 3: Extract only the lines we determined in step 1
+          if lines_to_keep
+            output = filter_highlighted_lines(output, lines_to_keep)
           end
 
           # Remove common indentation from the filtered output
@@ -289,7 +291,7 @@ module Jekyll
 
         selectors.each do |selector|
           range = find_element_line_range_by_selector(code, selector)
-          matching_ranges << range if range
+          matching_ranges << range if range  # Only add non-nil ranges
         end
 
         return nil if matching_ranges.empty?
@@ -337,9 +339,9 @@ module Jekyll
 
         return nil unless start_line
 
-        # Check if it's a self-closing tag
+        # Check if it's a self-closing tag (no content to extract)
         if lines[start_line - 1].match(self_closing_pattern)
-          return "#{start_line}-#{start_line}"
+          return nil  # Self-closing tags have no content
         end
 
         # Find the closing tag - start searching from the line after the opening tag
@@ -359,7 +361,16 @@ module Jekyll
           end
         end
 
-        "#{start_line}-#{end_line}"
+        # Return the range INSIDE the tags (excluding opening and closing lines)
+        content_start = start_line + 1  # Line after opening tag
+        content_end = end_line - 1      # Line before closing tag
+
+        # If there's no content between tags, return nil
+        if content_start > content_end
+          return nil
+        end
+
+        "#{content_start}-#{content_end}"
       end
 
       def find_element_by_id(lines, tag_pattern, id)
@@ -381,9 +392,9 @@ module Jekyll
         match = lines[start_line - 1].match(/<(#{tag_pattern})[^>]*>/i)
         actual_tag = match ? match[1] : tag_pattern.gsub(/\[.*?\]/, "") # fallback
 
-        # Check if it's a self-closing tag
+        # Check if it's a self-closing tag (no content to extract)
         if lines[start_line - 1].match(/<#{Regexp.escape(actual_tag)}[^>]*\/>/i)
-          return "#{start_line}-#{start_line}"
+          return nil  # Self-closing tags have no content
         end
 
         # Find the closing tag with proper nesting support
@@ -406,7 +417,16 @@ module Jekyll
           end
         end
 
-        "#{start_line}-#{end_line}"
+        # Return the range INSIDE the tags (excluding opening and closing lines)
+        content_start = start_line + 1  # Line after opening tag
+        content_end = end_line - 1      # Line before closing tag
+
+        # If there's no content between tags, return nil
+        if content_start > content_end
+          return nil
+        end
+
+        "#{content_start}-#{content_end}"
       end
 
       def find_element_by_class(lines, tag_pattern, class_name)
@@ -429,9 +449,9 @@ module Jekyll
         match = lines[start_line - 1].match(/<(#{tag_pattern})[^>]*>/i)
         actual_tag = match ? match[1] : tag_pattern.gsub(/\[.*?\]/, "") # fallback
 
-        # Check if it's a self-closing tag
+        # Check if it's a self-closing tag (no content to extract)
         if lines[start_line - 1].match(/<#{Regexp.escape(actual_tag)}[^>]*\/>/i)
-          return "#{start_line}-#{start_line}"
+          return nil  # Self-closing tags have no content
         end
 
         # Find the closing tag with proper nesting support
@@ -454,7 +474,16 @@ module Jekyll
           end
         end
 
-        "#{start_line}-#{end_line}"
+        # Return the range INSIDE the tags (excluding opening and closing lines)
+        content_start = start_line + 1  # Line after opening tag
+        content_end = end_line - 1      # Line before closing tag
+
+        # If there's no content between tags, return nil
+        if content_start > content_end
+          return nil
+        end
+
+        "#{content_start}-#{content_end}"
       end
 
       def get_line_range_from_patterns(code, start_pattern, end_pattern)
