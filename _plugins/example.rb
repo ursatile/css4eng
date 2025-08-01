@@ -19,7 +19,7 @@ module Jekyll
 
             <pre>#{markup}</pre>
 
-            Valid syntax: example <filename> [mark_lines="3, 4, 5"] [iframe_style[="height: 10em;"]] [only_lines="4-6"] [start_after="<style>" end_before="</style>"]
+            Valid syntax: example <filename> [mark_lines="3, 4, 5"] [iframe_style[="height: 10em;"]] [only_lines="4-6"] [start_after="<style>" end_before="</style>"] [elements="style,body"]
           MSG
         end
       end
@@ -71,6 +71,12 @@ module Jekyll
           dir = File.dirname(file_path)
           FileUtils.mkdir_p(dir) unless Dir.exist?(dir)
           code = read_or_create_file(file_path, context)
+
+          # Apply element filtering if specified (before syntax highlighting)
+          if @highlight_options[:elements] && @lang == "html"
+            filtered_code = filter_by_elements(code, @highlight_options[:elements])
+            code = filtered_code if filtered_code
+          end
 
           # Determine line range from patterns if specified
           line_range = nil
@@ -208,6 +214,217 @@ module Jekyll
         else
           "# No content found between patterns\n"
         end
+      end
+
+      def filter_by_elements(code, elements_spec)
+        # Split the elements specification by comma and trim whitespace
+        selectors = elements_spec.split(',').map(&:strip)
+        
+        # Find all matching elements and extract their content
+        matched_content = []
+        
+        selectors.each do |selector|
+          element_content = extract_element_by_selector(code, selector)
+          matched_content << element_content if element_content
+        end
+        
+        return nil if matched_content.empty?
+        
+        # Join all matched content with newlines
+        matched_content.join("\n")
+      end
+
+      def extract_element_by_selector(code, selector)
+        lines = code.lines
+        
+        # Parse different selector types
+        if selector.include?('#')
+          # ID selector like "p#example"
+          tag, id = selector.split('#', 2)
+          tag = tag.empty? ? '[a-zA-Z][a-zA-Z0-9]*' : Regexp.escape(tag)
+          extract_element_by_id(lines, tag, id)
+        elsif selector.include?('.')
+          # Class selector like "div.container"
+          tag, class_name = selector.split('.', 2)
+          tag = tag.empty? ? '[a-zA-Z][a-zA-Z0-9]*' : Regexp.escape(tag)
+          extract_element_by_class(lines, tag, class_name)
+        else
+          # Simple tag selector like "style" or "body"
+          extract_element_by_tag(lines, selector)
+        end
+      end
+
+      def extract_element_by_tag(lines, tag_name)
+        range = find_element_by_tag(lines, tag_name)
+        return nil unless range
+        
+        start_line, end_line = range.split('-').map(&:to_i)
+        lines[(start_line - 1)..(end_line - 1)].join
+      end
+
+      def extract_element_by_id(lines, tag_pattern, id)
+        range = find_element_by_id(lines, tag_pattern, id)
+        return nil unless range
+        
+        start_line, end_line = range.split('-').map(&:to_i)
+        lines[(start_line - 1)..(end_line - 1)].join
+      end
+
+      def extract_element_by_class(lines, tag_pattern, class_name)
+        range = find_element_by_class(lines, tag_pattern, class_name)
+        return nil unless range
+        
+        start_line, end_line = range.split('-').map(&:to_i)
+        lines[(start_line - 1)..(end_line - 1)].join
+      end
+
+      def get_line_range_from_elements(code, elements_spec)
+        # Split the elements specification by comma and trim whitespace
+        selectors = elements_spec.split(',').map(&:strip)
+        
+        # Find all matching elements and their line numbers
+        matching_ranges = []
+        
+        selectors.each do |selector|
+          range = find_element_line_range_by_selector(code, selector)
+          matching_ranges << range if range
+        end
+        
+        return nil if matching_ranges.empty?
+        
+        # Find the overall range that encompasses all matching elements
+        min_start = matching_ranges.map { |r| r.split('-')[0].to_i }.min
+        max_end = matching_ranges.map { |r| r.split('-')[1].to_i }.max
+        
+        "#{min_start}-#{max_end}"
+      end
+
+      def find_element_line_range_by_selector(code, selector)
+        lines = code.lines
+        
+        # Parse different selector types
+        if selector.include?('#')
+          # ID selector like "p#example"
+          tag, id = selector.split('#', 2)
+          tag = tag.empty? ? '[a-zA-Z][a-zA-Z0-9]*' : Regexp.escape(tag)
+          find_element_by_id(lines, tag, id)
+        elsif selector.include?('.')
+          # Class selector like "div.container"
+          tag, class_name = selector.split('.', 2)
+          tag = tag.empty? ? '[a-zA-Z][a-zA-Z0-9]*' : Regexp.escape(tag)
+          find_element_by_class(lines, tag, class_name)
+        else
+          # Simple tag selector like "style" or "body"
+          find_element_by_tag(lines, selector)
+        end
+      end
+
+      def find_element_by_tag(lines, tag_name)
+        tag_pattern = Regexp.escape(tag_name)
+        opening_pattern = /<#{tag_pattern}(?:\s[^>]*)?>/i
+        closing_pattern = /<\/#{tag_pattern}>/i
+        self_closing_pattern = /<#{tag_pattern}[^>]*\/>/i
+        
+        start_line = nil
+        lines.each_with_index do |line, index|
+          if line.match(opening_pattern) || line.match(self_closing_pattern)
+            start_line = index + 1  # Convert to 1-based indexing
+            break
+          end
+        end
+        
+        return nil unless start_line
+        
+        # Check if it's a self-closing tag
+        if lines[start_line - 1].match(self_closing_pattern)
+          return "#{start_line}-#{start_line}"
+        end
+        
+        # Find the closing tag
+        end_line = start_line
+        lines[start_line..-1].each_with_index do |line, relative_index|
+          if line.match(closing_pattern)
+            end_line = start_line + relative_index
+            break
+          end
+        end
+        
+        "#{start_line}-#{end_line}"
+      end
+
+      def find_element_by_id(lines, tag_pattern, id)
+        # Look for tag with specific ID
+        id_pattern = Regexp.escape(id)
+        opening_pattern = /<#{tag_pattern}[^>]*id=["']#{id_pattern}["'][^>]*>/i
+        
+        start_line = nil
+        lines.each_with_index do |line, index|
+          if line.match(opening_pattern)
+            start_line = index + 1
+            break
+          end
+        end
+        
+        return nil unless start_line
+        
+        # Extract the actual tag name from the line for finding the closing tag
+        match = lines[start_line - 1].match(/<(#{tag_pattern})[^>]*>/i)
+        actual_tag = match ? match[1] : tag_pattern.gsub(/\[.*?\]/, '') # fallback
+        
+        # Check if it's a self-closing tag
+        if lines[start_line - 1].match(/<#{Regexp.escape(actual_tag)}[^>]*\/>/i)
+          return "#{start_line}-#{start_line}"
+        end
+        
+        # Find the closing tag
+        closing_pattern = /<\/#{Regexp.escape(actual_tag)}>/i
+        end_line = start_line
+        lines[start_line..-1].each_with_index do |line, relative_index|
+          if line.match(closing_pattern)
+            end_line = start_line + relative_index
+            break
+          end
+        end
+        
+        "#{start_line}-#{end_line}"
+      end
+
+      def find_element_by_class(lines, tag_pattern, class_name)
+        # Look for tag with specific class
+        class_pattern = Regexp.escape(class_name)
+        # Class can be among other classes, so we need a more flexible pattern
+        opening_pattern = /<#{tag_pattern}[^>]*class=["'][^"']*\b#{class_pattern}\b[^"']*["'][^>]*>/i
+        
+        start_line = nil
+        lines.each_with_index do |line, index|
+          if line.match(opening_pattern)
+            start_line = index + 1
+            break
+          end
+        end
+        
+        return nil unless start_line
+        
+        # Extract the actual tag name from the line for finding the closing tag
+        match = lines[start_line - 1].match(/<(#{tag_pattern})[^>]*>/i)
+        actual_tag = match ? match[1] : tag_pattern.gsub(/\[.*?\]/, '') # fallback
+        
+        # Check if it's a self-closing tag
+        if lines[start_line - 1].match(/<#{Regexp.escape(actual_tag)}[^>]*\/>/i)
+          return "#{start_line}-#{start_line}"
+        end
+        
+        # Find the closing tag
+        closing_pattern = /<\/#{Regexp.escape(actual_tag)}>/i
+        end_line = start_line
+        lines[start_line..-1].each_with_index do |line, relative_index|
+          if line.match(closing_pattern)
+            end_line = start_line + relative_index
+            break
+          end
+        end
+        
+        "#{start_line}-#{end_line}"
       end
 
       def get_line_range_from_patterns(code, start_pattern, end_pattern)
