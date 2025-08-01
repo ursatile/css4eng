@@ -412,7 +412,7 @@ module Jekyll
           nest_count -= closing_matches
 
           if nest_count == 0
-            end_line = start_line + relative_index
+            end_line = start_line + relative_index + 1  # +1 to convert back to 1-based indexing
             break
           end
         end
@@ -469,7 +469,7 @@ module Jekyll
           nest_count -= closing_matches
 
           if nest_count == 0
-            end_line = start_line + relative_index
+            end_line = start_line + relative_index + 1  # +1 to convert back to 1-based indexing
             break
           end
         end
