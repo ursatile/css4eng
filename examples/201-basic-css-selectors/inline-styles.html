@@ -7,12 +7,15 @@
 	p { color: yellow; }
 	p.special { color: blue; font-style: italic; }
 	p#magic { color: red; font-style: normal; }
+	p#weird { color: silver !important; }
+	p#super-weird[style~="gold"] { color: skyblue !important; }
 </style>
 <body>
 	<p>I'm a paragraph.</p>
 	<p class="special">I'm a special paragraph.</p>
 	<p id="magic">I'm a magic paragraph.</p>
 	<p style="color: green;">I have inline styles!</p>
-
+	<p id="weird" style="color: purple;">I'm a weird paragraph.</p>
+	<p id="invincible" style="color: gold !important;">I'm invincible. Nothing can stop me being gold.</p>
 </body>
 </html>
