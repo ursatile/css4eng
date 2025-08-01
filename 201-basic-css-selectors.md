@@ -224,4 +224,10 @@ If you add `!important` to an inline style? Well, now you've got put the Jedi Ma
 * ID selectors match elements based on their `id` attribute
   * Elements cannot have more than one ID
   * A specific ID should never appear more than once on the same page.
-* Grouped and nested selectors allow us to target elements based on their *ancestry*, where 
+* Grouped and nested selectors allow us to target elements based on their *ancestry*
+* Conflicting rules are applied based on their CSS specificity
+  * Element IDs are dragons 🐉
+  * Class names are tigers 🐅
+  * Element types are geese 🪿
+  * Inline styles are a Star Destroyer
+  * The `!important` rule is a Jedi Master
