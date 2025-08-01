@@ -286,7 +286,7 @@ We'll come back to selector strategies and the architecture of CSS in part 3 of 
 
 Pseudo-elements give us a way to target a specific part of an element's content. The classic example is using `::first-line` and ``:first-letter` to style up a paragraph of text with a decorative capital initial:
 
-{% example first-letter-first-line.html %}
+{% example first-letter-first-line.html iframe_style="height: 10em" elements="style, body" %}
 
 
 
