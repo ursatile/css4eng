@@ -290,6 +290,10 @@ Pseudo-elements give us a way to target a specific part of an element's content.
 
 > The only properties that can be styled with `::selection` are `color`, `background-color`, `text-decoration` and `text-shadow`. You can't use `::selection` for anything that could affect the document's layout, otherwise you end up with text that moves out of the way when you try to click on it, which makes for a truly terrible user experience.
 
+`::marker` can be used to style the bullets and numbers on HTML lists --- we've got a whole dedicated section about lists and counters coming up, so we're not going to do more than look at a quick example here:
+
+{% example marker-pseudo-element.html %}
+
 
 
 
