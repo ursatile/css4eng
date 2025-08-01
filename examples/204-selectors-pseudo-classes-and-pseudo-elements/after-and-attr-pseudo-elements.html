@@ -4,9 +4,11 @@
 	<title>After And Attr Pseudo Elements</title>
 	<style>
 		p a::after {
-			text-decoration: none;
-			color: red;
-			content: ' [' attr(href) ']';			
+			content: ' [' attr(href) ']';
+			font-size: 80%;
+		}
+		p a[href~='youtube']::before {
+			content: url('icons/youtube.png');
 		}
 	</style>
 </head>
