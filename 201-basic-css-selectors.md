@@ -139,6 +139,26 @@ p {
 
 According to [caniuse.com/css-nesting](https://caniuse.com/css-nesting), nesting is fully or partially supported on over 91% of browsers, so despite being a relatively recent addition to the CSS standard, we're going to use nested selectors wherever they make sense throughout the rest of this course.
 
+## Understanding CSS Specificity
+
+Let's go back to our party dress code for a second. Imagine we have three rules:
+
+* All guests should wear a blue baseball cap
+* Musicians should wear a yellow bucket hat
+* Freddie Mercury should wear a red cowboy hat
+
+According to this example, what kind of hat is Freddie going to wear? The rules here create a conflict - Freddie is a guest, and he's a musician, and he's Freddie Mercury.
+
+CSS resolves these kinds of conflicts using something called specificity: if there are multiple rules targeting a particular element, the most specific rule wins.
+
+If you look up the documentation for CSS specificity, you'll find yourself reading about something called *selector weight categories*. 
+
+{% example css-selectors.html iframe_style="height: 10em;" %}
+
+
+
+
+
 ## Review & Recap
 
 * CSS selectors target the element, or elements, on the page to which our rules should be applied
