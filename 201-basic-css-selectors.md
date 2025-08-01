@@ -177,7 +177,7 @@ Let's be clear: this was an edge case nobody was ever expected to find, because 
 
 It's trivially easy to try this out for yourself. Take a look at [css-specificity-with-256-rules.html]({{page.examples}}/css-specificity-with-256-rules.html) - that's a page in which some elements have 256 separate CSS classes, from `c001` through to `c256`, and other elements are nested inside 256 `<em><em><em>...` tags.
 
-For now, and hopefully for the foreseeable future, ID selectors win over classes, and classes win over types. A dragon always beats any number of tigers, and a tiger always beats any number of geese.
+For now, and hopefully for the foreseeable future, ID selectors win over classes, and classes win over types. A T-rex always beats any number of tigers, and a tiger always beats any number of geese.
 
 If two rules end up with the EXACT same weighting, then the browser applies something called the *proximity rule*, which is a fancy way of saying the last one wins.
 
@@ -187,11 +187,11 @@ Those rules both have one ID, one class, and one type, so they have the same spe
 
 ## Selectors, inline styles, and !important
 
-Inline styles --- `<p style="font-style: italic;">italics!</p>` --- will usually take precedence over any other rules which target that element. You just showed up to the fight with an Imperial Star Destroyer... 
+Inline styles --- `<p style="font-style: italic;">italics!</p>` --- will usually take precedence over any other rules which target that element. You just showed up to the fight a dragon. You know, like a T-rex, only it's bigger, it breathes fire, and it can fly... doesn't matter how many T-rexes the other side has when you've got a flying, fire-breathing dragon.
 
-Except, CSS has the `!important` keyword. That's the word important with a leading exclamation mark -- and yes, in most programming languages, the exclamation mark is logical not, so this means `not important`, and yes, this is one of the things that the designers of CSS acknowledge was a mistake.
+Except... we're not quite gone. CSS has the `!important` keyword. That's the word important with a leading exclamation mark -- and yes, in most programming languages, the exclamation mark is logical not, so this means `not important`, and yes, this is one of the things that the designers of CSS acknowledge was a mistake.
 
-What can defeat a Star Destroyer? How about a Jedi master? There you go. `!important` in CSS is a Jedi master; even if you've got geese, tigers, dragons AND a Star Destroyer, the Jedi master is going to use the Force, and you're going to lose.
+What can defeat a dragon? How about a wizard? 🧙🏼‍♂️ There you go. `!important` in CSS is a wizard. Even if you've got geese, tigers, T-rexes AND a dragon, the wizard can just turn them all into sheep, or make them vanish entirely. Wizard always wins.
 
 Marking a specific property value with `!important` will override the ID-class-type selector system, **and** override any inline style declared by an element:
 
@@ -211,7 +211,9 @@ p {
 
 You should only use `!important` as an absolute last resort, and even then, use it with a very, very specific selector. The only really valid scenario where you'd use `!important` is if your site imports a bunch of CSS from somewhere else, which you can't edit, and you need to override one of their styles because it's breaking your own code.
 
-If you add `!important` to an inline style? Well, now you've got put the Jedi Master in command of the Star Destroyer. They're undefeatable. There is literally nothing you can do to override this rule other than going into the HTML and editing it directly. 
+If you add `!important` to an inline style? Well, now you've got a wizard riding on a dragon, soaring high above the battlefield, raining down fire and magic spells on everything they see. They're undefeatable. 
+
+There is literally nothing you can do to override this rule other than going into the HTML and editing it directly.
 
 {% example inline-styles.html iframe_style="height: 10em" %}
 
@@ -228,8 +230,9 @@ If you add `!important` to an inline style? Well, now you've got put the Jedi Ma
   * A specific ID should never appear more than once on the same page.
 * Grouped and nested selectors allow us to target elements based on their *ancestry*
 * Conflicting rules are applied based on their CSS specificity
-  * Element IDs are dragons 🐉
+  * Element IDs are T-rexes 🦖
   * Class names are tigers 🐅
   * Element types are geese 🪿
-  * Inline styles are a Star Destroyer
-  * The `!important` rule is a Jedi Master
+  * Inline styles are dragons 🐉
+  * The `!important` rule is a wizard 🧙🏼‍♂️
+  * Tigers always beat geese, T-rexes always beat tigers, dragons always beat T-rexes, wizards always beat dragons, and nothing can beat a wizard riding a dragon.
