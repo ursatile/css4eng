@@ -157,7 +157,7 @@ The first column is the **ID column** column. Every ID selector, like '#example`
 
 Here's how I think about this. Each rule is an army, made up of highly trained fighting animals, and they're going to have a battle to see who wins.
 
-The ID column? That's how many dragons 🐲 you're bringing to the fight. The class column is how many tigers 🐯 you've got, and the third column is how many geese 🪿. 
+The ID column? That's how many dragons 🐉 you're bringing to the fight. The class column is how many tigers 🐅 you've got, and the third column is how many geese 🪿. 
 
 You see, if one side has a tiger, it doesn't matter how many geese the other side's got - the tiger's gonna win. If both sides have a tiger, then the geese get involved - but if you bring a tiger, and the other side's got a dragon? Yeah. Their dragon's going to beat your tiger. You got five tigers? Ten tigers? A hundred tigers? Dragon's still going to win. Only way to beat a dragon is to bring another dragon... and if they've got two dragons and four tigers and ten geese, but you've got two dragons and four tigers and eleven geese? Well, you're almost evenly matched, but you got one more goose than them - and that one extra goose is going to bring you victory.
 
@@ -165,9 +165,9 @@ Let's flip that into some CSS rules:
 
 {% include_relative {{page.examples}}/dragons-tigers-geese-oh-my.html %}
 
-Now, in the current CSS standard, and in all modern browsers, type selectors will never override class selectors, and class selectors will never override ID selectors. Or, to put it another way, even if it's a million geese against one tiger, the tiger's still going to win.
+In the current CSS standard, and in all modern browsers, type selectors will never override class selectors, and class selectors will never override ID selectors. Or, to put it another way, even if it's a million geese against one tiger, the tiger's still going to win.
 
-Now, I believe that this was always the *intention* of the specificity model, but an earlier version of the CSS spec said that selectors should be compared by adding up each column's value and then comparing them in "a number system with a large base". Webkit and Mozilla both decided that 256 was a large base, because this meant they could give the ID, class, and type specificity eight bits each and pack the result into a single 32-bit integer -- which meant if you wrote a selector with two hundred and fifty six classes on it, that selector would actually override a single ID selector.
+I believe that this was always the *intention* of the specificity model, but an earlier version of the CSS spec said that selectors should be compared by adding up each column's value and then comparing them in "a number system with a large base". Webkit and Mozilla both decided that 256 was a large base, because this meant they could give the ID, class, and type specificity eight bits each and pack the result into a single 32-bit integer -- which meant if you wrote a selector with two hundred and fifty six classes on it, that selector would actually override a single ID selector.
 
 Let's be clear: this was an edge case nobody was ever expected to find, because there's no reason why you would *ever* put 256 CSS classes in a single selector. But somebody found it, [posted about it on Hacker News back in 2012](https://news.ycombinator.com/item?id=4388649), and it somehow became part of CSS folklore that this behaviour was intentional. The exact number differed: some people wrote blog posts about how eleven classes overrides an ID, some people said it was a hundred, some people said it was 256 - but there are so many wrong versions out there that if you search for it, you'll probably find a dozen wrong answers before you find the right one. At the time I'm writing this, ChatGPT 4o will confidently tell you that eleven classes overrides an ID in CSS selectors - complete with an example:
 
@@ -181,7 +181,7 @@ If two rules end up with the EXACT same weighting, then the browser applies some
 
 {% example proximity-rule.html iframe_style="height: 10em" %}
 
-
+Those rules both have one ID, one class, and one type, so they have the same specificity weighting - `1-1-1`, or 🐉🐅🪿
 
 
 
