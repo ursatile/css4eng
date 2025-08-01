@@ -187,6 +187,28 @@ Those rules both have one ID, one class, and one type, so they have the same spe
 
 Inline styles --- `<p style="font-style: italic;">italics!</p>` --- will usually take precedence over any other rules which target that element.
 
+CSS has the `!important` keyword. That's the word important with a leading exclamation mark -- and yes, in most programming languages, the exclamation mark is logical not, so this means `not important`, and yes, this is one of the things that the designers of CSS acknowledge was a mistake.
+
+Marking a specific property value with `!important` will override the ID-class-type selector system, **and** override any inline style declared by an element:
+
+```html
+<style>
+p { 
+    /* Make every paragraph on the website blue, regardless of any 
+       other selectors that match it */
+    color: blue !important;
+}
+</style>
+
+<p style="color: green;">
+    This paragraph will be blue because of the !important rule.
+</p>
+
+
+```
+
+
+
 {% example inline-styles.html iframe_style="height: 10em" %}
 
 
