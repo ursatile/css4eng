@@ -80,10 +80,12 @@ module Jekyll
 
         # Step 1: Determine which lines to keep from the original code (before highlighting)
         lines_to_keep = nil
+        element_filtering_applied = false
 
         # Check for element filtering first
         if @highlight_options[:elements] && @lang == "html"
           lines_to_keep = get_line_ranges_from_elements(code, @highlight_options[:elements])
+          element_filtering_applied = true if lines_to_keep
         end
 
         # Check for pattern-based filtering if no element filtering was applied
@@ -105,7 +107,10 @@ module Jekyll
         end
 
         # Remove common indentation from the filtered output
-        output = remove_common_indentation(output)
+        # Skip this for element filtering since each block is already dedented individually
+        unless element_filtering_applied
+          output = remove_common_indentation(output)
+        end
 
         rendered_output = add_code_tag(output, expanded_path, "examples/#{page_filename}/#{expanded_path}")
         output = prefix + rendered_output + suffix
@@ -309,7 +314,7 @@ module Jekyll
         # Split the highlighted HTML by lines, preserving HTML tags
         lines = highlighted_html.split(/(?<=\n)/)
 
-        # Extract content for each range and combine with blank lines
+        # Extract content for each range and remove indentation from each block individually
         extracted_content = []
 
         line_ranges.each do |range|
@@ -322,7 +327,10 @@ module Jekyll
             end_index = [end_line - 1, lines.length - 1].min
 
             if start_index <= end_index && start_index < lines.length
-              extracted_content << lines[start_index..end_index].join
+              block_content = lines[start_index..end_index].join
+              # Remove indentation from this block individually
+              dedented_block = remove_common_indentation(block_content)
+              extracted_content << dedented_block
             end
           end
         end
