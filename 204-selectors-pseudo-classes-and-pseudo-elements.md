@@ -244,7 +244,7 @@ main h2:first-child {
 
 Using the `:is()` selector, we can write the same rule much more succinctly:
 
-{% example is-selector.html iframe_style="height: 20em;" start_after="<style>" end_before="</style>" %}
+{% example is-selector.html iframe_style="height: 20em;"  start_after="<style>" end_before="</style>" %}
 
 `:where()` has exactly the same behaviour as `:is()`, apart from one very important distinction: it doesn't affect the specificity of the rule.
 
@@ -254,7 +254,7 @@ Finally, there's the `:not()` selector, sometimes called the *negation pseudocla
 
 Earlier, we saw an example of using the `:last-child` selector to remove a border from the last paragraph on a page --- but a much nicer way to achieve the same thing is to use a `:not()` selector so that the border never gets applied in the first place:
 
-{% example not-selector.html iframe_height="20em" %}
+{% example not-selector.html elements="style" %}
 
 - Match selectors: `:not()`, `:is()`, `:where()`, `:has()`
 - Pseudo-elements: `::first-line`, `::first-letter`, `::before`, `::after`, `::placeholder`, `::marker`, `::selection`

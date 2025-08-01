@@ -1,17 +1,17 @@
 #!/usr/bin/env ruby
 
 # Load the example.rb file
-require_relative '_plugins/example.rb'
+require_relative "_plugins/example.rb"
 
 # Read the test HTML
-html_content = File.read('test_elements.html')
+html_content = File.read("test_elements.html")
 
 # Create a mock example tag instance
 class TestExampleTag < Jekyll::Tags::ExampleTag
   def initialize
     @highlight_options = {}
   end
-  
+
   def test_filter_by_elements(code, elements_spec)
     filter_by_elements(code, elements_spec)
   end
