@@ -4,7 +4,7 @@
 
 # Test HTML with style and body
 html_content = <<~HTML
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Test</title>
@@ -85,7 +85,7 @@ lines.each_with_index do |line, i|
   puts sprintf("%2d: %s", i + 1, line)
 end
 
-puts "\n" + "="*50 + "\n"
+puts "\n" + "=" * 50 + "\n"
 
 # Step 1: Find line ranges for style and body
 style_range = find_element_by_tag(lines, "style")
@@ -104,11 +104,11 @@ puts "Step 3 - Extract lines from highlighted output:"
 if style_range && style_range =~ /^(\d+)-(\d+)$/
   start_line, end_line = $1.to_i, $2.to_i
   puts "\nStyle content (lines #{start_line}-#{end_line}):"
-  lines[(start_line-1)..(end_line-1)].each { |line| puts "  #{line}" }
+  lines[(start_line - 1)..(end_line - 1)].each { |line| puts "  #{line}" }
 end
 
 if body_range && body_range =~ /^(\d+)-(\d+)$/
   start_line, end_line = $1.to_i, $2.to_i
   puts "\nBody content (lines #{start_line}-#{end_line}):"
-  lines[(start_line-1)..(end_line-1)].each { |line| puts "  #{line}" }
+  lines[(start_line - 1)..(end_line - 1)].each { |line| puts "  #{line}" }
 end

@@ -254,7 +254,7 @@ Finally, there's the `:not()` selector, sometimes called the *negation pseudocla
 
 Earlier, we saw an example of using the `:last-child` selector to remove a border from the last paragraph on a page --- but a much nicer way to achieve the same thing is to use a `:not()` selector so that the border never gets applied in the first place:
 
-{% example not-selector.html elements="style,body" %}
+{% example not-selector.html elements="style,section" %}
 
 - Match selectors: `:not()`, `:is()`, `:where()`, `:has()`
 - Pseudo-elements: `::first-line`, `::first-letter`, `::before`, `::after`, `::placeholder`, `::marker`, `::selection`

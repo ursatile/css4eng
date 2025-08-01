@@ -308,7 +308,7 @@ module Jekyll
 
         # Split the highlighted HTML by lines, preserving HTML tags
         lines = highlighted_html.split(/(?<=\n)/)
-        
+
         # Extract content for each range and combine with blank lines
         extracted_content = []
 
