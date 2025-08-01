@@ -94,11 +94,11 @@ class StandaloneTest
   end
 end
 
-html_content = File.read('final_test.html')
+html_content = File.read("final_test.html")
 test = StandaloneTest.new
 
 puts "HTML content:"
-html_content.lines.each_with_index { |line, i| puts "#{i+1}: #{line.chomp}" }
+html_content.lines.each_with_index { |line, i| puts "#{i + 1}: #{line.chomp}" }
 
 puts "\nTesting elements='style':"
 result = test.get_line_range_from_elements(html_content, "style")

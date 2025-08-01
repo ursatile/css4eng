@@ -57,65 +57,65 @@ module Jekyll
         if @syntax_error
           return %(<div style="background-color: red; color: white; padding: 10px; border: 2px solid white;">#{@syntax_error}</div>)
         end
-        begin
-          prefix = context["highlighter_prefix"] || ""
-          suffix = context["highlighter_suffix"] || ""
+        #begin
+        prefix = context["highlighter_prefix"] || ""
+        suffix = context["highlighter_suffix"] || ""
 
-          page = context.registers[:page]
-          parts = @markup.split(" ", 2)
-          expanded_path = Liquid::Template.parse(parts[0].strip).render(context)
-          page_filename = File.basename(page["path"], ".*")
-          root_path = File.expand_path(context.registers[:site].config["source"])
-          file_path = File.join(root_path, "examples", page_filename, expanded_path)
-          attributes = parts.length > 1 ? parts[1] : "all"
-          dir = File.dirname(file_path)
-          FileUtils.mkdir_p(dir) unless Dir.exist?(dir)
-          code = read_or_create_file(file_path, context)
+        page = context.registers[:page]
+        parts = @markup.split(" ", 2)
+        expanded_path = Liquid::Template.parse(parts[0].strip).render(context)
+        page_filename = File.basename(page["path"], ".*")
+        root_path = File.expand_path(context.registers[:site].config["source"])
+        file_path = File.join(root_path, "examples", page_filename, expanded_path)
+        attributes = parts.length > 1 ? parts[1] : "all"
+        dir = File.dirname(file_path)
+        FileUtils.mkdir_p(dir) unless Dir.exist?(dir)
+        code = read_or_create_file(file_path, context)
 
-          # Determine the file language first
-          @lang = File.extname(file_path).delete_prefix(".")
+        # Determine the file language first
+        @lang = File.extname(file_path).delete_prefix(".")
 
-          # Step 1: Determine which lines to keep from the original code (before highlighting)
-          lines_to_keep = nil
+        # Step 1: Determine which lines to keep from the original code (before highlighting)
+        lines_to_keep = nil
 
-          # Check for element filtering first
-          if @highlight_options[:elements] && @lang == "html"
-            lines_to_keep = get_line_range_from_elements(code, @highlight_options[:elements])
-          end
-
-          # Check for pattern-based filtering if no element filtering was applied
-          if !lines_to_keep && @highlight_options[:start_after] && @highlight_options[:end_before]
-            lines_to_keep = get_line_range_from_patterns(code, @highlight_options[:start_after], @highlight_options[:end_before])
-          end
-
-          # Check for only_lines filtering if no other filtering was applied
-          if !lines_to_keep && @highlight_options[:only_lines]
-            lines_to_keep = @highlight_options[:only_lines]
-          end
-
-          # Step 2: Apply syntax highlighting to the ENTIRE code
-          output = render_rouge(code)
-
-          # Step 3: Extract only the lines we determined in step 1
-          if lines_to_keep
-            output = filter_highlighted_lines(output, lines_to_keep)
-          end
-
-          # Remove common indentation from the filtered output
-          output = remove_common_indentation(output)
-
-          rendered_output = add_code_tag(output, expanded_path, "examples/#{page_filename}/#{expanded_path}")
-          output = prefix + rendered_output + suffix
-          if @highlight_options[:iframe_style]
-            output += %(<iframe src="./examples/#{page_filename}/#{expanded_path}" style="#{@highlight_options[:iframe_style]}"></iframe>)
-          end
-          return output
-        rescue => e
-          %(<div style="background-color: red; color: white; padding: 10px; border: 2px solid white;">
-          <div>⚠️ #{page["path"]}</div>
-          #{h(e.class.name + ": " + e.message)}
-          </div>)
+        # Check for element filtering first
+        if @highlight_options[:elements] && @lang == "html"
+          lines_to_keep = get_line_range_from_elements(code, @highlight_options[:elements])
         end
+
+        # Check for pattern-based filtering if no element filtering was applied
+        if !lines_to_keep && @highlight_options[:start_after] && @highlight_options[:end_before]
+          lines_to_keep = get_line_range_from_patterns(code, @highlight_options[:start_after], @highlight_options[:end_before])
+        end
+
+        # Check for only_lines filtering if no other filtering was applied
+        if !lines_to_keep && @highlight_options[:only_lines]
+          lines_to_keep = @highlight_options[:only_lines]
+        end
+
+        # Step 2: Apply syntax highlighting to the ENTIRE code
+        output = render_rouge(code)
+
+        # Step 3: Extract only the lines we determined in step 1
+        if lines_to_keep
+          output = filter_highlighted_lines(output, lines_to_keep)
+        end
+
+        # Remove common indentation from the filtered output
+        output = remove_common_indentation(output)
+
+        rendered_output = add_code_tag(output, expanded_path, "examples/#{page_filename}/#{expanded_path}")
+        output = prefix + rendered_output + suffix
+        if @highlight_options[:iframe_style]
+          output += %(<iframe src="./examples/#{page_filename}/#{expanded_path}" style="#{@highlight_options[:iframe_style]}"></iframe>)
+        end
+        return output
+        # rescue => e
+        #   %(<div style="background-color: red; color: white; padding: 10px; border: 2px solid white;">
+        #   <div>⚠️ #{page["path"]}</div>
+        #   #{h(e.class.name + ": " + e.message)}
+        #   </div>)
+        # end
       end
 
       private
@@ -221,14 +221,14 @@ module Jekyll
       end
 
       def filter_by_elements(code, elements_spec)
-        # Split the elements specification by comma and trim whitespace
-        selectors = elements_spec.split(",").map(&:strip)
+        # Handle both string and array inputs
+        selectors = elements_spec.is_a?(Array) ? elements_spec : elements_spec.split(",").map(&:strip)
 
         # Find all matching elements and extract their content
         matched_content = []
 
         selectors.each do |selector|
-          element_content = extract_element_by_selector(code, selector)
+          element_content = extract_element_by_selector(code, selector.strip)
           matched_content << element_content if element_content
         end
 
@@ -283,14 +283,14 @@ module Jekyll
       end
 
       def get_line_range_from_elements(code, elements_spec)
-        # Split the elements specification by comma and trim whitespace
-        selectors = elements_spec.split(",").map(&:strip)
+        # Handle both string and array inputs
+        selectors = elements_spec.is_a?(Array) ? elements_spec : elements_spec.split(",").map(&:strip)
 
         # Find all matching elements and their line numbers
         matching_ranges = []
 
         selectors.each do |selector|
-          range = find_element_line_range_by_selector(code, selector)
+          range = find_element_line_range_by_selector(code, selector.strip)
           matching_ranges << range if range  # Only add non-nil ranges
         end
 

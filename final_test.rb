@@ -1,20 +1,20 @@
 #!/usr/bin/env ruby
 
 # Simple test using the actual fixed methods
-require_relative '_plugins/example.rb'
+require_relative "_plugins/example.rb"
 
 # Mock example tag
 class TestExample < Jekyll::Tags::ExampleTag
   def initialize
     @highlight_options = {}
   end
-  
+
   def test_elements(code, elements_spec)
     get_line_range_from_elements(code, elements_spec)
   end
 end
 
-html_content = File.read('final_test.html')
+html_content = File.read("final_test.html")
 tag = TestExample.new
 
 puts "HTML content:"
