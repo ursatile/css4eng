@@ -151,9 +151,27 @@ According to this example, what kind of hat is Freddie going to wear? The rules 
 
 CSS resolves these kinds of conflicts using something called specificity: if there are multiple rules targeting a particular element, the most specific rule wins.
 
-If you look up the documentation for CSS specificity, you'll find yourself reading about something called *selector weight categories*. 
+If you look up the documentation for CSS specificity, you'll find yourself reading about something called *selector weight categories*, which look like `1-0-0` or `0-2-1` or `0-0-0`.
 
-{% example css-selectors.html iframe_style="height: 10em;" %}
+The first column is the **ID column** column. Every ID selector, like '#example`, adds one to this column. The second one is the **class column**; every class name adds one to this column. The third one is the **type column** - every element type adds one to this column.
+
+Here's how I think about this. Each rule is an army, made up of highly trained fighting animals, and they're going to have a battle to see who wins.
+
+The ID column? That's how many dragons you're bringing to the fight. The class column is how many tigers you've got, and the third column is how many geese. See, if one side has a tiger, it doesn't matter how many geese the other side's got - the tiger's gonna win. If both sides have a tiger, then the geese get involved - but if you bring a tiger, and the other side's got a dragon? Yeah. Their dragon's going to beat your tiger. You got five tigers? Ten tigers? A hundred tigers? Dragon's still going to win. And if they've got two dragons and four tigers and ten geese, but you've got two dragons and four tigers and eleven geese? Well, you're almost evenly matched, but that one extra goose is going to bring you victory.
+
+Let's flip that into some CSS rules
+
+| Selector   | IDs  | Classes | Types |
+| ---------- | ---- | ------- | ----- |
+| `p`        |      |         | 🪿     |
+| `.promo`   |      | 🐯       |       |
+| `#summary` | 🐲    |         |       |
+| `p.promo`  |      | 🐯       | 🪿     |
+|            |      |         |       |
+
+
+
+{% example css-specificy.html iframe_style="height: 10em;" %}
 
 
 
