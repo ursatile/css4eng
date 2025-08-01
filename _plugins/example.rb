@@ -72,6 +72,9 @@ module Jekyll
           FileUtils.mkdir_p(dir) unless Dir.exist?(dir)
           code = read_or_create_file(file_path, context)
 
+          # Determine the file language first
+          @lang = File.extname(file_path).delete_prefix(".")
+
           # Apply element filtering if specified (before syntax highlighting)
           if @highlight_options[:elements] && @lang == "html"
             filtered_code = filter_by_elements(code, @highlight_options[:elements])
@@ -84,7 +87,6 @@ module Jekyll
             line_range = get_line_range_from_patterns(code, @highlight_options[:start_after], @highlight_options[:end_before])
           end
 
-          @lang = File.extname(file_path).delete_prefix(".")
           output = render_rouge(code)
 
           # Apply pattern-based line filtering if we found a range
@@ -259,7 +261,7 @@ module Jekyll
         return nil unless range
 
         start_line, end_line = range.split("-").map(&:to_i)
-        lines[(start_line - 1)..(end_line - 1)].join
+        lines[(start_line)..(end_line - 1)].join
       end
 
       def extract_element_by_id(lines, tag_pattern, id)
@@ -267,7 +269,7 @@ module Jekyll
         return nil unless range
 
         start_line, end_line = range.split("-").map(&:to_i)
-        lines[(start_line - 1)..(end_line - 1)].join
+        lines[(start_line)..(end_line - 1)].join
       end
 
       def extract_element_by_class(lines, tag_pattern, class_name)
@@ -275,7 +277,7 @@ module Jekyll
         return nil unless range
 
         start_line, end_line = range.split("-").map(&:to_i)
-        lines[(start_line - 1)..(end_line - 1)].join
+        lines[(start_line)..(end_line - 1)].join
       end
 
       def get_line_range_from_elements(code, elements_spec)
