@@ -187,7 +187,9 @@ Those rules both have one ID, one class, and one type, so they have the same spe
 
 Inline styles --- `<p style="font-style: italic;">italics!</p>` --- will usually take precedence over any other rules which target that element. You just showed up to the fight with an Imperial Star Destroyer... 
 
-CSS has the `!important` keyword. That's the word important with a leading exclamation mark -- and yes, in most programming languages, the exclamation mark is logical not, so this means `not important`, and yes, this is one of the things that the designers of CSS acknowledge was a mistake.
+Except, CSS has the `!important` keyword. That's the word important with a leading exclamation mark -- and yes, in most programming languages, the exclamation mark is logical not, so this means `not important`, and yes, this is one of the things that the designers of CSS acknowledge was a mistake.
+
+What can defeat a Star Destroyer? How about a Jedi master? There you go. `!important` in CSS is a Jedi master; even if you've got geese, tigers, dragons AND a Star Destroyer, the Jedi master is going to use the Force, and you're going to lose.
 
 Marking a specific property value with `!important` will override the ID-class-type selector system, **and** override any inline style declared by an element:
 
@@ -205,15 +207,11 @@ p {
 </p>
 ```
 
-If you add `!important` to an inline style? You've created an undefeatable rule. Doesn't matter how many dragons, tigers and geese you bring to the fight: 
+You should only use `!important` as an absolute last resort, and even then, use it with a very, very specific selector. The only really valid scenario where you'd use `!important` is if your site imports a bunch of CSS from somewhere else, which you can't edit, and you need to override one of their styles because it's breaking your own code.
+
+If you add `!important` to an inline style? Well, now you've got put the Jedi Master in command of the Star Destroyer. They're undefeatable. There is literally nothing you can do to override this rule other than going into the HTML and editing it directly. 
 
 {% example inline-styles.html iframe_style="height: 10em" %}
-
-
-
-
-
-
 
 ## Review & Recap
 
