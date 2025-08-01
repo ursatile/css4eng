@@ -3,15 +3,24 @@
 <head>
   <title>CSS Specificity</title>
 	<style>
-		p { color: blue; }
-		p.musician { color: green; }
-		p#freddie { color: purple; }
-	</style>
+  /* specificity = 100 */
+  #button { color: red; }
+
+  /* specificity = 11 × 10 = 110 */
+  .btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn.btn {
+    color: blue;
+  }
+</style>
+
+
 </head>
 <body>
+<button id="button" class="btn btn btn btn btn btn btn btn btn btn btn">
+  Click me
+</button>
 	<p>Patton Oswalt</p>
 	<p class="musician">Brian May</p>
 	<p class="musician" id="freddie">Freddie Mercury</p>
-	
+
 </body>
 </html>
