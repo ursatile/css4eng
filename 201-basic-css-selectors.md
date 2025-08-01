@@ -211,9 +211,7 @@ p {
 
 You should only use `!important` as an absolute last resort, and even then, use it with a very, very specific selector. The only really valid scenario where you'd use `!important` is if your site imports a bunch of CSS from somewhere else, which you can't edit, and you need to override one of their styles because it's breaking your own code.
 
-If you add `!important` to an inline style? Well, now you've got a wizard riding on a dragon, soaring high above the battlefield, raining down fire and magic spells on everything they see. They're undefeatable. 
-
-There is literally nothing you can do to override this rule other than going into the HTML and editing it directly.
+If you add `!important` to an inline style? Well, now you've got a wizard riding on a dragon, soaring high above the battlefield, raining down fire and magic spells on everything they see. They're undefeatable. There is literally nothing you can do to override this rule other than going into the HTML and editing it directly.
 
 {% example inline-styles.html iframe_style="height: 10em" %}
 
@@ -236,3 +234,4 @@ There is literally nothing you can do to override this rule other than going int
   * Inline styles are dragons 🐉
   * The `!important` rule is a wizard 🧙🏼‍♂️
   * Tigers always beat geese, T-rexes always beat tigers, dragons always beat T-rexes, wizards always beat dragons, and nothing can beat a wizard riding a dragon.
+

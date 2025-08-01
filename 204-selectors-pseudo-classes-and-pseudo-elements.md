@@ -296,7 +296,7 @@ Pseudo-elements give us a way to target a specific part of an element's content.
 
 Then there's `::placeholder`, which we can use to style the placeholder text which appears in certain kinds of form elements when the user hasn't entered any data yet:
 
-{% example placeholder-pseudo-element.html elements="style, body" iframe_style="height: 5em;"r %}
+{% example placeholder-pseudo-element.html elements="style, body" iframe_style="height: 5em;" %}
 
 And then there are the two pseudo-elements which aren't really elements at all... but which you can use to do all kinds of awesome things. They're the `::before` and `::after` pseudo-elements, and they're a little strange because, by default, they don't exist.
 
