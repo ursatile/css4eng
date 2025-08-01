@@ -256,6 +256,22 @@ Earlier, we saw an example of using the `:last-child` selector to remove a borde
 
 {% example not-selector.html elements="style,section" %}
 
+You can use `:not()` to crank up the specificity of rules by filtering for non-existent elements:
+
+```css
+p#horse { 
+    /* 1-0-0 */ 
+}
+
+p#horse:not(#unicorn):not(#pegasus):not(#centaur) {
+    /* 4-0-0, because there are four IDs in the selector rule */
+}
+```
+
+You can also write completely nonsensical rules using `:not()`. `p:not(p)` matches every paragraph which isn't a paragraph, and `not(.foo)` matches every single element on the page which doesn't have the `"foo"` class -- which includes `<html>`, `<body>` , and will even match elements which are ordinarily invisible like `<head>`, `<style>`, and `<meta>` tags:
+
+{% example not-foo.html %}
+
 - Match selectors: `:not()`, `:is()`, `:where()`, `:has()`
 - Pseudo-elements: `::first-line`, `::first-letter`, `::before`, `::after`, `::placeholder`, `::marker`, `::selection`
 - using `attr()` in `content`
