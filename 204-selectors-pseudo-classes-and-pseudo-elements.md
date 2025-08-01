@@ -300,6 +300,8 @@ Then there's `::placeholder`, which we can use to style the placeholder text whi
 
 And then there are the two pseudo-elements which aren't really elements at all... but which you can use to do all kinds of awesome things. They're the `::before` and `::after` pseudo-elements, and they're a little strange because, by default, they don't exist.
 
+But... CSS defines a property called `content`, which we can use to inject content into the page as part of the the styling process. The content can't be HTML - markup isn't support - but it can be text, including Unicode text --- which means we can use emoji --- or it can load an external image.
+
 {% example before-and-after-pseudo-elements.html %}
 
 - Pseudo-elements: `::before`, `::after`, `::placeholder`, `::marker`, `::selection`

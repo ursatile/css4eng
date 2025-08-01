@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Before And After Pseudo Elements</title>
+	<title>Before And After Pseudo Elements</title>
 	<style>
-		p {
-			content: 'fnord';
+		p.positive::before {
+			content: '👍🏼';
+			font-size: 200%;
 		}
-		ol li::before {
-			color: red; 
-		}
+
 	</style>
 </head>
 <body>
-	<p>Hey</p>
-	<ol>
-		<li>foo</li>
-	</ol>
+	<h1>Album Reviews</h1>
+	<h2>Marillion: <em>Brave</em></h2>
+	<p class="positive">A masterpiece of progressive rock storytelling, “Brave”
+		showcases Marillion at their creative peak. The album’s conceptual depth
+		explores themes of isolation and urban alienation with remarkable
+		sensitivity, while Steve Hogarth’s vocals soar over intricate musical
+		arrangements that seamlessly blend atmospheric passages with powerful
+		crescendos.</p>
+	<p class="negative">“Brave” suffers from occasional self-indulgence
+		that may alienate casual listeners. At times the concept feels heavy-handed,
+		and some tracks meander without clear direction. The album’s ambitious scope
+		sometimes works against it, creating moments where pretension overshadows
+		the genuine emotional core that makes Marillion’s best work so compelling.
+	</p>
+
 </body>
 </html>
