@@ -172,7 +172,7 @@ Let's flip that into some CSS rules:
 | `p.promo#summary`                                            |    🐲 |       🐯 |     🪿 |
 | `section > h1`                                               |      |         |    🪿🪿 |
 | `section > .promo`                                           |      |       🐯 |     🪿 |
-| `body#homepage`<br /> `  nav#top-nav.admin`<br />`    ul.intranet`<br />`      li#my-account a.urgent` |  🐲🐲🐲 |     🐯🐯🐯 | 🪿🪿🪿🪿🪿 |
+| `body#homepage`<br> ` nav#top-nav.admin`<br>`      ul.intranet`<br>`        li#my-account` a.urgent |  🐲🐲🐲 |     🐯🐯🐯 | 🪿🪿🪿🪿🪿 |
 
 Now, in the current CSS standard, and in all modern browsers, type selectors will never override class selectors, and class selectors will never override ID selectors. Or, to put it another way, even if it's a million geese against one tiger, the tiger's still going to win.
 
