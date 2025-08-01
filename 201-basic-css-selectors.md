@@ -181,7 +181,13 @@ If two rules end up with the EXACT same weighting, then the browser applies some
 
 {% example proximity-rule.html iframe_style="height: 10em" %}
 
-Those rules both have one ID, one class, and one type, so they have the same specificity weighting - `1-1-1`, or 🐉🐅🪿
+Those rules both have one ID, one class, and one type, so they have the same specificity weighting: `1-1-2` (or 🐉🐅🪿🪿, if you prefer that notation), so the bottom rule wins. Change the order of the rules, and now the other rule takes precedence because last one wins.
+
+## Selectors, inline styles, and !important
+
+Inline styles --- `<p style="font-style: italic;">italics!</p>` --- will usually take precedence over any other rules which target that element.
+
+{% example inline-styles.html iframe_style="height: 10em" %}
 
 
 
