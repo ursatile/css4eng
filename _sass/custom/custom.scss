@@ -144,3 +144,7 @@ div.color-swatches {
 	}
 
 }
+
+td {
+	pre:only-child { margin: 0; }
+}
