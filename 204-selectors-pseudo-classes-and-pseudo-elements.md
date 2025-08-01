@@ -296,7 +296,7 @@ Pseudo-elements give us a way to target a specific part of an element's content.
 
 Finally, there's `::placeholder`, which we can use to style the placeholder text which appears in certain kinds of form elements when the user hasn't entered any data yet:
 
-{% example placeholder-pseudo-element.html %}
+{% example placeholder-pseudo-element.html elements="style, body" iframe_style="height: 5em;" %}
 
 
 

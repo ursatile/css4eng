@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Placeholder Pseudo Element</title>
+	<title>Placeholder Pseudo Element</title>
+	<style>
+		input[type="email"]::placeholder {
+			font-style: italic;
+			font-weight: bold;
+			color: silver;
+			font-family: monospace;
+		}
+	</style>
 </head>
 <body>
-	<label for="email-input">
-Email Address:
-	</label>
+	<label for="email-input">Email Address:</label>
 	<input type="email" id="email-input" placeholder="someone@domain.com">
 </body>
 </html>
