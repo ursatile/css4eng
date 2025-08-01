@@ -264,7 +264,7 @@ module Jekyll
         return nil unless range
 
         start_line, end_line = range.split("-").map(&:to_i)
-        lines[(start_line)..(end_line - 1)].join
+        lines[(start_line - 1)..(end_line - 1)].join
       end
 
       def extract_element_by_id(lines, tag_pattern, id)
@@ -272,7 +272,7 @@ module Jekyll
         return nil unless range
 
         start_line, end_line = range.split("-").map(&:to_i)
-        lines[(start_line)..(end_line - 1)].join
+        lines[(start_line - 1)..(end_line - 1)].join
       end
 
       def extract_element_by_class(lines, tag_pattern, class_name)
@@ -280,7 +280,7 @@ module Jekyll
         return nil unless range
 
         start_line, end_line = range.split("-").map(&:to_i)
-        lines[(start_line)..(end_line - 1)].join
+        lines[(start_line - 1)..(end_line - 1)].join
       end
 
       def render_elements_separately(code, elements_spec)
