@@ -284,15 +284,17 @@ We'll come back to selector strategies and the architecture of CSS in part 3 of 
 
 ## CSS Pseudo-Elements
 
-Pseudo-elements give us a way to target a specific part of an element's content. The classic example is using `::first-line` and ``:first-letter` to style up a paragraph of text with a decorative capital initial:
+Pseudo-elements give us a way to target a specific part of an element's content. The classic example is using `::first-line` and ``:first-letter` to style up a paragraph of text with a decorative capital initial. You can also use the `::selection` pseudo-element to target the part of the document that's been selected (e.g. by dragging over it with the mouse) - try highlighting part of this excerpt from Dickens' "A Tale of Two Cities":
 
 {% example first-letter-first-line.html iframe_style="height: 10em" elements="style, body" %}
 
+> The only properties that can be styled with `::selection` are `color`, `background-color`, `text-decoration` and `text-shadow`. You can't use `::selection` for anything that could affect the document's layout, otherwise you end up with text that moves out of the way when you try to click on it, which makes for a truly terrible user experience.
 
 
 
 
-- Pseudo-elements: `::first-line`, `::first-letter`, `::before`, `::after`, `::placeholder`, `::marker`, `::selection`
+
+- Pseudo-elements: `::before`, `::after`, `::placeholder`, `::marker`, `::selection`
 - using `attr()` in `content`
 - Exercise: Building a CSS mosaic
 
