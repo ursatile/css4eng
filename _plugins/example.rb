@@ -335,7 +335,7 @@ module Jekyll
           end
         end
 
-        return extracted_content.join("\n") unless extracted_content.empty?
+        return extracted_content.join("\n<hr>\n") unless extracted_content.empty?
         "<span class=\"c1\"># No content found for specified elements</span>\n"
       end
 

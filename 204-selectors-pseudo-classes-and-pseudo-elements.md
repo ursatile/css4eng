@@ -302,7 +302,7 @@ And then there are the two pseudo-elements which aren't really elements at all..
 
 But... CSS defines a property called `content`, which we can use to inject content into the page as part of the the styling process. The content can't be HTML - markup isn't support - but it can be text, including Unicode text --- which means we can use emoji --- or it can load an external image.
 
-{% example before-and-after-pseudo-elements.html elements="style, body" %}
+{% example before-and-after-pseudo-elements.html elements="style, body" iframe_style="height: 10em;" %}
 
 - Pseudo-elements: `::before`, `::after`, `::placeholder`, `::marker`, `::selection`
 - using `attr()` in `content`
