@@ -163,16 +163,7 @@ You see, if one side has a tiger, it doesn't matter how many geese the other sid
 
 Let's flip that into some CSS rules:
 
-| Selector                                                     |  IDs | Classes | Types |
-| :----------------------------------------------------------- | ---: | ------: | ----: |
-| `p`                                                          |      |         |     🪿 |
-| `.promo`                                                     |      |       🐯 |       |
-| `#summary`                                                   |    🐲 |         |       |
-| `p.promo`                                                    |      |       🐯 |     🪿 |
-| `p.promo#summary`                                            |    🐲 |       🐯 |     🪿 |
-| `section > h1`                                               |      |         |    🪿🪿 |
-| `section > .promo`                                           |      |       🐯 |     🪿 |
-| `body#homepage`<br> ` nav#top-nav.admin`<br>`      ul.intranet`<br>`        li#my-account` a.urgent |  🐲🐲🐲 |     🐯🐯🐯 | 🪿🪿🪿🪿🪿 |
+{% include_relative {{page.examples}}/dragons-tigers-geese-oh-my.html %}
 
 Now, in the current CSS standard, and in all modern browsers, type selectors will never override class selectors, and class selectors will never override ID selectors. Or, to put it another way, even if it's a million geese against one tiger, the tiger's still going to win.
 
