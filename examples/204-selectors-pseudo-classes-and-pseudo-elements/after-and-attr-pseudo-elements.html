@@ -7,8 +7,22 @@
 			content: ' [' attr(href) ']';
 			font-size: 80%;
 		}
-		p a[href~='youtube']::before {
+		p a::before {
+			width: 16px;
+			height: 16px;
+		}
+		
+		p a[href*='youtube']::before {
 			content: url('icons/youtube.png');
+		}
+		p a[href*='github']::before {
+			content: url('icons/github.png');
+		}
+		p a[href*='linkedin']::before {
+			content: url('icons/linkedin.png');
+		}
+		p a[href*='bsky']::before {
+			content: url('icons/bluesky.png');
 		}
 	</style>
 </head>
@@ -25,5 +39,6 @@
 		and follow him on <a
 			href="https://bsky.app/profile/dylanbeattie.net">Bluesky</a>.
 	</p>
+	<a href="https://www.flaticon.com/free-icons/" title="icons">Social Media icons created by Freepik - Flaticon</a>
 </body>
 </html>
