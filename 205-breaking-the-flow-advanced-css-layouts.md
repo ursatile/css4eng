@@ -66,7 +66,7 @@ Fixed positioning works like absolute positioning, but elements are positioned r
 
 Sticky is a relatively recent addition to CSS, and it's a fantastic example of the kind of thing that used to mean writing quite a lot of complicated JavaScript but now CSS just does it with one rule. Which is sad news if you enjoy writing --- and maintaining --- lots of complicated JavaScript, but it's fantastic news for the rest of us.
 
-{% example position-sticky.html iframe_style="height: 16em;" mark_lines="7,11,24" elements="style,body" %}
+{% example position-sticky.html iframe_style="height: 16em;" elements="style,body" %}
 
 
 
