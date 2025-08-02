@@ -56,11 +56,9 @@ In the example above, the absolute-positioned elements are all positioned relati
 
 And yes, the terminology here can get very confusing when we talk about absolute-positioned elements being positioned relative to relative-positioned elements.
 
-Yeah!
-
 ### position: fixed
 
-Fixed positioning works like absolute positioning, but elements are positioned relative to the *viewport*, not the *document* --- in other words, they won't move when you scroll the page.
+Fixed positioning works like absolute positioning, but elements are positioned relative to the *viewport*, not the *document* --- in other words, they won't move when you scroll the page. Fantastic for headers, footers and navigation menus.
 
 {% example fixed-position.html iframe_style="height: 16em;" mark_lines="7,11,24" elements="style,body" %}
 
