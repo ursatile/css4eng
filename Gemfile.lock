@@ -1,3 +1,8 @@
+PATH
+  remote: gems/rouge-4.6.0
+  specs:
+    rouge (4.6.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -75,7 +80,6 @@ GEM
     rb-inotify (0.11.1)
       ffi (~> 1.0)
     rexml (3.4.1)
-    rouge (4.5.2)
     safe_yaml (1.0.5)
     sass-embedded (1.89.2-x64-mingw-ucrt)
       google-protobuf (~> 4.31)
@@ -101,6 +105,7 @@ DEPENDENCIES
   jekyll-sass-converter (~> 3.1.0)
   just-the-docs (= 0.10.1)
   logger
+  rouge!
   tzinfo (~> 1.2)
   tzinfo-data
   wdm (>= 0.1.1)

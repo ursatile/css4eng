@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'rouge', path: 'gems/rouge-4.6.0'
 gem "jekyll", "~> 4.4.1" # installed by `gem jekyll`
 gem "logger" # Suppress Ruby 3.5.0 deprecation warning
 

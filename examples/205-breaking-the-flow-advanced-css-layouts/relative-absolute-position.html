@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Relative and Absolute Position</title>
+	<style>
+		aside {
+			float: right;
+			margin-left: 1em;
+			position: relative;
+			width: 25%;
+			border: 1px solid #000;
+			padding: 30px;
+			box-sizing: border-box;
+			text-align: center;
+
+			span {
+				position: absolute;
+				font-size: 150%;
+
+				&.n {
+					top: 2px;
+				}
+
+				&.e {
+					right: 2px;
+				}
+
+				&.s {
+					bottom: 2px;
+				}
+
+				&.w {
+					left: 2px
+				}
+			}
+	</style>
+</head>
+<body>
+	<h1>Absolute and Relative Positioning</h1>
+	<aside>
+		<p>This <code>&lt;aside&gt;</code> element has
+			<code>position: relative</code>,
+			and the four emoji inside it are wrapped in <code>&lt;span&gt;</code>
+			elements with <code>position: absolute</code> so we can position them
+			relative to their parent container.</p>
+		<span class="n w">↖️</span>
+		<span class="n e">↗️</span>
+		<span class="s e">↘️</span>
+		<span class="s w">↙️</span>
+	</aside>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur.</p>
+
+	<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+		deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste
+		natus error sit voluptatem accusantium doloremque laudantium, totam rem
+		aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto
+		beatae vitae dicta sunt.</p>
+
+	<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+		sed quia consequuntur magni dolores eos qui ratione voluptatem sequi
+		nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+		consectetur, adipisci velit, sed quia non numquam eius modi tempora
+		incidunt.</p>
+
+	<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+		praesentium voluptatum deleniti atque corrupti quos dolores et quas
+		molestias excepturi sint occaecati cupiditate non provident, similique sunt
+		in culpa qui officia deserunt mollitia animi, id est laborum et dolorum
+		fuga.</p>
+
+	<p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero
+		tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus
+		id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis
+		dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut
+		rerum necessitatibus saepe eveniet.</p>
+</body>
+</html>
