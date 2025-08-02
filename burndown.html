@@ -25,7 +25,7 @@ word_count: 77
 	</div>
 	{% endif %}
 	{% assign total_actual_minutes = total_actual_minutes | plus: actual_minutes %}
-	{% assign total_target_minutes = total_target_minutes | plus: page.target_minutes %} 
+	{% assign total_target_minutes = total_target_minutes | plus: page.target_minutes %}
 	{% endif %}
 	{% endfor %}
 </div>
@@ -42,7 +42,7 @@ word_count: 77
 	{% endif %}
 	{% endfor %}
 	<p><strong>Total Modules:</strong> {{ module_count }}</p>
-	<p><strong>Total Word Count:</strong> {{ total_words }}</p>
-	<p><strong>Actual: </strong> {{ total_actual_minutes | divided_by: 60 }}h {{ total_actual_minutes | modulo: 60 }}m</p>		
+	<p><strong>Total Word Count:</strong> {{ total_words }} (target: ({{ total_target_minutes | times: 200 }} words)</p>
+	<p><strong>Actual: </strong> {{ total_actual_minutes | divided_by: 60 }}h {{ total_actual_minutes | modulo: 60 }}m</p>
 	<p><strong>Target: </strong> {{ total_target_minutes | divided_by: 60 }}h {{ total_target_minutes | modulo: 60 }}m</p>
 </div>
