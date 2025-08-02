@@ -2,7 +2,7 @@
 title: "Breaking the Flow: Advanced CSS Layouts"
 layout: home
 nav_order: 205
-word_count: 30
+word_count: 1108
 target_minutes: 20
 examples: examples/205-breaking-the-flow-advanced-css-layouts
 ---
