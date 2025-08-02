@@ -32,6 +32,8 @@ In most of the examples we've looked at so far, the browser decides where to pla
 
 This behaviour is known as *static* positioning, and it's the default: every element in HTML has `position: static` unless we change it. Static layout works really well for articles, documents, blog posts, that kind of thing, but as we start incorporating more sophisticated navigation and interaction into our websites, we're going to need more options when it comes to layout.
 
+### `position: relative`
+
 Let's start with *relative* positioning. This lets us move an element relative to its original position, hence the name. If we say `top: 10px`, it'll move it down the page by ten pixels - remember, coordinates start at the top left and increase downwards and to the right. 
 
 {% example position-relative.html elements="style,body" iframe_style="height: 12em;" %}
@@ -39,6 +41,8 @@ Let's start with *relative* positioning. This lets us move an element relative t
 You see that middle paragraph? The one that's going places? It's moved down and to the right --- but also, because the paragraph *width* is still based on the width of the *viewport*, moving it to the right means we end up with a horizontal scrollbar.
 
 Relative positioning is useful if you've got an icon or a button that's not *quite* in the right place and you just need to nudge it by a few pixels, but it's mostly used because it has an incredibly useful side-effect we'll learn about in a moment.
+
+### position: absolute
 
 First, though, let's meet *absolute positioning*. Using `position: absolute`, we can specify exactly where an element should be placed within its parent element:
 
@@ -52,9 +56,13 @@ In the example above, the absolute-positioned elements are all positioned relati
 
 And yes, the terminology here can get very confusing when we talk about absolute-positioned elements being positioned relative to relative-positioned elements.
 
- 
+Yeah!
 
+### position: fixed
 
+Fixed positioning works like absolute positioning, but elements are positioned relative to the *viewport*, not the *document* --- in other words, they won't move when you scroll the page.
+
+{% example fixed-position.html iframe_style="height: 16em;" mark_lines="7,11,24" elements="style,body" %}
 
 
 
