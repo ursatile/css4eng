@@ -206,6 +206,16 @@ See how the Heading 1 has a much bigger border, because the browser renders it i
 
 A `rem` is an `em` but it's relative to the *root font size* - so it'll give you a consistent unit which doesn't vary between headings, paragraphs, etc., but which *does* reflect changes to the document's --- or the browser's --- default font size.
 
+Modern CSS also supports the following units; relative to the element's font, and their `r-` versions relative to the document root font:
+
+* `cap` / `rcap` = *cap height*, the height of a capital letter
+* `ch` / `rch` = the *advance measure* of the digit 0; width if text is flowing horizontally, height if text is flowing veritcally.
+* `ex` / `rex`, the height of a lowercase "x" 
+* `lh` / `rlh`, the *line height* 
+* `ic` / `ric` the width of the "水" glyph (CJK water ideograph, U+6C34)
+
+{% example typographic-units.html %}
+
 #### Percentages
 
 Let's get to know another couple of CSS properties: `width` and `height`. These ones do pretty much what you'd expect them to do:
