@@ -70,16 +70,28 @@ body { width: 720px; margin: 0 auto; }
 but CSS gives us some useful functions we can use to create a layout which is responsive up to a point, but won't become unusable on very large or very small devices. There's `min-width` and `max-width`:
 
 ```css
-css-width-examples {
+body {
   width: 60%;
   max-width: 960px;
   min-width: 420px;
 }
 ```
 
-Modern CSS also defines two general-purpose functions `min` and `max`, which take any number of compatible units - lengths, measrueme
+Modern CSS also defines two general-purpose functions `min` and `max`, which take any number of arguments, including other functions, and return their minimum or maximum argument:
 
-which you can reduce to two lines using the `min` and `max` functions.1
+```css
+body { width: min(960px, 60%); }
+body { width: max(420px, 60%); }
+body { width: max(420px, min(960px, 60%)); }
+```
+
+But that last syntax is a little unwieldly, so CSS also provides a `clamp()` function:
+
+```css
+body { width: clamp(420px, 60%, 960px); }
+```
+
+Open up this example in new window and try changing the window width to see how they behave:
 
 {% example responsive-width.html %}
 
@@ -162,27 +174,4 @@ The last two examples there use the `text-overflow` property, but the second one
 You can specify horizontal and vertical overflow separately, using the `overflow-x` and `overflow-y` properties:
 
 {% example overflow-x-y.html iframe_style="height: 12.5em;" elements="style,body" %}
-
-# Breaking the Flow: Advanced CSS Layouts (20m)
-
-## Course Content
-
-- Towards a responsive layout: `max-width`, `min()`, `max()`, `clamp()`
-- position: `fixed`, `absolute`, `relative`, `sticky`
-- Viewports and scrolling
-- Using `height` and `overflow`
-
-## Notes
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -216,6 +216,8 @@ Modern CSS also supports the following units; relative to the element's font, an
 
 {% example typographic-units.html elements="style" iframe_style="height: 12em;"  %}
 
+> As of August 2025, Firefox doesn't support `rcap`, `rch`, `rex`, or `ric`. 
+
 #### Percentages
 
 Let's get to know another couple of CSS properties: `width` and `height`. These ones do pretty much what you'd expect them to do:
