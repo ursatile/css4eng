@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Overflow X Y</title>
+	<style>
+		img {
+			width: 12em;
+			height: 12em;
+		}
+		div {
+			width: 8em;
+			height: 8em;
+			display: inline-block;
+			border: 1px solid #000;
+		}
+
+		div#a {
+			overflow: hidden;
+		}
+
+		div#b {
+			overflow-x: hidden;
+			overflow-y: scroll;
+		}
+
+		div#c {
+			overflow-x: scroll;
+			overflow-y: hidden;
+		}
+
+		div#d {
+			overflow: scroll;
+		}
+	</style>
+</head>
+<body>
+	<div id="a"><img src="cats/fr0ggy5-Eo_ncrYjvO4-unsplash.jpg"></div>
+	<div id="b"><img src="cats/fr0ggy5-Eo_ncrYjvO4-unsplash.jpg"></div>
+	<div id="c"><img src="cats/fr0ggy5-Eo_ncrYjvO4-unsplash.jpg"></div>
+	<div id="d"><img src="cats/fr0ggy5-Eo_ncrYjvO4-unsplash.jpg"></div>
+	<p>
+	<small>
+	Photo by <a href="https://unsplash.com/@fr0ggy5?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">fr0ggy5</a> on <a href="https://unsplash.com/photos/a-close-up-of-a-cat-near-a-window-Eo_ncrYjvO4?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+	</small>
+	</p>
+</body>
+</html>

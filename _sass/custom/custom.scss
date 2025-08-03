@@ -154,3 +154,19 @@ div.color-swatches {
 td {
 	pre:only-child { margin: 0; }
 }
+
+div#initial-scale-gallery {
+	display: flex;
+	justify-content: space-between;
+	figure {
+		box-sizing: border-box;
+		width: 22%;
+		figcaption {
+			text-align: center;
+			code {
+				background-color: transparent;
+				border: none;
+			}
+		}
+	}
+}

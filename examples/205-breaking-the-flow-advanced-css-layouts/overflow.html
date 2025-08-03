@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Overflow</title>
+	<style>
+		div {
+			width: 4em;
+			height: 4em;
+			border: 2px solid #000;
+			float: left;
+			margin-right: 1.8em;
+			padding: 0.2em;
+			font-size: 1.4rem;
+
+			box-sizing: border-box;
+			&#a {
+				overflow: visible;
+			}
+
+			&#b {
+				overflow: hidden;
+			}
+
+			&#c {
+				overflow: scroll;
+			}
+
+			&#d {
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			&#e {
+				overflow: hidden;
+				text-overflow: "😥";
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="a">CSS<br>is<br>AWESOME</div>
+	<div id="b">CSS<br>is<br>AWESOME</div>
+	<div id="c">CSS<br>is<br>AWESOME</div>
+	<div id="d">CSS<br>is<br>AWESOME</div>
+	<div id="e">CSS<br>is<br>AWESOME</div>
+</body>
+</html>

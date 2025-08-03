@@ -26,19 +26,70 @@ On mobile devices like smartphones, there's a feature called *pinch zoom*, which
 
 Sometimes, they're all the same. If you view a really short page on your mobile phone screen --- short enough that it doesn't scroll --- then the screen, the window, the viewport and the document are all the same size, and things are very easy indeed. But as we learn about more complex layouts, it's important to think about whether we're arranging elements relative to the document or to the viewport. 
 
+### The viewport meta tag
+
+When smartphone browsers adapt a page layout for their screens, they'll usually render the page as it would appear on a desktop device, and then zoom out until it fits on the screen. This can lead to very, very small text, and can cause layout problems.
+
+You can change this behaviour by using a `<meta>` tag in the document `<head`>, to specify the viewport width, and the initial scale factor - how much the page should be zoomed when it first loads.
+
+<div id="initial-scale-gallery">
+    <figure>
+    <img src="./images/initial-scale/initial-scale-0.1.png">
+        <figcaption><code>initial-scale: 0.1</code></figcaption>
+    </figure>
+        <figure>
+    <img src="./images/initial-scale/initial-scale-0.5.png">
+        <figcaption><code>initial-scale: 0.5</code></figcaption>
+    </figure>
+        <figure>
+    <img src="./images/initial-scale/initial-scale-1.0.png">
+        <figcaption><code>initial-scale: 1.0</code></figcaption>
+    </figure>
+        <figure>
+    <img src="./images/initial-scale/initial-scale-2.0.png">
+        <figcaption><code>initial-scale: 2.0</code></figcaption>
+    </figure>
+</div>
+
+
+
+## Responsive Width
+
+Page width --- and consequently, the length of each line of text --- can have a huge impact on readability, so when you're authoring a page that's going to be read on everything from an iPhone SE to a 48" Samsung ultrawide high definition monitor, you really want to be able to adjust the page width dynamically based on the device. This technique --- using styles that adapt to the device that's displaying them --- is known as *responsive design*, and we'll be talking about it a lot throughout the rest of this course.
+
+The simplest example is to fix the page width:
+
+```css
+body { width: 720px; margin: 0 auto; }
+```
+
+{% example responsive-width.html %}
+
+
+
+
+
+
+
+
+
 ## Using CSS Position
 
 In most of the examples we've looked at so far, the browser decides where to place each element on the page. Inline elements go next to the previous element, block elements go underneath the previous element; if the page ends up too wide, elements will wrap onto the next line, and if the page ends up too tall, we get a vertical scrollbar.
 
 This behaviour is known as *static* positioning, and it's the default: every element in HTML has `position: static` unless we change it. Static layout works really well for articles, documents, blog posts, that kind of thing, but as we start incorporating more sophisticated navigation and interaction into our websites, we're going to need more options when it comes to layout.
 
+## Positioning properties
+
+CSS exposes six properties which affect the position and size of an element: `top`, `bottom`, `left`, `right`, `width`, and `height` - they're all linear measurements, so they can be pixels, `ems`, `rems`, `points`, percentages, or any of the other units we met earlier. What these properties actually *do* depends on which positioning model we've applied to the element, so let's meet them.
+
 ### `position: relative`
 
-Let's start with *relative* positioning. This lets us move an element relative to its original position, hence the name. If we say `top: 10px`, it'll move it down the page by ten pixels - remember, coordinates start at the top left and increase downwards and to the right. 
+We'll start with *relative* positioning. This lets us move an element relative to its original position, hence the name. If we say `top: 10px`, it'll move it down the page by ten pixels - remember, coordinates start at the top left and increase downwards and to the right.
 
 {% example position-relative.html elements="style,body" iframe_style="height: 12em;" %}
 
-You see that middle paragraph? The one that's going places? It's moved down and to the right --- but also, because the paragraph *width* is still based on the width of the *viewport*, moving it to the right means we end up with a horizontal scrollbar.
+You see that middle paragraph? The one that's going places? It's moved down and to the right --- but also, because the paragraph *width* is still based on the width of the *viewport*, the content is now too wide for the container, so we end up with a horizontal scrollbar.
 
 Relative positioning is useful if you've got an icon or a button that's not *quite* in the right place and you just need to nudge it by a few pixels, but it's mostly used because it has an incredibly useful side-effect we'll learn about in a moment.
 
@@ -50,7 +101,15 @@ First, though, let's meet *absolute positioning*. Using `position: absolute`, we
 
 Unlike relative positioned elements, absolute positioned elements don't take up any space in the document flow. The browser doesn't leave a gap where they used to be; it yanks them out of the flow, draws everything else, and then slaps them over the top --- which means if you're not careful, you can easily end up with text that's unreadable because it's hidden behind another element.
 
-In the example above, the absolute-positioned elements are all positioned relative to the document's body... but if you create a parent element with `position: relative`, any absolute-positioned child elements will be positioned relative to that parent.
+You can also create styles which don't make any sense:
+
+{% example absolute-position-nonsense.html iframe_style="height: 7em;" elements="style,body" %}
+
+There's no way an element can be 6% left, 6% right and 41% wide, because percentages have to add up to 100 - so the browser has to ignore something. If `top`, `height` and `bottom` are all specified, `bottom` is ignored. 
+
+If `left`, `right` and `width` are all specified, then it depends on the reading order of the text;  the English version of the joke is aligned left --- and the `right` property is discarded --- but the Hebrew version of the joke is aligned right, with the `left` property discarded, because Hebrew reads right-to-left.
+
+In the example above, the absolute-positioned elements are all positioned relative to the document's body... but if you create a parent element with `position: relative`, any absolute-positioned child elements will be positioned relative to that parent. That's the superpower side-effect we talked about a moment ago; relative positioned elements create a new layout context.
 
 {% example relative-absolute-position.html iframe_style="height: 16em;" %}
 
@@ -66,9 +125,25 @@ Fixed positioning works like absolute positioning, but elements are positioned r
 
 Sticky is a relatively recent addition to CSS, and it's a fantastic example of the kind of thing that used to mean writing quite a lot of complicated JavaScript but now CSS just does it with one rule. Which is sad news if you enjoy writing --- and maintaining --- lots of complicated JavaScript, but it's fantastic news for the rest of us.
 
+Sticky gives you an element that'll stay visible for as long as its container is visible... it's kinda hard to explain, so here's an example:
+
 {% example position-sticky.html iframe_style="height: 16em;" elements="style,body" %}
 
+It's usually used for vertical scrolling, but you can use sticky horizontally as well:
 
+{% example position-sticky-horizontal.html iframe_style="height: 16em;" elements="style,body" %}
+
+## Scrolling and Overflow
+
+In plain old HTML, the only thing which ever scrolls is the viewport, but when we start giving elements specific widths and heights, it's trivially easy to create a container that isn't big enough for its content. In CSS, this is known as *overflow*, and we can handle it in a few different ways.
+
+{% example overflow.html iframe_style="height: 8em;" elements="style,body" %}
+
+The last two examples there use the `text-overflow` property, but the second one --- `text-overflow: "😥";` --- is a draft specification, that, at the time I'm writing this, August 2025, is only supported in Firefox.
+
+You can specify horizontal and vertical overflow separately, using the `overflow-x` and `overflow-y` properties:
+
+{% example overflow-x-y.html iframe_style="height: 12.5em;" elements="style,body" %}
 
 # Breaking the Flow: Advanced CSS Layouts (20m)
 
