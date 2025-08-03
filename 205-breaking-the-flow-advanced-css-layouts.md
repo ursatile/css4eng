@@ -51,7 +51,11 @@ You can change this behaviour by using a `<meta>` tag in the document `<head`>, 
     </figure>
 </div>
 
+You can set the viewport width to a specific number of pixels, from 1 to 10000, but by far the most common use of the `<meta name="viewport">` tag is using it to set the viewport width to the `device-width`:
 
+```html
+<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+```
 
 ## Responsive Width
 
