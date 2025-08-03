@@ -41,8 +41,9 @@ word_count: 77
 	{% assign module_count = module_count | plus: 1 %}
 	{% endif %}
 	{% endfor %}
+	{% assign target_words = total_target_minutes | times: 200 %}
 	<p><strong>Total Modules:</strong> {{ module_count }}</p>
-	<p><strong>Total Word Count:</strong> {{ total_words }} (target: ({{ total_target_minutes | times: 200 }} words)</p>
+	<p><strong>Total Word Count:</strong> {{ total_words }} (target: ({{ target_words }} words)</p>
 	<p><strong>Actual: </strong> {{ total_actual_minutes | divided_by: 60 }}h {{ total_actual_minutes | modulo: 60 }}m</p>
 	<p><strong>Target: </strong> {{ total_target_minutes | divided_by: 60 }}h {{ total_target_minutes | modulo: 60 }}m</p>
 </div>
@@ -52,3 +53,7 @@ word_count: 77
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript" src="progress-chart.js"></script>
+<script>
+	drawChart({{ target_words }});
+
+</script>"

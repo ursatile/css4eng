@@ -1,6 +1,6 @@
 // Google Charts progress tracking
 google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChart);
+// google.charts.setOnLoadCallback(drawChart);
 
 function calculateLinearRegression(data) {
     const n = data.length;
@@ -25,7 +25,7 @@ function calculateLinearRegression(data) {
     return { slope, intercept, firstDate };
 }
 
-function drawChart() {
+function drawChart(targetWords) {
     // Fetch progress data
     fetch('progress_data.json')
         .then(response => response.json())
@@ -45,8 +45,7 @@ function drawChart() {
             // Calculate linear regression for forecast
             const regression = calculateLinearRegression(data);
             if (regression) {
-                const { slope, intercept, firstDate } = regression;
-                const targetWords = 100000;
+                const { slope, intercept, firstDate } = regression;                
                 const currentWords = data[data.length - 1].wordCount;
                 const lastDate = new Date(data[data.length - 1].datetime);
                 
