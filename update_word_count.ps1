@@ -35,13 +35,21 @@ $currentDateTime = Get-Date -Format "yyyy-MM-ddTHH:mm:ss"
 
 # Read existing data or create empty array
 if (Test-Path $progressFile) {
-    $progressData = Get-Content $progressFile | ConvertFrom-Json
+    try {
+        $progressData = Get-Content $progressFile | ConvertFrom-Json
+        # Ensure it's an array
+        if ($progressData -isnot [array]) {
+            $progressData = @($progressData)
+        }
+    } catch {
+        $progressData = @()
+    }
 } else {
     $progressData = @()
 }
 
 # Add new data point
-$newDataPoint = @{
+$newDataPoint = [PSCustomObject]@{
     datetime = $currentDateTime
     wordCount = $totalWordCount
 }
