@@ -95,14 +95,6 @@ Open up this example in new window and try changing the window width to see how 
 
 {% example responsive-width.html %}
 
-
-
-
-
-
-
-
-
 ## Using CSS Position
 
 In most of the examples we've looked at so far, the browser decides where to place each element on the page. Inline elements go next to the previous element, block elements go underneath the previous element; if the page ends up too wide, elements will wrap onto the next line, and if the page ends up too tall, we get a vertical scrollbar.
@@ -175,3 +167,18 @@ You can specify horizontal and vertical overflow separately, using the `overflow
 
 {% example overflow-x-y.html iframe_style="height: 12.5em;" elements="style,body" %}
 
+## Review & Recap
+
+In this section, we've learned about viewports, element positioning, overflow, and introduced several techniques we can use to create responsive CSS layouts.
+
+- **Start with static layouts.** Most web pages start with a natural block/inline flow and the CSS box model. To create more complex layouts we need to break out of the default document flow.
+- **Screens, windows and viewports** - and how high-DPI screens and browser zoom modes (page vs. pinch zoom) affect layouts.
+- Using the **viewport meta tag** to control how your page scales on mobile, ensuring text remains readable and layouts look good on all devices.
+- Creating **responsive widths** using CSS units, `min-width`, `max-width`, and functions like `min()`/`max()`
+- **CSS Positioning Models:**
+  - `static` (default): elements follow the document flow.
+  - `relative`: nudge elements from their default position *(and as a handy side-effect, create a new layout container we can use with absolute-positioned child elements)*
+  - `absolute`: place elements anywhere, relative to their nearest positioned ancestor.
+  - `fixed`: anchor elements to the viewport for sticky headers/footers.
+  - `sticky`: elements stay visible as you scroll until their container moves out of view.
+- **Overflow**, and how to control scrollbars and content visibility with `overflow`, `overflow-x`, `overflow-y`, and `text-overflow`.

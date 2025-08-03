@@ -4,46 +4,89 @@
 	<title>Responsive Width</title>
 	<meta name="viewport" content="width=device-width;initial-scale=1.0">
 	<style>
-		section { margin: 2em auto; background-color: silver; }
-		section#a { width: 720px; }
-		section#b { width: 60%; max-width: 72ch; }
-		section#c { width: 60%; min-width: 32ch; }
-		section#d { width: min(72ch, 50%); }
-		section#e { width: max(72ch, 50%); }
-		section#f { width: clamp(30ch, 60%, 72ch); }
+		section {
+			margin: 2em auto;
+			background-color: silver;
+			h2 { text-align: center; }
+			padding: 1ex;
+		}
+
+		section#a {
+			width: 720px;
+		}
+
+		section#b {
+			width: 60%;
+			max-width: 72ch;
+		}
+
+		section#c {
+			width: 60%;
+			min-width: 32ch;
+		}
+
+		section#d {
+			width: min(72ch, 50%);
+		}
+
+		section#e {
+			width: max(72ch, 50%);
+		}
+
+		section#f {
+			width: clamp(30ch, 60%, 72ch);
+		}
 	</style>
 </head>
 <body>
-	<h1>Classic Albums Revisited</h1>
 	<section id="a">
-		<h2>Fixed Width (<code>width: 720px;</code>)</h2>
-		<p>This section has a fixed width of 720px. It won't adapt to different screen sizes and may cause horizontal scrolling on smaller devices.</p>
+		<h2><code>width: 720px;</code></h2>
+		<p>This section has a fixed width of 720px. It won't adapt to different
+			screen sizes and may cause horizontal scrolling on smaller devices. This
+			section has a fixed width of 720px. It won't adapt to different screen
+			sizes and may cause horizontal scrolling on smaller devices. This section
+			has a fixed width of 720px. It won't adapt to different screen sizes and
+			may cause horizontal scrolling on smaller devices. </p>
 	</section>
-
 	<section id="b">
-		<h2>Percentage with Max Width (<code>width: 60%; max-width: 72ch;</code>)</h2>
-		<p>This section uses 60% width but won't exceed 72 characters wide, making it readable on larger screens while still being responsive.</p>
+		<h2><code>width: 60%; max-width: 72ch;</code>
+		</h2>
+		<p>This section uses 60% width but won't exceed 72 characters wide, making
+			it readable on larger screens while still being responsive. This section
+			uses 60% width but won't exceed 72 characters wide, making it readable on
+			larger screens while still being responsive. This section uses 60% width
+			but won't exceed 72 characters wide, making it readable on larger screens
+			while still being responsive.</p>
 	</section>
-
 	<section id="c">
-		<h2>Percentage with Min Width (<code>width: 60%; min-width: 32ch;</code>)</h2>
-		<p>This section uses 60% width but maintains a minimum of 32 characters wide to ensure readability even on very narrow screens.</p>
+		<h2><code>width: 60%; min-width: 32ch;</code>
+		</h2>
+		<p>This section uses 60% width but maintains a minimum of 32 characters wide
+			to ensure readability even on very narrow screens. This section uses 60%
+			width but maintains a minimum of 32 characters wide to ensure readability
+			even on very narrow screens. This section uses 60% width but maintains a
+			minimum of 32 characters wide to ensure readability even on very narrow
+			screens. This section uses 60% width but maintains a minimum of 32
+			characters wide to ensure readability even on very narrow screens.</p>
 	</section>
-
 	<section id="d">
-		<h2>Min Function (<code>width: min(72ch, 50%);</code>)</h2>
-		<p>This section takes the smaller value between 72 characters and 50% of the viewport width, ensuring optimal reading length.</p>
+		<h2><code>width: min(72ch, 50%);</code></h2>
+		<p>This section takes the smaller value between 72 characters and 50% of the
+			viewport width, ensuring optimal reading length. This section takes the
+			smaller value between 72 characters and 50% of the viewport width,
+			ensuring optimal reading length. This section takes the smaller value
+			between 72 characters and 50% of the viewport width, ensuring optimal
+			reading length.</p>
 	</section>
-
 	<section id="e">
-		<h2>Max Function (<code>width: max(72ch, 50%);</code>)</h2>
-		<p>This section takes the larger value between 72 characters and 50% of the viewport width, maintaining a minimum size while allowing growth.</p>
+		<h2><code>width: max(72ch, 50%);</code></h2>
+		<p>This section takes the larger value between 72 characters and 50% of the
+			viewport width, maintaining a minimum size while allowing growth.</p>
 	</section>
-
 	<section id="f">
-		<h2>Clamp Function (<code>width: clamp(30ch, 60%, 72ch);</code>)</h2>
-		<p>This section has a fixed width of 720px. It won't adapt to different screen sizes and may cause horizontal scrolling on smaller devices.</p>
+		<h2><code>width: clamp(30ch, 60%, 72ch);</code></h2>
+		<p>This section uses clamp to set a flexible width between 30 and 72
+			characters, with a preferred value of 60% of the viewport width.</p>
 	</section>
-
 </body>
 </html>
