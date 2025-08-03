@@ -67,6 +67,20 @@ The simplest example is to fix the page width:
 body { width: 720px; margin: 0 auto; }
 ```
 
+but CSS gives us some useful functions we can use to create a layout which is responsive up to a point, but won't become unusable on very large or very small devices. There's `min-width` and `max-width`:
+
+```css
+css-width-examples {
+  width: 60%;
+  max-width: 960px;
+  min-width: 420px;
+}
+```
+
+Modern CSS also defines two general-purpose functions `min` and `max`, which take any number of compatible units - lengths, measrueme
+
+which you can reduce to two lines using the `min` and `max` functions.1
+
 {% example responsive-width.html %}
 
 
