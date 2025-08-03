@@ -35,10 +35,11 @@ function drawChart() {
             chartData.addColumn('number', 'Actual Word Count');
             chartData.addColumn('number', 'Forecast');
             chartData.addColumn('number', '100k Target');
+            chartData.addColumn('number', 'Aug 14th Goal');
 
             // Convert actual data to chart format
             var rows = data.map(function(item) {
-                return [new Date(item.datetime), item.wordCount, null, null];
+                return [new Date(item.datetime), item.wordCount, null, null, null];
             });
 
             // Calculate linear regression for forecast
@@ -55,14 +56,34 @@ function drawChart() {
                 const daysToTarget = (targetWords - intercept) / slope;
                 const targetDate = new Date(firstDate.getTime() + daysToTarget * 24 * 60 * 60 * 1000);
                 
-                // Add forecast points
+                // Calculate August 14th goal line
+                const aug14Date = new Date('2025-08-14');
+                const daysToAug14 = (aug14Date - lastDate) / (1000 * 60 * 60 * 24);
+                const wordsNeededPerDay = (targetWords - currentWords) / daysToAug14;
+                
+                console.log(`Current pace: ${Math.round(slope)} words/day`);
+                console.log(`Required pace for Aug 14th: ${Math.round(wordsNeededPerDay)} words/day`);
+                console.log(`Days remaining to Aug 14th: ${Math.round(daysToAug14)}`);
+                
+                // Add daily data points for August 14th goal line
+                const startDate = new Date(lastDate);
+                startDate.setHours(0, 0, 0, 0); // Start from beginning of next day
+                startDate.setDate(startDate.getDate() + 1);
+                
+                for (let d = new Date(startDate); d <= aug14Date; d.setDate(d.getDate() + 1)) {
+                    const daysSinceStart = (d - lastDate) / (1000 * 60 * 60 * 24);
+                    const goalWords = currentWords + (daysSinceStart * wordsNeededPerDay);
+                    rows.push([new Date(d), null, null, null, Math.round(goalWords)]);
+                }
+                
+                // Add forecast points for the natural progression
                 const forecastDays = Math.max(30, (targetDate - lastDate) / (1000 * 60 * 60 * 24) + 30);
                 for (let i = 0; i <= forecastDays; i += 5) {
                     const forecastDate = new Date(lastDate.getTime() + i * 24 * 60 * 60 * 1000);
                     const daysSinceFirst = (forecastDate - firstDate) / (1000 * 60 * 60 * 24);
                     const forecastWords = slope * daysSinceFirst + intercept;
                     
-                    rows.push([forecastDate, null, Math.round(forecastWords), targetWords]);
+                    rows.push([forecastDate, null, Math.round(forecastWords), targetWords, null]);
                 }
                 
                 console.log(`Forecast: ${Math.round((targetDate - new Date()) / (1000 * 60 * 60 * 24))} days to reach 100k words (${targetDate.toISOString().split('T')[0]})`);
@@ -98,7 +119,8 @@ function drawChart() {
                 series: {
                     0: {color: '#ffff00', lineWidth: 3, pointSize: 6, type: 'line'}, // Actual - Yellow
                     1: {color: '#ff8800', lineWidth: 2, pointSize: 3, lineDashStyle: [5, 5], type: 'line'}, // Forecast - Orange dashed
-                    2: {color: '#00ff00', lineWidth: 1, pointSize: 0, lineDashStyle: [10, 5], type: 'line'} // Target - Green dashed
+                    2: {color: '#00ff00', lineWidth: 1, pointSize: 0, lineDashStyle: [10, 5], type: 'line'}, // Target - Green dashed
+                    3: {color: '#ff00ff', lineWidth: 3, pointSize: 5, lineDashStyle: [2, 2], type: 'line'} // Aug 14th Goal - Magenta with points
                 },
                 legend: {
                     position: 'bottom',
