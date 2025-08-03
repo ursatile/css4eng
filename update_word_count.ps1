@@ -48,17 +48,30 @@ if (Test-Path $progressFile) {
     $progressData = @()
 }
 
-# Add new data point
-$newDataPoint = [PSCustomObject]@{
-    datetime = $currentDateTime
-    wordCount = $totalWordCount
+# Add new data point only if word count has changed
+$shouldAddDataPoint = $true
+if ($progressData.Count -gt 0) {
+    $lastEntry = $progressData[-1]
+    if ($lastEntry.wordCount -eq $totalWordCount) {
+        $shouldAddDataPoint = $false
+        Write-Host "Word count unchanged ($totalWordCount), skipping progress data update"
+    }
 }
 
-$progressData += $newDataPoint
-
-# Save updated data
-$progressData | ConvertTo-Json | Set-Content $progressFile
-Write-Host "Progress data saved to $progressFile"
+if ($shouldAddDataPoint) {
+    $newDataPoint = [PSCustomObject]@{
+        datetime = $currentDateTime
+        wordCount = $totalWordCount
+    }
+    
+    $progressData += $newDataPoint
+    
+    # Save updated data
+    $progressData | ConvertTo-Json | Set-Content $progressFile
+    Write-Host "Progress data saved to $progressFile"
+} else {
+    Write-Host "Progress data not updated (no change in word count)"
+}
 
 git add .
 git commit -m "Word count: $totalWordCount"
