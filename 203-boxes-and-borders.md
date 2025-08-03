@@ -209,12 +209,12 @@ A `rem` is an `em` but it's relative to the *root font size* - so it'll give you
 Modern CSS also supports the following units; relative to the element's font, and their `r-` versions relative to the document root font:
 
 * `cap` / `rcap` = *cap height*, the height of a capital letter
-* `ch` / `rch` = the *advance measure* of the digit 0; width if text is flowing horizontally, height if text is flowing veritcally.
+* `ch` / `rch` = the *advance measure* of the digit 0; width if text is flowing horizontally, height if text is flowing vertically.
 * `ex` / `rex`, the height of a lowercase "x" 
 * `lh` / `rlh`, the *line height* 
 * `ic` / `ric` the width of the "水" glyph (CJK water ideograph, U+6C34)
 
-{% example typographic-units.html %}
+{% example typographic-units.html elements="style" iframe_style="height: 12em;"  %}
 
 #### Percentages
 

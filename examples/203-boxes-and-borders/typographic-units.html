@@ -4,124 +4,77 @@
 	<title>Typographic Units</title>
 	<style>
 		span {
-			margin-right: 10px;
-			border-style: solid;
-			border-color: red;
+			margin: 0 10px 5px 0;
+			border: 0px solid black;
 			padding: 5px;
-			outline: 1px solid #000;
+			background-color: silver;
 			display: inline-block;
 			width: 100px;
 			box-sizing: border-box;
 		}
 
-		span.em {
-			border-width: 0 1em 0 0
-		}
-
-		span.rem {
-			border-width: 0 1rem 0 0
-		}
-
-		span.cap {
-			border-width: 0 1cap 0 0;
-		}
-
-		span.rcap {
-			border-width: 0 1rcap 0 0;
-		}
-
-		span.ch {
-			border-width: 0 1ch 0 0;
-		}
-
-		span.rch {
-			border-width: 0 1rch 0 0;
-		}
-
-		span.ex {
-			border-width: 0 1ex 0 0;
-		}
-
-		span.rex {
-			border-width: 0 1rex 0 0;
-		}
-
-		span.lh {
-			border-width: 0 1lh 0 0;
-		}
-
-		span.rlh {
-			border-width: 0 1rlh 0 0;
-		}
-
-		span.ic {
-			border-width: 0 1ic 0 0;
-		}
-
-		span.ric {
-			border-width: 0 1ric 0 0;
-		}
+		span.em		{ border-width: 0 1em 0 0; }
+		span.rem 	{ border-width: 0 1rem 0 0; }
+		span.cap 	{ border-width: 0 1cap 0 0; }
+		span.rcap { border-width: 0 1rcap 0 0; }
+		span.ch 	{ border-width: 0 1ch 0 0; }
+		span.rch 	{ border-width: 0 1rch 0 0; }
+		span.ex 	{ border-width: 0 1ex 0 0; }
+		span.rex 	{ border-width: 0 1rex 0 0; }
+		span.lh 	{ border-width: 0 1lh 0 0; }
+		span.rlh 	{ border-width: 0 1rlh 0 0; }
+		span.ic 	{ border-width: 0 1ic 0 0; }
+		span.ric 	{ border-width: 0 1ric 0 0; }
 	</style>
 </head>
 <body>
 	<p>CSS relative typography units</p>
-	<span class="em">em:</span><span class="cap">cap:</span><span
-		class="ch">ch:</span><span class="ex">ex:</span><span
-		class="lh">lh:</span><span class="ic">ic:</span>
+	<span class="em">1em</span><span class="cap">1cap</span><span
+		class="ch">1ch</span><span class="ex">1ex</span><span
+		class="lh">1lh</span><span class="ic">1ic</span>
 	<br>
-	<span class="rem">rem:</span>
-	<span class="rcap">rcap:</span>
-	<span class="rch">rch:</span>
-	<span class="rex">rex:</span>
-	<span class="rlh">rlh:</span>
-	<span class="ric">ric:</span>
+	<span class="rem">1rem</span><span class="rcap">1rcap</span><span
+		class="rch">1rch</span><span class="rex">1rex</span><span
+		class="rlh">1rlh</span><span class="ric">1ric</span>
 	<section style="font-family: Arial Narrow;">
 		<p><code>font-family: Arial Narrow;</code></p>
-		<span class="em">em:</span>
-		<span class="cap">cap:</span>
-		<span class="ch">ch:</span>
-		<span class="ex">ex:</span>
-		<span class="lh">lh:</span>
-		<span class="ic">ic:</span>
+		<span class="em">1em</span><span class="cap">1cap</span><span
+			class="ch">1ch</span><span class="ex">1ex</span><span
+			class="lh">1lh</span><span class="ic">1ic</span>
 		<br>
-		<span class="rem">rem:</span>
-		<span class="rcap">rcap:</span>
-		<span class="rch">rch:</span>
-		<span class="rex">rex:</span>
-		<span class="rlh">rlh:</span>
-		<span class="ric">ric:</span>
+		<span class="rem">1rem</span><span class="rcap">1rcap</span><span
+			class="rch">1rch</span><span class="rex">1rex</span><span
+			class="rlh">1rlh</span><span class="ric">1ric</span>
+	</section>
+	<section style="font-family: monospace;">
+		<p><code>font-family: monospace;</code></p>
+		<span class="em">1em</span><span class="cap">1cap</span><span
+			class="ch">1ch</span><span class="ex">1ex</span><span
+			class="lh">1lh</span><span class="ic">1ic</span>
+		<br>
+		<span class="rem">1rem</span><span class="rcap">1rcap</span><span
+			class="rch">1rch</span><span class="rex">1rex</span><span
+			class="rlh">1rlh</span><span class="ric">1ric</span>
 	</section>
 	<section style="font-size: 200%;">
 		<p><code>font-size: 200%;</code></p>
-		<span class="em">em:</span>
-		<span class="cap">cap:</span>
-		<span class="ch">ch:</span>
-		<span class="ex">ex:</span>
-		<span class="lh">lh:</span>
-		<span class="ic">ic:</span>
+		<span class="em">1em</span><span class="cap">1cap</span><span
+			class="ch">1ch</span><span class="ex">1ex</span><span
+			class="lh">1lh</span><span class="ic">1ic</span>
 		<br>
-		<span class="rem">rem:</span>
-		<span class="rcap">rcap:</span>
-		<span class="rch">rch:</span>
-		<span class="rex">rex:</span>
-		<span class="rlh">rlh:</span>
-		<span class="ric">ric:</span>
+		<span class="rem">1rem</span><span class="rcap">1rcap</span><span
+			class="rch">1rch</span><span class="rex">1rex</span><span
+			class="rlh">1rlh</span><span class="ric">1ric</span>
 	</section>
 	<section style="line-height: 50px;">
 		<p><code>line-height: 50px;</code></p>
-		<span class="em">em:</span>
-		<span class="cap">cap:</span>
-		<span class="ch">ch:</span>
-		<span class="ex">ex:</span>
-		<span class="lh">lh:</span>
-		<span class="ic">ic:</span>
+		<span class="em">1em</span><span class="cap">1cap</span><span
+			class="ch">1ch</span><span class="ex">1ex</span><span
+			class="lh">1lh</span><span class="ic">1ic</span>
 		<br>
-		<span class="rem">rem:</span>
-		<span class="rcap">rcap:</span>
-		<span class="rch">rch:</span>
-		<span class="rex">rex:</span>
-		<span class="rlh">rlh:</span>
-		<span class="ric">ric:</span>
+		<span class="rem">1rem</span><span class="rcap">1rcap</span><span
+			class="rch">1rch</span><span class="rex">1rex</span><span
+			class="rlh">1rlh</span><span class="ric">1ric</span>
 	</section>
 
 </body>
