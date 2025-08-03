@@ -29,6 +29,29 @@ Get-ChildItem -Path . -Filter *.md | ForEach-Object {
 Write-Host "Total word count: $totalWordCount"
 Write-Host "Total duration: $($totalWordCount / 200) minutes"
 
+# Capture progress data for chart
+$progressFile = "progress_data.json"
+$currentDateTime = Get-Date -Format "yyyy-MM-ddTHH:mm:ss"
+
+# Read existing data or create empty array
+if (Test-Path $progressFile) {
+    $progressData = Get-Content $progressFile | ConvertFrom-Json
+} else {
+    $progressData = @()
+}
+
+# Add new data point
+$newDataPoint = @{
+    datetime = $currentDateTime
+    wordCount = $totalWordCount
+}
+
+$progressData += $newDataPoint
+
+# Save updated data
+$progressData | ConvertTo-Json | Set-Content $progressFile
+Write-Host "Progress data saved to $progressFile"
+
 git add .
 git commit -m "Word count: $totalWordCount"
 
