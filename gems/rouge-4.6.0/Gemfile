@@ -5,6 +5,8 @@ source 'http://rubygems.org'
 gemspec
 
 gem 'rake'
+gem 'rack'
+gem 'rackup'
 
 gem 'minitest', '>= 5.0'
 gem 'minitest-power_assert'
