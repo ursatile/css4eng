@@ -81,17 +81,7 @@ If you do need to modify any other variables, the `font-variation-settings` prop
 
 Variable fonts are so powerful, and so flexible, that we're not even going to attempt an exhaustive description of what they can do, but here's an example of how to define different font weights and widths when using a variable font file.
 
-{% example variable-fonts.html iframe_style="height: 20em;" %}
-
-
-
-
-
-
-
-
-
-
+{% example variable-fonts.html iframe_style="height: 20em;" elements="style, body" %}
 
 ## CSS Text Properties
 
@@ -119,7 +109,13 @@ By the way, to tell whether a font is using synthetic oblique or true italics, c
 
 {% example font-style.html iframe_style="height: 16em;" %}
 
-`font-weight` can be `normal`, `bold`, `lighter`, `bolder`, or a number between 1 and 1000.
+`font-weight` can be `normal`, `bold`, `lighter`, `bolder`, or a number between 1 and 1000, and `line-height` is the distance between the baseline of adjacent lines of text.
+
+
+
+
+
+
 
 
 
@@ -148,6 +144,8 @@ By the way, to tell whether a font is using synthetic oblique or true italics, c
 ## Notes
 
 https://opentype.js.org/font-inspector.html
+
+https://fonts.google.com/knowledge/introducing_type/introducing_variable_fonts
 
 
 

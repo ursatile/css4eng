@@ -4,59 +4,51 @@
 	<title>Variable Fonts</title>
 	<style>
 		@font-face {
-			font-family: 'Roboto Flexable';
+			font-family: 'Roboto Flex';
 			src: url(./fonts/roboto-flex/roboto-flex-variable.ttf) format('truetype');
 			font-style: normal;
 			font-weight: 100 1000;
-			font-stretch: 1% 500%;
+			font-stretch: 50% 500%;
 			font-display: swap;
 		}
 
 		body {
-			font-family: "Roboto Flexable", sans-serif;
-			font-size: 1.25rem;
+			font-family: "Roboto Flex", sans-serif;
 		}
 
 		h1 {
-			font-weight: 100;
-			font-stretch: 120%;
+			font-weight: 500;
+			font-stretch: 150%;
 		}
 
 		h2 {
-			font-weight: 400;
+			font-weight: 100;
+			font-stretch: 50%;
 		}
 
 		h3 {
 			font-weight: 600;
-		}
-
-		h4 {
-			font-weight: 900;
-		}
-
-		h5 {
-			font-variation-settings:
-				"slnt" 0,
-				"wdth" 200,
-				"GRAD" 0,
-				"XOPQ" 96,
-				"XTRA" 468,
-				"YOPQ" 79,
-				"YTAS" 750,
-				"YTDE" -203,
-				"YTFI" 738,
-				"YTLC" 514,
-				"YTUC" 712;
+			font-variation-settings: "slnt" -10;
 		}
 	</style>
 </head>
 <body>
-	<h1>Heading 1</h1>
-	<h2>Heading 2</h2>
-	<h3>Heading 3</h3>
-	<h4>Heading 4</h4>
-	<h5>Heading 5</h5>
-	<h6>Heading 6</h6>
-	<p>Paragraph</p>
+	<h1>Showcasing CSS Variable Fonts</h1>
+	<p>In which we discuss the potential of variable fonts, their ability to
+		provide multiple font variations within a single file, and how they enable
+		dynamic typography adjustments for responsive design and enhanced user
+		experiences.</p>
+	<h2>What’s The Big Idea?</h2>
+	<p>Instead of having to provide multiple versions of a font, which means
+		multiple files,
+		which means multiple HTTP requests, we can provide a single variable font
+		and
+		then create the weights and variations we need on the client.</p>
+	<p>It’s a nice idea, you must admit.</p>
+	<h3>Well? Does It Work?</h3>
+	<p>I guess? Sometimes? It's temperamental, to say the least, but with a bit
+		of patience and the right font files, you can make it work. Mostly.
+	</p>
+
 </body>
 </html>
