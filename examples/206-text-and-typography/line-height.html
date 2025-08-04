@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Line Height</title>
+	<title>Line Height</title>
 	<style>
-		html, body { margin: 0; padding: 0; }
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
 		div {
 			box-sizing: border-box;
 			height: 100vh;
 			float: left;
 			width: 20%;
 			padding: 8px;
+
 			&:not(last-child) {
 				border-right: 2px solid #999;
 			}
@@ -17,13 +23,20 @@
 	</style>
 </head>
 <body>
+	<div style="line-height: 48px !important;">
+		<h1>line-height: 48px;</h1><br>
+		<p>line-height: 48px;<br>
+			line-height: 48px;<br>
+			line-height: 48px;</p>
+	</div>
+
 	<div style="line-height: 140%;">
 		line-height: 140%;<br>
 		line-height: 140%;<br>
 		line-height: 140%;<br>
 		line-height: 140%;<br>
 	</div>
-		<div style="line-height: 2rem;">
+	<div style="line-height: 2rem;">
 		line-height: 2rem;<br>
 		line-height: 2rem;<br>
 		line-height: 2rem;<br>
