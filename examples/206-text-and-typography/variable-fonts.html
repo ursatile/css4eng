@@ -1,35 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Working font-stretch Example (IBM Plex Sans)</title>
-  <style>
-    @font-face {
-      font-family: 'IBMPlexSansVar';
-      src: url('https://cdn.jsdelivr.net/gh/IBM/plex@v6.3.0/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSansVar-Roman.woff2') format('woff2');
-      font-weight: 400 700;
-      font-stretch: 75% 200%;
-      font-display: swap;
-    }
-    body {
-      font-family: 'IBMPlexSansVar', sans-serif;
-      font-size: 2rem;
-      margin: 2em;
-    }
-    .normal {
-      font-stretch: normal;
-    }
-    .condensed {
-      font-stretch: 80%;
-    }
-    .expanded {
-      font-stretch: 200%;
-    }
-  </style>
+	<title>Variable Fonts</title>
+	<style>
+		@font-face {
+			font-family: 'Roboto Flex';
+			font-style: normal;
+			font-weight: 100 1000;
+			font-stretch: 100%;
+			font-display: swap;
+			src: url(./fonts/roboto-flex/roboto-flex-latin-ext.woff2) format('woff2');
+		}
+
+		body {
+			font-family: "Roboto Flex", sans-serif;
+			font-size: 1.25rem;
+		}
+
+		h1 {
+			font-weight: 100;
+		}
+
+		h2 {
+			font-weight: 400;
+		}
+
+		h3 {
+			font-weight: 600;
+		}
+
+		h4 {
+			font-weight: 900;
+		}
+
+		h5 {
+			font-variation-settings:
+				"slnt" 0,
+				"wdth" 200,
+				"GRAD" 0,
+				"XOPQ" 96,
+				"XTRA" 468,
+				"YOPQ" 79,
+				"YTAS" 750,
+				"YTDE" -203,
+				"YTFI" 738,
+				"YTLC" 514,
+				"YTUC" 712;
+		}
+	</style>
 </head>
 <body>
-  <div class="normal">This is font-stretch: normal</div>
-  <div class="condensed">This is font-stretch: 80%</div>
-  <div class="expanded">This is font-stretch: 120%</div>
+	<h1>Heading 1</h1>
+	<h2>Heading 2</h2>
+	<h3>Heading 3</h3>
+	<h4>Heading 4</h4>
+	<h5>Heading 5</h5>
+	<h6>Heading 6</h6>
+	<p>Paragraph</p>
 </body>
 </html>
