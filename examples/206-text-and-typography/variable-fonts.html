@@ -3,22 +3,21 @@
 <head>
 	<title>Variable Fonts</title>
 	<style>
-		@font-face {
-			font-family: 'Roboto Flex';
-			font-style: normal;
-			font-weight: 100 1000;
-			font-stretch: 100%;
-			font-display: swap;
-			src: url(./fonts/roboto-flex/roboto-flex-latin-ext.woff2) format('woff2');
-		}
+@font-face {
+  src: url("https://mdn.github.io/shared-assets/fonts/LeagueMono-VF.ttf");
+  font-family: "Roboto Flexable";
+  font-style: normal;
+  font-stretch: 1% 500%; /* Required by Chrome */
+}
 
 		body {
-			font-family: "Roboto Flex", sans-serif;
+			font-family: "Roboto Flexable", sans-serif;
 			font-size: 1.25rem;
 		}
 
 		h1 {
 			font-weight: 100;
+			font-stretch: 100%;
 		}
 
 		h2 {
