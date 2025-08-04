@@ -44,6 +44,16 @@ For units like `em`, which are relative, font size is relative to the parent ele
 
 {% example relative-font-size.html iframe_style="height: 8em;" elements="style, body" %}
 
+`font-style` is pretty simple: it's either `normal` - sometimes referred to as *Roman type*, `oblique` or `italic`. 
+
+Technically, *oblique* text is regular text that's been skewed at an angle, and *italic* text is a different version of the font, but in practice many fonts just use an oblique font for italics rather than creating a completely separate font variant, so you won't see any difference. The CSS spec allows you to specify an angle for oblique text, which can even be negative, creating a backwards-italic effect - but right now that only works in Firefox.
+
+{% example font-style.html %}
+
+
+
+
+
 
 
 
