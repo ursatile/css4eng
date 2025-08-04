@@ -83,6 +83,23 @@ Variable fonts are so powerful, and so flexible, that we're not even going to at
 
 {% example variable-fonts.html iframe_style="height: 20em;" elements="style, body" %}
 
+I'm going to be honest here: this section very nearly ended up being one line that just says "variable fonts are a disaster and a total waste of your time." There's a significant difference between what the spec and docs say is going to work, and what actually works. To get the demo above to work properly, I had to:
+
+* Use the TTF version of Roboto Flex. The WOFF2 version doesn't work and I have no idea why.
+
+* Add a couple of declarations:
+
+  ```   font-weight: 100 1000;
+  font-weight: 100 1000;
+  font-stretch: 50% 150%;
+  ```
+
+  to the `@font-face` rule; I'm assuming this tells the browser what range of values the variable font can handle. I arrived at the values above by trial and error.
+
+* Use the Google Fonts type tester to determine the supported range of values for this particular font (e.g. the `slnt` property can only range from -10 to 0)
+
+And if you miss a step, or make a mistake, you don't get any sort of error message; it just doesn't work. It's a really interesting tech, with some very neat ideas in it, but I wouldn't use it on a production system right now unless I was working directly with the team that created the font.
+
 ## CSS Text Properties
 
 As well as the choice of font, we can change the appearance of text using `font` and `text` properties.
@@ -109,7 +126,9 @@ By the way, to tell whether a font is using synthetic oblique or true italics, c
 
 {% example font-style.html iframe_style="height: 16em;" %}
 
-`font-weight` can be `normal`, `bold`, `lighter`, `bolder`, or a number between 1 and 1000, and `line-height` is the distance between the baseline of adjacent lines of text.
+`font-weight` can be `normal`, `bold`, `lighter`, `bolder`, or a number between 1 and 1000, and `line-height` is the distance between the baseline of adjacent lines of text, as a CSS unit.
+
+{% example line-height.html iframe_style="height: 10em;" %}
 
 
 
