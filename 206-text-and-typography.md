@@ -66,7 +66,26 @@ Notice how the rules all use the same `font-family: 'PT Sans'`, so that we can s
 
 Regular fonts come in one variety per file: our `pt-sans.woff` file only contains the regular, normal version of PT Sans; if we want it to be bold or italic, we either need to find another font, or rely on font synthesis.
 
-Variable fonts  
+A variable font gives you a lot more flexibility; the font designers can choose to turn just about any property of the font into a parameter. Check out Roboto Flex at v-fonts.com for a live demo:
+
+* [https://v-fonts.com/fonts/roboto-flex](https://v-fonts.com/fonts/roboto-flex)
+
+Variable fonts are part of the OpenType font specification, which defines literally dozens of variables. As far as CSS is concerned, there's five fields we care about:
+
+* `font-weight` maps to the variable `weight`
+* `font-stretch` maps to the variable `width`
+* `font-style: italic | oblique` maps to the `slant` and `italic` properties
+* `font-optical-size` maps to the `optical-size` property.
+
+If you do need to modify any other variables, the `font-variation-settings` property will let specify name/value pairs for any number of font variables.
+
+Variable fonts are so powerful, and so flexible, that we're not even going to attempt an exhaustive description of what they can do, but here's an example of how to define different font weights and widths when using a variable font file.
+
+{% example variable-fonts.html iframe_style="height: 20em;" %}
+
+
+
+
 
 
 
@@ -101,6 +120,8 @@ By the way, to tell whether a font is using synthetic oblique or true italics, c
 {% example font-style.html iframe_style="height: 16em;" %}
 
 `font-weight` can be `normal`, `bold`, `lighter`, `bolder`, or a number between 1 and 1000.
+
+
 
 
 
