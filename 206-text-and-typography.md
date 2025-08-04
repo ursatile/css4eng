@@ -42,7 +42,7 @@ Font-size can be one of what I call the T-shirt sizes: `xx-small`, `x-small`, `s
 
 For units like `em`, which are relative, font size is relative to the parent element, so watch out for compounding font sizes:
 
-{% example relative-font-size.html iframe_style="height: 20em;" elements="style, body" %}
+{% example relative-font-size.html iframe_style="height: 8em;" elements="style, body" %}
 
 
 
