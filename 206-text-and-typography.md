@@ -26,42 +26,6 @@ The keyword `sans-serif` there isn't a font, it's a generic font family name. CS
 
 This example shows a range of CSS font stacks, along with a sample image showing what they look like on my Windows 11 workstation.
 
-## CSS Text Properties
-
-As well as the choice of font, we can change the appearance of text using `font` and `text` properties.
-
-Now, folks, web typography can get unbelievably complicated. A lot of very smart people have spent decades figuring out how to make all of this stuff work, and a fair amount of that time and effort has been spent covering edge cases that the vast majority of us will never encounter: if you want to use CSS to lay out a panel from a graphic novel where one character's arguing in Hebrew and the other one's arguing back in Japanese and the whole thing's rotated by 30% for dramatic effect, you can absolutely do that -- but if we go into every possible option of every typographic property in CSS, we'll be here for hours and you'll learn a whole bunch of things that I'd bet good money you'll never have to use. So I'm going to focus on the ones I think are relevant to the most common scenarios, and I'll leave you some links & pointers where you can go and read up on the rest of it if you really, really want to.
-
-First up, the font properties - `font-family`, `font-size`, `font-stretch`, `font-style`, `font-variant`, `font-weight`, and `line-height`.
-
-Font-family, we've already seen.
-
-Font-size can be one of what I call the T-shirt sizes: `xx-small`, `x-small`, `small`, `medium`, `large`, `x-large`, `xx-large`, `xxx-large`, a relative size keyword `larger` or `smaller`, a length value, or a percentage.
-
-{% example font-size.html iframe_style="height: 20em;" elements="style, body" %}
-
-For units like `em`, which are relative, font size is relative to the parent element, so watch out for compounding font sizes:
-
-{% example relative-font-size.html iframe_style="height: 8em;" elements="style, body" %}
-
-`font-style` is pretty simple: it's either `normal` - sometimes referred to as *Roman type*, `oblique` or `italic`. 
-
-Technically, *oblique* text is regular text that's been skewed at an angle, and *italic* text is a different version of the font, but in practice many fonts just use an oblique font for italics rather than creating a completely separate font variant, so you won't see any difference. The CSS spec allows you to specify an angle for oblique text, which can even be negative, creating a backwards-italic effect - but right now that only works in Firefox.
-
-{% example font-style.html %}
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Using Web Fonts
 
 If you want to use a font which isn't widely available, you can tell the browser to download the font file from the web - either directly from your own site, or from an external provider like Google Fonts. First, find the font you want to use. I've always liked the font PT Sans Narrow, so we're going to use that one as our example. Head over to [www.fontsquirrel.com/fonts/pt-sans](https://www.fontsquirrel.com/fonts/pt-sans), click on "Webfont Kit": 
@@ -97,6 +61,52 @@ Next, we'll add `@font-face` rules for each variant, specifying the URL to the `
 {% example pt-sans-variants.html iframe_style="height: 11em;" elements="style" mark_lines="17,18,23,24,29,30,31" %}
 
 Notice how the rules all use the same `font-family: 'PT Sans'`, so that we can set a document in PT Sans, and elements with intrinsic styling, like `<h1>` and `<em>` , will use the correct font variant.
+
+## Variable Fonts
+
+Regular fonts come in one variety per file: our `pt-sans.woff` file only contains the regular, normal version of PT Sans; if we want it to be bold or italic, we either need to find another font, or rely on font synthesis.
+
+Variable fonts  
+
+
+
+
+
+
+
+## CSS Text Properties
+
+As well as the choice of font, we can change the appearance of text using `font` and `text` properties.
+
+Now, folks, web typography can get unbelievably complicated. A lot of very smart people have spent decades figuring out how to make all of this stuff work, and a fair amount of that time and effort has been spent covering edge cases that the vast majority of us will never encounter: if you want to use CSS to lay out a panel from a graphic novel where one character's arguing in Hebrew and the other one's arguing back in Japanese and the whole thing's rotated by 30% for dramatic effect, you can absolutely do that -- but if we go into every possible option of every typographic property in CSS, we'll be here for hours and you'll learn a whole bunch of things that I'd bet good money you'll never have to use. So I'm going to focus on the ones I think are relevant to the most common scenarios, and I'll leave you some links & pointers where you can go and read up on the rest of it if you really, really want to.
+
+First up, the font properties - `font-family`, `font-size`, `font-stretch`, `font-style`, `font-variant`, `font-weight`, and `line-height`.
+
+Font-family, we've already seen.
+
+Font-size can be one of what I call the T-shirt sizes: `xx-small`, `x-small`, `small`, `medium`, `large`, `x-large`, `xx-large`, `xxx-large`, a relative size keyword `larger` or `smaller`, a length value, or a percentage.
+
+{% example font-size.html iframe_style="height: 20em;" elements="style, body" %}
+
+For units like `em`, which are relative, font size is relative to the parent element, so watch out for compounding font sizes:
+
+{% example relative-font-size.html iframe_style="height: 8em;" elements="style, body" %}
+
+`font-style` is pretty simple: it's either `normal` - sometimes referred to as *Roman type*, `oblique` or `italic`. 
+
+Technically, *oblique* text is regular text that's been skewed at an angle, and *italic* text is a different version of the font. In practice many fonts just use an oblique font for italics rather than creating a completely separate font variant, and if an italic version of a font is available, the browser will often use that instead of rendering a true oblique version, so the whole thing is a bit of a mess. The CSS spec allows you to specify an angle for oblique text, which can even be negative, creating a backwards-italic effect - but right now that only works in Firefox.
+
+By the way, to tell whether a font is using synthetic oblique or true italics, compare the lowercase letters --- a, f, g, j and z often have very different glyphs in true italic vs synthetic oblique versions of the font.
+
+{% example font-style.html iframe_style="height: 16em;" %}
+
+`font-weight` can be `normal`, `bold`, `lighter`, `bolder`, or a number between 1 and 1000.
+
+
+
+
+
+
 
 
 
