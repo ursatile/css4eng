@@ -2,7 +2,7 @@
 title: "Text & Typography"
 layout: home
 nav_order: 206
-word_count: 20
+word_count: 75
 target_minutes: 15
 examples: examples/206-text-and-typography
 ---
