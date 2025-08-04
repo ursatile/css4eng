@@ -130,7 +130,11 @@ By the way, to tell whether a font is using synthetic oblique or true italics, c
 
 {% example line-height.html iframe_style="height: 10em;" %}
 
+FUCK CSS TYPOGRAPHY
 
+IT IS REALLY REALLY REALLY FUCKING DULL
+
+FUCK IT IN THE BIN
 
 
 
