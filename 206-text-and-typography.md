@@ -22,7 +22,7 @@ The browser's going to start at the beginning: "do I have Franklin Gothic?" If t
 
 The keyword `sans-serif` there isn't a font, it's a generic font family name. CSS defines five of these --- `serif`, `sans-serif`, `monospace`, `cursive`, and `fantasy` --- but it's up to the browser to decide what typeface to use for each generic family.
 
-{% example generic-font-family.html iframe_style="height: 20em;" %}
+{% example generic-font-family.html iframe_style="height: 23em;" elements="section" %}
 
 This example shows a range of CSS font stacks, along with a sample image showing what they look like on my Windows 11 workstation.
 
