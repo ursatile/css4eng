@@ -26,6 +26,32 @@ The keyword `sans-serif` there isn't a font, it's a generic font family name. CS
 
 This example shows a range of CSS font stacks, along with a sample image showing what they look like on my Windows 11 workstation.
 
+## CSS Text Properties
+
+As well as the choice of font, we can change the appearance of text using `font` and `text` properties.
+
+Now, folks, web typography can get unbelievably complicated. A lot of very smart people have spent decades figuring out how to make all of this stuff work, and a fair amount of that time and effort has been spent covering edge cases that the vast majority of us will never encounter: if you want to use CSS to lay out a panel from a graphic novel where one character's arguing in Hebrew and the other one's arguing back in Japanese and the whole thing's rotated by 30% for dramatic effect, you can absolutely do that -- but if we go into every possible option of every typographic property in CSS, we'll be here for hours and you'll learn a whole bunch of things that I'd bet good money you'll never have to use. So I'm going to focus on the ones I think are relevant to the most common scenarios, and I'll leave you some links & pointers where you can go and read up on the rest of it if you really, really want to.
+
+First up, the font properties - `font-family`, `font-size`, `font-stretch`, `font-style`, `font-variant`, `font-weight`, and `line-height`.
+
+Font-family, we've already seen.
+
+Font-size can be one of what I call the T-shirt sizes: `xx-small`, `x-small`, `small`, `medium`, `large`, `x-large`, `xx-large`, `xxx-large`, a relative size keyword `larger` or `smaller`, a length value, or a percentage.
+
+{% example font-size.html iframe_style="height: 20em;" elements="style, body" %}
+
+For units like `em`, which are relative, font size is relative to the parent element, so watch out for compounding font sizes:
+
+{% example relative-font-size.html iframe_style="height: 20em;" elements="style, body" %}
+
+
+
+
+
+
+
+
+
 ## Using Web Fonts
 
 If you want to use a font which isn't widely available, you can tell the browser to download the font file from the web - either directly from your own site, or from an external provider like Google Fonts. First, find the font you want to use. I've always liked the font PT Sans Narrow, so we're going to use that one as our example. Head over to [www.fontsquirrel.com/fonts/pt-sans](https://www.fontsquirrel.com/fonts/pt-sans), click on "Webfont Kit": 
