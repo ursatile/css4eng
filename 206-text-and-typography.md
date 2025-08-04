@@ -20,9 +20,15 @@ p {
 
 The browser's going to start at the beginning: "do I have Franklin Gothic?" If that font's available, use it, otherwise check for Arial; if Arial's not available, use Helvetica, and if that's not available either, use any generic sans-serif font.
 
-The keyword `sans-serif` there isn't a font, it's a generic font family name. CSS defines five of these: `serif`, `sans-serif`, `monospace`, `cursive`, and `fantasy` --- but it's up to the browser to decide what typeface to use for each generic family:
+The keyword `sans-serif` there isn't a font, it's a generic font family name. CSS defines five of these --- `serif`, `sans-serif`, `monospace`, `cursive`, and `fantasy` --- but it's up to the browser to decide what typeface to use for each generic family.
 
 {% example generic-font-family.html iframe_style="height: 20em;" %}
+
+This example shows a range of CSS font stacks, along with a sample image showing what they look like on my Windows 11 workstation.
+
+
+
+
 
 
 
