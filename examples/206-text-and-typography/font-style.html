@@ -15,23 +15,32 @@
 		}
 
 		@font-face {
-			font-family: 'PT Sans Oblique';
+			font-family: "My Font Family";
 			src: url('fonts/pt-sans/pt-sans.woff') format('woff');
 		}
 
-		body {
+		h1 {
 			font-family: "PT Sans";
 		}
 	</style>
 </head>
 <body>
-	<p>normal: <span style="font-style: normal;">Sphinx of black quartz, judge my vow!</span></p>
-	<p>italic: <span style="font-style: italic;">Sphinx of black quartz, judge my vow!</span></p>
-	<p>oblique: <span style="font-style: oblique;">Sphinx of black quartz, judge my vow!</span></p>
-	<p>oblique 30deg: <span style="font-style: oblique 30deg;">Sphinx of black quartz, judge my vow!</span></p>
-	<p>oblique -30deg: <span style="font-style: oblique -30deg;">Sphinx of black quartz, judge my vow!</span></p>
-	<h1>abcdefghijklmnopqrstuvwxyz</h1>
-	<h1 style="font-style: italic;">falafel</h1>
-	<h1 style="font-family: PT Sans Oblique; font-style: oblique;">falafel</h1>
+	<p>normal: <span style="font-style: normal;">
+			Sphinx of black quartz, judge my vow!</span></p>
+	<p>italic: <span style="font-style: italic;">
+			Sphinx of black quartz, judge my vow!</span></p>
+	<p>oblique: <span style="font-style: oblique;">
+			Sphinx of black quartz, judge my vow!</span></p>
+	<p>oblique 30deg: <span style="font-style: oblique 30deg;">
+			Sphinx of black quartz, judge my vow!</span></p>
+	<p>oblique -30deg: <span style="font-style: oblique -30deg;">
+			Sphinx of black quartz, judge my vow!</span></p>
+	<h1>
+		“falafel” (normal), vs
+		<span style="font-style: italic;">“falafel” (italic)</span>,
+		vs
+		<span style="font-family: My Font Family; font-style: oblique;">“falafel”
+			(oblique)</span>
+	</h1>
 </body>
 </html>
