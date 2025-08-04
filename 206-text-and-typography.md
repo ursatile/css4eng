@@ -36,13 +36,33 @@ You'll get the option to download a subset of the font - if you know your websit
 
 All we actually need here are the WOFF files, so unzip that file and search through it for the files with .woff extension. You might want to rename them as you go - FontSquirrel's default filenames aren't terribly helpful. If you're using PT Sans, you can grab a ZIP file of just the WOFF files (and the license!) here: [pt-sans.zip]({{page.examples}}/pt-sans.zip)
 
-Next, we need to create the CSS rules which will import those font files and register them with the associated `font-family` name. When it comes to variants like bold and italic, there are three different things that can happen:
+Next, we need to create the CSS rules which will import those font files and register them with the associated `font-family` name:
+
+{% example pt-sans.html iframe_style="height: 11em;" elements="style, body" %}
+
+What's interesting here is that the WOFF file we've provided, `pt-sans.woff`, only defines the regular version of that typeface -- it doesn't include a bold version or an italic version. So where are those variants coming from?
+
+Those are what are called *synthetic fonts*; they're created by the operating system using something called font synthesis. To make a font italic, the OS sort of skews everything sideways a bit; to make it bold, it'll draw every letter with a heavy outline stroke.
+
+That works great, right up to the point where you have a client who is really, *really* particular about fonts and typography --- maybe they've even hired a font foundry to design their company font; they've paid a lot of money for those bold and italic versions and by golly they want to make sure they get used.
+
+First thing to do if you find yourself in this situation is to turn off font synthesis:
+
+{% example pt-sans-no-synthesis.html iframe_style="height: 11em;" elements="style" mark_lines="7" %}
+
+
+
+
+
+
+
+ When it comes to variants like bold and italic, there are three different things that can happen:
 
 1. You treat them as completely different font families, so that `PT Sans` and `PT Sans Bold` are entirely separate.
 2. You import two separate files into the same `font-family`, and specify that one of them is regular weight and the other is bold.
 3. You just import the regular variant, and let the browser - or rather, the operating system - create bold and italic versions of it as required. This is known as *font synthesis*.
 
-{% example pt-sans.html iframe_style="height: 20em;" %}
+
 
 
 
