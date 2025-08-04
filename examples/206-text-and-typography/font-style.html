@@ -3,7 +3,25 @@
 <head>
 	<title>Font Style</title>
 	<style>
-		p { font-family: sans-serif; }
+		@font-face {
+			font-family: 'PT Sans';
+			src: url('fonts/pt-sans/pt-sans.woff') format('woff');
+		}
+
+		@font-face {
+			font-family: 'PT Sans';
+			src: url('fonts/pt-sans/pt-sans-italic.woff') format('woff');
+			font-style: italic;
+		}
+
+		@font-face {
+			font-family: 'PT Sans Oblique';
+			src: url('fonts/pt-sans/pt-sans.woff') format('woff');
+		}
+
+		body {
+			font-family: "PT Sans";
+		}
 	</style>
 </head>
 <body>
@@ -13,8 +31,7 @@
 	<p>oblique 30deg: <span style="font-style: oblique 30deg;">Sphinx of black quartz, judge my vow!</span></p>
 	<p>oblique -30deg: <span style="font-style: oblique -30deg;">Sphinx of black quartz, judge my vow!</span></p>
 	<h1>abcdefghijklmnopqrstuvwxyz</h1>
-	<h1 style="font-style: oblique;">abcdefghijklmnopqrstuvwxyz</h1>
-	<h1 style="font-style: italic;">abcdefghijklmnopqrstuvwxyz</h1>
-
+	<h1 style="font-style: italic;">falafel</h1>
+	<h1 style="font-family: PT Sans Oblique; font-style: oblique;">falafel</h1>
 </body>
 </html>
