@@ -3,7 +3,7 @@ title: "Presenting Tabular Data"
 layout: home
 nav_order: 211
 word_count: 31
-target_minutes: 20
+target_minutes: 15
 examples: examples/211-presenting-tabular-data
 ---
 # Presenting Tabular Data (20m)

@@ -3,7 +3,7 @@ title: "Conclusion"
 layout: home
 nav_order: 501
 word_count: 24
-target_minutes: 20
+target_minutes: 10
 examples: examples/501-conclusion
 ---
 # Conclusion (20m)

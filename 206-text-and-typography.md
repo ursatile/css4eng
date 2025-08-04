@@ -3,9 +3,19 @@ title: "Text & Typography"
 layout: home
 nav_order: 206
 word_count: 20
-target_minutes: 20
+target_minutes: 15
 examples: examples/206-text-and-typography
 ---
+Every example we've looked at so far has used the browser's default font, and in my case, that's Times New Roman. And I don't know about you folks, but I'm getting a little bored of Times New Roman... nothing wrong with it, it's just a bit... nondescript, you know?
+
+Let's mix things up a bit.
+
+
+
+
+
+
+
 # Text & Typography (20m)
 
 ## Course Content
