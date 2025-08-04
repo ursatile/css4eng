@@ -36,9 +36,15 @@ You'll get the option to download a subset of the font - if you know your websit
 
 All we actually need here are the WOFF files, so unzip that file and search through it for the files with .woff extension. You might want to rename them as you go - FontSquirrel's default filenames aren't terribly helpful. If you're using PT Sans, you can grab a ZIP file of just the WOFF files (and the license!) here: [pt-sans.zip]({{page.examples}}/pt-sans.zip)
 
-Next, we need to create the CSS rules which will import those font files and register them with the associated `font-family` name.
+Next, we need to create the CSS rules which will import those font files and register them with the associated `font-family` name. When it comes to variants like bold and italic, there are three different things that can happen:
+
+1. You treat them as completely different font families, so that `PT Sans` and `PT Sans Bold` are entirely separate.
+2. You import two separate files into the same `font-family`, and specify that one of them is regular weight and the other is bold.
+3. You just import the regular variant, and let the browser - or rather, the operating system - create bold and italic versions of it as required. This is known as *font synthesis*.
 
 {% example pt-sans.html iframe_style="height: 20em;" %}
+
+
 
 
 
