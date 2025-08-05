@@ -1,5 +1,71 @@
 git add .
-git commit -m "Snapshot of everything before running update_word_count.ps1"
+git commit -m "Snapshot of everything before running update.ps1"
+
+$oldPartNumber = 0
+
+Get-ChildItem -Path . -Filter *.md | Sort-Object Name | ForEach-Object {
+	$oldFilename = $_.BaseName
+	if ($oldFilename -match '^(\d)(\d+)[a-z]?-(.*)$') {
+		$newPartNumber = $matches[1]
+		if ($newPartNumber -eq $oldPartNumber) {
+			$newSectionNumber = $newSectionNumber + 1
+		}
+		else {
+			$oldPartNumber = $newPartNumber
+			$newSectionNumber = 1
+		}
+		$title = $matches[3]
+		$newFileName = "{0}{1:00}-$title" -f [int]$newPartNumber, [int]$newSectionNumber
+		Rename-Item -Path "$oldFilename.md" -NewName "$newFileName.md"
+		Write-Host "$oldFileName.md > $newFileName"
+		if (Test-Path "examples\$oldFilename") {
+			Write-Host "examples\$oldFilename > examples\$newFileName"
+			if ($oldFilename -ne $newFileName) {
+				Rename-Item -Path "examples\$oldFilename" -NewName $newFileName
+			}
+		}
+	}
+ else {
+		Write-Host "Filename does not match expected pattern: $($_.Name)"
+	}
+}
+
+Get-ChildItem -Path . -Filter *.md | ForEach-Object {
+	if ($_.Name -match '^(\d+)-(.*)$') {
+		$filePath = $_.FullName
+		$baseName = $_.BaseName
+		$navOrder = $matches[1]
+		$content = Get-Content $filePath -Raw
+		if ($content -match "(?s)^---\s*(.*?)\s*---\s*(.*)") {
+			$frontMatter = $matches[1]
+			$body = $matches[2]
+			if ($frontMatter -match "nav_order:\s*\d+") {
+				$newFrontMatter = $frontMatter -replace "nav_order:\s*\d+", "nav_order: $navOrder"
+			}
+			else {
+				$newFrontMatter = $frontMatter + "`nav_order: $navOrder"
+			}
+			if ($newFrontMatter -match "examples: [^ ]+") {
+				$newFrontMatter = $newFrontMatter -replace "examples: [^ ]+$", "examples: examples/$baseName"
+			}
+			else {
+				$newFrontMatter = $newFrontMatter + "`nexamples: examples/$baseName"
+			}
+			Write-Host "========================================================"
+			Write-Host $newFrontMatter
+
+			$newContent = "---`r`n$newFrontMatter`r`n---`r`n$body"
+			Set-Content -NoNewline -Path $filePath -Value $newContent
+			Write-Host "Updated nav_order for $baseName to $navOrder"
+			WRite-Host "Updated examples for $baseName to examples/$baseName"
+		}
+		else {
+			Write-Host "No front matter found in $($_.Name)"
+		}
+	}
+}
+
+
 $totalWordCount = 0
 Get-ChildItem -Path . -Filter *.md | ForEach-Object {
 	$file = $_.FullName
