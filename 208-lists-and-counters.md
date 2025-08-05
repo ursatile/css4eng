@@ -1,10 +1,10 @@
 ---
 title: "Lists and Counters"
 layout: home
-nav_order: 207
+nav_order: 208
 word_count: 24
 target_minutes: 10
-examples: examples/207-lists-and-counters
+examples: examples/208-lists-and-counters
 ---
 # Lists and Counters (20m)
 

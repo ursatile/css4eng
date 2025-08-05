@@ -1,10 +1,10 @@
 ---
 title: "Colors and Composition"
 layout: home
-nav_order: 208
+nav_order: 209
 word_count: 49
 target_minutes: 15
-examples: examples/208-colors-and-composition
+examples: examples/209-colors-and-composition
 ---
 # Colors and Composition (20m)
 
