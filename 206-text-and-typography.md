@@ -136,6 +136,12 @@ IT IS REALLY REALLY REALLY FUCKING DULL
 
 FUCK IT IN THE BIN
 
+____
+
+There are dozens of font and text properties... and they aren't very interesting.
+
+{% example festival-poster.html %}
+
 
 
 
