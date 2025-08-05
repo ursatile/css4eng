@@ -73,7 +73,7 @@ A variable font gives you a lot more flexibility; the font designers can choose 
 Variable fonts are part of the OpenType font specification, which defines literally dozens of variables. As far as CSS is concerned, there's five fields we care about:
 
 * `font-weight` maps to the variable `weight`
-* `font-stretch` maps to the variable `width` *(for now, but it's being deprecated in favour of font-width, which isn't supported by most browsers yet so...* 🤷🏼‍♂️)
+* `font-stretch` maps to the variable `width`
 * `font-style: italic | oblique` maps to the `slant` and `italic` properties
 * `font-optical-size` maps to the `optical-size` property.
 
