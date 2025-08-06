@@ -4,7 +4,7 @@ layout: home
 nav_order: 209
 target_minutes: 5
 title: "Lists and Counters"
-word_count: 24
+word_count: 401
 ---
 HTML defines three different elements we can use to create lists.
 
