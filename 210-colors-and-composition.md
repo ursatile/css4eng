@@ -7,6 +7,7 @@ target_minutes: 15
 examples: examples/210-colors-and-composition
 av_order: 210
 av_order: 210
+nav_order: 210
 ---
 # Colors and Composition (20m)
 

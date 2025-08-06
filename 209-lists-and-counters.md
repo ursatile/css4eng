@@ -7,6 +7,7 @@ target_minutes: 10
 examples: examples/209-lists-and-counters
 av_order: 209
 av_order: 209
+nav_order: 209
 ---
 # Lists and Counters (20m)
 

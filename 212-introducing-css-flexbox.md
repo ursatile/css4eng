@@ -7,6 +7,7 @@ target_minutes: 20
 examples: examples/212-introducing-css-flexbox
 av_order: 212
 av_order: 212
+nav_order: 212
 ---
 # Introducing CSS Flexbox (20m)
 

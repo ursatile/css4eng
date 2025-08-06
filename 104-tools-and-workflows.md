@@ -8,6 +8,7 @@ word_count: 2437
 target_minutes: 15
 av_order: 104
 av_order: 104
+nav_order: 104
 ---
 In the previous section, we learned the rudiments of CSS syntax, and how to associate styles with our web content.
 

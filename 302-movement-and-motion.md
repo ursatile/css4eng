@@ -7,6 +7,7 @@ target_minutes: 20
 examples: examples/302-movement-and-motion
 av_order: 302
 av_order: 302
+nav_order: 302
 ---
 # Movement and Motion (20m)
 

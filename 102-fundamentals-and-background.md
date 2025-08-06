@@ -7,6 +7,7 @@ target_minutes: 10
 examples: examples/102-fundamentals-and-background
 av_order: 102
 av_order: 102
+nav_order: 102
 ---
 ## Why Do So Many Developers Struggle With CSS?
 

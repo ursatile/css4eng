@@ -7,6 +7,7 @@ target_minutes: 20
 examples: examples/303-using-css-grid
 av_order: 303
 av_order: 303
+nav_order: 303
 ---
 # Using CSS Grid (30m)
 

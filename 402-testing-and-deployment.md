@@ -7,6 +7,7 @@ target_minutes: 20
 examples: examples/402-testing-and-deployment
 av_order: 402
 av_order: 402
+nav_order: 402
 ---
 # Testing and Deployment (20m)
 

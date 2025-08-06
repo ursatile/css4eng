@@ -7,6 +7,7 @@ target_minutes: 20
 examples: examples/206-breaking-the-flow-advanced-css-layouts
 av_order: 206
 av_order: 206
+nav_order: 206
 ---
 As we saw a little while ago, most web pages have an intrinsic document flow, based around the idea of block and inline elements. We've also learned about the CSS box model --- content, padding, border, and margins --- and about how to specify sizes and layout using pixels, relative units like ems and rems, and the viewport-based units vh and vw.
 

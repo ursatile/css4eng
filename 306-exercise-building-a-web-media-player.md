@@ -7,6 +7,7 @@ target_minutes: 15
 examples: examples/306-exercise-building-a-web-media-player
 av_order: 306
 av_order: 306
+nav_order: 306
 ---
 # Exercise: Building a Web Media Player
 

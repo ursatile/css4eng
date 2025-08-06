@@ -24,6 +24,7 @@ av_order: 001
 av_order: 001
 av_order: 001
 av_order: 001
+nav_order: 001
 ---
 OK, so here's the experiment. This file is now part of a Markdown submodule that's been synced to my Obsidian vault.
 

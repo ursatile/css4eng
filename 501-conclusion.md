@@ -7,6 +7,7 @@ target_minutes: 10
 examples: examples/501-conclusion
 av_order: 501
 av_order: 501
+nav_order: 501
 ---
 # Conclusion (20m)
 

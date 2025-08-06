@@ -7,6 +7,7 @@ target_minutes: 15
 examples: examples/208-exercise-typesetting-a-festival-poster
 av_order: 208
 av_order: 208
+nav_order: 208
 ---
 In this exercise, we're going to walk through typesetting a poster for a music festival using everything we've learned so far about layout, colour, fonts, and text, and learn a few more things along the way.
 

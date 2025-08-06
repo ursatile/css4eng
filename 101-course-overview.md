@@ -6,6 +6,7 @@ word_count: 23
 examples: examples/101-course-overview
 av_order: 101
 av_order: 101
+nav_order: 101
 ---
 # Course Overview (5m)
 

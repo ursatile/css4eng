@@ -7,6 +7,7 @@ target_minutes: 15
 examples: examples/305-advanced-visual-effects
 av_order: 305
 av_order: 305
+nav_order: 305
 ---
 # Advanced Visual Effects (30m)
 

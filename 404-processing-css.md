@@ -7,6 +7,7 @@ target_minutes: 20
 examples: examples/404-processing-css
 av_order: 404
 av_order: 404
+nav_order: 404
 ---
 # Processing CSS (30m)
 

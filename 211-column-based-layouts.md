@@ -7,6 +7,7 @@ target_minutes: 20
 examples: examples/211-column-based-layouts
 av_order: 211
 av_order: 211
+nav_order: 211
 ---
 # Column-Based Layouts (20m)
 
