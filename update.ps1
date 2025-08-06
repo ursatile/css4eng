@@ -48,8 +48,8 @@ Get-ChildItem -Path . -Filter *.md | ForEach-Object {
 			Write-Host "=================================="
 			Write-Host $baseName
 			Write-Host "=================================="
-			if ($newFrontMatter -match "examples: [^ ]+") {
-				$newFrontMatter = $newFrontMatter -replace "examples: [^ ]+", "examples: examples/$baseName"
+			if ($newFrontMatter -match "examples:\s*.+") {
+				$newFrontMatter = $newFrontMatter -replace "examples:\s*.+", "examples: examples/$baseName"
 			}
 			else {
 				$newFrontMatter = $newFrontMatter + "`nexamples: examples/$baseName"
