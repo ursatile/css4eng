@@ -20,7 +20,7 @@ module Jekyll
 
             <pre>#{markup}</pre>
 
-            Valid syntax: diff <filename> [diff_baseline="baseline_filename"] [mark_lines="3, 4, 5"] [iframe_style[="height: 10em;"]] [only_lines="4-6"] [start_after="<style>" end_before="</style>"] [elements="style,body"]
+            Valid syntax: diff <filename> [diff_baseline="baseline_filename"] [diff_mode="mark"] [mark_lines="3, 4, 5"] [iframe_style[="height: 10em;"]] [only_lines="4-6"] [start_after="<style>" end_before="</style>"] [elements="style,body"]
           MSG
         end
       end
@@ -141,11 +141,29 @@ module Jekyll
             end
           end
 
-          # Apply syntax highlighting to baseline
-          baseline_highlighted = render_rouge(filtered_baseline)
-          
-          # Calculate diff and filter output to show only changed lines
-          output = filter_diff_lines(output, baseline_highlighted)
+          # Check diff mode
+          if @highlight_options[:diff_mode] == "mark"
+            # Mark mode: show entire file but highlight differing lines
+            diff_line_numbers = find_diff_line_numbers(code, baseline_code, lines_to_keep)
+            unless diff_line_numbers.empty?
+              # Add diff line numbers to existing mark_lines
+              existing_marks = @highlight_options[:mark_lines] || []
+              existing_marks = [existing_marks] unless existing_marks.is_a?(Array)
+              @highlight_options[:mark_lines] = existing_marks + diff_line_numbers
+              # Re-render with the diff lines marked
+              output = render_rouge(code)
+              if lines_to_keep
+                output = filter_highlighted_lines_for_elements(output, lines_to_keep)
+              end
+            end
+          else
+            # Default mode: show only differing lines
+            # Apply syntax highlighting to baseline
+            baseline_highlighted = render_rouge(filtered_baseline)
+            
+            # Calculate diff and filter output to show only changed lines
+            output = filter_diff_lines(output, baseline_highlighted)
+          end
         end
 
         # Remove common indentation from the filtered output
@@ -802,6 +820,108 @@ module Jekyll
         end
 
         result_lines.join
+      end
+
+      def find_diff_line_numbers(current_code, baseline_code, lines_to_keep)
+        require 'diff/lcs'
+        require 'set'
+        
+        # Apply same filtering to both files for fair comparison
+        current_text = current_code
+        baseline_text = baseline_code
+        
+        if lines_to_keep
+          if lines_to_keep.is_a?(Array)
+            # Handle element filtering - extract same ranges from both files
+            current_filtered_lines = []
+            baseline_filtered_lines = []
+            lines_to_keep.each do |range|
+              if range =~ /^(\d+)-(\d+)$/
+                start_line = Regexp.last_match(1).to_i
+                end_line = Regexp.last_match(2).to_i
+                start_index = [start_line - 1, 0].max
+                
+                # Extract from current file
+                current_end_index = [end_line - 1, current_code.lines.length - 1].min
+                if start_index <= current_end_index && start_index < current_code.lines.length
+                  current_filtered_lines.concat(current_code.lines[start_index..current_end_index])
+                end
+                
+                # Extract from baseline file
+                baseline_end_index = [end_line - 1, baseline_code.lines.length - 1].min
+                if start_index <= baseline_end_index && start_index < baseline_code.lines.length
+                  baseline_filtered_lines.concat(baseline_code.lines[start_index..baseline_end_index])
+                end
+              end
+            end
+            current_text = current_filtered_lines.join
+            baseline_text = baseline_filtered_lines.join
+          else
+            # Handle single range filtering
+            current_text = filter_lines(current_code, lines_to_keep)
+            baseline_text = filter_lines(baseline_code, lines_to_keep)
+          end
+        end
+
+        # Split into lines for comparison
+        current_lines = current_text.lines
+        baseline_lines = baseline_text.lines
+
+        # Use diff-lcs to find differences
+        diffs = Diff::LCS.diff(baseline_lines, current_lines)
+        
+        changed_lines = Set.new
+        
+        diffs.each do |hunk|
+          hunk.each do |change|
+            case change.action
+            when '+' # Line added in current file
+              changed_lines << (change.position + 1) # Convert to 1-based line numbers
+            when '!' # Line changed
+              changed_lines << (change.position + 1) # Convert to 1-based line numbers
+            end
+          end
+        end
+
+        # If we applied filtering, we need to map back to original line numbers
+        if lines_to_keep && lines_to_keep.is_a?(Array)
+          # For element filtering, map the relative positions back to absolute line numbers
+          mapped_lines = Set.new
+          current_offset = 0
+          
+          lines_to_keep.each do |range|
+            if range =~ /^(\d+)-(\d+)$/
+              range_start = Regexp.last_match(1).to_i
+              range_end = Regexp.last_match(2).to_i
+              range_size = range_end - range_start + 1
+              
+              # Check if any changed lines fall in this range
+              changed_lines.each do |line_num|
+                if line_num > current_offset && line_num <= current_offset + range_size
+                  # Map back to original line number
+                  original_line = range_start + (line_num - current_offset - 1)
+                  mapped_lines << original_line
+                end
+              end
+              
+              current_offset += range_size
+            end
+          end
+          
+          changed_lines = mapped_lines
+        elsif lines_to_keep
+          # For single range filtering, adjust line numbers
+          if lines_to_keep =~ /^(\d+)-(\d+)$/
+            offset = Regexp.last_match(1).to_i - 1
+            adjusted_lines = Set.new
+            changed_lines.each do |line_num|
+              adjusted_lines << (line_num + offset)
+            end
+            changed_lines = adjusted_lines
+          end
+        end
+
+        changed_lines.to_a.sort
       end
 
       def add_code_tag(code, name, href)

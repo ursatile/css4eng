@@ -1,0 +1,74 @@
+*,
+::before,
+::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/* Outline all the things while we figure out the layout */
+html * {
+	outline: 1px solid #f0f;
+}
+
+body {
+	max-width: 720px;
+	margin: 0px auto;
+	padding: 0px 0;
+
+	&>header {
+		text-align: center;
+		margin-bottom: 2em;
+		padding: 20px 0;
+	}
+
+	&>footer {
+		position: sticky;
+		bottom: 0px;
+
+		clear: both;
+		padding: 1em;
+
+		h1 {
+			width: 50%;
+			float: left;
+			margin: 0;
+		}
+
+		a {
+			display: block;
+		}
+	}
+}
+
+section {
+	text-align: center;
+	width: 33%;
+	padding: 0.5em;
+	float: left;
+
+	header {
+		padding: 1rem 0 0.2rem 0;
+	}
+
+	h1 {
+		height: 4rem;
+		margin: 1rem 0;
+		padding: 1rem 0;
+	}
+
+	h2 {
+		height: 4rem;
+		margin: 0;
+	}
+
+	ul {
+		li {
+			display: block;
+		}
+	}
+}

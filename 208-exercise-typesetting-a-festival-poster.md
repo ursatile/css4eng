@@ -22,15 +22,15 @@ Doesn't look like much, though:
 
 So, let's fix it up. First, let's add a few normalize styles - these will set everything to use `border-box` sizing, and remove any margins and padding from the `html` and `body` elements.
 
-{% diff festival-01-normalized.html diff_baseline="festival.html" %}
+{% example styles-01-normalized.css %}
 
 Next up, we'll create our layout rules:
 
-{% diff festival-02-layout.html diff_baseline="festival-01-normalized.html" %}
+{% diff styles-02-layout.css diff_baseline="styles-01-normalized.css" %}
 
-{% diff festival-03-colors.html diff_baseline="festival-02-layout.html" %}
+{% diff festival-03-colors.css diff_mode="mark" diff_baseline="festival-02-layout.css" %}
 
-
+ 
 
 
 
