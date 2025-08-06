@@ -57,7 +57,7 @@ Get-ChildItem -Path . -Filter *.md | ForEach-Object {
 			$newContent = "---`r`n$newFrontMatter`r`n---`r`n$body"
 			Set-Content -NoNewline -Path $filePath -Value $newContent
 			Write-Host "Updated nav_order for $baseName to $navOrder"
-			WRite-Host "Updated examples for $baseName to examples/$baseName"
+			Write-Host "Updated examples for $baseName to examples/$baseName"
 		}
 		else {
 			Write-Host "No front matter found in $($_.Name)"
@@ -86,9 +86,9 @@ Get-ChildItem -Path . -Filter *.md | ForEach-Object {
 		$totalWordCount += $wordCount
 		$newContent = "---`r`n$newFrontMatter`r`n---`r`n$body"
 		Set-Content -NoNewline -Path $file -Value $newContent
-		Write-Host "Updated word count for $($_.Name)"
+		# Write-Host "Updated word count for $($_.Name)"
 	} else {
-		Write-Host "No front matter found in $($_.Name)"
+		# Write-Host "No front matter found in $($_.Name)"
 	}
 }
 
