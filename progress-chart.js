@@ -59,10 +59,6 @@ function drawChart(targetWords) {
                 const daysToAug14 = (aug14Date - lastDate) / (1000 * 60 * 60 * 24);
                 const wordsNeededPerDay = (targetWords - currentWords) / daysToAug14;
 
-                console.log(`Current pace: ${Math.round(slope)} words/day`);
-                console.log(`Required pace for Aug 14th: ${Math.round(wordsNeededPerDay)} words/day`);
-                console.log(`Days remaining to Aug 14th: ${Math.round(daysToAug14)}`);
-
                 // Add daily data points for August 14th goal line
                 const startDate = new Date(lastDate);
                 startDate.setHours(0, 0, 0, 0); // Start from beginning of next day
@@ -90,12 +86,12 @@ function drawChart(targetWords) {
             chartData.addRows(rows);
 
             var options = {
-                title: 'Writing Progress & Forecast',
-                titleTextStyle: {
-                    color: '#ffffff',
-                    fontSize: 18,
-                    bold: true
-                },
+                //title: 'Writing Progress & Forecast',
+                // titleTextStyle: {
+                //     color: '#ffffff',
+                //     fontSize: 18,
+                //     bold: true
+                // },
                 hAxis: {
                     title: 'Date',
                     format: 'yyyy-MM-dd',
@@ -115,9 +111,9 @@ function drawChart(targetWords) {
                 },
                 backgroundColor: '#000000',
                 series: {
-                    0: {color: '#ffff00', lineWidth: 1, pointSize: 0, type: 'line'}, // Actual - Yellow
+                    0: {color: '#ffff00', lineWidth: 2, pointSize: 0, type: 'line'}, // Actual - Yellow
                     1: {color: '#ff8800', lineWidth: 1, pointSize: 0, lineDashStyle: [5, 5], type: 'line'}, // Forecast - Orange dashed
-                    2: {color: '#00ff00', lineWidth: 1, pointSize: 0, lineDashStyle: [10, 5], type: 'line'}, // Target - Green dashed
+                    2: {color: '#00ff00', lineWidth: 1, pointSize: 0, lineDashStyle: [2, 8], type: 'line'}, // Target - Green dashed
                     3: {color: '#ff00ff', lineWidth: 1, pointSize: 0, lineDashStyle: [2, 2], type: 'line'} // Aug 14th Goal - Magenta with points
                 },
                 legend: {
@@ -127,9 +123,9 @@ function drawChart(targetWords) {
                 },
                 chartArea: {
                     left: 80,
-                    top: 60,
+                    top: 40,
                     width: '85%',
-                    height: '75%',
+                    height: '80%',
                     backgroundColor: '#000000'
                 }
             };

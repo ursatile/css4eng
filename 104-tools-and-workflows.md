@@ -2,7 +2,7 @@
 examples: examples/104-tools-and-workflows
 layout: home
 nav_order: 104
-target_minutes: 15
+target_minutes: 12
 title: "Tools and Workflows"
 typora-copy-images-to: ./images]
 word_count: 2437
