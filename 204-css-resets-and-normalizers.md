@@ -1,7 +1,7 @@
 ---
 title: "CSS Resets & Normalizers"
 layout: home
-nav_order: 204a
+nav_order: 204
 examples: examples/203-boxes-and-borders
 target_minutes: 20
 word_count: 3368
