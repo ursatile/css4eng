@@ -43,7 +43,7 @@ Get-ChildItem -Path . -Filter *.md | ForEach-Object {
 				$newFrontMatter = $frontMatter -replace "nav_order:\s*.*$", "nav_order: $navOrder"
 			}
 			else {
-				$newFrontMatter = $frontMatter + "`nav_order: $navOrder"
+				$newFrontMatter = $frontMatter + "`nnav_order: $navOrder"
 			}
 			if ($newFrontMatter -match "examples: [^ ]+") {
 				$newFrontMatter = $newFrontMatter -replace "examples: [^ ]+$", "examples: examples/$baseName"
@@ -51,8 +51,8 @@ Get-ChildItem -Path . -Filter *.md | ForEach-Object {
 			else {
 				$newFrontMatter = $newFrontMatter + "`nexamples: examples/$baseName"
 			}
-#			Write-Host "========================================================"
-#			Write-Host $newFrontMatter
+			#			Write-Host "========================================================"
+			#			Write-Host $newFrontMatter
 
 			$newContent = "---`r`n$newFrontMatter`r`n---`r`n$body"
 			Set-Content -NoNewline -Path $filePath -Value $newContent
@@ -74,20 +74,22 @@ Get-ChildItem -Path . -Filter *.md | ForEach-Object {
 		$frontMatter = $matches[1]
 		$body = $matches[2]
 		$wordCount = ($body -split '\s+') 
-			| Where-Object { $_ -match '\w' } 
-			| Measure-Object 
-			| Select-Object -ExpandProperty Count
+		| Where-Object { $_ -match '\w' } 
+		| Measure-Object 
+		| Select-Object -ExpandProperty Count
 
 		if ($frontMatter -match "word_count:\s*\d+") {
 			$newFrontMatter = $frontMatter -replace "word_count:\s*\d+", "word_count: $wordCount"
-		} else {
+		}
+		else {
 			$newFrontMatter = $frontMatter + "`nword_count: $wordCount"
 		}
 		$totalWordCount += $wordCount
 		$newContent = "---`r`n$newFrontMatter`r`n---`r`n$body"
 		Set-Content -NoNewline -Path $file -Value $newContent
 		# Write-Host "Updated word count for $($_.Name)"
-	} else {
+	}
+ else {
 		# Write-Host "No front matter found in $($_.Name)"
 	}
 }
@@ -101,42 +103,45 @@ $currentDateTime = Get-Date -Format "yyyy-MM-ddTHH:mm:ss"
 
 # Read existing data or create empty array
 if (Test-Path $progressFile) {
-    try {
-        $progressData = Get-Content $progressFile | ConvertFrom-Json
-        # Ensure it's an array
-        if ($progressData -isnot [array]) {
-            $progressData = @($progressData)
-        }
-    } catch {
-        $progressData = @()
-    }
-} else {
-    $progressData = @()
+	try {
+		$progressData = Get-Content $progressFile | ConvertFrom-Json
+		# Ensure it's an array
+		if ($progressData -isnot [array]) {
+			$progressData = @($progressData)
+		}
+	}
+ catch {
+		$progressData = @()
+	}
+}
+else {
+	$progressData = @()
 }
 
 # Add new data point only if word count has changed
 $shouldAddDataPoint = $true
 if ($progressData.Count -gt 0) {
-    $lastEntry = $progressData[-1]
-    if ($lastEntry.wordCount -eq $totalWordCount) {
-        $shouldAddDataPoint = $false
-        Write-Host "Word count unchanged ($totalWordCount), skipping progress data update"
-    }
+	$lastEntry = $progressData[-1]
+	if ($lastEntry.wordCount -eq $totalWordCount) {
+		$shouldAddDataPoint = $false
+		Write-Host "Word count unchanged ($totalWordCount), skipping progress data update"
+	}
 }
 
 if ($shouldAddDataPoint) {
-    $newDataPoint = [PSCustomObject]@{
-        datetime = $currentDateTime
-        wordCount = $totalWordCount
-    }
+	$newDataPoint = [PSCustomObject]@{
+		datetime  = $currentDateTime
+		wordCount = $totalWordCount
+	}
     
-    $progressData += $newDataPoint
+	$progressData += $newDataPoint
     
-    # Save updated data
-    $progressData | ConvertTo-Json | Set-Content $progressFile
-    Write-Host "Progress data saved to $progressFile"
-} else {
-    Write-Host "Progress data not updated (no change in word count)"
+	# Save updated data
+	$progressData | ConvertTo-Json | Set-Content $progressFile
+	Write-Host "Progress data saved to $progressFile"
+}
+else {
+	Write-Host "Progress data not updated (no change in word count)"
 }
 
 git add .
