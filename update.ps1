@@ -45,6 +45,9 @@ Get-ChildItem -Path . -Filter *.md | ForEach-Object {
 			else {
 				$newFrontMatter = $frontMatter + "`nnav_order: $navOrder"
 			}
+			Write-Host "=================================="
+			Write-Host $baseName
+			Write-Host "=================================="
 			if ($newFrontMatter -match "examples: [^ ]+") {
 				$newFrontMatter = $newFrontMatter -replace "examples: [^ ]+", "examples: examples/$baseName"
 			}
