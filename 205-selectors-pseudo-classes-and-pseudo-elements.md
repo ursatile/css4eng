@@ -2,7 +2,7 @@
 examples: examples/205-selectors-pseudo-classes-and-pseudo-elements
 layout: home
 nav_order: 205
-target_minutes: 20
+target_minutes: 15
 title: "Selectors, Pseudo-Classes and Pseudo-Elements"
 word_count: 3033
 ---

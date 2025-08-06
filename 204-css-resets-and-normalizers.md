@@ -4,6 +4,7 @@ layout: home
 nav_order: 204
 title: "CSS Resets & Normalizers"
 word_count: 588
+target_minutes: 5
 ---
 As we saw in the last few sections, every browser includes a collection of default styles it'll apply to elements of unstyled HTML. Headings are big and bold, unordered lists get bullet points, links are draw in blue and underlined.
 

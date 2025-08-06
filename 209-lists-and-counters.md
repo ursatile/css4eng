@@ -2,9 +2,9 @@
 examples: examples/209-lists-and-counters
 layout: home
 nav_order: 209
-target_minutes: 10
+target_minutes: 5
 title: "Lists and Counters"
-word_count: 425
+word_count: 24
 ---
 HTML defines three different elements we can use to create lists.
 
@@ -60,39 +60,5 @@ As well as using lists for elements like menus, we can use CSS counters for thin
 For example, to create a document with legal-style numbered paragraphs:
 
 {% example counter-content.html elements="style,body" iframe_style="height: 20em;" %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Lists and Counters (20m)
-
-## Course Content
-
-- Lists! All the lists.
-- Understanding CSS counters
-- Modifying counters with `counter-reset` and `counter-increment`
-- Using counters in `content`
-
-## Notes
-
-
-
-
-
-
-
-
-
-
-
 
 
