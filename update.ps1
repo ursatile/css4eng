@@ -88,6 +88,18 @@ Get-ChildItem -Path . -Filter *.md | ForEach-Object {
 			$newFrontMatter = $frontMatter + "`nword_count: $wordCount"
 		}
 		$totalWordCount += $wordCount
+		# Alphabetize and deduplicate front matter
+		$frontMatterLines = $newFrontMatter -split "`n" | Where-Object { $_.Trim() -ne "" }
+		$frontMatterHash = @{}
+		foreach ($line in $frontMatterLines) {
+			if ($line -match "^([^:]+):\s*(.*)$") {
+				$key = $matches[1].Trim()
+				$value = $matches[2].Trim()
+				$frontMatterHash[$key] = $value
+			}
+		}
+		$sortedKeys = $frontMatterHash.Keys | Sort-Object
+		$newFrontMatter = ($sortedKeys | ForEach-Object { "$($_): $($frontMatterHash[$_])" }) -join "`n"
 		$newContent = "---`r`n$newFrontMatter`r`n---`r`n$body"
 		Set-Content -NoNewline -Path $file -Value $newContent
 		# Write-Host "Updated word count for $($_.Name)"
