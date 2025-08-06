@@ -5,6 +5,7 @@ nav_order: 402
 word_count: 26
 target_minutes: 20
 examples: examples/402-testing-and-deployment
+av_order: 402
 ---
 # Testing and Deployment (20m)
 

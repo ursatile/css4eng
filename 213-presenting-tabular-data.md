@@ -5,6 +5,7 @@ nav_order: 213
 word_count: 31
 target_minutes: 15
 examples: examples/213-presenting-tabular-data
+av_order: 213
 ---
 # Presenting Tabular Data (20m)
 

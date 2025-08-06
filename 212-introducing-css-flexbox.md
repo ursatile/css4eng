@@ -5,6 +5,7 @@ nav_order: 212
 word_count: 34
 target_minutes: 20
 examples: examples/212-introducing-css-flexbox
+av_order: 212
 ---
 # Introducing CSS Flexbox (20m)
 

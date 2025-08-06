@@ -5,6 +5,7 @@ nav_order: 102
 word_count: 3623
 target_minutes: 10
 examples: examples/102-fundamentals-and-background
+av_order: 102
 ---
 ## Why Do So Many Developers Struggle With CSS?
 

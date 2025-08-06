@@ -5,6 +5,7 @@ nav_order: 209
 word_count: 24
 target_minutes: 10
 examples: examples/209-lists-and-counters
+av_order: 209
 ---
 # Lists and Counters (20m)
 

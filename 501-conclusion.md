@@ -5,6 +5,7 @@ nav_order: 501
 word_count: 24
 target_minutes: 10
 examples: examples/501-conclusion
+av_order: 501
 ---
 # Conclusion (20m)
 
