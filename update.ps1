@@ -51,8 +51,8 @@ Get-ChildItem -Path . -Filter *.md | ForEach-Object {
 			else {
 				$newFrontMatter = $newFrontMatter + "`nexamples: examples/$baseName"
 			}
-			Write-Host "========================================================"
-			Write-Host $newFrontMatter
+#			Write-Host "========================================================"
+#			Write-Host $newFrontMatter
 
 			$newContent = "---`r`n$newFrontMatter`r`n---`r`n$body"
 			Set-Content -NoNewline -Path $filePath -Value $newContent
