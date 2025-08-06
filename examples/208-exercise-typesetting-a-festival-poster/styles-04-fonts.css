@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Economica:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+
+
+html {
+	background: #000;
+	color: #fff;
+}
+
+body {
+	font-family: Economica;
+	max-width: 720px;
+	margin: 0px auto;
+	padding: 0px 0;
+	border-width: 0 3px;
+	border-color: #06b;
+	border-style: double;
+	box-sizing: border-box;
+
+	&>header {
+		text-align: center;
+		margin-bottom: 2em;
+		background-color: #012;
+		padding: 20px 0;
+
+		h1 {
+			font-weight: normal;
+			font-size: 3em;
+			letter-spacing: 1em;
+			text-indent: 1em;
+			text-transform: uppercase;
+		}
+
+		p {
+			padding: 0.5rem;
+			background-color: #036;
+			border-width: 3px 0;
+			border-style: double;
+			border-color: #06b;
+			letter-spacing: 0.3em;
+			text-transform: lowercase;
+		}
+	}
+
+	&>footer {
+		position: sticky;
+		bottom: 0px;
+		clear: both;
+		padding: 1em;
+		background-color: #012;
+		border-width: 1px 0;
+		border-style: solid;
+		border-color: #06b;
+
+		h1 {
+			width: 50%;
+			float: left;
+			margin: 0;
+			text-align: right;
+			padding-right: 0.2em;
+
+			&::after {
+				content: ':';
+			}
+		}
+
+		a {
+			color: white;
+			text-decoration: none;
+			display: block;
+		}
+	}
+}
+
+section {
+	text-align: center;
+	width: 33%;
+	float: left;
+	padding: 0.5rem;
+
+	header {
+		border-bottom: 1px solid #fff;
+		padding: 1rem 0 0.2rem 0;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+
+		li {
+			display: block;
+		}
+	}
+}

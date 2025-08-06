@@ -10,24 +10,34 @@ body {
 	padding: 0;
 }
 
-/* Outline all the things while we figure out the layout */
-html * {
-	outline: 1px solid #f0f;
+
+
+html {
+	background: #000;
+	color: #fff;
 }
 
 body {
 	max-width: 720px;
 	margin: 0px auto;
 	padding: 0px 0;
+	border-width: 0 3px;
+	border-color: #06b;
+	border-style: double;
+	box-sizing: border-box;
 
 	&>header {
 		text-align: center;
 		margin-bottom: 2em;
+		background-color: #012;
 		padding: 20px 0;
-
 
 		p {
 			padding: 0.5rem;
+			background-color: #036;
+			border-width: 3px 0;
+			border-style: double;
+			border-color: #06b;
 		}
 	}
 
@@ -36,6 +46,10 @@ body {
 		bottom: 0px;
 		clear: both;
 		padding: 1em;
+		background-color: #012;
+		border-width: 1px 0;
+		border-style: solid;
+		border-color: #06b;
 
 		h1 {
 			width: 50%;
@@ -44,6 +58,8 @@ body {
 		}
 
 		a {
+			color: white;
+			text-decoration: none;
 			display: block;
 		}
 	}
@@ -53,8 +69,10 @@ section {
 	text-align: center;
 	width: 33%;
 	float: left;
+	padding: 0.5rem;
 
 	header {
+		border-bottom: 1px solid #fff;
 		padding: 1rem 0 0.2rem 0;
 	}
 

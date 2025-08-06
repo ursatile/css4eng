@@ -764,9 +764,31 @@ module Jekyll
           hunk.each do |change|
             case change.action
             when '+' # Line added in new file
-              changed_lines << change.position
+              # Check if this is a real content change or just whitespace
+              current_line = current_text_lines[change.position] || ""
+              baseline_line = baseline_text_lines[change.position] || ""
+              
+              # Normalize whitespace for comparison
+              current_normalized = current_line.gsub(/\s+/, ' ').strip
+              baseline_normalized = baseline_line.gsub(/\s+/, ' ').strip
+              
+              # Only mark as changed if content actually differs
+              if current_normalized != baseline_normalized
+                changed_lines << change.position
+              end
             when '!' # Line changed
-              changed_lines << change.position
+              # Check if this is a real content change or just whitespace
+              current_line = current_text_lines[change.position] || ""
+              baseline_line = baseline_text_lines[change.position] || ""
+              
+              # Normalize whitespace for comparison
+              current_normalized = current_line.gsub(/\s+/, ' ').strip
+              baseline_normalized = baseline_line.gsub(/\s+/, ' ').strip
+              
+              # Only mark as changed if content actually differs
+              if current_normalized != baseline_normalized
+                changed_lines << change.position
+              end
             # Note: we don't track '-' (deletions) since they don't exist in the current file
             end
           end
@@ -876,9 +898,31 @@ module Jekyll
           hunk.each do |change|
             case change.action
             when '+' # Line added in current file
-              changed_lines << (change.position + 1) # Convert to 1-based line numbers
+              # Check if this is a real content change or just whitespace
+              current_line = current_lines[change.position] || ""
+              baseline_line = baseline_lines[change.position] || ""
+              
+              # Normalize whitespace for comparison
+              current_normalized = current_line.gsub(/\s+/, ' ').strip
+              baseline_normalized = baseline_line.gsub(/\s+/, ' ').strip
+              
+              # Only mark as changed if content actually differs
+              if current_normalized != baseline_normalized
+                changed_lines << (change.position + 1) # Convert to 1-based line numbers
+              end
             when '!' # Line changed
-              changed_lines << (change.position + 1) # Convert to 1-based line numbers
+              # Check if this is a real content change or just whitespace
+              current_line = current_lines[change.position] || ""
+              baseline_line = baseline_lines[change.position] || ""
+              
+              # Normalize whitespace for comparison
+              current_normalized = current_line.gsub(/\s+/, ' ').strip
+              baseline_normalized = baseline_line.gsub(/\s+/, ' ').strip
+              
+              # Only mark as changed if content actually differs
+              if current_normalized != baseline_normalized
+                changed_lines << (change.position + 1) # Convert to 1-based line numbers
+              end
             end
           end
         end

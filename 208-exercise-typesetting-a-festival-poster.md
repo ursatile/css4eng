@@ -20,17 +20,51 @@ Doesn't look like much, though:
 
 {% iframe festival.html %}
 
-So, let's fix it up. First, let's add a few normalize styles - these will set everything to use `border-box` sizing, and remove any margins and padding from the `html` and `body` elements.
+So, let's fix it up. 
+
+### Normalize
+
+First, let's add a few normalize styles - these will set everything to use `border-box` sizing, and remove any margins and padding from the `html` and `body` elements.
 
 {% example styles-01-normalized.css %}
+
+### Layout
 
 Next up, we'll create our layout rules:
 
 {% diff styles-02-layout.css diff_baseline="styles-01-normalized.css" %}
 
-{% diff festival-03-colors.css diff_mode="mark" diff_baseline="festival-02-layout.css" %}
+{% iframe festival-02-layout.html %}
 
- 
+### Colours and Borders
+
+Then we'll add rules for colours and borders:
+
+{% diff styles-03-colors.css diff_mode="mark" diff_baseline="styles-02-layout.css" %}
+
+ {% iframe festival-03-colors.html %}
+
+### Basic Typography
+
+Let's grab a font from Google Fonts to override the default font across the whole of that page. We're going to use a font called Economica:
+
+* [https://fonts.google.com/specimen/Economica](https://fonts.google.com/specimen/Economica)
+
+Click through to "Get Font", grab the **embed code**, and we're going to use the `@import` syntax - this is CSS' mechanism to import styles and rules from an external URL.
+
+Paste the import rule at the top of our file, and then we're going to add some rules to apply that font, and to override the default formatting for some of our page elements:
+
+{% diff styles-04-fonts.css diff_mode="mark" diff_baseline="styles-03-colors.css" %}
+
+
+
+
+
+
+
+
+
+
 
 
 
