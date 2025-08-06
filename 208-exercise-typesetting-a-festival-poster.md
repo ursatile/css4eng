@@ -20,7 +20,9 @@ Doesn't look like much, though:
 
 {% iframe festival.html %}
 
-So, let's fix it up.
+So, let's fix it up. First, let's add a few normalize styles - these will set everything to use `border-box` sizing, and remove any margins and padding from the `html` and `body` elements.
 
-First, we'll give it some layout.
+{% example festival-01-normalized.html elements="style" %}
+
+
 
