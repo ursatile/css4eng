@@ -1,10 +1,10 @@
 ---
 title: "Column-Based Layouts"
 layout: home
-nav_order: 210
+nav_order: 211
 word_count: 34
 target_minutes: 20
-examples: examples/210-column-based-layouts
+examples: examples/211-column-based-layouts
 ---
 # Column-Based Layouts (20m)
 

@@ -1,10 +1,10 @@
 ---
 title: "Text & Typography"
 layout: home
-nav_order: 206
+nav_order: 207
 word_count: 1736
 target_minutes: 15
-examples: examples/206-text-and-typography
+examples: examples/207-text-and-typography
 ---
 Every example we've looked at so far has used the browser's default font, and in my case, that's Times New Roman. And I don't know about you folks, but I'm getting a little bored of Times New Roman... nothing wrong with it, it's just a bit... nondescript, you know?
 

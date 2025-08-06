@@ -1,10 +1,10 @@
 ---
 title: "Selectors, Pseudo-Classes and Pseudo-Elements"
 layout: home
-nav_order: 204
+nav_order: 205
 word_count: 3047
 target_minutes: 20
-examples: examples/204-selectors-pseudo-classes-and-pseudo-elements
+examples: examples/205-selectors-pseudo-classes-and-pseudo-elements
 ---
 One of the most important principles in software engineering is known as the *separation of concerns*. You shouldn't mix, say, database queries and tax calculations in the same function, for a whole raft of reasons -- not least that you shouldn't have to connect to a database to be able to test your code calculates taxes correctly.
 
