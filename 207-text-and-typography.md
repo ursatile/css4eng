@@ -4,8 +4,7 @@ layout: home
 nav_order: 207
 word_count: 1736
 target_minutes: 15
-examples: examples/207-text-and-typography
-av_order: 207
+examples: examples/207-text-and-typography 207
 av_order: 207
 nav_order: 207
 ---

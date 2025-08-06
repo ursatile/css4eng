@@ -4,8 +4,7 @@ layout: home
 nav_order: 205
 word_count: 3047
 target_minutes: 20
-examples: examples/205-selectors-pseudo-classes-and-pseudo-elements
-av_order: 205
+examples: examples/205-selectors-pseudo-classes-and-pseudo-elements 205
 av_order: 205
 nav_order: 205
 ---

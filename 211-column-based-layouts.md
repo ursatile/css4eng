@@ -4,8 +4,7 @@ layout: home
 nav_order: 211
 word_count: 34
 target_minutes: 20
-examples: examples/211-column-based-layouts
-av_order: 211
+examples: examples/211-column-based-layouts 211
 av_order: 211
 nav_order: 211
 ---

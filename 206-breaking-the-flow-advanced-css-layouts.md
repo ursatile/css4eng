@@ -4,8 +4,7 @@ layout: home
 nav_order: 206
 word_count: 2008
 target_minutes: 20
-examples: examples/206-breaking-the-flow-advanced-css-layouts
-av_order: 206
+examples: examples/206-breaking-the-flow-advanced-css-layouts 206
 av_order: 206
 nav_order: 206
 ---

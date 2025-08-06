@@ -4,8 +4,7 @@ layout: home
 nav_order: 306
 word_count: 32
 target_minutes: 15
-examples: examples/306-exercise-building-a-web-media-player
-av_order: 306
+examples: examples/306-exercise-building-a-web-media-player 306
 av_order: 306
 nav_order: 306
 ---

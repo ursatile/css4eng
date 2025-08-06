@@ -4,8 +4,7 @@ layout: home
 nav_order: 208
 word_count: 201
 target_minutes: 15
-examples: examples/208-exercise-typesetting-a-festival-poster
-av_order: 208
+examples: examples/208-exercise-typesetting-a-festival-poster 208
 av_order: 208
 nav_order: 208
 ---

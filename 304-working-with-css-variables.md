@@ -4,8 +4,7 @@ layout: home
 nav_order: 304
 word_count: 26
 target_minutes: 10
-examples: examples/304-working-with-css-variables
-av_order: 304
+examples: examples/304-working-with-css-variables 304
 av_order: 304
 nav_order: 304
 ---

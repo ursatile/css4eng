@@ -4,8 +4,7 @@ layout: home
 nav_order: 404
 word_count: 11
 target_minutes: 20
-examples: examples/404-processing-css
-av_order: 404
+examples: examples/404-processing-css 404
 av_order: 404
 nav_order: 404
 ---
