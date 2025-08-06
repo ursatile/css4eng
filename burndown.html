@@ -48,12 +48,37 @@ word_count: 77
 	<p><strong>Target: </strong> {{ total_target_minutes | divided_by: 60 }}h {{ total_target_minutes | modulo: 60 }}m</p>
 </div>
 
+<h2>TODO Items</h2>
+<div class="todo-list">
+	{% assign todo_count = 0 %}
+	{% for page in site.pages %}
+	{% if page.path contains '.md' %}
+	{% assign page_todos = page.content | split: 'TODO' %}
+	{% unless page_todos.size == 1 %}
+	<h3><a href="{{ page.url | relative_url }}">{{ page.title | default: page.path }}</a></h3>
+	<ul>
+		{% for i in (1..page_todos.size) %}
+		{% unless forloop.first %}
+		{% assign todo_text = page_todos[forloop.index0] | split: '
+' | first | strip %}
+		<li>TODO{{ todo_text }}</li>
+		{% assign todo_count = todo_count | plus: 1 %}
+		{% endunless %}
+		{% endfor %}
+	</ul>
+	{% endunless %}
+	{% endif %}
+	{% endfor %}
+	<p><strong>Total TODOs:</strong> {{ todo_count }}</p>
+</div>
+
 <h2>Writing Progress Chart</h2>
 <div id="progressChart" style="width: 100%; height: 400px; background-color: #000000; border-radius: 8px; padding: 10px;"></div>
-
+<input id="target-words" type="hidden" value="{{ target_words }}">
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript" src="progress-chart.js"></script>
 <script>
-	drawChart({{ target_words }});
-
-</script>"
+	var targetWords = parseInt(document.getElementById("target-words").value);
+	alert(targetWords);
+	google.charts.setOnLoadCallback(() => drawChart(targetWords));
+</script>

@@ -1,6 +1,5 @@
 // Google Charts progress tracking
 google.charts.load('current', {'packages':['corechart']});
-// google.charts.setOnLoadCallback(drawChart);
 
 function calculateLinearRegression(data) {
     const n = data.length;
@@ -34,7 +33,7 @@ function drawChart(targetWords) {
             chartData.addColumn('datetime', 'Date');
             chartData.addColumn('number', 'Actual Word Count');
             chartData.addColumn('number', 'Forecast');
-            chartData.addColumn('number', '100k Target');
+            chartData.addColumn('number', 'Target');
             chartData.addColumn('number', 'Aug 14th Goal');
 
             // Convert actual data to chart format
@@ -49,7 +48,7 @@ function drawChart(targetWords) {
                 const currentWords = data[data.length - 1].wordCount;
                 const lastDate = new Date(data[data.length - 1].datetime);
                 
-                // Calculate days needed to reach 100k
+                // Calculate days needed to reach target
                 const lastDaysDiff = (lastDate - firstDate) / (1000 * 60 * 60 * 24);
                 const currentPredicted = slope * lastDaysDiff + intercept;
                 const daysToTarget = (targetWords - intercept) / slope;
@@ -91,7 +90,7 @@ function drawChart(targetWords) {
             chartData.addRows(rows);
 
             var options = {
-                title: 'Writing Progress & 100k Forecast',
+                title: 'Writing Progress & Forecast',
                 titleTextStyle: {
                     color: '#ffffff',
                     fontSize: 18,
