@@ -6,6 +6,7 @@ examples: examples/203-boxes-and-borders
 target_minutes: 20
 word_count: 3368
 av_order: 203
+av_order: 203
 ---
 So far, we've learned about the building blocks of the CSS language - selectors, properties, and values - and the tools and techniques we can use to inspect and manipulate those properties.
 
