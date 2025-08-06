@@ -39,8 +39,8 @@ Get-ChildItem -Path . -Filter *.md | ForEach-Object {
 		if ($content -match "(?s)^---\s*(.*?)\s*---\s*(.*)") {
 			$frontMatter = $matches[1]
 			$body = $matches[2]
-			if ($frontMatter -match "nav_order:\s*\d+") {
-				$newFrontMatter = $frontMatter -replace "nav_order:\s*\d+", "nav_order: $navOrder"
+			if ($frontMatter -match "nav_order:\s*.*$") {
+				$newFrontMatter = $frontMatter -replace "nav_order:\s*.*$", "nav_order: $navOrder"
 			}
 			else {
 				$newFrontMatter = $frontMatter + "`nav_order: $navOrder"
