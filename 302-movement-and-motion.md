@@ -1,12 +1,11 @@
 ---
-title: "Movement and Motion"
+av_order: 302
+examples: examples/302-movement-and-motion
 layout: home
 nav_order: 302
-word_count: 26
 target_minutes: 20
-examples: examples/302-movement-and-motion
-av_order: 302
-nav_order: 302
+title: "Movement and Motion"
+word_count: 26
 ---
 # Movement and Motion (20m)
 

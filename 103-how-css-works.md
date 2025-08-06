@@ -1,13 +1,11 @@
 ---
-title: "How CSS Works"
+av_order: 103
+examples: examples/103-how-css-works
 layout: home
 nav_order: 103
-examples: examples/103-how-css-works
 target_minutes: 5
+title: "How CSS Works"
 word_count: 1098
-av_order: 103
-av_order: 103
-nav_order: 103
 ---
 ## Properties and Values
 

@@ -1,12 +1,11 @@
 ---
-title: "Advanced Visual Effects"
+av_order: 305
+examples: examples/305-advanced-visual-effects
 layout: home
 nav_order: 305
-word_count: 31
 target_minutes: 15
-examples: examples/305-advanced-visual-effects
-av_order: 305
-nav_order: 305
+title: "Advanced Visual Effects"
+word_count: 31
 ---
 # Advanced Visual Effects (30m)
 

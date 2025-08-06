@@ -1,8 +1,8 @@
 ---
-title: "CSS Resets & Normalizers"
+examples: examples/204-css-resets-and-normalizers
 layout: home
 nav_order: 204
-examples: examples/204-css-resets-and-normalizers
+title: "CSS Resets & Normalizers"
 word_count: 3368
 ---
 So far, we've learned about the building blocks of the CSS language - selectors, properties, and values - and the tools and techniques we can use to inspect and manipulate those properties.

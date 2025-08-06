@@ -1,7 +1,7 @@
 ---
 front: matter
-title: TEST TEST
 layout: home
+title: TEST TEST
 word_count: 27
 ---
 {% example test.html mark_lines="1,2,3,4,5" %}

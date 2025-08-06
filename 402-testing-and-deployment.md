@@ -1,12 +1,11 @@
 ---
-title: "Testing and Deployment"
+av_order: 402
+examples: examples/402-testing-and-deployment
 layout: home
 nav_order: 402
-word_count: 26
 target_minutes: 20
-examples: examples/402-testing-and-deployment
-av_order: 402
-nav_order: 402
+title: "Testing and Deployment"
+word_count: 26
 ---
 # Testing and Deployment (20m)
 

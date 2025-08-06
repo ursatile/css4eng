@@ -1,14 +1,12 @@
 ---
-title: "Tools and Workflows"
+av_order: 104
+examples: examples/104-tools-and-workflows
 layout: home
 nav_order: 104
-examples: examples/104-tools-and-workflows
+target_minutes: 15
+title: "Tools and Workflows"
 typora-copy-images-to: ./images]
 word_count: 2437
-target_minutes: 15
-av_order: 104
-av_order: 104
-nav_order: 104
 ---
 In the previous section, we learned the rudiments of CSS syntax, and how to associate styles with our web content.
 

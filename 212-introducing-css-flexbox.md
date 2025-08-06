@@ -1,12 +1,11 @@
 ---
-title: "Introducing CSS Flexbox"
+av_order: 212
+examples: examples/212-introducing-css-flexbox
 layout: home
 nav_order: 212
-word_count: 34
 target_minutes: 20
-examples: examples/212-introducing-css-flexbox
-av_order: 212
-nav_order: 212
+title: "Introducing CSS Flexbox"
+word_count: 34
 ---
 # Introducing CSS Flexbox (20m)
 

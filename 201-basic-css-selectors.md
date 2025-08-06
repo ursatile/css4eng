@@ -1,13 +1,11 @@
 ---
-title: "Basic CSS Selectors"
+av_order: 201
+examples: examples/201-basic-css-selectors
 layout: home
 nav_order: 201
-examples: examples/201-basic-css-selectors
 target_minutes: 20
+title: "Basic CSS Selectors"
 word_count: 2894
-av_order: 201
-av_order: 201
-nav_order: 201
 ---
 So far, we've learned about the building blocks of the CSS language - selectors, properties, and values - and the tools and techniques we can use to inspect and manipulate those properties.
 

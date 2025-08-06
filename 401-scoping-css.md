@@ -1,12 +1,11 @@
 ---
-title: "Scoping CSS"
+av_order: 401
+examples: examples/401-scoping-css
 layout: home
 nav_order: 401
-word_count: 16
 target_minutes: 10
-examples: examples/401-scoping-css
-av_order: 401
-nav_order: 401
+title: "Scoping CSS"
+word_count: 16
 ---
 # Scoping CSS (20m)
 

@@ -1,12 +1,11 @@
 ---
-title: "CSS Frameworks"
+av_order: 403
+examples: examples/403-css-frameworks
 layout: home
 nav_order: 403
-word_count: 12
 target_minutes: 20
-examples: examples/403-css-frameworks
-av_order: 403
-nav_order: 403
+title: "CSS Frameworks"
+word_count: 12
 ---
 # CSS Frameworks (30m)
 

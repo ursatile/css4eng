@@ -1,12 +1,11 @@
 ---
-title: "Processing CSS"
+av_order: 404
+examples: examples/404-processing-css
 layout: home
 nav_order: 404
-word_count: 11
 target_minutes: 20
-examples: examples/404-processing-css
-av_order: 404
-nav_order: 404
+title: "Processing CSS"
+word_count: 11
 ---
 # Processing CSS (30m)
 

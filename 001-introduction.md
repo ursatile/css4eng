@@ -1,30 +1,10 @@
 ---
-title: Home
-layout: home
-word_count: 77
-av_order: 00
-av_order: 00
-av_order: 00
+av_order: 001
 examples: examples/001-introduction
-av_order: 00
-av_order: 00
-av_order: 00
-av_order: 00
-av_order: 00
-av_order: 00
-av_order: 00
-av_order: 00
-av_order: 001
-av_order: 001
-av_order: 001
-av_order: 001
-av_order: 001
-av_order: 001
-av_order: 001
-av_order: 001
-av_order: 001
-av_order: 001
+layout: home
 nav_order: 001
+title: Home
+word_count: 77
 ---
 OK, so here's the experiment. This file is now part of a Markdown submodule that's been synced to my Obsidian vault.
 
