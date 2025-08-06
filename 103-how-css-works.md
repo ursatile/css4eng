@@ -2,7 +2,7 @@
 title: "How CSS Works"
 layout: home
 nav_order: 103
-examples: examples/103-how-css-works 1100
+examples: examples/103-how-css-works
 target_minutes: 5
 word_count: 1098
 av_order: 103

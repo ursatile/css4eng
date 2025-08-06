@@ -4,7 +4,7 @@ layout: home
 nav_order: 303
 word_count: 37
 target_minutes: 20
-examples: examples/303-using-css-grid 303
+examples: examples/303-using-css-grid
 av_order: 303
 nav_order: 303
 ---

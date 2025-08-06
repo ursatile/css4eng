@@ -4,7 +4,7 @@ layout: home
 nav_order: 213
 word_count: 31
 target_minutes: 15
-examples: examples/213-presenting-tabular-data 213
+examples: examples/213-presenting-tabular-data
 av_order: 213
 nav_order: 213
 ---

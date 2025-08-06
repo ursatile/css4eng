@@ -5,7 +5,7 @@ word_count: 77
 av_order: 00
 av_order: 00
 av_order: 00
-examples: examples/001-introduction 00
+examples: examples/001-introduction
 av_order: 00
 av_order: 00
 av_order: 00

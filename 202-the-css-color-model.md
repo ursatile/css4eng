@@ -2,7 +2,7 @@
 title: "The CSS Color Model"
 layout: home
 nav_order: 202
-examples: examples/202-the-css-color-model 
+examples: examples/202-the-css-color-model
 target_minutes: 20
 word_count: 3952
 av_order: 202

@@ -2,7 +2,7 @@
 title: "Boxes & Borders"
 layout: home
 nav_order: 203
-examples: examples/203-boxes-and-borders 20
+examples: examples/203-boxes-and-borders
 word_count: 3368
 av_order: 203
 av_order: 203
