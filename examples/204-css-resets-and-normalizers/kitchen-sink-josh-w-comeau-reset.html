@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Kitchen Sink</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="reset-josh-w-comeau.css">
+</head>
+
+<body>
+	<header>(This is a <code>&lt;header&gt;</code> element, often used at the top of a page or section)</header>
+	<h1>The Kitchen Sink Page</h1>
+	<hr>
+	<p>(👆 that’s a <code>&lt;hr&gt;</code> - horizontal rule!)</p>
+	<nav>
+		This is a <code>&lt;nav&gt;</code> element.
+		<menu>
+			<li>This list is a <code>&lt;menu&gt;</code> containing <code>&lt;li&gt;</code> items</li>
+			<li><a href="#text-and-typography">Text &amp; Typography</a></li>
+			<li><a href="#lists">Lists</a></li>
+			<li><a href="#tables">Tables</a></li>
+			<li><a href="#figures">Figures</a></li>
+			<li><a href="#forms-and-interaction">Forms &amp; Interaction</a></li>
+			<li><a href="#buttons-and-dialogs">Buttons &amp; Dialogs</a></li>
+			<li><a href="#search">Search</a></li>
+			<li><a href="#footer">Footer</a></li>
+		</menu>
+	</nav>
+	<section id="text-and-typography">
+		<h2>Text &amp; Typography</h2>
+		<h1>Heading 1</h1>
+		<h2>Heading 2</h2>
+		<h3>Heading 3</h3>
+		<h4>Heading 4</h4>
+		<h5>Heading 5</h5>
+		<h6>Heading 6</h6>
+		<hgroup>
+			<h1>Heading 1 inside an <code>&lt;hgroup&gt;</code></h1>
+			<h2>Heading 2 inside an <code>&lt;hgroup&gt;</code></h2>
+		</hgroup>
+		<p>Here’s a bunch of paragraphs, so we can see what paragraphs will look like on our site.</p>
+		<p>The <code>&lt;dfn&gt;</code> element indicates a <dfn>term to be defined</dfn>, usually by
+			the enclosing paragraph. There’s also the <code>&lt;abbr&gt;</code> element,
+			used in <abbr>HTML</abbr> (Hypertext Markup Language) to indicate an abbreviation.
+		</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod magna eu purus suscipit, vitae semper
+			ligula
+			efficitur. Suspendisse semper vel mauris id sollicitudin. Aliquam erat volutpat. Vivamus luctus est ligula, eu
+			commodo metus ullamcorper id. Donec massa metus, cursus sit amet consequat sit amet, posuere vitae purus. Proin
+			nec
+			felis efficitur, scelerisque tortor quis, feugiat tellus. Sed imperdiet tincidunt dolor a molestie. Nullam tempus
+			purus felis, quis efficitur turpis maximus et. Phasellus nec nibh commodo, elementum est ut, interdum odio.
+			Aliquam
+			cursus consequat tortor sit amet maximus. Fusce aliquam eleifend leo a laoreet. Donec nibh massa, lacinia sodales
+			iaculis nec, finibus sed lorem. Etiam vitae tortor nec mi sodales malesuada.</p>
+		<p>This is a paragraph demonstrating <strong>strong</strong>, <em>emphasised</em>, <u>underlined</u>, and
+			<mark>highlighted</mark> text. It also contains a <q>quotation, denoted
+				by a <code>&lt;q&gt;</code> element</q>.
+		</p>
+		<p>This paragraph contains examples of superscript (<var>x</var><sup>2</sup>),
+			subscript (H<sub>2</sub>SO<sub>4</sub>),
+			variables like <var>x</var>, <var>y</var> &amp; <var>z</var>,
+			<data value="42">an HTML <code>&lt;data&gt;</code> element</data>,
+			an <code>&lt;time&gt;</code> element (<time datetime="2024-06-01T14:30">June 1, 2024, 2:30 PM</time>).
+		</p>
+		<p>This one contains some <del>deleted text</del>, some <ins>inserted text</ins>, and
+			some <s>strikethrough</s> text.</p>
+		<p>
+			This paragraph contains a <code>snippet of code, inside a <code>&lt;code&gt;</code> element</code>.
+			You'll also see the <code>&lt;kbd&gt;</code> element used to <kbd>indicate user input (like this)</kbd>.
+		</p>
+		<h3>Unicode and Emoji</h3>
+		<p>Let’s check our page doesn’t blow up if somebody renders content in Ukrainian, Greek,
+			Arabic or Hebrew:</p>
+		<p>Це абзац українською мовою, тому ми можемо переконатися, що
+			кирилиця відображатиметься правильно.</p>
+		<p>Αυτή η παράγραφος είναι στα ελληνικά, ώστε να μπορούμε να ελέγξουμε ότι ο ιστότοπός μας υποστηρίζει σωστά τα
+			ελληνικά.</p>
+		<p dir="rtl">هذه فقرة عربية، لذا يمكننا التأكد من ظهور الأبجدية العربية بشكل صحيح.</p>
+		<p dir="rtl">פסקה זו היא בעברית, כדי שנוכל לבדוק שהאתר שלנו תומך בעברית כראוי.</p>
+		<p>There’s also the <code>&lt;ruby&gt;</code> element, and the associated
+			<code>&lt;rt&gt;</code> and <code>&lt;rp&gt;</code> elements,
+			which are used to add pronunciation hints for text rendered
+			in Japanese and East Asian character sets, such as:
+			<ruby>
+				漢 <rp>(</rp>
+				<rt>Kan</rt>
+				<rp>)</rp> 字 <rp>(</rp>
+				<rt>ji</rt>
+				<rp>)</rp>
+			</ruby>
+			or
+			<ruby> ゆきひろ まつもと <rp>(</rp>
+				<rt>Yukihiro Matsumoto</rt>
+				<rp>)</rp>
+			</ruby>
+		</p>
+		<p>Special characters: £ &pound; & &amp; &lt; &gt;</p>
+		<p>Pictorial Emoji: 😀🎸🎤🦕👩🏿‍🚀</p>
+		<p>Pictoral Flags: 🏁🚩🎌🏴🏳️🏳️‍🌈🏳️‍⚧️🏴‍☠️🇺🇳</p>
+		<p>Regional Flags: 🇿🇼 🇺🇸 🇬🇧 🇦🇶 🏴󠁧󠁢󠁷󠁬󠁳󠁿</p>
+	</section>
+	<article>
+		<section>
+			<h2>This heading 2 is part of a section inside an article.</h2>
+			<p>And here’s a paragraph</p>
+			<aside>This is an <code>&lt;aside&gt;</code> element inside a section.</aside>
+		</section>
+	</article>
+	<div>Content might also be contained in a <code>&lt;div&gt;</code> element - a block element
+		with no semantic significance - or in a <code>&lt;span&gt;</code> element, denoting an
+		inline element with no semantic significance.</div>
+	<section id="lists">
+		<h2>Lists</h2>
+		<h3>Unordered Lists</h3>
+		<ul>
+			<li>Unordered list item 1</li>
+			<li>Unordered list item 2</li>
+			<li>Unordered list item 3</li>
+		</ul>
+		<h3>Ordered Lists</h3>
+		<ol>
+			<li>Ordered list item 1</li>
+			<li>Ordered list item 2</li>
+			<li>Ordered list item 3
+				<ol>
+					<li>Ordered sub-list item 1</li>
+					<li>Ordered sub-list item 2</li>
+					<li>Ordered sub-list item 3</li>
+				</ol>
+			</li>
+		</ol>
+		<h3>Definition List</h3>
+		<dl>
+			<dt>Term</dt>
+			<dd>Definition</dd>
+			<dt>Selector</dt>
+			<dd>The part of a CSS rule used to identify the element or elements which should be affected by the rule.</dd>
+			<dt>Property</dt>
+			<dd>The part of a CSS rule indicating what’s being modified</dd>
+			<dt>Value</dt>
+			<dd>The part of a CSS rule indicating what </dd>
+		</dl>
+		<h3>Blockquote</h3>
+		<blockquote>
+			This is a blockquote. It is used to indicate quoted text.
+		</blockquote>
+		<h3>Code and Preformatted Text</h3>
+		<pre>This is preformatted text, which preserves
+		whitespace and line breaks.
+	</pre>
+		<pre><code>
+// This is a block of code, using the <code>&lt;code&gt;</code> tag inside a <code>&lt;pre&gt;</code> tag.
+
+console.log('Hello, world!');
+	</code></pre>
+		<h3>Details &amp; Summary</h3>
+		<details name="examples">
+			<summary>How It Works</summary>
+			<p>Using <code>&lt;details&gt;</code> creates a region which the user can expand
+				and collapse. When collapsed, the <code>&lt;summary&gt;</code> remains visible.
+			</p>
+		</details>
+		<details name="examples">
+			<summary>What’s It Useful For?</summary>
+			<p>It’s a built-in way to present content in an accordion style.
+				Associated elements can be linked using the <code>name</code> attribute
+				on the <code>&lt;details&gt;</code> elements; only one linked element will be displayed
+				at a time.
+			</p>
+		</details>
+		<details name="examples">
+			<summary>Why’s it called an "accordion"?</summary>
+			<p>I honestly have no idea. Maybe something to do with French café jazz?</p>
+		</details>
+	</section>
+	<section id="figures">
+		<h2>Figures</h2>
+		<h4>Using <code>&lt;figure&gt;</code> to present a quotation:</h4>
+		<figure>
+			<blockquote>
+				<p>The dream behind the Web is of a common information space in which we communicate by sharing information. Its
+					universality is essential: the fact that a hypertext link can point to anything, be it personal, local or
+					global, be it draft or highly polished.</p>
+			</blockquote>
+			<figcaption>
+				<cite>- from <a href="https://www.w3.org/People/Berners-Lee/ShortHistory.html">The World Wide Web: A very short
+						personal history</a> by Tim Berners-Lee</cite>
+			</figcaption>
+		</figure>
+		<h4>Using <code>&lt;figure&gt;</code> for images, audio and video:</h4>
+		<figure>
+			<img src="/examples/assets/hornbill-360px.jpg" srcset="/examples/assets/hornbill-720px.jpg 2x"
+				alt="A hornbill, a bird with a large red beak and a long black tail, sits on a dead tree branch.">
+			<figcaption>Hornbill in the Luangwa National Park, Zambia.</figcaption>
+		</figure>
+		<figure>
+			<figcaption>The HTML <code>&lt;audio&gt;</code> element</figcaption>
+			<audio controls src="/examples/assets/kitchen-sink-page.mp3"></audio><br>
+			<a href="kitchen-sink-page.mp3"> Download audio</a>
+		</figure>
+
+		<figure>
+			<figcaption>The HTML <code>&lt;video&gt;</code> element</figcaption>
+			<video controls src="/examples/assets/kitchen-sink-page-270p.mp4"></video><br>
+			<a href="kitchen-sink-page-270p.mp4"> Download video</a>
+		</figure>
+	</section>
+	<section id="tables">
+		<h2>Tables</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Band Name</th>
+					<th>Year Formed</th>
+					<th>Total Record Sales (Millions)</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>The Beatles</td>
+					<td>1960</td>
+					<td>600</td>
+				</tr>
+				<tr>
+					<td>The Rolling Stones</td>
+					<td>1962</td>
+					<td>240</td>
+				</tr>
+				<tr>
+					<td>Led Zeppelin</td>
+					<td>1968</td>
+					<td>200</td>
+				</tr>
+				<tr>
+					<td>Pink Floyd</td>
+					<td>1965</td>
+					<td>250</td>
+				</tr>
+				<tr>
+					<td>Queen</td>
+					<td>1970</td>
+					<td>300</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="2"><strong>Total Combined Sales</strong></td>
+					<td><strong>1,590</strong></td>
+				</tr>
+			</tfoot>
+		</table>
+	</section>
+	<section id="forms-and-interaction">
+		<h2>Forms and Interaction</h2>
+		<p><code>&lt;meter&gt;</code></p>
+		<p>Volume: <meter min="0" max="100" value="75">75%</meter></p>
+
+		<p><code>&lt;progress&gt;</code></p>
+		<p>Upload: <progress max="100" value="25">25%</progress></p>
+		<hr>
+		<h3>Form Inputs</h3>
+		<a
+			href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input</a>
+		<form action="#">
+			<p>
+				<label for="input-text">Name</label>
+				<input type="text" id="input-text" placeholder="what’s your name?">
+			</p>
+			<p>
+				<label for="country">Favourite Drink</label>
+				<input type="text" id="drink" list="drinks-list">
+				<datalist id="drinks-list">
+					<option value="Bourbon"></option>
+					<option value="Beer"></option>
+					<option value="Coffee"></option>
+					<option value="Soda"></option>
+					<option value="Tea"></option>
+					<option value="Water"></option>
+					<option value="Whisky"></option>
+					<option value="Wine"></option>
+				</datalist>
+			</p>
+			<p>
+				<label for="color-input">Hair Colour</label>
+				<input type="color" id="hair-color-input" value="#ff3399">
+			</p>
+			<p>
+				<label for="date-input">Date of Birth</label>
+				<input type="date" id="date-input" value="date">
+			</p>
+			<p>
+				<label for="datetime-local-input">Audition Time</label>
+				<input type="datetime-local" id="datetime-local-input" value="datetime-local">
+			</p>
+			<p>
+				<label for="email-input">Email Address</label>
+				<input type="email" id="email-input" value="email">
+			</p>
+			<p>
+				<label for="file-input">Photograph</label>
+				<input type="file" id="file-input" value="file">
+			</p>
+			<p>
+				<label for="number-input">Strings</label>
+				<input type="number" id="number-input" value="5" min="2" max="8">
+			</p>
+			<p>
+				<label for="tel-input">Telephone</label>
+				<input type="tel" id="tel-input" value="tel">
+			</p>
+			<p>
+				<label for="month-input">First concert?</label>
+				<input type="month" id="month-input" value="month">
+			</p>
+			<p>
+				<label for="range-input">Volume</label>
+				<input type="range" id="range-input" value="range" min="2" max="20">
+			</p>
+			<p>
+				<label for="password-input">Password</label>
+				<input type="password" id="password-input" value="password">
+			</p>
+			<p>
+				<label for="time-input">Show time</label>
+				<input type="time" id="time-input" value="time">
+			</p>
+			<p>
+				<label for="url-input">Website</label>
+				<input type="url" id="url-input" value="url">
+			</p>
+			<p>
+				<label for="week-input">Holiday Week</label>
+				<input type="week" id="week-input" value="week">
+			</p>
+			<p>
+			<p>Instruments</p>
+			<label for="checkbox-input-guitar">
+				<input type="checkbox" id="checkbox-input-guitar" value="checkbox">
+				Guitar
+			</label><br>
+			<label for="checkbox-input-bass">
+				<input type="checkbox" id="checkbox-input-bass" value="checkbox">
+				Bass
+			</label><br>
+			<label for="checkbox-input-drums">
+				<input type="checkbox" id="checkbox-input-drums" value="checkbox">
+				Drums
+			</label><br>
+			</p>
+			<h4>Simple Select</h4>
+			<p>
+				<label for="select-single">Main Instrument</label><br />
+				<select id="select-single">
+					<option>select...</option>
+					<option>Guitar</option>
+					<option>Bass</option>
+					<option>Drums</option>
+					<optgroup label="Horns">
+						<option>Trumpet</option>
+						<option>Trombone</option>
+						<option>Saxophone</option>
+					</optgroup>
+				</select>
+			</p>
+			<h4>Select with Nested Markup</h4>
+			<label for="instrument-select">Instrument:</label>
+			<select id="instrument-select">
+				<button>
+					<selectedcontent></selectedcontent>
+				</button>
+				<option value="">Please select an instrument</option>
+				<option value="guitar">
+					<span aria-hidden="true">🎸</span>
+					<span>Guitar</span>
+				</option>
+				<option value="piano">
+					<span aria-hidden="true">🎹</span>
+					<span>Piano</span>
+				</option>
+				<option value="vocals">
+					<span aria-hidden="true">🎤</span>
+					<span>Vocals</span>
+				</option>
+				<option value="drums">
+					<span aria-hidden="true">🥁</span>
+					<span>Drums</span>
+				</option>
+				<option value="trumpet">
+					<span aria-hidden="true">🎺</span>
+					<span>Trumpet</span>
+				</option>
+			</select>
+			<p>
+				Radio Station
+			</p>
+			<p>
+				<label for="radio-input-jazz-fm">
+					<input type="radio" id="radio-input-jazz-fm" name="radio" value="jazz-fm">
+					Jazz FM
+				</label><br>
+				<label for="radio-input-knac">
+					<input type="radio" id="radio-input-knac" name="radio" value="knac-pure-rock">
+					KNAC Pure Rock 105.5
+				</label><br>
+				<label for="radio-input-bbc-r2">
+					<input type="radio" id="radio-input-bbc-r2" name="radio" value="bbc-radio-2">
+					BBC Radio 2
+				</label><br>
+			</p>
+			<p>
+				<label for="select-multiple">Select (multiple options)</label>
+			</p>
+			<p>
+				<select id="select-multiple" multiple="multiple">
+					<option>select...</option>
+					<option>Option 1</option>
+					<option>Option 2</option>
+					<option>Option 3</option>
+					<optgroup label="Special Options">
+						<option>Special Option A</option>
+						<option>Special Option B</option>
+						<option>Special Option C</option>
+					</optgroup>
+				</select>
+			</p>
+			<p>
+				<label for="textarea-comments">Comments</label>
+			</p>
+			<p>
+				<textarea id="textarea-comments" name="comments"></textarea>
+			</p>
+		</form>
+		<fieldset>
+			<legend>Music Genres</legend>
+			This is a set of checkboxes in fieldset element with a legend.
+			<br>
+			<label for="fieldset-checkbox-djent">
+				<input type="checkbox" name="fieldset-checkbox" id="fieldset-checkbox-djent" value="djent">
+				Djent
+			</label>
+			<label for="fieldset-checkbox-mathcore">
+				<input type="checkbox" name="fieldset-checkbox" id="fieldset-checkbox-mathcore" value="mathcore">
+				Mathcore
+			</label>
+			<label for="fieldset-checkbox-power-metal">
+				<input type="checkbox" name="fieldset-checkbox" id="fieldset-checkbox-power-metal" value="power-metal">
+				Power Metal
+			</label>
+			<label for="fieldset-checkbox-fusion">
+				<input type="checkbox" name="fieldset-checkbox" id="fieldset-checkbox-fusion" value="fusion">
+				Fusion
+			</label>
+			<label for="fieldset-checkbox-shredwave">
+				<input type="checkbox" name="fieldset-checkbox" id="fieldset-checkbox-shredwave" value="synthwave">
+				Shredwave
+			</label>
+			<label for="fieldset-checkbox-bardcore">
+				<input type="checkbox" name="fieldset-checkbox" id="fieldset-checkbox-bardcore" value="bardcore">
+				Bardcore
+			</label>
+		</fieldset>
+	</section>
+	<section id="buttons-and-dialogs">
+		<h3>Buttons and Dialogs</h3>
+		<p>
+			<input type="button" value="Normal Button">
+			<input type="submit" value="Submit Button">
+			<input type="reset" value="Reset Button">
+		</p>
+		<p>
+			<input type="image" src="blue-button.png" title="Click me! I’m blue!" alt="a blue button with a sort of X on it">
+		</p>
+		<p>
+			<button>This is an HTML <code>&lt;button&gt;</code> element.</button>
+		</p>
+		<p>
+			<button onclick="document.getElementById('dialog').showModal()">
+				Click this button to display a modal dialog
+			</button>
+		</p>
+		<p>
+			<button onclick="document.getElementById('output').innerHTML += ' Output!';">
+				Click this button to produce some output.
+			</button>
+		</p>
+		<p>
+			<output id="output">
+				this is an HTML <code>&lt;output&gt;</code> element.
+			</output>
+		</p>
+		<dialog id="dialog">
+			<h3>This is a modal dialog</h3>
+			<p>Yeah, HTML has modal dialogs now. Did you know that?</p>
+			<form method="dialog">
+				<input type="submit" value="Cool!">
+			</form>
+		</dialog>
+	</section>
+	<section id="search">
+		<h3>Search</h3>
+		<search>
+			<label for="search-input">Search</label>
+			<input type="search" id="search-input" value="search">
+		</search>
+	</section>
+	<footer id="footer">
+		and this is the page <code>&lt;footer&gt;</code>, which often includes some
+		<small><code>&lt;small&gt;</code> text</small>.
+		<nav>
+			<menu>
+				<li><a href="#">footer</a></li>
+				<li><a href="#">nav</a></li>
+				<li><a href="#">links</a></li>
+			</menu>
+		</nav>
+	</footer>
+</body>
+
+
+</html>

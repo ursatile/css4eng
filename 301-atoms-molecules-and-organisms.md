@@ -1,5 +1,4 @@
 ---
-av_order: 301
 examples: examples/301-atoms-molecules-and-organisms
 layout: home
 nav_order: 301

@@ -1,5 +1,4 @@
 ---
-av_order: 102
 examples: examples/102-fundamentals-and-background
 layout: home
 nav_order: 102

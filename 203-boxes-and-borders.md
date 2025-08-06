@@ -1,5 +1,4 @@
 ---
-av_order: 203
 examples: examples/203-boxes-and-borders
 layout: home
 nav_order: 203

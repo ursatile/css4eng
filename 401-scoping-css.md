@@ -1,5 +1,4 @@
 ---
-av_order: 401
 examples: examples/401-scoping-css
 layout: home
 nav_order: 401

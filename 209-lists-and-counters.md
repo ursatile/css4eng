@@ -1,5 +1,4 @@
 ---
-av_order: 209
 examples: examples/209-lists-and-counters
 layout: home
 nav_order: 209

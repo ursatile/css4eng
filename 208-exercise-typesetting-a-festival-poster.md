@@ -1,5 +1,4 @@
 ---
-av_order: 208
 examples: examples/208-exercise-typesetting-a-festival-poster
 layout: home
 nav_order: 208

@@ -1,5 +1,4 @@
 ---
-av_order: 207
 examples: examples/207-text-and-typography
 layout: home
 nav_order: 207

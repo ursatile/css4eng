@@ -1,5 +1,4 @@
 ---
-av_order: 304
 examples: examples/304-working-with-css-variables
 layout: home
 nav_order: 304

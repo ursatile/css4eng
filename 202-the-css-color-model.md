@@ -1,5 +1,4 @@
 ---
-av_order: 202
 examples: examples/202-the-css-color-model
 layout: home
 nav_order: 202

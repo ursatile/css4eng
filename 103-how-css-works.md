@@ -1,5 +1,4 @@
 ---
-av_order: 103
 examples: examples/103-how-css-works
 layout: home
 nav_order: 103

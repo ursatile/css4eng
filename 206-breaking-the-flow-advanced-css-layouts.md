@@ -1,5 +1,4 @@
 ---
-av_order: 206
 examples: examples/206-breaking-the-flow-advanced-css-layouts
 layout: home
 nav_order: 206

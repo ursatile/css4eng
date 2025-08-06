@@ -1,5 +1,4 @@
 ---
-av_order: 303
 examples: examples/303-using-css-grid
 layout: home
 nav_order: 303

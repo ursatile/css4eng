@@ -1,5 +1,4 @@
 ---
-av_order: 302
 examples: examples/302-movement-and-motion
 layout: home
 nav_order: 302

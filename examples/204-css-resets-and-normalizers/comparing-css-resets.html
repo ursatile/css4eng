@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Comparing Css Resets</title>
+	<style>
+		html {
+			font-family:'Trebuchet MS', Arial, sans-serif;
+			padding: 0;
+			margin: 0;
+		}
+
+		body {
+			height: 100vh;
+			overflow: hidden;
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+			display: grid;
+			grid-template-rows: 2em 1fr;
+			grid-template-columns: repeat(4, 1fr);
+
+			h1 {
+				font-size: 1rem;
+				text-align: center;
+			}
+
+			iframe {
+				height: 100%;
+				width: 100%;
+				zoom: 0.75;
+			}
+		}
+	</style>
+</head>
+<body>
+	<h1>Eric Meyer</h1>
+	<h1>Andy Bell</h1>
+	<h1>Josh W. Comeau</h1>
+	<h1>modern-normalize</h1>
+	<iframe src="kitchen-sink-eric-meyer-reset.html"></iframe>
+	<iframe src="kitchen-sink-andy-bell-reset.html"></iframe>
+	<iframe src="kitchen-sink-josh-w-comeau-reset.html"></iframe>
+	<iframe src="kitchen-sink-modern-normalize.html"></iframe>
+</body>
+</html>

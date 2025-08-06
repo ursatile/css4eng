@@ -1,5 +1,4 @@
 ---
-av_order: 210
 examples: examples/210-colors-and-composition
 layout: home
 nav_order: 210

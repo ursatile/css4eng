@@ -1,5 +1,4 @@
 ---
-av_order: 403
 examples: examples/403-css-frameworks
 layout: home
 nav_order: 403

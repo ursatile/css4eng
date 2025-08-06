@@ -1,5 +1,4 @@
 ---
-av_order: 306
 examples: examples/306-exercise-building-a-web-media-player
 layout: home
 nav_order: 306

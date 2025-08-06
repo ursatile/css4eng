@@ -1,5 +1,4 @@
 ---
-av_order: 205
 examples: examples/205-selectors-pseudo-classes-and-pseudo-elements
 layout: home
 nav_order: 205

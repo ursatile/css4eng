@@ -1,5 +1,4 @@
 ---
-av_order: 001
 examples: examples/001-introduction
 layout: home
 nav_order: 001

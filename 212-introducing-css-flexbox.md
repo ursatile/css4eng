@@ -1,5 +1,4 @@
 ---
-av_order: 212
 examples: examples/212-introducing-css-flexbox
 layout: home
 nav_order: 212

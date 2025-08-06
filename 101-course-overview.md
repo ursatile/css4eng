@@ -1,5 +1,4 @@
 ---
-av_order: 101
 examples: examples/101-course-overview
 layout: home
 nav_order: 101

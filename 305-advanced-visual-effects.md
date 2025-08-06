@@ -1,5 +1,4 @@
 ---
-av_order: 305
 examples: examples/305-advanced-visual-effects
 layout: home
 nav_order: 305
