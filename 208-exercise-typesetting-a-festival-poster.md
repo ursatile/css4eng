@@ -4,7 +4,7 @@ layout: home
 nav_order: 208
 target_minutes: 15
 title: "Exercise: Typesetting a Festival Poster"
-word_count: 201
+word_count: 586
 ---
 In this exercise, we're going to walk through typesetting a poster for a music festival using everything we've learned so far about layout, colour, fonts, and text, and learn a few more things along the way.
 
