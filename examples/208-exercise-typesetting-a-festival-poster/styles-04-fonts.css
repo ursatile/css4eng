@@ -98,8 +98,12 @@ section {
 	ul {
 		margin: 0;
 		padding: 0;
-
+		line-height: 2.2rem;
 		li {
+			&:first-of-type {
+				font-size: 1.2rem;
+				font-weight: bold;
+			}
 			display: block;
 		}
 	}

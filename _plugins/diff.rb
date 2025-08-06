@@ -160,7 +160,7 @@ module Jekyll
             # Default mode: show only differing lines
             # Apply syntax highlighting to baseline
             baseline_highlighted = render_rouge(filtered_baseline)
-            
+
             # Calculate diff and filter output to show only changed lines
             output = filter_diff_lines(output, baseline_highlighted)
           end
@@ -741,7 +741,7 @@ module Jekyll
       def filter_diff_lines(current_highlighted, baseline_highlighted)
         require 'diff/lcs'
         require 'set'
-        
+
         # Split both highlighted versions into lines
         current_lines = current_highlighted.split(/(?<=\n)/)
         baseline_lines = baseline_highlighted.split(/(?<=\n)/)
@@ -752,39 +752,38 @@ module Jekyll
 
         # Use diff-lcs to get structured diff information
         diffs = Diff::LCS.diff(baseline_text_lines, current_text_lines)
-        
+
         if diffs.empty?
           return "<span class=\"c1\"># No differences found compared to baseline</span>\n"
         end
 
         # Collect changed line numbers in the current (new) file
         changed_lines = Set.new
-        
+
         diffs.each do |hunk|
           hunk.each do |change|
             case change.action
             when '+' # Line added in new file
-              # Check if this is a real content change or just whitespace
+              # Check if the added line is whitespace-only
               current_line = current_text_lines[change.position] || ""
-              baseline_line = baseline_text_lines[change.position] || ""
-              
-              # Normalize whitespace for comparison
-              current_normalized = current_line.gsub(/\s+/, ' ').strip
-              baseline_normalized = baseline_line.gsub(/\s+/, ' ').strip
-              
-              # Only mark as changed if content actually differs
-              if current_normalized != baseline_normalized
-                changed_lines << change.position
-              end
+
+              # Skip if the added line is whitespace-only
+              next if current_line.strip.empty?
+
+              # For additions, we just need to check if the current line has content
+              changed_lines << change.position
             when '!' # Line changed
               # Check if this is a real content change or just whitespace
               current_line = current_text_lines[change.position] || ""
               baseline_line = baseline_text_lines[change.position] || ""
-              
+
+              # Skip if either line is whitespace-only
+              next if current_line.strip.empty? || baseline_line.strip.empty?
+
               # Normalize whitespace for comparison
               current_normalized = current_line.gsub(/\s+/, ' ').strip
               baseline_normalized = baseline_line.gsub(/\s+/, ' ').strip
-              
+
               # Only mark as changed if content actually differs
               if current_normalized != baseline_normalized
                 changed_lines << change.position
@@ -796,7 +795,7 @@ module Jekyll
 
         # Convert to sorted array
         changed_indices = changed_lines.to_a.sort
-        
+
         if changed_indices.empty?
           return "<span class=\"c1\"># No differences found compared to baseline</span>\n"
         end
@@ -810,7 +809,7 @@ module Jekyll
           if i == 0
             next # Already handled first element
           end
-          
+
           if line_idx == changed_indices[i-1] + 1
             # Consecutive line - extend current range
             current_range_end = line_idx
@@ -821,7 +820,7 @@ module Jekyll
             current_range_end = line_idx
           end
         end
-        
+
         # Add the final range
         ranges << [current_range_start, current_range_end]
 
@@ -834,7 +833,7 @@ module Jekyll
               result_lines << current_lines[i]
             end
           end
-          
+
           # Add separator between ranges (but not after the last one)
           if range_i < ranges.length - 1
             result_lines << "\n"
@@ -847,11 +846,11 @@ module Jekyll
       def find_diff_line_numbers(current_code, baseline_code, lines_to_keep)
         require 'diff/lcs'
         require 'set'
-        
+
         # Apply same filtering to both files for fair comparison
         current_text = current_code
         baseline_text = baseline_code
-        
+
         if lines_to_keep
           if lines_to_keep.is_a?(Array)
             # Handle element filtering - extract same ranges from both files
@@ -862,13 +861,13 @@ module Jekyll
                 start_line = Regexp.last_match(1).to_i
                 end_line = Regexp.last_match(2).to_i
                 start_index = [start_line - 1, 0].max
-                
+
                 # Extract from current file
                 current_end_index = [end_line - 1, current_code.lines.length - 1].min
                 if start_index <= current_end_index && start_index < current_code.lines.length
                   current_filtered_lines.concat(current_code.lines[start_index..current_end_index])
                 end
-                
+
                 # Extract from baseline file
                 baseline_end_index = [end_line - 1, baseline_code.lines.length - 1].min
                 if start_index <= baseline_end_index && start_index < baseline_code.lines.length
@@ -891,34 +890,33 @@ module Jekyll
 
         # Use diff-lcs to find differences
         diffs = Diff::LCS.diff(baseline_lines, current_lines)
-        
+
         changed_lines = Set.new
-        
+
         diffs.each do |hunk|
           hunk.each do |change|
             case change.action
             when '+' # Line added in current file
               # Check if this is a real content change or just whitespace
               current_line = current_lines[change.position] || ""
-              baseline_line = baseline_lines[change.position] || ""
-              
-              # Normalize whitespace for comparison
-              current_normalized = current_line.gsub(/\s+/, ' ').strip
-              baseline_normalized = baseline_line.gsub(/\s+/, ' ').strip
-              
-              # Only mark as changed if content actually differs
-              if current_normalized != baseline_normalized
-                changed_lines << (change.position + 1) # Convert to 1-based line numbers
-              end
+
+              # Skip if the added line is whitespace-only
+              next if current_line.strip.empty?
+
+              # For additions, we just need to check if the current line has content
+              changed_lines << (change.position + 1) # Convert to 1-based line numbers
             when '!' # Line changed
               # Check if this is a real content change or just whitespace
               current_line = current_lines[change.position] || ""
               baseline_line = baseline_lines[change.position] || ""
-              
+
+              # Skip if either line is whitespace-only
+              next if current_line.strip.empty? || baseline_line.strip.empty?
+
               # Normalize whitespace for comparison
               current_normalized = current_line.gsub(/\s+/, ' ').strip
               baseline_normalized = baseline_line.gsub(/\s+/, ' ').strip
-              
+
               # Only mark as changed if content actually differs
               if current_normalized != baseline_normalized
                 changed_lines << (change.position + 1) # Convert to 1-based line numbers
@@ -932,13 +930,13 @@ module Jekyll
           # For element filtering, map the relative positions back to absolute line numbers
           mapped_lines = Set.new
           current_offset = 0
-          
+
           lines_to_keep.each do |range|
             if range =~ /^(\d+)-(\d+)$/
               range_start = Regexp.last_match(1).to_i
               range_end = Regexp.last_match(2).to_i
               range_size = range_end - range_start + 1
-              
+
               # Check if any changed lines fall in this range
               changed_lines.each do |line_num|
                 if line_num > current_offset && line_num <= current_offset + range_size
@@ -947,11 +945,11 @@ module Jekyll
                   mapped_lines << original_line
                 end
               end
-              
+
               current_offset += range_size
             end
           end
-          
+
           changed_lines = mapped_lines
         elsif lines_to_keep
           # For single range filtering, adjust line numbers

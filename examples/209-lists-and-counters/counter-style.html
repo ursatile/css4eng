@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Counter Style</title>
+	<style>
+		@counter-style card-suits {
+			system: cyclic;
+			/* when you get to the end of the list, start over */
+			symbols: ♣ ♥ ♠ ♦;
+			suffix: " ";
+		}
+		@counter-style hex-digits {
+			system: numeric;
+			symbols: 𝟘 𝟙 𝟚 𝟛 𝟜 𝟝 𝟞 𝟟 𝟠 𝟡 𝔸 𝔹 ℂ 𝔻 𝔼 𝔽;
+			pad: 3 𝟘;
+			suffix: " ";
+		}
+
+		ol.programming-languages {
+			list-style: hex-digits;
+		}
+
+		ul.playing-cards {
+			list-style: card-suits;
+
+			li::marker {
+				font-size: 1.4em;
+			}
+
+			li:nth-child(2n)::marker {
+				color: crimson;
+			}
+		}
+		ul, ol {
+			width: 50%;
+			float: left;
+			box-sizing: border-box;
+		}
+
+
+	</style>
+</head>
+<body>
+	<ol class="programming-languages">
+		<li>Assembly (1949)</li>
+		<li>Fortran (1957)</li>
+		<li>LISP (1958)</li>
+		<li>ALGOL (1958/1960)</li>
+		<li>COBOL (1959)</li>
+		<li>APL (1962)</li>
+		<li>BASIC (1964)</li>
+		<li>PL/I (1964)</li>
+		<li>Logo (1967)</li>
+		<li>Simula (1967)</li>
+		<li>BCPL (1967)</li>
+		<li>Pascal (1970)</li>
+		<li>C (1972)</li>
+		<li>Prolog (1972)</li>
+		<li>ML (1973)</li>
+		<li>SQL (1978)</li>
+		<li>Ada (1980)</li>
+		<li>C++ (1983)</li>
+		<li>Objective-C (1984)</li>
+		<li>Erlang (1986)</li>
+		<li>Perl (1987)</li>
+		<li>Tcl (1988)</li>
+		<li>Python (1991)</li>
+		<li>Visual Basic (1991)</li>
+		<li>Lua (1993)</li>
+		<li>Ruby (1995)</li>
+		<li>Java (1995)</li>
+		<li>PHP (1995)</li>
+		<li>JavaScript (1995)</li>
+		<li>Delphi (Object Pascal) (1995)</li>
+		<li>Rebol (1997)</li>
+		<li>ActionScript (1998)</li>
+		<li>C# (2000)</li>
+		<li>D (2001)</li>
+		<li>Scala (2003)</li>
+		<li>Groovy (2003)</li>
+		<li>F# (2005)</li>
+		<li>Go (2009)</li>
+		<li>Rust (2010)</li>
+		<li>Kotlin (2011)</li>
+	</ol>
+		<ul class="playing-cards">
+		<li>Texas Hold 'Em</li>
+		<li>Five Card Stud</li>
+		<li>Racing Demon</li>
+		<li>Blackjack</li>
+		<li>Baccarat</li>
+		<li>Gin Rummy</li>
+		<li>Canasta</li>
+		<li>Hearts</li>
+		<li>Black Maria</li>
+	</ul>
+</body>
+</html>

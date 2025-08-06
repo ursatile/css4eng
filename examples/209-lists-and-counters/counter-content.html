@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Electric Guitar: Sample Requirements Specification</title>
+	<style>
+		body {
+			font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+		}
+
+		:is(h2, h3, p) {
+			padding-left: 4rem;
+
+			&::before {
+				position: absolute;
+				left: 1rem;
+				display: inline-block;
+				width: 3rem;
+				text-align: left;
+			}
+		}
+
+		h2 {
+			counter-increment: section;
+			counter-reset: subsection;
+
+			&::before {
+				content: counter(section) " ";
+			}
+		}
+
+		h3 {
+			counter-increment: subsection;
+			counter-reset: paragraph;
+
+			&::before {
+				content: counter(section) "." counter(subsection) " ";
+			}
+		}
+
+		p::before {
+			counter-increment: paragraph;
+			content: counter(section) "." counter(subsection) "." counter(paragraph) " ";
+		}
+	</style>
+</head>
+<body>
+	<h1>Electric Guitar: Requirements Specification</h1>
+	<h2>Body Construction</h2>
+	<h3>Material</h3>
+	<p>The guitar body shall be constructed from solid mahogany, alder, or ash.
+		Wood grain shall be tight and consistent with no visible defects or knots.
+	</p>
+	<p>Body wood shall be properly seasoned for a minimum of 12 months. Moisture
+		content shall be between 6% and 8% to prevent warping.</p>
+	<p>All wood materials must be sourced from sustainable forestry operations and
+		certified by recognized environmental standards.</p>
+	<h3>Shape and Dimensions</h3>
+	<p>The body shape shall conform to standard Stratocaster or Les Paul
+		templates.</p>
+	<p>Body thickness shall be between 40mm and 45mm.</p>
+	<p>Weight distribution must be balanced to ensure comfortable playing position
+		and prevent neck dive when worn with a strap.</p>
+	<h3>Routing and Cavities</h3>
+	<p>Electronics cavity shall allow for standard humbucker and single-coil
+		pickup routing.</p>
+	<p>Control cavity shall accommodate at least 2 potentiometers and a 5-way
+		switch.</p>
+	<p>All cavities must be properly shielded with copper foil or conductive paint
+		to minimize electromagnetic interference.</p>
+	<h2>Neck Construction</h2>
+	<h3>Material</h3>
+	<p>Neck shall be made from maple or mahogany.</p>
+	<p>Fingerboard shall be rosewood, maple, or ebony.</p>
+	<p>Wood joints between neck and fingerboard must be seamless and reinforced
+		with appropriate adhesives rated for musical instrument construction.</p>
+	<h3>Shape and Scale</h3>
+	<p>Scale length shall be 25.5” (+/- 0.1”).</p>
+	<p>Neck profile shall be C or D shape.</p>
+	<h3>Truss Rod</h3>
+	<p>Neck shall include a dual-action truss rod for adjustability.</p>
+	<p>Truss rod must be adjustable without removing the guitar neck or strings
+	</p>
+	<h2>Hardware</h2>
+	<h3>Bridge</h3>
+	<p>Guitar shall feature a fixed bridge or two-point tremolo system.</p>
+	<p>Bridge material shall be steel or brass.</p>
+	<h3>Tuners</h3>
+	<p>Headstock must accommodate 6 inline or 3+3 tuners.</p>
+	<p>Tuners shall provide at least 18:1 gear ratio for tuning stability.</p>
+	<h3>Electronics</h3>
+	<p>Pickups shall be shielded and soldered to minimize noise.</p>
+	<p>Output jack shall be 1/4” mono standard.</p>
+	<h2>Replaceability</h2>
+	<h3>Pickups</h3>
+	<p>Pickups must be easily replaceable using standard screw mounts and
+		soldering.</p>
+	<h3>Strings</h3>
+	<p>String replacement must be possible without removing the neck.</p>
+	<h2>Cleaning</h2>
+	<h3>Finish</h3>
+	<p>All surfaces must tolerate standard guitar cleaning products.</p>
+	<h3>Electronics</h3>
+	<p>Electronics cavity should allow easy access for dusting and contact
+		cleaning.</p>
+	<h2>Electrical Safety</h2>
+	<h3>Grounding</h3>
+	<p>All metal components shall be grounded to prevent electric shocks.</p>
+	<h3>Insulation</h3>
+	<p>Wires must be insulated with heat-resistant sheathing.</p>
+	<h2>Physical Safety</h2>
+	<h3>Edges</h3>
+	<p>All body and neck edges shall be rounded to prevent injury.</p>
+	<h2>Playability</h2>
+	<h3>Action</h3>
+	<p>String action at the 12th fret shall be between 1.5mm and 2.0mm.</p>
+	<h3>Intonation</h3>
+	<p>Instrument shall allow for intonation adjustment at each string.</p>
+	<p>Intonation accuracy shall be within +/- 2 cents across all frets and
+		strings.</p>
+	<h2>Electronics</h2>
+	<h3>Output</h3>
+	<p>Output signal shall be free from hum above 60dB.</p>
+	<h3>Tone Controls</h3>
+	<p>Tone and volume controls shall be smooth and noise-free throughout their
+		range.</p>
+	<h2>Finish</h2>
+	<h3>Color</h3>
+	<p>Body and headstock shall be finished in gloss or satin, in customer’s
+		choice of color.</p>
+	<h3>Inlays</h3>
+	<p>Fretboard shall include position marker inlays at standard fret positions.
+	</p>
+	<h2>User Manual</h2>
+	<h3>Contents</h3>
+	<p>Manual shall include string changing, truss rod adjustment, and cleaning
+		procedures.</p>
+</body>
+</html>

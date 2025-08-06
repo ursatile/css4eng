@@ -56,6 +56,34 @@ Paste the import rule at the top of our file, and then we're going to add some r
 
 {% diff styles-04-fonts.css diff_mode="mark" diff_baseline="styles-03-colors.css" %}
 
+{% iframe festival-04-fonts.html %}
+
+## Artist Logotypes
+
+Next, we're going to use the names of the various featured artists to showcase many of the capabilities of CSS typography.
+
+> OK, listen up. This is a fun way to showcase what CSS typography can do, and see the effects of various font and text properties.
+>
+> It is a *terrible* way to actually create artwork that incorporates anybody else's logos or logotypes. If you were doing this for a real music festival, you'd get high-quality vector artwork from the artists and use SVG or PNG images to display their logos.
+>
+> I wouldn't do this on a real project unless the client explicitly told me to recreate their logo using CSS, and provided the colour specs and typefaces, and even then I'd be waiting for the angry email saying it doesn't look right on the boss' 2011 Macbook Pro.
+
+We've done two things in the underlying HTML to make this part of the exercise a little easier; every featured artist element has an associated `id` attribute, and the individual words within each artist's name are wrapped in `<span>` tags.
+
+> CSS has the `::first-letter` and `::first-line` pseudo-elements, but no syntax for targeting specific words within a text element - there's no `::first-word`, `:nth-word` or anything comparable.
+
+{% diff styles-05-logotypes.css diff_baseline="styles-04-fonts.css" %}
+
+{% iframe festival-05-logotypes.html %}
+
+## Review and Recap
+
+In this exercise, we used CSS' layout and typography features to lay out a poster advertising a musical festival.
+
+
+
+
+
 
 
 
