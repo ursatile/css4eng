@@ -2,7 +2,7 @@
 examples: examples/303-using-css-grid
 layout: home
 nav_order: 303
-target_minutes: 20
+target_minutes: 15
 title: "Using CSS Grid"
 word_count: 37
 ---

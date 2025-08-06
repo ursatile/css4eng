@@ -61,4 +61,3 @@ For example, to create a document with legal-style numbered paragraphs:
 
 {% example counter-content.html elements="style,body" iframe_style="height: 20em;" %}
 
-
