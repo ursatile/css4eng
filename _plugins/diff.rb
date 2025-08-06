@@ -2,7 +2,7 @@
 
 module Jekyll
   module Tags
-    class ExampleTag < Liquid::Tag
+    class DiffTag < Liquid::Tag
       include Liquid::StandardFilters
 
       # SYNTAX = %r!^([a-zA-Z0-9.+#_-]+)((\s+\w+(=(\w+|"([0-9]+\s)*[0-9]+"))?)*)$!.freeze
@@ -13,13 +13,14 @@ module Jekyll
         if markup.strip =~ SYNTAX
           @filename = Regexp.last_match(1).downcase
           @highlight_options = parse_options(Regexp.last_match(2))
+          @baseline_filename = @highlight_options[:diff_baseline]
         else
           @syntax_error = <<~MSG
-            Syntax Error in tag 'example' while parsing the following markup:
+            Syntax Error in tag 'diff' while parsing the following markup:
 
             <pre>#{markup}</pre>
 
-            Valid syntax: example <filename> [mark_lines="3, 4, 5"] [iframe_style[="height: 10em;"]] [only_lines="4-6"] [start_after="<style>" end_before="</style>"] [elements="style,body"]
+            Valid syntax: diff <filename> [diff_baseline="baseline_filename"] [mark_lines="3, 4, 5"] [iframe_style[="height: 10em;"]] [only_lines="4-6"] [start_after="<style>" end_before="</style>"] [elements="style,body"]
           MSG
         end
       end
@@ -72,6 +73,13 @@ module Jekyll
         FileUtils.mkdir_p(dir) unless Dir.exist?(dir)
         code = read_or_create_file(file_path, context)
 
+        # Handle baseline file for diff functionality
+        baseline_code = nil
+        if @baseline_filename
+          baseline_path = File.join(root_path, "examples", page_filename, @baseline_filename)
+          baseline_code = read_or_create_file(baseline_path, context) if File.exist?(baseline_path)
+        end
+
         # Determine the file language first
         @lang = File.extname(file_path).delete_prefix(".")
 
@@ -106,9 +114,44 @@ module Jekyll
           output = filter_highlighted_lines_for_elements(output, lines_to_keep)
         end
 
+        # Step 4: Apply diff filtering if baseline file is specified
+        if @baseline_filename && baseline_code
+          # Apply same filtering to baseline code if needed
+          filtered_baseline = baseline_code
+          if lines_to_keep
+            # Apply same line filtering to baseline for fair comparison
+            if lines_to_keep.is_a?(Array)
+              # Handle element filtering
+              filtered_baseline_lines = []
+              lines_to_keep.each do |range|
+                if range =~ /^(\d+)-(\d+)$/
+                  start_line = Regexp.last_match(1).to_i
+                  end_line = Regexp.last_match(2).to_i
+                  start_index = [start_line - 1, 0].max
+                  end_index = [end_line - 1, baseline_code.lines.length - 1].min
+                  if start_index <= end_index && start_index < baseline_code.lines.length
+                    filtered_baseline_lines.concat(baseline_code.lines[start_index..end_index])
+                  end
+                end
+              end
+              filtered_baseline = filtered_baseline_lines.join
+            else
+              # Handle single range filtering
+              filtered_baseline = filter_lines(baseline_code, lines_to_keep)
+            end
+          end
+
+          # Apply syntax highlighting to baseline
+          baseline_highlighted = render_rouge(filtered_baseline)
+          
+          # Calculate diff and filter output to show only changed lines
+          output = filter_diff_lines(output, baseline_highlighted)
+        end
+
         # Remove common indentation from the filtered output
         # Skip this for element filtering since each block is already dedented individually
-        unless element_filtering_applied
+        # Also skip for diff processing since we want to preserve original indentation context
+        unless element_filtering_applied || (@baseline_filename && baseline_code)
           output = remove_common_indentation(output)
         end
 
@@ -677,6 +720,90 @@ module Jekyll
         h(code).strip
       end
 
+      def filter_diff_lines(current_highlighted, baseline_highlighted)
+        require 'diff/lcs'
+        require 'set'
+        
+        # Split both highlighted versions into lines
+        current_lines = current_highlighted.split(/(?<=\n)/)
+        baseline_lines = baseline_highlighted.split(/(?<=\n)/)
+
+        # Extract plain text content for comparison (remove HTML tags)
+        current_text_lines = current_lines.map { |line| line.gsub(/<[^>]*>/, '') }
+        baseline_text_lines = baseline_lines.map { |line| line.gsub(/<[^>]*>/, '') }
+
+        # Use diff-lcs to get structured diff information
+        diffs = Diff::LCS.diff(baseline_text_lines, current_text_lines)
+        
+        if diffs.empty?
+          return "<span class=\"c1\"># No differences found compared to baseline</span>\n"
+        end
+
+        # Collect changed line numbers in the current (new) file
+        changed_lines = Set.new
+        
+        diffs.each do |hunk|
+          hunk.each do |change|
+            case change.action
+            when '+' # Line added in new file
+              changed_lines << change.position
+            when '!' # Line changed
+              changed_lines << change.position
+            # Note: we don't track '-' (deletions) since they don't exist in the current file
+            end
+          end
+        end
+
+        # Convert to sorted array
+        changed_indices = changed_lines.to_a.sort
+        
+        if changed_indices.empty?
+          return "<span class=\"c1\"># No differences found compared to baseline</span>\n"
+        end
+
+        # Group into contiguous ranges
+        ranges = []
+        current_range_start = changed_indices.first
+        current_range_end = changed_indices.first
+
+        changed_indices.each_with_index do |line_idx, i|
+          if i == 0
+            next # Already handled first element
+          end
+          
+          if line_idx == changed_indices[i-1] + 1
+            # Consecutive line - extend current range
+            current_range_end = line_idx
+          else
+            # Gap found - close current range and start new one
+            ranges << [current_range_start, current_range_end]
+            current_range_start = line_idx
+            current_range_end = line_idx
+          end
+        end
+        
+        # Add the final range
+        ranges << [current_range_start, current_range_end]
+
+        # Extract lines for each contiguous range
+        result_lines = []
+        ranges.each_with_index do |(start_idx, end_idx), range_i|
+          # Add all lines in this contiguous range
+          (start_idx..end_idx).each do |i|
+            if i < current_lines.length
+              result_lines << current_lines[i]
+            end
+          end
+          
+          # Add separator between ranges (but not after the last one)
+          if range_i < ranges.length - 1
+            result_lines << "\n"
+          end
+        end
+
+        result_lines.join
+      end
+
       def add_code_tag(code, name, href)
         code_attrs = %(class="language-#{@lang.tr("+", "-")}" data-lang="#{@lang}")
         %(<figure class="highlight"><pre><code #{code_attrs}>#{code.chomp}</code></pre>
@@ -686,4 +813,4 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_tag("example", Jekyll::Tags::ExampleTag)
+Liquid::Template.register_tag("diff", Jekyll::Tags::DiffTag)
