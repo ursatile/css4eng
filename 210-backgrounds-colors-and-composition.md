@@ -6,7 +6,7 @@ target_minutes: 15
 title: "Colors and Composition"
 word_count: 49
 ---
-# Colors and Composition (20m)
+# Backgrounds, Colors and Composition (20m)
 
 ## Course Content
 
