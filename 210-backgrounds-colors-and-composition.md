@@ -4,7 +4,7 @@ layout: home
 nav_order: 210
 target_minutes: 15
 title: "Colors and Composition"
-word_count: 50
+word_count: 720
 ---
 In section 202, we learned about the CSS colour model, about named colours, system colours, specifying colours using RGB, HSL, or one of the other colour models supported by CSS.
 
