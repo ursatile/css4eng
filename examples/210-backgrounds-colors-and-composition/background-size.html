@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Background Size</title>
+	<style>
+		section {
+			background-image: url(seafloor.jpg);
+			width: 18%;
+			float: left;
+			height: 400px;
+			margin: 1%;
+			box-sizing: border-box;
+			padding: 250px 1em 1em 1em;
+			outline: 1px solid #000;
+			color: #fff;
+			font-family: Consolas, 'Courier New', Courier, monospace;
+			font-size: 0.8em;
+		}
+	</style>
+</head>
+<body>
+	<section style="background-size: contain;">
+		background-size: contain;
+	</section>
+	<section style="background-size: cover;">
+		background-size: cover;
+	</section>
+	<section style="background-size: 50%;">
+		background-size: 50%;
+	</section>
+		<section style="background-size: auto 50%;">
+		background-size: auto 50%;
+	</section>
+		<section style="background-size: 100% 100%;">
+		background-size: 100% 100%;
+	</section>
+</body>
+</html>

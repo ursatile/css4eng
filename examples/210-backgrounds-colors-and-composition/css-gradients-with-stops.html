@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Basic Css Gradients</title>
+	<style>
+		body {
+			overflow: hidden;
+			text-align: center;
+		}
+
+		section {
+			width: 30vw;
+			height: 30vw;
+			display: inline-block;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 1.5vw;
+			color: #fff;
+			text-align: center;
+		}
+
+		section.linear {
+			background-image: linear-gradient(to bottom, black, black 40px, yellow 50px, red 80%, green 90%, blue);
+		}
+
+		section.radial {
+			background-image: radial-gradient(red, red 20%, yellow 25%, green 30%, blue 35%, indigo 40%, red 50%);
+		}
+
+		section.conic {
+			background-image: conic-gradient(red, red 90deg, yellow 90deg, green 50%, blue 55%, indigo 60%, red);
+		}
+	</style>
+</head>
+<body>
+	<section class="linear">linear gradient</section>
+	<section class="radial">radial gradient</section>
+	<section class="conic">conic gradient</section>
+</body>
+</html>

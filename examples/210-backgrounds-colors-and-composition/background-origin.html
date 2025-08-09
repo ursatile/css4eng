@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Background Origin</title>
+	<style>
+		section {
+			width: 200px;
+			height: 100px;
+			padding: 50px 0;
+			text-align: center;
+			float: left;
+			background-repeat: no-repeat;
+			background-image: url(ornate-frame-200px.png);
+			border: 10px solid #036;
+			box-sizing: content-box;
+			margin: 0.4em;
+		}
+	</style>
+</head>
+<body>
+	<section style="background-origin: border-box;">
+		border-box;
+	</section>
+	<section style="background-origin: padding-box;">
+		padding-box;
+	</section>
+	<section style="background-origin: content-box;">
+		content-box;
+	</section>
+</body>
+</html>

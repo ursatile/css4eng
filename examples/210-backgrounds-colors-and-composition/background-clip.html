@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Background Clip</title>
+	<style>
+		html {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 0.8rem;
+			p { padding: 0.2rem; }
+		}
+		section {
+			background-image: url(sergey-pesterev-wdMWMHXUpsc-unsplash.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: 170px;
+			height: 200px;
+			border-width: 40px 10px;
+			border-style: solid;
+			border-color: #0369;
+			float: left;
+			margin: 0.2rem;
+			box-sizing: border-box;
+			font-weight: 900;
+			font-size: 5rem;
+			text-align: center;
+			padding: 1.2rem 0;
+			background-origin: border-box;
+		}
+	</style>
+</head>
+<body>
+	<section style="background-clip: border-box;">AB</section>
+	<section style="background-clip: padding-box;">CD</section>
+	<section style="background-clip: content-box;">EF</section>
+	<section style="background-clip: text; color: transparent;">GH</section>
+	<p style="clear: both;">
+	Photo by <a href="https://unsplash.com/@sickle?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Sergey Pesterev</a> on <a href="https://unsplash.com/photos/car-passing-by-in-between-trees-wdMWMHXUpsc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+	</p>
+
+</body>
+</html>

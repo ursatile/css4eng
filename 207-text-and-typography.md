@@ -136,25 +136,7 @@ There are dozens of font and text properties... and they aren't very interesting
 
 {% example festival-poster.html %}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# TODO: text-align: justify;
 
 # Text & Typography (20m)
 

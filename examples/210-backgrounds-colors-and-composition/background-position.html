@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Background Position</title>
+	<style>
+		section {
+			border: 4px solid white;
+			width: 20%;
+			height: 200px;
+			background-color: #000;
+			color: #fff;
+			background-image: url(cat.png);
+			background-repeat: no-repeat;
+			float: left;
+			padding: 0.2rem;
+			font-family: Consolas, 'Courier New', Courier, monospace;
+			font-size: 0.8rem;
+			box-sizing: border-box;
+		}
+
+		section[style*="left"] {
+			text-align: right;
+		}
+	</style>
+</head>
+<body>
+	<pre><code>background-position:</code></pre>
+	<section style="background-position: top;">
+		top
+	</section>
+	<section style="background-position: center;">
+		center
+	</section>
+	<section style="background-position: bottom;">
+		bottom
+	</section>
+	<section style="background-position: left;">
+		left
+	</section>
+	<section style="background-position: right;">
+		right
+	</section>
+	<br style="clear: both;">
+	<section style="background-position: top left;">
+		top left
+	</section>
+	<section style="background-position: bottom left;">
+		bottom left
+	</section>
+	<section style="background-position: bottom 20px right 20px;">
+		bottom 20px right 20px
+	</section>
+	<section style="background-position: 20% 80%;">
+		20% 80%
+	</section>
+	<section style="background-position: top 20% left 80%;">
+		top 20% right 80%
+	</section>
+</body>
+</html>
