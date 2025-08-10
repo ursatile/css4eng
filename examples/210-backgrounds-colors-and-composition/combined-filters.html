@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Combined Filters</title>
+	<style>
+		img {
+			width: 20vw;
+			height: 20vw;
+			margin: 2vw;
+			outline: 2px solid #000;
+
+			&:nth-child(2) {
+				filter: blur(5px) contrast(25) saturate(0.5);
+			}
+
+			&:nth-child(3) {
+				filter: saturate(0.5) contrast(25) blur(5px);
+			}
+
+			&:nth-child(4) {
+				filter:  blur(5px) saturate(0.5) contrast(25) ;
+			}
+		}
+	</style>
+</head>
+<body>
+	<img src="saddlebill-stork-by-dylan-beattie.jpg">
+	<img src="saddlebill-stork-by-dylan-beattie.jpg">
+	<img src="saddlebill-stork-by-dylan-beattie.jpg">
+	<img src="saddlebill-stork-by-dylan-beattie.jpg">
+</body>
+</html>

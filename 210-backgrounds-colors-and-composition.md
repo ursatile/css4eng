@@ -120,6 +120,10 @@ Using the `filter` property, we can apply a range of visual effects to any eleme
 
 {% example basic-filters.html elements="style,body" iframe_style="height: 32em;" %}
 
+You can combine multiple filters on a single element; if you do this, remember that filters are applied in the order they're defined:
+
+{% example combined-filters.html %}
+
 ## Notes
 
 
