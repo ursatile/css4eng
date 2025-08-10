@@ -4,7 +4,7 @@
 	<title>Basic Filters</title>
 	<style>
 		section {
-			background: linear-gradient(to right, red, yellow, green, blue, purple);
+			background: linear-gradient(to right, rgb(87, 24, 24), rgb(82, 72, 20), rgb(17, 75, 17), rgb(34, 34, 73), rgb(77, 34, 77));
 			color: white;
 			width: 200px;
 			height: 100px;
@@ -14,19 +14,15 @@
 			display: inline-block;
 			font-family: Consolas, 'Courier New', Courier, monospace;
 			padding-top: 20px;
+			margin: 4px;
 
 			span {
 				display: block;
-color: white;
-				/* &:nth-child(1) {
-					color: red;
-				}
+				color: white;
+
 				&:nth-child(2) {
-					color: green;
+					color: black;
 				}
-				&:nth-child(3) {
-					color: blue;
-				} */
 			}
 	</style>
 </head>
@@ -36,7 +32,7 @@ color: white;
 		<span>no filter</span>
 		<span>no filter</span>
 	</section>
-	<section style="filter: blur(5px);">
+	<section style="filter: blur(2px);">
 		<span>blur</span>
 		<span>blur</span>
 		<span>blur</span>
@@ -61,7 +57,7 @@ color: white;
 		<span>invert</span>
 		<span>invert</span>
 	</section>
-	<section style="filter: brightness(150%);">
+	<section style="filter: brightness(200%);">
 		<span>brightness</span>
 		<span>brightness</span>
 		<span>brightness</span>
@@ -71,7 +67,7 @@ color: white;
 		<span>contrast</span>
 		<span>contrast</span>
 	</section>
-	<section style="filter: saturate(200%);">
+	<section style="filter: saturate(50%);">
 		<span>saturate</span>
 		<span>saturate</span>
 		<span>saturate</span>
