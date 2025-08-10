@@ -124,11 +124,13 @@ You can combine multiple filters on a single element; if you do this, remember t
 
 {% example combined-filters.html elements="style" iframe_style="height: 14em;" %}
 
-## Mix Blend Modes
+## z-index and Mix Blend Modes
 
 The final creative technique we're going to look at is blend modes. If you've worked with Photoshop or Illlustrator, you've probably come across blend modes before --- and yes, I know this course is called "CSS for Engineers", and we're getting dangerously close to art here, but relax; after this we're going back to talking about viewports and responsive layouts.
 
+Using absolute positioning, we can have elements in a document which are painted over the top of each other. The exact order in which elements are painted is known as the `z-index`:
 
+{% example z-index.html elements="style,body" iframe_style="height: 10em;" %}
 
 
 

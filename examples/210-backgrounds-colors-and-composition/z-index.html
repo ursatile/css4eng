@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Z Index</title>
+	<style>
+		body, html { margin: 0; padding: 0; }
+		div {
+			display: inline-block;
+			width: 33%;
+			padding: 0;
+			height: 10em;
+			position: relative;
+			box-sizing: border-box;
+			margin: 0;
+
+			span {
+				position: absolute;
+				border: 1px solid #000;
+				padding: 2px;
+				font-family: consolas;
+				font-size: 10px;
+
+				&:nth-child(1) {
+					top: 10px;
+					left: 10px;
+					bottom: 50px;
+					right: 30px;
+					background-color: lime;
+				}
+
+				&:nth-child(2) {
+					top: 30px;
+					left: 50px;
+					bottom: 30px;
+					right: 50px;
+					background-color: yellow;
+				}
+
+				&:nth-child(3) {
+					top: 50px;
+					left: 30px;
+					bottom: 10px;
+					right: 10px;
+					background-color: red;
+				}
+
+			}
+	</style>
+</head>
+<body>
+	<div>
+		<span style="z-index: 1;">z-index: 1</span>
+		<span style="z-index: 2;">z-index: 2</span>
+		<span style="z-index: 3;">z-index: 3</span>
+	</div>
+	<div>
+		<span style="z-index: 3;">z-index: 3</span>
+		<span style="z-index: 2;">z-index: 2</span>
+		<span style="z-index: 1;">z-index: 1</span>
+	</div>
+	<div>
+		<span style="z-index: 2;">z-index: 2</span>
+		<span style="z-index: 3;">z-index: 3</span>
+		<span style="z-index: 1;">z-index: 1</span>
+	</div>
+
+</body>
+</html>
