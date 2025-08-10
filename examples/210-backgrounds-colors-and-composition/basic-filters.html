@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Basic Filters</title>
+	<title>Basic Filters</title>
 	<style>
 		section {
-			background: linear-gradient(to bottom right, #900, #009);
+			background: linear-gradient(to right, red, yellow, green, blue, purple);
 			color: white;
 			width: 200px;
 			height: 100px;
@@ -12,17 +12,79 @@
 			text-align: center;
 			font-weight: 900;
 			display: inline-block;
-			font-family: Consolas,'Courier New', Courier, monospace;
-		}
+			font-family: Consolas, 'Courier New', Courier, monospace;
+			padding-top: 20px;
+
+			span {
+				display: block;
+color: white;
+				/* &:nth-child(1) {
+					color: red;
+				}
+				&:nth-child(2) {
+					color: green;
+				}
+				&:nth-child(3) {
+					color: blue;
+				} */
+			}
 	</style>
 </head>
 <body>
-	<section>no filter</section>
+	<section>
+		<span>no filter</span>
+		<span>no filter</span>
+		<span>no filter</span>
+	</section>
 	<section style="filter: blur(5px);">
-		blur
+		<span>blur</span>
+		<span>blur</span>
+		<span>blur</span>
 	</section>
 	<section style="filter: sepia();">
-		sepia
+		<span>sepia</span>
+		<span>sepia</span>
+		<span>sepia</span>
+	</section>
+	<section style="filter: grayscale(100%);">
+		<span>grayscale</span>
+		<span>grayscale</span>
+		<span>grayscale</span>
+	</section>
+	<section style="filter: hue-rotate(90deg);">
+		<span>hue-rotate</span>
+		<span>hue-rotate</span>
+		<span>hue-rotate</span>
+	</section>
+	<section style="filter: invert(100%);">
+		<span>invert</span>
+		<span>invert</span>
+		<span>invert</span>
+	</section>
+	<section style="filter: brightness(150%);">
+		<span>brightness</span>
+		<span>brightness</span>
+		<span>brightness</span>
+	</section>
+	<section style="filter: contrast(200%);">
+		<span>contrast</span>
+		<span>contrast</span>
+		<span>contrast</span>
+	</section>
+	<section style="filter: saturate(200%);">
+		<span>saturate</span>
+		<span>saturate</span>
+		<span>saturate</span>
+	</section>
+	<section style="filter: opacity(50%);">
+		<span>opacity</span>
+		<span>opacity</span>
+		<span>opacity</span>
+	</section>
+	<section style="filter: drop-shadow(5px 5px 2px rgba(0,0,0,0.8));">
+		<span>drop-shadow</span>
+		<span>drop-shadow</span>
+		<span>drop-shadow</span>
 	</section>
 </body>
 </html>
