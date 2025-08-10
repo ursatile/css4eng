@@ -132,6 +132,12 @@ Using absolute positioning, we can have elements in a document which are painted
 
 {% example z-index.html elements="style,body" iframe_style="height: 10em;" %}
 
+`z-index` can take any integer value, including negative values to move something backwards in the display stack; I have occasionally resorted to `z-index: 99;` when I'm adding something like a popup to a legacy site, with a lot of confusing CSS to force it to be on top --- and I've also found `z-index: 99` in a few sites I've worked on and resorted to `z-index: 999`...
+
+{% example z-index-with-opacity.html elements="style,body" iframe_style="height: 10em;" %}
+
+
+
 
 
 
