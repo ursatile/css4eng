@@ -120,11 +120,17 @@ Using the `filter` property, we can apply a range of visual effects to any eleme
 
 {% example basic-filters.html elements="style,body" iframe_style="height: 32em;" %}
 
-You can combine multiple filters on a single element; if you do this, remember that filters are applied in the order they're defined:
+You can combine multiple filters on a single element; if you do this, remember that filters are applied in the order they're defined; applying `contrast` after `blur` will produce a very different outcome to applying `blur` after `contrast`:
 
-{% example combined-filters.html %}
+{% example combined-filters.html elements="style" iframe_style="height: 14em;" %}
 
-## Notes
+## Mix Blend Modes
+
+The final creative technique we're going to look at is blend modes. If you've worked with Photoshop or Illlustrator, you've probably come across blend modes before --- and yes, I know this course is called "CSS for Engineers", and we're getting dangerously close to art here, but relax; after this we're going back to talking about viewports and responsive layouts.
+
+
+
+
 
 
 
