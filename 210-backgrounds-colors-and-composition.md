@@ -71,37 +71,59 @@ There's also a repeating version of each gradient:
 
 {% example css-repeating-gradients.html elements="style, body" iframe_style="height: 15rem;" %}
 
-
-
-
-
 ## Multiple Backgrounds and Stacking Contexts
 
 OK, so you've seen about five hundred different ways to use an image as the background of an element... important, but not exciting.
 
-What makes CSS backgrounds really useful is that an element can have more than one background - and 
+What makes CSS backgrounds really useful is that an element can have more than one background - and we can control how multiple backgrounds are combined, giving us a way to create some really cool visual effects.
+
+How about a background photograph, and then overlaying that with a transparent gradient effect?
+
+{% example background-image-with-gradient.html elements="style" iframe_style="height: 26em;" %}
+
+Or combining multiple repeated gradients with a handwriting font to create something reminiscent of a school exercise book?
+
+{% example exercise-book.html element="style" iframe_style="height: 20em;" %}
+
+The thing to remember about composing multiple CSS backgrounds is that you need to provide multiple values for each property:
+
+```css
+background-image: <image1>, <image2>, <image3>, <image4>;
+background-size: <size1>, <size2>, <size3>, <size4>;
+background-position: <position1>, <position2>, <position3>, <position4>;
+```
+
+The first background is drawn closest to the viewer, the final background is drawn furthest away from the viewer, and only the final image can be a solid colour (even if that colour has transparency; if you need a transparent colour layer as part of a background stack, use a gradient that only defines one colour).
+
+## Using CSS Shorthand
+
+So far, almost every example we've seen has explicitly specified each property in turn. Many CSS features also support a shorthand syntax we can use to specify multiple related properties using a single rule. In the case of backgrounds, the shorthand property is `background`, followed by one more background layers, separated by commas, where each layer is specified using a shorthand syntax which includes one or more of:
+
+* `background-image`
+* `background-position`
+* `/ background-size`  - *note that size must follow position, and they must be separated with a `/`*
+* `background-repeat`
+* `background-origin`
+* `background-clip`
+* `background-attachment`
+* `background-color`
+
+Here's an example of a five-layer background, specified using the `background` shorthand:
+
+{% example background-shorthand.html elements="style" iframe_style="height: 20em;" %}
+
+## CSS Filters and Stacking Elements
+
+We can do some pretty cool things using layered backgrounds, but if we want to get really creative, we need to learn about CSS filters.
+
+Using the `filter` property, we can apply a range of visual effects to any element in the document.
+
+{% example basic-filters.html elements="style,body" iframe_style="height: 20em;" %}
 
 
 
 
 
-- [`background-attachment`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-attachment)
-- [`background-clip`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip)
-- [`background-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-color)
-- [`background-image`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image)
-- [`background-origin`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-origin)
-- [`background-position`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-position)
-- [`background-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size)
-
-# Backgrounds, Colors and Composition (20m)
-
-## Course Content
-
-- `color(from)`
-- DARK MODE
-- Beyond boxes: border-radius and backgrounds: `color`, `image`, `origin`, `size`, `position`
-- Understanding stacking contexts
-- Compositing multiple backgrounds
 - Using css `filter`: `blur()`, `brightness()`, `contrast()`, `drop-shadow()`, `grayscale()`, `hue-rotate()`, `invert()`, `opacity()`, `saturate()`, `sepia()`
 
 ## Notes

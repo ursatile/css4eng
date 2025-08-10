@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Background Shorthand</title>
+	<style>
+		body {
+			background:
+				/* First layer: the purple smoke curl */
+				url(purple-smoke-curl.png) bottom left -300px / 600px 1200px no-repeat,
+				/* second layer: the bottom right logotype */
+				url(indigo-designs.png) bottom 20px right 20px / min(20vw, 300px) no-repeat fixed,
+				/* third layer: the black-to-indigo gradient */
+				linear-gradient(to bottom right, #000e 0 50%, #4b008299) fixed,
+				/* fourth layer: the pinstripe */
+				repeating-linear-gradient(115deg, #0000 0 10px, white 11px 12px, #0000 13px) fixed,
+				/* bottom layer: solid black */
+				#000;
+			max-width: 540px;
+			padding-left: 200px;
+			padding-right: 20vw;
+			color: #fff;
+			font-family: 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+			footer {
+				font-size: 60%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<h2>“Layers Beneath The Silence”</h2>
+	<p><em>a sad goth poem about CSS, by ChatGPT 5</em></p>
+	<p>layer upon layer upon layer</p>
+	<p>a sky of gradients that never ends</p>
+	<p>the first image hides behind the second</p>
+	<p>the second cowers beneath the third</p>
+	<p>the fourth is a ghost you cannot name</p>
+	<p>position is a whisper you pretend not to hear</p>
+	<p>left 0 is a lie you tell yourself</p>
+	<p>top 0 is a dream you cannot hold</p>
+	<p>size is a promise you never keep</p>
+	<p>cover is the mask that fits too well</p>
+	<p>contain is the prison you built from math</p>
+	<p>transparent is the only honest color</p>
+	<p>white is not white, it is absence</p>
+	<p>black is not black, it is surrender</p>
+	<p>repeat is a curse from which there is no waking</p>
+	<p>repeat-x is the horizon collapsing</p>
+	<p>repeat-y is the rain you cannot stop</p>
+	<p>no-repeat is the cruelest optimism</p>
+	<p>scroll or fixed, you are never truly still</p>
+	<p>local is just another word for exile</p>
+	<p>blend-modes are alchemy in bad lighting</p>
+	<p>multiply eats your sunlight</p>
+	<p>screen burns you in reverse</p>
+	<p>overlay whispers your secrets in grayscale</p>
+	<p>linear-gradient is a ladder into the void</p>
+	<p>radial-gradient is an eye that will not blink</p>
+	<p>z-index means nothing here</p>
+	<p>order is only the illusion of control</p>
+	<p>and always, always, the browser decides your fate</p>
+	<p>and you will smile, because you cannot help it</p>
+	<footer>
+		<p>prompt: <q>30 lines of prose about CSS multiple backgrounds. Stark, bold,
+				blank verse style, like ee cummings meets one of those awful LinkedIn
+				posts meets bad Goth poetry.</q></p>
+				<p>this verse gets just about every detail wrong.</p>
+	</footer>
+</body>
+</html>

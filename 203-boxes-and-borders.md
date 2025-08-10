@@ -290,6 +290,8 @@ we can get our `<div>` elements to render side-by-side:
 
 We'll wrap it up there for now - in the next section we're going to work through a couple of exercises that'll give you a chance to try out the CSS box formatting model.
 
+
+
 ## Review & Recap
 
 * Elements on a page are either **block-level** or **inline** elements

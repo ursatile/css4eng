@@ -15,6 +15,7 @@ word_count: 26
 - Using variables in calculations
 - Environment variables with `env()`
 - colors and `from`
+- `color(from)`
 
 ## Notes
 
