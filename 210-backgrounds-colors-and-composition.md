@@ -18,9 +18,9 @@ One of the oldest web design techniques is using images as element backgrounds, 
 
 We'll kick off with the simplest possible example:
 
-{% example simple-background-image.html elements="style,body" iframe_style="height: 4em;" %}
+{% example simple-background-image.html elements="style" iframe_style="height: 20em;" %}
 
-The background image is shown at its native size --- 128x128 pixels in this example --- and covers the whole background with a repeating tile pattern.
+The background image is shown at its native size --- 100x100 pixels in this example --- and covers the whole background with a repeating tile pattern.
 
 The `background-repeat` property takes one or two parameters; if you give it two parameters, the first one is the horizontal repeat, the second is the vertical:
 
@@ -39,7 +39,7 @@ The `background-repeat` property takes one or two parameters; if you give it two
 
 `background-attachment` controls how the element's background responds to scrolling - is the background attached to the viewport (`fixed`), to the document (`scroll`), or to the element itself (`local`) ? You'll also notice if you look closely at this example that if the `background-attachment` is set to `fixed`, then the `background-size` is relative to the viewport, not the element itself:
 
-{% iframe background-attachment.html %}
+{% iframe background-attachment.html style="height: 22em;" %}
 
 `background-origin` controls whether the top-left corner - the `origin` - of the background is relative to the element's border, padding, or content:
 
@@ -118,13 +118,7 @@ We can do some pretty cool things using layered backgrounds, but if we want to g
 
 Using the `filter` property, we can apply a range of visual effects to any element in the document.
 
-{% example basic-filters.html elements="style,body" iframe_style="height: 20em;" %}
-
-
-
-
-
-- Using css `filter`: `blur()`, `brightness()`, `contrast()`, `drop-shadow()`, `grayscale()`, `hue-rotate()`, `invert()`, `opacity()`, `saturate()`, `sepia()`
+{% example basic-filters.html elements="style,body" iframe_style="height: 32em;" %}
 
 ## Notes
 

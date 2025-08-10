@@ -3,17 +3,27 @@
 <head>
 	<title>Basic Filters</title>
 	<style>
+		body {
+			text-align: center;
+		}
+
 		section {
-			background: linear-gradient(to right, rgb(87, 24, 24), rgb(82, 72, 20), rgb(17, 75, 17), rgb(34, 34, 73), rgb(77, 34, 77));
+			background: linear-gradient(to right,
+					hsl(000, 50%, 30%),
+					hsl(060, 50%, 30%),
+					hsl(120, 50%, 30%),
+					hsl(180, 50%, 30%),
+					hsl(240, 50%, 30%),
+					hsl(300, 50%, 30%));
 			color: white;
-			width: 200px;
-			height: 100px;
+			width: 30vw;
+			display: inline-block;
 			font-size: 20px;
 			text-align: center;
 			font-weight: 900;
 			display: inline-block;
 			font-family: Consolas, 'Courier New', Courier, monospace;
-			padding-top: 20px;
+			padding: 20px 0;
 			margin: 4px;
 
 			span {
@@ -30,55 +40,62 @@
 	<section>
 		<span>no filter</span>
 		<span>no filter</span>
-		<span>no filter</span>
 	</section>
 	<section style="filter: blur(2px);">
-		<span>blur</span>
-		<span>blur</span>
-		<span>blur</span>
+		<span>blur(2px)</span>
+		<span>blur(2px)</span>
 	</section>
 	<section style="filter: sepia();">
 		<span>sepia</span>
 		<span>sepia</span>
-		<span>sepia</span>
 	</section>
 	<section style="filter: grayscale(100%);">
-		<span>grayscale</span>
-		<span>grayscale</span>
-		<span>grayscale</span>
+		<span>grayscale(100%)</span>
+		<span>grayscale(100%)</span>
 	</section>
 	<section style="filter: hue-rotate(90deg);">
-		<span>hue-rotate</span>
-		<span>hue-rotate</span>
-		<span>hue-rotate</span>
+		<span>hue-rotate(90deg)</span>
+		<span>hue-rotate(90deg)</span>
 	</section>
 	<section style="filter: invert(100%);">
-		<span>invert</span>
-		<span>invert</span>
-		<span>invert</span>
+		<span>invert(100%)</span>
+		<span>invert(100%)</span>
 	</section>
+	<section style="filter: brightness(50%);">
+		<span>brightness(50%)</span>
+		<span>brightness(50%)</span>
+	</section>
+
 	<section style="filter: brightness(200%);">
-		<span>brightness</span>
-		<span>brightness</span>
-		<span>brightness</span>
+		<span>brightness(200%)</span>
+		<span>brightness(200%)</span>
 	</section>
 	<section style="filter: contrast(200%);">
-		<span>contrast</span>
-		<span>contrast</span>
-		<span>contrast</span>
+		<span>contrast(200%)</span>
+		<span>contrast(200%)</span>
 	</section>
+	<section style="filter: contrast(50%);">
+		<span>contrast(50%)</span>
+		<span>contrast(50%)</span>
+	</section>
+
 	<section style="filter: saturate(50%);">
-		<span>saturate</span>
-		<span>saturate</span>
-		<span>saturate</span>
+		<span>saturate(50%)</span>
+		<span>saturate(50%)</span>
+	</section>
+	<section style="filter: saturate(200%);">
+		<span>saturate(200%)</span>
+		<span>saturate(200%)</span>
 	</section>
 	<section style="filter: opacity(50%);">
-		<span>opacity</span>
-		<span>opacity</span>
-		<span>opacity</span>
+		<span>opacity(50%)</span>
+		<span>opacity(50%)</span>
 	</section>
 	<section style="filter: drop-shadow(5px 5px 2px rgba(0,0,0,0.8));">
 		<span>drop-shadow</span>
+		<span>drop-shadow</span>
+	</section>
+	<section style="filter: drop-shadow(10px 10px 0px magenta);">
 		<span>drop-shadow</span>
 		<span>drop-shadow</span>
 	</section>
