@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mix Blend Mode</title>
+	<style>
+		body {
+			background-image: conic-gradient(black 0deg 90deg, white 90deg 180deg, black 180deg 270deg, grey 270deg 360deg);
+			background-size: 32px 32px;
+		}
+
+		div {
+			outline: 2px solid red;
+			width: 12vh;
+			float: left;
+			background: linear-gradient(to right, red, gold, green, blue, purple);
+			color: #fff;
+			margin: 1em;
+			padding: 1em;
+		}
+	</style>
+</head>
+<body>
+	<div style="mix-blend-mode: normal;">Normal</div>
+	<div style="mix-blend-mode: multiply;">Multiply</div>
+	<div style="mix-blend-mode: screen;">Screen</div>
+	<div style="mix-blend-mode: overlay;">Overlay</div>
+	<div style="mix-blend-mode: darken;">Darken</div>
+	<div style="mix-blend-mode: lighten;">Lighten</div>
+	<div style="mix-blend-mode: color-dodge;">Color Dodge</div>
+	<div style="mix-blend-mode: color-burn;">Color Burn</div>
+	<div style="mix-blend-mode: hard-light;">Hard Light</div>
+	<div style="mix-blend-mode: soft-light;">Soft Light</div>
+	<div style="mix-blend-mode: difference;">Difference</div>
+	<div style="mix-blend-mode: exclusion;">Exclusion</div>
+	<div style="mix-blend-mode: hue;">Hue</div>
+	<div style="mix-blend-mode: saturation;">Saturation</div>
+	<div style="mix-blend-mode: color;">Color</div>
+	<div style="mix-blend-mode: luminosity;">Luminosity</div>
+</body>
+</html>

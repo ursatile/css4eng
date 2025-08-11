@@ -140,6 +140,10 @@ Stacking elements like this is relatively simple when they're all solid: you onl
 
 Notice how in this example, the boxes in the middle have `opacity` applied to the entire element, so it affects the text and border as well as the background, whereas the boxes on the right are opaque elements with a transparent background, so the text and border is still drawn at full intensity.
 
+Opacity isn't the only way that an element can be affected by its background, though. CSS also supports something called `mix-blend-mode`; using this, we can specify exactly how the colour of a background pixel should be combined with the colour of a foreground pixel to determine what colour actually gets drawn at that point.
+
+{% example mix-blend-mode.html elements="body" iframe_style="height: 20em;" %}
+
 
 
 
