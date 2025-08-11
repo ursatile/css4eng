@@ -7,32 +7,15 @@
 		html {
 			margin: 0;
 			padding: 0;
-			background:
-		}
-
-		div:nth-child(2) span {
-			opacity: 0.5;
-		}
-
-		div:nth-child(3) {
-			span:nth-child(1) {
-				background-color: rgb(145 255 122 / 0.5);
-			}
-
-			span:nth-child(2) {
-				background-color: rgb(124 218 255 / 0.5);
-			}
-
-			span:nth-child(3) {
-				background-color: rgb(216 132 255 / 0.5);
-			}
+			text-align: center;
+			overflow: hidden;
 		}
 
 		div {
 			display: inline-block;
-			width: 33%;
+			width: 32%;
 			padding: 0;
-			height: 10em;
+			height: 8em;
 			position: relative;
 			box-sizing: border-box;
 			margin: 0;
@@ -85,14 +68,17 @@
 		<span style="z-index: 3;">z-index: 3</span>
 	</div>
 	<div>
-		<span style="z-index: 3;">z-index: 3</span>
-		<span style="z-index: 2;">z-index: 2</span>
-		<span style="z-index: 1;">z-index: 1</span>
+		<span style="z-index: 3; opacity: 0.5;">z-index: 3</span>
+		<span style="z-index: 2; opacity: 0.5;">z-index: 2</span>
+		<span style="z-index: 1; opacity: 0.5;">z-index: 1</span>
 	</div>
 	<div>
-		<span style="z-index: 2;">z-index: 2</span>
-		<span style="z-index: 3;">z-index: 3</span>
-		<span style="z-index: 1;">z-index: 1</span>
+		<span style="z-index: 2;background-color: rgb(145 255 122 / 0.5);">
+			z-index: 2</span>
+		<span style="z-index: 3;background-color: rgb(124 218 255 / 0.5);">
+			z-index: 3</span>
+		<span style="z-index: 1;background-color: rgb(216 132 255 / 0.5);">
+			z-index: 1</span>
 	</div>
 
 </body>
