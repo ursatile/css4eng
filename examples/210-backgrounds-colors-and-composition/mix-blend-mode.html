@@ -3,15 +3,28 @@
 <head>
 	<title>Mix Blend Mode</title>
 	<style>
-		body {
-			background-image: conic-gradient(black 0deg 90deg, white 90deg 180deg, black 180deg 270deg, grey 270deg 360deg);
-			background-size: 16px 16px;
-		}
-
+		body { text-align: center; }
+		pre, section { margin: 10px; }
 		section {
 			div {
 				width: 20vw;
-				height: 10em;
+				display: inline-block;
+				height: 10rem;
+				background-position: center;
+				background-size: cover;
+				overflow: clip;
+				span {
+					background-color: red;
+					color: white;
+					display: block;
+					text-align: center;
+					padding-top: 1rem;
+					font-size: 5rem;
+					padding-bottom: 3rem;
+					font-weight: 900;
+					font-family: arial;
+				}
+
 			}
 
 			div:nth-child(1) {
@@ -23,45 +36,66 @@
 			}
 
 			div:nth-child(3) {
-				background-image: conic-gradient(#333 0deg 90deg, #333 90deg 180deg, #666 180deg 270deg, #ccc 270deg 360deg);
+				background-image: conic-gradient(#333 0deg 90deg, #ccc 90deg 180deg, #333 180deg 270deg, #ccc 270deg 360deg);
 				background-size: 32px 32px;
 			}
 		}
-
-
-		div {
-			background: white;
-			color: black;
-			font-size: 4em;
-			font-weight: 900;
-			padding: 0;
-			outline: 2px solid red;
-			width: 12vh;
-			float: left;
+		main {
+			section:nth-of-type(1) div span { mix-blend-mode: normal; }
+			section:nth-of-type(2) div span { mix-blend-mode: multiply; }
+			section:nth-of-type(3) div span { mix-blend-mode: screen; }
+			section:nth-of-type(4) div span { mix-blend-mode: overlay; }
+			section:nth-of-type(5) div span { mix-blend-mode: darken; }
+			section:nth-of-type(6) div span { mix-blend-mode: lighten; }
+			section:nth-of-type(7) div span { mix-blend-mode: color-dodge; }
+			section:nth-of-type(8) div span { mix-blend-mode: color-burn; }
+			section:nth-of-type(9) div span { mix-blend-mode: hard-light; }
+			section:nth-of-type(10) div span { mix-blend-mode: soft-light; }
+			section:nth-of-type(11) div span { mix-blend-mode: difference; }
+			section:nth-of-type(12) div span { mix-blend-mode: exclusion; }
+			section:nth-of-type(13) div span { mix-blend-mode: hue; }
+			section:nth-of-type(14) div span { mix-blend-mode: saturation; }
+			section:nth-of-type(15) div span { mix-blend-mode: color; }
+			section:nth-of-type(16) div span { mix-blend-mode: luminosity; }
 		}
 	</style>
 </head>
 <body>
-	<section>
-		<div></div>
-		<div></div>
-		<div></div>
-	</section>
-	<!-- <div style="mix-blend-mode: normal;">Normal</div>
-	<div style="mix-blend-mode: multiply;">Multiply</div>
-	<div style="mix-blend-mode: screen;">Screen</div>
-	<div style="mix-blend-mode: overlay;">Overlay</div>
-	<div style="mix-blend-mode: darken;">Darken</div>
-	<div style="mix-blend-mode: lighten;">Lighten</div>
-	<div style="mix-blend-mode: color-dodge;">Color Dodge</div>
-	<div style="mix-blend-mode: color-burn;">Color Burn</div>
-	<div style="mix-blend-mode: hard-light;">Hard Light</div>
-	<div style="mix-blend-mode: soft-light;">Soft Light</div>
-	<div style="mix-blend-mode: difference;">Difference</div>
-	<div style="mix-blend-mode: exclusion;">Exclusion</div>
-	<div style="mix-blend-mode: hue;">Hue</div>
-	<div style="mix-blend-mode: saturation;">Saturation</div>
-	<div style="mix-blend-mode: color;">Color</div>
-	<div style="mix-blend-mode: luminosity;">Luminosity</div> -->
+	<pre>background images:</pre>
+	<section> <div></div> <div></div> <div></div> </section>
+	<main>
+	<pre>mix-blend-mode: normal;</pre>
+	<section> <div><span>CSS</span></div> <div><span>CSS</span></div> <div><span>CSS</span></div> </section>
+	<pre>mix-blend-mode: multiply;</pre>
+	<section> <div><span>CSS</span></div> <div><span>CSS</span></div> <div><span>CSS</span></div> </section>
+	<pre>mix-blend-mode: screen;</pre>
+	<section> <div><span>CSS</span></div> <div><span>CSS</span></div> <div><span>CSS</span></div> </section>
+	<pre>mix-blend-mode: overlay;</pre>
+	<section> <div><span>CSS</span></div> <div><span>CSS</span></div> <div><span>CSS</span></div> </section>
+	<pre>mix-blend-mode: darken;</pre>
+	<section> <div><span>CSS</span></div> <div><span>CSS</span></div> <div><span>CSS</span></div> </section>
+	<pre>mix-blend-mode: lighten;</pre>
+	<section> <div><span>CSS</span></div> <div><span>CSS</span></div> <div><span>CSS</span></div> </section>
+	<pre>mix-blend-mode: color-dodge;</pre>
+	<section> <div><span>CSS</span></div> <div><span>CSS</span></div> <div><span>CSS</span></div> </section>
+	<pre>mix-blend-mode: color-burn;</pre>
+	<section> <div><span>CSS</span></div> <div><span>CSS</span></div> <div><span>CSS</span></div> </section>
+	<pre>mix-blend-mode: hard-light;</pre>
+	<section> <div><span>CSS</span></div> <div><span>CSS</span></div> <div><span>CSS</span></div> </section>
+	<pre>mix-blend-mode: soft-light;</pre>
+	<section> <div><span>CSS</span></div> <div><span>CSS</span></div> <div><span>CSS</span></div> </section>
+	<pre>mix-blend-mode: difference;</pre>
+	<section> <div><span>CSS</span></div> <div><span>CSS</span></div> <div><span>CSS</span></div> </section>
+	<pre>mix-blend-mode: exclusion;</pre>
+	<section> <div><span>CSS</span></div> <div><span>CSS</span></div> <div><span>CSS</span></div> </section>
+	<pre>mix-blend-mode: hue;</pre>
+	<section> <div><span>CSS</span></div> <div><span>CSS</span></div> <div><span>CSS</span></div> </section>
+	<pre>mix-blend-mode: saturation;</pre>
+	<section> <div><span>CSS</span></div> <div><span>CSS</span></div> <div><span>CSS</span></div> </section>
+	<pre>mix-blend-mode: color;</pre>
+	<section> <div><span>CSS</span></div> <div><span>CSS</span></div> <div><span>CSS</span></div> </section>
+	<pre>mix-blend-mode: luminosity;</pre>
+	<section> <div><span>CSS</span></div> <div><span>CSS</span></div> <div><span>CSS</span></div> </section>
+	</main>
 </body>
 </html>
