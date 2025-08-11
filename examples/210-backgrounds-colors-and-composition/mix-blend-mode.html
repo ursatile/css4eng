@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Mix Blend Mode</title>
+	<title>Mix Blend Mode</title>
 	<style>
 		body {
 			background-image: conic-gradient(black 0deg 90deg, white 90deg 180deg, black 180deg 270deg, grey 270deg 360deg);
 			background-size: 16px 16px;
 		}
+
+		section {
+			div {
+				width: 20vw;
+				height: 10em;
+			}
+
+			div:nth-child(1) {
+				background-image: url(david-clode-Ue2tcqeomdw-unsplash.jpg);
+			}
+
+			div:nth-child(2) {
+				background-image: url(sergey-pesterev-tMvuB9se2uQ-unsplash.jpg);
+			}
+
+			div:nth-child(3) {
+				background-image: conic-gradient(#333 0deg 90deg, #333 90deg 180deg, #666 180deg 270deg, #ccc 270deg 360deg);
+				background-size: 32px 32px;
+			}
+		}
+
 
 		div {
 			background: white;
@@ -21,7 +42,12 @@
 	</style>
 </head>
 <body>
-	<div style="mix-blend-mode: normal;">Normal</div>
+	<section>
+		<div></div>
+		<div></div>
+		<div></div>
+	</section>
+	<!-- <div style="mix-blend-mode: normal;">Normal</div>
 	<div style="mix-blend-mode: multiply;">Multiply</div>
 	<div style="mix-blend-mode: screen;">Screen</div>
 	<div style="mix-blend-mode: overlay;">Overlay</div>
@@ -36,6 +62,6 @@
 	<div style="mix-blend-mode: hue;">Hue</div>
 	<div style="mix-blend-mode: saturation;">Saturation</div>
 	<div style="mix-blend-mode: color;">Color</div>
-	<div style="mix-blend-mode: luminosity;">Luminosity</div>
+	<div style="mix-blend-mode: luminosity;">Luminosity</div> -->
 </body>
 </html>
