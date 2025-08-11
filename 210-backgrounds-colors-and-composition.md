@@ -112,6 +112,88 @@ Here's an example of a five-layer background, specified using the `background` s
 
 {% example background-shorthand.html elements="style" iframe_style="height: 20em;" %}
 
+## Using CSS Blend Modes
+
+In all the examples above, we only see the further layer if the nearer layer has some transparency to it; if foreground background layers are fully opaque, the background layer is completely covered and doesn't affect what ends up on the screen.
+
+Multiple backgrounds is one of the places where we can use something called blend modes; a bunch of algorithms that started out in fundamental computer graphics, made their way into applications like Photoshop, and have ended up baked into browsers as part of the latest CSS standards.
+
+Before we go any further, there are two things to bear in mind about blend modes and filters. First: you can use them to create just about any effect imaginable; by combining blend modes, you can create literally thousands of different effects. 
+
+Second: the vast majority of those will not yield anything useful. Many of them won't actually do anything at all. It's incredibly hard to predict what a given combination of blend modes will actually do, and using them in your own code often boils down to a lengthy iterative process of trial and error. There are a handful of genuinely useful applications of CSS blend modes, and once in while you'll find a scenario where a background blend mode actually solves a problem, but if you're staring at them going "...why would I ever use this?", you're not alone.
+
+The descriptions here are taken directly from the [MDN documentation on blend modes](https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode):
+
+- [`normal`](https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode#normal)
+
+  The final color is the top color, regardless of what the bottom color is. The effect is like two opaque pieces of paper overlapping.
+
+- [`multiply`](https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode#multiply)
+
+  The final color is the result of multiplying the top and bottom colors. A black layer leads to a black final layer, and a white layer leads to no change. The effect is like two images printed on transparent film overlapping.
+
+- [`screen`](https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode#screen)
+
+  The final color is the result of inverting the colors, multiplying them, and inverting that value. A black layer leads to no change, and a white layer leads to a white final layer. The effect is like shining two projectors onto the same screen.
+
+- [`overlay`](https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode#overlay)
+
+  The final color is the result of `multiply` if the bottom color is darker, or `screen` if the bottom color is lighter. This blend mode is equivalent to `hard-light` but with the layers swapped.
+
+- [`darken`](https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode#darken)
+
+  The final color is composed of the darkest values of each color channel.
+
+- [`lighten`](https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode#lighten)
+
+  The final color is composed of the lightest values of each color channel.
+
+- [`color-dodge`](https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode#color-dodge)
+
+  The final color is the result of dividing the bottom color by the inverse of the top color. A black foreground leads to no change. A foreground with the inverse color of the backdrop leads to a fully lit color. This blend mode is similar to `screen`, but the foreground need only be as light as the inverse of the backdrop to create a fully lit color.
+
+- [`color-burn`](https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode#color-burn)
+
+  The final color is the result of inverting the bottom color, dividing the value by the top color, and inverting that value. A white foreground leads to no change. A foreground with the inverse color of the backdrop leads to a black final image. This blend mode is similar to `multiply`, but the foreground need only be as dark as the inverse of the backdrop to make the final image black.
+
+- [`hard-light`](https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode#hard-light)
+
+  The final color is the result of `multiply` if the top color is darker, or `screen` if the top color is lighter. This blend mode is equivalent to `overlay` but with the layers swapped. The effect is similar to shining a *harsh* spotlight on the backdrop.
+
+- [`soft-light`](https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode#soft-light)
+
+  The final color is similar to `hard-light`, but softer. This blend mode behaves similar to `hard-light`. The effect is similar to shining a *diffused* spotlight on the backdrop.
+
+- [`difference`](https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode#difference)
+
+  The final color is the result of subtracting the darker of the two colors from the lighter one. A black layer has no effect, while a white layer inverts the other layer's color.
+
+- [`exclusion`](https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode#exclusion)
+
+  The final color is similar to `difference`, but with less contrast. As with `difference`, a black layer has no effect, while a white layer inverts the other layer's color.
+
+- [`hue`](https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode#hue)
+
+  The final color has the *hue* of the top color, while using the *saturation* and *luminosity* of the bottom color.
+
+- [`saturation`](https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode#saturation)
+
+  The final color has the *saturation* of the top color, while using the *hue* and *luminosity* of the bottom color. A pure gray backdrop, having no saturation, will have no effect.
+
+- [`color`](https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode#color)
+
+  The final color has the *hue* and *saturation* of the top color, while using the *luminosity* of the bottom color. The effect preserves gray levels and can be used to colorize the foreground.
+
+- [`luminosity`](https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode#luminosity)
+
+  The final color has the *luminosity* of the top color, while using the *hue* and *saturation* of the bottom color. This blend mode is equivalent to `color`, but with the layers swapped.
+
+{% iframe mix-blend-mode.html style="height: 20em;" %}
+
+That said, let's take a look at a few useful examples.
+
+
+
 ## CSS Filters and Stacking Elements
 
 We can do some pretty cool things using layered backgrounds, but if we want to get really creative, we need to learn about CSS filters.
@@ -141,6 +223,15 @@ Stacking elements like this is relatively simple when they're all solid: you onl
 Notice how in this example, the boxes in the middle have `opacity` applied to the entire element, so it affects the text and border as well as the background, whereas the boxes on the right are opaque elements with a transparent background, so the text and border is still drawn at full intensity.
 
 Opacity isn't the only way that an element can be affected by its background, though. CSS also supports something called `mix-blend-mode`; using this, we can specify exactly how the colour of a background pixel should be combined with the colour of a foreground pixel to determine what colour actually gets drawn at that point.
+
+`multiply` will multiply the foreground by the background. It helps me to think white as 1 and black as 0; anything times white is anything; anything times black is black.
+
+
+
+* `screen`: 
+* 
+
+
 
 {% example mix-blend-mode.html elements="body" iframe_style="height: 20em;" %}
 
