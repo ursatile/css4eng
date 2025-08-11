@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Hard-Light blend mode demo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  :root { --size: 260px; font: 16px/1.4 system-ui, sans-serif; }
+  body {
+    margin: 0; min-height: 100svh; display: grid; place-items: center;
+    background: #111; color: #eee;
+  }
+  .demo {
+    display: grid; gap: 20px; grid-template-columns: repeat(2, minmax(260px, 1fr));
+    width: min(90vw, 720px);
+  }
+  .card {
+    border-radius: 14px; overflow: hidden; position: relative; padding: 16px;
+    background: #1b1b1b; box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  }
+  .card h2 { margin: 0 0 10px; font-weight: 700; font-size: 1rem; opacity: .8; }
+  .stage {
+    border-radius: 12px; overflow: hidden; height: var(--size); position: relative;
+    /* Critical: isolate creates a new stacking context so blending stays inside */
+    isolation: isolate;
+  }
+
+  /* Panel A: mix-blend-mode on the foreground image */
+  .stage.a {
+    background:
+      radial-gradient(120% 120% at 0% 100%, #ff7a00 0%, #7028e4 45%, #0ea5e9 100%);
+  }
+  .stage.a img {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    transform: scale(1.1);
+    mix-blend-mode: hard-light;
+    opacity: .95;
+  }
+  .stage.a .label {
+    position: absolute; inset: auto 10px 10px auto; background: rgba(0,0,0,.55);
+    padding: 6px 10px; border-radius: 999px; font-size: .8rem;
+  }
+
+  /* Panel B: background-blend-mode on the element's background layers */
+  .stage.b {
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, .15), rgba(0, 0, 0, .6)),
+      url("https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=1200&auto=format&fit=crop") center/cover no-repeat,
+      radial-gradient(140% 120% at 100% 0%, #22d3ee 0%, #ec4899 40%, #f59e0b 100%);
+    background-blend-mode: hard-light, hard-light, normal;
+  }
+  .stage.b .label {
+    position: absolute; inset: auto auto 10px 10px; background: rgba(0,0,0,.55);
+    padding: 6px 10px; border-radius: 999px; font-size: .8rem;
+  }
+
+  footer { grid-column: 1 / -1; opacity: .7; font-size: .9rem; text-align: center; }
+  code { background: #222; padding: .1rem .35rem; border-radius: .35rem; }
+</style>
+</head>
+<body>
+  <div class="demo">
+    <div class="card">
+      <h2>A) <code>mix-blend-mode: hard-light</code> (foreground blends with parent)</h2>
+      <div class="stage a">
+        <!-- any image works; using an Unsplash placeholder -->
+        <img alt="Texture" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&auto=format&fit=crop" />
+        <span class="label">mix-blend-mode: hard-light</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>B) <code>background-blend-mode: hard-light</code> (background layers blend)</h2>
+      <div class="stage b">
+        <span class="label">background-blend-mode: hard-light</span>
+      </div>
+    </div>
+
+    <footer>
+      Tip: blending happens where pixels overlap. Use <code>isolation: isolate</code> on a container
+      to keep the effect from bleeding into the page.
+    </footer>
+  </div>
+</body>
+</html>
