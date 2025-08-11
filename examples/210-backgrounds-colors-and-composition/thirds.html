@@ -12,50 +12,13 @@
 
 		div {
 			display: inline-block;
+			background-color: #ff9;
 			width: 33%;
 			padding: 0;
 			margin: 0;
 			height: 8em;
 			position: relative;
 			box-sizing: border-box;
-			span {
-				position: absolute;
-				border: 1px solid #000;
-				padding: 2px;
-				font-family: consolas;
-				font-size: 10px;
-				display: flex;
-				/* Aligns content to the bottom */
-
-				&:nth-child(1) {
-					top: 10px;
-					left: 10px;
-					bottom: 50px;
-					right: 30px;
-					background-color: rgb(145, 255, 122);
-				}
-
-				&:nth-child(2) {
-					top: 30px;
-					left: 50px;
-					bottom: 30px;
-					right: 50px;
-					background-color: rgb(124, 218, 255);
-
-					&:has(~ [style*="z-index: 1"]) {
-						align-items: flex-end;
-					}
-				}
-
-				&:nth-child(3) {
-					top: 50px;
-					left: 30px;
-					bottom: 10px;
-					right: 10px;
-					background-color: rgb(216, 132, 255);
-					align-items: flex-end;
-				}
-
 			}
 	</style>
 </head>
@@ -64,13 +27,11 @@
 		<span style="z-index: 1;">z-index: 1</span>
 		<span style="z-index: 2;">z-index: 2</span>
 		<span style="z-index: 3;">z-index: 3</span>
-	</div>
-	<div>
+	</div><div>
 		<span style="z-index: 3;">z-index: 3</span>
 		<span style="z-index: 2;">z-index: 2</span>
 		<span style="z-index: 1;">z-index: 1</span>
-	</div>
-	<div>
+	</div><div>
 		<span style="z-index: 2;">z-index: 2</span>
 		<span style="z-index: 3;">z-index: 3</span>
 		<span style="z-index: 1;">z-index: 1</span>
