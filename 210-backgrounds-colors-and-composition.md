@@ -132,9 +132,13 @@ Using absolute positioning, we can have elements in a document which are painted
 
 {% example z-index.html elements="body" iframe_style="height: 8.5em;" %}
 
-`z-index` can take any integer value, including negative values to move something backwards in the display stack; I have occasionally resorted to `z-index: 99;` when I'm adding something like a popup to a legacy site, with a lot of confusing CSS to force it to be on top --- and I've also found `z-index: 99` in a few sites I've worked on and resorted to `z-index: 999`...
+`z-index` can take any integer value, including negative values to move something backwards in the display stack; I have occasionally resorted to `z-index: 99;` when I'm adding something like a popup to a legacy site, with a lot of confusing CSS to force it to be on top --- and I've also found `z-index: 99` in a few sites I've worked on and resorted to `z-index: 999`.
+
+Stacking elements like this is relatively simple when they're all solid: you only see the one at the front. But once we start introducing concepts like opacity, it can get very interesting indeed.
 
 {% example z-index-with-opacity.html elements="body" iframe_style="height: 8.5em;" %}
+
+Notice how in this example, the boxes in the middle have `opacity` applied to the entire element, so it affects the text and border as well as the background, whereas the boxes on the right are opaque elements with a transparent background, so the text and border is still drawn at full intensity.
 
 
 
