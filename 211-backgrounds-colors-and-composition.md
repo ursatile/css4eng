@@ -202,9 +202,7 @@ For a full duotone effect, sometimes known as a split tone, you can apply one ti
 
 {% example split-tone-background.html elements="style" iframe_style="height: 17em;" %}
 
-
-
-
+In this example, I've used a `:hover` pseudo-class to reveal the unfiltered background image when you mouse-over each element; this effect also relies on very specific combinations of colours, so you'll need to experiment if you want to recreate it using your own colour palette and images.
 
 ## CSS Filters and Stacking Elements
 
