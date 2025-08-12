@@ -1,8 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Variable Fonts</title>
+	<title>Variable Fonts</title>
+	<style>
+		@font-face {
+			font-family: 'Roboto Flex';
+			src: url(./fonts/roboto-flex/roboto-flex-variable.ttf) format('truetype');
+			font-style: normal;
+			font-weight: 100 1000;
+			font-stretch: 50% 150%;
+			font-display: swap;
+		}
+
+		body {
+			font-family: "Roboto Flex", sans-serif;
+		}
+
+		h1 {
+			font-weight: 500;
+			font-stretch: 150%;
+		}
+
+		h2 {
+			font-weight: 100;
+			font-stretch: 50%;
+		}
+
+		h3 {
+			font-weight: 600;
+			font-variation-settings: "slnt" -10;
+		}
+	</style>
 </head>
 <body>
+	<h1>Showcasing CSS Variable Fonts</h1>
+	<p>In which we discuss the potential of variable fonts, their ability to
+		provide multiple font variations within a single file, and how they enable
+		dynamic typography adjustments for responsive design and enhanced user
+		experiences.</p>
+	<h2>What’s The Big Idea?</h2>
+	<p>Instead of having to provide multiple versions of a font, which means
+		multiple files,
+		which means multiple HTTP requests, we can provide a single variable font
+		and
+		then create the weights and variations we need on the client.</p>
+	<p>It’s a nice idea, you must admit.</p>
+	<h3>Well? Does It Work?</h3>
+	<p>I guess? Sometimes? It's temperamental, to say the least, but with a bit
+		of patience and the right font files, you can make it work. Mostly.
+	</p>
+
 </body>
 </html>

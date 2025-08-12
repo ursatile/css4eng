@@ -1,8 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Relative Font Size</title>
+	<title>Relative Font Size</title>
+	<style>
+		body {
+			font-size: 2rem;
+		}
+		body * {
+			font-size: 0.5em;
+		}
+	</style>
 </head>
 <body>
+	This page has a CSS rule <code>body * { font-size: 0.5em; }</code>
+	<p>That means <em>every element <strong>including nested ones</strong></em>
+		ends up being 50% larger than its parent.</p>
+		<p>
+			<ul>
+				<li>A list with <a href="#">links</a> in it looks daft.</li>
+			</ul>
+		</p>
 </body>
 </html>

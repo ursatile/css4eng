@@ -1,8 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Font Style</title>
+	<title>Font Style</title>
+	<style>
+		@font-face {
+			font-family: 'PT Sans';
+			src: url('fonts/pt-sans/pt-sans.woff') format('woff');
+		}
+
+		@font-face {
+			font-family: 'PT Sans';
+			src: url('fonts/pt-sans/pt-sans-italic.woff') format('woff');
+			font-style: italic;
+		}
+
+		@font-face {
+			font-family: "DEMO";
+			src: url('fonts/pt-sans/pt-sans.woff') format('woff');
+		}
+
+		h2 {
+			font-family: "PT Sans";
+		}
+	</style>
 </head>
 <body>
+	<p>normal: <span style="font-style: normal;">
+			Sphinx of black quartz, judge my vow!</span></p>
+	<p>italic: <span style="font-style: italic;">
+			Sphinx of black quartz, judge my vow!</span></p>
+	<p>oblique: <span style="font-style: oblique;">
+			Sphinx of black quartz, judge my vow!</span></p>
+	<p>oblique 30deg: <span style="font-style: oblique 30deg;">
+			Sphinx of black quartz, judge my vow!</span></p>
+	<p>oblique -30deg: <span style="font-style: oblique -30deg;">
+			Sphinx of black quartz, judge my vow!</span></p>
+	<h2>
+		“falafel” (normal), vs
+		<span style="font-style: italic;">“falafel” (italic)</span>,
+		vs
+		<span style="font-family: DEMO; font-style: oblique;">“falafel”
+			(oblique)</span>
+	</h2>
 </body>
 </html>

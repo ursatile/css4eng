@@ -1,8 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Pt Sans Variants</title>
+	<title>PT Sans</title>
+	<style>
+		html {
+			font-synthesis: none;
+		}
+
+		@font-face {
+			font-family: 'PT Sans';
+			src: url('fonts/pt-sans/pt-sans.woff') format('woff');
+		}
+
+		@font-face {
+			font-family: 'PT Sans';
+			src: url('fonts/pt-sans/pt-sans-bold.woff') format('woff');
+			font-weight: bold;
+		}
+
+		@font-face {
+			font-family: 'PT Sans';
+			src: url('fonts/pt-sans/pt-sans-italic.woff') format('woff');
+			font-style: italic;
+		}
+
+		@font-face {
+			font-family: 'PT Sans';
+			src: url('fonts/pt-sans/pt-sans-bold-italic.woff') format('woff');
+			font-style: italic;
+			font-weight: bold;
+		}
+	</style>
 </head>
 <body>
+	<p style="font-family: PT Sans;">
+		font-family: PT Sans;</p>
+	<p style="font-family: PT Sans; font-weight: bold;">
+		font-family: PT Sans; font-weight: bold;</p>
+	<p style="font-family: PT Sans; font-style: italic;">
+		font-family: PT Sans; font-style: italic;</p>
+	<p style="font-family: PT Sans; font-style: italic; font-weight: bold;">
+		font-family: PT Sans; font-style: italic; font-weight: bold;</p>
 </body>
 </html>
