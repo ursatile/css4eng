@@ -14,21 +14,20 @@
 		section {
 			font-family: Consolas, 'Courier New', Courier, monospace;
 			font-size: 0.8rem;
-			width: 10vw;
-			height: 2vw;
+			width: 16vw;
+			height: 16vw;
 			background-color: #999;
 			border: 1px solid #000;
 			position: relative;
-			padding: 12vw 5px 0 0;
 			text-align: right;
 			box-sizing: content-box;
 
 			&:nth-child(1) {
-				left: 10vw;
+				left: 8em;
 			}
 
 			&:nth-child(2) {
-				top: -11vw;
+				top: -11.5vw;
 				background-color: black;
 				color: white;
 
@@ -41,7 +40,7 @@
 			div {
 				border: 1px solid #000;
 				width: 12vw;
-				height: 5vw;
+				height: 12vw;
 				position: absolute;
 				box-sizing: border-box;
 				padding: 0.1em 0.3em;
@@ -49,19 +48,19 @@
 
 			div:nth-child(1) {
 				left: 1vw;
-				top: 1vw;
+				top: 2vw;
 				background-color: magenta;
 			}
 
 			div:nth-child(2) {
 				left: 3vw;
-				top: 3vw;
+				top: 4vw;
 				background-color: cyan;
 			}
 
 			div:nth-child(3) {
 				left: 5vw;
-				top: 5vw;
+				top: 6vw;
 				background-color: yellow;
 			}
 		}
@@ -71,15 +70,15 @@
 	<article>
 		<section>
 			(no z-index)
-			<div style="z-index: 2; background-color: red;">2</div>
-			<div style="z-index: 4; background-color: yellow;">4</div>
-			<div style="z-index: 6; background-color: blue; color: white;">6</div>
+			<div style="z-index: 2; background-color: #f009;">2</div>
+			<div style="z-index: 4; background-color: #f009;">4</div>
+			<div style="z-index: 6; background-color: #f009;">6</div>
 		</section>
 		<section>
 			(no z-index)
-			<div style="z-index: 3; background-color: orange;">8</div>
-			<div style="z-index: 5; background-color: lime;">10</div>
-			<div style="z-index: 7; background-color: magenta;">12</div>
+			<div style="z-index: 3; background-color: #ff09;">8</div>
+			<div style="z-index: 5; background-color: #ff09;">10</div>
+			<div style="z-index: 7; background-color: #ff09;">12</div>
 		</section>
 	</article>
 	<article>
