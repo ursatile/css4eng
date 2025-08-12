@@ -4,6 +4,7 @@
 	<title>Stacking Contexts</title>
 	<style>
 		body {
+			background: #999;
 			display: flex;
 		}
 
@@ -13,49 +14,56 @@
 
 		section {
 			font-family: Consolas, 'Courier New', Courier, monospace;
-			font-size: 0.8rem;
-			width: 12vw;
-			height: 14vw;
+			font-size: 0.7rem;
+			width: 18vw;
+			height: 21vw;
 			border: 1px solid #000;
 			position: relative;
 
 			&:nth-child(1) {
-				left: 6em;
+				background-color: white;
 			}
 
 			&:nth-child(2) {
+				left: 3vw;
+				top: -20vw;
 				background-color: black;
 				color: white;
+				justify-content: flex-end;
+				align-items: flex-end;
+				display: flex;
 				div {
 					color: black;
-					text-align: left;
+					justify-content: flex-end;
+					align-items: flex-end;
 				}
 			}
 
 			div {
 				border: 1px solid #000;
-				width: 10vw;
-				height: 10vw;
+				width: 9vw;
+				height: 9vw;
 				position: absolute;
 				box-sizing: border-box;
 				padding: 0.1em 0.3em;
+				display: flex;
 			}
 
 			div:nth-child(1) {
-				left: 1vw;
-				top: 2vw;
+				left: 15vw;
+				top: 6vw;
 				background-color: magenta;
 			}
 
 			div:nth-child(2) {
-				left: 3vw;
-				top: 4vw;
+				left: 9vw;
+				top: 12vw;
 				background-color: cyan;
 			}
 
 			div:nth-child(3) {
-				left: 5vw;
-				top: 6vw;
+				left: 3vw;
+				top: 18vw;
 				background-color: yellow;
 			}
 		}
@@ -65,15 +73,15 @@
 	<article>
 		<section>
 			(no z-index)
-			<div style="z-index: 2; background-color: #f009;">2</div>
-			<div style="z-index: 4; background-color: #f009;">4</div>
-			<div style="z-index: 6; background-color: #f009;">6</div>
+			<div style="z-index: 2; background-color: #f00;">2</div>
+			<div style="z-index: 4; background-color: #f00;">4</div>
+			<div style="z-index: 6; background-color: #f00;">6</div>
 		</section>
 		<section>
 			(no z-index)
-			<div style="z-index: 3; background-color: #ff09;">8</div>
-			<div style="z-index: 5; background-color: #ff09;">10</div>
-			<div style="z-index: 7; background-color: #ff09;">12</div>
+			<div style="z-index: 3; background-color: #ff0;">8</div>
+			<div style="z-index: 5; background-color: #ff0;">10</div>
+			<div style="z-index: 7; background-color: #ff0;">12</div>
 		</section>
 	</article>
 	<!-- <article>
