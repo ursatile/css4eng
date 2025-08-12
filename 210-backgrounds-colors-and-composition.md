@@ -188,6 +188,8 @@ The descriptions here are taken directly from the [MDN documentation on blend mo
 
   The final color has the *luminosity* of the top color, while using the *hue* and *saturation* of the bottom color. This blend mode is equivalent to `color`, but with the layers swapped.
 
+Here's what they look like. 
+
 {% iframe mix-blend-mode.html style="height: 20em;" %}
 
 To apply blend modes to multiple background on the same element, use `background-blend-mode`; if you want to blend elements against other elements, use `mix-blend-mode`.
