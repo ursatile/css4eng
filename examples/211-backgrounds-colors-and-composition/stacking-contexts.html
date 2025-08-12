@@ -4,49 +4,58 @@
 	<title>Stacking Contexts</title>
 	<style>
 		section {
-			width: 22vw;
-			height: 22vw;
-			background-color: #9999;
+			font-family: Consolas, 'Courier New', Courier, monospace;
+			font-size: 0.8rem;
+			width: 27vw;
+			height: 2vw;
+			background-color: #999;
+			border: 1px solid #000;
 			position: relative;
+			padding: 12vw 5px 0 0;
+			text-align: right;
+			box-sizing: content-box;
 
 			div {
 				border: 1px solid #000;
 				width: 15vw;
-				height: 15vw;
+				height: 5vw;
 				position: absolute;
-				font-family: Consolas, 'Courier New', Courier, monospace;
+				box-sizing: border-box;
+				padding: 0.1em 0.3em;
 			}
 
 			div:nth-child(1) {
 				left: 2vw;
 				top: 2vw;
-				background-color: blue;
+				background-color: magenta;
 			}
 
 			div:nth-child(2) {
 				left: 6vw;
-				top: 6vw;
-				background-color: red;
+				top: 4vw;
+				background-color: cyan;
 			}
 
 			div:nth-child(3) {
 				left: 10vw;
-				top: 10vw;
-				background-color: lime;
+				top: 6vw;
+				background-color: yellow;
 			}
 		}
 	</style>
 </head>
 <body>
-	<section style="z-index: 4; left: 16vw;">
-		<div style="z-index: 2;">2</div>
-		<div style="z-index: 4;">4</div>
-		<div style="z-index: 6;">6</div>
+	<section style="z-index: 0; left: 8vw;">
+		1
+		<div style="z-index: 3; background-color: red;">3</div>
+		<div style="z-index: 6; background-color: yellow;">6</div>
+		<div style="z-index: 9; background-color: blue; color: white;">9</div>
 	</section>
-	<section style="top: -16vw;">
-		<div style="z-index: 1;">1</div>
-		<div style="z-index: 3;">3</div>
-		<div style="z-index: 5;">5</div>
+	<section style="top: -10vw; background-color: black; color: white;">
+		(no z-index)
+		<div style="z-index: 2; background-color: orangered;">2</div>
+		<div style="z-index: 5; background-color: lime;">5</div>
+		<div style="z-index: 8; background-color: magenta;">8</div>
 	</section>
 </body>
 </html>
