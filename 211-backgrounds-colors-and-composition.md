@@ -75,7 +75,7 @@ Watch out for the difference between a **repeating gradient**, and **repeating a
 
 {% example repeating-css-gradients.html elements="style" iframe_style="height: 23rem;" %}
 
-## Multiple Backgrounds and Stacking Contexts
+## Composing Multiple Backgrounds
 
 OK, so you've seen about five hundred different ways to use an image as the background of an element... important, but not exciting.
 
@@ -99,7 +99,7 @@ background-position: <position1>, <position2>, <position3>, <position4>;
 
 The first background is drawn closest to the viewer, the final background is drawn furthest away from the viewer, and only the final image can be a solid colour (even if that colour has transparency; if you need a transparent colour layer as part of a background stack, use a gradient that only defines one colour).
 
-## Using CSS Shorthand
+## Background Shorthand
 
 So far, almost every example we've seen has explicitly specified each property in turn. Many CSS features also support a shorthand syntax we can use to specify multiple related properties using a single rule. In the case of backgrounds, the shorthand property is `background`, followed by one more background layers, separated by commas, where each layer is specified using a shorthand syntax which includes one or more of:
 
@@ -133,6 +133,14 @@ Stacking elements like this is relatively simple when they're all solid: you onl
 {% example z-index-with-opacity.html elements="body" iframe_style="height: 8.5em;" %}
 
 Notice how in this example, the boxes in the middle have `opacity` applied to the entire element, so it affects the text and border as well as the background, whereas the boxes on the right are opaque elements with a transparent background, so the text and border is still drawn at full intensity.
+
+## Stacking Contexts
+
+A stacking context defines a group of associated elements that will be stacked independently of any other group of elements. Every page has at least one stacking context, created by the root `<html>` element, and various layout properties will create additional stacking contexts - check out [features creating stacking contexts](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Stacking_context#features_creating_stacking_contexts) at MDN if you want the full list. It's not very interesting.
+
+{% example stacking-contexts.html elements="style,body" iframe_style="height: 8em;" %}
+
+
 
 ## Using CSS Blend Modes
 

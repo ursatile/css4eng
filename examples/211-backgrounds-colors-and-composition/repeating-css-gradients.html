@@ -6,13 +6,15 @@
 		section {
 			display: flex;
 			justify-content: space-around;
+
 			div {
-				border: 1px solid black;
+				outline: 1px solid black;
 				width: 32vw;
 				height: 16vw;
 				background-size: 8vw 8vw;
 				margin-bottom: 1rem;
 			}
+
 			&.no-repeat {
 				div {
 					background-repeat: no-repeat;
@@ -20,15 +22,18 @@
 			}
 
 			div:nth-child(1) {
-				background-image: linear-gradient(to bottom right, gold 50%, blue 50%);
+				background-image: linear-gradient(to top left, gold 50%, blue 50%);
 			}
 
 			div:nth-child(2) {
-				background-image: radial-gradient(gold 25%, blue 25% 50%, white 50%);
+				background-image: radial-gradient(gold 30%, blue 30%);
 			}
 
 			div:nth-child(3) {
-				background-image: conic-gradient(gold 0 90deg, blue 90deg 180deg, gold 180deg 270deg, blue 270deg 360deg);
+				background-image: conic-gradient(gold 0 90deg,
+						blue 90deg 180deg,
+						gold 180deg 270deg,
+						blue 270deg 360deg);
 			}
 		}
 	</style>
