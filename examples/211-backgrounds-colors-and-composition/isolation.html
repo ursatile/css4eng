@@ -11,26 +11,53 @@
 		}
 
 		section {
-			&::before {
-				content: '🐘';
-				position: absolute;
-				right: 0px;
-				top: -30px;
-				font-size: 100px;
-				z-index: -1;
-				background-color: lime;
-			}
-
 			position: relative;
+			padding: 2em;
 			overflow: clip;
 			width: 30vh;
-			height: 20vh;
-			background-color: green;
+			box-sizing: border-box;
+			background: url('sergey-pesterev-wdMWMHXUpsc-unsplash.jpg');
 			border: 1px solid #000;
+			text-align: justify;
+
+			&::before {
+				content: '“';
+				position: absolute;
+				left: 0px;
+				top: -30px;
+				font-size: 150px;
+				font-weight: 900;
+				z-index: -1;
+				color: #ccc;
+				mix-blend-mode: lighten;
+			}
+			&::after {
+				content: '”';
+				position: absolute;
+				right: 0px;
+				bottom: -80px;
+				font-size: 150px;
+				font-weight: 900;
+				z-index: -1;
+				color: #ccc;
+				mix-blend-mode: lighten;
+			}
+
+		}
+
+		div#overlay {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			background-color: #000c;
 		}
 	</style>
 </head>
 <body>
+	<div id="overlay">
+	</div>
 	<section>
 		Elephants are the largest land mammals on Earth, known for their
 		intelligence, complex social structures, and remarkable memories. Found
@@ -38,7 +65,7 @@
 		their long trunks, which they use for breathing, drinking, feeding, and
 		communicating.
 	</section>
-	<section>
+	<section style="z-index: -2">
 		Elephants are the largest land mammals on Earth, known for their
 		intelligence, complex social structures, and remarkable memories. Found
 		mainly in Africa and Asia, these gentle giants are easily recognized by
