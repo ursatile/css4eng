@@ -17,22 +17,21 @@
 		}
 
 		section {
-			display: flex;
-			font-family: Arial, Helvetica, sans-serif;
-			font-weight: 900;
-			font-size: 10vw;
-			color: #fff;
 			align-items: flex-end;
-			justify-content: flex-start;
-			box-sizing: border-box;
-			padding-left: 1vw;
-			padding-bottom: 0;
 			background-position: center;
 			background-repeat: no-repeat;
 			background-size: cover;
-			width: 30vw;
+			box-sizing: border-box;
+			color: #fff;
+			display: flex;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 10vw;
+			font-weight: 900;
 			height: 30vw;
+			justify-content: flex-start;
+			padding-left: 1vw;
 			position: relative;
+			width: 30vw;
 
 			&:hover::before {
 				display: none;
@@ -41,29 +40,24 @@
 			&:hover::after {
 				display: none;
 			}
+		}
 
+		section::before, section::after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
 		}
 
 		section::before {
-			content: '';
-			display: block;
 			mix-blend-mode: darken;
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
 		}
 
 		section::after {
-			content: '';
-			display: block;
 			mix-blend-mode: lighten;
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
 		}
 
 		section#skyline {
@@ -94,7 +88,7 @@
 			background-image: url(filip-mroz-0hJL8lBl0qQ-unsplash.jpg);
 
 			&::before {
-				background-color: lime;
+				background-color: magenta;
 			}
 
 			&::after {
