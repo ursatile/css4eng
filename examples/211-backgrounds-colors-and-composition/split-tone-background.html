@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Split Tone Background</title>
+	<style>
+		footer {
+			margin: 10px auto;
+			font-size: 10px;
+			line-height: 14px;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		main {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		section {
+			display: flex;
+			font-family: Arial, Helvetica, sans-serif;
+			font-weight: 900;
+			font-size: 10vw;
+			color: #fff;
+			align-items: flex-end;
+			justify-content: flex-start;
+			box-sizing: border-box;
+			padding-left: 1vw;
+			padding-bottom: 0;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: 30vw;
+			height: 30vw;
+			position: relative;
+
+			&:hover::before {
+				display: none;
+			}
+
+			&:hover::after {
+				display: none;
+			}
+
+		}
+
+		section::before {
+			content: '';
+			display: block;
+			mix-blend-mode: darken;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+
+		section::after {
+			content: '';
+			display: block;
+			mix-blend-mode: lighten;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+
+		section#skyline {
+			background-image: url('sean-pollock-PhYq704ffdA-unsplash.jpg');
+
+			&::before {
+				background-color: lime;
+			}
+
+			&::after {
+				background-color: navy;
+			}
+		}
+
+		section#coolpup {
+			background-image: url(mollie-sivaram-ts1zXzsD7xc-unsplash.jpg);
+
+			&::before {
+				background-color: yellow;
+			}
+
+			&::after {
+				background-color: red;
+			}
+		}
+
+		section#monster {
+			background-image: url(filip-mroz-0hJL8lBl0qQ-unsplash.jpg);
+
+			&::before {
+				background-color: lime;
+			}
+
+			&::after {
+				background-color: blue;
+			}
+	</style>
+</head>
+<body>
+	<main>
+		<section id="skyline">C</section>
+		<section id="coolpup">S</section>
+		<section id="monster">S</section>
+
+	</main>
+	<footer>
+		<span>
+			Skyline by <a
+				href="https://unsplash.com/@seanpollock?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Sean
+				Pollock</a> on <a
+				href="https://unsplash.com/photos/low-angle-photo-of-city-high-rise-buildings-during-daytime-PhYq704ffdA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+		</span><span>
+
+			Dog by <a
+				href="https://unsplash.com/@molliesivaram?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Mollie
+				Sivaram</a> on <a
+				href="https://unsplash.com/photos/black-white-and-brown-long-coated-dog-wearing-black-sunglasses-ts1zXzsD7xc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+		</span><span>
+
+			Truck by <a
+				href="https://unsplash.com/@mroz?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Filip
+				Mroz</a> on <a
+				href="https://unsplash.com/photos/green-off-road-vehicle-on-snow-during-winter-season-0hJL8lBl0qQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a><br>
+		</span>
+	</footer>
+</body>
+</html>

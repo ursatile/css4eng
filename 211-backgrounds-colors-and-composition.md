@@ -194,9 +194,17 @@ Here's what they look like.
 
 To apply blend modes to multiple background on the same element, use `background-blend-mode`; if you want to blend elements against other elements, use `mix-blend-mode`.
 
-One particularly useful example of blend modes is creating tinted images to use as element backgrounds.
+One particularly useful example of blend modes is creating duotone images to use as element backgrounds. If you're happy with black shadows, you can do this in a single rule:
 
-{% example duotone-background.html elements="style,body" iframe_height="10em;" %}
+{% example duotone-background.html elements="style" iframe_style="height: 17em;" %}
+
+For a full duotone effect, sometimes known as a split tone, you can apply one tint to the shadows and a separate tint to the highlights by using a `::before` and `::after` pseudoelement:
+
+{% example split-tone-background.html elements="style" iframe_style="height: 17em;" %}
+
+
+
+
 
 ## CSS Filters and Stacking Elements
 
