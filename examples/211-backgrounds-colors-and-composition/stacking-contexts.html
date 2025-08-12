@@ -9,7 +9,7 @@
 				if (shuffled) {
 					el.style.top = "0px";
 				} else {
-					el.style.top = "calc(4px + -1 * (18vw + 24px))";
+					el.style.top = "calc(2px + -1 * (18vw + 24px))";
 				}
 			});
 			shuffled = !shuffled;
@@ -17,13 +17,17 @@
 	</script>
 	<style>
 		body {
-			font-family:Arial, Helvetica, sans-serif;
+			font-family: system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif, "Segoe UI Emoji";
 			cursor: pointer;
+			overflow: hidden;
 		}
 
 		main {
 			display: flex;
 			justify-content: space-between;
+		}
+		footer {
+			font-size: 0.875em;
 		}
 
 		article {
@@ -47,7 +51,7 @@
 
 			&:nth-child(2) {
 				left: 4vw;
-				top: calc(4px + -1 * (18vw + 24px));
+				top: calc(2px + -1 * (18vw + 24px));
 				transition: top 2s;
 
 				background-color: #ff9;
@@ -150,6 +154,6 @@
 			</section>
 		</article>
 	</main>
-	<footer>👉🏼 click anywhere to play animation</footer>
+	<footer>👉🏼 this one has animation! click anywhere to play it.</footer>
 </body>
 </html>
