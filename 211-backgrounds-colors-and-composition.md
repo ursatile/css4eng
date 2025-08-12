@@ -136,9 +136,13 @@ Notice how in this example, the boxes in the middle have `opacity` applied to th
 
 ## Stacking Contexts
 
-A stacking context defines a group of associated elements that will be stacked independently of any other group of elements. Every page has at least one stacking context, created by the root `<html>` element, and various layout properties will create additional stacking contexts - check out [features creating stacking contexts](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Stacking_context#features_creating_stacking_contexts) at MDN if you want the full list. It's not very interesting.
+A stacking context defines a group of associated elements that will be stacked independently of any other group of elements. Every page has at least one stacking context, created by the root `<html>` element, and giving just about element a `z-index` will create another stacking context - check out [features creating stacking contexts](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Stacking_context#features_creating_stacking_contexts) at MDN if you want the full list. It's not very interesting.
 
-{% example stacking-contexts.html elements="style,body" iframe_style="height: 8em;" %}
+
+
+
+
+{% iframe stacking-contexts.html style="height: 24em;" %}
 
 
 
