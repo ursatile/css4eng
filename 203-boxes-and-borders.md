@@ -288,6 +288,8 @@ we can get our `<div>` elements to render side-by-side:
 
 <iframe src="{{ page.examples}}/border-box.html" style="height: 10em;"></iframe>
 
+# TODO: the thing where you have 3 x 33% and it overflows!
+
 We'll wrap it up there for now - in the next section we're going to work through a couple of exercises that'll give you a chance to try out the CSS box formatting model.
 
 
