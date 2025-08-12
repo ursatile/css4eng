@@ -3,10 +3,18 @@
 <head>
 	<title>Stacking Contexts</title>
 	<style>
+		body {
+			display: flex;
+		}
+
+		article {
+			width: 25vw;
+		}
+
 		section {
 			font-family: Consolas, 'Courier New', Courier, monospace;
 			font-size: 0.8rem;
-			width: 27vw;
+			width: 10vw;
 			height: 2vw;
 			background-color: #999;
 			border: 1px solid #000;
@@ -15,9 +23,24 @@
 			text-align: right;
 			box-sizing: content-box;
 
+			&:nth-child(1) {
+				left: 10vw;
+			}
+
+			&:nth-child(2) {
+				top: -11vw;
+				background-color: black;
+				color: white;
+
+				div {
+					color: black;
+					text-align: left;
+				}
+			}
+
 			div {
 				border: 1px solid #000;
-				width: 15vw;
+				width: 12vw;
 				height: 5vw;
 				position: absolute;
 				box-sizing: border-box;
@@ -25,37 +48,67 @@
 			}
 
 			div:nth-child(1) {
-				left: 2vw;
-				top: 2vw;
+				left: 1vw;
+				top: 1vw;
 				background-color: magenta;
 			}
 
 			div:nth-child(2) {
-				left: 6vw;
-				top: 4vw;
+				left: 3vw;
+				top: 3vw;
 				background-color: cyan;
 			}
 
 			div:nth-child(3) {
-				left: 10vw;
-				top: 6vw;
+				left: 5vw;
+				top: 5vw;
 				background-color: yellow;
 			}
 		}
 	</style>
 </head>
 <body>
-	<section style="z-index: 0; left: 8vw;">
-		1
-		<div style="z-index: 3; background-color: red;">3</div>
-		<div style="z-index: 6; background-color: yellow;">6</div>
-		<div style="z-index: 9; background-color: blue; color: white;">9</div>
-	</section>
-	<section style="top: -10vw; background-color: black; color: white;">
-		(no z-index)
-		<div style="z-index: 2; background-color: orangered;">2</div>
-		<div style="z-index: 5; background-color: lime;">5</div>
-		<div style="z-index: 8; background-color: magenta;">8</div>
-	</section>
+	<article>
+		<section>
+			(no z-index)
+			<div style="z-index: 2; background-color: red;">2</div>
+			<div style="z-index: 4; background-color: yellow;">4</div>
+			<div style="z-index: 6; background-color: blue; color: white;">6</div>
+		</section>
+		<section>
+			(no z-index)
+			<div style="z-index: 3; background-color: orange;">8</div>
+			<div style="z-index: 5; background-color: lime;">10</div>
+			<div style="z-index: 7; background-color: magenta;">12</div>
+		</section>
+	</article>
+	<article>
+		<section style="z-index: 1;">
+			z-index: 1;
+			<div style="z-index: 2; background-color: red;">2</div>
+			<div style="z-index: 4; background-color: yellow;">4</div>
+			<div style="z-index: 6; background-color: blue; color: white;">6</div>
+		</section>
+		<section>
+			(no z-index)
+			<div style="z-index: 3; background-color: orange;">8</div>
+			<div style="z-index: 5; background-color: lime;">10</div>
+			<div style="z-index: 7; background-color: magenta;">12</div>
+		</section>
+	</article>
+	<article>
+		<section style="z-index: 1;">
+			z-index: 1;
+			<div style="z-index: 2; background-color: red;">2</div>
+			<div style="z-index: 4; background-color: yellow;">4</div>
+			<div style="z-index: 6; background-color: blue; color: white;">6</div>
+		</section>
+		<section style="z-index: 2;">
+			z-index: 2;
+			<div style="z-index: 3; background-color: orange;">8</div>
+			<div style="z-index: 5; background-color: lime;">10</div>
+			<div style="z-index: 7; background-color: magenta;">12</div>
+		</section>
+	</article>
 </body>
 </html>
