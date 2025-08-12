@@ -71,9 +71,9 @@ There's also a repeating version of each gradient:
 
 {% example css-repeating-gradients.html elements="style, body" iframe_style="height: 15rem;" %}
 
-Watch out for the difference between a **repeating gradient**, and **repeating a gradient**; you can also use a regular non-repeating gradient pattern to create a single background tile, and then repeat that tile across the element's background:
+Watch out for the difference between a **repeating gradient**, and **repeating a gradient**; you can also use a regular non-repeating gradient pattern to create a single background tile, and then repeat that tile across the element's background. One particularly neat trick here is to use a conic gradient to create one "tile" of a repeating chequerboard pattern:
 
-{% example repeating-css-gradients.html element="style,body" iframe_style="height: 15rem;" %}
+{% example repeating-css-gradients.html elements="style" iframe_style="height: 23rem;" %}
 
 ## Multiple Backgrounds and Stacking Contexts
 
