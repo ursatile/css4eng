@@ -1,8 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Stacking Contexts</title>
+	<title>Stacking Contexts</title>
+	<style>
+		section {
+			width: 22vw;
+			height: 22vw;
+			background-color: #9999;
+			position: relative;
+
+			div {
+				border: 1px solid #000;
+				width: 15vw;
+				height: 15vw;
+				position: absolute;
+				font-family: Consolas, 'Courier New', Courier, monospace;
+			}
+
+			div:nth-child(1) {
+				left: 2vw;
+				top: 2vw;
+				background-color: blue;
+			}
+
+			div:nth-child(2) {
+				left: 6vw;
+				top: 6vw;
+				background-color: red;
+			}
+
+			div:nth-child(3) {
+				left: 10vw;
+				top: 10vw;
+				background-color: lime;
+			}
+		}
+	</style>
 </head>
 <body>
+	<section style="z-index: 4; left: 16vw;">
+		<div style="z-index: 2;">2</div>
+		<div style="z-index: 4;">4</div>
+		<div style="z-index: 6;">6</div>
+	</section>
+	<section style="top: -16vw;">
+		<div style="z-index: 1;">1</div>
+		<div style="z-index: 3;">3</div>
+		<div style="z-index: 5;">5</div>
+	</section>
 </body>
 </html>
