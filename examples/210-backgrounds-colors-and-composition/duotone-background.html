@@ -4,10 +4,20 @@
 	<title>Duotone Background</title>
 	<style>
 		section {
-			background-image:
-				url(dominik-scythe-XV9F-gfmThs-unsplash.jpg),
-				linear-gradient(to right, red);
-			background-blend-mode: luminosity;
+			&::before {
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: blue;
+				position: absolute;
+				z-index: -1;
+				content: "yeahbo!";
+			}
+			position: relative;
+			background-image: linear-gradient(to right, lime),
+				url(dominik-scythe-XV9F-gfmThs-unsplash.jpg);
+			background-blend-mode: multiply;
 			background-size: cover;
 			width: 400px;
 			height: 400px;
