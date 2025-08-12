@@ -3,62 +3,35 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>CSS isolation vs mix-blend-mode (side by side)</title>
+<title>isolation: auto vs isolate — clear demo</title>
 <style>
-  :root {
-    --radius: 20px;
-    --pad: 24px;
-  }
-
-  /* Page chrome */
+  /* Base/reset */
   * { box-sizing: border-box; }
   html, body { height: 100%; }
   body {
     margin: 0;
     font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-    color: #fff;
-    /* Page background intentionally vivid so blending differences are obvious */
-    background: radial-gradient(1200px 800px at 15% 20%, #ff2e93, transparent 60%),
-                radial-gradient(1000px 1000px at 85% 75%, #00e0ff, transparent 55%),
-                linear-gradient(135deg, #4b2fff, #0f172a 60%);
-    transition: background 600ms ease;
+    color: white;
+    /* An animated backdrop that will make blending differences obvious */
+    --t: 0deg;
+    background:
+      radial-gradient(50vmax 50vmax at 20% 25%, rgba(255,255,255,.14), transparent 60%),
+      radial-gradient(40vmax 40vmax at 80% 70%, rgba(255,255,255,.10), transparent 60%),
+      linear-gradient(135deg, #ff2e93, #00e0ff 40%, #5b2bff);
+    background-attachment: fixed;
+    animation: hue 8s linear infinite;
   }
-  body.alt {
-    background: radial-gradient(900px 700px at 78% 18%, #ffc400, transparent 50%),
-                radial-gradient(900px 900px at 15% 80%, #00d47b, transparent 55%),
-                linear-gradient(135deg, #131b28, #6a00ff 60%);
+  @keyframes hue {
+    to { filter: hue-rotate(360deg); }
   }
 
   header {
-    padding: 24px clamp(16px, 4vw, 48px) 8px;
-    display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+    padding: 20px clamp(16px, 4vw, 48px) 8px;
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
   }
-  header h1 {
-    margin: 0;
-    font-size: clamp(18px, 3.2vw, 28px);
-    font-weight: 700;
-    letter-spacing: .2px;
-  }
-  header .spacer { flex: 1; }
+  header h1 { margin: 0; font-size: clamp(18px,3.2vw,28px); }
 
-  .btn {
-    appearance: none;
-    border: 0;
-    border-radius: 999px;
-    padding: 10px 14px;
-    background: rgba(255,255,255,.14);
-    color: #fff;
-    backdrop-filter: blur(6px);
-    cursor: pointer;
-    font-weight: 600;
-    transition: transform .06s ease, background .2s ease;
-  }
-  .btn:active { transform: translateY(1px); }
-  .btn:hover { background: rgba(255,255,255,.22); }
-
-  main {
-    padding: 12px clamp(16px, 4vw, 48px) 48px;
-  }
+  main { padding: 16px clamp(16px, 4vw, 48px) 48px; }
 
   /* Two-up layout */
   .grid {
@@ -67,114 +40,98 @@
     gap: clamp(16px, 3vw, 28px);
     align-items: start;
   }
-  @media (max-width: 720px) {
-    .grid { grid-template-columns: 1fr; }
-  }
+  @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
 
   .panel {
     position: relative;
-    border-radius: var(--radius);
-    padding: var(--pad);
-    /* Card background deliberately neutral so text blend stands out */
+    min-height: 360px;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 18px 42px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.08);
+    padding: 24px;
+    /* IMPORTANT: a translucent fill so the page background contributes
+       to the backdrop when isolation is AUTO, but not when ISOLATE. */
+    background: rgba(20,20,26,0.35);
+    backdrop-filter: blur(6px);
+  }
+
+  /* Shared decorative background INSIDE the panel (still slightly translucent) */
+  .panel::before {
+    content: "";
+    position: absolute; inset: 0;
     background:
-      linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)),
+      linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0)),
       url('data:image/svg+xml;utf8,\
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">\
-  <defs>\
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">\
-      <stop stop-color="%238a8a8a" offset="0"/><stop stop-color="%236f6f6f" offset="1"/>\
-    </linearGradient>\
-  </defs>\
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">\
+    <stop stop-color="%238c8c8c" offset="0"/><stop stop-color="%236b6b6b" offset="1"/>\
+  </linearGradient></defs>\
   <rect width="1200" height="800" fill="url(%23g)"/>\
-  <g opacity=".25" fill="%23ffffff">\
-    <circle cx="120" cy="140" r="90"/>\
-    <circle cx="350" cy="200" r="140"/>\
-    <circle cx="720" cy="240" r="190"/>\
-    <circle cx="1000" cy="160" r="110"/>\
-    <circle cx="950" cy="560" r="190"/>\
-    <circle cx="280" cy="580" r="180"/>\
+  <g opacity=".22" fill="%23ffffff">\
+    <circle cx="150" cy="160" r="110"/>\
+    <circle cx="380" cy="230" r="150"/>\
+    <circle cx="760" cy="250" r="210"/>\
+    <circle cx="1020" cy="180" r="120"/>\
+    <circle cx="960" cy="560" r="200"/>\
+    <circle cx="280" cy="580" r="190"/>\
   </g>\
 </svg>') center/cover no-repeat;
-    box-shadow:
-      0 20px 40px rgba(0,0,0,.35),
-      inset 0 1px 0 rgba(255,255,255,.06);
-    min-height: 360px;
-    overflow: hidden;
+    opacity: .85;   /* <— semi-transparent on purpose */
+    z-index: 0;
   }
 
-  /* Left: default stacking context (isolation:auto) */
-  .panel.auto {
-    /* default is 'auto' but set explicitly for clarity */
-    isolation: auto;
-  }
+  /* LEFT: default behaviour (auto) — set explicitly for clarity */
+  .panel.auto { isolation: auto; }
 
-  /* Right: the key difference */
-  .panel.isolate {
-    isolation: isolate;
-  }
+  /* RIGHT: isolate — creates a new stacking context that stops blending
+     from reaching the page background behind the panel. */
+  .panel.isolate { isolation: isolate; }
 
-  /* Content that blends */
+  /* Content that blends with its backdrop */
+  .blend-title, .blend-copy { position: relative; z-index: 1; }
   .blend-title {
-    margin: 0 0 6px 0;
+    margin: 0 0 6px;
     font-size: clamp(28px, 5.2vw, 48px);
-    line-height: 1.05;
     font-weight: 800;
-    letter-spacing: .2px;
-    /* This is the star of the show: it blends with the backdrop */
+    line-height: 1.05;
     mix-blend-mode: difference;
   }
   .blend-copy {
     margin: 8px 0 0;
     font-size: clamp(16px, 2.2vw, 20px);
-    opacity: .95;
     mix-blend-mode: difference;
   }
 
   /* Labels */
   .label {
-    position: absolute;
-    top: 10px; right: 10px;
+    position: absolute; top: 10px; right: 10px;
+    z-index: 2;
     font: 12px/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    letter-spacing: .3px;
-    text-transform: uppercase;
-    background: rgba(0,0,0,.55);
-    color: #fff;
-    padding: 6px 8px;
-    border-radius: 999px;
+    text-transform: uppercase; letter-spacing: .3px;
+    background: rgba(0,0,0,.55); color: #fff;
+    padding: 6px 8px; border-radius: 999px;
     border: 1px solid rgba(255,255,255,.18);
-    user-select: none;
-    pointer-events: none;
+    user-select: none; pointer-events: none;
   }
 
-  /* Helper note */
-  .note {
-    margin-top: 18px;
-    font-size: 14px;
-    color: rgba(255,255,255,.86);
-  }
-
-  /* Make links visible even with blends nearby */
-  a { color: #fff; text-underline-offset: 2px; }
+  .note { margin-top: 18px; color: rgba(255,255,255,.9); font-size: 14px; }
 </style>
 </head>
 <body>
   <header>
-    <h1>isolation: <span style="opacity:.8">auto</span> vs <span style="opacity:.8">isolate</span> — with <code>mix-blend-mode: difference</code></h1>
-    <span class="spacer"></span>
-    <button class="btn" id="toggleBg" aria-pressed="false" aria-label="Toggle page background for comparison">
-      Toggle Page Background
-    </button>
+    <h1>isolation: auto (default) vs isolation: isolate</h1>
   </header>
 
   <main>
     <div class="grid" role="group" aria-label="Side-by-side comparison">
-      <!-- LEFT: isolation:auto (default) -->
+      <!-- LEFT: isolation:auto -->
       <section class="panel auto" aria-label="Without isolation">
         <span class="label">isolation: auto</span>
         <h2 class="blend-title">Blends with page too</h2>
         <p class="blend-copy">
-          The text uses <code>mix-blend-mode: difference</code>, so it also reacts to
-          the <em>page background behind this card</em>. Toggle the background to see it shift.
+          The heading and copy use <code>mix-blend-mode: difference</code>. Because this
+          panel is <em>not isolated</em> and has translucent layers, the blend includes the
+          <strong>page background behind the card</strong>. As the page animates, these colors shift.
         </p>
       </section>
 
@@ -183,27 +140,17 @@
         <span class="label">isolation: isolate</span>
         <h2 class="blend-title">Blends only inside</h2>
         <p class="blend-copy">
-          This card creates a new stacking context. The blend is computed
-          <em>only</em> against the card’s own background, staying stable even as the page changes.
+          This panel creates its own stacking context, so the blend is computed
+          <em>only</em> against the panel’s own (semi-transparent) background image. The
+          page’s animated background no longer affects the text.
         </p>
       </section>
     </div>
 
     <p class="note">
-      Tip: On the left, the heading color changes noticeably whenever the page background changes,
-      because it’s blending with everything behind the card. On the right, isolation confines the
-      effect to the card itself.
+      Watch the page background animate: on the left, the text color changes with it;
+      on the right, it stays stable thanks to <code>isolation: isolate</code>.
     </p>
   </main>
-
-<script>
-  // Simple background toggle to make differences obvious in all browsers.
-  const btn = document.getElementById('toggleBg');
-  btn.addEventListener('click', () => {
-    const pressed = btn.getAttribute('aria-pressed') === 'true';
-    btn.setAttribute('aria-pressed', String(!pressed));
-    document.body.classList.toggle('alt');
-  });
-</script>
 </body>
 </html>
