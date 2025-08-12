@@ -194,7 +194,7 @@ Here's what they look like.
 
 To apply blend modes to multiple background on the same element, use `background-blend-mode`; if you want to blend elements against other elements, use `mix-blend-mode`.
 
-One particularly useful example of blend modes is creating duotone images to use as element backgrounds.
+One particularly useful example of blend modes is creating tinted images to use as element backgrounds.
 
 {% example duotone-background.html elements="style,body" iframe_height="10em;" %}
 
