@@ -3,21 +3,22 @@
 <head>
 	<title>Duotone Background</title>
 	<style>
-		section {
-			&::before {
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				background-color: blue;
-				position: absolute;
-				z-index: -1;
-				content: "yeahbo!";
-			}
-			position: relative;
-			background-image: linear-gradient(to right, lime),
+		section.one {
+			background-image:
+				linear-gradient(#fff),
+				linear-gradient(black),
 				url(dominik-scythe-XV9F-gfmThs-unsplash.jpg);
-			background-blend-mode: multiply;
+			background-blend-mode: color-burn, saturation;
+			background-size: cover;
+			width: 400px;
+			height: 400px;
+		}
+		section.two {
+			background-image:
+				linear-gradient(#fff),
+				linear-gradient(black),
+				url(dominik-scythe-XV9F-gfmThs-unsplash.jpg);
+			background-blend-mode: color-burn, saturation;
 			background-size: cover;
 			width: 400px;
 			height: 400px;
@@ -25,9 +26,14 @@
 	</style>
 </head>
 <body>
-	<section>
+	<section class="one">
 		blues
 		classics
 	</section>
+		<section class="two">
+		blues
+		classics
+	</section>
+
 </body>
 </html>
