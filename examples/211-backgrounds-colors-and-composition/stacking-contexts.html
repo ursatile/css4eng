@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
 	<title>Stacking Contexts</title>
+	<script>
+		let shuffled = true;
+		document.addEventListener("click", function () {
+			document.querySelectorAll("section.demo").forEach(el => {
+				if (shuffled) {
+					el.style.top = "0px";
+				} else {
+					el.style.top = "calc(4px + -1 * (18vw + 24px))";
+				}
+			});
+			shuffled = !shuffled;
+
+		});
+
+	</script>
 	<style>
 		body {
-			background: #999;
+			background: #000;
 			display: flex;
 		}
 
@@ -29,11 +44,14 @@
 
 			&:nth-child(2) {
 				left: 4vw;
-				/* top: calc(16px + -1 * (18vw + 24px)); */
+				top: calc(4px + -1 * (18vw + 24px));
+				transition: top 3s;
+
 				background-color: #ff9;
 				justify-content: flex-end;
 				align-items: flex-end;
 				display: flex;
+
 				div {
 					color: black;
 					justify-content: flex-end;
@@ -113,7 +131,7 @@
 			<div style="z-index: 7;">7</div>
 		</section>
 	</article>
-		<article>
+	<article>
 		<section style="z-index: 2;">
 			z-index: 2;
 			<div style="z-index: 2;">2</div>
