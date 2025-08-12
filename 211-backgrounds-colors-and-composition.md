@@ -71,6 +71,10 @@ There's also a repeating version of each gradient:
 
 {% example css-repeating-gradients.html elements="style, body" iframe_style="height: 15rem;" %}
 
+Watch out for the difference between a **repeating gradient**, and **repeating a gradient**; you can also use a regular non-repeating gradient pattern to create a single background tile, and then repeat that tile across the element's background:
+
+{% example repeating-css-gradients.html element="style,body" iframe_style="height: 15rem;" %}
+
 ## Multiple Backgrounds and Stacking Contexts
 
 OK, so you've seen about five hundred different ways to use an image as the background of an element... important, but not exciting.
