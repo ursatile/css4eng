@@ -112,6 +112,24 @@ Here's an example of a five-layer background, specified using the `background` s
 
 {% example background-shorthand.html elements="style" iframe_style="height: 20em;" %}
 
+## z-index
+
+Using absolute positioning, we can have elements in a document which are painted over the top of each other. 3D computer graphics traditionally uses three coordinates `(x,y,z)`, where `x` is horizontal, `y` is vertical, and the `z`-axis is pointing either away from the viewer into the screen, or out of the screen towards the viewer, depending which system you're using. CSS doesn't use a true 3D coordinate system, but we can "move" elements forwards or backwards in the rendering stack using a property called the `z-index`. 
+
+{% example z-index.html elements="body" iframe_style="height: 8.5em;" %}
+
+`z-index` can take any integer value, including negative values to move something backwards in the display stack. In practice, you'll see it used in two ways. Well-engineered CSS tends to use small z-index values - 3, 4, 5 - to assign elements to a predetermined series of layers, because somebody sat down and figured it all out in advance and a well-engineered site will seldom have more than half-a-dozen elements in a render stack.
+
+In my experience, it's also common to see z-index values like `99` and  `999` because some long-suffering maintenance developer has to add a cookie warning banner or a chat popover window or something, and the only way to get it to appear on top of all the existing elements on the page is to use a very high `z-index`. 
+
+> If you're curious, `z-index` is a 32-bit signed integer in all modern browsers, which means the highest `z-index` you can have is (2^31-1) = 2147483647. But hey - twenty one billion layers ought to be enough for anybody, right?
+
+Stacking elements like this is relatively simple when they're all solid: you only see the one at the front. But once we start introducing concepts like opacity, it can get very interesting indeed.
+
+{% example z-index-with-opacity.html elements="body" iframe_style="height: 8.5em;" %}
+
+Notice how in this example, the boxes in the middle have `opacity` applied to the entire element, so it affects the text and border as well as the background, whereas the boxes on the right are opaque elements with a transparent background, so the text and border is still drawn at full intensity.
+
 ## Using CSS Blend Modes
 
 In all the examples above, we only see the further layer if the nearer layer has some transparency to it; if foreground background layers are fully opaque, the background layer is completely covered and doesn't affect what ends up on the screen.
@@ -190,15 +208,15 @@ The descriptions here are taken directly from the [MDN documentation on blend mo
 
 Here's what they look like. 
 
-{% iframe mix-blend-mode.html style="height: 20em;" %}
+{% iframe mix-blend-mode.html style="height: 28em;" %}
 
 To apply blend modes to multiple background on the same element, use `background-blend-mode`; if you want to blend elements against other elements, use `mix-blend-mode`.
 
-One particularly useful example of blend modes is creating duotone images to use as element backgrounds. If you're happy with black shadows, you can do this in a single rule:
+One particularly useful example of blend modes is creating duotone images to use as element backgrounds:
 
 {% example duotone-background.html elements="style" iframe_style="height: 17em;" %}
 
-For a full duotone effect, sometimes known as a split tone, you can apply one tint to the shadows and a separate tint to the highlights by using a `::before` and `::after` pseudoelement:
+For a full duotone effect, sometimes known as a split tone, you can apply one tint to the shadows and a separate tint to the highlights by using a `::before` and `::after` pseudoelement, with different `mix-blend-mode` properties applied to the `::before` and `::after` layer.
 
 {% example split-tone-background.html elements="style" iframe_style="height: 17em;" %}
 
@@ -216,38 +234,11 @@ You can combine multiple filters on a single element; if you do this, remember t
 
 {% example combined-filters.html elements="style" iframe_style="height: 14em;" %}
 
-## z-index and Mix Blend Modes
-
-The final creative technique we're going to look at is blend modes. If you've worked with Photoshop or Illlustrator, you've probably come across blend modes before --- and yes, I know this course is called "CSS for Engineers", and we're getting dangerously close to art here, but relax; after this we're going back to talking about viewports and responsive layouts.
-
-Using absolute positioning, we can have elements in a document which are painted over the top of each other. The exact order in which elements are painted is known as the `z-index`:
-
-{% example z-index.html elements="body" iframe_style="height: 8.5em;" %}
-
-`z-index` can take any integer value, including negative values to move something backwards in the display stack; I have occasionally resorted to `z-index: 99;` when I'm adding something like a popup to a legacy site, with a lot of confusing CSS to force it to be on top --- and I've also found `z-index: 99` in a few sites I've worked on and resorted to `z-index: 999`.
-
-Stacking elements like this is relatively simple when they're all solid: you only see the one at the front. But once we start introducing concepts like opacity, it can get very interesting indeed.
-
-{% example z-index-with-opacity.html elements="body" iframe_style="height: 8.5em;" %}
-
-Notice how in this example, the boxes in the middle have `opacity` applied to the entire element, so it affects the text and border as well as the background, whereas the boxes on the right are opaque elements with a transparent background, so the text and border is still drawn at full intensity.
-
-Opacity isn't the only way that an element can be affected by its background, though. CSS also supports something called `mix-blend-mode`; using this, we can specify exactly how the colour of a background pixel should be combined with the colour of a foreground pixel to determine what colour actually gets drawn at that point.
-
-`multiply` will multiply the foreground by the background. It helps me to think white as 1 and black as 0; anything times white is anything; anything times black is black.
-
-
-
-* `screen`: 
-* 
-
-
-
 {% example mix-blend-mode.html elements="body" iframe_style="height: 20em;" %}
 
 
 
-
+ 
 
 
 
