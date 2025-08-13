@@ -23,29 +23,26 @@
 					font-weight: 900;
 				}
 			}
+
 			p {
-				text-align: right; padding: 5px;
+				text-align: right;
+				padding: 5px;
 			}
+
 		}
 
 		nav {
-			background-color: #036;
-			border-width: 1px 0;
-			border-style: solid;
-			border-color: #9cf;
-
 			ul {
 				margin: 0;
 				padding: 0;
-
 				li {
-					display: inline-block;
-
 					a {
+						background-color: #036;
+						font-weight: bold;
+						padding: 1em;
+						margin: 1em;
 						text-decoration: none;
-						display: inline-block;
-						padding: 5px;
-						margin: 0 2px;
+						display: block;
 						color: #fff;
 
 						&:hover {
@@ -55,6 +52,7 @@
 					}
 				}
 			}
+		}
 	</style>
 </head>
 <body>
@@ -69,61 +67,17 @@
 				grid system<br>
 			</p>
 		</header>
-		<nav>
-			<ul>
-				<li><a href="#">home</a></li>
-				<li><a href="#">about</a></li>
-				<li><a href="#">projects</a></li>
-				<li><a href="#">events</a></li>
-				<li><a href="#">contact</a></li>
-			</ul>
-		</nav>
-		<div class="row">
-			<div class="col-1">col-1</div>
-			<div class="col-1">col-1</div>
-			<div class="col-1">col-1</div>
-			<div class="col-1">col-1</div>
-			<div class="col-1">col-1</div>
-			<div class="col-1">col-1</div>
-			<div class="col-1">col-1</div>
-			<div class="col-1">col-1</div>
-			<div class="col-1">col-1</div>
-			<div class="col-1">col-1</div>
-			<div class="col-1">col-1</div>
-			<div class="col-1">col-1</div>
-		</div>
-		<div class="row">
-			<div class="col-4">col-4</div>
-			<div class="col-4">col-4</div>
-			<div class="col-4">col-4</div>
-		</div>
-		<div class="row">
-			<div class="col-6">col-6</div>
-			<div class="col-6">col-6</div>
-		</div>
-		<div class="row">
-			<div class="col-12">col-12</div>
-		</div>
-		<div class="row">
-			<div class="col-1">col-1</div>
-			<div class="col-11">col-11</div>
-		</div>
-		<div class="row">
-			<div class="col-2">col-2</div>
-			<div class="col-10">col-10</div>
-		</div>
-		<div class="row">
-			<div class="col-3">col-3</div>
-			<div class="col-9">col-9</div>
-		</div>
-		<div class="row">
-			<div class="col-4">col-4</div>
-			<div class="col-8">col-8</div>
-		</div>
-		<div class="row">
-			<div class="col-5">col-5</div>
-			<div class="col-7">col-7</div>
-		</div>
+		<main class="row">
+			<nav class="col-3">
+				<ul>
+					<li><a href="#">home</a></li>
+					<li><a href="#">about</a></li>
+					<li><a href="#">projects</a></li>
+					<li><a href="#">events</a></li>
+					<li><a href="#">contact</a></li>
+				</ul>
+			</nav>
+		</main>
 	</div>
 </body>
 </html>
