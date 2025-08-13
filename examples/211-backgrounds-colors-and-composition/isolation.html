@@ -5,14 +5,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<style>
+		code {
+			letter-spacing: -0.05em;
+		}
+
 		body {
 			display: flex;
+			flex-wrap: wrap;
 			justify-content: space-around;
 			gap: 1em;
 		}
 
 		section {
-			width: 30vw;
+			width: 40vw;
 			font-size: 1.0rem;
 			color: #fff;
 			position: relative;
@@ -21,6 +26,7 @@
 			box-sizing: border-box;
 			background-image: url('david-clode-ol4brlodnvY-unsplash.jpg'), linear-gradient(#333);
 			background-size: cover;
+			background-position: center;
 			background-blend-mode: overlay;
 			border: 1px solid #000;
 			text-align: justify;
@@ -31,7 +37,7 @@
 				font-family: Arial, Helvetica, sans-serif;
 				font-size: 180px;
 				font-weight: 900;
-				color: purple;
+				color: green;
 				position: absolute;
 			}
 
@@ -64,25 +70,30 @@
 	</style>
 </head>
 <body>
-	<section> You can see the problem here - or at least, you could if the fancy
-		purple quotes weren't obscuring this text. By default, the
+	<section> You can see the problem - or at least, you could if the quotes
+		weren't in the way. By default, the
 		<code>::before</code> and <code>::after</code> pseudo-elements have
 		<code>z-index: auto</code>, which means the browser draws them over the top
-		of any other content within their <em>originating element</em>. </section>
+		of any other content within their <em>originating element</em>.
+	</section>
 	<section> If we give the <code>::before</code> and <code>::after</code>
-		elements a <code>z-index: -1</code>, they get pushed to the back of the
-		stacking context, which means they're drawn <em>behind</em> the originating
-		element, and will be hidden by its background. </section>
-	<section style="z-index: 0;"> If we give the <code>::before</code> and <code>::after</code>
-		elements a <code>z-index: -1</code>, they get pushed to the back of the
-		stacking context, which means they're drawn <em>behind</em> the originating
-		element, and will be hidden by its background. </section>
-	<section style="isolation: isolate;"> Using <code>isolation: isolate</code>,
-		we can give the originating element its own stacking context without
-		affecting its position in the document stack - and then when we put
+		elements a <code>z-index: -1</code>, they'll get pushed to the back of the
+		current stacking context - but that means they'll be drawn <em>behind</em>
+		the
+		originating element, and most likely end up being hidden by that element's
+		background. </section>
+	<section style="z-index: 1;"> We can fix that by putting a
+		<code>z-index: 1</code> on the originating element, but that isn't ideal.
+		We don't want to modify the originating element's <code>z-index</code> -
+		we just want to control where the pseudo-elements sit
+		relative to the originating element's content and background.
+	</section>
+	<section style="isolation: isolate;"> Instead, if we use
+		<code>isolation: isolate</code>, we can create a stacking context without
+		specifying a <code>z-index</code>. Then we can specify
 		<code>z-index: -1</code> on the <code>::before</code> and
-		<code>::after</code> pseudo-elements, they're moved to the back of the local
-		stacking context, in front of the originating element's background but
-		behind its content. Which is cool. </section>
+		<code>::after</code> pseudo-elements to move them to the back of that stack,
+		behind the element's text.
+	</section>
 </body>
 </html>

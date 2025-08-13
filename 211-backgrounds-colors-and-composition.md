@@ -140,9 +140,9 @@ A stacking context defines a group of associated elements that will be stacked i
 
 {% iframe stacking-contexts.html style="height: 23em;" %}
 
-If you want to create a new stacking context without specifying a `z-index`, use the `isolation: isolate` property. Stacking contexts also controls 
+If you want to create a new stacking context without specifying a `z-index`, use the `isolation: isolate` property. This is particularly useful for controlling the composition of the `::before` and `::after` pseudo-elements without affecting the originating element's position in the document stack.
 
-{% example isolation.html elements="style,body" iframe_style="height: 20em;" %}
+{% example isolation.html elements="style,body" iframe_style="height: 34em;" %}
 
 ## Using CSS Blend Modes
 
@@ -247,8 +247,6 @@ Using the `filter` property, we can apply a range of visual effects to any eleme
 You can combine multiple filters on a single element; if you do this, remember that filters are applied in the order they're defined; applying `contrast` after `blur` will produce a very different outcome to applying `blur` after `contrast`:
 
 {% example combined-filters.html elements="style" iframe_style="height: 14em;" %}
-
-{% example mix-blend-mode.html elements="body" iframe_style="height: 20em;" %}
 
 
 
