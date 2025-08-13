@@ -1,8 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Backdrop Filter</title>
+	<title>Backdrop Filter</title>
+	<style>
+		body {
+			background: conic-gradient(#7e3d3d 0deg 90deg, #393979 90deg 180deg, #398039 180deg 270deg, rgb(124, 124, 55) 270deg 360deg);
+			background-size: 48px 48px;
+		}
+
+		div {
+			font-family: Consolas, 'Courier New', Courier, monospace;
+			display: inline-block;
+			margin: 1em;
+			padding: 2em;
+			border: 1px solid #000;
+			color: #fff;
+
+			&:nth-child(1) {
+				backdrop-filter: invert(0.8) brightness(0.2);
+			}
+
+			&:nth-child(2) {
+				backdrop-filter: grayscale()  brightness(0.5);
+			}
+			&:nth-child(3) {
+				backdrop-filter: blur(2px) brightness(0.5);
+			}
+			&:nth-child(4) {
+				backdrop-filter: hue-rotate(45deg) brightness(0.2);
+			}
+			&:nth-child(5) {
+				backdrop-filter: saturate(2);
+			}
+		}
+	</style>
 </head>
 <body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<script>
+		function ready(fn) {
+			if (document.readyState !== 'loading') {
+				fn();
+			} else {
+				document.addEventListener('DOMContentLoaded', fn);
+			}
+		}
+
+		ready(() => document.querySelectorAll("div").forEach(div => {
+			div.innerHTML = getComputedStyle(div).backdropFilter;
+		}));
+	</script>
 </body>
 </html>
