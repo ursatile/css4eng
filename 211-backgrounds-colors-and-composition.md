@@ -271,22 +271,14 @@ In this section, we've learned about CSS backgrounds, blend modes, stacking cont
 
 ## Links and References
 
-foo
-: a thing
+Compositing and Blending In CSS by Sara Souiedan
+: [https://www.sarasoueidan.com/blog/compositing-and-blending-in-css/](https://www.sarasoueidan.com/blog/compositing-and-blending-in-css/)
 
-bar
-: another thing
+The CSS property you didn't know you needed by Francesco Vetere
+: [https://dev.to/francescovetere/the-css-property-you-didnt-know-you-needed-3fk0](https://dev.to/francescovetere/the-css-property-you-didnt-know-you-needed-3fk0)
 
-
-
-
-<dl>
-<dt>Compositing and Blending In CSS by Sara Souiedan:</dt>
-<dd>[https://www.sarasoueidan.com/blog/compositing-and-blending-in-css/](https://www.sarasoueidan.com/blog/compositing-and-blending-in-css/)</dd>
-<dt>The CSS property you didn't know you needed by Francesco Vetere</dt>
-<dd>https://dev.to/francescovetere/the-css-property-you-didnt-know-you-needed-3fk0</dd>
-</dl>
-* 
+Exploring CSS Isolation Property: Enhancing Web Design with Stacking Contexts
+: [https://levelup.gitconnected.com/exploring-css-isolation-property-enhancing-web-design-with-stacking-contexts-87dedfa0f2c0](https://levelup.gitconnected.com/exploring-css-isolation-property-enhancing-web-design-with-stacking-contexts-87dedfa0f2c0)
 
 
 
