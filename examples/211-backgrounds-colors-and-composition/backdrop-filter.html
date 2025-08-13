@@ -5,24 +5,33 @@
 	<style>
 		body {
 			width: 100vw;
-			height: 100vh;
-			overflow: hidden;
-			background-image: url(hua-thun-ho-90qdd1mgB0Y-unsplash.jpg);
+			height: 200vh;
+			overflow-x: hidden;
+			background-image: url(josh-soto-M76ZhVCMtYw-unsplash.jpg);
 			background-size: cover;
+			background-position: center;
+		}
+
+		main {
+			position: fixed;
 			display: flex;
 			flex-wrap: wrap;
+			justify-content: space-around;
+			gap: 1rem;
 		}
 
 		div {
-			flex: 1 1 auto;
+			box-sizing: border-box;
+			width: 30vw;
+			height: 7rem;
 			font-family: Consolas, 'Courier New', Courier, monospace;
 			display: inline-block;
 			padding: 1em;
-			border: 5px solid #fff;
+			border: 5px solid #000;
 			color: #fff;
 
 			code {
-				background-color: #0009;
+				background-color: #000;
 				color: #fff;
 				padding: 5px;
 				border-radius: 3px;
@@ -38,7 +47,7 @@
 			}
 
 			&:nth-child(3) {
-				backdrop-filter: blur(5px);
+				backdrop-filter: blur(10px);
 			}
 
 			&:nth-child(4) {
@@ -46,7 +55,7 @@
 			}
 
 			&:nth-child(5) {
-				backdrop-filter: saturate(0.2);
+				backdrop-filter: saturate(0.5);
 			}
 
 			&:nth-child(6) {
@@ -60,24 +69,31 @@
 			&:nth-child(8) {
 				backdrop-filter: brightness(0.2);
 			}
+
+			&:nth-child(9) {
+				backdrop-filter: brightness(5.0);
+			}
 	</style>
 </head>
 <body>
-	<div></div>
-	<div></div>
-	<div></div>
-	<div></div>
-	<div></div>
-	<div></div>
-	<div></div>
-	<div></div>
+	<main>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</main>
+	Photo by <a href="https://unsplash.com/@josh">Josh
+		Soto</a> on <a href="https://unsplash.com/photos/M76ZhVCMtYw">Unsplash</a>
+
 	<script>
 		function ready(fn) {
-			if (document.readyState !== 'loading') {
-				fn();
-			} else {
-				document.addEventListener('DOMContentLoaded', fn);
-			}
+			if (document.readyState !== 'loading') return (fn());
+			document.addEventListener('DOMContentLoaded', fn);
 		}
 
 		ready(() => document.querySelectorAll("div").forEach(div => {

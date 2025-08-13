@@ -252,9 +252,9 @@ Backdrop Filter
 
 And finally... backdrop filter. You know that cool translucent effect you sometimes see on things like Windows Terminal?
 
-Yeah. We can totally do that.
+Yeah. We can totally do that. If you apply any of the CSS filter functions using the `backdrop-filter` property, they'll be applied to the background that appears behind the target element.
 
-{% example backdrop-filter.html elements="style,body" iframe_style="height: 20em;" %}
+{% example backdrop-filter.html elements="style" iframe_style="height: 24em;" %}
 
 
 
