@@ -10,7 +10,7 @@ header {
 	height: 5rem;
 
 	h1 {
-		font-size: clamp(24px, 4vw, 40px);
+		font-size: 32px;
 		font-weight: 100;
 		padding: 5px;
 		position: relative;
@@ -63,7 +63,7 @@ div#call-to-action {
 
 	h2 {
 		text-transform: uppercase;
-		font-size: min(5vw, 3em);
+		font-size: 3em;
 		letter-spacing: -0.05em;
 	}
 
@@ -93,11 +93,11 @@ div#categories {
 			display: flex;
 			align-items: flex-end;
 			justify-content: center;
-			height: min(18rem, 30%);
+			height: 18rem;
 			width: 100%;
 			background-size: 80%;
 			background-repeat: no-repeat;
-			background-position: top center;
+			background-position: center;
 
 			&[href*='guitars'] {
 				background-image: url('guitars.png');

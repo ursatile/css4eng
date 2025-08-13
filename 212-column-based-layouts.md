@@ -64,10 +64,6 @@ Instead, we can give the container a `max-width`, and set the width of the colum
 
 {% iframe 12-col-responsive-demo.html style="width: 50%; height: 20em;" %}
 
-If you look at the CSS for the Guitar Garage demo site, you'll see that in several places we've used responsive measurements based on the viewport width, but with a `min()` applied to limit them on larger devices:
-
-{% example guitar-garage.css mark_lines="13,66,96" %}
-
 The Guitar Garage demo site using a responsive layout looks like this:
 
 {% iframe guitar-garage-12-col-responsive-grid.html style="border: 2px solid #fff; height: 25em; zoom: 90%;" %}
@@ -76,34 +72,8 @@ and on a narrower screen layout, various elements will adjust to adapt the layou
 
 {% iframe guitar-garage-12-col-responsive-grid.html style="border: 2px solid #fff; height: 25em; width: 50%; zoom: 90%" %}
 
+It's a lot better than the fixed-width layout - we no longer get a horizontal scroll for starters - but we can do a lot better.
 
+## Responsive Layouts with @media Queries
 
-
-
-
-
-
-
-# Column-Based Layouts (20m)
-
-## Course Content
-
-- Understanding column-based layouts
-- Building a 960 grid system (and why it's not the same thing as a CSS grid!)
-- Responsive design with @media queries
-- Exercise: responsive registration form
-
-## Notes
-
-
-
-
-
-
-
-
-
-
-
-
-
+Using `@media`, CSS allows us to define styles which will only be applied when 
