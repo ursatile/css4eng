@@ -88,13 +88,30 @@
 					}
 				}
 			}
+
 			div#categories {
 				div {
-					display: flex;
-					height: 20em;
-					align-items: flex-end;
-					justify-content: center;
 					a {
+						display: flex;
+						align-items: flex-end;
+						justify-content: center;
+						height: 20em;
+						width: 100%;
+						background-size: 80%;
+						background-repeat: no-repeat;
+						background-position: top center;
+
+						&[href*='guitars'] {
+							background-image: url('guitars.png');
+						}
+
+						&[href*='basses'] {
+							background-image: url('basses.png');
+						}
+
+						&[href*='amps'] {
+							background-image: url('amps.png');
+						}
 
 						padding: 0.5em;
 						color: #fff;
@@ -107,8 +124,8 @@
 							text-decoration: 4px underline;
 						}
 
+					}
 				}
-			}
 	</style>
 </head>
 <body>
@@ -142,22 +159,29 @@
 			</div>
 			<div class="row" id="categories">
 				<div class="col-4">
-					<a href="#guitars">
-						guitars
-					</a>
+					<a href="#guitars">guitars</a>
 				</div>
 				<div class="col-4">
-					<a href="#basses">
-						basses
-					</a>
+					<a href="#basses">basses</a>
 				</div>
 				<div class="col-4">
-					<a href="#amps">
-						amps
-					</a>
+					<a href="#amps">amps</a>
 				</div>
 			</div>
 		</main>
+		<footer class="row">
+			<div class="col-6">
+				<address>
+					Guitar Garage<br>
+					217 Gibson Boulevard<br>
+					Burns Hill<br>
+					Adelina<br>
+					AB123<br>
+					<tel>01234 567890</tel>
+					<a href="#">hello@guitargarage.example</a>
+				</address>
+			</div>
+		</footer>
 	</div>
 </body>
 </html>
