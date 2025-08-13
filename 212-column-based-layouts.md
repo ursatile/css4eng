@@ -18,7 +18,9 @@ Fundamentally, a 12-column grid splits the page into twelve equally-sized column
 960 Grid System: <a href="/images/960-grid-layout.png">960-grid-layout.png</a></figcaption>
 </figure>
 
-You'll find legacy systems using 960 grids based on block elements with some very clever use of `float`, but these days the best way to build any kind of 960 grid system is to use CSS flex layotus.
+{% example 960-grid-using-floats.html %}
+
+
 
 
 
