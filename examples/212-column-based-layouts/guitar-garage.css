@@ -93,7 +93,7 @@ div#categories {
 			display: flex;
 			align-items: flex-end;
 			justify-content: center;
-			height: min(18rem, 28vw);
+			height: min(18rem, 30%);
 			width: 100%;
 			background-size: 80%;
 			background-repeat: no-repeat;

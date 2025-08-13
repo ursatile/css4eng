@@ -48,7 +48,7 @@ Here, you can see the effects of the various `col-*` classes applied to elements
 
 Here's an example of a full site layout built around that 960 grid system:
 
-{% iframe guitar-garage-960-grid.html style="border: 2px solid #fff; height: 75em; zoom: 75%;" %}
+{% iframe guitar-garage-960-grid.html style="border: 2px solid #fff; height: 75em;" %}
 
 ## Responsive Grids
 
@@ -64,9 +64,19 @@ Instead, we can give the container a `max-width`, and set the width of the colum
 
 {% iframe 12-col-responsive-demo.html style="width: 50%; height: 20em;" %}
 
+If you look at the CSS for the Guitar Garage demo site, you'll see that in several places we've used responsive measurements based on the viewport width, but with a `min()` applied to limit them on larger devices:
+
+{% example guitar-garage.css mark_lines="13,66,96" %}
+
 The Guitar Garage demo site using a responsive layout looks like this:
 
-{% iframe guitar-garage-12-col-responsive-grid.html style="border: 2px solid #fff; height: 75em; zoom: 75%;" %}
+{% iframe guitar-garage-12-col-responsive-grid.html style="border: 2px solid #fff; height: 25em; zoom: 90%;" %}
+
+and on a narrower screen layout, various elements will adjust to adapt the layout to the narrower format:
+
+{% iframe guitar-garage-12-col-responsive-grid.html style="border: 2px solid #fff; height: 25em; width: 50%; zoom: 90%" %}
+
+
 
 
 
