@@ -21,10 +21,14 @@
 				position: relative;
 				top: 0.5em;
 
-				span {
-					font-weight: 900;
-					position: relative;
-					top: -0.5em;
+				a {
+					color: #fff;
+					text-decoration: none;
+					span {
+						font-weight: 900;
+						position: relative;
+						top: -0.5em;
+					}
 				}
 			}
 
@@ -70,10 +74,14 @@
 				background-color: indigo;
 				color: #fff;
 				text-decoration: none;
-				padding: 5px;
+				padding: 1em;
 				font-weight: 600;
 				float: right;
 				border-radius: 5px;
+				&:hover {
+					color: indigo;
+					background-color: white;
+				}
 
 				&::after {
 					content: ' ⮞';
@@ -126,27 +134,59 @@
 
 			address {
 				margin: 1em;
-				text-align: center;
+				text-align: right;
 				font-size: 0.8em;
 				font-style: normal;
 			}
+
 			ul#social-media-links {
 				margin: 0;
 				padding: 0;
+
 				li {
 					display: block;
-					text-align: center;
+
 					a {
+						display: flex;
+						align-items: center;
 						color: #fff;
 						text-decoration: none;
-				 }
-		}
+						background-size: 32px;
+						background-position: left center;
+						background-repeat: no-repeat;
+						padding-left: 40px;
+						height: 32px;
+						margin: 0.5em;
+
+						&[href*="facebook"] {
+							background-image: url('social-media/facebook-square-white.svg');
+						}
+
+						&[href*="youtube"] {
+							background-image: url('social-media/youtube-square-white.svg');
+						}
+
+						&[href*="bluesky"] {
+							background-image: url('social-media/bluesky-square-white.svg');
+						}
+
+						&[href*="instagram"] {
+							background-image: url('social-media/instagram-square-white.svg');
+						}
+
+						&[href*="twitch"] {
+							background-image: url('social-media/twitch-square-white.svg');
+						}
+					}
+				}
 	</style>
 </head>
 <body class="container">
 	<header class="row">
 		<h1 class="col-4">
-			<span>guitar</span>garage
+			<a href="#">
+				<span>guitar</span>garage
+			</a>
 		</h1>
 		<nav class="col-8">
 			<a href="#">home</a>
