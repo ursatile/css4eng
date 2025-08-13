@@ -4,42 +4,20 @@
 	<title>960 Grid Using Floats</title>
 	<link rel="stylesheet" href="960grid.css">
 	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-		html {
-			background-color: #000;
-			color: #fff;
-		}
-		header {
-			background-color: #036;
-			h1 {
-				margin: 1rem;
-				font-family: Raleway, sans-serif;
-				font-weight: 100;
-				span {
-					font-weight: 900;
-				}
-			}
-		}
 
+		[class*="col-"] {
+			padding: 2px;
+			font-family: Consolas;
+			box-sizing: border-box;
+			float: left;
+			text-align: center;
+			margin: 0px 10px;
+			background-color: #9999;
+		}
 	</style>
 </head>
 <body>
 	<div class="container">
-		<header class="row">
-			<h1 class="col-4">
-				<span>960</span>grid
-			</h1>
-		</header>
-		<nav>
-			<ul>
-				<li><a href="#">home</a></li>
-				<li><a href="#">about</a></li>
-				<li><a href="#">projects</a></li>
-				<li><a href="#">events</a></li>
-				<li><a href="#">contact</a></li>
-			</ul>
-
-		</nav>
 		<div class="row">
 			<div class="col-1">col-1</div><div class="col-1">col-1</div>
 			<div class="col-1">col-1</div><div class="col-1">col-1</div>
