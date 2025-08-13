@@ -11,72 +11,60 @@
 			background-color: #000;
 			color: #fff;
 		}
+		* { outline: 1px solid #f0f9;
+			.container { outline: 1px solid #fc0c; }
+
 
 		header {
-			background: linear-gradient(to right, #036, black);
-
+			height: 5rem;
 			h1 {
 				font-weight: 100;
 				padding: 5px;
+				position: relative;
+				top: 0.5em;
 
 				span {
 					font-weight: 900;
+					position: relative;
+					top: -0.5em;
 				}
 			}
 
-			p {
+			nav {
 				text-align: right;
 				padding: 5px;
-			}
-
-		}
-
-		nav {
-			ul {
-				margin: 0;
-				padding: 0;
-				li {
-					a {
-						background-color: #036;
-						font-weight: bold;
-						padding: 1em;
-						margin: 1em;
-						text-decoration: none;
-						display: block;
-						color: #fff;
-
-						&:hover {
-							background-color: #9cf;
-							color: #000;
-						}
-					}
+				display: flex;
+				height: 5rem;
+				align-items: flex-end;
+				justify-content: flex-end;
+				a {
+					display: inline-block;
+					padding: 0.5em;
+					color: #fff;
+					font-weight: bold;
+					text-decoration: none;
+					&:hover { text-decoration: 4px underline; }
 				}
 			}
 		}
+
 	</style>
 </head>
 <body>
 	<div class="container">
 		<header class="row">
 			<h1 class="col-4">
-				<span>960</span>grid
+				<span>guitar</span>garage
 			</h1>
-			<p class="col-8">
-				the world's<br>
-				least responsive<br>
-				grid system<br>
-			</p>
+			<nav class="col-8">
+				<a href="#">home</a>
+				<a href="#">guitars</a>
+				<a href="#">basses</a>
+				<a href="#">pedals</a>
+				<a href="#">amps</a>
+			</nav>
 		</header>
 		<main class="row">
-			<nav class="col-3">
-				<ul>
-					<li><a href="#">home</a></li>
-					<li><a href="#">about</a></li>
-					<li><a href="#">projects</a></li>
-					<li><a href="#">events</a></li>
-					<li><a href="#">contact</a></li>
-				</ul>
-			</nav>
 		</main>
 	</div>
 </body>
