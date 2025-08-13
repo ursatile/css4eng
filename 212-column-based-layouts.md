@@ -64,7 +64,9 @@ Instead, we can give the container a `max-width`, and set the width of the colum
 
 {% iframe 12-col-responsive-demo.html style="width: 50%; height: 20em;" %}
 
+The Guitar Garage demo site using a responsive layout looks like this:
 
+{% iframe guitar-garage-12-col-responsive-grid.html style="border: 2px solid #fff; height: 75em; zoom: 75%;" %}
 
 
 
