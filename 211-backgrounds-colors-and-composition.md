@@ -92,9 +92,9 @@ Or combining multiple repeated gradients with a handwriting font to create somet
 The thing to remember about composing multiple CSS backgrounds is that you need to provide multiple values for each property:
 
 ```css
-background-image: <image1>, <image2>, <image3>, <image4>;
-background-size: <size1>, <size2>, <size3>, <size4>;
-background-position: <position1>, <position2>, <position3>, <position4>;
+background-image:     <image1>     <image2>,    <image3>,    <image4>;
+background-size:      <size1>,     <size2>,     <size3>,     <size4>;
+background-position:  <position1>, <position2>, <position3>, <position4>;
 ```
 
 The first background is drawn closest to the viewer, the final background is drawn furthest away from the viewer, and only the final image can be a solid colour (even if that colour has transparency; if you need a transparent colour layer as part of a background stack, use a gradient that only defines one colour).
@@ -138,11 +138,11 @@ Notice how in this example, the boxes in the middle have `opacity` applied to th
 
 A stacking context defines a group of associated elements that will be stacked independently of any other group of elements. Every page has at least one stacking context, created by the root `<html>` element, and giving just about element a `z-index` will create another stacking context - check out [features creating stacking contexts](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Stacking_context#features_creating_stacking_contexts) at MDN if you want the full list. It's not very interesting.
 
-{% iframe stacking-contexts.html style="height: 23em;" %}
+{% iframe stacking-contexts.html style="height: 24em;" %}
 
 If you want to create a new stacking context without specifying a `z-index`, use the `isolation: isolate` property. This is particularly useful for controlling the composition of the `::before` and `::after` pseudo-elements without affecting the originating element's position in the document stack.
 
-{% example isolation.html elements="style,body" iframe_style="height: 34em;" %}
+{% iframe isolation.html style="height: 28em;" %}
 
 ## Using CSS Blend Modes
 
@@ -247,6 +247,14 @@ Using the `filter` property, we can apply a range of visual effects to any eleme
 You can combine multiple filters on a single element; if you do this, remember that filters are applied in the order they're defined; applying `contrast` after `blur` will produce a very different outcome to applying `blur` after `contrast`:
 
 {% example combined-filters.html elements="style" iframe_style="height: 14em;" %}
+
+Backdrop Filter
+
+And finally... backdrop filter. You know that cool translucent effect you sometimes see on things like Windows Terminal?
+
+Yeah. We can totally do that.
+
+{% example backdrop-filter.html elements="style,body" iframe_style="height: 20em;" %}
 
 
 
