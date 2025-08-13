@@ -11,43 +11,104 @@
 			background-color: #000;
 			color: #fff;
 		}
-		* { outline: 1px solid #f0f9;
-			.container { outline: 1px solid #fc0c; }
 
+		* {
+			outline: 1px solid #f0f9;
 
-		header {
-			height: 5rem;
-			h1 {
-				font-weight: 100;
-				padding: 5px;
-				position: relative;
-				top: 0.5em;
-
-				span {
-					font-weight: 900;
-					position: relative;
-					top: -0.5em;
-				}
+			.container {
+				outline: 1px solid #fc0c;
 			}
 
-			nav {
-				text-align: right;
-				padding: 5px;
-				display: flex;
+
+			header {
 				height: 5rem;
-				align-items: flex-end;
-				justify-content: flex-end;
-				a {
-					display: inline-block;
-					padding: 0.5em;
-					color: #fff;
-					font-weight: bold;
-					text-decoration: none;
-					&:hover { text-decoration: 4px underline; }
+
+				h1 {
+					font-weight: 100;
+					padding: 5px;
+					position: relative;
+					top: 0.5em;
+
+					span {
+						font-weight: 900;
+						position: relative;
+						top: -0.5em;
+					}
+				}
+
+				nav {
+					text-align: right;
+					padding: 5px;
+					display: flex;
+					height: 5rem;
+					align-items: flex-end;
+					justify-content: flex-end;
+
+					a {
+						display: inline-block;
+						padding: 0.5em;
+						color: #fff;
+						font-weight: bold;
+						text-decoration: none;
+
+						&:hover {
+							text-decoration: 4px underline;
+						}
+					}
 				}
 			}
-		}
 
+			div#showcase {
+				background-image: url(xie-lipton-SjrgIBKSLW0-unsplash.jpg);
+				background-position: center;
+				background-size: cover;
+				height: 25em;
+			}
+
+			div#call-to-action {
+				padding: 1em;
+
+				h2 {
+					text-transform: uppercase;
+					font-size: 3em;
+					letter-spacing: -0.05em;
+				}
+
+				a {
+					background-color: indigo;
+					color: #fff;
+					text-decoration: none;
+					padding: 5px;
+					font-weight: 600;
+					float: right;
+					border-radius: 5px;
+
+					&::after {
+						content: ' ⮞';
+					}
+				}
+			}
+			div#categories {
+				div {
+					display: flex;
+					height: 20em;
+					align-items: flex-end;
+					justify-content: center;
+					a {
+
+						padding: 0.5em;
+						color: #fff;
+						font-weight: bold;
+						text-decoration: none;
+						text-transform: uppercase;
+						letter-spacing: 0.5em;
+
+						&:hover {
+							text-decoration: 4px underline;
+						}
+
+				}
+			}
 	</style>
 </head>
 <body>
@@ -64,7 +125,38 @@
 				<a href="#">amps</a>
 			</nav>
 		</header>
-		<main class="row">
+		<main>
+			<div class="row">
+				<div class="col-6" id="showcase">
+				</div>
+				<div class="col-6" id="call-to-action">
+					<h2>Find Your<br>
+						Next<br>
+						Guitar<br>
+						Today</h2>
+					<p>Explore our guitars, basses, and effects, with instruments
+						for every skill level and budget, and free shipping until
+						Friday.</p>
+					<a href="#">Browse Guitars</a>
+				</div>
+			</div>
+			<div class="row" id="categories">
+				<div class="col-4">
+					<a href="#guitars">
+						guitars
+					</a>
+				</div>
+				<div class="col-4">
+					<a href="#basses">
+						basses
+					</a>
+				</div>
+				<div class="col-4">
+					<a href="#amps">
+						amps
+					</a>
+				</div>
+			</div>
 		</main>
 	</div>
 </body>
