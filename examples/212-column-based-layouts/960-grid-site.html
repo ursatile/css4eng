@@ -4,247 +4,63 @@
 	<title>960 Grid Using Floats</title>
 	<link rel="stylesheet" href="960grid.css">
 	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-
-		html {
-			font-family: Raleway, sans-serif;
-			background-color: #000;
-			color: #fff;
+		div.row {
+			margin: 10px 0;
 		}
 
-		header {
-			height: 5rem;
-
-			h1 {
-				font-weight: 100;
-				padding: 5px;
-				position: relative;
-				top: 0.5em;
-
-				a {
-					color: #fff;
-					text-decoration: none;
-					span {
-						font-weight: 900;
-						position: relative;
-						top: -0.5em;
-					}
-				}
-			}
-
-			nav {
-				text-align: right;
-				padding: 5px;
-				display: flex;
-				height: 5rem;
-				align-items: flex-end;
-				justify-content: flex-end;
-
-				a {
-					display: inline-block;
-					padding: 0.5em;
-					color: #fff;
-					font-weight: bold;
-					text-decoration: none;
-
-					&:hover {
-						text-decoration: 4px underline;
-					}
-				}
-			}
+		[class*="col-"] {
+			padding: 2px;
+			font-family: Consolas;
+			box-sizing: border-box;
+			float: left;
+			text-align: center;
+			margin: 0px 10px;
+			background-color: #999;
 		}
-
-		div#showcase {
-			background-image: url(xie-lipton-SjrgIBKSLW0-unsplash.jpg);
-			background-position: center;
-			background-size: cover;
-			height: 25em;
-		}
-
-		div#call-to-action {
-			padding: 1em;
-
-			h2 {
-				text-transform: uppercase;
-				font-size: 3em;
-				letter-spacing: -0.05em;
-			}
-
-			a {
-				background-color: indigo;
-				color: #fff;
-				text-decoration: none;
-				padding: 1em;
-				font-weight: 600;
-				float: right;
-				border-radius: 5px;
-				&:hover {
-					color: indigo;
-					background-color: white;
-				}
-
-				&::after {
-					content: ' ⮞';
-				}
-			}
-		}
-
-		div#categories {
-			div {
-				a {
-					display: flex;
-					align-items: flex-end;
-					justify-content: center;
-					height: 20em;
-					width: 100%;
-					background-size: 80%;
-					background-repeat: no-repeat;
-					background-position: top center;
-
-					&[href*='guitars'] {
-						background-image: url('guitars.png');
-					}
-
-					&[href*='basses'] {
-						background-image: url('basses.png');
-					}
-
-					&[href*='amps'] {
-						background-image: url('amps.png');
-					}
-
-					padding: 0.5em;
-					color: #fff;
-					font-weight: bold;
-					text-decoration: none;
-					text-transform: uppercase;
-					letter-spacing: 0.5em;
-
-					&:hover {
-						text-decoration: 4px underline;
-					}
-
-				}
-			}
-		}
-
-		footer {
-			border-top: 5px solid indigo;
-			padding-top: 2em;
-
-			address {
-				margin: 1em;
-				text-align: right;
-				font-size: 0.8em;
-				font-style: normal;
-			}
-
-			ul#social-media-links {
-				margin: 0;
-				padding: 0;
-
-				li {
-					display: block;
-
-					a {
-						display: flex;
-						align-items: center;
-						color: #fff;
-						text-decoration: none;
-						background-size: 32px;
-						background-position: left center;
-						background-repeat: no-repeat;
-						padding-left: 40px;
-						height: 32px;
-						margin: 0.5em;
-
-						&[href*="facebook"] {
-							background-image: url('social-media/facebook-square-white.svg');
-						}
-
-						&[href*="youtube"] {
-							background-image: url('social-media/youtube-square-white.svg');
-						}
-
-						&[href*="bluesky"] {
-							background-image: url('social-media/bluesky-square-white.svg');
-						}
-
-						&[href*="instagram"] {
-							background-image: url('social-media/instagram-square-white.svg');
-						}
-
-						&[href*="twitch"] {
-							background-image: url('social-media/twitch-square-white.svg');
-						}
-					}
-				}
 	</style>
 </head>
-<body class="container">
-	<header class="row">
-		<h1 class="col-4">
-			<a href="#">
-				<span>guitar</span>garage
-			</a>
-		</h1>
-		<nav class="col-8">
-			<a href="#">home</a>
-			<a href="#">guitars</a>
-			<a href="#">basses</a>
-			<a href="#">pedals</a>
-			<a href="#">amps</a>
-		</nav>
-	</header>
-	<main>
+<body>
+	<div class="container">
 		<div class="row">
-			<div class="col-6" id="showcase">
-			</div>
-			<div class="col-6" id="call-to-action">
-				<h2>Find Your<br>
-					Next<br>
-					Guitar<br>
-					Today</h2>
-				<p>Explore our guitars, basses, and effects, with instruments
-					for every skill level and budget, and free shipping until
-					Friday.</p>
-				<a href="#">Browse Guitars</a>
-			</div>
+			<div class="col-1">col-1</div><div class="col-1">col-1</div>
+			<div class="col-1">col-1</div><div class="col-1">col-1</div>
+			<div class="col-1">col-1</div><div class="col-1">col-1</div>
+			<div class="col-1">col-1</div><div class="col-1">col-1</div>
+			<div class="col-1">col-1</div><div class="col-1">col-1</div>
+			<div class="col-1">col-1</div><div class="col-1">col-1</div>
 		</div>
-		<div class="row" id="categories">
-			<div class="col-4">
-				<a href="#guitars">guitars</a>
-			</div>
-			<div class="col-4">
-				<a href="#basses">basses</a>
-			</div>
-			<div class="col-4">
-				<a href="#amps">amps</a>
-			</div>
+		<div class="row">
+			<div class="col-4">col-4</div>
+			<div class="col-4">col-4</div>
+			<div class="col-4">col-4</div>
 		</div>
-	</main>
-	<footer class="row">
-		<div class="col-6">
-			<address>
-				Guitar Garage<br>
-				217 Gibson Boulevard<br>
-				Burns Hill<br>
-				Adelina<br>
-				AB123<br>
-				<tel>01234 567890</tel><br>
-				<a href="#">hello@guitargarage.example</a>
-			</address>
+		<div class="row">
+			<div class="col-6">col-6</div>
+			<div class="col-6">col-6</div>
 		</div>
-		<div class="col-6">
-			<ul id="social-media-links">
-				<li><a href="#facebook">Guitar Garage</a></li>
-				<li><a href="#bluesky">@guitar.garage</a></li>
-				<li><a href="#youtube">@GuitarGarage</a></li>
-				<li><a href="#instagram">@GuitarGarage</a></li>
-				<li><a href="#twitch">@GuitarGarageTV</a></li>
-			</ul>
-
+		<div class="row">
+			<div class="col-12">col-12</div>
 		</div>
-	</footer>
+		<div class="row">
+			<div class="col-1">col-1</div>
+			<div class="col-11">col-11</div>
+		</div>
+		<div class="row">
+			<div class="col-2">col-2</div>
+			<div class="col-10">col-10</div>
+		</div>
+		<div class="row">
+			<div class="col-3">col-3</div>
+			<div class="col-9">col-9</div>
+		</div>
+		<div class="row">
+			<div class="col-4">col-4</div>
+			<div class="col-8">col-8</div>
+		</div>
+		<div class="row">
+			<div class="col-5">col-5</div>
+			<div class="col-7">col-7</div>
+		</div>
+	</div>
 </body>
 </html>

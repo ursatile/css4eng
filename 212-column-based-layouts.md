@@ -38,9 +38,13 @@ Fundamentally, a 12-column grid splits the page into twelve equally-sized column
 
 {% example 960grid.css %}
 
-{% example 960-grid-using-floats.html elements="body" iframe_style="height: 20em; zoom: 75%;" %}
+Using predefined widths and `float`, you can create a simple 960 grid system in less than 20 lines of code:
 
-> There's a `zoom: 75%` applied to the `iframe` for the demo here; open the example in a new window to see it at 1:1 size.
+{% example 960-grid-site.html elements="body" iframe_style="height: 30em; zoom: 70%;" %}
+
+> There's a `zoom: 70%` applied to the `iframe` for the demo here; open the example in a new window to see it at 1:1 size.
+
+Here's an example of a site built around that 960 grid system:
 
 
 
