@@ -4,7 +4,7 @@ layout: home
 nav_order: 501
 target_minutes: 10
 title: "Conclusion"
-word_count: 24
+word_count: 29
 ---
 # Conclusion (20m)
 
