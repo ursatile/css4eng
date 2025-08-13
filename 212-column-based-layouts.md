@@ -6,6 +6,26 @@ target_minutes: 15
 title: "Column-Based Layouts"
 word_count: 34
 ---
+Since the earliest days of the web, designers have been coming up with beautiful column-based layouts and asking developers to build them --- and for a long, long while, the only tool we had to do this was tables. Fortunately, things have improved a great deal since then, and today there's quite a few different ways to build responsive column-based layouts for websites and apps. Before we get into how we actually build them, let's talk about one of the most popular layout systems, something called a 12-column grid.
+
+The first thing to realise: this isn't the same as a CSS grid, which we're going to meet shortly. Designers and developers were referring to this kind of column layout as a 960 grid, or a twelve-column grid, for a long while before the grid module was added to CSS, and they are not the same thing.
+
+Fundamentally, a 12-column grid splits the page into twelve equally-sized columns, which creates a layout grid we can use to organise our content by specifying how many columns each element should occupy. Most versions you'll see in the wild are based on a 960-pixel site width, with 12 60-pixel columns, each surrounded by 10px of space, creating a 20px gap --- known as a *gutter* --- between adjacent columns.
+
+<figure>
+    <img src="./images/960-grid-layout.png" style="background: #fff;">
+    <figcaption>
+960 Grid System: <a href="/images/960-grid-layout.png">960-grid-layout.png</a></figcaption>
+</figure>
+
+You'll find legacy systems using 960 grids based on block elements with some very clever use of `float`, but these days the best way to build any kind of 960 grid system is to use CSS flex layotus.
+
+
+
+
+
+
+
 # Column-Based Layouts (20m)
 
 ## Course Content
