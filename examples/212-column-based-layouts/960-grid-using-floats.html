@@ -2,68 +2,8 @@
 <html lang="en">
 <head>
 	<title>960 Grid Using Floats</title>
-</head>
-<body>
+	<link rel="stylesheet" href="960grid.css">
 	<style>
-		.container {
-			width: 960px;
-			margin: 0 auto;
-			overflow: hidden;
-		}
-
-		.row {
-			width: 100%;
-			overflow: hidden;
-			margin-bottom: 10px;
-		}
-
-		.col-1 {
-			width: 60px;
-		}
-
-		.col-2 {
-			width: 140px;
-		}
-
-		.col-3 {
-			width: 220px;
-		}
-
-		.col-4 {
-			width: 300px;
-		}
-
-		.col-5 {
-			width: 380px;
-		}
-
-		.col-6 {
-			width: 460px;
-		}
-
-		.col-7 {
-			width: 540px;
-		}
-
-		.col-8 {
-			width: 620px;
-		}
-
-		.col-9 {
-			width: 700px;
-		}
-
-		.col-10 {
-			width: 780px;
-		}
-
-		.col-11 {
-			width: 860px;
-		}
-
-		.col-12 {
-			width: 940px;
-		}
 
 		[class*="col-"] {
 			padding: 2px;
@@ -75,13 +15,16 @@
 			background-color: #9999;
 		}
 	</style>
-
+</head>
+<body>
 	<div class="container">
 		<div class="row">
-			<div class="col-1">col-1</div><div class="col-1">col-1</div><div class="col-1">col-1</div>
-			<div class="col-1">col-1</div><div class="col-1">col-1</div><div class="col-1">col-1</div>
-			<div class="col-1">col-1</div><div class="col-1">col-1</div><div class="col-1">col-1</div>
-			<div class="col-1">col-1</div><div class="col-1">col-1</div><div class="col-1">col-1</div>
+			<div class="col-1">col-1</div><div class="col-1">col-1</div>
+			<div class="col-1">col-1</div><div class="col-1">col-1</div>
+			<div class="col-1">col-1</div><div class="col-1">col-1</div>
+			<div class="col-1">col-1</div><div class="col-1">col-1</div>
+			<div class="col-1">col-1</div><div class="col-1">col-1</div>
+			<div class="col-1">col-1</div><div class="col-1">col-1</div>
 		</div>
 		<div class="row">
 			<div class="col-4">col-4</div>
@@ -94,6 +37,26 @@
 		</div>
 		<div class="row">
 			<div class="col-12">col-12</div>
+		</div>
+		<div class="row">
+			<div class="col-1">col-1</div>
+			<div class="col-11">col-11</div>
+		</div>
+		<div class="row">
+			<div class="col-2">col-2</div>
+			<div class="col-10">col-10</div>
+		</div>
+		<div class="row">
+			<div class="col-3">col-3</div>
+			<div class="col-9">col-9</div>
+		</div>
+		<div class="row">
+			<div class="col-4">col-4</div>
+			<div class="col-8">col-8</div>
+		</div>
+		<div class="row">
+			<div class="col-5">col-5</div>
+			<div class="col-7">col-7</div>
 		</div>
 	</div>
 </body>

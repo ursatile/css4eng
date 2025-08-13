@@ -28,7 +28,7 @@ We're going to look at putting together a simple grid system, to demonstrate the
 
 ## Using a 12-Column Grid
 
-Fundamentally, a 12-column grid splits the page into twelve equally-sized columns, which creates a layout grid we can use to organise our content by specifying how many columns each element should occupy. Most versions you'll see in the wild are based on a 960-pixel site width, with 12 60-pixel columns, each surrounded by 10px of space, creating a 20px gap --- known as a *gutter* --- between adjacent columns.
+Fundamentally, a 12-column grid splits the page into twelve equally-sized columns, which creates a layout grid we can use to organise our content by specifying how many columns each element should occupy. Most versions you'll see in the wild are based on a 960-pixel site width, with twelve 60-pixel columns, each surrounded by 10px of space, creating a 20px gap --- known as a *gutter* --- between adjacent columns.
 
 <figure>
     <img src="./images/960-grid-layout.png" style="background: #fff;">
@@ -36,7 +36,11 @@ Fundamentally, a 12-column grid splits the page into twelve equally-sized column
 960 Grid System: <a href="/images/960-grid-layout.png">960-grid-layout.png</a></figcaption>
 </figure>
 
-{% example 960-grid-using-floats.html %}
+{% example 960grid.css %}
+
+{% example 960-grid-using-floats.html elements="body" iframe_style="height: 20em; zoom: 75%;" %}
+
+> There's a `zoom: 75%` applied to the `iframe` for the demo here; open the example in a new window to see it at 1:1 size.
 
 
 
