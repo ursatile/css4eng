@@ -25,6 +25,14 @@ https://frontendmasters.com/blog/understanding-css-corner-shape-and-the-power-of
 
 
 
+CRAZY FUN STUFF
+
+https://codepen.io/shannonmoeller/pen/XJbyQre
+
+![image-20250813113454886](./images/image-20250813113454886.png)
+
+
+
 {% example foo.html %}
 
 
