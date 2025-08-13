@@ -36,15 +36,33 @@ Fundamentally, a 12-column grid splits the page into twelve equally-sized column
 960 Grid System: <a href="/images/960-grid-layout.png">960-grid-layout.png</a></figcaption>
 </figure>
 
+Using predefined widths and `float`, you can create a very simple 960 grid system in less than 20 lines of code:
+
 {% example 960grid.css %}
 
-Using predefined widths and `float`, you can create a simple 960 grid system in less than 20 lines of code:
+Here, you can see the effects of the various `col-*` classes applied to elements within a container:
 
-{% example 960-grid-site.html elements="body" iframe_style="height: 30em; zoom: 70%;" %}
+{% iframe 960-grid-site.html style="height: 30em; zoom: 70%;" %}
 
 > There's a `zoom: 70%` applied to the `iframe` for the demo here; open the example in a new window to see it at 1:1 size.
 
-Here's an example of a site built around that 960 grid system:
+Here's an example of a full site layout built around that 960 grid system:
+
+{% iframe guitar-garage-960-grid.html style="border: 2px solid #fff; height: 75em; zoom: 75%;" %}
+
+## Responsive Grids
+
+One drawback of a fixed layout grid is that it's always 960px wide; on narrower devices, the layout doesn't adjust to the screen width, and you get a horizontal scrollbar.
+
+> Horizonal scrolling is almost always a terrible idea unless it's done on purpose.
+
+Instead, we can give the container a `max-width`, and set the width of the column elements as a proportion of the container width. Here, we're using CSS `calc()` to keep the column gutter at a constant 10px while adjusting the width of the columns themselves.
+
+{% example 12-col-responsive.css %}
+
+{% iframe 12-col-responsive-demo.html style="height: 20em;" %}
+
+{% iframe 12-col-responsive-demo.html style="width: 50%; height: 20em;" %}
 
 
 
