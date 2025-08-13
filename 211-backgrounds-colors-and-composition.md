@@ -256,9 +256,41 @@ Yeah. We can totally do that. If you apply any of the CSS filter functions using
 
 {% example backdrop-filter.html elements="style" iframe_style="height: 24em;" %}
 
+Backdrop filters are particularly useful for darkening a background image behind elements, so you can ensure that light-coloured text remains legible without completely covering the background - and like before, you can combine multiple filters in a single property to achieve effects like solarization.
+
+## Review and Recap
+
+In this section, we've learned about CSS backgrounds, blend modes, stacking contexts, and filters --- all features we can use to control how overlapping elements are *composed* by the browser.
+
+* We've learned about background properties like `background-repeat`, `background-size`, `background-attachment`, `background-origin`, `background-clip` and `background-position` control how an element's background is composed relative to the element itself
+* We learned how to use linear, radial, and conic gradients to create various kinds of background effects - and the difference between a repeating gradient, and repeating a gradient.
+* We've seen how to give an element multiple backgrounds, how to control their stacking order, and how to use the `background` property shorthand to define multiple properties in a single rule
+* We've met `z-index`, `isolation`, and stacking contexts, use to control the rendering order of overlapping elements
+* We've used CSS blend modes to create visual effects like duotone backgrounds
+* We've used CSS filters like `blur()` and `brightness()` to change the appearance of elements, and used `backdrop-filter` to apply visual effects to an element's backdrop.
+
+## Links and References
+
+foo
+: a thing
+
+bar
+: another thing
 
 
- 
+
+
+<dl>
+<dt>Compositing and Blending In CSS by Sara Souiedan:</dt>
+<dd>[https://www.sarasoueidan.com/blog/compositing-and-blending-in-css/](https://www.sarasoueidan.com/blog/compositing-and-blending-in-css/)</dd>
+<dt>The CSS property you didn't know you needed by Francesco Vetere</dt>
+<dd>https://dev.to/francescovetere/the-css-property-you-didnt-know-you-needed-3fk0</dd>
+</dl>
+* 
+
+
+
+
 
 
 
