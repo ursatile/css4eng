@@ -1,6 +1,7 @@
 title: CSS for Engineers
 description: Online handbook for Dylan Beattie’s course “CSS for Engineers”
 theme: just-the-docs
+host: 0.0.0.0
 
 color_scheme: midnight
 
