@@ -80,9 +80,28 @@ It wasn't all that long ago that developers would find themselves building, and 
 
 A much better approach is to create a single site, running from a single codebase, which adapts to the device it's running on. This is the fundamental principle behind **responsive design**: smaller devices don't just show a smaller version of your site, they actually apply a different layout so that the same elements and content are optimised for use on a smaller screen.
 
-Now, there are two different approaches to responsive design. One is to use what's called a *fluid layout*; elements are defined using relative units, and the layout scales smoothly to fit the current viewport. You'll also hear this referred to as a "liquid layout", but that term's fallen out of favour 
+Now, there are two different approaches to responsive design. One is to use what's called a *fluid layout*; elements are defined using relative units, and the layout scales smoothly to fit the current viewport. You'll also hear this referred to as a "liquid layout", but that term's fallen out of favour since Shopify created an open-source templating language called Liquid in 2006, which has become incredibly popular for building static websites and content management systems. Liquid is it's awesome; this handbook is built using Liquid --- but it also means googling "liquid layout" produces very confusing results.
 
-The other is 
+The other approach is to use what we call **breakpoints** to create styles which will only be applied at specific viewport sizes. 
+
+CSS does this using something called a **media query**, created using the `@media` rule; a way to define CSS rules that only apply in specific circumstances. You'll sometimes see this used to include rules that should only apply when content is printed:
+
+```css
+body { font-size: 16pt; }
+
+@media print {
+    /* Remove unnecessary elements when printing */
+    header, nav, footer { display: none; }
+    /* Adjust body width and font to improve readability */
+    body { width: 100%; font-size: 10pt; }
+}
+```
+
+We can also define media queries based on device characteristics. Open this example in a new browser window and change the screen width:
+
+{% example media-query-width-color.html elements="style" %}
+
+
 
 
 
