@@ -76,4 +76,19 @@ It's a lot better than the fixed-width layout - we no longer get a horizontal sc
 
 ## Responsive Layouts with @media Queries
 
+It wasn't all that long ago that developers would find themselves building, and maintaining, two completely different versions of the same website; one built for desktops, the other built for mobile devices. This generally turned out to be a frustrating and expensive proposition, especially since it would double the time, and cost, it took to add new features, and so you'd rapidly end up with a bunch of features that were only available on desktop or vice versa.
+
+A much better approach is to create a single site, running from a single codebase, which adapts to the device it's running on. This is the fundamental principle behind **responsive design**: smaller devices don't just show a smaller version of your site, they actually apply a different layout so that the same elements and content are optimised for use on a smaller screen.
+
+Now, there are two different approaches to responsive design. One is to use what's called a *fluid layout*; elements are defined using relative units, and the layout scales smoothly to fit the current viewport. You'll also hear this referred to as a "liquid layout", but that term's fallen out of favour 
+
+The other is 
+
+
+
 Using `@media`, CSS allows us to define styles which will only be applied when 
+
+Links
+
+Fixed vs. Fluid vs. Elastic Layout: What’s The Right One For You?
+: [https://www.smashingmagazine.com/2009/06/fixed-vs-fluid-vs-elastic-layout-whats-the-right-one-for-you/](https://www.smashingmagazine.com/2009/06/fixed-vs-fluid-vs-elastic-layout-whats-the-right-one-for-you/)
