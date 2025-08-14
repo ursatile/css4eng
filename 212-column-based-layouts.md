@@ -10,11 +10,11 @@ Since the earliest days of the web, designers have been coming up with beautiful
 
 OK, before we get started, three very important things to bear in mind.
 
-### 1. Layout Grids are not CSS Grid
+### 1. Layout Grids Are Not CSS Grids
 
 First: this isn't the same as a CSS grid, which we're going to meet shortly. Designers and developers were referring to this kind of column layout as a 960 grid, or a twelve-column grid, for a long while before the grid module was added to CSS, and they are not the same thing. I'll try very hard to always refer to layout grids and CSS grids if there could be confusion between the two, so if I talk about a layout grid, I mean a column-based system built using floats or flexbox, and if I talk about CSS grids, I mean the grid module that's actually part of CSS.
 
-### 2. Layout Grids Aren't Cool
+### 2. Layout Grids Aren't “Cool”
 
 The second thing to realise: these kinds of layout grids all originated in print, where designers would use them to lay out magazine pages, posters, that kind of thing - and in print, nothing moves. There's no such thing as a responsive magazine. CSS layout grids started out as a way to take ideas from conventional typesetting and incorporate them into web design; these days, with the prevalence of smartphones and other mobile devices, we've got a whole new set of challenges when it comes to layout and information design.
 
