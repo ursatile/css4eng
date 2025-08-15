@@ -101,7 +101,9 @@ We can also define media queries based on device characteristics. Open this exam
 
 {% example media-query-width-color.html elements="style" %}
 
+Now, let's take our fixed 960 grid layout and add a rule that says when we get below a certain screen width - say, 640px - we're going to scrap the side-by-side layout sections and just display every element at 100% width:
 
+{% example 960-grid-with-640-breakpoint.html elements="style" %}
 
 
 
