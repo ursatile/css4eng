@@ -1,7 +1,7 @@
 ---
-examples: examples/211-backgrounds-colors-and-composition
+examples: examples/210-backgrounds-colors-and-composition
 layout: home
-nav_order: 211
+nav_order: 210
 target_minutes: 15
 title: "Colors and Composition"
 word_count: 2834

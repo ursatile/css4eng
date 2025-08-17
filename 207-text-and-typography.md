@@ -1,7 +1,7 @@
 ---
-examples: examples/208-text-and-typography
+examples: examples/207-text-and-typography
 layout: home
-nav_order: 208
+nav_order: 207
 target_minutes: 10
 title: "Text & Typography"
 word_count: 1739

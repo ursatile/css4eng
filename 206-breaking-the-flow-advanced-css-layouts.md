@@ -1,7 +1,7 @@
 ---
-examples: examples/207-breaking-the-flow-advanced-css-layouts
+examples: examples/206-breaking-the-flow-advanced-css-layouts
 layout: home
-nav_order: 207
+nav_order: 206
 target_minutes: 10
 title: "Breaking the Flow: Advanced CSS Layouts"
 word_count: 2008
