@@ -4,7 +4,7 @@ layout: home
 nav_order: 212
 target_minutes: 15
 title: "Column-Based Layouts"
-word_count: 964
+word_count: 1757
 ---
 Since the earliest days of the web, designers have been coming up with beautiful column-based layouts and asking developers to build them --- and for a long, long while, the only tool we had to do this was tables. Fortunately, things have improved a great deal since then, and today there's quite a few different ways to build responsive column-based layouts for websites and apps. Before we get into how we actually build them, let's talk about one of the most popular layout systems, something called a 12-column grid.
 
