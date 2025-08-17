@@ -90,7 +90,15 @@ iframe {
 	border: 1px solid #000;
 	height: 480px;
 	display: block;
+	margin: 0px auto 2px auto;
+}
+
+figure.iframe:has(iframe[style*="width: 50%"]) {
+	width: 50%;
 	margin: 0px auto;
+	& iframe {
+		width: 100% !important;
+	}
 }
 
 

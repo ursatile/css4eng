@@ -36,19 +36,19 @@ Fundamentally, a 12-column grid splits the page into twelve equally-sized column
 960 Grid System: <a href="/images/960-grid-layout.png">960-grid-layout.png</a></figcaption>
 </figure>
 
-Using predefined widths and `float`, you can create a very simple 960 grid system in less than 20 lines of code:
+Using predefined widths and `float`, you can create a very simple 960 grid system in under  20 lines of code:
 
-{% example 960grid.css %}
+{% example fixed-grid.css %}
 
 Here, you can see the effects of the various `col-*` classes applied to elements within a container:
 
-{% iframe 960-grid-site.html style="height: 30em; zoom: 70%;" %}
+{% iframe fixed-grid.html style="height: 22em; zoom: 70%;" %}
 
 > There's a `zoom: 70%` applied to the `iframe` for the demo here; open the example in a new window to see it at 1:1 size.
 
 Here's an example of a full site layout built around that 960 grid system:
 
-{% iframe guitar-garage-960-grid.html style="border: 2px solid #fff; height: 75em;" %}
+{% iframe guitar-garage-fixed.html style="border: 2px solid #fff; height: 75em;" %}
 
 ## Responsive Grids
 
@@ -56,23 +56,23 @@ One drawback of a fixed layout grid is that it's always 960px wide; on narrower 
 
 > Horizonal scrolling is almost always a terrible idea unless it's done on purpose.
 
-Instead, we can give the container a `max-width`, and set the width of the column elements as a proportion of the container width. Here, we're using CSS `calc()` to keep the column gutter at a constant 10px while adjusting the width of the columns themselves.
+Instead, we can give the container a `max-width`, and set the width of the column elements as a percentage of the container width:
 
-{% example 12-col-responsive.css %}
+{% example fluid-grid.css %}
 
-{% iframe 12-col-responsive-demo.html style="height: 20em;" %}
+{% iframe fluid-grid.html style="height: 20em;" %}
 
-{% iframe 12-col-responsive-demo.html style="width: 50%; height: 20em;" %}
+{% iframe fluid-grid.html style="width: 50%; height: 20em;" %}
 
 The Guitar Garage demo site using a responsive layout looks like this:
 
-{% iframe guitar-garage-12-col-responsive-grid.html style="border: 2px solid #fff; height: 25em; zoom: 90%;" %}
+{% iframe guitar-garage-fluid.html style="border: 2px solid #fff; height: 25em;" %}
 
-and on a narrower screen layout, various elements will adjust to adapt the layout to the narrower format:
+and on a narrower screen:
 
-{% iframe guitar-garage-12-col-responsive-grid.html style="border: 2px solid #fff; height: 25em; width: 50%; zoom: 90%" %}
+{% iframe guitar-garage-fluid.html style="border: 2px solid #fff; height: 25em; width: 50%;" %}
 
-It's a lot better than the fixed-width layout - we no longer get a horizontal scroll for starters - but we can do a lot better.
+It works OK up to a point, but when you get down to something like a mobile device, the whole idea of side-by-side content doesn't really make sense. We'd be much better off with a layout that uses the full width of the device on desktops and tablets, but on something like a smartphone, it switches to a completely different layout which stacks items vertically instead of displaying them side-by-side.
 
 ## Responsive Layouts with @media Queries
 
@@ -80,7 +80,7 @@ It wasn't all that long ago that developers would find themselves building, and 
 
 A much better approach is to create a single site, running from a single codebase, which adapts to the device it's running on. This is the fundamental principle behind **responsive design**: smaller devices don't just show a smaller version of your site, they actually apply a different layout so that the same elements and content are optimised for use on a smaller screen.
 
-Now, there are two different approaches to responsive design. One is to use what's called a *fluid layout*; elements are defined using relative units, and the layout scales smoothly to fit the current viewport. You'll also hear this referred to as a "liquid layout", but that term's fallen out of favour since Shopify created an open-source templating language called Liquid in 2006, which has become incredibly popular for building static websites and content management systems. Liquid is it's awesome; this handbook is built using Liquid --- but it also means googling "liquid layout" produces very confusing results.
+Now, there are two different approaches to responsive design. One is to use what's called a *fluid layout*; elements are defined using relative units, and the layout scales smoothly to fit the current viewport. You'll also hear this referred to as a "liquid layout", but that term's fallen out of favour since Shopify created an open-source templating language called Liquid in 2006, which has become incredibly popular for building static websites and content management systems. Liquid's great --- this handbook site is built using Liquid --- but it also means googling "liquid layout" produces very confusing results. We've see a fluid layout based on layout grids above, and later in the workshop we'll look at how you can use CSS flexbox to create truly fluid layouts that don't rely on an underlying grid system.
 
 The other approach is to use what we call **breakpoints** to create styles which will only be applied at specific viewport sizes. 
 
@@ -101,13 +101,73 @@ We can also define media queries based on device characteristics. Open this exam
 
 {% example media-query-width-color.html elements="style" %}
 
-Now, let's take our fixed 960 grid layout and add a rule that says when we get below a certain screen width - say, 640px - we're going to scrap the side-by-side layout sections and just display every element at 100% width:
+Now, let's take our fluid layout grid and add a rule that says when we get below a certain screen width - say 600px - we're going to scrap the side-by-side layout sections and just display every element at 100% width:
 
-{% example 960-grid-with-640-breakpoint.html elements="style" %}
+{% example fluid-grid-breakpoint.html elements="style" %}
+
+{% iframe fluid-grid-breakpoint.html style="height: 18em;"  %}
+
+{% iframe fluid-grid-breakpoint.html style="width: 50%; height: 18em;" %}
+
+Here's the Guitar Garage demo site using a 600px breakpoint:
+
+{% iframe guitar-garage-breakpoint.html style="border: 1px solid #fff;" %}
+
+{% iframe guitar-garage-breakpoint.html style="border: 1px solid #fff; width: 50%;" %}
+
+This approach is very simple, but it doesn't give us a huge amount of control over how the layout will respond to different device widths, so most layout grid systems go a step further and include multiple column classes so that you can define exactly how specific elements should react to specific breakpoints.
+
+The convention here is to define a set of named breakpoints; [Bootstrap's grid system](https://getbootstrap.com/docs/4.0/layout/grid/) defines these as:
+
+* `xs`: extra small (0 -- 576px)
+* `sm`: small (576px -- 768px)
+* `md`: medium (768px -- 992px)
+* `lg`: large (992px -- 1200px)
+* `xl`: extra large (> 1200px)
+
+Then we can create a set of CSS classes based on those breakpoints, and use those classes to define how many columns an element should take up at each screen width.
+
+This snippet:
+
+```html
+<div class="col-6 col-4-lg col-3-xl"></div>
+```
+
+defines a `<div>` which is six columns wide on most devices, four columns on large screens, and three on extra-large.
+
+### Desktop-First or Mobile-First?
+
+When using breakpoint-based layouts, it's vitally important to decide up front whether you're going to build a mobile-first layout that adapts to desktop and widescreen devices, or a widescreen device that adapts to tablets and mobile devices. In this example, the layout is mobile-first: every element defaults to 12 columns - full width - and then I've used override classes to switch to a 2, 3, 4, or 6-column layout on larger devices:
+
+{% example breakpoints.html elements="body" iframe_style="height: 20em; zoom: 75%;" %}
+
+## Column Offsets
+
+One more feature of most grid systems is *offsets*: a way to define an element that doesn't start in the left-most column, or which leaves a gap.
+
+{% example fluid-grid-with-offset.html elements="body" iframe_style="height: 14em;" %}
+
+And, yes, you can combine offset classes with media queries, to create offsets which only kick in at specific display sizes.
+
+## Putting It All Together
+
+Let's wire up the checkout form for our Guitar Garage site, using a combination of all the layout grid techniques we've seen in this section.
+
+{% example guitar-garage-checkout.html elements="body" iframe_style="height: 14em;" %}
 
 
 
-Using `@media`, CSS allows us to define styles which will only be applied when 
+
+
+
+
+
+
+
+
+
+
+
 
 Links
 

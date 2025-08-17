@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
 	<title>960 Grid Using Floats</title>
-	<link rel="stylesheet" href="960grid-with-breakpoint.css">
+	<link rel="stylesheet" href="fixed-grid.css">
 	<style>
-		div.row {
-			margin: 10px 0;
+		.container {
+			background: repeating-linear-gradient(to right,
+				#ccf 0 10px,
+				#fcc  10px 70px,
+				#ccf  70px 80px);
 		}
-
 		[class*="col-"] {
+			margin-top: 10px;
 			padding: 2px;
 			font-family: Consolas;
-			box-sizing: border-box;
-			float: left;
 			text-align: center;
-			margin: 0px 10px;
 			background-color: #999;
 		}
 	</style>
@@ -29,6 +29,13 @@
 			<div class="col-1">col-1</div><div class="col-1">col-1</div>
 			<div class="col-1">col-1</div><div class="col-1">col-1</div>
 		</div>
+		<div class="row">
+			<div class="col-3">col-3</div>
+			<div class="col-3">col-3</div>
+			<div class="col-3">col-3</div>
+			<div class="col-3">col-3</div>
+		</div>
+
 		<div class="row">
 			<div class="col-4">col-4</div>
 			<div class="col-4">col-4</div>

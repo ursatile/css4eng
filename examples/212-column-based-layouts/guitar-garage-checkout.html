@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>960 Grid Using Floats</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="fluid-grid-with-breakpoints-and-offsets.css">
+	<link rel="stylesheet" href="guitar-garage.css">
+	<style>
+		/* .container {
+			background: repeating-linear-gradient(to right,
+					#003 0 1%,
+					#330 1% 7.3333%,
+					#003 7.3333% 8.3333%);
+		}
+
+		[class*="col-"] {
+			outline: 1px solid orange;
+		} */
+	</style>
+</head>
+<body class="container">
+	<header class="row">
+		<h1 class="col-12 col-sm-4">
+			<a href="#">
+				<span>guitar</span>garage
+			</a>
+		</h1>
+		<nav class="col-12 col-sm-8">
+			<a href="#">home</a>
+			<a href="#">guitars</a>
+			<a href="#">basses</a>
+			<a href="#">pedals</a>
+			<a href="#">amps</a>
+		</nav>
+	</header>
+	<form action="#" method="POST" id="checkout-form">
+		<div class="row">
+			<h3 class="col-12 col-sm-10 off-sm-1 col-md-8 off-md-2">Order Details
+				<hr>
+			</h3>
+		</div>
+		<div class="row">
+			<h4 class="col-8 col-sm-7 off-sm-1 col-md-5 off-md-2">
+				Description
+			</h4>
+			<h4 class="col-1 right">
+				Qty
+			</h4>
+			<h4 class="col-3 col-sm-2 right">
+				Total
+			</h4>
+		</div>
+		<div class="row">
+			<div class="col-8 col-sm-7 off-sm-1 col-md-5 off-md-2">
+				PRS Limited Edition 40th Anniversary Custom 24 Sub Zero @
+				£6,999<small>.00</small>
+			</div>
+			<div class="col-1 right">
+				1
+			</div>
+			<div class="col-3 col-sm-2 right">
+				£6,999<small>.00</small>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-8 col-sm-7 off-sm-1 col-md-5 off-md-2">
+				Soldano SLO-100 100W Classic Valve Amp Head @ £3,999<small>.00</small>
+			</div>
+			<div class="col-1 right">
+				1
+			</div>
+			<div class="col-3 col-sm-2 right">
+				£3,999<small>.00</small>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-8 col-sm-7 off-sm-1 col-md-5 off-md-2">
+				Ibanez SRMS725 5 String Multi Scale Blue Chameleon @
+				£1,459<small>.00</small>
+			</div>
+			<div class="col-1 right">
+				1
+			</div>
+			<div class="col-3 col-sm-2 right">
+				£1,459<small>.00</small>
+			</div>
+		</div>
+		<hr class="col-12 col-sm-10 off-sm-1 col-md-8 off-md-2">
+		<div class="row">
+			<div class="col-9 col-sm-8 off-sm-1 col-md-6 off-md-2">
+				Subtotal
+			</div>
+			<div class="col-3 col-sm-2 right">
+				£12,457<small>.00</small>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-9 col-sm-8 off-sm-1 col-md-6 off-md-2">
+				Shipping
+			</div>
+			<div class="col-3 col-sm-2 right">
+				£35<small>.00</small>
+			</div>
+		</div>
+		<hr class="col-12 col-sm-10 off-sm-1 col-md-8 off-md-2">
+		<div class="row grand-total">
+			<div class="col-9 col-sm-8 off-sm-1 col-md-6 off-md-2">
+				Total to Pay
+			</div>
+			<div class="col-3 col-sm-2 right">
+				£12,492<small>.00</small>
+			</div>
+		</div>
+		<div class="row">
+			<h3 class="col-12 col-sm-10 off-sm-1 col-md-8 off-md-2">Customer Details
+				<hr>
+			</h3>
+		</div>
+		<div class="row">
+			<div class="col-12 col-sm-5 off-sm-1 col-md-4 off-md-2">
+				<label>First Name</label>
+				<input type="text" placeholder="first name">
+			</div>
+			<div class="col-12 col-sm-5 col-md-4">
+				<label>Last Name</label>
+				<input type="text" placeholder="last name">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-12 col-sm-5 off-sm-1 col-md-4 off-md-2">
+				<label>Email Address</label>
+				<input type="email">
+			</div>
+			<div class="col-12 col-sm-5 col-md-4">
+				<label>Phone Number</label>
+				<input type="phone">
+			</div>
+		</div>
+		<div class="row">
+			<h3 class="col-12 col-sm-10 off-sm-1 col-md-8 off-md-2">Shipping
+				<hr>
+			</h3>
+		</div>
+		<div class="row">
+			<div class="col-12 col-sm-10 off-sm-1 col-md-8 off-md-2">
+				<label>Street Address</label>
+				<input type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 col-sm-4 off-sm-1 col-md-3 off-md-2">
+				<label>City</label>
+				<input type="text">
+			</div>
+			<div class="col-12 col-sm-3 col-md-3">
+				<label>Country</label>
+				<select>
+					<option>Select...</option>
+				</select>
+			</div>
+			<div class="col-12 col-sm-3 col-md-2">
+				<label>Postal Code</label>
+				<input type="text">
+			</div>
+		</div>
+		<div class="col-12 col-sm-10 off-sm-1 col-md-8 off-md-2">
+			<hr>
+			<input type="submit" value="🢐 Back">
+			<input type="submit" value="Next 🢒">
+		</div>
+	</form>
+	<footer class="row">
+		<div class="col-6">
+			<address>
+				Guitar Garage<br>
+				217 Gibson Boulevard<br>
+				Burns Hill<br>
+				Adelina<br>
+				AB123<br>
+				<tel>01234 567890</tel><br>
+				<a href="#">hello@guitargarage.example</a>
+			</address>
+		</div>
+		<div class="col-6">
+			<ul id="social-media-links">
+				<li><a href="#facebook">Guitar Garage</a></li>
+				<li><a href="#bluesky">@guitar.garage</a></li>
+				<li><a href="#youtube">@GuitarGarage</a></li>
+				<li><a href="#instagram">@GuitarGarage</a></li>
+				<li><a href="#twitch">@GuitarGarageTV</a></li>
+			</ul>
+
+		</div>
+	</footer>
+</body>
+</html>

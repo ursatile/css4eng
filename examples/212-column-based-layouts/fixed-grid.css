@@ -14,4 +14,4 @@ html, body { margin: 0; padding: 0; }
 .col-10 { width: 780px; }
 .col-11 { width: 860px; }
 .col-12 { width: 940px; }
-[class*="col-"] {	float: left;	margin: 0px 10px; }
+[class*="col-"] {	float: left; margin: 0px 10px; }
