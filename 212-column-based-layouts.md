@@ -153,23 +153,47 @@ And, yes, you can combine offset classes with media queries, to create offsets w
 
 Let's wire up the checkout form for our Guitar Garage site, using a combination of all the layout grid techniques we've seen in this section.
 
-{% example guitar-garage-checkout.html elements="body" iframe_style="height: 14em;" %}
+{% example guitar-garage-checkout.html elements="main" iframe_style="height: 14em; outline: 1px solid #fff;" %}
 
+Here's the same page, but with a background on the `.container` element that makes the layout grid structure visible so you can see what's lining up with what:
 
+{% example guitar-garage-checkout-with-guides.html elements="style" iframe_style="height: 14em; outline: 1px solid #fff;" %}
 
+Here's that same example in a narrow screen format:
 
+{% iframe guitar-garage-checkout-with-guides.html style="width: 50%;" %}
 
+Things to look for:
 
+* The rows in the checkout form are full-width on narrow devices, but on larger devices are either 10 columns offset by 1, or 8 columns offset by 2 -- this avoids uncomfortably wide rows on very large displays.
+* We're using a combination of columns and offsets to simulate a tabular layout for the Order Details section.
+* The customer details form uses one, two, or three columns depending on the screen size
+* It's not just `<div>` elements being styled by the grid system; we've also used the `col-*` classes on `<h3>` and `<hr>` elements.
 
+## Review & Recap
 
+In this section, we’ve learned:
 
+- How **column-based layout grids** work, and why they’re different from CSS Grid.
+- That layout grids originated in **print design**, and while not always “cool,” they remain a practical way to create simple, responsive layouts.
+- Why it’s usually better to **use an existing grid system** (like Bootstrap or Foundation) instead of building your own from scratch.
+- How a **12-column grid** provides a flexible foundation for structuring content, using gutters, columns, and offsets.
+- The difference between **fixed** and **fluid** grids, and why fluid layouts scale better across different screen widths.
+- How to make grids **responsive** using `@media` queries and **breakpoints**, so designs adapt smoothly to different devices.
+- The importance of deciding between a **mobile-first** or **desktop-first** strategy before implementing breakpoints.
+- How **offsets** can create spacing and alignment options beyond simple left-aligned layouts.
+- Finally, how all these techniques come together in a practical example (the Guitar Garage site), combining grids, offsets, and breakpoints to build a layout that works well across devices.
 
+We're not going to spend any more time on layout grids. I think they're a really important technique, one that you'll still find used in many sites and frontend design frameworks, but there are good reason they're not really considered "best practice" any more.
 
+Most significantly, they need a *lot* of extraneous classes and markup; we need to wrap our content up in row elements, wrap those in a container element, add column and offset classes to our content elements - and we'll often end up having to wrap those in *another* layer of divs. 
 
+The good news is: there's a much, much better way to deliver the same kind of results; a set of capabilities that were added to CSS about ten years ago, influenced and inspired by the kind of layouts people were creating using layout grids. Together, they're known as CSS flexbox, so let's meet flexbox and see what it can do.
 
-
-
-Links
+## Links and References
 
 Fixed vs. Fluid vs. Elastic Layout: What’s The Right One For You?
 : [https://www.smashingmagazine.com/2009/06/fixed-vs-fluid-vs-elastic-layout-whats-the-right-one-for-you/](https://www.smashingmagazine.com/2009/06/fixed-vs-fluid-vs-elastic-layout-whats-the-right-one-for-you/)
+
+Bootstrap Grid System
+: [https://getbootstrap.com/docs/4.0/layout/grid/](https://getbootstrap.com/docs/4.0/layout/grid/)
