@@ -29,7 +29,7 @@ To activate the flexbox layout system, you'll need a container element with `dis
 
 That'll give you a container with a *main axis* and a *cross axis*, and just about everything else is defined in terms of those two axes.
 
-{% example display-flex.html elements="style,body" iframe_style="height: 10em;" %}
+{% example display-flex.html elements="body" iframe_style="height: 20em;" %}
 
 
 
