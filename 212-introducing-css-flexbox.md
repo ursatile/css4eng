@@ -19,6 +19,22 @@ Third: flexbox is mind-meltingly complicated. It's a completely new layout model
 
 You ready? Let's see what it can do.
 
+## Flexbox Fundamentals
+
+Flexbox is designed to align elements in a container along a single axis; every flexbox container is fundamentally trying to be either a single row of things, or a single column of things. This is in contrast to the CSS Grid we'll meet a little later, which is all about two-dimensional layouts.
+
+Also bear in mind that while you *can* use flexbox to lay out entire screens and applications, it's just as effective for building small standalone components, as we'll see later in this section.
+
+To activate the flexbox layout system, you'll need a container element with `display: flex` on it --- or `display: inline-flex`, if you want your container to behave like an inline element.
+
+That'll give you a container with a *main axis* and a *cross axis*, and just about everything else is defined in terms of those two axes.
+
+{% example display-flex.html elements="style,body" iframe_style="height: 10em;" %}
+
+
+
+
+
 
 
 
