@@ -4,9 +4,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>justify-content with flex-direction: column</title>
 	<style>
+		code {
+			display: inline-block;
+			margin: 4px 0;
+		}
+
 		div {
 			background-color: royalblue;
 			border-radius: 4px;
+
 			span {
 				border-radius: 4px;
 				background-color: gold;
@@ -18,12 +24,24 @@
 		article#row {
 			div {
 				display: flex;
-				height: 12em;
+				height: 6em;
+
 				span:nth-child(1) {
-					font-size: 500%;
-				}
-				span:nth-child(2) {
 					font-size: 300%;
+				}
+
+				span:nth-child(2) {
+					font-size: 200%;
+				}
+
+				hr {
+					position: absolute;
+					top: 2.9rem;
+					border-width: 2px 0 0 0;
+					border-style: dashed;
+					border-color: black;
+					left: 5px;
+					right: 5px;
 				}
 			}
 		}
@@ -36,7 +54,7 @@
 				text-align: center;
 
 				div {
-					width: 19vw;
+					width: 22vw;
 					display: flex;
 					flex-direction: column;
 
@@ -49,19 +67,52 @@
 	</style>
 </head>
 <body>
+	<h3>flex-direction: row;</h3>
 	<article id="row">
-		<p><code>flex-start</code></p>
+		<code>align-items: flex-start</code>
 		<div style="align-items: flex-start;">
 			<span>AC/DC</span>
 			<span>Bon Jovi</span>
 			<span>Creedence Clearwater Revival</span>
 		</div>
-		<code>flex-direction: column</code>
+
+		<code>align-items: flex-end</code>
+		<div style="align-items: flex-end;">
+			<span>AC/DC</span>
+			<span>Bon Jovi</span>
+			<span>Creedence Clearwater Revival</span>
+		</div>
+
+		<code>align-items: center</code>
+		<div style="align-items: center;">
+			<span>AC/DC</span>
+			<span>Bon Jovi</span>
+			<span>Creedence Clearwater Revival</span>
+		</div>
+
+		<code>align-items: stretch</code>
+		<div style="align-items: stretch;">
+			<span>AC/DC</span>
+			<span>Bon Jovi</span>
+			<span>Creedence Clearwater Revival</span>
+		</div>
+		<code>align-items: baseline</code> - <em>I've added a
+			<code>&lt;hr&gt;</code> here so you can see the baseline
+			alignment more clearly.</em>
+		<div style="align-items: baseline; position: relative;">
+			<span>AC/DC</span>
+			<span>Bon Jovi</span>
+			<span>Creedence Clearwater Revival</span>
+			<hr>
+		</div>
+
+
 	</article>
+	<h3>flex-direction: column;</h3>
 
 	<article id="column">
 		<section>
-			<p><code>flex-start</code></p>
+			<code>flex-start</code>
 			<div style="align-items: flex-start;">
 				<span>AC/DC</span>
 				<span>Bon Jovi</span>
@@ -69,7 +120,7 @@
 			</div>
 		</section>
 		<section>
-			<p><code>flex-end</code></p>
+			<code>flex-end</code>
 			<div style="align-items: flex-end;">
 				<span>AC/DC</span>
 				<span>Bon Jovi</span>
@@ -77,7 +128,7 @@
 			</div>
 		</section>
 		<section>
-			<p><code>center</code></p>
+			<code>center</code>
 			<div style="align-items: center;">
 				<span>AC/DC</span>
 				<span>Bon Jovi</span>
@@ -85,7 +136,7 @@
 			</div>
 		</section>
 		<section>
-			<p><code>stretch</code></p>
+			<code>stretch</code>
 			<div style="align-items: stretch;">
 				<span>AC/DC</span>
 				<span>Bon Jovi</span>

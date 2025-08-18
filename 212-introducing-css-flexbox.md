@@ -61,7 +61,7 @@ and if you reverse the flex direction, the start becomes the end, so to speak:
 
 To control how elements are laid out along the **cross axis**, use `align-items`:
 
-{% iframe align-items.html  style="height: 27em;" %}
+{% iframe align-items.html  style="height: 50em;" %}
 
 
 
