@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>justify-content with flex-direction: column</title>
+	<style>
+		div {
+			background-color: royalblue;
+			border-radius: 4px;
+			span {
+				border-radius: 4px;
+				background-color: gold;
+				margin: 5px;
+				padding: 5px;
+			}
+		}
+
+		article#row {
+			div {
+				display: flex;
+				height: 12em;
+				span:nth-child(1) {
+					font-size: 500%;
+				}
+				span:nth-child(2) {
+					font-size: 300%;
+				}
+			}
+		}
+
+		article#column {
+			display: flex;
+			justify-content: space-between;
+
+			section {
+				text-align: center;
+
+				div {
+					width: 19vw;
+					display: flex;
+					flex-direction: column;
+
+					span {
+						text-align: left;
+					}
+				}
+			}
+		}
+	</style>
+</head>
+<body>
+	<article id="row">
+		<p><code>flex-start</code></p>
+		<div style="align-items: flex-start;">
+			<span>AC/DC</span>
+			<span>Bon Jovi</span>
+			<span>Creedence Clearwater Revival</span>
+		</div>
+		<code>flex-direction: column</code>
+	</article>
+
+	<article id="column">
+		<section>
+			<p><code>flex-start</code></p>
+			<div style="align-items: flex-start;">
+				<span>AC/DC</span>
+				<span>Bon Jovi</span>
+				<span>Creedence Clearwater Revival</span>
+			</div>
+		</section>
+		<section>
+			<p><code>flex-end</code></p>
+			<div style="align-items: flex-end;">
+				<span>AC/DC</span>
+				<span>Bon Jovi</span>
+				<span>Creedence Clearwater Revival</span>
+			</div>
+		</section>
+		<section>
+			<p><code>center</code></p>
+			<div style="align-items: center;">
+				<span>AC/DC</span>
+				<span>Bon Jovi</span>
+				<span>Creedence Clearwater Revival</span>
+			</div>
+		</section>
+		<section>
+			<p><code>stretch</code></p>
+			<div style="align-items: stretch;">
+				<span>AC/DC</span>
+				<span>Bon Jovi</span>
+				<span>Creedence Clearwater Revival</span>
+			</div>
+		</section>
+	</article>
+</body>
+</html>
