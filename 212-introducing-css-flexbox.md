@@ -79,6 +79,24 @@ and here's how it works with `flex-direction: column`:
 
 {% iframe align-content-column.html %}
 
+____
+
+## The Holy Grail of CSS
+
+For many years, perfectly centring an element in its parent container has been a "Holy Grail" of CSS; horizontal alignment has been trivial since HTML 1.0, but to centre something vertically, developers had to resort to all sorts of tricks involving table cells, negative margins, JavaScript... well, no more. With the advent of flexbox, we can, *finally*, centre content within its container without resorting to hacks!
+
+{% example centred-content.html elements="style" iframe_style="height: 16em;" %}
+
+You can even use flexbox to centre text content within a container, without having to wrap it in an enclosing element:
+
+{% example centred-text.html %}
+
+## Flexbox Item Properties
+
+All the properties we've looked at above apply to the *container* - the element with the `display: flex` property applied to it, which activates the flexbox layout module.
+
+We can also target individual flexbox items, which comes in useful when we've got one or two elements that should be laid out differently to the rest.
+
 
 
 
