@@ -43,7 +43,7 @@ This is where flexbox starts to get a bit gnarly, mainly because we just don't h
 
 `justify-content` controls how elements are arranged along the main axis, **if they don't fill the container**.
 
-{% iframe justify-content.html style="height: 43em;" %}
+{% iframe justify-content.html style="height: 44em;" %}
 
 There are several values there which appear to do the same thing, but remember that not all web pages will read from left to right:
 
