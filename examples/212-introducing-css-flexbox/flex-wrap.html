@@ -13,14 +13,19 @@
 		span {
 			width: 3rem;
 			margin: 5px;
+			padding: 5px;
 			text-align: center;
 			background-color: oklch(80% 80% 10deg);
-			background-color: oklch(100% 100% calc(sibling-index() * 12deg));
+			background-color: oklch(100% 100% calc((sibling-index() - 1) * (360deg / 26)));
 			text-align: center;
 		}
 	</style>
 </head>
 <body>
+	<p><code>flex-wrap: nowrap (default)</code>:
+		Elements shrink to fit along one axis if possible. If they can't
+		shrink any further, the content overflows the container.
+	</p>
 	<div style="display: flex; flex-wrap: nowrap">
 		<span>A</span><span>B</span><span>C</span><span>D</span><span>E</span>
 		<span>F</span><span>G</span><span>H</span><span>I</span><span>J</span>
@@ -36,9 +41,7 @@
 		<span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span>
 		<span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span>
 		<span>Z</span>
-
 	</div>
-
 	<div style="display: flex; flex-wrap: wrap-reverse">
 		<span>A</span><span>B</span><span>C</span><span>D</span><span>E</span>
 		<span>F</span><span>G</span><span>H</span><span>I</span><span>J</span>
@@ -46,7 +49,6 @@
 		<span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span>
 		<span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span>
 		<span>Z</span>
-
 	</div>
 </body>
 </html>
