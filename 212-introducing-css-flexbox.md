@@ -47,7 +47,11 @@ This is where flexbox starts to get a bit gnarly, mainly because we just don't h
 
 Remember, though, this is justification **along the main axis**. You change the axis orientation or direction, it's going to produce a different effect:
 
-{% iframe justify-content-column.html style="height: 30em;" %}
+{% iframe justify-content-column.html style="height: 27em;" %}
+
+and if you reverse the flex direction, the start becomes the end, so to speak:
+
+{% iframe justify-content-column-reverse.html style="height: 27em;" %}
 
 
 
