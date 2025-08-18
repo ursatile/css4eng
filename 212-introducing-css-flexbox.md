@@ -87,15 +87,27 @@ For many years, perfectly centring an element in its parent container has been a
 
 {% example centred-content.html elements="style" iframe_style="height: 16em;" %}
 
-You can even use flexbox to centre text content within a container, without having to wrap it in an enclosing element:
+You can also use flexbox along with `justify-content`, `align-items` and `text-align` to centre text within its container without having to wrap it in an enclosing element:
 
-{% example centred-text.html %}
+{% example centred-text.html iframe_style="height: 16em;" %}
+
+If you've only recently started working with CSS, you're probably thinking "so what's the big deal?" --- but trust me, for those of us who've been around for a while, this will never stop being amazing.
 
 ## Flexbox Item Properties
 
 All the properties we've looked at above apply to the *container* - the element with the `display: flex` property applied to it, which activates the flexbox layout module.
 
 We can also target individual flexbox items, which comes in useful when we've got one or two elements that should be laid out differently to the rest.
+
+One very powerful, and potentially dangerous, application of CSS is causing elements to appear on the screen in a different order to how they appear in the underlying markup. We've already seen examples of this using `position: absolute` and `float`, to pull an element out of the regular document flow and render it somewhere else on the page. Flexbox goes a step further with this and gives us the `order` property, which will literally change the rendering order of elements in a container. Every item in a flex container has a default `order` of `0`; giving items a non-zero `order` will override the order in which they appear in their container. Use a negative `order` to move an element nearer the start of the main axis:
+
+{% example flex-item-order.html elements="style,body" iframe_style="" %}
+
+To control how the layout engine will resize an item, we can use `flex-grow`, `flex-shrink` and `flex-basis`. `flex-grow` and `flex-shrink` accept a *unitless value*; it doesn't mean anything beyond the fact that an item with `flex-grow: 2` will take up twice as much space as an item with `flex-grow: 1`.
+
+ {% example flex-grow.html %}
+
+
 
 
 
