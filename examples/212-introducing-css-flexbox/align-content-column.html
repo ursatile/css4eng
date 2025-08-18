@@ -6,7 +6,7 @@
 	<style>
 		code {
 			display: inline-block;
-			margin: 4px 0;
+			margin: 1rem 0 0.5rem 0;
 		}
 
 		div {
@@ -21,118 +21,26 @@
 			}
 		}
 
-		article#row {
+
+		section {
 			div {
 				display: flex;
+				flex-direction: column;
 				flex-wrap: wrap;
-				min-height: 15em;
+				height: 15em;
 
-				hr {
-					position: absolute;
-					top: 2.9rem;
-					border-width: 2px 0 0 0;
-					border-style: dashed;
-					border-color: black;
-					left: 5px;
-					right: 5px;
-				}
-			}
-		}
-
-		article#column {
-			section {
-				div {
-					display: flex;
-					flex-direction: column;
-					flex-wrap: wrap;
-					height: 15em;
-					span {
-						text-align: left;
-					}
+				span {
+					text-align: left;
 				}
 			}
 		}
 	</style>
 </head>
 <body>
-	<h3>flex-direction: row;</h3>
-	<article id="row"> <code>flex-start</code>
-		<div style="align-content: flex-start;"> <span>ABBA</span><span>Bon
-				Jovi</span> <span>Creedence Clearwater Revival</span> <span>Dio</span>
-			<span>Europe</span> <span>Fleetwood Mac</span> <span>Garbage</span>
-			<span>Heart</span> <span>Iron Maiden</span> <span>Journey</span>
-			<span>Kansas</span> <span>L7</span> <span>Mötley Crüe</span>
-			<span>Nirvana</span> <span>Opeth</span> <span>Pearl Jam</span>
-			<span>Queensrÿche</span> <span>REO Speedwagon</span>
-			<span>Scorpions</span> <span>Toto</span> <span>Ugly Kid Joe</span>
-			<span>Van Halen</span> <span>Whitesnake</span> <span>Xentrix</span>
-			<span>Yes</span> <span>ZZ Top</span> </div> <code>flex-end</code>
-		<div style="align-content: flex-end;"> <span>ABBA</span><span>Bon
-				Jovi</span> <span>Creedence Clearwater Revival</span> <span>Dio</span>
-			<span>Europe</span> <span>Fleetwood Mac</span> <span>Garbage</span>
-			<span>Heart</span> <span>Iron Maiden</span> <span>Journey</span>
-			<span>Kansas</span> <span>L7</span> <span>Mötley Crüe</span>
-			<span>Nirvana</span> <span>Opeth</span> <span>Pearl Jam</span>
-			<span>Queensrÿche</span> <span>REO Speedwagon</span>
-			<span>Scorpions</span> <span>Toto</span> <span>Ugly Kid Joe</span>
-			<span>Van Halen</span> <span>Whitesnake</span> <span>Xentrix</span>
-			<span>Yes</span> <span>ZZ Top</span> </div> <code>center</code>
-		<div style="align-content: center;"> <span>ABBA</span><span>Bon Jovi</span>
-			<span>Creedence Clearwater Revival</span> <span>Dio</span> <span>Europe</span>
-			<span>Fleetwood Mac</span> <span>Garbage</span> <span>Heart</span>
-			<span>Iron Maiden</span> <span>Journey</span> <span>Kansas</span>
-			<span>L7</span> <span>Mötley Crüe</span> <span>Nirvana</span>
-			<span>Opeth</span> <span>Pearl Jam</span> <span>Queensrÿche</span>
-			<span>REO Speedwagon</span> <span>Scorpions</span> <span>Toto</span>
-			<span>Ugly Kid Joe</span> <span>Van Halen</span> <span>Whitesnake</span>
-			<span>Xentrix</span> <span>Yes</span> <span>ZZ Top</span> </div>
-		<code>stretch</code>
-		<div style="align-content: stretch;"> <span>ABBA</span><span>Bon Jovi</span>
-			<span>Creedence Clearwater Revival</span> <span>Dio</span> <span>Europe</span>
-			<span>Fleetwood Mac</span> <span>Garbage</span> <span>Heart</span>
-			<span>Iron Maiden</span> <span>Journey</span> <span>Kansas</span>
-			<span>L7</span> <span>Mötley Crüe</span> <span>Nirvana</span>
-			<span>Opeth</span> <span>Pearl Jam</span> <span>Queensrÿche</span>
-			<span>REO Speedwagon</span> <span>Scorpions</span> <span>Toto</span>
-			<span>Ugly Kid Joe</span> <span>Van Halen</span> <span>Whitesnake</span>
-			<span>Xentrix</span> <span>Yes</span> <span>ZZ Top</span> </div>
-		<code>space-around</code>
-		<div style="align-content: space-around;"> <span>ABBA</span><span>Bon
-				Jovi</span> <span>Creedence Clearwater Revival</span> <span>Dio</span>
-			<span>Europe</span> <span>Fleetwood Mac</span> <span>Garbage</span>
-			<span>Heart</span> <span>Iron Maiden</span> <span>Journey</span>
-			<span>Kansas</span> <span>L7</span> <span>Mötley Crüe</span>
-			<span>Nirvana</span> <span>Opeth</span> <span>Pearl Jam</span>
-			<span>Queensrÿche</span> <span>REO Speedwagon</span>
-			<span>Scorpions</span> <span>Toto</span> <span>Ugly Kid Joe</span>
-			<span>Van Halen</span> <span>Whitesnake</span> <span>Xentrix</span>
-			<span>Yes</span> <span>ZZ Top</span> </div> <code>space-between</code>
-		<div style="align-content: space-between;"> <span>ABBA</span><span>Bon
-				Jovi</span> <span>Creedence Clearwater Revival</span> <span>Dio</span>
-			<span>Europe</span> <span>Fleetwood Mac</span> <span>Garbage</span>
-			<span>Heart</span> <span>Iron Maiden</span> <span>Journey</span>
-			<span>Kansas</span> <span>L7</span> <span>Mötley Crüe</span>
-			<span>Nirvana</span> <span>Opeth</span> <span>Pearl Jam</span>
-			<span>Queensrÿche</span> <span>REO Speedwagon</span>
-			<span>Scorpions</span> <span>Toto</span> <span>Ugly Kid Joe</span>
-			<span>Van Halen</span> <span>Whitesnake</span> <span>Xentrix</span>
-			<span>Yes</span> <span>ZZ Top</span> </div> <code>space-evenly</code>
-		<div style="align-content: space-evenly;"> <span>ABBA</span><span>Bon
-				Jovi</span> <span>Creedence Clearwater Revival</span> <span>Dio</span>
-			<span>Europe</span> <span>Fleetwood Mac</span> <span>Garbage</span>
-			<span>Heart</span> <span>Iron Maiden</span> <span>Journey</span>
-			<span>Kansas</span> <span>L7</span> <span>Mötley Crüe</span>
-			<span>Nirvana</span> <span>Opeth</span> <span>Pearl Jam</span>
-			<span>Queensrÿche</span> <span>REO Speedwagon</span>
-			<span>Scorpions</span> <span>Toto</span> <span>Ugly Kid Joe</span>
-			<span>Van Halen</span> <span>Whitesnake</span> <span>Xentrix</span>
-			<span>Yes</span> <span>ZZ Top</span> </div>
-	</article>
-	<h3>flex-direction: column;</h3>
 	<article id="column">
-		<section> <code>flex-start</code>
+		<section> <code>flex-direction: column; align-content: flex-start;</code>
 			<div style="align-content: flex-start;"> <span>ABBA</span><span>Bon
-					Jovi</span> <span>Creedence Clearwater Revival</span> <span>Dio</span>
+					Jovi</span> <span>Cher</span> <span>Dio</span>
 				<span>Europe</span> <span>Fleetwood Mac</span> <span>Garbage</span>
 				<span>Heart</span> <span>Iron Maiden</span> <span>Journey</span>
 				<span>Kansas</span> <span>L7</span> <span>Mötley Crüe</span>
@@ -140,11 +48,12 @@
 				<span>Queensrÿche</span> <span>REO Speedwagon</span>
 				<span>Scorpions</span> <span>Toto</span> <span>Ugly Kid Joe</span>
 				<span>Van Halen</span> <span>Whitesnake</span> <span>Xentrix</span>
-				<span>Yes</span> <span>ZZ Top</span> </div>
+				<span>Yes</span> <span>ZZ Top</span>
+			</div>
 		</section>
-		<section> <code>flex-end</code>
+		<section> <code>flex-direction: column; align-content: flex-end;</code>
 			<div style="align-content: flex-end;"> <span>ABBA</span><span>Bon
-					Jovi</span> <span>Creedence Clearwater Revival</span> <span>Dio</span>
+					Jovi</span> <span>Cher</span> <span>Dio</span>
 				<span>Europe</span> <span>Fleetwood Mac</span> <span>Garbage</span>
 				<span>Heart</span> <span>Iron Maiden</span> <span>Journey</span>
 				<span>Kansas</span> <span>L7</span> <span>Mötley Crüe</span>
@@ -152,11 +61,12 @@
 				<span>Queensrÿche</span> <span>REO Speedwagon</span>
 				<span>Scorpions</span> <span>Toto</span> <span>Ugly Kid Joe</span>
 				<span>Van Halen</span> <span>Whitesnake</span> <span>Xentrix</span>
-				<span>Yes</span> <span>ZZ Top</span> </div>
+				<span>Yes</span> <span>ZZ Top</span>
+			</div>
 		</section>
-		<section> <code>center</code>
+		<section> <code>flex-direction: column; align-content: center;</code>
 			<div style="align-content: center;"> <span>ABBA</span><span>Bon
-					Jovi</span> <span>Creedence Clearwater Revival</span> <span>Dio</span>
+					Jovi</span> <span>Cher</span> <span>Dio</span>
 				<span>Europe</span> <span>Fleetwood Mac</span> <span>Garbage</span>
 				<span>Heart</span> <span>Iron Maiden</span> <span>Journey</span>
 				<span>Kansas</span> <span>L7</span> <span>Mötley Crüe</span>
@@ -164,11 +74,12 @@
 				<span>Queensrÿche</span> <span>REO Speedwagon</span>
 				<span>Scorpions</span> <span>Toto</span> <span>Ugly Kid Joe</span>
 				<span>Van Halen</span> <span>Whitesnake</span> <span>Xentrix</span>
-				<span>Yes</span> <span>ZZ Top</span> </div>
+				<span>Yes</span> <span>ZZ Top</span>
+			</div>
 		</section>
-		<section> <code>stretch</code>
+		<section> <code>flex-direction: column; align-content: stretch;</code>
 			<div style="align-content: stretch;"> <span>ABBA</span><span>Bon
-					Jovi</span> <span>Creedence Clearwater Revival</span> <span>Dio</span>
+					Jovi</span> <span>Cher</span> <span>Dio</span>
 				<span>Europe</span> <span>Fleetwood Mac</span> <span>Garbage</span>
 				<span>Heart</span> <span>Iron Maiden</span> <span>Journey</span>
 				<span>Kansas</span> <span>L7</span> <span>Mötley Crüe</span>
@@ -176,11 +87,12 @@
 				<span>Queensrÿche</span> <span>REO Speedwagon</span>
 				<span>Scorpions</span> <span>Toto</span> <span>Ugly Kid Joe</span>
 				<span>Van Halen</span> <span>Whitesnake</span> <span>Xentrix</span>
-				<span>Yes</span> <span>ZZ Top</span> </div>
+				<span>Yes</span> <span>ZZ Top</span>
+			</div>
 		</section>
-		<section> <code>space-around</code>
+		<section> <code>flex-direction: column; align-content: space-around;</code>
 			<div style="align-content: space-around;"> <span>ABBA</span><span>Bon
-					Jovi</span> <span>Creedence Clearwater Revival</span> <span>Dio</span>
+					Jovi</span> <span>Cher</span> <span>Dio</span>
 				<span>Europe</span> <span>Fleetwood Mac</span> <span>Garbage</span>
 				<span>Heart</span> <span>Iron Maiden</span> <span>Journey</span>
 				<span>Kansas</span> <span>L7</span> <span>Mötley Crüe</span>
@@ -188,11 +100,12 @@
 				<span>Queensrÿche</span> <span>REO Speedwagon</span>
 				<span>Scorpions</span> <span>Toto</span> <span>Ugly Kid Joe</span>
 				<span>Van Halen</span> <span>Whitesnake</span> <span>Xentrix</span>
-				<span>Yes</span> <span>ZZ Top</span> </div>
+				<span>Yes</span> <span>ZZ Top</span>
+			</div>
 		</section>
-		<section> <code>space-between</code>
+		<section> <code>flex-direction: column; align-content: space-between;</code>
 			<div style="align-content: space-between;"> <span>ABBA</span><span>Bon
-					Jovi</span> <span>Creedence Clearwater Revival</span> <span>Dio</span>
+					Jovi</span> <span>Cher</span> <span>Dio</span>
 				<span>Europe</span> <span>Fleetwood Mac</span> <span>Garbage</span>
 				<span>Heart</span> <span>Iron Maiden</span> <span>Journey</span>
 				<span>Kansas</span> <span>L7</span> <span>Mötley Crüe</span>
@@ -200,11 +113,12 @@
 				<span>Queensrÿche</span> <span>REO Speedwagon</span>
 				<span>Scorpions</span> <span>Toto</span> <span>Ugly Kid Joe</span>
 				<span>Van Halen</span> <span>Whitesnake</span> <span>Xentrix</span>
-				<span>Yes</span> <span>ZZ Top</span> </div>
+				<span>Yes</span> <span>ZZ Top</span>
+			</div>
 		</section>
-		<section> <code>space-evenly</code>
+		<section> <code>flex-direction: column; align-content: space-evenly;</code>
 			<div style="align-content: space-evenly;"> <span>ABBA</span><span>Bon
-					Jovi</span> <span>Creedence Clearwater Revival</span> <span>Dio</span>
+					Jovi</span> <span>Cher</span> <span>Dio</span>
 				<span>Europe</span> <span>Fleetwood Mac</span> <span>Garbage</span>
 				<span>Heart</span> <span>Iron Maiden</span> <span>Journey</span>
 				<span>Kansas</span> <span>L7</span> <span>Mötley Crüe</span>
@@ -212,7 +126,8 @@
 				<span>Queensrÿche</span> <span>REO Speedwagon</span>
 				<span>Scorpions</span> <span>Toto</span> <span>Ugly Kid Joe</span>
 				<span>Van Halen</span> <span>Whitesnake</span> <span>Xentrix</span>
-				<span>Yes</span> <span>ZZ Top</span> </div>
+				<span>Yes</span> <span>ZZ Top</span>
+			</div>
 		</section>
 	</article>
 </body>
