@@ -1,9 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flex Grow</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Flex Grow</title>
+	<style>
+		section {
+			background-color: royalblue;
+			display: flex;
+			gap: 5px;
+			padding: 5px;
+
+			div {
+				background-color: gold;
+				padding: 5px;
+			}
+		}
+	</style>
+
 </head>
 <body>
+	<section>
+		<div style="flex-grow: 1">AC/DC</div>
+		<div>Bon Jovi</div>
+		<div>Cinderella</div>
+		<div>Def Leppard</div>
+		<div>Europe</div>
+	</section>
 </body>
 </html>
