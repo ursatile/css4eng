@@ -3,37 +3,50 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Flex Wrap</title>
+	<style>
+		div {
+			display: flex;
+			border: 2px solid #000;
+			margin: 10px;
+		}
+
+		span {
+			width: 3rem;
+			margin: 5px;
+			text-align: center;
+			background-color: oklch(80% 80% 10deg);
+			background-color: oklch(100% 100% calc(sibling-index() * 12deg));
+			text-align: center;
+		}
+	</style>
 </head>
 <body>
 	<div style="display: flex; flex-wrap: nowrap">
-		<span>A</span>
-		<span>B</span>
-		<span>C</span>
-		<span>D</span>
-		<span>E</span>
-		<span>F</span>
-		<span>G</span>
-		<span>H</span>
-		<span>I</span>
-		<span>J</span>
-		<span>K</span>
-		<span>L</span>
-		<span>M</span>
-		<span>N</span>
-		<span>O</span>
-		<span>P</span>
-		<span>Q</span>
-		<span>R</span>
-		<span>S</span>
-		<span>T</span>
-		<span>U</span>
-		<span>V</span>
-		<span>W</span>
-		<span>X</span>
-		<span>Y</span>
+		<span>A</span><span>B</span><span>C</span><span>D</span><span>E</span>
+		<span>F</span><span>G</span><span>H</span><span>I</span><span>J</span>
+		<span>K</span><span>L</span><span>M</span><span>N</span><span>O</span>
+		<span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span>
+		<span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span>
 		<span>Z</span>
 	</div>
-	<div style="display: flex; flex-wrap: wrap"></div>
-	<div style="display: flex; flex-wrap: wrap-reverse"></div>
+	<div style="display: flex; flex-wrap: wrap">
+		<span>A</span><span>B</span><span>C</span><span>D</span><span>E</span>
+		<span>F</span><span>G</span><span>H</span><span>I</span><span>J</span>
+		<span>K</span><span>L</span><span>M</span><span>N</span><span>O</span>
+		<span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span>
+		<span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span>
+		<span>Z</span>
+
+	</div>
+
+	<div style="display: flex; flex-wrap: wrap-reverse">
+		<span>A</span><span>B</span><span>C</span><span>D</span><span>E</span>
+		<span>F</span><span>G</span><span>H</span><span>I</span><span>J</span>
+		<span>K</span><span>L</span><span>M</span><span>N</span><span>O</span>
+		<span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span>
+		<span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span>
+		<span>Z</span>
+
+	</div>
 </body>
 </html>
