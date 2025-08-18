@@ -1,0 +1,15 @@
+<script>
+	document.querySelectorAll("iframe").forEach(iframe => {
+		const doc = iframe.contentWindow.document;
+		console.log(iframe.src);
+		const height = Math.max(
+			doc.body.scrollHeight,
+			doc.body.offsetHeight,
+			doc.documentElement.clientHeight,
+			doc.documentElement.scrollHeight,
+			doc.documentElement.offsetHeight
+		);
+		console.log(height);
+		iframe.style.height = height + 'px';
+	});
+</script>
