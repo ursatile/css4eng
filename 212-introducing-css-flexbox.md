@@ -43,7 +43,9 @@ This is where flexbox starts to get a bit gnarly, mainly because we just don't h
 
 `justify-content` controls how elements are arranged along the main axis, **if they don't fill the container**.
 
-{% iframe justify-content.html style="height: 34em;" %}
+{% iframe justify-content.html style="height: 43em;" %}
+
+The spec also includes 
 
 Remember, though, this is justification **along the main axis**. You change the axis orientation or direction, it's going to produce a different effect:
 
