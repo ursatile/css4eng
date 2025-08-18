@@ -63,7 +63,9 @@ To control how elements are laid out along the **cross axis**, use `align-items`
 
 {% iframe align-items.html  style="height: 55em;" %}
 
+If your flexbox container wraps, you'll end up with more than one row (or column) of items; to control how these wrapped rows are laid out, use the `align-content` property:
 
+{% iframe align-content.html %}
 
 
 

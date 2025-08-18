@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>justify-content with flex-direction: column</title>
+	<style>
+		code {
+			display: inline-block;
+			margin: 4px 0;
+		}
+
+		div {
+			background-color: royalblue;
+			border-radius: 4px;
+
+			span {
+				border-radius: 4px;
+				background-color: gold;
+				margin: 5px;
+				padding: 5px;
+			}
+		}
+
+		article#row {
+			div {
+				display: flex;
+				flex-wrap: wrap;
+				min-height: 12em;
+
+				hr {
+					position: absolute;
+					top: 2.9rem;
+					border-width: 2px 0 0 0;
+					border-style: dashed;
+					border-color: black;
+					left: 5px;
+					right: 5px;
+				}
+			}
+		}
+
+		article#column {
+			display: flex;
+			justify-content: space-between;
+
+			section {
+				text-align: center;
+
+				div {
+					width: 22vw;
+					display: flex;
+					flex-direction: column;
+
+					span {
+						text-align: left;
+					}
+				}
+			}
+		}
+	</style>
+</head>
+<body>
+	<h3>flex-direction: row;</h3>
+	<article id="row">
+		<code>align-content: flex-start</code>
+		<div style="align-content: flex-start;">
+			<span>ABBA</span><span>Bon Jovi</span> <span>Creedence Clearwater
+				Revival</span> <span>Def Leppard</span> <span>Europe</span>
+			<span>Fleetwood Mac</span> <span>Garbage</span> <span>Heart</span>
+			<span>Iron Maiden</span> <span>Journey</span> <span>Kansas</span>
+			<span>L7</span> <span>Mötley Crüe</span> <span>Nirvana</span>
+			<span>Offspring</span> <span>Pearl Jam</span> <span>Queensrÿche</span>
+			<span>REO Speedwagon</span> <span>Scorpions</span> <span>Toto</span>
+			<span>Ugly Kid Joe</span> <span>Van Halen</span> <span>Whitesnake</span>
+			<span>Xentrix</span> <span>Yes</span> <span>ZZ Top</span>
+		</div>
+		<code>align-content: flex-end</code>
+		<div style="align-content: flex-end;">
+			<span>ABBA</span><span>Bon Jovi</span> <span>Creedence Clearwater
+				Revival</span> <span>Def Leppard</span> <span>Europe</span>
+			<span>Fleetwood Mac</span> <span>Garbage</span> <span>Heart</span>
+			<span>Iron Maiden</span> <span>Journey</span> <span>Kansas</span>
+			<span>L7</span> <span>Mötley Crüe</span> <span>Nirvana</span>
+			<span>Offspring</span> <span>Pearl Jam</span> <span>Queensrÿche</span>
+			<span>REO Speedwagon</span> <span>Scorpions</span> <span>Toto</span>
+			<span>Ugly Kid Joe</span> <span>Van Halen</span> <span>Whitesnake</span>
+			<span>Xentrix</span> <span>Yes</span> <span>ZZ Top</span>
+		</div>
+
+		<code>align-content: center</code>
+		<div style="align-content: center;">
+			<span>ABBA</span><span>Bon Jovi</span> <span>Creedence Clearwater
+				Revival</span> <span>Def Leppard</span> <span>Europe</span>
+			<span>Fleetwood Mac</span> <span>Garbage</span> <span>Heart</span>
+			<span>Iron Maiden</span> <span>Journey</span> <span>Kansas</span>
+			<span>L7</span> <span>Mötley Crüe</span> <span>Nirvana</span>
+			<span>Offspring</span> <span>Pearl Jam</span> <span>Queensrÿche</span>
+			<span>REO Speedwagon</span> <span>Scorpions</span> <span>Toto</span>
+			<span>Ugly Kid Joe</span> <span>Van Halen</span> <span>Whitesnake</span>
+			<span>Xentrix</span> <span>Yes</span> <span>ZZ Top</span>
+		</div>
+
+		<code>align-content: stretch</code>
+		<div style="align-content: stretch;">
+			<span>ABBA</span><span>Bon Jovi</span> <span>Creedence Clearwater
+				Revival</span> <span>Def Leppard</span> <span>Europe</span>
+			<span>Fleetwood Mac</span> <span>Garbage</span> <span>Heart</span>
+			<span>Iron Maiden</span> <span>Journey</span> <span>Kansas</span>
+			<span>L7</span> <span>Mötley Crüe</span> <span>Nirvana</span>
+			<span>Offspring</span> <span>Pearl Jam</span> <span>Queensrÿche</span>
+			<span>REO Speedwagon</span> <span>Scorpions</span> <span>Toto</span>
+			<span>Ugly Kid Joe</span> <span>Van Halen</span> <span>Whitesnake</span>
+			<span>Xentrix</span> <span>Yes</span> <span>ZZ Top</span>
+		</div>
+		<code>align-content: baseline</code> - <em>I've added a
+			<code>&lt;hr&gt;</code> here so you can see the baseline
+			alignment more clearly.</em>
+		<div style="align-content: baseline; position: relative;">
+			<span>ABBA</span>
+			<span>Bon Jovi</span>
+			<span>Creedence Clearwater Revival</span>
+			<hr>
+		</div>
+
+
+	</article>
+	<h3>flex-direction: column;</h3>
+
+	<article id="column">
+		<section>
+			<code>flex-start</code>
+			<div style="align-content: flex-start;">
+				<span>ABBA</span>
+				<span>Bon Jovi</span>
+				<span>Creedence Clearwater Revival</span>
+			</div>
+		</section>
+		<section>
+			<code>flex-end</code>
+			<div style="align-content: flex-end;">
+				<span>ABBA</span>
+				<span>Bon Jovi</span>
+				<span>Creedence Clearwater Revival</span>
+			</div>
+		</section>
+		<section>
+			<code>center</code>
+			<div style="align-content: center;">
+				<span>ABBA</span>
+				<span>Bon Jovi</span>
+				<span>Creedence Clearwater Revival</span>
+			</div>
+		</section>
+		<section>
+			<code>stretch</code>
+			<div style="align-content: stretch;">
+				<span>ABBA</span>
+				<span>Bon Jovi</span>
+				<span>Creedence Clearwater Revival</span>
+			</div>
+		</section>
+	</article>
+</body>
+</html>
