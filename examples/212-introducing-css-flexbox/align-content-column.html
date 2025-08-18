@@ -4,34 +4,27 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>justify-content with flex-direction: column</title>
 	<style>
-		code {
-			display: inline-block;
-			margin: 1rem 0 0.5rem 0;
-		}
-
-		div {
-			background-color: royalblue;
-			border-radius: 4px;
-
-			span {
-				border-radius: 4px;
-				background-color: gold;
-				margin: 5px;
-				padding: 5px;
+		section {
+			margin-bottom: 1rem;
+			code {
+				display: block;
+				margin-bottom: 0.5rem;
 			}
 		}
 
+		div {
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			height: 15em;
 
-		section {
-			div {
-				display: flex;
-				flex-direction: column;
-				flex-wrap: wrap;
-				height: 15em;
+			background-color: royalblue;
+			gap: 5px;
+			padding: 5px;
 
-				span {
-					text-align: left;
-				}
+			span {
+				background-color: gold;
+				padding: 5px;
 			}
 		}
 	</style>
@@ -40,7 +33,7 @@
 	<article id="column">
 		<section> <code>flex-direction: column; align-content: flex-start;</code>
 			<div style="align-content: flex-start;"> <span>ABBA</span><span>Bon
-					Jovi</span> <span>Cher</span> <span>Dio</span>
+					Jovi</span> <span>Creedence Clearwater Revival</span> <span>Dio</span>
 				<span>Europe</span> <span>Fleetwood Mac</span> <span>Garbage</span>
 				<span>Heart</span> <span>Iron Maiden</span> <span>Journey</span>
 				<span>Kansas</span> <span>L7</span> <span>Mötley Crüe</span>
@@ -53,7 +46,7 @@
 		</section>
 		<section> <code>flex-direction: column; align-content: flex-end;</code>
 			<div style="align-content: flex-end;"> <span>ABBA</span><span>Bon
-					Jovi</span> <span>Cher</span> <span>Dio</span>
+					Jovi</span> <span>Creedence Clearwater Revival</span> <span>Dio</span>
 				<span>Europe</span> <span>Fleetwood Mac</span> <span>Garbage</span>
 				<span>Heart</span> <span>Iron Maiden</span> <span>Journey</span>
 				<span>Kansas</span> <span>L7</span> <span>Mötley Crüe</span>
@@ -66,7 +59,7 @@
 		</section>
 		<section> <code>flex-direction: column; align-content: center;</code>
 			<div style="align-content: center;"> <span>ABBA</span><span>Bon
-					Jovi</span> <span>Cher</span> <span>Dio</span>
+					Jovi</span> <span>Creedence Clearwater Revival</span> <span>Dio</span>
 				<span>Europe</span> <span>Fleetwood Mac</span> <span>Garbage</span>
 				<span>Heart</span> <span>Iron Maiden</span> <span>Journey</span>
 				<span>Kansas</span> <span>L7</span> <span>Mötley Crüe</span>
@@ -79,7 +72,7 @@
 		</section>
 		<section> <code>flex-direction: column; align-content: stretch;</code>
 			<div style="align-content: stretch;"> <span>ABBA</span><span>Bon
-					Jovi</span> <span>Cher</span> <span>Dio</span>
+					Jovi</span> <span>Creedence Clearwater Revival</span> <span>Dio</span>
 				<span>Europe</span> <span>Fleetwood Mac</span> <span>Garbage</span>
 				<span>Heart</span> <span>Iron Maiden</span> <span>Journey</span>
 				<span>Kansas</span> <span>L7</span> <span>Mötley Crüe</span>
@@ -92,7 +85,7 @@
 		</section>
 		<section> <code>flex-direction: column; align-content: space-around;</code>
 			<div style="align-content: space-around;"> <span>ABBA</span><span>Bon
-					Jovi</span> <span>Cher</span> <span>Dio</span>
+					Jovi</span> <span>Creedence Clearwater Revival</span> <span>Dio</span>
 				<span>Europe</span> <span>Fleetwood Mac</span> <span>Garbage</span>
 				<span>Heart</span> <span>Iron Maiden</span> <span>Journey</span>
 				<span>Kansas</span> <span>L7</span> <span>Mötley Crüe</span>
@@ -105,7 +98,7 @@
 		</section>
 		<section> <code>flex-direction: column; align-content: space-between;</code>
 			<div style="align-content: space-between;"> <span>ABBA</span><span>Bon
-					Jovi</span> <span>Cher</span> <span>Dio</span>
+					Jovi</span> <span>Creedence Clearwater Revival</span> <span>Dio</span>
 				<span>Europe</span> <span>Fleetwood Mac</span> <span>Garbage</span>
 				<span>Heart</span> <span>Iron Maiden</span> <span>Journey</span>
 				<span>Kansas</span> <span>L7</span> <span>Mötley Crüe</span>
@@ -118,7 +111,7 @@
 		</section>
 		<section> <code>flex-direction: column; align-content: space-evenly;</code>
 			<div style="align-content: space-evenly;"> <span>ABBA</span><span>Bon
-					Jovi</span> <span>Cher</span> <span>Dio</span>
+					Jovi</span> <span>Creedence Clearwater Revival</span> <span>Dio</span>
 				<span>Europe</span> <span>Fleetwood Mac</span> <span>Garbage</span>
 				<span>Heart</span> <span>Iron Maiden</span> <span>Journey</span>
 				<span>Kansas</span> <span>L7</span> <span>Mötley Crüe</span>
