@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Flex shrink</title>
+	<style>
+		section {
+			background-color: royalblue;
+			display: flex;
+			gap: 5px;
+			padding: 5px;
+			margin: 5px;
+
+			div {
+				width: 200px;
+				font-family: Consolas, 'Courier New', Courier, monospace;
+				background-color: gold;
+				padding: 5px;
+			}
+		}
+	</style>
+
+</head>
+<body>
+	<section>
+		<div style="flex-shrink: 1">1</div>
+		<div style="flex-shrink: 0;">0</div>
+		<div style="flex-shrink: 0;">0</div>
+		<div style="flex-shrink: 0;">0</div>
+		<div style="flex-shrink: 0;">0</div>
+	</section>
+	<section>
+		<div>1</div>
+		<div style="flex-shrink: 0;">0</div>
+		<div>1</div>
+		<div style="flex-shrink: 0;">0</div>
+		<div>1</div>
+	</section>
+	<section>
+		<div style="flex-shrink: 4;">4</div>
+		<div style="flex-shrink: 0;">0</div>
+		<div style="flex-shrink: 2;">2</div>
+		<div style="flex-shrink: 0;">0</div>
+		<div style="flex-shrink: 1;">1</div>
+	</section>
+
+	<section>
+		<div style="flex-shrink: 1;">1</div>
+		<div style="flex-shrink: 2;">2</div>
+		<div style="flex-shrink: 4;">4</div>
+		<div style="flex-shrink: 8;">8</div>
+		<div style="flex-shrink: 16;">16</div>
+	</section>
+	<section>
+		<div style="flex-shrink: 1;">flex-shrink: 1</div>
+		<div style="flex-shrink: 2;">flex-shrink: 2</div>
+		<div style="flex-shrink: 4;">flex-shrink: 4</div>
+		<div style="flex-shrink: 8;">flex-shrink: 8</div>
+		<div style="flex-shrink: 16;">flex-shrink: 32</div>
+	</section>
+</body>
+</html>
