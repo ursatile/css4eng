@@ -37,13 +37,19 @@ By default, flex will try to fit every element onto the same row (or column), sh
 
 > You can also set the direction and wrap in one statement using the `flex-flow` shorthand property: `flex-flow: <direction> <wrap>;` 
 
-### `justify-content`,` align-items`, `align-content`
+## Justify and Align, Content and Items
 
 This is where flexbox starts to get a bit gnarly, mainly because we just don't have enough specific words in everyday English for the number of different ways content inside a flexbox can be arranged.
 
-`justify-content` controls how elements are arranged along the main axis, **if they don't fill the container**
+`justify-content` controls how elements are arranged along the main axis, **if they don't fill the container**.
 
-{% example justify-content.html elements="body" iframe_style="height: 26em;" %}
+{% iframe justify-content.html style="height: 34em;" %}
+
+Remember, though, this is justification **along the main axis**. You change the axis orientation or direction, it's going to produce a different effect:
+
+{% iframe justify-content-column.html style="height: 30em;" %}
+
+
 
 
 

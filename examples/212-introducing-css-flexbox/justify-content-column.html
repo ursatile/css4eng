@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>justify-content</title>
+	<style>
+		body {
+			display: flex;
+			justify-content: space-between;
+			section {
+				text-align: center;
+			}
+		}
+
+		div {
+			width: 15vw;
+			border-radius: 4px;
+			display: flex;
+			flex-direction: column;
+			background-color: royalblue;
+			height: 25rem;
+			span {
+				border-radius: 4px;
+				background-color: gold;
+				margin: 5px;
+				padding: 5px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<p><code>flex-start</code></p>
+		<div style="justify-content: flex-start;">
+			<span>A</span>
+			<span>B</span>
+			<span>C</span>
+			<span>D</span>
+			<span>E</span>
+		</div>
+	</section>
+	<section>
+		<p><code>flex-end</code></p>
+		<div style="justify-content: flex-end;">
+			<span>A</span>
+			<span>B</span>
+			<span>C</span>
+			<span>D</span>
+			<span>E</span>
+		</div>
+	</section>
+	<section>
+		<p><code>center</code></p>
+		<div style="justify-content: center;">
+			<span>A</span>
+			<span>B</span>
+			<span>C</span>
+			<span>D</span>
+			<span>E</span>
+		</div>
+	</section>
+	<section>
+		<p><code>space-between</code></p>
+		<div style="justify-content: space-between;">
+			<span>A</span>
+			<span>B</span>
+			<span>C</span>
+			<span>D</span>
+			<span>E</span>
+		</div>
+	</section>
+	<section>
+		<p><code>space-around</code></p>
+		<div style="justify-content: space-around;">
+			<span>A</span>
+			<span>B</span>
+			<span>C</span>
+			<span>D</span>
+			<span>E</span>
+		</div>
+	</section>
+	<section>
+		<p><code>space-evenly</code></p>
+		<div style="justify-content: space-evenly;">
+			<span>A</span>
+			<span>B</span>
+			<span>C</span>
+			<span>D</span>
+			<span>E</span>
+		</div>
+	</section>
+
+</body>
+</html>
