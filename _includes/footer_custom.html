@@ -4,12 +4,7 @@
 			const iframe = evt.target;
 			const doc = iframe.contentWindow.document;
 			console.log(iframe.src);
-			var height = Math.max(doc.body.scrollHeight,
-				doc.body.offsetHeight,
-				doc.documentElement.clientHeight,
-				doc.documentElement.scrollHeight,
-				doc.documentElement.offsetHeight
-			);
+			var height = doc.documentElement.offsetHeight;
 			iframe.style.height = (height + 10) + 'px';
 		};
 	});

@@ -29,13 +29,21 @@ To activate the flexbox layout system, you'll need a container element with `dis
 
 That'll give you a container with a *main axis* and a *cross axis*, and just about everything else is defined in terms of those two axes.
 
-{% example display-flex.html elements="body" iframe_style="height: 26em;" %}
+{% example display-flex.html elements="body" iframe_style="height: 22em;" %}
 
 By default, flex will try to fit every element onto the same row (or column), shrinking elements as necessary. Use `flex-wrap` if you want items to wrap across multiple lines
 
 {% example flex-wrap.html elements="body" iframe_style="height: 26em;" %}
 
 > You can also set the direction and wrap in one statement using the `flex-flow` shorthand property: `flex-flow: <direction> <wrap>;` 
+
+## Mind the Gap
+
+Flexbox layouts will respect element margins, but you can also specify a gap between the elements in a flex container using `row-gap`, `column-gap`, or the shorthand `gap` property.
+
+{% example gap.html iframe_style="" %}
+
+Notice that the gap is only applied *between* items; if you want a gap between the container and the items, either set `padding` on the container, or add a `margin` to the elements.
 
 ## Justify and Align, Content and Items
 
