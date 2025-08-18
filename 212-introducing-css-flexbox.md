@@ -45,14 +45,13 @@ This is where flexbox starts to get a bit gnarly, mainly because we just don't h
 
 {% iframe justify-content.html style="height: 43em;" %}
 
-There are several values there which appear to do the same thing:
+There are several values there which appear to do the same thing, but remember that not all web pages will read from left to right:
 
-* `left` and `right` are cardinal directions. They never change
+* `left` and `right` are fixed directions and are not affected by the document's writing direction.
 * `start` and `end` will change based on the writing direction; in right-to-left reading systems like Hebrew and Arabic, `start` is the right, `end` is the left.
-* `flex-start` and `flex-end` are relative to the `flex-direction`.
-* 
+* `flex-start` and `flex-end` are relative to the `flex-direction` --- but this is also based on the writing direction; in a left-to-right reading system, `row` goes left to right, and `row-reverse` goes right-to-left, so as far as flexbox is concerned, `start` is always the same as `flex-start` and `end` is always the same as `flex-end`.
 
-Remember, though, this is justification **along the main axis**. You change the axis orientation or direction, it's going to produce a different effect:
+Remember, too, that this is justification **along the main axis**. You change the axis orientation or direction, it's going to produce a different effect:
 
 {% iframe justify-content-column.html style="height: 27em;" %}
 
