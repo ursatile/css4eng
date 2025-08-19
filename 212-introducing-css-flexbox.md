@@ -103,7 +103,17 @@ One very powerful, and potentially dangerous, application of CSS is causing elem
 
 {% example flex-item-order.html elements="style,body" iframe_style="" %}
 
-To control how the layout engine will resize an item, we can use `flex-grow`, `flex-shrink` and `flex-basis`. `flex-grow` and `flex-shrink` accept a *unitless value*; it doesn't mean anything beyond the fact that an item with `flex-grow: 2` will take up twice as much space as an item with `flex-grow: 1`.
+To control how the layout engine will resize an item, we can use `flex-grow`, `flex-shrink` and `flex-basis`, and this is where some seriously complex mathematics gets involved.
+
+Let's start with `flex-basis` . The `flex-basis` property works like `width` or `height`, but it's aligned with the main axis of the flex container - so if your flex items are in a row`flex-basis` specifies a width; if you're using a column, `flex-basis` specifies a height. Flex basis *will* override `width` or`height`, but won't override `max-width`, `max-height`, `min-width` or `min-height` properties:
+
+{% example flex-basis.html elements="body" iframe_style="" %}
+
+{% example flex-basis-column.html elements="body" iframe_style="" %}
+
+
+
+ `flex-grow` and `flex-shrink` accept a *unitless value*; it doesn't mean anything beyond the fact that an item with `flex-grow: 2` will take up twice as much space as an item with `flex-grow: 1`.
 
  {% example flex-grow.html %}
 
