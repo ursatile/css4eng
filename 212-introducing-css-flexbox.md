@@ -117,7 +117,7 @@ Let's walk through that slowly.
 
 Say we have a flex container here, that's 720 pixels wide, and it has five `<div>` elements in it. Initially, they don't have a `flex-grow` property - or rather, they have the default `flex-grow` value, which is zero - so they only take up as much space as their content, and the container has a bunch of empty space at the end:
 
-{% example flex-grow-01.html %}
+{% iframe flex-grow-01.html %}
 
 
 
