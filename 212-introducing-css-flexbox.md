@@ -127,7 +127,13 @@ The flexbox layout engine is going to add those `flex-grow` values together --- 
 
 <img src="{{page.examples}}/flex-grow-03.png">
 
+Then --- this is the clever part --- it'll redistribute that space between the flex items based on their `flex-grow` values:
 
+<img src="{{page.examples}}/flex-grow-04.png"> 
+
+and then increase the size of each item to occupy the space allocated to it by that distribution:
+
+<img src="{{page.examples}}/flex-grow-05.png">
 
 
 
