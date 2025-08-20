@@ -115,7 +115,7 @@ Next up, let's meet `flex-grow`, and its counterpart `flex-shrink`. These both a
 
 Let's walk through that slowly.
 
-Say we have a flex container here, that's 720 pixels wide, and it has five `<div>` elements in it. Initially, they don't have a `flex-grow` property - or rather, they have the default `flex-grow` value, which is zero - so they only take up as much space as their content, and the container has a bunch of empty space at the end:
+Say we have a flex container here, that's 720 pixels wide, with 5px of padding and a 5px flex gap. There are five `<div>` elements in the container, with their `flex-basis` set to 50px. Initially, they don't have a `flex-grow` property - or rather, they have the default `flex-grow` value, which is zero - so they only take up as much space as their content, and the container has a bunch of empty space at the end:
 
 {% iframe flex-grow-01.html %}
 
