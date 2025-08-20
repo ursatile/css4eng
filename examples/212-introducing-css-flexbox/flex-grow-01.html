@@ -1,26 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flex Grow 01</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Flex Grow 01</title>
 	<style>
+		* {
+			box-sizing: border-box;
+		}
+
 		section {
+			font-family: Consolas, 'Courier New', Courier, monospace;
 			background-color: royalblue;
 			display: flex;
 			padding: 5px;
+			gap: 5px;
+			position: relative;
+
 			div {
-				flex-basis: 100px;
+				padding: 1rem;
+				background-color: gold;
+			}
+
+			span {
+				position: absolute;
+				top: 1rem;
+				right: 5px;
+				color: #fff;
 			}
 		}
 	</style>
 </head>
 <body>
 	<section>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
+		<div>A</div>
+		<div>B</div>
+		<div>C</div>
+		<div>D</div>
+		<div>E</div>
+		<span>&lt;------------------- empty space ------------------&gt;</span>
 	</section>
 </body>
 </html>
