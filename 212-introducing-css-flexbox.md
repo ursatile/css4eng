@@ -111,6 +111,24 @@ Let's start with `flex-basis` . The `flex-basis` property works like `width` or 
 
 {% example flex-basis-column.html elements="body" iframe_style="" %}
 
+Next up, let's meet `flex-grow`, and its counterpart `flex-shrink`. These both accept a *unitless value*, a non-negative integer value which controls how much that item will grow or shrink, proportional to the other items in the same flex container.
+
+Let's walk through that slowly.
+
+Say we have a flex container here, that's 720 pixels wide, and it has five `<div>` elements in it. Initially, they don't have a `flex-grow` property - or rather, they have the default `flex-grow` value, which is zero - so they only take up as much space as their content, and the container has a bunch of empty space at the end:
+
+{% example flex-grow-01.html %}
+
+
+
+
+
+
+
+
+
+
+
 
 
  `flex-grow` and `flex-shrink` accept a *unitless value*; it doesn't mean anything beyond the fact that an item with `flex-grow: 2` will take up twice as much space as an item with `flex-grow: 1`.
