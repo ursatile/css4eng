@@ -7,6 +7,7 @@
 	<title>Heart - Brigade</title>
 	<style>
 		@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght,XOPQ,XTRA,YOPQ@8..144,25..151,100..1000,27..175,323..603,25..135&display=swap");
+		* { box-sizing: border-box; }
 
 		html {
 			background-color: white;
@@ -16,17 +17,28 @@
 			width: 80vw;
 			height: 80vw;
 			margin: 10vw auto;
-			background-color: black;
+			background-image: url(heart-brigade.jpg);
+			background-size: cover;
+			position: relative;
+
 
 			div:first-child {
 				text-transform: uppercase;
-				background-color: gold;
-				width: 20vw;
+				background-color: #cf9700;
+				width: 26vw;
 				height: 10vw;
-				font-family: Roboto;
+				font-family: "Roboto Flex", sans-serif;
+				position: absolute;
+				top: 14.4vw;
+				padding-left: 0.3vw;
+				padding-top: 0.2vw;
 
 				span {
-					font-size: calc(8vw - (1vw * sibling-index()));
+					font-size: calc(9vw - (1vw * sibling-index()));
+					font-weight: 700;
+					letter-spacing: 0.5rem;
+					font-variation-settings:
+						"wdth" 15;
 				}
 			}
 		}
