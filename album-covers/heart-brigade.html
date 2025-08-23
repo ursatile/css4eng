@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Heart Brigade</title>
-    <link rel="stylesheet" href="styles.css">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Heart - Brigade</title>
+	<style>
+		@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght,XOPQ,XTRA,YOPQ@8..144,25..151,100..1000,27..175,323..603,25..135&display=swap");
+
+		html {
+			background-color: white;
+		}
+
+		body {
+			width: 80vw;
+			height: 80vw;
+			margin: 10vw auto;
+			background-color: black;
+
+			div:first-child {
+				text-transform: uppercase;
+				background-color: gold;
+				width: 20vw;
+				height: 10vw;
+				font-family: Roboto;
+
+				span {
+					font-size: calc(8vw - (1vw * sibling-index()));
+				}
+			}
+		}
+	</style>
 </head>
 <body>
-    <div>heart</div>
-    <div>brigade</div>
+	<div>
+		<span>H</span>
+		<span>E</span>
+		<span>A</span>
+		<span>R</span>
+		<span>T</span>
+	</div>
+	<div>brigade</div>
 </body>
 </html>
