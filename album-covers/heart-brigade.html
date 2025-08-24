@@ -19,7 +19,15 @@
 		}
 
 		body {
-			/* &:hover::after {
+			width: 80vw;
+			height: 80vw;
+			margin: 10vw auto;
+			background: black;
+			position: relative;
+			overflow: hidden;
+			clip-path: inset(0);
+
+			&:hover::after {
 				content: ' ';
 				width: 80vw;
 				height: 80vw;
@@ -30,14 +38,9 @@
 				left: 0;
 				background-image: url(heart-brigade.jpg);
 				background-size: cover;
-			} */
+			}
 
-			overflow: hidden;
-			width: 80vw;
-			height: 80vw;
-			margin: 10vw auto;
-			background: black;
-			position: relative;
+
 
 			&::before {
 				position: absolute;
@@ -48,6 +51,7 @@
 				width: 27vw;
 				height: 3.5vw;
 			}
+
 			&::after {
 				position: absolute;
 				background-color: #cd3328;
@@ -67,6 +71,7 @@
 				padding-top: 0.2vw;
 				border-top: 4.4vw solid black;
 				overflow: hidden;
+
 				&::after {
 					content: ' ';
 					width: 39vw;
@@ -77,17 +82,17 @@
 					font-weight: 900;
 					display: block;
 					font-variation-settings: "wdth" 130,
-					"XOPQ" 100,
-					"XTRA" 470,
-					"YOPQ" 120,
-					"YTAS" 20,
-					"YTUC" 10;
+						"XOPQ" 100,
+						"XTRA" 470,
+						"YOPQ" 120,
+						"YTAS" 20,
+						"YTUC" 10;
 					font-size: 50vw;
 					background-image:
 						repeating-conic-gradient(black 0deg 90deg,
 							white 90deg 360deg),
-					linear-gradient(-45deg,
-					#cd3328 0 50%, #1d509b 50%);
+						linear-gradient(-45deg,
+							#cd3328 0 50%, #1d509b 50%);
 					background-size: 67% 67%, 100%;
 					background-position: -1px -1px, center;
 					background-blend-mode: darken;
@@ -96,7 +101,7 @@
 				}
 
 				span {
-					display:inline-block;
+					display: inline-block;
 					/* transform: scale(1,1.05); */
 					font-size: calc(8vw - (0.9vw * sibling-index()));
 					font-weight: 700;
