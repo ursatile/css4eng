@@ -139,10 +139,18 @@ and then increase the size of each item to occupy the space allocated to it by t
 
 The simple explanation is that a flex item with `flex-shrink: 2` will shrink twice as fast as an element with `flex-shrink: 1`, and an element with `flex-shrink: 0` will never shrink.
 
+{% example flex-shrink.html elements="style, body" iframe_style="" %}
+
 If you're interested, the mathematics behind it works like this:
 
-1. Calculate the **shrink factor** - how much space do we need to lose? If we have 4 x 200px elements in a 500px container, we've got 800px of content in a 500px container, so the **shrink factor** is 300px;
-2. Divide each 
+1. Calculate the **overflow** - how much space do we need to lose? If we have 4 x 200px elements in a 500px container, we've got 800px of content in a 500px container, so the **overflow** is 300px. You'll also sometimes see this called the **negative free space**.
+2. Calculate the **shrink factor** for each element: this is `flex-basis` (or `width`, if no flex basis is specified), multiplied by the `flex-shrink`
+3. Determine each item's share of the total **shrink factor**
+4. Reduce each item's width in proportion to its share of the shrink factor.
+
+## Using the `flex` shorthand property
+
+
 
 
 
