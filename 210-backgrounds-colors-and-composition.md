@@ -67,7 +67,24 @@ You can specify the exact position of the colour stops in a gradient:
 
 {% example css-gradients-with-stops.html elements="style, body" iframe_style="height: 15rem;" %}
 
-For the `linear-gradient` function, you can specify the *direction* of the gradient, as an angle, 
+### Angles in CSS 
+
+ We briefly met CSS angles when we looked at colour wheels in the section on CSS colour models. Angles crop up in all kinds of places in CSS --- most obviously, in the functions for rotating an element, which we'll meet later --- but they're also used to specify the direction of a `linear-gradient`, and the postions of the colour stops when using a `conic-gradient`.
+
+You can specify angles in CSS using:
+
+* Degrees: `90deg`. One full circle is 360 degrees. (You knew that, right?)
+* Radians: `3.1416rad`; a full circle is 2π radians (but you can't use π as a number in CSS, so working in radians you'll end up with lots of decimal places )
+* Gradians: `100grad`. A full circle is 400 gradians; 100 gradians is a right angle.
+* Turns. `0.5turn` - a full circle is 1 turn.
+
+The full docs are over on MDN if you need them: [https://developer.mozilla.org/en-US/docs/Web/CSS/angle](https://developer.mozilla.org/en-US/docs/Web/CSS/angle)
+
+For the `linear-gradient` function, you can specify the *direction* of the gradient, as an angle:
+
+{% example css-linear-gradient-angles.html elements="style,body" iframe_style="" %}
+
+### 
 
 There's also a repeating version of each gradient:
 
