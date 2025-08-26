@@ -135,7 +135,14 @@ and then increase the size of each item to occupy the space allocated to it by t
 
 <img src="{{page.examples}}/flex-grow-05.png">
 
+`flex-shrink` is... more complicated.
 
+The simple explanation is that a flex item with `flex-shrink: 2` will shrink twice as fast as an element with `flex-shrink: 1`, and an element with `flex-shrink: 0` will never shrink.
+
+If you're interested, the mathematics behind it works like this:
+
+1. Calculate the **shrink factor** - how much space do we need to lose? If we have 4 x 200px elements in a 500px container, we've got 800px of content in a 500px container, so the **shrink factor** is 300px;
+2. Divide each 
 
 
 
