@@ -99,9 +99,13 @@ All the properties we've looked at above apply to the *container* - the element 
 
 We can also target individual flexbox items, which comes in useful when we've got one or two elements that should be laid out differently to the rest.
 
+### Flex Order
+
 One very powerful, and potentially dangerous, application of CSS is causing elements to appear on the screen in a different order to how they appear in the underlying markup. We've already seen examples of this using `position: absolute` and `float`, to pull an element out of the regular document flow and render it somewhere else on the page. Flexbox goes a step further with this and gives us the `order` property, which will literally change the rendering order of elements in a container. Every item in a flex container has a default `order` of `0`; giving items a non-zero `order` will override the order in which they appear in their container. Use a negative `order` to move an element nearer the start of the main axis:
 
 {% example flex-item-order.html elements="style,body" iframe_style="" %}
+
+### Flex Grow, Shrink and Basis
 
 To control how the layout engine will resize an item, we can use `flex-grow`, `flex-shrink` and `flex-basis`, and this is where some seriously complex mathematics gets involved.
 
@@ -150,29 +154,16 @@ If you're interested, the mathematics behind it works like this:
 
 ## Using the `flex` shorthand property
 
+Although you can specify `flex-basis`, `flex-grow` and `flex-shrink` separately, it's usually much easier to use the `flex` shorthand property:
 
+```css
+.item {
+  flex: <grow> <shrink> <basis>;
+}
+```
 
+Every item in a flexbox container has a default `flex: 0 1 auto` --- i.e. don't grow, shrink equally with other elements as necessary, and set initial width based on the element's width.
 
+If you use the `flex` property and only specify the `grow` value, the browser will set the `flex-basis` to `0%`; this might seem counterintuitive but what it's actually saying is "grow & shrink this item as necessary; don't worry what size it was supposed to be"
 
-
-
-
-
-
-
-
-
- `flex-grow` and `flex-shrink` accept a *unitless value*; it doesn't mean anything beyond the fact that an item with `flex-grow: 2` will take up twice as much space as an item with `flex-grow: 1`.
-
- {% example flex-grow.html %}
-
-
-
-
-
-
-
-
-
-
-
+{% example css-flex-shorthand.html elements="style,body" iframe_style="" %}
