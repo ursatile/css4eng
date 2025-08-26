@@ -67,6 +67,8 @@ You can specify the exact position of the colour stops in a gradient:
 
 {% example css-gradients-with-stops.html elements="style, body" iframe_style="height: 15rem;" %}
 
+For the `linear-gradient` function, you can specify the *direction* of the gradient, as an angle, 
+
 There's also a repeating version of each gradient:
 
 {% example css-repeating-gradients.html elements="style, body" iframe_style="height: 15rem;" %}
