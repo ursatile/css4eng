@@ -1,26 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Linear Gradient Angles</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Linear Gradient Angles</title>
 	<style>
+		* {
+			box-sizing: border-box;
+		}
+
 		div {
 			padding: 1vw;
 			font-family: Consolas, 'Courier New', Courier, monospace;
 			width: 20vw;
 			height: 20vw;
 			display: inline-block;
+			border: 1px solid black;
+			font-size: 0.8rem;
 		}
 	</style>
 </head>
 <body>
-	<div style="background-image: linear-gradient(0deg, white 8vw, red, white 12vw);">0deg</div>
-	<div style="background-image: linear-gradient(22deg, black, white);">22deg</div>
-	<div style="background-image: linear-gradient(to left, black, white);">to left</div>
-	<div style="background-image: linear-gradient(to right, black, white);">to right</div>
-	<div style="background-image: linear-gradient(to bottom left, black, white);">to bottom left</div>
-	<div style="background-image: linear-gradient(to bottom right, black, white);">to bottom right</div>
-	<div style="background-image: linear-gradient(-0.33turn, black, white);">-0.33turn</div>
-	<div style="background-image: linear-gradient(-0.33rad, black, white);">-0.33rad</div>
+	<div
+		style="background-image: linear-gradient(0deg, white 30%, red, yellow, blue, white 70%);">
+		0deg</div>
+	<div
+		style="background-image: linear-gradient(22deg, white 30%, red, yellow, blue,  white 70%);">
+		22deg</div>
+	<div
+		style="background-image: linear-gradient(to left,  white 30%, red, yellow, blue,  white 70%);">
+		to left</div>
+	<div
+		style="background-image: linear-gradient(to right,  white 30%, red, yellow, blue,  white 70%);">
+		to right</div>
+	<div
+		style="background-image: linear-gradient(to bottom left,  white 30%, red, yellow, blue,  white 70%);">
+		to bottom left</div>
+	<div
+		style="background-image: linear-gradient(to bottom right,  white 30%, red, yellow, blue,  white 70%);">
+		to bottom right</div>
+	<div
+		style="background-image: linear-gradient(-0.33turn,  white 30%, red, yellow, blue,  white 70%);">
+		-0.33turn</div>
+	<div
+		style="background-image: linear-gradient(-0.33rad,  white 30%, red, yellow, blue,  white 70%);">
+		-0.33rad</div>
 </body>
 </html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Radial Gradient Origin</title>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		div {
+			float: left;
+			margin: 1vw;
+			width: 20vw;
+			height: 20vw;
+			border: 1px solid #000;
+
+			&#a {
+				background-image: conic-gradient(yellow, red, blue, purple);
+			}
+
+			&#b {
+				background-image: conic-gradient(from 45deg, yellow, red, blue, purple);
+			}
+
+			&#c {
+				background-image: conic-gradient(at 0 100%, yellow, red, blue, purple);
+			}
+
+			&#d {
+				background-image: conic-gradient(from 45deg at 0 100%, yellow, red, blue, purple);
+			}
+
+			&#e {
+				background-image: conic-gradient(from 60deg at 0 50%, yellow, red, blue, purple);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="a"></div>
+	<div id="b"></div>
+	<div id="c"></div>
+	<div id="d"></div>
+	<div id="e"></div>
+	<div id="f"></div>
+	<div id="g"></div>
+	<div id="h"></div>
+</body>
+</html>

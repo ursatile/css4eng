@@ -84,7 +84,13 @@ For the `linear-gradient` function, you can specify the *direction* of the gradi
 
 {% example css-linear-gradient-angles.html elements="style,body" iframe_style="" %}
 
-### 
+For radial gradients, you can specify the gradient's origin point, independently of the background position:
+
+{% example radial-gradient-origin.html elements="style,body" iframe_style="" %}
+
+For conic gradients, you can specify both the origin point, and the starting angle:
+
+{% example conic-gradient-origin.html elements="style,body" iframe_style="" %}
 
 There's also a repeating version of each gradient:
 
