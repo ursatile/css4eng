@@ -4,6 +4,10 @@
 	--code-highlight-background-color: #444;
 }
 
+html {
+	scroll-behavior: auto;
+}
+
 div.highlighter-rouge,
 figure.highlight {
 	line-height: 1.2em;

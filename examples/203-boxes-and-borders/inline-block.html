@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>inline-block</title>
+	<style>
+		em {
+			display: inline-block;
+			background-color: gold;
+			border: 1px solid royalblue;
+			padding: 10px 5px;
+			margin: 5px;
+		}
+
+		strong {
+			height: 3em;
+			background-color: lime;
+			display: inline-block;
+		}
+
+		p#vertical-align-examples {
+			outline: 1px solid gold;
+			line-height: 5rem;
+
+			code {
+				line-height: normal;
+				padding: 0.25rem;
+				background-color: gold;
+				display: inline-block;
+			}
+		}
+	</style>
+</head>
+<body>
+	<p>Using <code>display: inline-block;</code> you can put elements in your page
+		which have <em>block characteristics</em> like height and vertical margins,
+		but which are treated like <strong>inline</strong> elements for layout
+		purposes. They don't create a new block context, they don't cause a line
+		break, and they have an implicit width based on the size of their content,
+		rather than taking up the full width of the viewport.</p>
+
+	<p id="vertical-align-examples">vertical-align:
+		<code style="vertical-align: baseline;">baseline (default)</code>,
+		<code style="vertical-align: middle;">middle</code>,
+		<code style="vertical-align: top;">top</code>,
+		<code style="vertical-align: bottom;">bottom</code>,
+		<code style="vertical-align: super;">super</code>, and
+		<code style="vertical-align: sub;">sub</code>, and
+		<code style="vertical-align: text-top;">text-top</code>
+	</p>
+</body>
+</html>

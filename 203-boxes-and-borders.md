@@ -56,7 +56,7 @@ Time to meet the CSS box model.
 
 CSS is based on boxes. Every element on a page sits inside an invisible bounding rectangle, sometimes known as the *content box*, which the browser uses to determine where to draw that element, and how big it should be. 
 
-**ARTWORK TO FOLLOW**
+**TODO: artwork illustrating CSS content box**
 
 We've already met the CSS `outline` property, which tells the browser to make the bounding rectangle visible, but doesn't change the size, or shape, of the element. See what happens if we take several adjacent DIV elements and add a rule that gives them a 1 pixel red outline:
 
@@ -66,11 +66,11 @@ If we crank up the outline - 2px, 5px, 10px, 20px - you can clearly see that the
 
 Instead, CSS has a property called `border`. Let's change that rule to give our `div` elements a 1 pixel red border:
 
-**ARTWORK TO FOLLOW**
+**TODO: artwork demonstrating CSS border**
 
 And now, if we change the thickness to 2, 5, 10, 20 pixels, you can see how the layout changes each time so that the border doesn't obscure the contents.
 
-**ARTWORK TO FOLLOW**
+**TODO: artwork demonstrating border-width**
 
 If you want a space between the content and the border, use the CSS property called `padding`. Unlike `border`, `padding` doesn't actually draw anything, it just creates empty space, so we don't give it a style or a colour - just a measurement:
 
@@ -248,7 +248,7 @@ One more relative unit that's remarkably useful in CSS is `auto`. Most of the ti
 
 One extremely useful, but slightly counter-intuitive, application of `auto` is that if you give an element a fixed width and then set the left and right `margin` of that element to `auto`, the browser will centre the element horizontally.
 
-{% example auto-margins.html mark_lines="10" %}
+{% example auto-margins.html mark_lines="10" iframe_style="" %}
 
 ## Float Like A Butterfly...
 
@@ -282,17 +282,63 @@ In 25 years of web development, I have never, ever encountered a situation where
 
 If we modify our example CSS to override the default:
 
-{% example border-box.css mark_lines="7" %}
+{% example border-box.html elements="style,body" mark_lines="12" %}
 
 we can get our `<div>` elements to render side-by-side:
 
-<iframe src="{{ page.examples}}/border-box.html" style="height: 10em;"></iframe>
+{% iframe border-box.html %}
 
-# TODO: the thing where you have 3 x 33% and it overflows!
+## Using `inline-block`
 
-We'll wrap it up there for now - in the next section we're going to work through a couple of exercises that'll give you a chance to try out the CSS box formatting model.
+We've met block elements and inline elements, but sometimes you need an element which behaves like a block - width, height, margins - but is treated as an inline element for layout purposes. That's what `display: inline-block` is for.
 
+{% example inline-block.html elements="style,body" iframe_style="" %}
 
+Let's meet a classic "gotcha" that almost every web developer will meet at some point in their career. We've got three `<div>` elements, we're going to give them a width of `33%` and `display: inline-block` to get three elements side-by-side... 
+
+{% example inline-block-thirds.html elements="style,body" iframe_style="zoom: 80%;" %}
+
+But then you look at the same page in a slightly narrower viewport:
+
+{% iframe inline-block-thirds.html style="width: 60%; zoom: 80%;" %}
+
+...and one of the `<div>` elements has dropped to the next line. What's going on?
+
+This is one of those classic scenarios that's completely baffling until you work it out... and completely obvious in hindsight.
+
+**First**: there is actually space between those elements. If there's whitespace between inline elements in the HTML source, it'll get preserved - multiple spaces get collapsed down to a single space, but you'll still get a single space. If you don't want whitespace between your elements, you can't have any whitespace between them in the HTML source:
+
+{% example space-between-inline-elements.html elements="body" iframe_style="" %}
+
+**Second**: when you specify `display: inline-block`, the target elements are treated as `inline` for display purposes - which means if there's any whitespace between them, you'll get a space in your output. And our source looks like this:
+
+```html
+    <div></div>
+    <div></div>
+    <div></div>
+```
+
+...so there's a newline and a tab between each `<div>` element.
+
+**Third**: percentages and rounding. Three elements with `width: 33%` adds up to a total width of `99%` - so we've got one percent of the total viewport width left to play with. On my system, as long as the viewport is over 812px wide, those two whitespaces are smaller than the 1% of available space, so nothing wraps... but if I shrink the viewport below 812px, it won't fit on one line any more, and the browser wraps it only multiple lines as it would with any other inline content.
+
+The fix is to put the `<div>` elements on the same line in source... but that brings us to the **fourth** problem: most code editors are smart enough that if you've got adjacent inline elements with no spaces between them, it'll keep them on the same line... but they don't do that with `<div>` elements 'cos the editor isn't smart enough to read the CSS and figure out those elements are going to be inline. 
+
+If you ask VS Code to reformat `<em>one</em><em>two</em><em>three</em>`, it won't insert any line breaks... but if you reformat a file with 
+
+```html
+<div>one</div><div>two</div><div>three</div>
+```
+
+you'll end up with:
+
+```html
+<div>one</div>
+<div>two</div>
+<div>three</div>
+```
+
+As a general rule, it's safe to apply `inline-block` to elements that are intrinsically inline --- `<span>`, `<code>`, `<strong>`, `<em>` --- but if you apply it to block-level elements like `<div>`, `<pre>`, `<h1>`, watch out for whitespace getting introduced when you reformat the HTML source code. 
 
 ## Review & Recap
 

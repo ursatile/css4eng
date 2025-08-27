@@ -6,7 +6,7 @@ target_minutes: 15
 title: "Presenting Tabular Data"
 word_count: 31
 ---
-# Presenting Tabular Data (20m)
+Tables are one of the web's oldest layout systems, added to HTML 3.2 way back in 1997. For many years, web developers relied extensively on tables because they were just about the only way to break out of the inline/block layout model; it was common to see tables used for everything from the website layout down to individual buttons, 
 
 ## Course Content
 

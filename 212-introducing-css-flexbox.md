@@ -49,6 +49,10 @@ Notice that the gap is only applied *between* items; if you want a gap between t
 
 This is where flexbox starts to get a bit gnarly, mainly because we just don't have enough specific words in everyday English for the number of different ways content inside a flexbox can be arranged.
 
+I find it helpful to think of flexbox as three separate things - the container, the content, and the items. The container and items are the actual HTML elements, the *content* is the implied grouping created by the arrangement of the items:
+
+<img src="{{ page.examples }}/container-content-items.svg">
+
 `justify-content` controls how elements are arranged along the main axis, **if they don't fill the container**.
 
 {% iframe justify-content.html style="height: 44em;" %}
@@ -104,6 +108,16 @@ We can also target individual flexbox items, which comes in useful when we've go
 One very powerful, and potentially dangerous, application of CSS is causing elements to appear on the screen in a different order to how they appear in the underlying markup. We've already seen examples of this using `position: absolute` and `float`, to pull an element out of the regular document flow and render it somewhere else on the page. Flexbox goes a step further with this and gives us the `order` property, which will literally change the rendering order of elements in a container. Every item in a flex container has a default `order` of `0`; giving items a non-zero `order` will override the order in which they appear in their container. Use a negative `order` to move an element nearer the start of the main axis:
 
 {% example flex-item-order.html elements="style,body" iframe_style="" %}
+
+### Align Self
+
+Individual flex items can also override the default item alignment for their flex container:
+
+{% example align-self.html elements="style,body" iframe_style="" %}
+
+Watch out for using `align-self` with `baseline` values. Baseline alignment doesn't align elements relative to the container, it aligns them with each other, and so it doesn't make sense to specify baseline alignment for a single element. A collection of elements in the same flex container with the same baseline alignment is known as a *baseline sharing group*; in this example there are two such groups, one aligned to the default baseline, and one aligned to the last baseline:
+
+{% example align-self-baseline.html elements="style,body" iframe_style="" %}
 
 ### Flex Grow, Shrink and Basis
 
@@ -167,3 +181,40 @@ Every item in a flexbox container has a default `flex: 0 1 auto` --- i.e. don't 
 If you use the `flex` property and only specify the `grow` value, the browser will set the `flex-basis` to `0%`; this might seem counterintuitive but what it's actually saying is "grow & shrink this item as necessary; don't worry what size it was supposed to be"
 
 {% example css-flex-shorthand.html elements="style,body" iframe_style="" %}
+
+## Parting Thoughts about Flexbox
+
+As you've seen in this section, flexbox gives us a whole new way to think about linear layouts in CSS. It's incredibly flexible - hence the name - but that flexibility has a cost; at a certain point, it becomes almost impossible to look at a given combination of properties and values and predict how it's going to behave.
+
+Thing is: I don't think it matters. Working with flexbox, for me, is as much about trial and error as it is about precision engineering; I'll usually sketch out how I want something to appear at various device sizes, figure out how to create a flex layout that's broadly correct, and then play around with specific properties and values to smooth out the rough edges.
+
+The other thing to remember about flexbox: it's just as valid for laying out a tiny component, like a button or a form field, as it is for laying out entire pages and sections. We'll look at some examples of that in the next section of the course.
+
+## Review & Recap
+
+In this section, we learned:
+
+- Flexbox is part of the CSS Flexible Box Layout Module, finalised around 2012 and widely supported by 2017.
+- It introduces a new layout model based on a *main axis* and a *cross axis*, activated with `display: flex` or `display: inline-flex`.
+- Flexbox is one-dimensional: it arranges elements in a row *or* a column, unlike CSS Grid which handles two dimensions.
+- We can control wrapping with `flex-wrap` or shorthand `flex-flow: <direction> <wrap>`.
+- Gaps between items can be managed with `row-gap`, `column-gap`, or `gap`, while container spacing still requires `padding` or `margin`.
+- Layout alignment uses `justify-content` (main axis), `align-items` (cross axis), and `align-content` (for multiple rows/columns).
+- Flexbox makes it easy to centre elements horizontally and vertically—solving a long-standing CSS challenge.
+- Individual items can override container rules using `order` (reordering), `align-self`, and baseline alignment.
+- Sizing and distribution of space is handled with `flex-grow`, `flex-shrink`, and `flex-basis`, which determine how items expand or contract.
+- The shorthand `flex: <grow> <shrink> <basis>` simplifies item sizing, with a default of `flex: 0 1 auto`.
+
+## References
+
+"Learn Flexbox with 30 Code Tidbits" by Samantha Ming
+: A wonderful mini-course all about CSS flexbox, delivered as 30 short coding exercises: [https://www.samanthaming.com/flexbox30/](https://www.samanthaming.com/flexbox30/)
+
+"CSS Flexbox Layout Guide" by Chris Coyler at css-tricks.com
+: [https://css-tricks.com/snippets/css/a-guide-to-flexbox/](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - along with a handy high-res printable "quick reference" poster covering all the various flexbox properties and values
+
+"CSS Flexible Box Layout" at MDN
+: MDN's comprehensive documentation on the flexible box layout module and all the associated properties: [https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout)
+
+
+
