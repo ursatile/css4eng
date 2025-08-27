@@ -224,7 +224,7 @@ Let's get to know another couple of CSS properties: `width` and `height`. These 
 
 {% example width-and-height-absolute.css %}
 
-<iframe src="{{ page.examples }}/width-and-height.html" style="height: 10em;"></iframe>
+<iframe src="{{ page.examples }}/width-and-height-absolute.html" style="height: 10em;"></iframe>
 
 Note how elements with a `width` are aligned to the left edge of the page. Also notice how, if you resize the browser window, these elements don't change size, because their width and height are specified in *absolute units*.
 

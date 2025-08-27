@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Media Query Width Color</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			@media (width < 500px) { background-color: red; }
+			@media (500px <= width < 600px) { background-color: orange; }
+			@media (600px <= width < 700px) { background-color: gold; }
+			@media (700px <= width < 800px) { background-color: green; }
+			@media (800px <= width < 900px) { background-color: blue; }
+			@media (width > 900px) { background-color: indigo; }
+		}
+	</style>
+</head>
+<body>
+	I'm responsive! Try resizing me.
+
+</body>
+</html>

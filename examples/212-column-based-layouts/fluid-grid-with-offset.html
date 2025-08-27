@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>960 Grid Using Floats</title>
+	<link rel="stylesheet" href="fluid-grid.css">
+	<link rel="stylesheet" href="offsets.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		.container {
+			background: repeating-linear-gradient(to right,
+					#ccf 0 1%,
+					#fcc 1% 7.3333%,
+					#ccf 7.3333% 8.3333%);
+			height: 100vh;
+		}
+
+		[class*="col-"] {
+			margin-top: 10px;
+			padding: 5px;
+			font-family: Consolas;
+			text-align: center;
+			background-color: #fff;
+			color: #000;
+			font-size: 12px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-4 off-2">col-4 off-2</div>
+			<div class="col-2 off-1">col-2 off-1</div>
+			<div class="col-1">1</div>
+			<div class="col-1">1</div>
+			<div class="col-1">1</div>
+		</div>
+		<div class="row">
+			<div class="col-2">col-2</div>
+			<div class="col-2 off-8">col-2 off-8</div>
+		</div>
+		<div class="row">
+			<div class="col-11 off-1">col-11 off-1</div>
+		</div>
+		<div class="row">
+			<div class="col-10 off-2">col-10 off-2</div>
+		</div>
+		<div class="row">
+			<div class="col-9 off-3">col-9 off-3</div>
+		</div>
+		<div class="row">
+			<div class="col-2 off-10">col-2 off-10</div>
+		</div>
+	</div>
+</body>
+</html>
