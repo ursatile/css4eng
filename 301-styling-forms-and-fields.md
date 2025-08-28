@@ -4,7 +4,7 @@ layout: home
 nav_order: 301
 target_minutes: 15
 title: "Styling Forms and Fields"
-word_count: 29
+word_count: 10
 ---
 # Styling Forms and Fields
 
