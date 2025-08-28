@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Timing Functions</title>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: Consolas, 'Courier New', Courier, monospace;
+			color: #fff;
+			display: flex;
+
+			a {
+				display: block;
+				background-color: crimson;
+				padding: 5px;
+				margin: 5px;
+				display: flex;
+				text-align: center;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+
+		section {
+			div {
+				width: 35vw;
+				background-color: forestgreen;
+				padding: 5px;
+				margin: 5px;
+				transition: width 2s;
+
+				&:hover {
+					width: 75vw;
+				}
+			}
+		}
+
+		a:hover+section div {
+			width: 90vw;
+		}
+	</style>
+</head>
+<body>
+	<a>
+		PLAY<br>
+		ALL
+	</a>
+	<section>
+		<div style="transition-timing-function:ease;">ease</div>
+		<div style="transition-timing-function:ease-in;">ease-in</div>
+		<div style="transition-timing-function:ease-out;">ease-out</div>
+		<div style="transition-timing-function:ease-in;">ease-in-out</div>
+		<div style="transition-timing-function:linear;">linear</div>
+		<div style="transition-timing-function:step-start;">step-start</div>
+		<div style="transition-timing-function:step-end;">step-end</div>
+		<div style="transition-timing-function:steps(5);">steps(5)</div>
+		<div style="transition-timing-function:steps(2, jump-start);">steps(2, jump-start)</div>
+		<div style="transition-timing-function:steps(2, jump-end);">steps(2, jump-end)</div>
+		<div style="transition-timing-function:steps(2, jump-none);">steps(2, jump-none)</div>
+		<div style="transition-timing-function:steps(2, jump-both);">steps(2, jump-both)</div>
+		<div
+			style="transition-timing-function:cubic-bezier(0.25, -0.5, 0.75, 1.5);">
+			cubic-bezier(0.25, -0.5, 0.75, 1.5)
+		</div>
+	</section>
+</body>
+</html>
