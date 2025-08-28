@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Speech Bubble</title>
+	<style>
+		body {
+			padding-bottom: 4rem;
+		}
+
+		div.speech {
+			border-radius: 1em;
+			border: 3px solid #000;
+			position: relative;
+			padding: 1em;
+			margin: 1em;
+			box-sizing: border-box;
+
+			&.left {
+				background-color: #9f9;
+				margin-right: 8em;
+
+				&::before {
+					left: 1em;
+					border-width: 0em 0em 4em 2.66em;
+					border-color: transparent transparent transparent black;
+				}
+
+				&::after {
+					left: 1.2em;
+					border-width: 0em 0 3.4em 2.3em;
+					border-color: transparent transparent transparent #9f9;
+				}
+			}
+
+			&.right {
+				background-color: #99f;
+				margin-left: 8em;
+			}
+
+			&.left &.left &.right::before {
+				right: 1em;
+				border-width: 0em 2.66em 4em 0em;
+				border-color: transparent black transparent transparent;
+			}
+
+			&.right::after {
+				right: 1.2em;
+				border-width: 0em 2.3em 3.4em 0em;
+				border-color: transparent #99f transparent transparent;
+			}
+
+			&::before {
+				content: ' ';
+				position: absolute;
+				bottom: -4em;
+				border-color: transparent transparent transparent black;
+				border-style: solid;
+			}
+
+			&::after {
+				content: ' ';
+				position: absolute;
+				z-index: 1;
+				bottom: -3.4em;
+				border-color: transparent transparent transparent white;
+				border-style: solid;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="speech left">
+		The numbers all go to eleven. Look, right across the board, eleven, eleven,
+		eleven and...
+	</div>
+	<div class="speech right">
+		Oh, I see. And most amps go up to ten?
+	</div>
+	<div class="speech left">
+		Exactly.
+	</div>
+	<div class="speech right">
+		Does that mean it's louder? Is it any louder?
+	</div>
+	<div class="speech left">
+		Well, it's one louder, isn't it? It's not ten. You see, most blokes, you
+		know, will be playing at ten. You're on ten here, all the way up, all the
+		way up, all the way up, you're on ten on your guitar. Where can you go from
+		there? Where?
+	</div>
+</body>
+</html>

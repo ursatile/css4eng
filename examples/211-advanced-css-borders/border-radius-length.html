@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>border-radius</title>
+	<style>
+		* {
+			box-sizing: border-box;
+			text-align: center;
+			font-family: Consolas, 'Courier New', Courier, monospace;
+		}
+
+		div {
+			font-size: 0.6rem;
+			border: 2px solid royalblue;
+			background-color: gold;
+			padding: 50px 0px;
+			width: 29vw;
+			display: inline-block;
+			margin: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div style="border-radius: 25px;">border-radius: 25px;</div>
+	<div style="border-radius: 25px 100px;">border-radius: 25px 100px;</div>
+	<div style="border-radius: 5px 25px 75px;">border-radius: 5px 25px 75px;</div>
+	<div style="border-radius: 5px 25px 50px 75px;">border-radius: 5px 25px 50px 75px;</div>
+	<div style="border-radius: 0 200px;">border-radius: 0 200px;</div>
+	<div style="border-radius: 0 0 0 200px;">border-radius: 0 0 0 200px;</div>
+	<div style="border-radius: 200px 200px 0 0;">border-radius: 200px 200px 0 0;</div>
+	<div style="border-radius: 200px;">border-radius: 200px;</div>
+	<div style="border-radius: 50px 50px 50px 0;">border-radius: 50px 50px 50px 0;</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>border-image-slice</title>
+	<style>
+		* { box-sizing: border-box; }
+		body {
+			background-color: #000;
+			margin: 0;
+		}
+
+		section {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 20px;
+			justify-content: space-around;
+		}
+
+		div {
+			background-color: white;
+			border-radius: 6px;
+			color: #000;
+			font-family: Consolas, 'Courier New', Courier, monospace;
+			font-size: 0.6em;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 40vw;
+			height: 140px;
+			border-image-source: url(9-slice-chain.png);
+			border-width: 40px;
+			border-style: solid;
+			border-image-slice: 160;
+			border-image-repeat: round;
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<div style="border-image-width: 15px;">15px</div>
+		<div style="border-image-width: 40px;">40px</div>
+		<div style="border-image-width: 20px 40px;">20px 40px</div>
+		<div style="border-image-width: 10px 20px 40px 60px;">10px 20px 40px 60px</div>
+	</section>
+</body>
+</html>

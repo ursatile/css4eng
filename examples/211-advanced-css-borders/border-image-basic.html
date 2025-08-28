@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Basic border-image</title>
+	<style>
+		body {
+			margin: 0;
+			display: flex;
+			gap: 10px;
+			padding: 10px;
+			div {
+				width: 5vw;
+				height: 5vw;
+				padding: 20px;
+				border: 40px solid;
+				flex: 1;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+		div:nth-of-type(1) {
+			border-image: conic-gradient(red, yellow, blue, green, red) 20;
+		}
+		div:nth-of-type(2) {
+			border-image: conic-gradient(red, yellow, blue, green, red);
+		}
+	</style>
+</head>
+<body>
+	<div>hey!</div>
+	<div>hey!</div>
+	<div>hey!</div>
+	<div>hey!</div>
+</body>
+</html>

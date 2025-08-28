@@ -374,7 +374,7 @@ You'll find the HTML code in [flags.html](examples/02-01-boxes-and-borders/flags
 
 ### Boxes and Borders Exercise: News Article
 
-TODO: this
+TODO: exercise: laying out a news article
 
   
 

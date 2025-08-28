@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Border Image Shorthand</title>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			padding: 20px 20px 40px 20px;
+			display: flex;
+			gap: 100px;
+		}
+
+		div {
+			width: 120px;
+			height: 120px;
+			background-color: #000;
+		}
+
+		div#a {
+			border-image: url('9-slice.png') 40 / 10px 20px 30px 40px stretch;
+		}
+
+		div#b {
+			border-image: repeating-conic-gradient(red 1deg 10grad, purple 0.5turn 2rad, teal 80% 90%, gold, red) 10% 20 30% 50% / 1vw 20pt 30q 0.2in / 20px 30px 40px 50px round;
+		}
+
+		div#c {
+			border-image: url('9-slice-chain.png') 160 / 20px round;
+		}
+	</style>
+</head>
+<body>
+	<div id="a"></div>
+	<div id="b"></div>
+	<div id="c"></div>
+</body>
+</html>

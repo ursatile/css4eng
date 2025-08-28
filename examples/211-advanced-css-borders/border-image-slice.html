@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>border-image-slice</title>
+	<style>
+		body {
+			background-color: #000;
+			padding: 10px;
+			margin: 0;
+		}
+
+		section {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 20px;
+			justify-content: space-around;
+		}
+
+		div {
+			background-color: #fff;
+			color: #000;
+			font-family: Consolas, 'Courier New', Courier, monospace;
+			font-size: 0.6em;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 8vw;
+			height: 8vw;
+			border-image-source: url(9-slice.png);
+			border-width: 40px;
+			border-style: solid;
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<div style="border-image-slice: 6">6</div>
+		<div style="border-image-slice: 10">10</div>
+		<div style="border-image-slice: 20">20</div>
+		<div style="border-image-slice: 40">40</div>
+		<div style="border-image-slice: 49%">49%</div>
+		<div style="border-image-slice: 50%">50%</div>
+		<div style="border-image-slice: 80">80</div>
+		<div style="border-image-slice: 120">120</div>
+	</section>
+</body>
+</html>
