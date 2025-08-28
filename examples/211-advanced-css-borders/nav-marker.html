@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Nav Marker</title>
+	<style>
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		* {
+			font-family: Arial, Helvetica, sans-serif;
+			box-sizing: border-box;
+		}
+
+		nav {
+			margin: 10px auto;
+			background: #036;
+
+			a {
+				color: #fff;
+				text-decoration: none;
+				display: inline-block;
+				padding: 0.8rem;
+				position: relative;
+
+				&:target::after {
+					content: ' ';
+					border-width: 0 0.5rem 0.8rem 0.5rem;
+					border-color: transparent transparent white transparent;
+					border-style: solid;
+					position: absolute;
+					bottom: 0;
+					margin-inline: auto;
+					left: 0;
+					right: 0;
+					width: 0;
+				}
+			}
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<a id="home" href="#home">home</a>
+		<a id="guitars" href="#guitars">guitars</a>
+		<a id="basses" href="#basses">basses</a>
+		<a id="amps" href="#amps">amps</a>
+		<a id="pedals" href="#pedals">pedals</a>
+	</nav>
+</body>
+</html>

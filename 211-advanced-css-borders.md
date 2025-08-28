@@ -155,7 +155,13 @@ Now, if we set the top border to zero, and change the colours of the other borde
 
 ...we've made a triangle using pure CSS. 
 
-OK, so what can we do with it? Well, one scenario that's come up several times in my own career is creating a "speech bubble" callout.
+OK, so what can we do with it? 
+
+I've used this kind of technique on several projects to create a navigation indicator, adding a tiny triangle beneath the nav link for whichever page is currently active. This example uses the `:target` pseudo-class to target the navigation element matching the current URL, along with an absolute-positioned `::after` pseudo-element that creates the triangular border effect.
+
+{% example nav-marker.html elements="style,body" iframe_style="" %}
+
+Another scenario that's come up several times in my own career is creating a "speech bubble" callout.
 
 ## Exercise: Creating Pure CSS Speech Bubbles
 
