@@ -1,7 +1,7 @@
 ---
-examples: examples/304-working-with-css-variables
+examples: examples/305-working-with-css-variables
 layout: home
-nav_order: 304
+nav_order: 305
 target_minutes: 10
 title: "Working with CSS Variables"
 word_count: 27

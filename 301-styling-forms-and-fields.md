@@ -1,9 +1,9 @@
 ---
-examples: examples/301-atoms-molecules-and-organisms
+examples: examples/301-styling-forms-and-fields
 layout: home
 nav_order: 301
 target_minutes: 10
-title: "Atoms, Molecules and Organisms"
+title: "Styling Forms and Fields"
 word_count: 29
 ---
 # Atoms, Molecules and Organisms (20m)

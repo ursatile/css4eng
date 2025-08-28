@@ -1,10 +1,10 @@
 ---
-examples: examples/302-movement-and-motion
+examples: examples/303-movement-and-motion
 layout: home
-nav_order: 302
+nav_order: 303
 target_minutes: 20
 title: "Movement and Motion"
-word_count: 26
+word_count: 244
 ---
 The web has always rested on three pillars: HTML controls structure, CSS controls presentation, JavaScript controls behaviour.
 
