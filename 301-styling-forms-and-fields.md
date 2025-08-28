@@ -2,16 +2,15 @@
 examples: examples/301-styling-forms-and-fields
 layout: home
 nav_order: 301
-target_minutes: 10
+target_minutes: 15
 title: "Styling Forms and Fields"
 word_count: 29
 ---
-# Atoms, Molecules and Organisms (20m)
+# Styling Forms and Fields
 
 ## Course Content
 
-- Beyond Basic Buttons: FontAwesome, CSS shapes, inline SVGs, PNG images, emoji
-- Exercise: building a CSS control bar for a media player
+- Buttons, Inputs, Selects
 
 ## Notes
 
