@@ -16,7 +16,7 @@ Consequently, animation features like transitions, keyframes and easing function
 
 ## Animation and Accessibility
 
-
+TODO: write the stuff about animation and accessibility!
 
 ## Animation using `transition`
 
@@ -109,7 +109,7 @@ Now, in one sense, that's everything you need to know about CSS transitions: pro
 
 Sometimes you need something more complex than a smooth interpolation between the initial and the final state. That's where the CSS `animation` module gets involved.
 
-An **animation** in CSS has two components: a style describing the timing, duration and other parameters, and a set of **keyframes** that dictate the initial state, final state, and any intermediate  states 
+An **animation** in CSS has two components: a style describing the timing, duration and other parameters, and a set of **keyframes** that dictate the initial state, final state, and any intermediate  states./
 
  
 

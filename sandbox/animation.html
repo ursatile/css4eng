@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		@keyframes invalid-input {
+
+			0% { transform: translate(0px); }
+			10% { transform: translate(-10px); }
+			20% { transform: translate(10px); }
+			30% { transform: translate(-10px); }
+			40% { transform: translate(8px); }
+			50% { transform: translate(-8px); }
+			60% { transform: translate(5px); }
+			70% { transform: translate(-5px); }
+			80% { transform: translate(2px); }
+			90% { transform: translate(-2px); }
+			100% {
+				transform: translate(0px);
+			}
+		}
+
+		input {
+			border: 2px solid #000;
+			border-radius: 5px;
+			padding: 5px;
+		}
+		input:user-invalid {
+			border-color: crimson;
+			animation: invalid-input 0.5s;
+			animation-delay: -0.05s;
+		}
+	</style>
+</head>
+<body>
+	<input type="email" required>
+</body>
+</html>
