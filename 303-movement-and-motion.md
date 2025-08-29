@@ -14,18 +14,22 @@ Animation was historically considered behaviour, but as the web has matured, we'
 
 Consequently, animation features like transitions, keyframes and easing functions have gradually moved out of JavaScript and become part of CSS.
 
+## Animation and Accessibility
+
+
+
 ## Animation using `transition`
 
 Here's a page with three `<div>` elements on it. Each of them does something different when you hover the mouse over it:
 
 {% example divs-without-transitions.html elements="style,body" iframe_style="" %}
 
-Using the CSS `transition` property, we can specify:
+Usually, when we change a property of an element - change its background colour, make it wider, change its position - the change happens instantaneously. Using transitions, we can create smooth animations from the initial state to the final state by specifying:
 
-* Which property we want to animate
-* How long the transition should take
-* What *easing function* to apply
-* How long to wait before running the transition (default: `0s`)
+* `transition-property`: what are we animating? *(Use `all` to animate everything that's animatable)*
+* `transition-duration`: How long the transition should take - in seconds (`1s`) or milliseconds (`100ms`)
+* `transition-timing-function`: for smooth animations, how should we calculate intermediate stages?
+* `transition-delay`: how long to wait before running the transition (default: `0`)
 
 You *can* specify each one individually:
 
@@ -59,6 +63,14 @@ For our `background-color` example, it calculates the intermediate red, green, a
 
 For something like `font-family`, there's no mathematical way to specify what's halfway between Times New Roman and Arial, so the animation is `discrete`. By default, this means it'll flip immediately, but in this case we've used the `transition-behavior: allow-discrete` property, which will flip it at the halfway point of the transition duration; in this case, we've specified the duration as `1s` so the font family changes after half a second.
 
+## Transition Delays
+
+Every transition can take an extra `delay` parameter, specified in seconds or milliseconds. 
+
+Negative delays are allowed, which might seem impossible --- how can you have a  button that starts to change colour two seconds before the user has decided to click on it? --- but what they actually do is to start the transition partway through, as if it had already been running for the specified period. If the negative delay is equal to, or longer than, the transition duration, you won't see any animation - it's already done and jumps straight to the final state.
+
+{% example transition-delays.html elements="style,body" iframe_style="" %}
+
 ## Timing Functions
 
 Timing functions create smooth, natural animations by simulating real-world physics effects like inertia. First, an interactive example:
@@ -79,15 +91,27 @@ The equivalent in Chrome is accessed in a very similar way, and provides mostly 
 
 ![image-20250828231925584](./images/chrome-dev-tools-bezier-curve-editor.png)
 
-One more useful thing to know is that the `transition-property` property accepts a keyword `all`, meaning "animate every property that's animatable."
+You can even build your own timing function visualiser in a few lines of code, by animating the position (`top` and `left`) of an element and using the `linear` timing function for the `left` transition:
+
+{% example timing-function-visualiser.html element="style,body" iframe_style="" %}
+
+As we saw a moment ago, the `transition-property` property accepts a keyword `all`, meaning "animate every property that's animatable". You can use to create some fairly dramatic effects:
 
 {% example transition-property-all.html elements="style,body" iframe_style="" %}
 
+If you look closely, you'll also see that this example only animates in one direction. The `transition` property is only applied to the `:hover` state, so the animations will only play when the element transitions *from* normal *to* hover; when you mouse-out of the element, it snaps back immediately.
 
+Oh, and watch out for horrible flicker loops... see what happens if you hover over the "put your mouse here" `<span>` in this example? Yeah. Not great user experience.
 
-Advanced Animation
+Now, in one sense, that's everything you need to know about CSS transitions: property, duration, timing function, delay, and `transition-behaviour: allow-discrete` to include discrete properties like font family. That's the complete transition feature set. In another sense, we've barely scratched the surface of what you can do with CSS transitions.
 
+## Advanced Animation
 
+Sometimes you need something more complex than a smooth interpolation between the initial and the final state. That's where the CSS `animation` module gets involved.
+
+An **animation** in CSS has two components: a style describing the timing, duration and other parameters, and a set of **keyframes** that dictate the initial state, final state, and any intermediate  states 
+
+ 
 
 Course Content
 
@@ -95,6 +119,14 @@ Course Content
 - Triggering interactions: hover, click, scroll, JS events
 - Parallax scrolling
 - Exercise: animated airline departure board grid
+
+
+
+- [Designing Safer Web Animation For Motion Sensitivity · An A List Apart Article](https://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity/)
+- [An Introduction to the Reduced Motion Media Query | CSS-Tricks](https://css-tricks.com/introduction-reduced-motion-media-query/)
+- [Responsive Design for Motion | WebKit](https://webkit.org/blog/7551/responsive-design-for-motion/)
+- [MDN Understanding WCAG, Guideline 2.2 explanations](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Operable#guideline_2.2_—_enough_time_provide_users_enough_time_to_read_and_use_content)
+- [Understanding Success Criterion 2.2.2 | W3C Understanding WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/time-limits-pause.html)
 
 ## Notes
 

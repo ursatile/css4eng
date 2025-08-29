@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Writing Mode</title>
+	<style>
+		section {
+			display: flex;
+			gap: 5px;
+			justify-content: space-around;
+			font-family: Arial, Helvetica, sans-serif;
+
+			code {
+				writing-mode: sideways-lr;
+				display: block;
+				font-size: 0.8rem;
+				text-align: left;
+				flex: 1;
+				display: flex;
+				align-items: center;
+			}
+
+			div {
+				flex: 1 1 6vw;
+				padding: 5px;
+				font-size: 1.6vw;
+				background-color: gold;
+				display: inline-block;
+				aspect-ratio: 0.8;
+				vertical-align: text-top;
+				&[dir="rtl"] {
+					font-size: 2.4vw;
+				}
+
+				&.ok {
+					background-color: royalblue;
+					color: white;
+				}
+				&.dupe {
+					opacity: 0.2;
+				}
+
+				&:nth-child(2) {
+					writing-mode: vertical-lr;
+				}
+
+				&:nth-child(3) {
+					writing-mode: vertical-rl;
+				}
+
+				&:nth-child(4) {
+					writing-mode: sideways-lr;
+				}
+
+				&:nth-child(5) {
+					writing-mode: sideways-rl;
+				}
+
+				&:nth-child(6) {
+					writing-mode: vertical-lr;
+					text-orientation: sideways;
+				}
+
+				&:nth-child(7) {
+					writing-mode: vertical-rl;
+					text-orientation: sideways;
+				}
+
+				&:nth-child(8) {
+					writing-mode: vertical-lr;
+					text-orientation: upright;
+				}
+
+				&:nth-child(9) {
+					writing-mode: vertical-rl;
+					text-orientation: upright;
+				}
+			}
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<code>default</code>
+		<code>writing-mode: vertical-lr<br>text-orientation: mixed</code>
+		<code>writing-mode: vertical-rl<br>text-orientation: mixed</code>
+		<code>writing-mode: sideways-lr<br>text-orientation: mixed</code>
+		<code>writing-mode: sideways-rl<br>text-orientation: mixed</code>
+		<code>writing-mode: vertical-lr<br>text-orientation: sideways</code>
+		<code>writing-mode: vertical-rl<br>text-orientation: sideways</code>
+		<code>writing-mode: vertical-lr<br>text-orientation: upright</code>
+		<code>writing-mode: vertical-rl<br>text-orientation: upright</code>
+	</section>
+	<hr>
+	<section>
+		<div class="ok">Hello<br>World</div>
+		<div>Hello<br>World</div>
+		<div class="ok">Hello<br>World</div>
+		<div class="ok">Hello<br>World</div>
+		<div class="dupe">Hello<br>World</div>
+		<div class="dupe">Hello<br>World</div>
+		<div class="dupe">Hello<br>World</div>
+		<div class="ok">Hello<br>World</div>
+		<div>Hello<br>World</div>
+	</section>
+	<hr>
+	<section>
+		<div class="ok">ハロー<br>ワールド<br>HELLO<br>WORLD</div>
+		<div>ハロー<br>ワールド<br>HELLO<br>WORLD</div>
+		<div class="ok">ハロー<br>ワールド<br>HELLO<br>WORLD</div>
+		<div>ハロー<br>ワールド<br>HELLO<br>WORLD</div>
+		<div>ハロー<br>ワールド<br>HELLO<br>WORLD</div>
+		<div>ハロー<br>ワールド<br>HELLO<br>WORLD</div>
+		<div class="dupe">ハロー<br>ワールド<br>HELLO<br>WORLD</div>
+		<div>ハロー<br>ワールド<br>HELLO<br>WORLD</div>
+		<div>ハロー<br>ワールド<br>HELLO<br>WORLD</div>
+	</section>
+	<hr>
+	<section>
+		<div class="ok" dir="rtl">שלום<br>עולם</div>
+		<div dir="rtl">שלום<br>עולם</div>
+		<div class="ok" dir="rtl">שלום<br>עולם</div>
+		<div class="ok" dir="rtl">שלום<br>עולם</div>
+		<div class="dupe" dir="rtl">שלום<br>עולם</div>
+		<div class="dupe" dir="rtl">שלום<br>עולם</div>
+		<div class="dupe" dir="rtl">שלום<br>עולם</div>
+		<div dir="rtl">שלום<br>עולם</div>
+		<div dir="rtl">שלום<br>עולם</div>
+	</section>
+</body>
+</html>

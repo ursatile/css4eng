@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Top Right Bottom Left Inline Block Start End</title>
+	<style>
+		html {
+			text-align: center;
+			font-family: Consolas, 'Courier New', Courier, monospace;
+			background: black;
+			color: white;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		article {
+			display: flex;
+			gap: 20px;
+			justify-content: space-around;
+		}
+
+		section {
+			&:only-of-type {
+				div {
+					inline-size: 20vw;
+					block-size: 70px;
+				}
+			}
+			background: white;
+			color: black;
+			flex: 1;
+			div {
+				vertical-align: text-top;
+				display: inline-block;
+				inline-size: 70px;
+				block-size: 19vw;
+				margin: 10px;
+				background-color: gold;
+				padding: 10px;
+				position: relative;
+			}
+
+			div:nth-of-type(1) {
+				border-top: 10px solid purple;
+				border-left: 10px solid forestgreen;
+			}
+
+			div:nth-of-type(2) {
+				border-block: 10px solid royalblue;
+			}
+
+			div:nth-of-type(3) {
+				border-inline: 10px solid crimson;
+			}
+
+			div:nth-of-type(4) {
+				border-block-start: 10px solid royalblue;
+				border-inline-end: 10px solid crimson;
+			}
+		}
+	</style>
+</head>
+<body>
+	<pre>Direction: ltr (left-to-right)</pre>
+	<article>
+		<section>
+			<div>top, left</div>
+			<div>block</div>
+			<div>inline</div>
+			<div>block-start + inline-end</div>
+		</section>
+	</article>
+	<article>
+		<pre>vertical-lr</pre>
+		<pre>vertical-rl</pre>
+		<pre>sideways-lr</pre>
+		<pre>sideways-rl</pre>
+	</article>
+	<article>
+		<section style="writing-mode: vertical-lr;">
+			<div>A a<br>B b</div>
+			<div>C c<br>D d</div>
+			<div>E e<br>F f</div>
+			<div>G g<br>H h</div>
+		</section>
+		<section style="writing-mode: vertical-rl;">
+			<div>A a<br>B b</div>
+			<div>C c<br>D d</div>
+			<div>E e<br>F f</div>
+			<div>G g<br>H h</div>
+		</section>
+		<section style="writing-mode: sideways-lr;">
+			<div>A a<br>B b</div>
+			<div>C c<br>D d</div>
+			<div>E e<br>F f</div>
+			<div>G g<br>H h</div>
+		</section>
+		<section style="writing-mode: sideways-rl;">
+			<div>A a<br>B b</div>
+			<div>C c<br>D d</div>
+			<div>E e<br>F f</div>
+			<div>G g<br>H h</div>
+		</section>
+	</article>
+	<hr>
+	<pre>Direction: rtl (right-to-left)</pre>
+	<article>
+		<section>
+			<div>top, left</div>
+			<div>block</div>
+			<div>inline</div>
+			<div>block-start + inline-end</div>
+		</section>
+	</article>
+	<article>
+		<pre>vertical-lr</pre>
+		<pre>vertical-rl</pre>
+		<pre>sideways-lr</pre>
+		<pre>sideways-rl</pre>
+	</article>
+	<article>
+		<section style="writing-mode: vertical-lr;">
+			<div dir="rtl">A a<br>B b</div>
+			<div dir="rtl">C c<br>D d</div>
+			<div dir="rtl">E e<br>F f</div>
+			<div dir="rtl">G g<br>H h</div>
+		</section>
+		<section style="writing-mode: vertical-rl;">
+			<div dir="rtl">A a<br>B b</div>
+			<div dir="rtl">C c<br>D d</div>
+			<div dir="rtl">E e<br>F f</div>
+			<div dir="rtl">G g<br>H h</div>
+		</section>
+		<section style="writing-mode: sideways-lr;">
+			<div dir="rtl">A a<br>B b</div>
+			<div dir="rtl">C c<br>D d</div>
+			<div dir="rtl">E e<br>F f</div>
+			<div dir="rtl">G g<br>H h</div>
+		</section>
+		<section style="writing-mode: sideways-rl;">
+			<div dir="rtl">A a<br>B b</div>
+			<div dir="rtl">C c<br>D d</div>
+			<div dir="rtl">E e<br>F f</div>
+			<div dir="rtl">G g<br>H h</div>
+		</section>
+	</article>
+</body>
+</html>

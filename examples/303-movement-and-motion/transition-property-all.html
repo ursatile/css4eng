@@ -4,14 +4,39 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Transition Property All</title>
 	<style>
-		html, body {
-			margin: 0; padding: 0;
+		html,
+		body {
+			margin: 0;
+			padding: 0;
 		}
+
 		body {
 			height: 100vh;
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			position: relative;
+
+			span {
+				position: absolute;
+				left: 85vw;
+				top: 40vh;
+				width: 10px;
+				height: 10px;
+				border: 5px solid white;
+				border-radius: 100%;
+				pointer-events: none;
+				display: block;
+
+				&::after {
+					color: #fff;
+					position: absolute;
+					top: 15px;
+					left: -15px;
+					content: 'put your mouse here!';
+					text-align: center;
+				}
+			}
 
 			div {
 				background-color: purple;
@@ -25,11 +50,12 @@
 				align-items: center;
 				justify-content: center;
 				text-align: center;
-				transition: all 1s;
 				border-width: 2rem 1rem;
 				border-style: solid;
 				border-color: gold;
+
 				&:hover {
+					transition: all 1s;
 					border-radius: 3rem;
 					border-color: purple;
 					border-width: 1rem 2rem;
@@ -45,6 +71,7 @@
 </head>
 <body>
 	<div>hover!</div>
+	<span></span>
 
 </body>
 </html>

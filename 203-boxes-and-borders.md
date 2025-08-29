@@ -340,6 +340,41 @@ you'll end up with:
 
 As a general rule, it's safe to apply `inline-block` to elements that are intrinsically inline --- `<span>`, `<code>`, `<strong>`, `<em>` --- but if you apply it to block-level elements like `<div>`, `<pre>`, `<h1>`, watch out for whitespace getting introduced when you reformat the HTML source code. 
 
+## Writing Modes and Text Orientations
+
+As we've already seen, most CSS defaults are based on the assumption that we're reading top-to-bottom, left-to-right, so we can assume that, say, the *left margin* is the leading edge of the text. 
+
+That's not always true, though. In right-to-left writing systems like Arabic and Hebrew, there may be scenarios where we don't mean the *actual left* border, we mean the border that appears at the leading edge of a line of text.
+
+Han-based writing systems, which include Chinese, Japanese, and Korean, and so are sometimes known as CJK languages, were traditionally written vertically: start at the top right, the inline direction flows top-to-bottom, the block direction flows right-to-left. Today, it's common to see a mixture of horizontal (left-to-right) and vertical writing - this page from the Japanese edition of *Vogue* magazine includes text using both writing modes:
+
+<img src="images/vogue-japan-april-2025-page-212.png" alt="A page from Vogue Japan, showing two different writing modes used on the same page">
+
+In CSS, text can be horizontal, vertical, or sideways --- with *vertical* intended for CJK languages that were traditionally written vertically, and *sideways* intended for rotating languages which are traditionally written horizontally.
+
+Here's "hello world" in English, Japanase (katakana ハロー ワールド, literally "Harō wārudo", the transliterated title of the 2019 film "[HELLO WORLD](https://en.wikipedia.org/wiki/Hello_World_(film))"), and Hebrew ([שלום עולם](https://he.wikipedia.org/wiki/%D7%A9%D7%9C%D7%95%D7%9D_%D7%A2%D7%95%D7%9C%D7%9D_(%D7%A9%D7%99%D7%A8)) - "Hello World", a song by Galit Bell, which failed to qualify as Israel's entry for the 1996 Eurovision Song Contest); each one is shown using the nine different combinations of `writing-mode` and `text-orientation` supported by CSS:
+
+{% iframe writing-mode.html %}
+
+Even if you're working on internationalised sites with some fairly complex design, the examples highlighted in <span style="display: inline-block; padding: 2px; background-color: royalblue; color: white">blue</span> are the only ones you're ever likely to use in production - and the faded-out examples are duplicates; they produce the same effect as another combination.
+
+> The exception here is if you need to support Mongolian script, which is written top-to-bottom, left-to-right, but with glyphs oriented with their "baseline" towards the left edge. But we're not going to get into that, no matter how interesting it sounds.
+
+Things to note:
+
+* `text-orientation` only affects `vertical` text - not `sideways` text. 
+* Glyphs have an intrinsic orientation. If we write English text vertically, we rotate the letters *and* the lines - if we want the lines flowing vertically but don't want to rotate the letters, we need to specify `text-orientation: upright`. If we write Japanese text vertically, the glyphs stay upright; if we want to rotate them, we have to specify `text-orientation: sideways`
+
+## Top, Right, Bottom, Left, Inline, Block, Start, End
+
+Specifying borders, margins and padding in terms of top/left/bottom/right doesn't always cope well with alternative writing systems, so CSS encourages us to think in terms of the block and inline axis of each element:
+
+<img src="images/writing-modes.png" alt="writing modes">
+
+As well as the individual top, right, bottom, and left variants of each property, CSS also lets us specify them in terms of the `block` and `inline` axis, with `-start` and `-end` variants for each axis property.
+
+{% example top-right-bottom-left-inline-block-start-end.html elements="style,body" iframe_style="" %}
+
 ## Review & Recap
 
 * Elements on a page are either **block-level** or **inline** elements

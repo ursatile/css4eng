@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Timing Functions</title>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: Consolas, 'Courier New', Courier, monospace;
+			color: #fff;
+			display: flex;
+
+			a {
+				display: block;
+				background-color: crimson;
+				padding: 5px;
+				margin: 5px;
+				display: flex;
+				text-align: center;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+
+		section {
+			div {
+				width: 35vw;
+				background-color: forestgreen;
+				padding: 5px;
+				margin: 5px;
+				transition: all 1s;
+
+				&:hover {
+					width: 90vw;
+				}
+			}
+		}
+
+		a:hover+section div {
+			width: 90vw;
+		}
+	</style>
+</head>
+<body>
+	<a>
+		PLAY<br>
+		ALL
+	</a>
+	<section>
+		<div style="transition-delay: -1s;">transition-delay: -1s</div>
+		<div style="transition-delay: -0.5s;">transition-delay: -0.5s</div>
+		<div style="transition-delay: 0s;">transition-delay: 0s</div>
+		<div style="transition-delay: 0.5s;">transition-delay: 0.5s</div>
+		<div style="transition-delay: 1s;">transition-delay: 1s</div>
+	</section>
+</body>
+</html>
