@@ -117,6 +117,8 @@ module Jekyll
         output = prefix + rendered_output + suffix
         if @highlight_options[:iframe_style]
           output += %(<iframe src="./examples/#{page_filename}/#{expanded_path}" style="#{@highlight_options[:iframe_style]}"></iframe>)
+        elsif @highlight_options[:iframe]
+          output += %(<iframe src="./examples/#{page_filename}/#{expanded_path}"></iframe>)
         end
         return output
         # rescue => e

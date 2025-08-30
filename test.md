@@ -4,9 +4,9 @@ layout: home
 title: TEST TEST
 word_count: 27
 ---
-{% example test.html mark_lines="1,2,3,4,5" %}
+{% example test.html mark_lines="1,2,3,4,5" iframe_style="height: 2rem;" %}
 
-{% example test.css mark_lines="3,5,7,9" %}
+{% example test.css mark_lines="3,5,7,9" iframe_style="" %}
 
 How to Structure Things
 

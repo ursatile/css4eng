@@ -109,7 +109,42 @@ Now, in one sense, that's everything you need to know about CSS transitions: pro
 
 Sometimes you need something more complex than a smooth interpolation between the initial and the final state. That's where the CSS `animation` module gets involved.
 
-An **animation** in CSS has two components: a style describing the timing, duration and other parameters, and a set of **keyframes** that dictate the initial state, final state, and any intermediate  states./
+An **animation** in CSS has two components: a style describing the timing, duration and other parameters, and a **named set of keyframes** that dictate the initial state, final state, and any intermediate states.
+
+### Defining Keyframes
+
+Here's a simple keyframe animation that'll change an element's background colour from crimson to royal blue. This is the simplest possible example that actually works:
+
+{% example simple-keyframes.html elements="style" iframe_style="" %}
+
+Things to notice here:
+
+* The animation has a *name* - I've used `really-cool-animation-demo`
+  * You can use anything you like, as long as it's a valid `<custom-ident>` - see below.
+* The animation runs once, when the page loads.
+* The only way to run it again is to reload the page.
+* When the animation's done, it vanishes - we animate our `<div>` from crimson to royal blue, but it doesn't stay blue.
+
+Custom Identifiers
+
+Animation names in CSS must be a valid `<custom-ident`>: one or more characters, which can contain letters `A-Z a-z`, numbers `0-9`, hyphens `-`, underscores `_`
+
+* Number `0-9`
+* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  
 
