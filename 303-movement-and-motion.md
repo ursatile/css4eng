@@ -175,5 +175,5 @@ Course Content
 
 
 
-
+One really important thing to note about CSS transforms is that on the vast majority of modern computers, they're actually processed by the graphics processing unit (GPU) - you know that NVidia RTX5070 you bought to play Cyberpunk 2077? Yeah. By using CSS transforms, we can offload the visual processing to the GPU 0 a
 

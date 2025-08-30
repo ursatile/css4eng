@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Basic Transforms</title>
+</head>
+<style>
+	* {
+		box-sizing: border-box;
+	}
+
+	body {
+		margin: 0;
+		padding: 10px;
+		height: 600px;
+		width: 100vw;
+		display: grid;
+		gap: 10px;
+		grid-template-rows: repeat(3, 1fr 3vh);
+		grid-template-columns: 1fr, 1fr, 1fr;
+		grid-auto-flow: column;
+	}
+
+	pre {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0;
+		padding: 0;
+	}
+
+	div {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: royalblue;
+		font-size: 10vw;
+	}
+</style>
+<body>
+	<div><span style="transform: none;">😎</span></div>
+	<pre>transform: none;</pre>
+	<div><span style="transform: translate(70%);">😎</span></div>
+	<pre>transform: translate(70%);</pre>
+	<div><span style="transform: translate(0, 50px);">😎</span></div>
+	<pre>transform: translate(0, 50px);</pre>
+	<div><span style="transform: scale(2);">😎</span></div>
+	<pre>transform: scale(2);</pre>
+	<div><span style="transform: scale(0.5);">😎</span></div>
+	<pre>transform: scale(2);</pre>
+	<div><span style="transform: scale(2,0.5);">😎</span></div>
+	<pre>transform: scale(2);</pre>
+	<div><span style="transform: rotate(-120deg);">😎</span></div>
+	<pre>transform: rotate(-120deg);</pre>
+	<div><span style="transform: skew(45deg);">😎</span></div>
+	<pre>transform: skew(45deg);</pre>
+	<div><span style="transform: skew(20deg, 20deg);">😎</span></div>
+	<pre>transform: skew(20deg, 20deg);</pre>
+</body>
+</html>
