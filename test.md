@@ -2,7 +2,7 @@
 front: matter
 layout: home
 title: TEST TEST
-word_count: 27
+word_count: 30
 ---
 {% example test.html mark_lines="1,2,3,4,5" iframe_style="height: 2rem;" %}
 
