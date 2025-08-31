@@ -26,3 +26,14 @@ And, just to make things extra interesting, CSS transforms are applied **from ri
 It's clearer to see from an example. Hover your mouse over each of these examples to see the transformations being applied in order:
 
 {% iframe multiple-2d-transforms.html  %}
+
+In case you're wondering, the animations here are pure CSS; we'll learn about those in the module on transitions and animation later.
+
+CSS supports dedicated property aliases for the `scale`, `translate` and `rotate` transformations (but not `skew`, for some reason.):
+
+{% example transform-property-aliases.html elements="style,body" iframe %}
+
+If you're into the whole matrix thing, you can 
+
+
+
