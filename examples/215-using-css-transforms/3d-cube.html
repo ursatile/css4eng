@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Perspective</title>
+	<style>
+		div {
+			font-weight: bold;
+			font-size: 3rem;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 40vw;
+			height: 40vw;
+			border: 2px solid #000;
+			border-radius: 2px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		div.front {
+			background-color: hsl(0 100% 70% / 0.8);
+			transform: translateZ(20vw);
+		}
+		div.back {
+			background-color: hsl(60 100% 70% / 0.8);
+			transform: translateZ(-20vw) rotateY(180deg);
+		}
+		div.left {
+			background-color: hsl(120 100% 70% / 0.8);
+			transform: translateX(-20vw) rotateY(-90deg);
+		}
+		div.right {
+			background-color: hsl(180 100% 70% / 0.8);
+			transform: translateX(20vw) rotateY(+90deg);
+		}
+		div.top {
+			background-color: hsl(240 100% 70% / 0.8);
+			transform: translateY(-20vw) rotateX(+90deg);
+		}
+		div.bottom {
+			background-color: hsl(300 100% 70% / 0.8);
+			transform: translateY(20vw) rotateX(-90deg);
+		}
+	</style>
+	<style>
+		@import url('../styles/raleway.css');
+
+		* { box-sizing: border-box; }
+
+		body,
+		html {
+			margin: 0;
+			padding: 0;
+		}
+
+		@keyframes spin {
+			0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+			25% { transform: rotateX(0.5turn) rotateY(1turn) rotateZ(0.25turn); }
+			50% { transform: rotateX(1turn) rotateY(2turn) rotateZ(0.5turn); }
+			75% { transform: rotateX(1.5turn) rotateY(3turn) rotateZ(0.75turn); }
+			100% { transform: rotateX(2turn) rotateY(4turn) rotateZ(1turn); }
+		}
+		body {
+			width: 100vw;
+			height: 100vh;
+			min-height: 480px;
+			display: flex;
+			gap: 10px;
+			padding: 10px;
+			background-color: black;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+
+			&:hover {
+				section { animation: spin 10s linear infinite; }
+			}
+			section {
+				transform-origin: 20vw 20vw;
+				transform-style: preserve-3d;
+				transform: rotateY(25deg) rotateX(-25deg);
+				position: relative;
+				left: -20vw;
+				top: -20vw;
+			}
+		}
+	</style>
+</head>
+<body>
+	<article style="perspective: 100vw;">
+		<section>
+			<div class="front">FRONT</div>
+			<div class="back">BACK</div>
+			<div class="left">LEFT</div>
+			<div class="right">RIGHT</div>
+			<div class="top">TOP</div>
+			<div class="bottom">BOTTOM</div>
+		</section>
+	</article>
+</body>
+</html>
