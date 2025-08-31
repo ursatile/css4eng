@@ -4,6 +4,31 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Minimal 3d Transform</title>
 	<style>
+		body {
+			background: black;
+			padding: 10px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: 10px;
+			height: 100vh;
+			min-height: 420px;
+			perspective: 100vw;
+		}
+
+		div {
+			background-color: purple;
+			color: white;
+			border-radius: 10px;
+			font-size: 8vw;
+			font-weight: 900;
+			padding: 20px;
+			text-align: center;
+			&:nth-of-type(1) { transform: rotateY(65deg); }
+			&:nth-of-type(2) { transform: rotateY(-65deg); }
+		}
+	</style>
+	<style>
 		@import url("../styles/raleway.css");
 		* { box-sizing: border-box; }
 
@@ -11,28 +36,6 @@
 		html {
 			margin: 0;
 			padding: 0;
-		}
-
-		body {
-			padding: 10px;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			gap: 10px;
-			height: 100vh;
-			min-height: 400px;
-			perspective: 80vw;
-		}
-
-		div {
-			background-color: purple;
-			color: white;
-			border-radius: 10px;
-			font-size: 7vw;
-			font-weight: 900;
-			padding: 20px;
-			&:nth-of-type(1) { text-align: left; transform: rotateY(65deg); }
-			&:nth-of-type(2) { text-align: right; transform: rotateY(-65deg); }
 		}
 	</style>
 </head>

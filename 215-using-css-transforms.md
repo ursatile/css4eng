@@ -58,11 +58,11 @@ transform: <scale> <rotate> <translate> <skew>
 
 is like calling a set of transformation functions:
 
-➡️ `scale ( rotate ( translate ( skew ( shape ))))`
-➡️ `scale ( rotate ( translate ( skewed-shape )))`
-➡️ `scale ( rotate ( translated-skewed-shape ))`
-➡️ `scale ( rotated-translated-skewed-shape )`
-➡️ `scaled-rotated-translated-skewed-shape`
+➡️ `scale ( rotate ( translate ( skew ( shape ))))`  
+➡️ `scale ( rotate ( translate ( skewed-shape )))`  
+➡️ `scale ( rotate ( translated-skewed-shape ))`  
+➡️ `scale ( rotated-translated-skewed-shape )`  
+➡️ `scaled-rotated-translated-skewed-shape`  
 
 If you're happy doing the whole matrix thing, you can provide your own matrix:
 
@@ -87,7 +87,7 @@ Now, this is a *completely different thing* to the `z-index` and stacking contex
 
 Here's a minimal example of a 3D effect that would be impossible (well, extremely difficult) to achieve using only 2D transformation: perspective.
 
-{% example minimal-3d-transform.html elements="style,body" iframe %}
+{% example minimal-3d-transform.html mark_lines="16,27,28" elements="style,body" iframe %}
 
 
 

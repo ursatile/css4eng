@@ -14,3 +14,5 @@ sass:
 
 aux_links:
   Template Repository: https://github.com/just-the-docs/just-the-docs-template
+kramdown:
+ math_engine: mathjax
