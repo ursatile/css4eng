@@ -4,15 +4,59 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Transform List Multiple Properties Composite Transforms</title>
 	<style>
-		body {
-			* { box-sizing: border-box; }
+		span#example1 { transform: rotate(45deg) scale(2, 0.5) translate(0, 50px); }
 
+		span#example2 {
+			transform: translate(0, 50px);
+			transform: scale(2, 0.5);
+			transform: rotate(45deg);
+		}
+
+		span#example3 {
+			translate: 0 50px;
+			scale: 2 0.5;
+			rotate: 45deg;
+		}
+
+		span#example4 {
+			rotate: 45deg;
+			scale: 2 0.5;
+			translate: 0 50px;
+		}
+	</style>
+	<style>
+		* { box-sizing: border-box; }
+		body, html { padding: 0; margin: 0; }
+		body { padding: 10px; }
+
+		section {
 			display: flex;
 			gap: 10px;
-			padding: 10px;
+			pre {
+				flex: 1 1 25vw;
+				text-align: center;
+				margin: 10px 0 0 0;
+			}
 			div {
 				font-size: 4rem;
-				background-color: royalblue;
+				background: repeating-conic-gradient(
+						transparent 0 90deg,
+						royalblue 90deg 180deg,
+						transparent 180deg 270deg,
+						royalblue 270deg 360deg
+					)
+					top left / 10px 10px,
+				linear-gradient(
+					transparent 0 calc(50% - 0.5px),
+					white calc(50% - 0.5px) calc(50% + 0.5px),
+					transparent calc(50% + 0.5px)
+				),
+				linear-gradient(
+					to right,
+					royalblue 0 calc(50% - 0.5px),
+					white calc(50% - 0.5px) calc(50% + 0.5px),
+					royalblue calc(50% + 0.5px)
+				);
 				flex: 1 1 25vw;
 				height: 200px;
 				display: flex;
@@ -20,15 +64,20 @@
 				justify-content: center;
 			}
 		}
-
-		span#example1 {	transform: rotate(45deg) translate(-100px) scale(2);	}
-
 	</style>
 </head>
 <body>
-	<div><span id="example1">😎</span></div>
-	<div><span id="example2">😎</span></div>
-	<div><span id="example3">😎</span></div>
-	<div><span id="example4">😎</span></div>
+	<section>
+		<div><span id="example1">😎</span></div>
+		<div><span id="example2">😎</span></div>
+		<div><span id="example3">😎</span></div>
+		<div><span id="example4">😎</span></div>
+	</section>
+	<section>
+		<pre>#example1</pre>
+		<pre>#example2</pre>
+		<pre>#example3</pre>
+		<pre>#example4</pre>
+	</section>
 </body>
 </html>
