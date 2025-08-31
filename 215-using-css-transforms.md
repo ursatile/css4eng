@@ -91,6 +91,8 @@ Here's a minimal example of a 3D effect that would be impossible (well, extremel
 
 The key here is the `perspective` property applied to the body. Without this, you can still apply 3D transformations, but you'll see them in what's called an *orthogonal projection*; objects don't appear smaller if they're further away from the "camera", so you don't really get the full impact of the 3D effect.
 
+{% example perspective.html elements="style,body" iframe %}
+
 CSS defines a bunch of named 3D transformation properties, as well as a 3D version of the `matrix()` transform we looked at a moment ago.
 
 

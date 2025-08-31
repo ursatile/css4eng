@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Perspective</title>
+	<style></style>
+	<style>
+		* { box-sizing: border-box; }
+
+		body,
+		html {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			article {
+				outline: 1px solid orange;
+				perspective: 1000px;
+				flex: 1 1 50vw;
+				height: 300px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				section {
+					position: relative;
+					div {
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100px;
+						height: 100px;
+					}
+					div:nth-of-type(1) {
+						background-color: #3699;
+						transform: rotateY(-45deg) translate(-50px);
+					}
+					div:nth-of-type(2) {
+						background-color: #3969;
+						transform: rotateY(45deg) translate(50px);
+					}
+				}
+			}
+		}
+	</style>
+</head>
+<body>
+	<article>
+		<section>
+			<div>A</div>
+			<div>B</div>
+			<div>C</div>
+		</section>
+	</article>
+</body>
+</html>
