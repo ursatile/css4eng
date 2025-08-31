@@ -4,7 +4,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Minimal 3d Transform</title>
 	<style>
-		@import url('../styles/raleway.css');
+		@import url("../styles/raleway.css");
 		* { box-sizing: border-box; }
 
 		body,
@@ -14,23 +14,30 @@
 		}
 
 		body {
-			height: 100vh;
+			padding: 10px;
 			display: flex;
-			align-items: center;
+			flex-direction: column;
 			justify-content: center;
-			perspective: 1500px;
+			gap: 10px;
+			height: 100vh;
+			min-height: 400px;
+			perspective: 80vw;
 		}
+
 		div {
-			font-size: 10vw;
+			background-color: purple;
+			color: white;
+			border-radius: 10px;
+			font-size: 7vw;
 			font-weight: 900;
-			color: gold;
-			background-color: royalblue;
 			padding: 20px;
-			transform: rotateY(65deg);
+			&:nth-of-type(1) { text-align: left; transform: rotateY(65deg); }
+			&:nth-of-type(2) { text-align: right; transform: rotateY(-65deg); }
 		}
 	</style>
 </head>
 <body>
-	<div>CSS just went 3D!</div>
+	<div>The future's so bright...</div>
+	<div>...I gotta wear shades!</div>
 </body>
 </html>
