@@ -13,19 +13,25 @@
 			padding: 0;
 		}
 		body {
+			transform-style: preserve-3d;
 			width: 100vw;
 			height: 100vh;
 			display: flex;
 			article {
+				transform-style: preserve-3d;
 				outline: 1px solid orange;
-				perspective: 100px;
 				flex: 1 1 50vw;
 				height: 300px;
 				display: flex;
 				align-items: center;
 				justify-content: center;
+				perspective: 100px;
+				perspective-origin: 50% 50%;
 				section {
+					transform-style: preserve-3d;
 					position: relative;
+					left: -50px;
+					top: -50px;
 					div {
 						position: absolute;
 						top: 0;
@@ -37,11 +43,11 @@
 					}
 					div.front {
 						background-color: hsl(0 100% 70% / 0.5);
-						transform: translate3d(0, 0, 500px);
+						transform: translateZ(50px);
 					}
 					div.back {
 						background-color: hsl(60 100% 70% / 0.5);
-						transform: translate3d(0, 0, -500px);
+						transform: translateZ(-50px);
 					}
 					div.left { background-color: hsl(120 100% 70% / 0.5); }
 					div.right { background-color: hsl(180 100% 70% / 0.5); }
@@ -58,9 +64,9 @@
 			<div class="front">FRONT</div>
 			<div class="back">BACK</div>
 			<!-- <div class="left">LEFT</div>
-		<div class="right">RIGHT</div>
-		<div class="top">TOP</div>
-		<div class="bottom">BOTTOM</div> -->
+<div class="right">RIGHT</div>
+<div class="top">TOP</div>
+<div class="bottom">BOTTOM</div> -->
 		</section>
 	</article>
 </body>
