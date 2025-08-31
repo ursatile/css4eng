@@ -16,6 +16,13 @@ We'll start with the basic 2D transforms: `translate`, `scale`, `rotate`, `trans
 
 {% iframe basic-transforms.html %}
 
-You can apply multiple transforms to the same element, but if you do this, pay attention to the order of the transforms; they're all applied relative to the same origin, so applying a translation followed by a rotation will produce a different effect to rotating and *then* translating:
+You can apply multiple transforms to the same element, but if you do this, pay attention to the order of the transforms. Rotating and *then* translating an element produces a completely different effect to translating and then rotating it.
 
-{% iframe multiple-2d-transforms.html %}
+And, just to make things extra interesting, CSS transforms are applied **from right to left**. 
+
+* If you want to know why... it's because CSS transforms, like all geometric transformations in computer graphics, are implemented using matrices. When you apply multiple transformations, CSS multiplies the transformation matrices to produce a single composite transformation. Matrix multiplication is not commutative (𝐴 × 𝐵 ≠ 𝐵 × 𝐴), and when you multiply matrices left-to-right, the *last* transformation in the expression is the one that gets applied *first*.
+* If you don't want to know why, that's also fine. The whole reason CSS has friendly aliases like `rotate` and `scale` is so you can use transforms do to useful things without having to know what a matrix is.
+
+It's clearer to see from an example. Hover your mouse over each of these examples to see the transformations being applied in order:
+
+{% iframe multiple-2d-transforms.html  %}
