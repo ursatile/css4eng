@@ -10,11 +10,11 @@
 			margin: 0;
 			padding: 10px;
 			height: 100vh;
-			min-height: 400px;
+			min-height: 200px;
 			width: 100vw;
 			display: grid;
 			gap: 10px;
-			grid-template-rows: repeat(1, 1fr 3vh);
+			grid-template-rows: repeat(1, 1fr 2em);
 			grid-template-columns: 1fr, 1fr, 1fr;
 			grid-auto-flow: column;
 		}
@@ -40,7 +40,7 @@
 					top left / 10px 10px,
 				linear-gradient(
 					transparent 0 calc(50% - 0.5px),
-					white calc(50% - 1px) calc(50% + 1px),
+					white calc(50% - 0.5px) calc(50% + 0.5px),
 					transparent calc(50% + 0.5px)
 				),
 				linear-gradient(
@@ -54,11 +54,11 @@
 	</style>
 </head>
 <body>
-	<div><span style="scale: 1 2">😎</span></div>
-	<pre>scale: 1 2;</pre>
+	<div><span style="scale: 2 1">😎</span></div>
+	<pre>scale: 2 1;</pre>
 	<div><span style="rotate: 45deg">😎</span></div>
 	<pre>rotate: 45deg;</pre>
-	<div><span style="translate: 12vw 5vw">😎</span></div>
-	<pre>translate: 12vw 5vw</pre>
+	<div><span style="translate: 8vw 3vw">😎</span></div>
+	<pre>translate: 8vw 3vw</pre>
 </body>
 </html>

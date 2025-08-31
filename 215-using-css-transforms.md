@@ -31,9 +31,13 @@ In case you're wondering, the animations here are pure CSS; we'll learn about th
 
 CSS supports dedicated property aliases for the `scale`, `translate` and `rotate` transformations (but not `skew`, for some reason.):
 
-{% example transform-property-aliases.html elements="style,body" iframe %}
+{% example transform-property-aliases.html elements="body" iframe %}
 
-If you're into the whole matrix thing, you can 
+Now, take a look at this example here:
+
+{% example transform-list-multiple-properties-composite-transforms.html elements="style" iframe %}
+
+
 
 
 
