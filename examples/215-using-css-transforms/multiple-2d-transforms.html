@@ -47,7 +47,7 @@
 
 		@keyframes rotate-then-translate {
 			0% { transform: none; }
-			50% { transform: rotate(45deg) }
+			50% { transform: rotate(45deg); }
 			100% { transform: translate(12vw) rotate(45deg); }
 		}
 		div {
@@ -76,7 +76,7 @@
 
 			span { animation-delay: 0.2s; }
 
-			&:hover {
+			&:active {
 				span[style="transform: rotate(90deg) scale(1, 2)"] {
 					animation: scale-then-rotate 2s;
 				}
@@ -95,9 +95,9 @@
 </head>
 <body>
 	<div><span style="transform: rotate(90deg) scale(1, 2)">😎</span></div>
-	<pre>transform: rotate(90deg) scale(1,2);</pre>
+	<pre>transform: rotate(90deg) scale(1, 2);</pre>
 	<div><span style="transform: scale(1, 2) rotate(90deg)">😎</span></div>
-	<pre>transform: scale(1,2) rotate(90deg);</pre>
+	<pre>transform: scale(1, 2) rotate(90deg);</pre>
 	<div><span style="transform: rotate(45deg) translate(12vw)">😎</span></div>
 	<pre>transform: rotate(45deg) translate(12vw)</pre>
 	<div><span style="transform: translate(12vw) rotate(45deg)">😎</span></div>
