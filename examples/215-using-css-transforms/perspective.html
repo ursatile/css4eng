@@ -6,6 +6,7 @@
 	<style></style>
 	<style>
 		@import url('../styles/raleway.css');
+		
 		* { box-sizing: border-box; }
 
 		body,
@@ -13,6 +14,12 @@
 			margin: 0;
 			padding: 0;
 		}
+		@keyframes zoom {
+			0% { perspective: 0px; }
+			50% { perspective: 100px; }
+			100% { perspective: 0px; }
+		}
+
 		@keyframes spin {
 			0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
 			25% { transform: rotateX(0.5turn) rotateY(1turn) rotateZ(0.25turn); }
@@ -34,9 +41,12 @@
 				align-items: center;
 				justify-content: center;
 				overflow: hidden;
+				&:hover {
+					section { animation: spin 10s linear infinite; }
+				}
 				section {
 					transform-origin: 50px 50px;
-					animation: spin 10s linear infinite;
+
 					transform-style: preserve-3d;
 					position: relative;
 					left: -50px;
@@ -85,6 +95,16 @@
 	</style>
 </head>
 <body>
+	<article style="perspective: 10px;">
+		<section>
+			<div class="front">FRONT</div>
+			<div class="back">BACK</div>
+			<div class="left">LEFT</div>
+			<div class="right">RIGHT</div>
+			<div class="top">TOP</div>
+			<div class="bottom">BOTTOM</div>
+		</section>
+	</article>
 	<article style="perspective: 100px;">
 		<section>
 			<div class="front">FRONT</div>
@@ -95,7 +115,7 @@
 			<div class="bottom">BOTTOM</div>
 		</section>
 	</article>
-	<article style="perspective: 1000px;">
+	<article style="perspective: 200px;">
 		<section>
 			<div class="front">FRONT</div>
 			<div class="back">BACK</div>
@@ -105,7 +125,7 @@
 			<div class="bottom">BOTTOM</div>
 		</section>
 	</article>
-	<article style="perspective: 1000000000000000000px;">
+	<article style="perspective: 500px;">
 		<section>
 			<div class="front">FRONT</div>
 			<div class="back">BACK</div>
@@ -115,6 +135,5 @@
 			<div class="bottom">BOTTOM</div>
 		</section>
 	</article>
-
 </body>
 </html>
