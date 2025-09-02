@@ -8,11 +8,13 @@ word_count: 10
 ---
 Forms are the fundamental building blocks of interactive web applications. Everything we've looked at so far has been static content: users can scroll, click, and navigate around our content, but they're not really interacting with it.
 
-The first iteration of HTML forms included a basic set of elements:
+The first iteration of HTML forms included a basic set of input types:
 
 {% iframe basic-html-form-elements.html %}
 
+HTML5 (which rolled out gradually from 2007-2014) introduced a whole bunch of new form types, but all of these are fundamentally different ways to submit a string:
 
+{% iframe html5-form-elements.html %}
 
 
 
