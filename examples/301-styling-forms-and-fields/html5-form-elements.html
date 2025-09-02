@@ -8,11 +8,12 @@
 			padding: 10px 0;
 			border-top: 1px solid #000;
 			margin: 0;
+			clear: both;
 		}
 
 		label {
 			font-family: Consolas, 'Courier New', Courier, monospace;
-			width: 12em;
+			width: 10em;
 			display: inline-block;
 		}
 
@@ -25,6 +26,9 @@
 </head>
 <body>
 	<h1>HTML5 Input Types</h1>
+	<p><label>Input Type</label>
+		<span>Underlying Value</span>
+	</p>
 	<p><label for="color">color:</label>
 		<input type="color" id="color" value="#336699">
 		<span></span>
@@ -59,19 +63,19 @@
 		<span></span>
 	</p>
 	<p><label for="tel">tel:</label>
-		<input type="tel" id="tel">
+		<input type="tel" id="tel" value="+44 5150 090125">
 		<span></span>
 	</p>
 	<p><label for="time">time:</label>
-		<input type="time" id="time">
+		<input type="time" id="time" value="16:20">
 		<span></span>
 	</p>
 	<p><label for="url">url:</label>
-		<input type="url" id="url">
+		<input type="url" id="url" value="https://dylanbeattie.net">
 		<span></span>
 	</p>
 	<p><label for="week">week:</label>
-		<input type="week" id="week">
+		<input type="week" id="week" value="1955-W44">
 		<span></span>
 	</p>
 </body>
