@@ -12,24 +12,26 @@
 
 		label {
 			font-family: Consolas, 'Courier New', Courier, monospace;
-			width: 22em;
+			width: 12em;
+			display: inline-block;
 		}
-
-		input::after {
+		span {
+			font-family: Consolas, 'Courier New', Courier, monospace;
+			float: right;
 			display: block;
-			outline: 1px solid orange;
-			content: attr(value);
-			margin-left: 10px;
-			font-style: italic;
-			color: #666;
 		}
-	</style>
 
+	</style>
 </head>
 <body>
 	<h1>HTML5 Input Types</h1>
-	<p><label for="color">color:</label> <input type="color" id="color" value="#336699"></p>
-	<p><label for="date">date:</label> <input type="date" id="date"></p>
+	<p><label for="color">color:</label> <input type="color" id="color"
+			value="#336699">
+		<span></span>
+	</p>
+	<p><label for="date">date:</label> <input type="date" id="date">
+		<span></span>
+	</p>
 	<p><label for="datetime-local">datetime-local:</label>
 		<input type="datetime-local" id="datetime-local">
 	</p>
@@ -42,6 +44,13 @@
 	<p><label for="time">time:</label> <input type="time" id="time"></p>
 	<p><label for="url">url:</label> <input type="url" id="url"></p>
 	<p><label for="week">week:</label> <input type="week" id="week"></p>
-
 </body>
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		document.querySelectorAll('input').forEach(input => input.addEventListener('change', function () {
+			const span = this.parentElement.querySelector('span');
+			if (span) span.innerHTML = this.value;
+		}));
+	});
+</script>
 </html>
