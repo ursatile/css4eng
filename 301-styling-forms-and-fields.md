@@ -6,15 +6,11 @@ target_minutes: 15
 title: "Styling Forms and Fields"
 word_count: 10
 ---
-# Styling Forms and Fields
+Forms are the fundamental building blocks of interactive web applications. Everything we've looked at so far has been static content: users can scroll, click, and navigate around our content, but they're not really interacting with it.
 
-## Course Content
+The first iteration of HTML forms included a basic set of elements:
 
-- Buttons, Inputs, Selects
-
-## Notes
-
-
+{% example basic-html-form-elements.html %}
 
 
 

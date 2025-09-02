@@ -96,6 +96,9 @@ iframe {
 	display: block;
 	margin: 0px auto 2px auto;
 }
+video {
+	width: 100%;
+}
 
 figure.iframe:has(iframe[style*="width: 50%"]) {
 	width: 50%;

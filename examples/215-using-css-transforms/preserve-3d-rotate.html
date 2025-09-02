@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>preserve-3d</title>
+	<style>
+		body {
+
+			article {
+				margin: 2vw;
+
+				&:not(:last-of-type) { margin-bottom: 5vw; }
+
+				background-color: #000c;
+				perspective: 50vw;
+				padding: 20px;
+				display: flex;
+				justify-content: center;
+				gap: 0.2vw;
+
+				&:hover {
+					div { transform: none !important; }
+				}
+
+				div {
+					width: 14vw;
+					transition: transform 1s;
+					border: 2px solid black;
+					border-radius: 10px;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					font-family: Consolas, 'Courier New', Courier, monospace;
+					font-size: 8vw;
+
+					pre { font-size: 1.5vw; }
+					&:nth-of-type(1) { background-color: gold; }
+					&:nth-of-type(2) { background-color: crimson; }
+					&:nth-of-type(3) { background-color: royalblue; }
+				}
+			}
+		}
+	</style>
+</head>
+<body>
+	<article>
+		<div style="transform: rotateZ(-45deg);">🐄</div>
+		<div style="transform: rotateY(-25deg);">🐈</div>
+		<div style="transform: rotateZ(45deg);">🪿</div>
+	</article>
+	<article style="transform-style: preserve-3d;">
+		<div style="transform: rotateZ(-45deg);">🐄</div>
+		<div style="transform: rotateY(-25deg);">🐈</div>
+		<div style="transform: rotateZ(45deg);">🪿</div>
+	</article>
+</body>
+<script>
+	document.querySelectorAll("div").forEach(div => {
+		div.innerHTML += "<pre>" + div.getAttribute("style").replace(/transform: /, '') + "</pre>";
+	});
+</script>
+</html>

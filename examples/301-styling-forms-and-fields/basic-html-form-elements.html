@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Basic Html Form Elements</title>
+</head>
+<body>
+	<h2>Papa Pepperoni's Pizza Picker</h2>
+	<form action="#" method="post">
+		<p>
+			<label for="size">
+				Size:
+			</label>
+			<select>
+				<option>select...</option>
+				<option>Small (8")</option>
+				<option>Medium (12")</option>
+				<option>Large (16")</option>
+				<option>Party (24")</option>
+			</select>
+		</p>
+		<fieldset>
+			<legend>Toppings</legend>
+			<label>
+				<input type="checkbox" name="toppings" value="ham">
+				Ham</label>
+			<label>
+				<input type="checkbox" name="toppings" value="pepperoni">
+				Pepperoni</label>
+			<label>
+				<input type="checkbox" name="toppings" value="pineapple">
+				Pineapple</label>
+			<label>
+				<input type="checkbox" name="toppings" value="mushroom">
+				Mushrooms</label>
+			<label>
+				<input type="checkbox" name="toppings" value="jalapeno">
+				Jalapeños</label>
+		</fieldset>
+		<fieldset>
+			<legend>Base</legend>
+			<label>
+				<input type="radio" name="base" value="thin">
+				Thin Crust</label>
+			<label>
+				<input type="radio" name="base" value="deep-pan">
+				Deep Pan</label>
+			<label>
+				<input type="radio" name="base" value="chicago">
+				Chicago Style</label>
+			<label>
+				<input type="radio" name="toppings" value="stuffed-crust">
+				Stuffed Crust</label>
+		</fieldset>
+		<p>
+			<label>Dipping Sauce:</label><br>
+			<select name="multiselect" multiple size="4">
+				<option value="garlic-ranch">Garlic & Herb</option>
+				<option value="item2">Honey Mustard</option>
+				<option value="item3">BBQ</option>
+				<option value="item4">Sour Cream & Chive</option>
+				<option value="item4">Carolina Reaper</option>
+			</select>
+		</p>
+		<p>
+			<label>Name:</label> <input type="text" value="Hungry Joe"
+				name="textfield" size="30">
+		</p>
+		<p>
+			<label>Password:</label> <input type="password" name="password"
+				value="abcd1234" size="30">
+		</p>
+
+		<p>
+			<label>Delivery Address:</label><br>
+			<textarea name="textarea" rows="4" cols="40">Apartment 21
+456 Pepperoni Place
+Cheeseville
+</textarea>
+		</p>
+		<p>
+			<input type="submit" value="Submit">
+			<input type="reset" value="Reset">
+		</p>
+	</form>
+</body>
+</html>

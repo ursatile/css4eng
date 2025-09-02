@@ -42,6 +42,10 @@ At a glance, it looks like we're applying the same transformations - rotate > sc
 * `#example2`, we've specified the `transform` property three times - **but CSS is not procedural; it's declarative**. This doesn't create a composite transformation; the last one "wins". *(Imagine ordering ice-cream, and you keep changing your mind... "I'll have chocolate. No, vanilla. No, strawberry!". You're gonna get strawberry. Last one wins.)*
 * `#example3` and `#example4`, we've used the property aliases to apply three different transformations to the element, but when you specify transformations like this, they don't get combined. Each transformation is applied in isolation, **and the coordinate system is reset each time**, so it doesn't matter what order they're applied in.
 
+## Transforms and Viewports
+
+One important thing to notice about CSS transforms is that they're applied *after* the browser has finished laying out the document. If you use `scale` to make an element larger, the browser won't move other elements around to create space; if you `translate` an element so it's no longer within the browser window, the browser isn't going to add a scrollbar for it. If you do need to modify your layout to account for scaled, rotated or translated elements, you'll have to make the adjustments yourself.
+
 ## The Matrix Has You, Neo
 
 CSS transformations are all applied by using *matrices*; a very common technique used in computer graphics to rotate, skew, scale, and otherwise manipulate sets of coordinates in 2D or 3D space. 
@@ -89,27 +93,118 @@ Here's a minimal example of a 3D effect that would be impossible (well, extremel
 
 {% example minimal-3d-transform.html mark_lines="16,27,28" elements="style,body" iframe %}
 
+CSS defines a bunch of named 3D transformation properties, as well as a 3D version of the `matrix()` transform we looked at a moment ago. To get the full impact of the 3D effect, you'll need to apply a `perspective` to the parent element. Without this, you can still apply 3D transformations, but you'll see them in what's called an *orthogonal projection*; objects don't appear smaller if they're further away from the "camera":
+
+{% example 3d-transforms.html elements="body" iframe %}
+
+A good way to understand the `perspective` keyword has nothing to do with CSS - it's to look at a Hollywood camera trick called a *dolly zoom*, memorably used by Steven Spielberg in the movie *Jaws* - notice how Chief Brody's face stays roughly the same size, while the background behind him changes dramatically? 
+
+
+<video controls loop muted>
+  <source src="./media/jaws-dolly-zoom.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+CSS doesn't (yet!) simulate the full range of camera settings used in 3D computer graphics, like field of view and focal length, but it might help to think of `perspective` as a shorthand for "how much dolly zoom do you want?"; small values are way up close with a very wide-angle lens, large values are very long shots with a very narrow lens.
+
+## Understanding `preserve-3d`
+
+Take a look at these two examples here:
+
+{% iframe preserve-3d-translateZ.html elements="body" iframe %}
+
+In the top example, the red cat is being translated `30vw` *towards* the viewer, but still appears *behind* the blue goose.
+
+By default, every element in CSS has a completely isolated 3D transform context. Imagine we're painting each element on its own sheet of glass: when we translate, rotate and scale elements, we can't actually move them in real 3D space; we're drawing --- *projecting*, if you want to use the technical term --- that element onto its glass sheet, and then stacking those sheets in the order they appear in the HTML, remembering to account for `z-index` and stacking contexts.
+
+If we want to use 3D transforms to move objects so that they actually appear in front of and behind each other, they need to share a common 3D transformation space. CSS does this using the `transform-style` property. In the lower of the two examples above the black `<div>` has `transform-style: preserve-3d` applied, and so when we move the red cat towards the viewer, it appears in front of the blue goose, regardless of the order of the elements in the underlying HTML.
+
+So far, so good... but now check out what happens with rotation:
+
+{% iframe preserve-3d-rotate.html elements="body" iframe %}
+
+I've given the background a little transparency here, so you can see the effect more clearly: parts of the rotated elements are ending up *behind* the container.
+
+The only solution I've found to this is to introduce a wrapper element, so you've got a parent element that actually places the content into the DOM, a wrapper element that doesn't do anything except establish the 3D transformation space, and then the individual child elements within that space:
+
+{% example preserve-3d-with-wrapper.html elements="body" iframe %}
+
 ## Creating a 3D Cube
 
-The classic 3D transform demo is to create a cube in 3D space, using six `<div>` elements for each side of the cube, and transforming them in 3D space.
+The classic 3D transform demo is to create a cube in 3D space, using six `<div>` elements for each side of the cube, and transforming them in 3D space. In this example I've included a spinning transformation effect - hover over the cube to see the animation:
 
 {% example 3d-cube.html elements="style,body" iframe %}
 
-The key here is the `perspective` property applied to the body. Without this, you can still apply 3D transformations, but you'll see them in what's called an *orthogonal projection*; objects don't appear smaller if they're further away from the "camera", so you don't really get the full impact of the 3D effect.
+This effect also demonstrates more clearly how the `perspective` property works: here's the same cube, with the same animation effect, but with four different perspective values:
 
 {% iframe perspective.html %}
 
+In the leftmost example here, the perspective distance is actually inside the cube, producing a very dramatic --- albeit almost entirely useless --- 3D effect.
 
+## The Matrix Reloaded
 
-CSS defines a bunch of named 3D transformation properties, as well as a 3D version of the `matrix()` transform we looked at a moment ago.
+Finally --- yep, you guessed it --- there's the `matrix3d` transform:
 
+```css
+transform: matrix3d(a1, b1, c1, d1, a2, b2, c2, d2, a3, b3, c3, d3, a4, b4, c4, d4)
+```
 
+$$
+\begin{bmatrix}a1 & a2 & a3 & a4\\b1 & b2 & b3 & b4\\c1 & c2 & c3 & c4\\d1 & d2 & d3 & d4\end{bmatrix}
+$$
 
+You want to know what that does? I'd suggest buying a textbook on 3D computer graphics. 😎
 
+## Transformation Summary
 
+Just to recap, here's the complete list of CSS transform properties and what they do:
 
+#### Translation
 
+- `translate(𝑥)` – moves an element along the *x*-axis.
+- `translate(𝑥,𝑦)` – moves an element along the *x*- and *y*-axes.
+- `translate3d(𝑥,𝑦,𝑧)` – moves an element in 3D space along *x*, *y*, and *z*.
+- `translateX(𝑥)` – moves an element along the *x*-axis only.
+- `translateY(𝑦)` – moves an element along the *y*-axis only.
+- `translateZ(𝑧)` – moves an element along the *z*-axis only.
 
+#### Rotation
+
+- `rotate(𝛼)` – rotates the element around the *z*-axis (in 2D).
+- `rotate3d(𝑥,𝑦,𝑧,𝛼)` – rotates the element in 3D space around the vector (*x,y,z*) by angle *α*.
+- `rotateX(𝛼)` – rotates the element around the *x*-axis.
+- `rotateY(𝛼)` – rotates the element around the *y*-axis.
+- `rotateZ(𝛼)` – rotates the element around the *z*-axis (same as `rotate()`).
+
+#### Scaling
+
+- `scale(𝑠)` – scales uniformly by factor *s* on both *x* and *y* axes.
+- `scale(𝑠ₓ,𝑠ᵧ)` – scales by *sₓ* on the *x*-axis and *sᵧ* on the *y*-axis.
+- `scale3d(𝑠ₓ,𝑠ᵧ,𝑠𝑧)` – scales in 3D space along *x*, *y*, and *z*.
+- `scaleX(𝑠ₓ)` – scales only along the *x*-axis.
+- `scaleY(𝑠ᵧ)` – scales only along the *y*-axis.
+- `scaleZ(𝑠𝑧)` – scales only along the *z*-axis.
+
+#### Skewing
+
+- `skew(𝛼ₓ)` – skews the element by angle *αₓ* along the *x*-axis.
+- `skew(𝛼ₓ,𝛼ᵧ)` – skews by *αₓ* along the *x*-axis and *αᵧ* along the *y*-axis.
+- `skewX(𝛼ₓ)` – skews only along the *x*-axis.
+- `skewY(𝛼ᵧ)` – skews only along the *y*-axis.
+
+#### Matrix transforms
+
+- `matrix(𝑎,𝑏,𝑐,𝑑,𝑒,𝑓)` – defines a 2D transformation matrix.
+- `matrix3d(𝑎₁,𝑎₂,…,𝑎₁₆)` – defines a 3D transformation matrix using 16 values.
+
+## Review & Recap
+
+In this section, we've learned about how **CSS transforms** let you move beyond static presentation by translating, rotating, scaling, and skewing elements in 2D and 3D space.
+
+* Named transforms like `rotate()`, `scale()`, and `translate()` are friendly aliases for specific matrix operations; you can also use `matrix()` and `matrix3d()` for full control.
+* A *transform list* allows multiple transforms on one element, but order matters — they’re applied **right-to-left** because they’re based on matrix multiplication.
+* 3D transforms introduce depth and distance; the `perspective` property controls how dramatic the effect looks.
+* By default, each element has an isolated 3D context; using `transform-style: preserve-3d` gives child elements a common 3D space so that objects can appear in front of or behind each other.
+* Classic demos include spinning 3D cubes and dolly-zoom-style effects; in practice, most use cases can be handled with the simpler alias transforms rather than raw matrices.
 
 
 

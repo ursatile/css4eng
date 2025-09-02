@@ -4,6 +4,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Perspective</title>
 	<style>
+		section {
+			transform-origin: 20vw 20vw;
+			transform-style: preserve-3d;
+			transform: rotateY(25deg) rotateX(-25deg);
+			position: relative;
+			left: -20vw;
+			top: -20vw;
+		}
+
 		div {
 			font-weight: bold;
 			font-size: 3rem;
@@ -61,6 +70,7 @@
 			75% { transform: rotateX(1.5turn) rotateY(3turn) rotateZ(0.75turn); }
 			100% { transform: rotateX(2turn) rotateY(4turn) rotateZ(1turn); }
 		}
+
 		body {
 			width: 100vw;
 			height: 100vh;
@@ -77,19 +87,10 @@
 			&:hover {
 				section { animation: spin 10s linear infinite; }
 			}
-			section {
-				transform-origin: 20vw 20vw;
-				transform-style: preserve-3d;
-				transform: rotateY(25deg) rotateX(-25deg);
-				position: relative;
-				left: -20vw;
-				top: -20vw;
-			}
 		}
 	</style>
 </head>
-<body>
-	<article style="perspective: 100vw;">
+<body style="perspective: 100vw;">
 		<section>
 			<div class="front">FRONT</div>
 			<div class="back">BACK</div>
@@ -98,6 +99,5 @@
 			<div class="top">TOP</div>
 			<div class="bottom">BOTTOM</div>
 		</section>
-	</article>
 </body>
 </html>
