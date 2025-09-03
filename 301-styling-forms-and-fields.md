@@ -82,5 +82,11 @@ One option if you're wrapping your inputs in a `<label>` element is to style the
 
 {% example radio-buttons-and-checkboxes.html elements="style" iframe %}
 
+You still can't control the appearance of the actual form elements, though:
 
+![radio-buttons-and-checkboxes-on-different-platforms](./images/radio-buttons-and-checkboxes-on-different-platforms.png)
+
+To do that, you've got to completely strip out the native element and build a new one... and the good news is, CSS will totally let us do that, using `appearance: none`.
+
+{% example styling-inputs-with-appearance-none.html elements="style,body" iframe %}
 
