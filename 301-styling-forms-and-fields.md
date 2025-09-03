@@ -86,8 +86,12 @@ You *can* use the CSS `accent-color` property to change the colour of the select
 
 If you want more control than that, you've got to completely strip out the native element and build a new one... and the good news is, CSS will totally let us do that, using `appearance: none`.
 
-{% example styling-inputs-with-appearance-none.html elements="style,body" iframe %}
+{% example styling-inputs-with-appearance-none.html elements="style" iframe %}
 
 
 
 https://moderncss.dev/pure-css-custom-styled-radio-buttons/
+
+https://www.smashingmagazine.com/2021/09/simplifying-form-styles-accent-color/
+
+https://www.scottohara.me/blog/2021/09/24/custom-radio-checkbox-again.html

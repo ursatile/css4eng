@@ -4,16 +4,24 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Styling Inputs With Appearance None</title>
 	<style>
+		fieldset {
+			border: 2px solid navy;
+			border-radius: 5px;
+			margin-bottom: 20px;
+		}
+
 		input[type="radio"],
 		input[type="checkbox"] {
 			appearance: none;
-			width: 1.4em;
-			height: 1.4em;
+			width: 20px;
+			height: 20px;
 			border: 3px solid silver;
 			display: inline-grid;
 			place-content: center;
+			translate: 0 -1px;
 
-			&:focus { outline: 1px solid silver; }
+			&:focus { outline: 1px solid navy; }
+			&::before { transition: scale 0.2s; }
 
 			&:checked {
 				border-color: navy;
@@ -22,15 +30,27 @@
 			}
 		}
 
-		input[type="radio"] {
-			border-radius: 1rem;
+		input[type="checkbox"] {
+			border-radius: 2px;
 
 			&::before {
-				left: 2px;
-				top: 2px;
+				content: "✔";
+				font-weight: 900;
+				color: navy;
+				font-size: 1.2em;
+				scale: 0;
+				position: relative;
+				top: -1px;
+			}
+		}
+
+		input[type="radio"] {
+			border-radius: 12px;
+
+			&::before {
 				content: "";
-				width: 0.6em;
-				height: 0.6em;
+				width: 10px;
+				height: 10px;
 				box-shadow: inset 1rem 1rem navy;
 				border-radius: 1rem;
 				scale: 0;
