@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Styling Radio Buttons And Checkboxes</title>
+	<style>
+		fieldset {
+			border-radius: 8px;
+			padding: 10px;
+			margin-bottom: 10px;
+			border-color: #999;
+			display: grid;
+			grid-template-columns: repeat(4,1fr);
+			label {
+				border: 1px solid #999;
+				margin: 2px 8px 2px 0px;
+				padding: 4px 12px 4px 24px;
+				position: relative;
+				&:has(input[type="radio"]) { border-radius: 20px; }
+				&:has(input[type="checkbox"]) { border-radius: 4px; }
+
+				input {
+					position: absolute;
+					top: 3px;
+					left: 3px;
+				}
+
+				&:has(input:checked) { background-color: silver; }
+			}
+		}
+	</style>
+</head>
+<body>
+	<fieldset>
+		<legend>Favourite Queen Member</legend>
+		<label>
+			<input type="radio" name="queen" value="fm"> Freddie Mercury
+		</label>
+		<label>
+			<input type="radio" name="queen" value="bm" checked> Brian May
+		</label>
+		<label>
+			<input type="radio" name="queen" value="jd"> John Deacon
+		</label>
+		<label>
+			<input type="radio" name="queen" value="rt"> Roger Taylor
+		</label>
+	</fieldset>
+	<fieldset>
+		<legend>Which Queen Albums Do You Own?</legend>
+		<label>
+			<input type="checkbox" name="albums" value="queen"> Queen
+		</label>
+		<label>
+			<input type="checkbox" name="albums" value="queen-ii"> Queen II
+		</label>
+		<label>
+			<input type="checkbox" name="albums" value="sheer-heart-attack">
+			Sheer Heart Attack
+		</label>
+		<label>
+			<input type="checkbox" name="albums" value="a-night-at-the-opera" checked>
+			A Night At The Opera
+		</label>
+		<label>
+			<input type="checkbox" name="albums" value="a-day-at-the-races">
+			A Day At The Races
+		</label>
+		<label>
+			<input type="checkbox" name="albums" value="news-of-the-world">
+			News of the World
+		</label>
+		<label>
+			<input type="checkbox" name="albums" value="jazz">
+			Jazz
+		</label>
+		<label>
+			<input type="checkbox" name="albums" value="the-game">
+			The Game
+		</label>
+		<label>
+			<input type="checkbox" name="albums" value="flash" checked>
+			Flash Gordon
+		</label>
+		<label>
+			<input type="checkbox" name="albums" value="hot-space">
+			Hot Space
+		</label>
+		<label>
+			<input type="checkbox" name="albums" value="theworks">
+			The Works
+		</label>
+		<label>
+			<input type="checkbox" name="albums" value="akindofmagic" checked>
+			A Kind of Magic
+		</label>
+		<label>
+			<input type="checkbox" name="albums" value="themiracle" checked>
+			The Miracle
+		</label>
+		<label>
+			<input type="checkbox" name="albums" value="innuendo" checked>
+			Innuendo
+		</label>
+		<label>
+			<input type="checkbox" name="albums" value="made-in-heaven">
+			Made In Heaven
+		</label>
+	</fieldset>
+</body>
+</html>
