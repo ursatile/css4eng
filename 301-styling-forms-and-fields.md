@@ -46,6 +46,12 @@ When it comes to styling form elements, you'll find there's a few different appr
 
 Styling Inputs and Buttons
 
+You can style text fields and buttons like just about any other element - backgrounds, borders, gradients, fonts; all the techniques we've looked at so far in the course:
+
+{% example inputs-and-buttons.html elements="style,body" iframe %}
+
+
+
 
 
 
