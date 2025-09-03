@@ -78,15 +78,16 @@ If you find this easy, have a couple of drinks and then try doing it on your pho
 
 The problem with styling radio buttons and checkboxes is that on almost all devices, they aren't drawn by the browser - they're drawn by the operating system, so properties like border and background have no effect.
 
-One option if you're wrapping your inputs in a `<label>` element is to style the label; you'll need to tweak the positioning a bit to get it to look good, but thanks to modern CSS' support for the `:has()` selector, it's easy to style the label associated with the selected checkbox to make it more obvious which one's selected:
+One option if you're wrapping your inputs in a `<label>` element is to style the label; you'll need to tweak the positioning a bit to get it to look good, but thanks to modern CSS' support for the `:has()` selector, it's easy to style the label associated with the selected checkbox to make it more obvious which one's selected.
+
+You *can* use the CSS `accent-color` property to change the colour of the selected input, and you can apply CSS transforms to checkboxes and radio buttons to change the element size:
 
 {% example radio-buttons-and-checkboxes.html elements="style" iframe %}
 
-You still can't control the appearance of the actual form elements, though:
-
-![radio-buttons-and-checkboxes-on-different-platforms](./images/radio-buttons-and-checkboxes-on-different-platforms.png)
-
-To do that, you've got to completely strip out the native element and build a new one... and the good news is, CSS will totally let us do that, using `appearance: none`.
+If you want more control than that, you've got to completely strip out the native element and build a new one... and the good news is, CSS will totally let us do that, using `appearance: none`.
 
 {% example styling-inputs-with-appearance-none.html elements="style,body" iframe %}
 
+
+
+https://moderncss.dev/pure-css-custom-styled-radio-buttons/
