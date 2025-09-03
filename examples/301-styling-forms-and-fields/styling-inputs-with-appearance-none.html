@@ -5,26 +5,28 @@
 	<title>Styling Inputs With Appearance None</title>
 	<style>
 		fieldset {
-			border: 2px solid navy;
+			border: 2px solid black;
 			border-radius: 5px;
 			margin-bottom: 20px;
 		}
 
 		input[type="radio"],
 		input[type="checkbox"] {
+			color: magenta;
 			appearance: none;
 			width: 20px;
 			height: 20px;
-			border: 3px solid silver;
+			border: 2px solid black;
 			display: inline-grid;
 			place-content: center;
 			translate: 0 -1px;
 
-			&:focus { outline: 1px solid navy; }
+			&:focus { outline: 1px solid silver; }
 			&::before { transition: scale 0.2s; }
+			&:disabled { border-color: #ccc; background-color: #eee; }
 
 			&:checked {
-				border-color: navy;
+				border-color: currentcolor;
 
 				&::before { scale: 1; }
 			}
@@ -36,7 +38,6 @@
 			&::before {
 				content: "✔";
 				font-weight: 900;
-				color: navy;
 				font-size: 1.2em;
 				scale: 0;
 				position: relative;
@@ -51,7 +52,8 @@
 				content: "";
 				width: 10px;
 				height: 10px;
-				box-shadow: inset 1rem 1rem navy;
+				/* use box-shadow here because background-color doesn't print */
+				box-shadow: inset 10px 10px currentColor;
 				border-radius: 1rem;
 				scale: 0;
 			}
@@ -68,7 +70,7 @@
 			<input type="radio" name="queen" value="bm" checked> Brian May
 		</label>
 		<label>
-			<input type="radio" name="queen" value="jd"> John Deacon
+			<input type="radio" name="queen" value="jd" disabled> John Deacon
 		</label>
 		<label>
 			<input type="radio" name="queen" value="rt"> Roger Taylor
@@ -83,7 +85,7 @@
 			<input type="checkbox" name="albums" value="queen-ii"> Queen II
 		</label>
 		<label>
-			<input type="checkbox" name="albums" value="sheer-heart-attack">
+			<input type="checkbox" name="albums" value="sheer-heart-attack" disabled>
 			Sheer Heart Attack
 		</label>
 		<label>

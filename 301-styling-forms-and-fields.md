@@ -101,6 +101,7 @@ What we've done here:
 * Use a `::before` pseudo-element to create an extra element corresponding to the element's checked state, and set it to `scale: 0` so doesn't appear
 * Use the `:checked` selector to set the `::before` element to `scale: 1`, so it appears when the element is checked
 * Use the `:focus` selector to draw an outline around the form element when it has the focus - often overlooked, but vital for making sure your forms are navigable by users relying on keyboard navigation.
+* Use the `:disabled` selector to give the element a different style when it's marked as disabled and won't respond to user events.
 
 Finally, because we're being *fancy*, there's a one-second `transition` on the `scale` property, which gives us a cute little animation effect when a form element changes state.
 
