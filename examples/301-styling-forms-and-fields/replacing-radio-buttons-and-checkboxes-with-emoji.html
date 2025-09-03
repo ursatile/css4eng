@@ -15,31 +15,25 @@
 		input[type="radio"],
 		input[type="checkbox"] {
 			appearance: none;
-			width: 36px;
-			height: 20px;
-			background-color: silver;
-			border-radius: 10px;
-			translate: 0 2px;
-
+			width: 26px;
+			height: 26px;
+			border-radius: 12px;
+			font-size: 1.2em;
 			display: inline-grid;
 			place-content: center;
 
 			&:focus { outline: 1px solid silver; }
 
 			&:checked {
-				background-color: #369;
-
-				&::before { translate: 8px 0; }
+				&::before { transform: rotate(0.5turn); }
 			}
 
 			&::before {
-				transition: translate 0.2s;
-				content: "";
-				width: 18px;
-				height: 18px;
+				transition: transform 0.5s;
+				content: "👎";
+
 				box-shadow: inset 1rem 1rem white;
 				border-radius: 1rem;
-				translate: -8px 0;
 			}
 		}
 	</style>

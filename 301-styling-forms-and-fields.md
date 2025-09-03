@@ -104,9 +104,15 @@ What we've done here:
 
 Finally, because we're being *fancy*, there's a one-second `transition` on the `scale` property, which gives us a cute little animation effect when a form element changes state.
 
-Of course, we're not restricted to recreating the original circular radio buttons and square checkboxes; we can use the same technique to create different styles of inputs with the same semantics as the original elements.
+Of course, we're not restricted to recreating the original circular radio buttons and square checkboxes; we can use the same technique to create different styles of inputs with the same semantics as the original elements. Here's a pure CSS recreation of the toggle switches used in recent versions of iOS:
 
 {% example replacing-radio-buttons-and-checkboxes-with-toggle-switches.html elements="style" iframe %} 
+
+And here's a variant using emoji and rotation effects to replace on/off with thumbs-up / thumbs-down:
+
+{% example replacing-radio-buttons-and-checkboxes-with-emoji.html elements="style" iframe %} 
+
+## Styling Select Lists
 
 
 
