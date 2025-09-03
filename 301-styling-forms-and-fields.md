@@ -84,9 +84,31 @@ You *can* use the CSS `accent-color` property to change the colour of the select
 
 {% example radio-buttons-and-checkboxes.html elements="style" iframe %}
 
-If you want more control than that, you've got to completely strip out the native element and build a new one... and the good news is, CSS will totally let us do that, using `appearance: none`.
+If you want more control than that, you've got to completely strip out the native element and build a new one... and the good news is, CSS will totally let us do that.
+
+## Replacing Inputs Using Appearance: None
+
+CSS supports the `appearance` property for form elements. It's a slightly weird property, with idiosyncratic support across browsers (including the `appearance: --apple-pay-button` value baked into iOS that'll display an Apple Pay logo on those devices) , but `appearance: none` is widely supported, and does what you might expect: it'll completely remove the platform-native version of the widget so that we can build a new one using CSS rules.
+
+Here's an example:
 
 {% example styling-inputs-with-appearance-none.html elements="style" iframe %}
+
+What we've done here:
+
+* Remove the original widget using `appearance: none`
+* Create a new widget using borders, backgrounds and other CSS styling rules.
+* Use a `::before` pseudo-element to create an extra element corresponding to the element's checked state, and set it to `scale: 0` so doesn't appear
+* Use the `:checked` selector to set the `::before` element to `scale: 1`, so it appears when the element is checked
+* Use the `:focus` selector to draw an outline around the form element when it has the focus - often overlooked, but vital for making sure your forms are navigable by users relying on keyboard navigation.
+
+Finally, because we're being *fancy*, there's a one-second `transition` on the `scale` property, which gives us a cute little animation effect when a form element changes state.
+
+Of course, we're not restricted to recreating the original circular radio buttons and square checkboxes; we can use the same technique to create different styles of inputs with the same semantics as the original elements.
+
+{% example replacing-radio-buttons-and-checkboxes-with-toggle-switches.html elements="style" iframe %} 
+
+
 
 
 

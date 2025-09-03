@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Styling Inputs With Appearance None</title>
+	<style>
+		fieldset {
+			border: 2px solid silver;
+			border-radius: 5px;
+			margin-bottom: 20px;
+		}
+
+		input[type="radio"],
+		input[type="checkbox"] {
+			appearance: none;
+			width: 30px;
+			height: 20px;
+			border: 2px solid grey;
+			box-shadow: inset 1px 1px 2px silver;
+			border-radius: 12px;
+
+			display: inline-grid;
+			place-content: center;
+
+			&:focus { outline: 1px solid navy; }
+
+			&:checked {
+				border-color: navy;
+				background-color: gold;
+
+				&::before {
+					translate: 4px 0;
+					box-shadow: inset 1rem 1rem navy;
+				}
+			}
+
+			&::before {
+				transition: scale 0.2s;
+				content: "";
+				width: 12px;
+				height: 12px;
+				box-shadow: inset 1rem 1rem silver;
+				border-radius: 1rem;
+				translate: -4px 0;
+			}
+		}
+	</style>
+</head>
+<body>
+	<fieldset>
+		<legend>Favourite Queen Member</legend>
+		<label>
+			<input type="radio" name="queen" value="fm"> Freddie Mercury
+		</label>
+		<label>
+			<input type="radio" name="queen" value="bm" checked> Brian May
+		</label>
+		<label>
+			<input type="radio" name="queen" value="jd"> John Deacon
+		</label>
+		<label>
+			<input type="radio" name="queen" value="rt"> Roger Taylor
+		</label>
+	</fieldset>
+	<fieldset>
+		<legend>Which Queen Albums Do You Own?</legend>
+		<label>
+			<input type="checkbox" name="albums" value="queen"> Queen
+		</label>
+		<label>
+			<input type="checkbox" name="albums" value="queen-ii"> Queen II
+		</label>
+		<label>
+			<input type="checkbox" name="albums" value="sheer-heart-attack">
+			Sheer Heart Attack
+		</label>
+		<label>
+			<input type="checkbox" name="albums" value="a-night-at-the-opera" checked>
+			A Night At The Opera
+		</label>
+	</fieldset>
+</body>
+</html>
