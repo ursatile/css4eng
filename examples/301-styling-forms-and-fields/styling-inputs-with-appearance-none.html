@@ -12,7 +12,9 @@
 
 		input[type="radio"],
 		input[type="checkbox"] {
-			color: magenta;
+			 /* the elements don't have a color per se, but the value
+			 set here determines the value of currentcolor for styling */
+			color: orangered;
 			appearance: none;
 			width: 20px;
 			height: 20px;
@@ -70,10 +72,13 @@
 			<input type="radio" name="queen" value="bm" checked> Brian May
 		</label>
 		<label>
-			<input type="radio" name="queen" value="jd" disabled> John Deacon
+			<input type="radio" name="queen" value="jd"> John Deacon
 		</label>
 		<label>
 			<input type="radio" name="queen" value="rt"> Roger Taylor
+		</label>
+		<label>
+			<input type="radio" name="queen" value="se" disabled> Spike Edney
 		</label>
 	</fieldset>
 	<fieldset>
@@ -85,12 +90,16 @@
 			<input type="checkbox" name="albums" value="queen-ii"> Queen II
 		</label>
 		<label>
-			<input type="checkbox" name="albums" value="sheer-heart-attack" disabled>
-			Sheer Heart Attack
+			<input type="checkbox" name="albums" value="Jazz">
+			Jazz
 		</label>
 		<label>
-			<input type="checkbox" name="albums" value="a-night-at-the-opera" checked>
-			A Night At The Opera
+			<input type="checkbox" name="albums" value="Hot Space" checked>
+			Hot Space
+		</label>
+		<label>
+			<input type="checkbox" name="albums" value="mr-bad-guy" disabled>
+			Mr. Bad Guy
 		</label>
 	</fieldset>
 </body>

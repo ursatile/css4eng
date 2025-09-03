@@ -115,6 +115,10 @@ And here's a variant using emoji and rotation effects to replace on/off with thu
 
 ## Styling Select Lists
 
+Drop-down lists, select lists, pick lists, whatever you & your team call them: styling them has always been a headache, to the extent that just about every project I've worked on, we've ended up plugging in some sort of custom component or JavaScript library to replace them.
+
+
+
 
 
 
