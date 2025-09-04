@@ -5,35 +5,27 @@
 	<title>Basic Select</title>
 	<style>
 		select,
-		::picker(select) {
-			appearance: base-select;
-			background-color: gold;
-			border-color: royalblue;
-			border-width: 2px;
-		}
+		::picker(select) { appearance: base-select; }
 
 		select {
-			width: 12em;
+			background: url('angles-down.svg') right center / 1rem 1rem no-repeat;
+
 			border-radius: 5px;
+			border: 2px solid blue;
 			padding: 5px;
 			&::picker-icon {
-				transition: all 0.5s;
-				color: royalblue;
+				display: none;
+				color: magenta;
 			}
 		}
 
 		select:open {
+			background-image: url('angles-up.svg');
 			border-radius: 5px 5px 0 0;
-			border-width: 2px 2px 2px 2px;
-			&::picker-icon {
-				transform: rotateX(0.5turn);
-			}
+			border-width: 1px 1px 0px 1px;
 		}
 
-		::picker(select) {
-			border-radius: 0px 0px 5px 5px;
-			border-width: 0px 2px 2px 2px;
-		}
+		::picker(select) { background-color: magenta; }
 
 	</style>
 </head>
