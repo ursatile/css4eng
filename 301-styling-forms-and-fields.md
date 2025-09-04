@@ -125,7 +125,7 @@ The good news is that CSS now specifies a way to target just about every part of
 
 In one sense, a `<select>` is a single HTML element. In another sense, it's a `<select>` - which renders as a text field with an adjacent button - that wraps a bunch of other elements. Historically, these all had to be `<option>` elements; today they can be just about anything.
 
-## What Happened To `<selectmenu>` ?
+### What Happened To `<selectmenu>` ?
 
 In 2022, the [Open UI initiative](https://open-ui.org/), part of the W3C, proposed a new element, `<selectmenu>`, which would replace the older `<select>` and offer developers the control and customisation that we've been asking for since the days of HTML 3 and Netscape Navigator.
 
@@ -139,7 +139,7 @@ Problem is, as recently as early 2024 people were still writing very exciting bl
 
 Don't use it. `<selectmenu>` is dead, and it's  not coming back.
 
-## Styling a Customisable Select
+### Styling a Customisable Select
 
 Let's walk through styling a `<select>` component, one feature at a time.
 
@@ -185,7 +185,7 @@ So far, so good - it's still basically a drop-down list, it's just a very colour
 
 Let's go further.
 
-## Beyond Dropdown Lists
+### Beyond Dropdown Lists
 
 One long-requested feature has been a way to activate the drop-down from something that doesn't look like a drop-down list. This is now possible thanks to another feature in the new customisable select module: if the first child element of the `<select>` is a `<button>`, that button will be used as the closed state of the control, and a new element, `<selectedcontent>`, will display the content of the currently selected `<option>`:
 
@@ -196,6 +196,18 @@ Here's a standalone example:
 When you combine this with styling the `picker(select)`, and the fact that  `<option>` elements can contain additional HTML, you can end up with something that doesn't look anything like a regular drop-down list, but which still has all the same underlying semantics and behaviour.
 
 {% example select-with-all-the-extra-toppings.html elements="style,body" iframe_style="height: 480px;" %}
+
+### What About Multiple Selects?
+
+HTML has always supported multiline selects, and the little-known `multiple` attribute that allows the user to select more than one option simultaneously:
+
+{% example multiple-select.html elements="style,body" iframe %}
+
+
+
+
+
+## Styling File Inputs
 
 
 
