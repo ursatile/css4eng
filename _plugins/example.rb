@@ -37,15 +37,16 @@ module Jekyll
                 <title>#{title}</title>
               </head>
               <body>
+              <!-- WRITE YOUR EXAMPLE HERE -->
               </body>
               </html>
             HTML
           elsif path.downcase.end_with?(".css")
             puts "#{path} not found - creating with CSS boilerplate"
-            File.write(path, "html { }")
+            File.write(path, "/* WRITE YOUR EXAMPLE HERE */ html { }")
           elsif File.extname(path).length >= 3
-            puts "#{path} not found - creating empty file"
-            File.write(path, "")
+            puts "#{path} not found - creating empty file."
+            File.write(path, "WRITE YOUR EXAMPLE HERE")
           end
         end
         file_read_opts = context.registers[:site].file_read_opts

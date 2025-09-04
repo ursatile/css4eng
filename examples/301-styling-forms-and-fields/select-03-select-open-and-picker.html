@@ -4,8 +4,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>appearance: base-select</title>
 	<style>
-		select#custom { appearance: base-select; }
+		select {
+			font-family: Arial, Helvetica, sans-serif;
+			appearance: base-select;
+			border-radius: 5px;
+			border: 2px solid royalblue;
+			background-color: gold;
+			width: 12em;
 
+			&::picker-icon { color: crimson; }
+
+			&:open {
+				background: royalblue;
+				color: white;
+				border-radius: 5px 5px 0 0;
+			}
+		}
 	</style>
 	<style>
 		body { padding: 10px; }
@@ -19,20 +33,6 @@
 </head>
 <body>
 	<section>
-		<label for="default">default:</label>
-		<select id="default">
-			<option>select...</option>
-			<option>AC/DC</option>
-			<option>Bon Jovi</option>
-			<option>Cinderella</option>
-			<option>Def Leppard</option>
-			<option>Europe</option>
-			<option>Fleetwood Mac</option>
-		</select>
-	</section>
-	<hr>
-	<section>
-		<label for="custom">appearance: base-select:</label>
 		<select id="custom">
 			<option>select...</option>
 			<option>AC/DC</option>

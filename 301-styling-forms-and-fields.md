@@ -149,9 +149,22 @@ First: to opt in to the new styling features, you'll need to add `appearance: ba
 
 {% example select-01-appearance-base-select.html elements="style" iframe %}
 
-Let's add a little style:
+Let's add a little style. We're going to give our select a border and a background color. We can also use the `::picker-icon` pseudo-element to target the little arrow icon:
 
 {% example select-02-select-and-picker-icon.html elements="style" iframe %}
+
+Looks great until we open it - but the *open* state - the actual dropdown menu bit doesn't match the *closed* state. 
+
+To fix that, we need to use two new targets:
+
+* The `select:open` pseudo-selector matches the input, but only when the dropdown is open
+* The `::picker(select)` pseudo-element matches the actual drop-down list.
+
+> Why `::picker(select)`? Because the `<select>` isn't the only input type that opens a picker, and at some future point there might be variants like `::picker(input[type=datetime])` and `::picker(input[type=color])`; the WHATWG decided that allowing developers to write `select::picker` was a bad idea because if you can do that, you can also write `form *::picker` or various other syntax variants that could mess things up really badly later on.
+
+{% example select-03-select-open-and-picker.html elements="style" iframe %}
+
+
 
 
 
@@ -161,7 +174,7 @@ Let's add a little style:
 
 I know about a new selector, and a new property value. The selector is `::picker(select)`, which targets the drop-down menu (the thing that drops down when you activate the control), and the value is `appearance: base-select`, which we need to apply to the select and to the picker pseudo-element.
 
-> Why `::picker(select)`? Because the `<select>` isn't the only input type that opens a picker, and at some future point there might be `::picker(datetime)`, `::picker(input[type=color])`, and other variations, and the WHATWG decided that allowing developers to write `select::picker` was a bad idea because if you can do that, you can also write `form *::picker` or various other syntax variants that could mess things up really badly later on.
+> 
 
 
 
