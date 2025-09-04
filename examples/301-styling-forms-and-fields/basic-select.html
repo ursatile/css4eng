@@ -8,24 +8,23 @@
 		::picker(select) { appearance: base-select; }
 
 		select {
-			appearance: none;
-
-			&::after {
-				display: block;
-				content: '🔽';
-				width: 10px;
-				height: 10px;
-				background-color: red;
-			}
+			background: url('angles-down.svg') right center / 1rem 1rem no-repeat;
 
 			border-radius: 5px;
 			border: 2px solid blue;
 			padding: 5px;
-			accent-color: magenta;
+			&::picker-icon {
+				color: magenta;
+			}
 		}
 
-		select:open { background-color: lime; }
-		::picker(select) { background-color: orange; }
+		select:open {
+			background-image: url('angles-up.svg');
+			border-radius: 5px 5px 0 0;
+			border-width: 1px 1px 0px 1px;
+		}
+
+		::picker(select) { background-color: magenta; }
 
 	</style>
 </head>
