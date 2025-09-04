@@ -162,7 +162,22 @@ To fix that, we need to use two new targets:
 
 > Why `::picker(select)`? Because the `<select>` isn't the only input type that opens a picker, and at some future point there might be variants like `::picker(input[type=datetime])` and `::picker(input[type=color])`; the WHATWG decided that allowing developers to write `select::picker` was a bad idea because if you can do that, you can also write `form *::picker` or various other syntax variants that could mess things up really badly later on.
 
+Note that `::picker(select)` also needs the `appearance: base-select` property to tell the browser we're opting-in to custom styling rules.
+
+We're going to modify the border-width and border-radius to give our open select a single rounded border, and change the colour of the select when it's open.
+
+We're also going to apply a `transform` to the `::picker-icon`, and add a `transition` so we get a bit of animation when we open the dropdown:
+
 {% example select-03-select-open-and-picker.html elements="style" iframe %}
+
+Next, let's style the options in the drop-down list, including the one which is currently selected. This uses three more selectors:
+
+* `option` targets the `option` elements 
+  * *this is a regular CSS element selector, it's just never worked before.*
+* `option:checked` targets the selected option itself
+* `option::checkmark` targets the checkmark indicator next to the selected option
+
+{% example select-04-select-option-checked-and-checkmark.html elements="style" iframe %}
 
 
 

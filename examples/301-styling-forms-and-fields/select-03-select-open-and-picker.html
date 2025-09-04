@@ -12,12 +12,28 @@
 			background-color: gold;
 			width: 12em;
 
-			&::picker-icon { color: crimson; }
+			&::picker-icon {
+				transition: all 0.5s;
+				color: royalblue;
+			}
 
 			&:open {
 				background: royalblue;
 				color: white;
 				border-radius: 5px 5px 0 0;
+
+				&::picker-icon {
+					color: white;
+					transform: rotateX(0.5turn); }
+			}
+
+			&::picker(select) {
+				appearance: base-select;
+				border-style: solid;
+				border-color: royalblue;
+				border-width: 0 2px 2px 2px;
+				border-radius: 0 0 5px 5px;
+				background: gold;
 			}
 		}
 	</style>
