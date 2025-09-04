@@ -145,23 +145,31 @@ Let's walk through styling a `<select>` component, one feature at a time.
 
 Remember: everything I'm showing you here will work in Chrome and Edge today, it'll degrade gracefully in Firefox and Safari - in most cases all the way back to an ordinary  `<select>` - and iOS/Android will ignore most of it by design in favour of their own select widget that's optimised for mobile devices.
 
-First: to opt in to the new styling features, you'll need to know about a new selector, and a new property value. The selector is `::picker(select)`, which targets the drop-down menu (the thing that drops down when you activate the control), and the value is `appearance: base-select`, which we need to apply to the select and to the picker pseudo-element.
+First: to opt in to the new styling features, you'll need to add `appearance: base-select` to the select element:
+
+{% example select-01-appearance-base-select.html elements="style" iframe %}
+
+Let's add a little style:
+
+{% example select-02-select-and-picker-icon.html elements="style" iframe %}
+
+
+
+
+
+
+
+I know about a new selector, and a new property value. The selector is `::picker(select)`, which targets the drop-down menu (the thing that drops down when you activate the control), and the value is `appearance: base-select`, which we need to apply to the select and to the picker pseudo-element.
 
 > Why `::picker(select)`? Because the `<select>` isn't the only input type that opens a picker, and at some future point there might be `::picker(datetime)`, `::picker(input[type=color])`, and other variations, and the WHATWG decided that allowing developers to write `select::picker` was a bad idea because if you can do that, you can also write `form *::picker` or various other syntax variants that could mess things up really badly later on.
 
 
 
-{% example select-01-appearance-base-select.html elements="style" iframe %}
-
-
-
-{% example basic-select.html elements="style" iframe %}
 
 
 
 
-
-
+---
 
 
 

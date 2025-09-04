@@ -15,7 +15,10 @@
 		}
 
 		select {
-			width: 15em; border-radius: 5px; padding: 5px;
+			width: 15em;
+			border-radius: 5px;
+			padding: 5px;
+
 			&::picker-icon {
 				transition: all 0.5s;
 				color: royalblue;
@@ -23,6 +26,7 @@
 
 			option {
 				color: crimson;
+
 				&:checked {
 					background-color: crimson;
 					color: gold;
@@ -47,6 +51,12 @@
 </head>
 <body>
 	<select>
+		<button style="display: grid;">
+			<h3>Pick a band</h3>
+			<p>A good band.</p>
+			You chose <selectedcontent></selectedcontent>
+		</button>
+
 		<option>select...</option>
 		<option>AC/DC</option>
 		<option>Bon Jovi</option>
