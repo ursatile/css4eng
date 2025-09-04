@@ -4,34 +4,51 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Select With All The Extra Toppings</title>
 	<style>
-		img { width: 100px; }
+		* { box-sizing: border-box; }
 
 		select,
 		::picker(select) { appearance: base-select; }
+		img { width: 400px; }
 
 		select {
+			border-radius: 10px;
+			border: 2px solid #000;
+			background-color: black;
+
+			&::picker-icon { display: none; }
+			button selectedcontent { padding: 10px; }
+
 			&:open {
 				&::picker(select) {
-					position: absolute;
-					top: 0px;
-					right: 0px;
+					border-radius: 10px;
+					padding: 10px;
+					top: -440px;
+					width: 440px;
+					height: 440px;
 					gap: 10px;
-					display: grid;
 					background-color: black;
-					grid-template-columns: repeat(5, 1fr);
-					grid-template-rows: repeat(3, 1fr);
+					display: grid;
+					grid: repeat(4, 1fr) / repeat(4, 1fr);
 				}
 			}
+
 			option {
-				border: 2px solid #666;
+				border: 2px solid #000;
 				border-radius: 5px;
 				padding: 5px;
 				display: block;
+				display: grid;
+				place-content: center;
+
+				img {
+					width: 100px;
+					padding: 0;
+					margin: 5px;
+				}
 			}
+
 			option::checkmark { display: none; }
-			option:checked {
-				border: 2px solid #fff;
-			}
+			option:checked { border: 2px solid #fff; }
 		}
 	</style>
 </head>
@@ -73,7 +90,7 @@
 			<img src="album-covers/magnum-wings-of-heaven.jpg"
 				alt="Magnum - Wings of Heaven">
 		</option>
-		<option value="marillion-brave">
+		<option value="marillion-brave" selected>
 			<img src="album-covers/marillion-brave.jpg" alt="Marillion - Brave">
 		</option>
 		<option value="pearl-jam-ten">

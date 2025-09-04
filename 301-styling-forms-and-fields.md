@@ -195,7 +195,7 @@ Here's a standalone example:
 
 When you combine this with styling the `picker(select)`, and the fact that  `<option>` elements can contain additional HTML, you can end up with something that doesn't look anything like a regular drop-down list, but which still has all the same underlying semantics and behaviour.
 
-{% example select-with-all-the-extra-toppings.html elements="style,body" iframe_style="height: 240px;" %}
+{% example select-with-all-the-extra-toppings.html elements="style,body" iframe_style="height: 480px;" %}
 
 
 
