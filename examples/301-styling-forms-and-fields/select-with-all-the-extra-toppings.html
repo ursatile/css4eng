@@ -4,8 +4,34 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Select With All The Extra Toppings</title>
 	<style>
-		select, ::picker(select) {
-			appearance: base-select;
+		img { width: 100px; }
+
+		select,
+		::picker(select) { appearance: base-select; }
+
+		select {
+			&:open {
+				&::picker(select) {
+					position: absolute;
+					top: 0px;
+					right: 0px;
+					gap: 10px;
+					display: grid;
+					background-color: black;
+					grid-template-columns: repeat(5, 1fr);
+					grid-template-rows: repeat(3, 1fr);
+				}
+			}
+			option {
+				border: 2px solid #666;
+				border-radius: 5px;
+				padding: 5px;
+				display: block;
+			}
+			option::checkmark { display: none; }
+			option:checked {
+				border: 2px solid #fff;
+			}
 		}
 	</style>
 </head>
@@ -14,30 +40,63 @@
 		<button>
 			<selectedcontent></selectedcontent>
 		</button>
-		<table>
-			<tr>
-				<td>
-					<option value="one">ONE</option>
-				</td>
-				<td>
-					<option value="two">TWO</option>
-				</td>
-				<td>
-					<option value="three">THREE</option>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<option value="one">ONE</option>
-				</td>
-				<td>
-					<option value="two">TWO</option>
-				</td>
-				<td>
-					<option value="three">THREE</option>
-				</td>
-			</tr>
-		</table>
+		<option value="acdc-back-in-black">
+			<img src="album-covers/acdc-back-in-black.jpg"
+				alt="AC/DC - Back in Black">
+		</option>
+		<option value="blondie-blondie">
+			<img src="album-covers/blondie-blondie.jpg" alt="Blondie - Blondie">
+		</option>
+		<option value="bon-jovi-slippery-when-wet">
+			<img src="album-covers/bon-jovi-slippery-when-wet.jpg"
+				alt="Bon Jovi - Slippery When Wet">
+		</option>
+		<option value="bruce-springsteen-born-in-the-usa">
+			<img src="album-covers/bruce-springsteen-born-in-the-usa.jpg"
+				alt="Bruce Springsteen - Born in the USA">
+		</option>
+		<option value="david-bowie-heroes">
+			<img src="album-covers/david-bowie-heroes.jpg" alt="David Bowie - Heroes">
+		</option>
+		<option value="don-mclean-american-pie">
+			<img src="album-covers/don-mclean-american-pie.jpg"
+				alt="Don McLean - American Pie">
+		</option>
+		<option value="duran-duran-rio">
+			<img src="album-covers/duran-duran-rio.jpg" alt="Duran Duran - Rio">
+		</option>
+		<option value="electric-light-orchestra-time">
+			<img src="album-covers/electric-light-orchestra-time.jpg"
+				alt="Electric Light Orchestra - Time">
+		</option>
+		<option value="magnum-wings-of-heave">
+			<img src="album-covers/magnum-wings-of-heaven.jpg"
+				alt="Magnum - Wings of Heaven">
+		</option>
+		<option value="marillion-brave">
+			<img src="album-covers/marillion-brave.jpg" alt="Marillion - Brave">
+		</option>
+		<option value="pearl-jam-ten">
+			<img src="album-covers/pearl-jam-ten.jpg" alt="Pearl Jam - Ten">
+		</option>
+		<option value="pink-floyd-the-dark-side-of-the-moon">
+			<img src="album-covers/pink-floyd-the-dark-side-of-the-moon.jpg"
+				alt="Pink Floyd - The Dark Side of the Moon">
+		</option>
+		<option value="queensrÿche-empire">
+			<img src="album-covers/queensrÿche-empire.jpg" alt="Queensrÿche - Empire">
+		</option>
+		<option value="rem-automatic-for-the-people">
+			<img src="album-covers/rem-automatic-for-the-people.jpg"
+				alt="REM - Automatic for the People">
+		</option>
+		<option value="threshold-dead-reckoning">
+			<img src="album-covers/threshold-dead-reckoning.jpg"
+				alt="Threshold - Dead Reckoning">
+		</option>
+		<option value="van-halen-5150">
+			<img src="album-covers/van-halen-5150.jpg" alt="Van Halen - 5150">
+		</option>
 	</select>
 </body>
 </html>
