@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Basic Select</title>
+	<style>
+		select,
+		::picker(select) { appearance: base-select; }
+
+		select {
+			appearance: none;
+
+			&::after {
+				display: block;
+				content: '🔽';
+				width: 10px;
+				height: 10px;
+				background-color: red;
+			}
+
+			border-radius: 5px;
+			border: 2px solid blue;
+			padding: 5px;
+			accent-color: magenta;
+		}
+
+		select:open { background-color: lime; }
+		::picker(select) { background-color: orange; }
+
+	</style>
+</head>
+<body>
+	<select>
+		<option>select...</option>
+		<option>AC/DC</option>
+		<option>Bon Jovi</option>
+		<option>Cinderella</option>
+		<option>Def Leppard</option>
+		<option>Europe</option>
+		<option>Fleetwood Mac</option>
+	</select>
+</body>
+</html>
