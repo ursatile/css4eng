@@ -3,41 +3,61 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Basic Select</title>
+	<link rel="stylesheet" href="../styles/raleway.css">
 	<style>
 		select,
 		::picker(select) {
 			appearance: base-select;
 			background-color: gold;
 			border-color: royalblue;
+			color: royalblue;
 			border-width: 2px;
 		}
 
 		select {
-			width: 12em;
+			width: 15em;
 			border-radius: 5px;
 			padding: 5px;
+
 			&::picker-icon {
 				transition: all 0.5s;
 				color: royalblue;
+			}
+
+			option {
+				color: crimson;
+				&:checked {
+					background-color: crimson;
+					color: gold;
+				}
+
+				&::checkmark { content: "▶"; }
 			}
 		}
 
 		select:open {
 			border-radius: 5px 5px 0 0;
 			border-width: 2px 2px 2px 2px;
-			&::picker-icon {
-				transform: rotateX(0.5turn);
-			}
+
+			&::picker-icon { transform: rotateX(0.5turn); }
 		}
 
 		::picker(select) {
 			border-radius: 0px 0px 5px 5px;
 			border-width: 0px 2px 2px 2px;
 		}
-
 	</style>
 </head>
 <body>
+	<select>
+		<option>select...</option>
+		<option>AC/DC</option>
+		<option>Bon Jovi</option>
+		<option>Cinderella</option>
+		<option>Def Leppard</option>
+		<option>Europe</option>
+		<option>Fleetwood Mac</option>
+	</select>
 	<select>
 		<option>select...</option>
 		<option>AC/DC</option>
