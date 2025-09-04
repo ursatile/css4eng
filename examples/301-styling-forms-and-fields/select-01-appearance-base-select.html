@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>appearance: base-select</title>
+	<style>
+		select#custom,
+		::picker(select#custom) { appearance: base-select; }
+
+	</style>
+	<style>
+		label {
+			width: 16em;
+			display: inline-block;
+			font-family: Consolas, 'Courier New', Courier, monospace;
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<label for="default">default:</label>
+		<select id="default">
+			<option>select...</option>
+			<option>AC/DC</option>
+			<option>Bon Jovi</option>
+			<option>Cinderella</option>
+			<option>Def Leppard</option>
+			<option>Europe</option>
+			<option>Fleetwood Mac</option>
+		</select>
+	</section>
+	<hr>
+	<section>
+		<label for="custom">appearance: base-select:</label>
+		<select id="custom">
+			<option>select...</option>
+			<option>AC/DC</option>
+			<option>Bon Jovi</option>
+			<option>Cinderella</option>
+			<option>Def Leppard</option>
+			<option>Europe</option>
+			<option>Fleetwood Mac</option>
+		</select>
+	</section>
+</body>
+</html>

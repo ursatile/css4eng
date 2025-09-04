@@ -123,6 +123,38 @@ The good news is that CSS now specifies a way to target just about every part of
 
 > The whole point of using built-in styles rather than hiding and rebuilding the control is that you still get the inherent advantages of the underlying native control - accessibility, keyboard navigation, scaling. Don't fight the browser; tell it your best case scenario, and let it figure out what makes sense for a particular user on a particular device.
 
+In one sense, a `<select>` is a single HTML element. In another sense, it's a `<select>` - which renders as a text field with an adjacent button - that wraps a bunch of other elements. Historically, these all had to be `<option>` elements; today they can be just about anything.
+
+## What Happened To `<selectmenu>` ?
+
+In 2022, the [Open UI initiative](https://open-ui.org/), part of the W3C, proposed a new element, `<selectmenu>`, which would replace the older `<select>` and offer developers the control and customisation that we've been asking for since the days of HTML 3 and Netscape Navigator.
+
+In September 2024, a [post on Google's Chrome for Developers blog](https://developer.chrome.com/blog/rfc-customizable-select) announced a proposed syntax for a customisable `<select>` element; a set of new selectors and pseudo-classes which developers could use to style the existing `<select>` control instead of replacing it with `<selectmenu>` - and browsers which don't support the new syntax will just show an old-style drop-down menu.
+
+This was very positively received; support for customisable `<select>` [rolled out in Chrome in March 2025](https://developer.chrome.com/blog/a-customizable-select); at the time I'm writing this it's available in Chrome, Edge, and Chrome for Android, but mostly unsupported in Safari and Firefox. With widespread community support for the new customisable select features, `<selectmenu>` was relegated to a historical footnote: nice idea, but we had a better idea.
+
+Problem is, as recently as early 2024 people were still writing very exciting blog posts about how `<selectmenu>` was the future; those posts are all still out there, they'll show up if you search for "style HTML select element", and they're part of the dataset that's used to train modern AI tools; according to ChatGPT, right now (September 2025):
+
+> `<selectmenu>` is one of those *experimental* HTML elements that’s been bubbling up in the specs and some browsers, but not something you’d use in production just yet.
+
+Don't use it. `<selectmenu>` is dead, and it's  not coming back.
+
+## Styling a Customisable Select
+
+Let's walk through styling a `<select>` component, one feature at a time.
+
+Remember: everything I'm showing you here will work in Chrome and Edge today, it'll degrade gracefully in Firefox and Safari - in most cases all the way back to an ordinary  `<select>` - and iOS/Android will ignore most of it by design in favour of their own select widget that's optimised for mobile devices.
+
+First: to opt in to the new styling features, you'll need to know about a new selector, and a new property value. The selector is `::picker(select)`, which targets the drop-down menu (the thing that drops down when you activate the control), and the value is `appearance: base-select`, which we need to apply to the select and to the picker pseudo-element.
+
+> Why `::picker(select)`? Because the `<select>` isn't the only input type that opens a picker, and at some future point there might be `::picker(datetime)`, `::picker(input[type=color])`, and other variations, and the WHATWG decided that allowing developers to write `select::picker` was a bad idea because if you can do that, you can also write `form *::picker` or various other syntax variants that could mess things up really badly later on.
+
+
+
+{% example select-01-appearance-base-select.html elements="style" iframe %}
+
+
+
 {% example basic-select.html elements="style" iframe %}
 
 
