@@ -4,28 +4,29 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Select With Button Option</title>
 	<style>
-		* { box-sizing: border-box; }
 		select {
+			outline: 1px solid orange;
 			appearance: base-select;
 			border: none;
 
 			&::picker-icon { display: none; }
+
 			button {
-				border-bottom: 2px solid blue;
-				selectedcontent {
-					border:
-					background-color: orange;
-				}
+				span { background-color: gold; }
+				selectedcontent { background-color: turquoise; }
 			}
 		}
+	</style>
+	<style>
+		body { padding: 10px; }
+		* { box-sizing: border-box; }
 
 	</style>
-
 </head>
 <body>
 	<select>
 		<button>
-			🤘 CHOOSE A ROCK BAND 🤘
+			<span>PICK A ROCK BAND</span>
 			<selectedcontent></selectedcontent>
 		</button>
 		<option>AC/DC</option>

@@ -187,11 +187,13 @@ Let's go further.
 
 ## Beyond Dropdown Lists
 
-One long-requested feature has been a way to activate a dropdown list from something that doesn't look like a drop-down list. This is now possible thanks to another feature in the new customisable select module: if the first child element of the `<select>` is a `<button>`, that button will be used as the closed state of the control.
+One long-requested feature has been a way to activate the drop-down from something that doesn't look like a drop-down list. This is now possible thanks to another feature in the new customisable select module: if the first child element of the `<select>` is a `<button>`, that button will be used as the closed state of the control, and a new element, `<selectedcontent>`, will display the content of the currently selected `<option>`:
 
 Here's a standalone example:
 
-{% example select-with-button-option.html elements="style,body" iframe %}
+{% example select-with-button-option.html elements="style,body" iframe_style="height: 240px;" %}
+
+
 
 
 
