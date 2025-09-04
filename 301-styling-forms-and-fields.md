@@ -168,28 +168,30 @@ We're going to modify the border-width and border-radius to give our open select
 
 We're also going to apply a `transform` to the `::picker-icon`, and add a `transition` so we get a bit of animation when we open the dropdown:
 
-{% example select-03-select-open-and-picker.html elements="style" iframe %}
+{% example select-03-select-open-and-picker.html elements="style" iframe_style="height: 240px;" %}
 
 Next, let's style the options in the drop-down list, including the one which is currently selected. This uses three more selectors:
 
 * `option` targets the `option` elements 
   * *this is a regular CSS element selector, it's just never worked before.*
 * `option:checked` targets the selected option itself
-* `option::checkmark` targets the checkmark indicator next to the selected option
+* `option::checkmark` targets the checkmark indicator next to the selected option.
 
-{% example select-04-select-option-checked-and-checkmark.html elements="style" iframe %}
+We'll give each option a 2px border (except the top one, 'cos the select already has a bottom border and we don't want to double it up), give the selected option a blue background, and replace the checkmark with a ▶ character:
 
+{% example select-04-select-option-checked-and-checkmark.html elements="style" iframe_style="height: 240px;" %}
 
+So far, so good - it's still basically a drop-down list, it's just a very colourful drop-down list.
 
+Let's go further.
 
+## Beyond Dropdown Lists
 
+One long-requested feature has been a way to activate a dropdown list from something that doesn't look like a drop-down list. This is now possible thanks to another feature in the new customisable select module: if the first child element of the `<select>` is a `<button>`, that button will be used as the closed state of the control.
 
+Here's a standalone example:
 
-
-
-I know about a new selector, and a new property value. The selector is `::picker(select)`, which targets the drop-down menu (the thing that drops down when you activate the control), and the value is `appearance: base-select`, which we need to apply to the select and to the picker pseudo-element.
-
-> 
+{% example select-with-button-option.html elements="style,body" iframe %}
 
 
 
