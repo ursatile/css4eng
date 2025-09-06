@@ -6,12 +6,15 @@
 	<style>
 		section {
 			display: grid;
-			grid-template-rows: auto;
-			grid-template-columns: 100px auto 100px;
+			grid-template-columns: auto;
+			grid-template-rows: 1fr 1fr;
 		}
 	</style>
 	<style>
-		body { height: 20rem; }
+		body {
+			height: 20rem;
+			overflow-y: scroll;
+		}
 
 		section {
 			gap: 10px;
@@ -40,21 +43,39 @@
 
 		pre { text-align: center; }
 
+		button {
+			background-color: gold;
+			border: none;
+			border-radius: 20px;
+			padding: 10px;
+			margin-bottom: 10px;
+			cursor: pointer;
+
+			&:nth-of-type(2) { float: right; }
+		}
 	</style>
 </head>
 <body>
-	<a href="#">add an element</a> <a href="#">reset</a>
+	<button id="add-an-element-button" href="#">add an element</button>
+	<button id="reset-button" href="#">reset</button>
 	<section>
-		<div></div>
 	</section>
-	<pre>Click to add elements to the grid</pre>
 </body>
 <script>
-	document.querySelectorAll("section").forEach(section => {
-		section.addEventListener("click", () => {
-			const div = document.createElement('div');
-			section.appendChild(div);
-		});
+	document.getElementById("add-an-element-button").addEventListener("click", () => {
+		const div = document.createElement('div');
+		document.querySelector("section").appendChild(div);
+		return false;
 	});
+	document.getElementById("reset-button").addEventListener("click", () => {
+		document.querySelector("section").innerHTML = '';
+	});
+	window.setInterval(() => {
+				const div = document.createElement('div');
+		document.querySelector("section").appendChild(div);
+	}, 500);
+
+
+
 </script>
 </html>
