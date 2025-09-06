@@ -2,6 +2,10 @@
 nav_exclude: true
 word_count: 733
 ---
+---
+nav_exclude: true
+word_count: 733
+---
 ## Part 1: Introduction and Background (45m)
 
 ### Course overview (5m)

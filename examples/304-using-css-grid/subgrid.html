@@ -19,6 +19,7 @@
 				grid-template-columns: subgrid;
 				grid-template-rows: subgrid;
 				gap: 5px;
+
 				span {
 					background-color: crimson;
 					color: white;
@@ -51,6 +52,7 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
+
 				&:not(.subgrid)::before { content: counter(grid-item); }
 			}
 		}
