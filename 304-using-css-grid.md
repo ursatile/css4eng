@@ -106,25 +106,29 @@ First up, let's take a look at named lines. To create a named line, put the name
 
 Naming lines is just a prelude to the really good stuff: named grid areas. You can take whole chunks of the grid, give them names using a relatively simple format, and then link chunks of content to those areas.
 
-{% example grid-named-areas.html elements="style" iframe %}
+How simple? Imagine the dumbest thing you can possibly think of: ASCII art. Actually, even simpler than ASCII art, because there aren't any lines: just names. Given a 3x5 grid layout, we can divide into areas like this:
 
+```css
+div { 
+	grid-template-areas: 
+        "header     header    header"
+        "site-nav  site-nav   adverts"
+        "page-nav    main     adverts"
+        "page-nav    main    comments"
+        "footer     footer    footer";
+}
+```
 
+The resulting layout ends up like this:
 
+<figure>
+    <img src="./images/css-grid-areas.png" alt="CSS Grid Tracks">
+    <figcaption>CSS grid areas</figcaption>
+</figure>
 
+and then by specifying the `grid-area` property on the various elements that make up the page, we can lay those elements directly onto the grid:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+{% example grid-named-areas.html elements="style" iframe_style="height: 600px;" %}
 
 # Using CSS Grid (30m)
 
