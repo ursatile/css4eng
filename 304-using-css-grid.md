@@ -39,7 +39,14 @@ The rows and columns in a CSS grid layout are collectively known as *tracks*, so
     <figcaption>CSS Grid Tracks</figcaption>
 </figure>
 
-Tracks are specified using the `grid-template-rows` and `grid-template-columns` properties; each property is a list of track sizes - absolute units, relative units, or the special `fr` unit which represents a proportion of the available space.
+The boundaries around the grid and between adjacent tracks are known as *grid lines* - and no, there's no way to make them visible the way you can with table cell borders.
+
+<figure>
+    <img src="./images/css-grid-lines.png" alt="CSS Grid Tracks">
+    <figcaption>CSS grid: columns, rows, and lines</figcaption>
+</figure>
+
+If it helps, think of the grid cells like city blocks, and the lines as the streets between them. The tracks in a grid are specified using the `grid-template-rows` and `grid-template-columns` properties; each property is a list of track sizes - absolute units, relative units, or the special `fr` unit which represents a proportion of the available space.
 
 > `fr` is officially short for for *fraction* but when I first saw it I thought "oh, OK, `fr` for 'free space'" and that's stuck in my head now.
 
@@ -69,17 +76,15 @@ To control the size of the implicit tracks, use `grid-auto-rows` or `grid-auto-c
 
 Items within the grid can target specific rows and columns using the `grid-column-start`, `grid-column-end`, `grid-row-start` and `grid-row-end` properties.
 
-Something which often trips people up when they first encounter this syntax: we're not specifying the row or column number, we're specifying the *line between them*. I think one of the reasons there's so much confusion here is that there's some really misleading behaviour baked into the CSS grid spec:
+Something which often trips people up when they first encounter this syntax: we're not specifying the row or column number, we're specifying the *line between them*. I think one of the reasons there's so much confusion here is that there's some really misleading behaviour baked into the CSS grid spec. Take a look at this code and the resulting output:
 
 {% example grid-start-end-edge-case.html elements="style" iframe %}
 
+Div #1 - the red one - clearly starts and ends in column 3, and starts and ends in row 2... right?
 
+No. This is actually invalid syntax. The numbers refer to lines, not rows/columns, so an item which starts *and ends* at column grid line 1 actually has zero width... but there's a fallback rule in the CSS grid spec which says that if the combination of a start and an end rule would create an element with zero (or negative) size, ignore the end rule... and because the default is to span a single row/column, it looks like it worked.
 
-
-
-
-
-
+Here's an example that specifies start and end lines correctly. This example also creates some overlapping elements; these will be stacked in the order they appear in the HTML, unless you override this using a `z-index`:
 
 {% example grid-item-start-end.html elements="style" iframe %}
 
@@ -87,7 +92,11 @@ Something which often trips people up when they first encounter this syntax: we'
 
 Part of the power of CSS grid is the ability to name parts of the grid, and then use those names to allocate other elements in your document to named grid areas.
 
-Note that when you use names in the row/column specification, you aren't naming the tracks, you're **naming the lines between them**.
+First up, let's take a look at named lines:
+
+* You aren't naming the tracks, you're **naming the lines between them**.
+* A single line can have more than one name.
+* A name can be applied to more than one line.
 
 {% example grid-named-columns.html element="style" iframe %}
 
