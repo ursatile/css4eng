@@ -49,7 +49,19 @@ You can also use the `repeat` function to repeat the same track size:
 
 {% example grid-template-rows-and-columns-repeat.html elements="style" iframe %}
 
-{% example grid-template-auto.html elements="style" iframe %}
+## Explicit vs Implicit Grids
+
+If there are more items in the grid than you've allocated spaces for, the grid layout module will add extra rows or columns to accommodate the extra elements.
+
+By default, the grid layout adds additional rows to the end of the grid. 
+
+>  These examples are interactive - click the button to add extra items to the grid:
+
+{% example grid-implicit-rows.html elements="style" iframe %}
+
+To add additional *columns*, add `grid-auto-flow: column` to the grid container; this tells the layout module to add elements by filling each column first, and adding more columns as needed:
+
+{% example grid-implicit-rows.html elements="style" iframe %}
 
 
 
