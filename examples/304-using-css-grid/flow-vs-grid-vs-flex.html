@@ -4,26 +4,41 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Flow Vs Grid Vs Flex</title>
 	<style>
+		* { box-sizing: border-box; margin: 0; padding: 0; }
+
 		div {
 			background: gold;
 			padding: 10px;
-			margin: 10px;
-			min-width: 80px;
+			font-family: Consolas, 'Courier New', Courier, monospace;
+			border: 2px solid royalblue;
 		}
 
 		section[style*="display: flex"] {
-			div { flex: 1; }
+			flex-wrap: wrap;
+			div { flex: 1 1 50%; }
 		}
+
+		section[style*="display: grid"] {
+			grid: auto / 1fr 1fr;
+		}
+
 	</style>
 	<style>
+		body {
+			padding: 10px;
+		}
 		article {
 			display: flex;
-			padding: 10px;
 			gap: 10px;
+
+			pre,
+			section { flex: 0 1 33%; }
+			pre { text-align: center; }
 
 			section {
 				flex: 0 1 33%;
 				background: royalblue;
+				padding: 10px;
 			}
 		}
 	</style>
@@ -37,20 +52,25 @@
 			<div>4</div>
 			<div>5</div>
 		</section>
-		<section style="display: flex; flex-wrap: wrap;">
+		<section style="display: flex;">
 			<div>1</div>
 			<div>2</div>
 			<div>3</div>
 			<div>4</div>
 			<div>5</div>
 		</section>
-		<section style="display: grid; grid: auto / 1fr 1fr;">
+		<section style="display: grid;">
 			<div>1</div>
 			<div>2</div>
 			<div>3</div>
 			<div>4</div>
 			<div>5</div>
 		</section>
+	</article>
+	<article>
+		<pre>flow</pre>
+		<pre>flex</pre>
+		<pre>grid</pre>
 	</article>
 </body>
 </html>
