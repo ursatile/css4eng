@@ -4,6 +4,29 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>CSS Grid Named Columns</title>
 	<style>
+		body {
+			display: grid;
+			gap: 10px;
+			grid-template-columns:
+				[nav-start] 180px [nav-end main-start] 1fr [main-end ads-start] 180px [ads-end];
+
+			nav {
+				grid-column-start: nav-start;
+				grid-column-end: nav-end;
+			}
+
+			main {
+				grid-column-start: main-start;
+				grid-column-end: main-end;
+			}
+
+			aside#adverts {
+				grid-column-start: ads-start;
+				grid-column-end: ads-end;
+			}
+		}
+	</style>
+	<style>
 		* {
 			box-sizing: border-box;
 			margin: 0;
@@ -11,30 +34,11 @@
 		}
 
 		body {
+
 			height: 100vh;
 			max-width: 960px;
 			margin: 0px auto;
 			padding: 20px;
-
-			display: grid;
-			gap: 10px;
-			grid-template-columns:
-				[start-nav] 180px [end-nav start-content] 2fr 2fr 2fr [end-content start-ads] 180px [end-ads];
-
-			nav {
-				grid-column-start: start-nav;
-				grid-column-end: end-nav;
-			}
-
-			main {
-				grid-column-start: start-content;
-				grid-column-end: end-content;
-			}
-
-			aside#adverts {
-				grid-column-start: start-ads;
-				grid-column-end: end-ads;
-			}
 
 			>* {
 				background-color: silver;
@@ -43,6 +47,7 @@
 				align-items: center;
 				font-family: Consolas, 'Courier New', Courier, monospace;
 			}
+		}
 	</style>
 </head>
 <body>

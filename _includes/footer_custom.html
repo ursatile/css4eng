@@ -15,4 +15,11 @@
 	document.querySelectorAll("iframe").forEach(iframe => {
 		iframe.onload = adjustIframeHeightOnLoad;
 	});
+	document.querySelectorAll("a.footnote").forEach(a => {
+		var footnoteSelector = a.getAttribute("href");
+		footnoteSelector = footnoteSelector.replace(/:/, "\\:");
+		console.log(footnoteSelector);
+		var footnote = document.querySelector(footnoteSelector);
+		a.setAttribute("title", footnote.innerText);
+	});
 </script>
