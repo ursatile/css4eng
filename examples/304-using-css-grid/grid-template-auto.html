@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Template Auto</title>
+	<style>
+				section {
+			counter-reset: grid-item;
+
+			div {
+				font-family: Consolas, 'Courier New', Courier, monospace;
+				text-align: center;
+				counter-increment: grid-item;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				&::before { content: counter(grid-item); }
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<section>
+		<div>
+	</section>
+
+</body>
+</html>

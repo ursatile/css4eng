@@ -49,6 +49,10 @@ You can also use the `repeat` function to repeat the same track size:
 
 {% example grid-template-rows-and-columns-repeat.html elements="style" iframe %}
 
+There's also the `auto` keyword, which is... weird.
+
+{% example grid-template-auto.html elements="style" iframe %}
+
 
 
 
