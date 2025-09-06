@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Grid Start End Edge Case</title>
+	<link rel="stylesheet" href="grid-demo.css">
+	<style>
+		section {
+			display: grid;
+			padding: 10px;
+			gap: 10px;
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: repeat(4, 1fr);
+
+			div#example {
+				grid-column-start: 3;
+				grid-column-end: 3;
+				grid-row-start: 2;
+				grid-row-end: 2;
+				background-color: crimson;
+				color: white;
+			}
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<div id="example"></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</section>
+</body>
+</html>

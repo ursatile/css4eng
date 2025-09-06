@@ -67,7 +67,19 @@ To control the size of the implicit tracks, use `grid-auto-rows` or `grid-auto-c
 
 {% example grid-auto-columns.html mark_lines="12" elements="style" iframe %}
 
-Items within the grid can target specific rows and columns:
+Items within the grid can target specific rows and columns using the `grid-column-start`, `grid-column-end`, `grid-row-start` and `grid-row-end` properties.
+
+Something which often trips people up when they first encounter this syntax: we're not specifying the row or column number, we're specifying the *line between them*. I think one of the reasons there's so much confusion here is that there's some really misleading behaviour baked into the CSS grid spec:
+
+{% example grid-start-end-edge-case.html elements="style" iframe %}
+
+
+
+
+
+
+
+
 
 {% example grid-item-start-end.html elements="style" iframe %}
 
