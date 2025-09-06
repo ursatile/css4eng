@@ -1,10 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Subgrid</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Subgrid</title>
+	<style>
+		section {
+			display: grid;
+			grid-template-columns: repeat(5 1fr);
+			grid-template-rows: repeat(5 1fr);
+			gap: 5px;
+		}
+	</style>
+	<style>
+		body {
+			display: flex;
+			align-items: space-around;
+		}
+
+		section {
+			background-color: royalblue;
+
+			div {
+				background-color: gold;
+				padding: 20px;
+			}
+
+			counter-reset: grid-item;
+
+			div {
+				font-family: Consolas, 'Courier New', Courier, monospace;
+				text-align: center;
+				counter-increment: grid-item;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				&::before { content: counter(grid-item); }
+			}
+		}
+	</style>
 </head>
 <body>
-<!-- WRITE YOUR EXAMPLE HERE -->
+	<section>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div class="subgrid">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</section>
+
 </body>
 </html>
