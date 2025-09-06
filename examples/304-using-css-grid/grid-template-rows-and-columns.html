@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Grid Template Rows And Columns</title>
+	<style>
+		section {
+			display: grid;
+			grid-template-rows: 3fr 2fr 1fr;
+			grid-template-columns: 20px 3fr 1fr 10%;
+
+			div {}
+		}
+	</style>
+	<style>
+		section {
+			counter-reset: grid-item;
+
+			div {
+				counter-increment: grid-item;
+
+				&::before { content: counter(grid-item); }
+			}
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+
+	</section>
+</body>
+</html>

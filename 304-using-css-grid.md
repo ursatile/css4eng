@@ -14,9 +14,44 @@ And then there was the 12-column layout, and the CSS flexbox, and it was good, a
 
 The first thing to remember --- and this applies to just about everything we've seen so far in this course --- is that none of it is mutually exclusive. Choosing CSS layout modules isn't like choosing Python vs nodeJS, or React vs Angular; you can mix and match. You can absolutely have a site where you have individual grid-based components used in flex-based sections in a page that's using a legacy 12-column layout grid; in fact, many of the examples I've shown so far in this course use a flex or a grid just to lay out a handful of elements inside a div or a section.
 
-Flow vs Grid vs Flex 
+### Understanding Flow vs Grid vs Flex 
+
+There's a lot of overlap between flex and grid; they share many of the same concepts and use the same syntax for properties like `gap`. The fundamental difference between them is that **flex always tries to fill the container**, whereas **grid always respects rows and columns**.
+
+From time to time, somebody will ask online "I'm using CSS flexbox with wrap; how do I stop the last item stretching to fill the row?" and the answer comes back "use a CSS grid":
 
 {% example flow-vs-grid-vs-flex.html elements="style,body" iframe %}
+
+## Basic CSS Grid
+
+Very broadly speaking, CSS grid boils down to three things.
+
+1. Set `display: grid` or `display: inline-grid` on the container element
+2. Define the rows and columns on the container
+3. Override those if required for specific grid items
+
+I learned most of what I know about using CSS grid from Chris House's excellent [CSS Grid Layout Guide](https://css-tricks.com/snippets/css/complete-guide-grid/) over at css-tricks.com, which also has a [one-sheet quick-reference guide](https://css-tricks.com/wp-content/uploads/2022/02/css-grid-poster.png) covering all the grid layout properties and values.
+
+The rows and columns in a CSS grid layout are collectively known as *tracks*, so when you see a reference to a track or track size, we're talking about something which is either a row or a column.
+
+<figure>
+    <img src="./images/css-grid-tracks.png" alt="CSS Grid Tracks">
+    <figcaption>CSS Grid Tracks</figcaption>
+</figure>
+
+Tracks are specified using the `grid-template-rows` and `grid-template-columns` properties; each property is a list of track sizes - absolute units, relative units, or the special `fr` unit which represents a proportion of the available space.
+
+> `fr` is officially short for for *fraction* but when I first saw it I thought "oh, OK, `fr` for 'free space'" and that's stuck in my head now.
+
+{% example grid-template-rows-and-columns.html elements="style,body" iframe %}
+
+
+
+
+
+
+
+
 
 
 
