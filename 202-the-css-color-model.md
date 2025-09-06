@@ -16,7 +16,10 @@ Colour and contrast is one of the most important considerations when it comes to
 
 It's a common misconception that accessibility is about making special adaptations for people with specific disabilities. It's not. Accessibility and inclusive design are about creating content and experiences that don't *require* special adaptations --- and "disability" isn't boolean. One of the most insightful resources I've seen on the subject of inclusive design is Microsoft's [Inclusive 101 Guidebook](https://inclusive.microsoft.design/tools-and-activities/Inclusive101Guidebook.pdf), and in particular something called the Persona Spectrum:
 
-![image-20250728001812102](./images/microsoft-inclusive-persona-spectrum.png)
+<figure>
+<img src="./images/microsoft-inclusive-persona-spectrum.png" alt="Microsoft Inclusive Persona Spectrum" style="filter: invert();" />
+<figcaption>Microsoft Inclusive Persona Spectrum</figcaption>
+</figure>
 
 When it comes to colour... well, I have pretty good eyesight, but every time I find myself using my phone outside on a bright sunny day, it becomes instantly apparent how much difference colour, size and contrast can make when it comes to trying to read what's on the screen in less than ideal conditions. I also have a wonderful gadget called a Boox, which is an Android tablet with a monochrome e-ink display. Fantastic for reading books and taking notes, and it runs Google Chrome, but browsing the web on it is a real hit-and-miss experience because of the number of sites that degrade to the point of being unusable when they're rendered in monochrome.
 
@@ -28,7 +31,7 @@ WCAG Understanding Doc SC 1.4.1 covers use of colour:
 
 Take a moment to read through that --- it's only a few pages. Then take a look at this example of colour accessibility done really badly. How many issues can you spot?
 
-{% iframe color-and-accessibility.html style="height: 18em;" %}
+{% iframe color-and-accessibility.html %}
 
 ### Simulating Visual Deficiency with Browser DevTools
 

@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
 ## Part 1: Introduction and Background (45m)
 
 ### Course overview (5m)
@@ -156,4 +160,3 @@ An in-depth exercise combining material from each part to build an interactive w
 * The future of CSS
 * FAQ (20m)
 * Thank you
- 

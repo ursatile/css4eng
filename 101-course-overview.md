@@ -1,6 +1,7 @@
 ---
 examples: examples/101-course-overview
 layout: home
+nav_exclude: true
 nav_order: 101
 title: "Course Overview"
 word_count: 23
@@ -14,7 +15,6 @@ word_count: 23
 - Prerequisites: what should you already know?
 
 ## Notes
-
 
 
 

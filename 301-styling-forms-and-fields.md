@@ -197,19 +197,17 @@ When you combine this with styling the `picker(select)`, and the fact that  `<op
 
 {% example select-with-all-the-extra-toppings.html elements="style,body" iframe_style="height: 480px;" %}
 
+**TODO: summary of select list elements and pseudo-classes.**
+
 ### What About Multiple Selects?
 
 HTML has always supported multiline selects, and the little-known `multiple` attribute that allows the user to select more than one option simultaneously:
 
 {% example multiple-select.html elements="style,body" iframe %}
 
-
-
-
-
 ## Styling File Inputs
 
-
+**TODO: styling file inputs**
 
 
 

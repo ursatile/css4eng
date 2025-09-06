@@ -132,7 +132,7 @@ Animation names in CSS must be a valid `<custom-ident`>: one or more characters,
 * Number `0-9`
 * 
 
-
+**TODO: finish writing about animations**
 
 
 
