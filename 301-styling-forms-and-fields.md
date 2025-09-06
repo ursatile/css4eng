@@ -74,7 +74,7 @@ Despite this being part of the HTML standard since the 1990s, you'll still see a
 
 {% example radio-buttons-without-labels.html elements="style,body" iframe %}
 
-If you find this easy, have a couple of drinks and then try doing it on your phone on a moving train - a completely valid technique for understanding what it's like to use your software for somebody who has limited dexterity. The WCAG refers to this particular issue as [target size](https://www.w3.org/WAI/WCAG21/Understanding/target-size.html); WCAG level AA requires a minimum target size of 24x24 pixels, and for compliance with level AAA (the highest accessibility standard) targets should be [at least 44x44 pixels](https://www.w3.org/WAI/WCAG21/Understanding/target-size.
+If you find this easy, have a couple of drinks and then try doing it on your phone on a moving train - a completely valid technique for understanding what it's like to use your software for somebody who has limited dexterity. The WCAG refers to this particular issue as [target size](https://www.w3.org/WAI/WCAG21/Understanding/target-size.html); WCAG level AA requires a minimum target size of 24x24 pixels, and for compliance with level AAA (the highest accessibility standard) targets should be [at least 44x44 pixels](https://www.w3.org/WAI/WCAG21/Understanding/target-size).
 
 The problem with styling radio buttons and checkboxes is that on almost all devices, they aren't drawn by the browser - they're drawn by the operating system, so properties like border and background have no effect.
 

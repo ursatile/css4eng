@@ -2,6 +2,7 @@
 examples: examples/401-scoping-css
 layout: home
 nav_order: 401
+nav_exclude: true
 target_minutes: 10
 title: "Scoping CSS"
 word_count: 16

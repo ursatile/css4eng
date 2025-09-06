@@ -3,6 +3,7 @@ examples: examples/404-processing-css
 layout: home
 nav_order: 404
 target_minutes: 20
+nav_exclude: true
 title: "Processing CSS"
 word_count: 11
 ---
