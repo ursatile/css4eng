@@ -43,9 +43,11 @@ Tracks are specified using the `grid-template-rows` and `grid-template-columns` 
 
 > `fr` is officially short for for *fraction* but when I first saw it I thought "oh, OK, `fr` for 'free space'" and that's stuck in my head now.
 
-{% example grid-template-rows-and-columns.html elements="style,body" iframe %}
+{% example grid-template-rows-and-columns.html elements="style" iframe %}
 
+You can also use the `repeat` function to repeat the same track size:
 
+{% example grid-template-rows-and-columns-repeat.html elements="style" iframe %}
 
 
 
