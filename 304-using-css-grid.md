@@ -94,15 +94,19 @@ Part of the power of CSS grid is the ability to name parts of the grid, and then
 
 First up, let's take a look at named lines. To create a named line, put the name in `[]` square brackets between two tracks in the row or column template property.
 
-* You aren't naming the tracks, you're **naming the lines between them**.
+* Remember, you aren't naming the tracks, you're **naming the lines between them**.
 
-* A single line can have more than one name - useful when the end of one area also marks the start of another area.
+* A single line can have more than one name - useful when the end of one area also marks the start of another area, like when the `nav-end`
 
 * A name can be applied to more than one line, and then used by qualifying it with a number - apparently useful if you put named lines into a `repeat()` statement.[^1]
 
 [^1]: Don't ask me why anybody would do this. I have no idea.
 
 {% example grid-named-columns.html elements="style" iframe %}
+
+Naming lines is just a prelude to the really good stuff: named grid areas. You can take whole chunks of the grid, give them names using a relatively simple format, and then link chunks of content to those areas.
+
+{% example grid-named-areas.html elements="style" iframe %}
 
 
 

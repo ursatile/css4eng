@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Grid Named Areas</title>
+	<style>
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			height: 100vh;
+			display: grid;
+			grid-template-rows: 100px 20px 1fr 1fr 120px;
+			grid-template-columns: minmax(100px, 10vw) 1fr 200px;
+			gap: 5px;
+
+			grid-template-areas:
+				" header    header     header "
+				"site-nav  site-nav    adverts"
+				"page-nav    main      adverts"
+				"page-nav    main     comments"
+				" footer    footer     footer";
+
+			header { grid-area: header; }
+			nav#site-nav { grid-area: site-nav; }
+			nav#page-nav { grid-area: page-nav; }
+			main { grid-area: main; }
+			aside#comments { grid-area: comments; }
+			aside#adverts { grid-area: adverts; }
+			footer { grid-area: footer; }
+
+			>* {
+				background-color: silver;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-family: Consolas, 'Courier New', Courier, monospace;
+			}
+		}
+	</style>
+</head>
+<body>
+	<header>
+		header
+	</header>
+	<nav id="site-nav">
+		site nav
+	</nav>
+	<nav id="page-nav">
+		page nav
+	</nav>
+	<main>main</main>
+	<aside id="adverts">
+		adverts
+	</aside>
+	<aside id="comments">comments</aside>
+	<footer>footer</footer>
+</body>
+</html>
