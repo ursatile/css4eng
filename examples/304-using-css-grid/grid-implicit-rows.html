@@ -10,6 +10,7 @@
 			grid-template-rows: 1fr 1fr;
 		}
 	</style>
+
 	<style>
 		body {
 			height: 20rem;
@@ -20,40 +21,9 @@
 			gap: 10px;
 			padding: 10px;
 			height: 15rem;
-			background-color: royalblue;
-
-			div {
-				background-color: gold;
-				padding: 20px;
-			}
-
-			counter-reset: grid-item;
-
-			div {
-				font-family: Consolas, 'Courier New', Courier, monospace;
-				text-align: center;
-				counter-increment: grid-item;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-
-				&::before { content: counter(grid-item); }
-			}
-		}
-
-		pre { text-align: center; }
-
-		button {
-			background-color: gold;
-			border: none;
-			border-radius: 20px;
-			padding: 10px;
-			margin-bottom: 10px;
-			cursor: pointer;
-
-			&:nth-of-type(2) { float: right; }
 		}
 	</style>
+	<link rel="stylesheet" href="grid-demo.css">
 </head>
 <body>
 	<button id="add-an-element-button" href="#">add an element</button>

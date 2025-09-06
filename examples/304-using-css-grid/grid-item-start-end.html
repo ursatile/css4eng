@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Grid Item Start End</title>
+	<link rel="stylesheet" href="grid-demo.css">
+	<style>
+		section {
+			display: grid;
+			grid-template-rows: repeat(5, 1fr);
+			grid-template-columns: repeat(5, 1fr);
+			gap: 10px;
+			padding: 10px;
+		}
+		div#alpha {
+			background-color: crimson;
+			color: #fff;
+			grid-column-start: 2;
+			grid-column-end: 5;
+			grid-row-start: 2;
+			grid-row-end: 5;
+		}
+		div#beta {
+			background-color: turquoise;
+			grid-column-start: 1;
+			grid-row-start: 1;
+			grid-row-end: 5;
+		}
+	</style>
+</head>
+
+<body>
+	<section>
+		<div></div>
+		<div></div>
+		<div id="alpha"></div>
+		<div id="beta"></div>
+	</section>
+</body>
+</html>

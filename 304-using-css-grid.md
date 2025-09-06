@@ -67,6 +67,26 @@ To control the size of the implicit tracks, use `grid-auto-rows` or `grid-auto-c
 
 {% example grid-auto-columns.html mark_lines="12" elements="style" iframe %}
 
+Items within the grid can target specific rows and columns:
+
+{% example grid-item-start-end.html elements="style" iframe %}
+
+## Named Tracks and Template Areas
+
+Part of the power of CSS grid is the ability to name parts of the grid, and then use those names to allocate other elements in your document to named grid areas.
+
+Note that when you use names in the row/column specification, you aren't naming the tracks, you're **naming the lines between them**.
+
+{% example grid-named-columns.html element="style" iframe %}
+
+
+
+
+
+
+
+
+
 
 
 
