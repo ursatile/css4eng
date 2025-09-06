@@ -2,9 +2,15 @@
 	function adjustIframeHeightOnLoad(loadEvent) {
 		const iframe = loadEvent.target;
 		if (iframe.style.height) return;
+
+		let extraHeight = 10;
+
 		const doc = iframe.contentWindow.document;
+		const computedStyle = iframe.contentWindow.getComputedStyle(doc.body);
+		const overflowX = computedStyle.getPropertyValue('overflow-x');
+		if (overflowX && overflowX !== 'visible') extraHeight += 10;
 		var height = doc.documentElement.offsetHeight;
-		iframe.style.height = (height + 10) + 'px';
+		iframe.style.height = (height + extraHeight) + 'px';
 	}
 	document.querySelectorAll("iframe").forEach(iframe => {
 		iframe.onload = adjustIframeHeightOnLoad;

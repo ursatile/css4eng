@@ -61,7 +61,11 @@ By default, the grid layout adds additional rows to the end of the grid.
 
 To add additional *columns*, add `grid-auto-flow: column` to the grid container; this tells the layout module to add elements by filling each column first, and adding more columns as needed:
 
-{% example grid-implicit-rows.html elements="style" iframe %}
+{% example grid-implicit-columns.html mark_lines="11" elements="style" iframe %}
+
+To control the size of the implicit tracks, use `grid-auto-rows` or `grid-auto-columns`:
+
+{% example grid-auto-columns.html mark_lines="12" elements="style" iframe %}
 
 
 
