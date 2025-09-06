@@ -39,7 +39,7 @@ The rows and columns in a CSS grid layout are collectively known as *tracks*, so
     <figcaption>CSS Grid Tracks</figcaption>
 </figure>
 
-The boundaries around the grid and between adjacent tracks are known as *grid lines* - and no, there's no way to make them visible the way you can with table cell borders.
+The boundaries around the grid and between adjacent tracks are known as *grid lines* - and before you ask, there's no way to use CSS to make them visible the way you can with table cell borders.
 
 <figure>
     <img src="./images/css-grid-lines.png" alt="CSS Grid Tracks">
@@ -130,30 +130,32 @@ and then by specifying the `grid-area` property on the various elements that mak
 
 {% example grid-named-areas.html elements="style" iframe_style="height: 600px;" %}
 
-# Using CSS Grid (30m)
+## Subgrid and Masonry Grids
 
-## Course Content
+As well as specifying track sizes, the CSS  properties support the `subgrid` and the (experimental) `masonry` value:
 
-- Display: `grid` and `inline-grid`
-- Grid-template columns, rows, areas
-- grid-colum (+ start and end)
-- grid-row (+ start and end)
-- grid-area
-- place - items, content, self
-- justify and align
-- auto grids - flow, columns and rows
+Subgrids are used when a grid item is itself a grid container:
 
-## Notes
+{% example subgrid.html elements="style,body" iframe %}
 
+## Grid Shorthand
 
+The property `grid` is a shorthand syntax covering:
 
+* `grid-auto-columns`
+* `grid-auto-flow`
+* `grid-auto-rows`
+* `grid-template-areas`
+* `grid-template-columns`
+* `grid-template-rows`
 
-
-
-
-
+Like most CSS shorthand properties, it's redundant if you're only specifying a single property, useful if you're specifying two or three properties, and rapidly becomes unreadable if you pack in many more than that.
 
 
 
 
+
+## Justify, Align, and Grid Item Properties
+
+Like CSS flexbox, grid gives us a whole range of options when it comes to aligning and justifying items in the container, and for allowing individual items to override container-level styling.
 
