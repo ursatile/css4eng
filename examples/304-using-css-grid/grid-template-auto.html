@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grid Template Auto</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Grid Template Auto</title>
 	<style>
-				section {
+		section {
+			display: grid;
+			grid-template-rows: auto;
+			grid-template-columns: 100px auto 100px;
+		}
+	</style>
+	<style>
+		body { height: 20rem; }
+
+		section {
+			gap: 10px;
+			padding: 10px;
+			height: 15rem;
+			background-color: royalblue;
+
+			div {
+				background-color: gold;
+				padding: 20px;
+			}
+
 			counter-reset: grid-item;
 
 			div {
@@ -19,12 +38,23 @@
 			}
 		}
 
+		pre { text-align: center; }
+
 	</style>
 </head>
 <body>
+	<a href="#">add an element</a> <a href="#">reset</a>
 	<section>
-		<div>
+		<div></div>
 	</section>
-
+	<pre>Click to add elements to the grid</pre>
 </body>
+<script>
+	document.querySelectorAll("section").forEach(section => {
+		section.addEventListener("click", () => {
+			const div = document.createElement('div');
+			section.appendChild(div);
+		});
+	});
+</script>
 </html>
