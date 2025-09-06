@@ -1,25 +1,16 @@
 ---
-examples: examples/302-atoms-molecules-and-organisms
+examples: examples/302-interaction-design
 layout: home
 nav_order: 302
 target_minutes: 10
-title: "Atoms, Molecules and Organisms"
+title: "Interaction Design"
 word_count: 29
 ---
-# Atoms, Molecules and Organisms (20m)
+TODO: responsive navigation
 
-## Course Content
+TODO: toolbars and control bar
 
-- Beyond Basic Buttons: FontAwesome, CSS shapes, inline SVGs, PNG images, emoji
-- Exercise: building a CSS control bar for a media player
-
-## Notes
-
-
-
-
-
-
+TODO: images and buttons
 
 
 

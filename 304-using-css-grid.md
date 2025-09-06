@@ -14,6 +14,10 @@ And then there was the 12-column layout, and the CSS flexbox, and it was good, a
 
 The first thing to remember --- and this applies to just about everything we've seen so far in this course --- is that none of it is mutually exclusive. Choosing CSS layout modules isn't like choosing Python vs nodeJS, or React vs Angular; you can mix and match. You can absolutely have a site where you have individual grid-based components used in flex-based sections in a page that's using a legacy 12-column layout grid; in fact, many of the examples I've shown so far in this course use a flex or a grid just to lay out a handful of elements inside a div or a section.
 
+Flow vs Grid vs Flex 
+
+{% example flow-vs-grid-vs-flex.html elements="style,body" iframe %}
+
 
 
 
