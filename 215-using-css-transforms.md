@@ -4,7 +4,7 @@ layout: home
 nav_order: 215
 target_minutes: 15
 title: "Using CSS Transforms"
-word_count: 7
+word_count: 2042
 ---
 Everything we've looked at so far is about static presentation; the only user interaction we've looked at is what happens when the user resizes their browser, or opens the page on a different device.
 

@@ -1,10 +1,10 @@
 ---
-examples: examples/305-working-with-css-variables
+examples: examples/305-variables-and-functions
 layout: home
 nav_order: 305
 target_minutes: 10
 title: "Variables and Functions"
-word_count: 27
+word_count: 40
 ---
 # Working with CSS Variables (20m)
 

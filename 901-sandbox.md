@@ -1,8 +1,10 @@
 ---
+examples: examples/901-sandbox
 front: matter
 layout: home
+nav_order: 901
 title: Sandbox Test Page
-word_count: 30
+word_count: 43
 ---
 This is a sandbox test page for Dylan's handbook system and Jekyll plugins.
 

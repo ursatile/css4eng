@@ -1,10 +1,10 @@
 ---
-examples: examples/306-advanced-visual-effects
+examples: examples/306-shapes-and-clip-paths
 layout: home
 nav_order: 306
 target_minutes: 10
 title: "Shapes and Clip Paths"
-word_count: 31
+word_count: 19
 ---
 # Shapes and Clip Paths
 
