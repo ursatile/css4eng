@@ -1,7 +1,7 @@
 ---
-examples: examples/904-speech-bubbles
+examples: examples/903-speech-bubbles
 layout: home
-nav_order: 904
+nav_order: 903
 target_minutes: 5
 title: "Exercise: Speech Bubbles"
 word_count: 10
