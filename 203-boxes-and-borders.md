@@ -26,17 +26,17 @@ Let's start here, with an empty web page.
 
 Anything we add to that page is going to appear in the top left corner. Let's add a paragraph that just says “Hello World!”:
 
-<iframe style="height: 10rem;" src="{{ page.examples }}/hello-world.html"></iframe>
+{% iframe hello-world.html %}
 
 A paragraph is what's known as a **block-level element**: it always starts on a new line, and it always takes up the full width of the page. Copy & paste that paragraph a few times:
 
-<iframe style="height: 10rem;" src="{{ page.examples }}/hello-world-paragraphs.html"></iframe>
+{% iframe hello-world-paragraphs.html %}
 
 Now, if you use the inspector tool to examine those paragraphs, you'll see that each one is a distinct block, and they're all the full width of the page.
 
 Next, let's put a bunch of `<em>` tags inside the first paragraph:
 
-<iframe style="height: 10rem;" src="{{ page.examples }}/hello-world-paragraphs-and-ems.html"></iframe>
+{% iframe hello-world-paragraphs-and-ems.html %]
 
 The`em` element is what's called an **inline** element. It doesn't start a new line, and it's only as big as it needs to be to contain its own content.
 
@@ -56,7 +56,7 @@ Time to meet the CSS box model.
 
 CSS is based on boxes. Every element on a page sits inside an invisible bounding rectangle, sometimes known as the *content box*, which the browser uses to determine where to draw that element, and how big it should be. 
 
-**TODO: artwork illustrating CSS content box**
+**TODO: ARTWORK TO FOLLOW - CSS box model**
 
 We've already met the CSS `outline` property, which tells the browser to make the bounding rectangle visible, but doesn't change the size, or shape, of the element. See what happens if we take several adjacent DIV elements and add a rule that gives them a 1 pixel red outline:
 
@@ -66,11 +66,11 @@ If we crank up the outline - 2px, 5px, 10px, 20px - you can clearly see that the
 
 Instead, CSS has a property called `border`. Let's change that rule to give our `div` elements a 1 pixel red border:
 
-**TODO: artwork demonstrating CSS border**
+**TODO: artwork to follow demonstrating CSS border**
 
 And now, if we change the thickness to 2, 5, 10, 20 pixels, you can see how the layout changes each time so that the border doesn't obscure the contents.
 
-**TODO: artwork demonstrating border-width**
+**TODO: artwork to follow demonstrating border-width**
 
 If you want a space between the content and the border, use the CSS property called `padding`. Unlike `border`, `padding` doesn't actually draw anything, it just creates empty space, so we don't give it a style or a colour - just a measurement:
 
@@ -100,11 +100,11 @@ Take a look at this example:
 
 If you modify the rule to give the `h1` element a 20 pixel margin, you'll get this:
 
-<iframe style="height: 20rem;" src="{{ page.examples }}/collapse-with-h1-margin.html"></iframe>
+{% iframe collapse-with-h1-margin.html %}
 
 Now if you also give the `p` elements a 10px margin, you get this:
 
-<iframe style="height: 20rem;" src="{{ page.examples }}/collapse-with-h1-and-p-margin.html"></iframe>
+{% iframe collapse-with-h1-and-p-margin.html %}
 
 See how the *total* distance between the heading 1 and the first paragraph there is 20 pixels? The browser has *collapsed* the two elements' margins: the h1 is 20 pixels away from the paragraph, which is fine, and the paragraph is more than 10 pixels away from the heading, which is also fine.
 
@@ -125,23 +125,18 @@ p {
 }
 
 /* which is equivalent to: */
-p {
-    margin: 10px 0 20px 0;
-}
+p { margin: 10px 0 20px 0; }
 ```
 
 The second rule there is using what's sometimes called *TRBL shorthand*: the values apply clockwise from the top: top > right > bottom > left. I usually remember this because it matches the consonants in the word *trouble*. There's also a 2-value and a 3-value shorthand syntax:
 
 ```css
 /* CSS two-value syntax: top & bottom, right & left */
-p {
-    margin: 10px 20px;
+p { margin: 10px 20px;
 }
 
 /* CSS three value syntax: top, right & left, bottom */
-p {
-    margin: 10px 20px 30px;
-}
+p { margin: 10px 20px 30px; }
 ```
 
 When it comes to borders, there's a whole bunch of ways we can combine the various properties. Each edge of the element can have a `border-width`, a `border-style`, and a `border-color` - and any of these properties can use any of the shorthand syntaxes above:
@@ -320,8 +315,8 @@ This is one of those classic scenarios that's completely baffling until you work
 
 ...so there's a newline and a tab between each `<div>` element.
 
-**Third**: percentages and rounding. Three elements with `width: 33%` adds up to a total width of `99%` - so we've got one percent of the total viewport width left to play with. On my system, as long as the viewport is over 812px wide, those two whitespaces are smaller than the 1% of available space, so nothing wraps... but if I shrink the viewport below 812px, it won't fit on one line any more, and the browser wraps it only multiple lines as it would with any other inline content.4340
----
+**Third**: percentages and rounding. Three elements with `width: 33%` adds up to a total width of `99%` - so we've got one percent of the total viewport width left to play with. On my system, as long as the viewport is over 812px wide, those two whitespaces are smaller than the 1% of available space, so nothing wraps... but if I shrink the viewport below 812px, it won't fit on one line any more, and the browser wraps it only multiple lines as it would with any other inline content.
+
 So far, we've learned about the building blocks of the CSS language - selectors, properties, and values - and the tools and techniques we can use to inspect and manipulate those properties.
 
 Time to dive into how CSS actually works, and why.

@@ -160,11 +160,7 @@ I've used this kind of technique on several projects to create a navigation indi
 
 {% example nav-marker.html elements="style,body" iframe_style="" %}
 
-Another scenario that's come up several times in my own career is creating a "speech bubble" callout.
-
-## Exercise: Creating Pure CSS Speech Bubbles
-
-{% example speech-bubble.html elements="style,body" iframe_style="" %}
+Another scenario that's come up several times in my own career is creating a "speech bubble" callout - see the linked exercise for a walkthrough of how to do this.
 
 
 
