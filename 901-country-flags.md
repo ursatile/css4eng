@@ -1,7 +1,7 @@
 ---
-examples: examples/501-conclusion
+examples: examples/901-country-flags
 layout: home
-nav_order: x01
+nav_order: 901
 target_minutes: 10
 title: "Exercise: Country Flags 1"
 word_count: 76
