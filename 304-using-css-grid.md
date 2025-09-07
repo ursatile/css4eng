@@ -145,7 +145,7 @@ There's also a popular layout used on a lot of sites, most notably Pinterest, wh
     <figcaption>Example of a Masonry Layout</figcaption>
 </figure>
 
-There is a proposal to add a masonry grid to CSS, so you could build a layout like the one above by specifying the grid columns as usual and setting `grid-template-rows` to `masonry`; however, at the time I'm writing this, it's only available as a technology preview in experimental versions of Safari, so I reckon it'll be mid-2026 at the earliest before we see any support across Chrome and/or Firefox for masonry grids.
+There is a [proposal to add a masonry grid to CSS](https://css-tricks.com/css-masonry-css-grid/), so you could build a layout like the one above by specifying the grid columns as usual and setting `grid-template-rows` to `masonry`; however, at the time I'm writing this, it's only available as a technology preview in experimental versions of Safari, so I reckon it'll be mid-2026 at the earliest before we see any support across Chrome and/or Firefox for masonry grids; in the meantime, if you're trying to create this kind of layout, the only option is to use JavaScript to 
 
 ## Grid Shorthand
 
