@@ -209,10 +209,6 @@ HTML has always supported multiline selects, and the little-known `multiple` att
 
 **TODO: styling file inputs**
 
-
-
-
-
 ---
 
 

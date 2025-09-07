@@ -36,7 +36,7 @@ Now, if you use the inspector tool to examine those paragraphs, you'll see that 
 
 Next, let's put a bunch of `<em>` tags inside the first paragraph:
 
-{% iframe hello-world-paragraphs-and-ems.html %]
+{% iframe hello-world-paragraphs-and-ems.html %}
 
 The`em` element is what's called an **inline** element. It doesn't start a new line, and it's only as big as it needs to be to contain its own content.
 
@@ -46,7 +46,7 @@ Modern HTML provides two elements specifically for those scenarios: `div` and `s
 
 Let's throw a few `div`s and `span`s into our page to see what happens:
 
-{% example divs-and-spans.html iframe_style="height: 20rem;" %}
+{% example divs-and-spans.html iframe %}
 
 You'll notice two differences here. One: the emphasis tags are in italics, whereas the span tags are just regular text. Two: there's vertical spacing between the paragraphs, but no vertical spacing between the div elements.
 
@@ -189,7 +189,7 @@ By the way, in computing, we use the terms *font* and *typeface* interchangeably
 
 Here's an example page:
 
-* [ems-and-rems.html](/examples/02-01-boxes-and-borders/ems-and-rems.html)
+* [ems-and-rems.html]({{ page.examples }}/ems-and-rems.html)
 
 We've given every element on the page a bottom border that's `1em` thick:
 
@@ -209,7 +209,7 @@ Modern CSS also supports the following units; relative to the element's font, an
 * `lh` / `rlh`, the *line height* 
 * `ic` / `ric` the width of the "水" glyph (CJK water ideograph, U+6C34)
 
-{% example typographic-units.html elements="style" iframe_style="height: 12em;"  %}
+{% example typographic-units.html elements="style" iframe %}
 
 > As of August 2025, Firefox doesn't support `rcap`, `rch`, `rex`, or `ric`. 
 
@@ -219,7 +219,7 @@ Let's get to know another couple of CSS properties: `width` and `height`. These 
 
 {% example width-and-height-absolute.css %}
 
-<iframe src="{{ page.examples }}/width-and-height-absolute.html" style="height: 10em;"></iframe>
+{% iframe width-and-height-absolute.html %}
 
 Note how elements with a `width` are aligned to the left edge of the page. Also notice how, if you resize the browser window, these elements don't change size, because their width and height are specified in *absolute units*.
 
