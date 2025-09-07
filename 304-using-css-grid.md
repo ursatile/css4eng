@@ -4,7 +4,7 @@ layout: home
 nav_order: 304
 target_minutes: 15
 title: "Using CSS Grid"
-word_count: 332
+word_count: 1601
 ---
 In the beginning, there was the document flow, and there were block and inline elements, and lo, it was sort of OK, and if it wasn't you could always use float, and developers went "but how do we get a header here and a footer there and a left and right hand navigation and have the whole thing responsive across different layouts" and the World Wide Web Consortium went "we don't know maybe you could do it using tables?"
 

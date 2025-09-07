@@ -1,9 +1,9 @@
 ---
 examples: examples/501-conclusion
 layout: home
+nav_exclude: true
 nav_order: 501
 target_minutes: 10
-nav_exclude: true
 title: "Conclusion"
 word_count: 29
 ---

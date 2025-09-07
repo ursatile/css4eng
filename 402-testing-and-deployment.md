@@ -1,9 +1,9 @@
 ---
 examples: examples/402-testing-and-deployment
 layout: home
+nav_exclude: true
 nav_order: 402
 target_minutes: 20
-nav_exclude: true
 title: "Testing and Deployment"
 word_count: 26
 ---

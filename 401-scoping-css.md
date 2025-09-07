@@ -1,8 +1,8 @@
 ---
 examples: examples/401-scoping-css
 layout: home
-nav_order: 401
 nav_exclude: true
+nav_order: 401
 target_minutes: 10
 title: "Scoping CSS"
 word_count: 16
