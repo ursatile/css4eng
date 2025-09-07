@@ -4,7 +4,7 @@ layout: home
 nav_order: 210
 target_minutes: 15
 title: "Advanced CSS Borders"
-word_count: 1151
+word_count: 1153
 ---
 In the section on boxes & borders, we learned about `border-width`, `border-style` and `border-color` - basically, a bunch of ways to draw a line around a box. 
 
