@@ -1,9 +1,5 @@
 ---
 nav_exclude: true
-word_count: 737
----
----
-nav_exclude: true
 word_count: 733
 ---
 ## Part 1: Introduction and Background (45m)
