@@ -1,7 +1,7 @@
 ---
-examples: examples/208-exercise-typesetting-a-festival-poster
+examples: examples/902-festival-poster
 layout: home
-nav_order: 208
+nav_order: 902
 target_minutes: 5
 title: "Exercise: Typesetting a Festival Poster"
 word_count: 586

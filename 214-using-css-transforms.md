@@ -1,7 +1,7 @@
 ---
-examples: examples/215-using-css-transforms
+examples: examples/214-using-css-transforms
 layout: home
-nav_order: 215
+nav_order: 214
 target_minutes: 15
 title: "Using CSS Transforms"
 word_count: 2042

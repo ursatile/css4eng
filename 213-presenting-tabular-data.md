@@ -1,7 +1,7 @@
 ---
-examples: examples/214-presenting-tabular-data
+examples: examples/213-presenting-tabular-data
 layout: home
-nav_order: 214
+nav_order: 213
 target_minutes: 15
 title: "Presenting Tabular Data"
 word_count: 296
