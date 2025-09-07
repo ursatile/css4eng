@@ -5,7 +5,7 @@
 	<title>Subgrid</title>
 	<style>
 		section {
-			font-size: 0.8vw;
+			font-size: 1.2vw;
 			width: 40vw;
 			aspect-ratio: 1;
 			display: grid;
@@ -22,6 +22,7 @@
 				grid-template-columns: 2fr 3fr 4fr;
 				grid-template-rows: 2fr 3fr 4fr;
 				gap: 10px;
+
 				&.subgrid {
 					grid-template-columns: subgrid;
 					grid-template-rows: subgrid;
@@ -54,6 +55,7 @@
 
 			>span {
 				counter-increment: grid-item;
+
 				&::before { content: counter(grid-item); }
 			}
 		}
@@ -64,9 +66,17 @@
 		<span></span><span></span><span></span><span></span><span></span>
 		<span></span>
 		<div>
-			<span>Alice Cooper</span><span>Bon Jovi</span><span>Creedence Clearwater Revival</span>
-			<span>Dire Straits</span><span>Eagles</span><span>Foo Fighters</span>
-			<span>Galahad</span><span>Heart</span><span>Iron Maiden</span>
+			<span>Alice Cooper</span>
+			<span>Bon Jovi</span>
+			<span>Creedence Clearwater Revival</span>
+
+			<span>Dire Straits</span>
+			<span>Eagles</span>
+			<span>Foo Fighters</span>
+
+			<span>Galahad</span>
+			<span>Heart</span>
+			<span>Iron Maiden</span>
 		</div>
 		<span></span>
 		<span></span><span></span>
@@ -78,9 +88,17 @@
 		<span></span><span></span><span></span><span></span><span></span>
 		<span></span>
 		<div class="subgrid">
-			<span>Alice Cooper</span><span>Bon Jovi</span><span>Creedence Clearwater Revival</span>
-			<span>Dire Straits</span><span>Eagles</span><span>Foo Fighters</span>
-			<span>Galahad</span><span>Heart</span><span>Iron Maiden</span>
+			<span>Alice Cooper</span>
+			<span>Bon Jovi</span>
+			<span>Creedence Clearwater Revival</span>
+
+			<span>Dire Straits</span>
+			<span>Eagles</span>
+			<span>Foo Fighters</span>
+
+			<span>Galahad</span>
+			<span>Heart</span>
+			<span>Iron Maiden</span>
 		</div>
 		<span></span>
 		<span></span><span></span>

@@ -132,11 +132,13 @@ and then by specifying the `grid-area` property on the various elements that mak
 
 ## Subgrid and Masonry Grids
 
-As well as specifying track sizes, the CSS  properties support the `subgrid` and the (experimental) `masonry` value:
+As well as specifying track sizes, the CSS `grid-template-row` and `grid-template-column` properties can take the value `subgrid`
 
-Subgrids are used when a grid item is itself a grid container:
+Subgrid is used when a grid item is itself a grid container; it causes the tracks and lines of the child element to align with the grid of the parent element. Other grid properties, like `gap`, are not inherited, and can be declared separately on the child container:
 
 {% example subgrid.html elements="style,body" iframe %}
+
+There's also a popular layout used on a lot of sites, most notably Pinterest, which is known as a *masonry layout*; a way to arrange irregular content in columns such that it doesn't leave any g
 
 ## Grid Shorthand
 
