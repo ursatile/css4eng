@@ -1,10 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Align Self</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>align-self</title>
+	<style>
+		body {
+			display: flex;
+			gap: 10px;
+		}
+
+		section {
+			flex: 1;
+			display: flex;
+			padding: 5px;
+			gap: 5px;
+			min-height: 14em;
+			background: royalblue;
+			font-family: Consolas, 'Courier New', Courier, monospace;
+			font-size: 0.6rem;
+
+			div {
+				flex: 1;
+				background: gold;
+				padding: 5px;
+			}
+		}
+	</style>
 </head>
 <body>
-<!-- WRITE YOUR EXAMPLE HERE -->
+	<section style="align-items: start;">
+		<div>(default)</div>
+		<div style="align-self: end;">align-self: end</div>
+		<div style="align-self: stretch;">align-self: stretch</div>
+		<div style="align-self: center;">align-self: center</div>
+	</section>
 </body>
 </html>

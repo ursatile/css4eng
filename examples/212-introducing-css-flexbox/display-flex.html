@@ -1,10 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Display Flex</title>
+	<title>display-flex</title>
+	<style>
+		section {
+			background-color: royalblue;
+			padding: 0.2rem;
+			margin: 0.2rem;
+
+			span {
+				padding: 0.5rem;
+				border: 1px solid crimson;
+			}
+
+			span {
+				background: gold;
+			}
+		}
+	</style>
 </head>
 <body>
-<!-- WRITE YOUR EXAMPLE HERE -->
+	<section style="display: flex;">
+		<span>A</span>
+		<span>B</span>
+		<span>C</span>
+	</section>
+	<section style="display: flex; flex-direction: column;">
+		<span>A</span>
+		<span>B</span>
+		<span>C</span>
+	</section>
+	<section style="display: flex; flex-direction: row-reverse;">
+		<span>A</span>
+		<span>B</span>
+		<span>C</span>
+	</section>
+	<section style="display: flex; flex-direction: column-reverse;">
+		<span>A</span>
+		<span>B</span>
+		<span>C</span>
+	</section>
 </body>
 </html>

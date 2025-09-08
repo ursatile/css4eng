@@ -57,13 +57,13 @@ Border images can be a little baffling because you need to provide multiple prop
 
 To understand how slice works, we're going to use this background image:
 
-<img src="examples/211-advanced-css-borders/9-slice.png">
+<img src="examples/210-advanced-css-borders/9-slice.png">
 
 The `border-image-slice` property takes one or more numbers - either unitless numbers or percentages. If they're unitless, and the `border-image-source` is a bitmap, the numbers are pixels (if you're using something like an SVG as a border image, unitless numbers are interpreted as coordinates, so you're better off using percentages.)
 
 The number specifies where to slice the image. If you specify one number, it'll slice that distance from each edge:
 
-<img src="examples/211-advanced-css-borders/border-image-slice.png"> 
+<img src="examples/210-advanced-css-borders/border-image-slice.png"> 
 
 The key to understanding this is that if the number is more than half the size of the image, there's nothing left for the edges - and if the number is equal to, or greater than, the size of the image, it'll just give you a copy of the border image in each corner.
 
@@ -71,7 +71,7 @@ The key to understanding this is that if the number is more than half the size o
 
 If you provide more than one number, it uses the same `t-r-b-l` shorthand syntax as other CSS border properties:
 
-<img src="examples/211-advanced-css-borders/border-image-slice-multiple.png">
+<img src="examples/210-advanced-css-borders/border-image-slice-multiple.png">
 
 `border-image-slice: 10% 50%`
 : 10% top and bottom; 50% left and right
@@ -90,7 +90,7 @@ Border Image Outset and Border Image Repeat
 
 For these examples, we're using this transparent PNG as our border image: [9-slice-chain.png]({{ page.examples}}/9-slice-chain.png)
 
-<a href="{{ page.examples}}/9-slice-chain.png"><img src="examples/211-advanced-css-borders/9-slice-chain.png" style="width: 200px; margin: 10px auto;"></a>
+<a href="{{ page.examples}}/9-slice-chain.png"><img src="examples/210-advanced-css-borders/9-slice-chain.png" style="width: 200px; margin: 10px auto;"></a>
 
 `border-image-outset` --- another `t-b-r-l` property --- specifies the distance between the element's border box and the border image.
 

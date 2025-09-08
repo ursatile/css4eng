@@ -1,10 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gap</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Flex Wrap</title>
+	<style>
+		div {
+			display: flex;
+			flex-wrap: wrap;
+			background-color: royalblue;
+		}
+
+		span {
+			width: 3rem;
+			border: 1px solid crimson;
+			padding: 5px;
+			text-align: center;
+			background-color: gold;
+			text-align: center;
+		}
+	</style>
 </head>
 <body>
-<!-- WRITE YOUR EXAMPLE HERE -->
+	<pre>row-gap: 1rem;</pre>
+	<div style="row-gap: 1rem;">
+		<span>A</span><span>B</span><span>C</span><span>D</span><span>E</span>
+		<span>F</span><span>G</span><span>H</span><span>I</span><span>J</span>
+		<span>K</span><span>L</span><span>M</span><span>N</span><span>O</span>
+		<span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span>
+		<span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span>
+		<span>Z</span>
+	</div>
+	<pre>column-gap: 1rem;</pre>
+	<div style="column-gap: 1rem;">
+		<span>A</span><span>B</span><span>C</span><span>D</span><span>E</span>
+		<span>F</span><span>G</span><span>H</span><span>I</span><span>J</span>
+		<span>K</span><span>L</span><span>M</span><span>N</span><span>O</span>
+		<span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span>
+		<span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span>
+		<span>Z</span>
+	</div>
+	<pre>gap: 1rem;</pre>
+	<div style="gap: 1rem;">
+		<span>A</span><span>B</span><span>C</span><span>D</span><span>E</span>
+		<span>F</span><span>G</span><span>H</span><span>I</span><span>J</span>
+		<span>K</span><span>L</span><span>M</span><span>N</span><span>O</span>
+		<span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span>
+		<span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span>
+		<span>Z</span>
+	</div>
+	<pre>gap: 1rem 3rem;</pre>
+	<div style="gap: 1rem 3rem;">
+		<span>A</span><span>B</span><span>C</span><span>D</span><span>E</span>
+		<span>F</span><span>G</span><span>H</span><span>I</span><span>J</span>
+		<span>K</span><span>L</span><span>M</span><span>N</span><span>O</span>
+		<span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span>
+		<span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span>
+		<span>Z</span>
+	</div>
 </body>
 </html>
