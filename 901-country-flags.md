@@ -17,7 +17,7 @@ The specification for each flag is above, or you can find a PDF version here:
 
 * **[css-flags.pdf](./images/box-model/css-flags.pdf)**
 
-You'll find the HTML code in [flags.html](examples/02-01-boxes-and-borders/flags.html), and the linked stylesheet in [flags.css]({{page.examples}}/flags.css)
+You'll find the HTML code in [flags.html]({{ page.examples }}/flags.html), and the linked stylesheet in [flags.css]({{page.examples}}/flags.css)
 
 {% example flags.html %}
 
