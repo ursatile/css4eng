@@ -28,11 +28,11 @@ CSS grid is a great example of a feature which is actually pretty simple, but wh
 
 Like flexbox, grid is based on the idea of a container element which contains a number of items. A CSS grid is fundamentally defined by two things.
 
-First, the grid itself: how many rows and columns, and -- optionally -- the widths of the columns and the heights of the rows.
+First, the grid itself: how many rows and columns, and -- optionally -- the widths of the columns and the heights of the rows. Rows and columns are collectively known as *tracks*, so  *track size refers to either a row height or a column width depending on the context.
 
 Second: how items should be placed in the grid. Do we fill each row and then move down to the next row, or fill each column and then move across to the next column -- and what happens when we run out of space?
 
-If we just take an element likdee a `<div> and say "hey, that's a grid", it looks like nothing happens - because the default grid works exactly like the flow model; items take up the full width of the container, and we stack from the top downwards:
+If we just take an element like a `<div> and say "hey, that's a grid", it looks like nothing happens - because the default grid works exactly like the flow model; items take up the full width of the container, and we stack from the top downwards:
 
 {% example default-grid.html elements="style" iframe %}
 
@@ -48,11 +48,45 @@ If you only specify the columns, the browser's going to add as many rows as it n
 
 {% example grid-auto-rows.html elements="style" iframe %}
 
-Alternatively, you can flip the whole thing sideways. By specifying `grid-auto-flow: column`, we get a grid which fills from top to bottom, one column at a time, adding new columns as needed -- so we should also swap the other gro properties, so we're specifying `grid-template-rows` instead of `grid-template-columns` and `grid-auto-columns` instead of `grid-auto-rows`:
+Alternatively, you can flip the whole thing sideways. By specifying `grid-auto-flow: column`, we get a grid which fills from top to bottom, one column at a time, adding new columns as needed -- so we should also swap the other properties, so we're specifying `grid-template-rows` instead of `grid-template-columns` and `grid-auto-columns` instead of `grid-auto-rows`:
 
 {% example grid-auto-flow.html elements="style" iframe %}
 
+If you don't want an automatic grid layout, you can specify both the rows and columns:
 
+{% example grid-template-rows-columns.html elements="style" iframe %}
+
+If you look closely here, we're not actually giving any of the rows an explicit height; we've specified `grid-template-rows: 2fr 5fr 1fr`,  so where's the height coming from? The layout engine here is working backwards... it's making the bottom row big enough to contain its own content without clipping, and then going "right, if that's one fraction, then the middle row is five fractions, so five times larger, and the top row is two fractions so twice that height."
+
+Note that a CSS grid will always create new tracks; if we specify a 3x3 grid and then give it ten child elements, it'll make a new track for the tenth item, although it will still respect the `grid-auto-flow` and `grid-auto-*` property when deciding where to create the extra track and what size it should be. You *can* specify the track size should be zero, but you'll still get an extra track, and it'll probably overflow its container because zero isn't big enough to contain it.
+
+The final grid property is `grid-template-areas`, which takes a completely different approach to specifying a grid layout by letting us use a syntax similar to ASCII art to visually define the layout of our grid:
+
+{% example grid-template-areas.html elements="style" iframe %}
+
+What makes this syntax so powerful is that we can use it to define named grid areas; those areas can span more than one grid cell, and we can use the `grid-area` property on the items to place them in a named grid area:
+
+{% example grid-template-areas-with-names.html elements="style" iframe %}
+
+> The `.` here denotes a grid area with no name.
+
+If you want to combine named areas with track sizes:
+
+{% example grid-template-areas-with-track-sizes.html elements="style" iframe %}
+
+## The `grid-template` Shorthand Syntax
+
+If you don't want to specify areas, rows, and columns separately, you can use the shorthand `grid-template` property syntax: specify a row height after each list of area names, then a forward slash `/`, then the list of column widths:
+
+{% example grid-template.html elements="style" iframe %}
+
+You can even go a step further, because there's a `grid` shorthand property that accepts the `grid-template` syntax, so you can write the same rule as:
+
+{% example grid-shorthand.html elements="style" iframe %}
+
+OK, checkpoint. 
+
+We've learned about six new CSS properties:
 
 * `grid-auto-columns`
 * `grid-auto-flow`
@@ -61,15 +95,41 @@ Alternatively, you can flip the whole thing sideways. By specifying `grid-auto-f
 * `grid-template-columns`
 * `grid-template-rows`
 
+In a moment, we're going to look at some other variants on the CSS grid syntax, but just about everything that is possible with CSS grid, you can achieve using the properties described above. Using the `grid-template` shorthand to define your layout in terms of named areas, and giving items a `grid-area` to position them within that layout, is friendly, readable, and covers 99% of the real-world use cases you'll ever see for CSS grid.
 
+But if you want to get freaky? You want grid items that overlap, grids where the gaps between the tracks have got names, or grids inside other grids? Buckle up, buttercup. Let's see what else this thing can do.
+
+## Advanced CSS Grid Syntax
+
+The boundaries around the grid and between adjacent tracks are known as *grid lines* - and before you ask, there's no way to use CSS to make them visible the way you can with table cell borders.
+
+<figure>
+    <img src="./images/css-grid-lines.png" alt="CSS Grid Tracks">
+    <figcaption>CSS grid: columns, rows, and lines</figcaption>
+</figure>
+
+
+If it helps, think of the grid cells like city blocks, and the lines as the streets between them. 
+
+Items within the grid can target specific tracks using the `grid-column-start`, `grid-column-end`, `grid-row-start` and `grid-row-end` properties.
+
+Something which often trips people up when they first encounter this syntax: we're not specifying the row or column number, we're specifying the *line between them*. I think one of the reasons there's so much confusion here is that there's some really misleading behaviour baked into the CSS grid spec. Take a look at this code and the resulting output:
+
+{% example grid-start-end-edge-case.html elements="style" iframe %}
+
+Div #1 - the red one - clearly starts and ends in column 3, and starts and ends in row 2... right?
+
+No. This is actually invalid syntax. The numbers refer to lines, not rows/columns, so an item which starts *and ends* at column grid line 1 actually has zero width... but there's a fallback rule in the CSS grid spec which says that if the combination of a start and an end rule would create an element with zero (or negative) size, ignore the end rule... and because the default is to span a single row/column, it looks like it worked.
+
+Here's an example that specifies start and end lines correctly. This example also creates some overlapping elements; these will be stacked in the order they appear in the HTML, unless you override this using a `z-index`:
+
+{% example grid-item-start-end.html elements="style" iframe %}
 
 ## 
 
-Very broadly speaking, CSS grid boils down to three things.
 
-1. Set `display: grid` or `display: inline-grid` on the container element
-2. Define the rows and columns on the container
-3. Override those if required for specific grid items
+
+
 
 
 
@@ -80,14 +140,7 @@ The rows and columns in a CSS grid layout are collectively known as *tracks*, so
     <figcaption>CSS Grid Tracks</figcaption>
 </figure>
 
-The boundaries around the grid and between adjacent tracks are known as *grid lines* - and before you ask, there's no way to use CSS to make them visible the way you can with table cell borders.
-
-<figure>
-    <img src="./images/css-grid-lines.png" alt="CSS Grid Tracks">
-    <figcaption>CSS grid: columns, rows, and lines</figcaption>
-</figure>
-
-If it helps, think of the grid cells like city blocks, and the lines as the streets between them. The tracks in a grid are specified using the `grid-template-rows` and `grid-template-columns` properties; each property is a list of track sizes - absolute units, relative units, or the special `fr` unit which represents a proportion of the available space.
+The tracks in a grid are specified using the `grid-template-rows` and `grid-template-columns` properties; each property is a list of track sizes - absolute units, relative units, or the special `fr` unit which represents a proportion of the available space.
 
 {% example grid-template-rows-and-columns.html elements="style" iframe %}
 
@@ -112,20 +165,6 @@ To add additional *columns*, add `grid-auto-flow: column` to the grid container;
 To control the size of the implicit tracks, use `grid-auto-rows` or `grid-auto-columns`:
 
 {% example grid-auto-columns.html mark_lines="12" elements="style" iframe %}
-
-Items within the grid can target specific rows and columns using the `grid-column-start`, `grid-column-end`, `grid-row-start` and `grid-row-end` properties.
-
-Something which often trips people up when they first encounter this syntax: we're not specifying the row or column number, we're specifying the *line between them*. I think one of the reasons there's so much confusion here is that there's some really misleading behaviour baked into the CSS grid spec. Take a look at this code and the resulting output:
-
-{% example grid-start-end-edge-case.html elements="style" iframe %}
-
-Div #1 - the red one - clearly starts and ends in column 3, and starts and ends in row 2... right?
-
-No. This is actually invalid syntax. The numbers refer to lines, not rows/columns, so an item which starts *and ends* at column grid line 1 actually has zero width... but there's a fallback rule in the CSS grid spec which says that if the combination of a start and an end rule would create an element with zero (or negative) size, ignore the end rule... and because the default is to span a single row/column, it looks like it worked.
-
-Here's an example that specifies start and end lines correctly. This example also creates some overlapping elements; these will be stacked in the order they appear in the HTML, unless you override this using a `z-index`:
-
-{% example grid-item-start-end.html elements="style" iframe %}
 
 ## Named Tracks and Template Areas
 

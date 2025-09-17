@@ -1,47 +1,47 @@
-		section {
-			background-color: royalblue;
+* { box-sizing: border-box; }
 
-			counter-reset: grid-item;
+section {
+	background-color: royalblue;
 
-			span {
-				background-color: crimson;
-				color: white;
-			}
+	counter-reset: grid-item;
 
-			div {
-				background-color: gold;
-			}
+	> * {
+		background-color: gold;
+		padding: 10px;
+		font-family: Consolas, 'Courier New', Courier, monospace;
+		font-size: 0.8rem;
+		text-align: center;
+		counter-increment: grid-item;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 
-			div,
-			span {
-				padding: 20px;
-				font-family: Consolas, 'Courier New', Courier, monospace;
-				font-size: 0.8rem;
-				text-align: center;
-				counter-increment: grid-item;
-				display: flex;
-				align-items: center;
-				justify-content: center;
+	span {
+		background-color: crimson;
+		color: white;
+	}
 
-				&::before {
-					content: counter(grid-item);
-				}
-			}
+	div, span {
+		&::before {
+			content: counter(grid-item);
 		}
+	}
+}
 
-		pre {
-			text-align: center;
-		}
+pre {
+	text-align: center;
+}
 
-		button {
-			background-color: gold;
-			border: none;
-			border-radius: 20px;
-			padding: 10px;
-			margin-bottom: 10px;
-			cursor: pointer;
+button {
+	background-color: gold;
+	border: none;
+	border-radius: 20px;
+	padding: 10px;
+	margin-bottom: 10px;
+	cursor: pointer;
 
-			&:nth-of-type(2) {
-				float: right;
-			}
-		}
+	&:nth-of-type(2) {
+		float: right;
+	}
+}

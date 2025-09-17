@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Default Grid</title>
+	<link rel="stylesheet" href="grid-demo.css">
+	<style>
+		section {
+			display: grid;
+			grid-template-rows: 50px 100px 20px;
+			grid-template-columns: 20% 1fr 15%;
+			grid-template-areas:
+				"a a a"
+				"b . c"
+				"d d d";
+			gap: 10px;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<header style="grid-area: a;">grid-area: a</header>
+		<nav style="grid-area: b;">grid-area: b</nav>
+		<article>(article content)</article>
+		<aside style="grid-area: c;">grid-area: c</aside>
+		<footer style="grid-area: d;">grid-area: d</footer>
+	</section>
+</body>
+</html>
