@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>dense</title>
+	<style>
+		section {
+			flex: 1;
+			gap: 10px;
+			padding: 10px;
+			display: grid;
+			grid: auto-flow 50px / repeat(3, 1fr);
+
+			span.feature {
+				grid-column-start: 1;
+				grid-column-end: 4;
+				background-color: gold;
+				color: black;
+			}
+
+			&.dense {
+				grid: auto-flow dense 50px / repeat(3, 1fr);
+			}
+		}
+	</style>
+	<style>
+		body {
+			display: flex;
+			justify-content: space-between;
+			gap: 10px;
+		}
+	</style>
+	<link rel="stylesheet" href="grid-demo.css">
+</head>
+<body>
+	<section>
+		<span></span>
+		<span></span>
+		<span class="feature"></span>
+		<span></span>
+		<span></span>
+		<span class="feature"></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</section>
+	<section class="dense">
+		<span></span>
+		<span></span>
+		<span class="feature"></span>
+		<span></span>
+		<span></span>
+		<span class="feature"></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</section>
+</body>
+</html>

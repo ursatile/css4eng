@@ -20,9 +20,50 @@ There's a lot of overlap between flex and grid; they share many of the same conc
 
 From time to time, somebody will ask online "I'm using CSS flexbox with wrap; how do I stop the last item stretching to fill the row?" and the answer comes back "use a CSS grid":
 
-{% example flow-vs-grid-vs-flex.html elements="style,body" iframe %}
+{% iframe flow-vs-grid-vs-flex.html %}
 
-## Basic CSS Grid
+## Basic CSS Grid Properties
+
+CSS grid is a great example of a feature which is actually pretty simple, but which supports so many different property and shorthand syntaxes that it ends up seeming way more complicated than it really is.
+
+Like flexbox, grid is based on the idea of a container element which contains a number of items. A CSS grid is fundamentally defined by two things.
+
+First, the grid itself: how many rows and columns, and -- optionally -- the widths of the columns and the heights of the rows.
+
+Second: how items should be placed in the grid. Do we fill each row and then move down to the next row, or fill each column and then move across to the next column -- and what happens when we run out of space?
+
+If we just take an element likdee a `<div> and say "hey, that's a grid", it looks like nothing happens - because the default grid works exactly like the flow model; items take up the full width of the container, and we stack from the top downwards:
+
+{% example default-grid.html elements="style" iframe %}
+
+Using `grid-template-columns`, we can organise our grid into vertical columns by specifying the width of each column, using CSS absolute or relative units, or the special unit `fr`, denoting a fraction of the remaining available space.
+
+> `fr` is officially short for for *fraction* but when I first saw it I thought "oh, OK, `fr` for 'free space'" and that's stuck in my head now. 
+
+I've also added `padding: 10px` and `gap: 10px` here so you can see the arrangement of the grid items more clearly:
+
+{% example grid-template-columns.html elements="style" iframe %}
+
+If you only specify the columns, the browser's going to add as many rows as it needs to to accommodate all the grid items: use `grid-auto-rows` to specify the size of these rows. (If you specify more than one size, they'll be applied in order and then repeated)
+
+{% example grid-auto-rows.html elements="style" iframe %}
+
+Alternatively, you can flip the whole thing sideways. By specifying `grid-auto-flow: column`, we get a grid which fills from top to bottom, one column at a time, adding new columns as needed -- so we should also swap the other gro properties, so we're specifying `grid-template-rows` instead of `grid-template-columns` and `grid-auto-columns` instead of `grid-auto-rows`:
+
+{% example grid-auto-flow.html elements="style" iframe %}
+
+
+
+* `grid-auto-columns`
+* `grid-auto-flow`
+* `grid-auto-rows`
+* `grid-template-areas`
+* `grid-template-columns`
+* `grid-template-rows`
+
+
+
+## 
 
 Very broadly speaking, CSS grid boils down to three things.
 
@@ -30,7 +71,7 @@ Very broadly speaking, CSS grid boils down to three things.
 2. Define the rows and columns on the container
 3. Override those if required for specific grid items
 
-I learned most of what I know about using CSS grid from Chris House's excellent [CSS Grid Layout Guide](https://css-tricks.com/snippets/css/complete-guide-grid/) over at css-tricks.com, which also has a [one-sheet quick-reference guide](https://css-tricks.com/wp-content/uploads/2022/02/css-grid-poster.png) covering all the grid layout properties and values.
+
 
 The rows and columns in a CSS grid layout are collectively known as *tracks*, so when you see a reference to a track or track size, we're talking about something which is either a row or a column.
 
@@ -47,8 +88,6 @@ The boundaries around the grid and between adjacent tracks are known as *grid li
 </figure>
 
 If it helps, think of the grid cells like city blocks, and the lines as the streets between them. The tracks in a grid are specified using the `grid-template-rows` and `grid-template-columns` properties; each property is a list of track sizes - absolute units, relative units, or the special `fr` unit which represents a proportion of the available space.
-
-> `fr` is officially short for for *fraction* but when I first saw it I thought "oh, OK, `fr` for 'free space'" and that's stuck in my head now.
 
 {% example grid-template-rows-and-columns.html elements="style" iframe %}
 
@@ -130,6 +169,14 @@ and then by specifying the `grid-area` property on the various elements that mak
 
 {% example grid-named-areas.html elements="style" iframe_style="height: 600px;" %}
 
+## Dense Grids
+
+By default, a CSS grid always fills "forwards" --- items will be placed in the *next* available space, even if there's a blank space earlier in the grid which could accommodate them. To override this behaviour, set either the rows or columns to `auto-flow` and include the `dense` keyword:
+
+{% example dense-grid.html elements="style" iframe %}
+
+{% example dense-columns-grid.html elements="style" iframe %}
+
 ## Subgrid and Masonry Grids
 
 As well as specifying track sizes, the CSS `grid-template-row` and `grid-template-column` properties can take the value `subgrid`
@@ -144,21 +191,37 @@ There's also a popular layout used on a lot of sites, most notably Pinterest, wh
     <img src="./images/masonry-layout.png" alt="Masonry Layout">
     <figcaption>Example of a Masonry Layout</figcaption>
 </figure>
+There is a [proposal to add a masonry grid to CSS](https://css-tricks.com/css-masonry-css-grid/), so you could build a layout like the one above by specifying the grid columns as usual and setting `grid-template-rows` to `masonry`; however, at the time I'm writing this, it's only available as a technology preview in experimental versions of Safari, so I reckon it'll be mid-2026 at the earliest before we see any support across Chrome and/or Firefox for masonry grids; in the meantime, if you're trying to create this kind of layout, you'll have to get a bit creative.
 
-There is a [proposal to add a masonry grid to CSS](https://css-tricks.com/css-masonry-css-grid/), so you could build a layout like the one above by specifying the grid columns as usual and setting `grid-template-rows` to `masonry`; however, at the time I'm writing this, it's only available as a technology preview in experimental versions of Safari, so I reckon it'll be mid-2026 at the earliest before we see any support across Chrome and/or Firefox for masonry grids; in the meantime, if you're trying to create this kind of layout, the only option is to use JavaScript to 
+## Grid Shorthand Syntaxes
 
-## Grid Shorthand
+OK, this is where it gets complicated... and maybe a little tedious. But the problem with covering something like CSS grid in this kind of course is that there's about a thousand different ways to write a CSS grid spec, so there's no telling which ones you might encounter out there in the wild when you're maintaining or modifying existing code that uses a CSS grid. We're not going to go through *all* the possible variants, but here's the ones to look out for.
 
-The property `grid` is a shorthand syntax covering:
+### grid-template
 
-* `grid-auto-columns`
-* `grid-auto-flow`
-* `grid-auto-rows`
-* `grid-template-areas`
-* `grid-template-columns`
-* `grid-template-rows`
+First, there's a `grid-template` shorthand property for defining areas, rows, and columns. If you only specify the named areas, you'll get a completely auto-sized grid; you can also specify the height of each row alongside the row definition, and if you want to specify the column widths as well, put a slash after the grid areas and list the column track sizes there:
+
+{% example grid-template-shorthand.html elements="style" iframe %}
+
+### grid
+
+There's also the `grid` shorthand property, which covers al the possible grid properties and --- confusingly --- also lets you use the `grid-template` syntax as part of the shorthand.
+
+* 
 
 Like most CSS shorthand properties, it's redundant if you're only specifying a single property, useful if you're specifying two or three properties, and rapidly becomes unreadable if you pack in many more than that.
+
+Here's the deal. If `grid` starts with a quoted string, then it's the shorthand version of the grid template areas syntax:
+
+{% example grid-shorthand-with-areas.html elements="style" %}
+
+If it starts with anything else, it's the other version.
+
+
+
+
+
+
 
 
 
@@ -168,3 +231,6 @@ Like most CSS shorthand properties, it's redundant if you're only specifying a s
 
 Like CSS flexbox, grid gives us a whole range of options when it comes to aligning and justifying items in the container, and for allowing individual items to override container-level styling.
 
+## References and Further Reading
+
+I learned most of what I know about using CSS grid from Chris House's excellent [CSS Grid Layout Guide](https://css-tricks.com/snippets/css/complete-guide-grid/) over at css-tricks.com, which also has a [one-sheet quick-reference guide](https://css-tricks.com/wp-content/uploads/2022/02/css-grid-poster.png) covering all the grid layout properties and values.

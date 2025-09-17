@@ -1,26 +1,37 @@
 		section {
 			background-color: royalblue;
 
-			div {
-				background-color: gold;
-				padding: 20px;
-			}
-
 			counter-reset: grid-item;
 
+			span {
+				background-color: crimson;
+				color: white;
+			}
+
 			div {
+				background-color: gold;
+			}
+
+			div,
+			span {
+				padding: 20px;
 				font-family: Consolas, 'Courier New', Courier, monospace;
+				font-size: 0.8rem;
 				text-align: center;
 				counter-increment: grid-item;
 				display: flex;
 				align-items: center;
 				justify-content: center;
 
-				&::before { content: counter(grid-item); }
+				&::before {
+					content: counter(grid-item);
+				}
 			}
 		}
 
-		pre { text-align: center; }
+		pre {
+			text-align: center;
+		}
 
 		button {
 			background-color: gold;
@@ -30,5 +41,7 @@
 			margin-bottom: 10px;
 			cursor: pointer;
 
-			&:nth-of-type(2) { float: right; }
+			&:nth-of-type(2) {
+				float: right;
+			}
 		}

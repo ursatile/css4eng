@@ -26,7 +26,7 @@ The `background-repeat` property takes one or two parameters; if you give it two
 
 * `repeat` - the default; repeat the image to cover the entire background area, clipping if it overflows the element's content area.
 * `no-repeat` - just show the image once
-* `space` - repeat the image as many times as possible, but leave a space between adjact tiles so that none of them get clipped.
+* `space` - repeat the image as many times as possible, but leave a space between adjacent tiles so that none of them get clipped.
 * `round` - stretch (distort) the image rather than clipping it. If the element will accommodate 1.49 backgrounds, you'll get a single tile stretched to fit. If the element will accommodate 1.5 backgrounds, you'll get two tiles, shrunk to fit. The tile's aspect ratio is not preserved.
 * `repeat-x`: shorthand for `repeat no-repeat`
 * `repeat-y`: shorthand for `no-repeat repeat`

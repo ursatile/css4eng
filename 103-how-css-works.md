@@ -10,7 +10,7 @@ word_count: 1098
 
 CSS, fundamentally, allows us to do three things:
 
-1. Select an element, or elements, on a web page.
+1. Target an element, or elements, on a web page.
 2. Choose a property which is relevant to that element.
 3. Assign that property to a value, which controls how the browser will display it.
 

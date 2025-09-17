@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Grid Template Shorthand</title>
+	<style>
+		body {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		section {
+			width: 32vw;
+			aspect-ratio: 1;
+			padding: 10px;
+			display: grid;
+			gap: 13px;
+			margin: 10px;
+			font-size: 0.6em;
+		}
+
+		section#a {
+			grid-template:
+				"header header header"
+				"nav     main  adverts"
+				"footer footer adverts";
+		}
+
+		section#b {
+			grid-template:
+				"header header header" 50px
+				"nav     main  adverts" 1fr
+				"footer footer adverts" 50px;
+		}
+
+		section#c {
+			grid-template:
+				"header header header" 50px
+				"nav     main  adverts" 1fr
+				"footer footer adverts" 50px
+				/ 1fr 2fr 4fr;
+		}
+	</style>
+	<link rel="stylesheet" href="grid-demo.css">
+</head>
+<body>
+	<section id="a">
+		<div style="grid-area: header;"></div>
+		<div></div>
+		<div></div>
+		<div style="grid-area: adverts;"></div>
+		<div style="grid-area: footer;"></div>
+	</section>
+
+	<section id="b">
+		<div style="grid-area: header;"></div>
+		<div></div>
+		<div></div>
+		<div style="grid-area: adverts;"></div>
+		<div style="grid-area: footer;"></div>
+	</section>
+
+	<section id="c">
+		<div style="grid-area: header;"></div>
+		<div></div>
+		<div></div>
+		<div style="grid-area: adverts;"></div>
+		<div style="grid-area: footer;"></div>
+	</section>
+</body>
+</html>

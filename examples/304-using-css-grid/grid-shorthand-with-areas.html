@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Grid Shorthand With Areas</title>
+	<style>
+		body {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		section {
+			height: 30vw;
+			aspect-ratio: 1;
+			display: grid;
+			gap: 10px;
+			padding: 10px;
+		}
+
+		section#a {
+			/* grid as shorthand for grid-template */
+			grid:
+				"a b c" 20%
+				"d e f"
+				"g h i" 10% / 2fr 3fr 1fr;
+		}
+
+		section#b {
+			grid: 20% auto 10%
+						/ 1fr 2fr 3fr;
+		}
+	</style>
+	<link rel="stylesheet" href="grid-demo.css">
+</head>
+<body>
+	<section id="a">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</section>
+	<section id="b">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</section>
+</body>
+</html>
