@@ -1,7 +1,7 @@
 ---
 examples: examples/401-scoping-css
-layout: home
-nav_exclude: true
+layexclude: true
+nav_order: 401
 nav_order: 401
 target_minutes: 10
 title: "Scoping CSS"
