@@ -97,7 +97,7 @@ You can even build your own timing function visualiser in a few lines of code, b
 
 As we saw a moment ago, the `transition-property` property accepts a keyword `all`, meaning "animate every property that's animatable". You can use to create some fairly dramatic effects:
 
-{% example transition-property-all.html elements="style,body" iframe_style="" %}
+{% example transition-property-all.html elements="style,body" iframe_style="height: 400px;" %}
 
 If you look closely, you'll also see that this example only animates in one direction. The `transition` property is only applied to the `:hover` state, so the animations will only play when the element transitions *from* normal *to* hover; when you mouse-out of the element, it snaps back immediately.
 

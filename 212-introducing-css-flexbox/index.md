@@ -126,7 +126,9 @@ Let's start with `flex-basis` . The `flex-basis` property works like `width` or 
 
 {% example flex-basis.html elements="body" iframe %}
 
-{% example flex-basis-column.html elements="body" iframe %}
+If you're using flex columns instead of flex rows:
+
+{% iframe flex-basis-column.html %}
 
 Next up, let's meet `flex-grow`, and its counterpart `flex-shrink`. These both accept a *unitless value*, a non-negative integer value which controls how much that item will grow or shrink, proportional to the other items in the same flex container.
 
