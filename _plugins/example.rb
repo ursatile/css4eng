@@ -118,9 +118,9 @@ module Jekyll
         rendered_output = add_code_tag(output, name_of_example_file_including_extension, "examples/#{name_of_example_file_including_extension}")
         output = prefix + rendered_output + suffix
         if @highlight_options[:iframe_style]
-          output += %(<iframe src="./examples/#{page_filename}/#{name_of_example_file_including_extension}" style="#{@highlight_options[:iframe_style]}"></iframe>)
+          output += %(<iframe src="examples/#{name_of_example_file_including_extension}" style="#{@highlight_options[:iframe_style]}"></iframe>)
         elsif @highlight_options[:iframe]
-          output += %(<iframe src="./examples/#{page_filename}/#{name_of_example_file_including_extension}"></iframe>)
+          output += %(<iframe src="examples/#{name_of_example_file_including_extension}"></iframe>)
         end
         return output
         # rescue => e

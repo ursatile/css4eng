@@ -183,11 +183,11 @@ If two rules end up with the EXACT same weighting, then the browser applies some
 
 {% example proximity-rule.html iframe %}
 
-Those rules both have one ID, one class, and one type, so they have the same specificity weighting: `1-1-2` (or 🐉🐅🪿🪿, if you prefer that notation), so the bottom rule wins. Change the order of the rules, and now the other rule takes precedence because last one wins.
+Those rules both have one ID, one class, and two types, giving them the same specificity weighting: `1-1-2` (or 🐉🐅🪿🪿, if you prefer that notation), so the bottom rule wins. Change the order of the rules, and now the other rule takes precedence because last one wins.
 
 ## Selectors, inline styles, and !important
 
-Inline styles --- `<p style="font-style: italic;">italics!</p>` --- will usually take precedence over any other rules which target that element. You just showed up to the fight a dragon. You know, like a T-rex, only it's bigger, it breathes fire, and it can fly... doesn't matter how many T-rexes the other side has when you've got a flying, fire-breathing dragon.
+Inline styles --- `<p style="font-style: italic;">italics!</p>` --- will usually take precedence over any other rules which target that element. You just showed up to the fight with a dragon 🐉... that's like a T-rex, only it's bigger, it breathes fire, and it can fly. It doesn't matter how many T-rexes the other side has when you've got a flying, fire-breathing dragon.
 
 Except... we're not quite gone. CSS has the `!important` keyword. That's the word important with a leading exclamation mark -- and yes, in most programming languages, the exclamation mark is logical not, so this means `not important`, and yes, this is one of the things that the designers of CSS acknowledge was a mistake.
 
