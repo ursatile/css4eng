@@ -27,7 +27,7 @@ My favourite extension for this kind of development is called Live Preview:
 
 By default, Live Preview opens an embedded browser inside VS Code, and changes appear as you edit your source code - you don't even have to save the file. If you want to change that, open the VS Code Settings UI, search for "Live Preview", and you can tell it to only update when you save a file, to use an external browser (and which one to use), and a whole bunch of other settings:
 
-![image-20250717183649962](images/vs-code-live-preview-settings-screenshot.png)
+![VS Code Live Preview settings](images/vs-code-live-preview-settings-screenshot.png)
 
 > If Live Preview isn't working, or you don't get the option to preview your `.html` files, check that `*.html` hasn't ended up associated with another document type - open the VS Code settings JSON  and search for `"files.associations"` 
 
@@ -134,7 +134,7 @@ HTML and CSS are constantly evolving. Proposals evolve into recommendations, var
 
 The best site to check the current status of a given feature, rule or property is [caniuse.com](https://caniuse.com/):
 
-![image-20250719131116457](./images/caniuse-dot-com-support-for-css-has-slotted.png)
+![caniuse.com support for CSS slotted property](./images/caniuse-dot-com-support-for-css-has-slotted.png)
 
 Here's an example of a particularly obscure CSS selector, [`has-slotted`](https://caniuse.com/mdn-css_selectors_has-slotted), which is part of the Web Components system which we'll talk about later in the course; I've picked this example because at the time I'm writing this, that selector isn't yet supported by any version of Safari. The colour-coded tiles correspond to browser version numbers; green indicates full support, red means no support - and hover over a specific version to see exactly what it and isn't supported.
 
