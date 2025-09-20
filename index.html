@@ -4,9 +4,9 @@ layout: home
 word_count: 77
 ---
 
-# CSS for Engineers Course
+<h1>CSS for Engineers Course</h1>
 
-## Course Modules
+<h2>Course Modules</h2>
 
 {% assign sorted_pages = site.pages | where_exp: "page", "page.path contains
 '.md'" | where_exp: "page", "page.title != 'Home'" | sort: "nav_order" %}
