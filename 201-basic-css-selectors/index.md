@@ -213,7 +213,7 @@ You should only use `!important` as an absolute last resort, and even then, use 
 
 If you add `!important` to an inline style? Well, now you've got a wizard riding on a dragon, soaring high above the battlefield, raining down fire and magic spells on everything they see. They're undefeatable. There is literally nothing you can do to override this rule other than going into the HTML and editing it directly.
 
-{% example inline-styles.html iframe_style="height: 10em" %}
+{% example inline-styles.html iframe %}
 
 ## Review & Recap
 

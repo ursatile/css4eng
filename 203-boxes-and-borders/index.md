@@ -141,14 +141,12 @@ p { margin: 10px 20px 30px; }
 
 When it comes to borders, there's a whole bunch of ways we can combine the various properties. Each edge of the element can have a `border-width`, a `border-style`, and a `border-color` - and any of these properties can use any of the shorthand syntaxes above:
 
-{% example border-syntax.css iframe_style="" %}
+{% example border-syntax.css %}
 
 The `border-style` property must take one of the values defined in the CSS spec:
 
-<figure>
-<iframe style="height: 16em;" src="{{ page.examples }}/border-styles.html"></iframe>
-<figcaption>CSS border styles</figcaption>
-</figure>
+{% iframe border-styles.html %}
+
 > Wondering why `none` and `hidden` do the same thing? It's all to with *border collapse*, which we'll meet in a later section, but the short answer is: if you combine a `solid` border with a `none` border, the `solid` border wins. If you combine a `solid` border with `hidden` border, the `hidden` wins.
 
 The `border-color` can be any CSS color --- we'll learn all about those in the section on colors and composition a little later --- and the `border-width` can be any CSS length unit, so now's probably a great time to learn about CSS units and how they work.
@@ -257,7 +255,7 @@ The CSS `float` property lets us pull an element out of the regular document flo
 
 Take a look at the code in [box-sizing.html]({{ page.examples }}/box-sizing.html):
 
-<iframe src="{{ page.examples }}/box-sizing.html"></iframe>
+{% iframe box-sizing.html %}
 
 There's a `<section>` containing two `<div>` elements; there's a rule saying `<div>` elements have `width: 50%` and `float: left` - so the first one should take up half of the `section` and leave space for the second one alongside it... right?
 
