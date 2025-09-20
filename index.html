@@ -34,7 +34,7 @@ word_count: 77
 						{% if heading contains '## ' %}
 							{% unless heading contains '###' %}
 								{{ heading | remove: '## ' | strip_html  }}
-							{% endif %}
+							{% endunless %}
 						{% endif %}
 					</li>
 				{% endfor %}

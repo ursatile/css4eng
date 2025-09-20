@@ -65,11 +65,11 @@ module Jekyll
 
         page = context.registers[:page]
         parts = @markup.split(" ", 2)
-        expanded_path = Liquid::Template.parse(parts[0].strip).render(context)
+        name_of_example_file_including_extension = Liquid::Template.parse(parts[0].strip).render(context)
         page_filename = File.basename(page["path"], ".*")
         page_directory = File.dirname(page["path"])
         root_path = File.expand_path(context.registers[:site].config["source"])
-        file_path = File.join(root_path, page_directory, "examples", expanded_path)
+        file_path = File.join(root_path, page_directory, "examples", name_of_example_file_including_extension)
         attributes = parts.length > 1 ? parts[1] : "all"
         dir = File.dirname(file_path)
         FileUtils.mkdir_p(dir) unless Dir.exist?(dir)
@@ -115,12 +115,12 @@ module Jekyll
           output = remove_common_indentation(output)
         end
 
-        rendered_output = add_code_tag(output, expanded_path, "examples/#{page_filename}/#{expanded_path}")
+        rendered_output = add_code_tag(output, name_of_example_file_including_extension, "examples/#{name_of_example_file_including_extension}")
         output = prefix + rendered_output + suffix
         if @highlight_options[:iframe_style]
-          output += %(<iframe src="./examples/#{page_filename}/#{expanded_path}" style="#{@highlight_options[:iframe_style]}"></iframe>)
+          output += %(<iframe src="./examples/#{page_filename}/#{name_of_example_file_including_extension}" style="#{@highlight_options[:iframe_style]}"></iframe>)
         elsif @highlight_options[:iframe]
-          output += %(<iframe src="./examples/#{page_filename}/#{expanded_path}"></iframe>)
+          output += %(<iframe src="./examples/#{page_filename}/#{name_of_example_file_including_extension}"></iframe>)
         end
         return output
         # rescue => e

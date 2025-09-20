@@ -181,7 +181,7 @@ For now, and hopefully for the foreseeable future, ID selectors win over classes
 
 If two rules end up with the EXACT same weighting, then the browser applies something called the *proximity rule*, which is a fancy way of saying the last one wins.
 
-{% example proximity-rule.html iframe_style="height: 10em" %}
+{% example proximity-rule.html iframe %}
 
 Those rules both have one ID, one class, and one type, so they have the same specificity weighting: `1-1-2` (or 🐉🐅🪿🪿, if you prefer that notation), so the bottom rule wins. Change the order of the rules, and now the other rule takes precedence because last one wins.
 
