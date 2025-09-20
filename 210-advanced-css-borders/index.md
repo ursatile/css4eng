@@ -88,9 +88,9 @@ Finally, if you include the `fill` keyword anywhere in the border slice property
 
 Border Image Outset and Border Image Repeat
 
-For these examples, we're using this transparent PNG as our border image: [9-slice-chain.png]({{ page.examples}}/9-slice-chain.png)
+For these examples, we're using this transparent PNG as our border image: [9-slice-chain.png](examples/9-slice-chain.png)
 
-<a href="{{ page.examples}}/9-slice-chain.png"><img src="examples/210-advanced-css-borders/9-slice-chain.png" style="width: 200px; margin: 10px auto;"></a>
+<a href="examples/9-slice-chain.png"><img src="examples/210-advanced-css-borders/9-slice-chain.png" style="width: 200px; margin: 10px auto;"></a>
 
 `border-image-outset` --- another `t-b-r-l` property --- specifies the distance between the element's border box and the border image.
 

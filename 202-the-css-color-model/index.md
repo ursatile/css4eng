@@ -79,13 +79,13 @@ CSS also defines a set of names for *system colours* --- the colours used by the
 
 If you're viewing this on the web, the example above is live --- so what you're seeing there is based on your own system settings. For comparison, here's two screenshots showing what that preview looks like for me running Windows 11 - first in **dark mode**:
 
-<img src="{{ page.examples}}/system-colors-dark-mode.png"
+<img src="examples/system-colors-dark-mode.png"
 onmouseover="this.src='{{page.examples}}/system-colors-light-mode.png';"
 onmouseout="this.src='{{page.examples}}/system-colors-dark-mode.png';">
 
 and then in **light mode**:
 
-<img src="{{ page.examples}}/system-colors-light-mode.png"
+<img src="examples/system-colors-light-mode.png"
 onmouseover="this.src='{{page.examples}}/system-colors-dark-mode.png';"
 onmouseout="this.src='{{page.examples}}/system-colors-light-mode.png';">
 
