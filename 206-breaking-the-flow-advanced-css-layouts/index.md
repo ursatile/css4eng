@@ -6,7 +6,7 @@ target_minutes: 10
 title: "Breaking the Flow: Advanced CSS Layouts"
 word_count: 2008
 ---
-As we saw a little while ago, most web pages have an intrinsic document flow, based around the idea of block and inline elements. We've also learned about the CSS box model --- content, padding, border, and margins --- and about how to specify sizes and layout using pixels, relative units like ems and rems, and the viewport-based units ``vh` and `vw``.
+As we saw a little while ago, most web pages have an intrinsic document flow, based around the idea of block and inline elements. We've also learned about the CSS box model --- content, padding, border, and margins --- and about how to specify sizes and layout using pixels, relative units like ems and rems, and the viewport-based units `vh` and `vw`.
 
 In this section, we're going to learn some techniques we can use to break out of the document flow model and take much greater control of our page layouts.
 

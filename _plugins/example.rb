@@ -69,6 +69,7 @@ module Jekyll
         page_filename = File.basename(page["path"], ".*")
         root_path = File.expand_path(context.registers[:site].config["source"])
         file_path = File.join(root_path, "examples", page_filename, expanded_path)
+        return %(<div style="background-color: lime; padding: 20px; color: white;">#{file_path}</div>)
         attributes = parts.length > 1 ? parts[1] : "all"
         dir = File.dirname(file_path)
         FileUtils.mkdir_p(dir) unless Dir.exist?(dir)

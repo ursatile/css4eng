@@ -57,7 +57,7 @@ Accessibility is important, but if you approach it right, it's not complicated a
 
 Back in the days of Netscape Navigator, HTML 3.0 defined a palette of sixteen named colours - the same colors supported by the Microsoft Windows VGA palette:
 
-{% include_relative {{ page.examples }}/16-colors.html %}
+{% example 16-colors.html %}
 
 Over time, CSS has also adopted named colours from various sources, including the X Windows System. MDN notes that “about 150 other colours have a keyword associated to them”; [Anthony Lieuallen](https://arantius.com/anthony-lieuallen) has created this ingenious colour-wheel visualisation which you can use to explore them all:
 
@@ -75,7 +75,7 @@ CSS has borrowed named colours from all kinds of places, going way back to a cou
 
 CSS also defines a set of names for *system colours* --- the colours used by the rest of the user's operating system. The idea is that you can say “hey, make the buttons on my web page the same colour as all the other buttons on that person's computer” so you can build web apps that reflect their desktop colour scheme and preferences.
 
-{% include_relative {{page.examples}}/system-colors.html %}
+{% example system-colors.html %}
 
 If you're viewing this on the web, the example above is live --- so what you're seeing there is based on your own system settings. For comparison, here's two screenshots showing what that preview looks like for me running Windows 11 - first in **dark mode**:
 

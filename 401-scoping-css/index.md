@@ -1,10 +1,6 @@
 ---
 examples: examples/401-scoping-css
-<<<<<<< HEAD
 layexclude: true
-=======
-layexclude: true
->>>>>>> 80d840975bfd4014763cb58de74638fc4a7449e0
 nav_order: 401
 nav_order: 401
 target_minutes: 10
