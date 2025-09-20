@@ -124,9 +124,9 @@ To control how the layout engine will resize an item, we can use `flex-grow`, `f
 
 Let's start with `flex-basis` . The `flex-basis` property works like `width` or `height`, but it's aligned with the main axis of the flex container - so if your flex items are in a row`flex-basis` specifies a width; if you're using a column, `flex-basis` specifies a height. Flex basis *will* override `width` or`height`, but won't override `max-width`, `max-height`, `min-width` or `min-height` properties:
 
-{% example flex-basis.html elements="body" iframe_style="" %}
+{% example flex-basis.html elements="body" iframe %}
 
-{% example flex-basis-column.html elements="body" iframe_style="" %}
+{% example flex-basis-column.html elements="body" iframe %}
 
 Next up, let's meet `flex-grow`, and its counterpart `flex-shrink`. These both accept a *unitless value*, a non-negative integer value which controls how much that item will grow or shrink, proportional to the other items in the same flex container.
 
@@ -134,23 +134,23 @@ Let's walk through that slowly.
 
 Say we have a flex container here, that's 730 pixels wide, with 5px of padding and a 5px flex gap. There are five `<div>` elements in the container, with their `flex-basis` set to 50px. Initially, they don't have a `flex-grow` property - or rather, they have the default `flex-grow` value, which is zero - so they only take up as much space as their content, and the container has a bunch of empty space at the end:
 
-<img src="{{page.examples}}/flex-grow-01.png">
+<img src="images/flex-grow-01.png">
 
 Now, let's assign the `flex-grow` property for each of our flex items - we'll set them to 1, 2, 3, 4, and 5, respectively:
 
-<img src="{{page.examples}}/flex-grow-02.png">
+<img src="images/flex-grow-02.png">
 
 The flexbox layout engine is going to add those `flex-grow` values together --- 1 + 2 + 3 + 4 + 5 = 15 --- and then divide the available free space into 15 equal parts:
 
-<img src="{{page.examples}}/flex-grow-03.png">
+<img src="images/flex-grow-03.png">
 
 Then --- this is the clever part --- it'll redistribute that space between the flex items based on their `flex-grow` values:
 
-<img src="{{page.examples}}/flex-grow-04.png"> 
+<img src="images/flex-grow-04.png"> 
 
 and then increase the size of each item to occupy the space allocated to it by that distribution:
 
-<img src="{{page.examples}}/flex-grow-05.png">
+<img src="images/flex-grow-05.png">
 
 `flex-shrink` is... more complicated.
 
