@@ -54,7 +54,7 @@ I find it helpful to think of flexbox as three separate things - the container, 
 
 `justify-content` controls how elements are arranged along the main axis, **if they don't fill the container**.
 
-{% iframe justify-content.html style="height: 44em;" %}
+{% iframe justify-content.html %}
 
 There are several values there which appear to do the same thing, but remember that not all web pages will read from left to right:
 
@@ -64,15 +64,15 @@ There are several values there which appear to do the same thing, but remember t
 
 Remember, too, that this is justification **along the main axis**. You change the axis orientation or direction, it's going to produce a different effect:
 
-{% iframe justify-content-column.html style="height: 27em;" %}
+{% iframe justify-content-column.html %}
 
 and if you reverse the flex direction, the start becomes the end, so to speak:
 
-{% iframe justify-content-column-reverse.html style="height: 27em;" %}
+{% iframe justify-content-column-reverse.html  %}
 
 To control how elements are laid out along the **cross axis**, use `align-items`:
 
-{% iframe align-items.html  style="height: 55em;" %}
+{% iframe align-items.html  %}
 
 If your flexbox container wraps, you'll end up with more than one row (or column) of items; to control how these wrapped rows are laid out, use the `align-content` property. Here's how it works with `flex-direction: row`:
 
