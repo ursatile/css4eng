@@ -153,7 +153,7 @@ CSS resolves these kinds of conflicts using something called specificity: if the
 
 If you look up the documentation for CSS specificity, you'll find yourself reading about something called *selector weight categories*, which look like `1-0-0` or `0-2-1` or `0-0-0`. You can use the DevTools to see the category weight of any selector by hovering over the selector in the styles inspector:
 
-![image-20250801153952927](./images/devtools-css-specificity-category-weights.png)
+![CSS Specificity weights in Chrome DevTools](images/devtools-css-specificity-category-weights.png)
 
 The first column is the **ID column** column. Every ID selector, like `#example`, adds one to this column. The second one is the **class column**; every class name adds one to this column. The third one is the **type column** - every element type adds one to this column.
 

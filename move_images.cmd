@@ -1,0 +1,13 @@
+
+move "d:\Obsidian\Dylan's Obsidian Vault\css4eng\images\vs-code-live-preview-settings-screenshot.png" "D:\Obsidian\Dylan's Obsidian Vault\css4eng\104-tools-and-workflows\images\vs-code-live-preview-settings-screenshot.png"
+move "d:\Obsidian\Dylan's Obsidian Vault\css4eng\images\flagpedia\mg.png" "D:\Obsidian\Dylan's Obsidian Vault\css4eng\904-responsive-flags\images\mg.png"
+move "d:\Obsidian\Dylan's Obsidian Vault\css4eng\images\flagpedia\jp.png" "D:\Obsidian\Dylan's Obsidian Vault\css4eng\904-responsive-flags\images\jp.png"
+move "d:\Obsidian\Dylan's Obsidian Vault\css4eng\images\flagpedia\mv.png" "D:\Obsidian\Dylan's Obsidian Vault\css4eng\904-responsive-flags\images\mv.png"
+move "d:\Obsidian\Dylan's Obsidian Vault\css4eng\images\flagpedia\sc.png" "D:\Obsidian\Dylan's Obsidian Vault\css4eng\904-responsive-flags\images\sc.png"
+move "d:\Obsidian\Dylan's Obsidian Vault\css4eng\images\flagpedia\jm.png" "D:\Obsidian\Dylan's Obsidian Vault\css4eng\904-responsive-flags\images\jm.png"
+move "d:\Obsidian\Dylan's Obsidian Vault\css4eng\images\flagpedia\mk.png" "D:\Obsidian\Dylan's Obsidian Vault\css4eng\904-responsive-flags\images\mk.png"
+move "d:\Obsidian\Dylan's Obsidian Vault\css4eng\images\flagpedia\gy.png" "D:\Obsidian\Dylan's Obsidian Vault\css4eng\904-responsive-flags\images\gy.png"
+move "d:\Obsidian\Dylan's Obsidian Vault\css4eng\images\flagpedia\lc.png" "D:\Obsidian\Dylan's Obsidian Vault\css4eng\904-responsive-flags\images\lc.png"
+move "d:\Obsidian\Dylan's Obsidian Vault\css4eng\images\flagpedia\gb.png" "D:\Obsidian\Dylan's Obsidian Vault\css4eng\904-responsive-flags\images\gb.png"
+move "d:\Obsidian\Dylan's Obsidian Vault\css4eng\images\flagpedia\za.png" "D:\Obsidian\Dylan's Obsidian Vault\css4eng\904-responsive-flags\images\za.png"
+move "d:\Obsidian\Dylan's Obsidian Vault\css4eng\images\piet-mondrian-composition.png" "D:\Obsidian\Dylan's Obsidian Vault\css4eng\905-piet-mondrian\images\piet-mondrian-composition.png"
