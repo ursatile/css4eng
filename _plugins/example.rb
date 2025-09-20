@@ -67,9 +67,9 @@ module Jekyll
         parts = @markup.split(" ", 2)
         expanded_path = Liquid::Template.parse(parts[0].strip).render(context)
         page_filename = File.basename(page["path"], ".*")
+        page_directory = File.dirname(page["path"])
         root_path = File.expand_path(context.registers[:site].config["source"])
-        file_path = File.join(root_path, "examples", page_filename, expanded_path)
-        return %(<div style="background-color: lime; padding: 20px; color: white;">#{file_path}</div>)
+        file_path = File.join(root_path, page_directory, "examples", expanded_path)
         attributes = parts.length > 1 ? parts[1] : "all"
         dir = File.dirname(file_path)
         FileUtils.mkdir_p(dir) unless Dir.exist?(dir)

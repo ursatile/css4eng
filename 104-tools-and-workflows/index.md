@@ -27,7 +27,7 @@ My favourite extension for this kind of development is called Live Preview:
 
 By default, Live Preview opens an embedded browser inside VS Code, and changes appear as you edit your source code - you don't even have to save the file. If you want to change that, open the VS Code Settings UI, search for "Live Preview", and you can tell it to only update when you save a file, to use an external browser (and which one to use), and a whole bunch of other settings:
 
-![image-20250717183649962](images/vs-code-live-preview-settings-screenshot)
+![image-20250717183649962](images/vs-code-live-preview-settings-screenshot.png)
 
 > If Live Preview isn't working, or you don't get the option to preview your `.html` files, check that `*.html` hasn't ended up associated with another document type - open the VS Code settings JSON  and search for `"files.associations"` 
 
@@ -69,7 +69,7 @@ Now, add another rule to `styles.css`:
 
 {% example styles.css mark_lines="5,6,7" %}
 
-![image-20250718155004640](./images/chrome-inspector-screenshot-with-em-styles)
+![Chrome Inspector with em styles](./images/chrome-inspector-screenshot-with-em-styles.png)
 
 When the page reloads, you can see in the inspector the new rule is being applied, that that rule is defined in styles.css, line 5 - and also that it **overrides** the existing rule which says paragraphs should be purple. This is happening because of something called *specificity*: when deciding what color to make that emphasis element, the teal rule is more *specific* than the purple rule, because the teal rule specifically targets the `em` element, whereas the purple rule is *inherited* from the paragraph. 
 
