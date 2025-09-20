@@ -165,7 +165,7 @@ You see, if one side has a tiger, it doesn't matter how many geese the other sid
 
 Let's flip that into some CSS rules:
 
-{% example t-rexes-tigers-geese-oh-my.html %}
+{% include_relative examples/t-rexes-tigers-geese-oh-my.html %}
 
 In the current CSS standard, and in all modern browsers, type selectors will never override class selectors, and class selectors will never override ID selectors. Or, to put it another way, even if it's a million geese against one tiger, the tiger's still going to win.
 

@@ -24,14 +24,17 @@ word_count: 77
 	<tr style="vertical-align: top;">
 		<td>
 			<a href="{{ page.url | relative_url }}">{{ page.path }}</a>
-			{% assign headings = page.content | newline_to_br | split: "<br />" | where_exp: "line", "line contains '## ' or line contains '<h2'" %}
+			{% assign headings = page.content
+				| newline_to_br
+				| split: "<br />"
+				| where_exp: "line", "line contains '## '" %}
 			<ul>
 				{% for heading in headings %}
 					<li>
 						{% if heading contains '## ' %}
-							{{ heading | remove: '## ' | strip_html  }}
-						{% elsif heading contains '<h2' %}
-							{{ heading | replace: '<h2>', '' | replace: '</h2>', '' | strip_html  }}
+							{% unless heading contains '###' %}
+								{{ heading | remove: '## ' | strip_html  }}
+							{% endif %}
 						{% endif %}
 					</li>
 				{% endfor %}
