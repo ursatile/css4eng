@@ -1,5 +1,4 @@
 ---
-examples: examples/999-sandbox
 front: matter
 layout: home
 nav_order: 999
