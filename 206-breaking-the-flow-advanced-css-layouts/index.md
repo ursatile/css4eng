@@ -1,5 +1,5 @@
 ---
-examples: examples/206-breaking-the-flow-advanced-css-layouts
+examples: examples/index
 layout: home
 nav_order: 206
 target_minutes: 10

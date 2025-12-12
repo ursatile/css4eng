@@ -1,5 +1,5 @@
 ---
-examples: examples/404-processing-css
+examples: examples/index
 layout: home
 nav_exclude: true
 nav_order: 404

@@ -1,7 +1,7 @@
 ---
-examples: examples/104-tools-and-workflows
+examples: examples/index
 layout: home
-nav_order: 104
+nav_order: 106
 target_minutes: 12
 title: "Tools and Workflows"
 typora-copy-images-to: ./images]

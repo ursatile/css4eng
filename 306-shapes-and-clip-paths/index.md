@@ -1,5 +1,5 @@
 ---
-examples: examples/306-shapes-and-clip-paths
+examples: examples/index
 layout: home
 nav_order: 306
 target_minutes: 10

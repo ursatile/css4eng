@@ -1,5 +1,5 @@
 ---
-examples: examples/209-backgrounds-colors-and-composition
+examples: examples/index
 layout: home
 nav_order: 209
 target_minutes: 15

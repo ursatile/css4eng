@@ -1,5 +1,5 @@
 ---
-examples: examples/213-presenting-tabular-data
+examples: examples/index
 layout: home
 nav_order: 213
 target_minutes: 15

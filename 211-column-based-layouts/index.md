@@ -1,5 +1,5 @@
 ---
-examples: examples/211-column-based-layouts
+examples: examples/index
 layout: home
 nav_order: 211
 target_minutes: 15

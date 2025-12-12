@@ -1,5 +1,5 @@
 ---
-examples: examples/302-interaction-design
+examples: examples/index
 layout: home
 nav_order: 302
 target_minutes: 10

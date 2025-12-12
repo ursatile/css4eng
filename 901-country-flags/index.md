@@ -1,5 +1,5 @@
 ---
-examples: examples/901-country-flags
+examples: examples/index
 layout: home
 nav_order: 901
 target_minutes: 10

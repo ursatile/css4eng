@@ -1,5 +1,5 @@
 ---
-examples: examples/210-advanced-css-borders
+examples: examples/index
 layout: home
 nav_order: 210
 target_minutes: 15

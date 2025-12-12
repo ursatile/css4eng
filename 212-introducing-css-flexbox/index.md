@@ -1,5 +1,5 @@
 ---
-examples: examples/212-introducing-css-flexbox
+examples: examples/index
 layout: module
 nav_order: 212
 target_minutes: 15

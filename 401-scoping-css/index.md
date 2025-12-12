@@ -1,5 +1,5 @@
 ---
-examples: examples/401-scoping-css
+examples: examples/index
 layout: home
 nav_order: 401
 target_minutes: 10

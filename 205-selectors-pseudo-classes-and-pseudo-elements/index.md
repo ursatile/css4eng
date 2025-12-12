@@ -1,5 +1,5 @@
 ---
-examples: examples/205-selectors-pseudo-classes-and-pseudo-elements
+examples: examples/index
 layout: home
 nav_order: 205
 target_minutes: 15

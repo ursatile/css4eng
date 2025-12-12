@@ -25,12 +25,11 @@ Get-ChildItem -Path . -Directory | Sort-Object Name | ForEach-Object {
 
 Get-ChildItem -Path . -Directory | Sort-Object Name | ForEach-Object {
 	$existingFolderName = $_.Name
-
-	Get-ChildItem -Path $existingFolderName -Filter *.md | ForEach-Object {
-		if ($_.Name -match '^(\d+)-(.*)$') {
+	if ($_.Name -match '^(\d+)-(.*)$') {
+		$navOrder = $matches[1]
+		Get-ChildItem -Path $existingFolderName -Filter *.md | ForEach-Object {
 			$filePath = $_.FullName
 			$baseName = $_.BaseName
-			$navOrder = $matches[1]
 			$content = Get-Content $filePath -Raw
 			if ($content -match "(?s)^---\s*(.*?)\s*---\s*(.*)") {
 				$frontMatter = $matches[1]

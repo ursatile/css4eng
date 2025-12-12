@@ -1,5 +1,5 @@
 ---
-examples: examples/102-fundamentals-and-background
+examples: examples/index
 layout: home
 nav_order: 102
 target_minutes: 18

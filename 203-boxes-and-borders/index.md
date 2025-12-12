@@ -1,5 +1,5 @@
 ---
-examples: examples/203-boxes-and-borders
+examples: examples/index
 layout: home
 nav_order: 203
 target_minutes: 15

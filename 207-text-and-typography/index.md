@@ -1,5 +1,5 @@
 ---
-examples: examples/207-text-and-typography
+examples: examples/index
 layout: home
 nav_order: 207
 target_minutes: 10

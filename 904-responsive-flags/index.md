@@ -1,5 +1,5 @@
 ---
-examples: examples/904-responsive-flags
+examples: examples/index
 layout: home
 nav_order: 904
 target_minutes: 5

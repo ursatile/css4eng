@@ -1,7 +1,7 @@
 ---
-examples: examples/904-piet-mondrian
+examples: examples/index
 layout: home
-nav_order: 904
+nav_order: 905
 target_minutes: 5
 title: "Exercise: Piet Mondrian"
 word_count: 141

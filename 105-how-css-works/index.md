@@ -1,7 +1,7 @@
 ---
-examples: examples/103-how-css-works
+examples: examples/index
 layout: home
-nav_order: 103
+nav_order: 105
 target_minutes: 6
 title: "How CSS Works"
 word_count: 1098

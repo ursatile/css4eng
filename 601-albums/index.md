@@ -1,5 +1,5 @@
 ---
-examples: examples/601-albums
+examples: examples/index
 layout: home
 nav_exclude: true
 nav_order: 601

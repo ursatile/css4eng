@@ -1,5 +1,5 @@
 ---
-examples: examples/501-conclusion
+examples: examples/index
 layout: home
 nav_exclude: true
 nav_order: 501

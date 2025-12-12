@@ -1,5 +1,5 @@
 ---
-examples: examples/204-css-resets-and-normalizers
+examples: examples/index
 layout: home
 nav_order: 204
 target_minutes: 5

@@ -1,5 +1,5 @@
 ---
-examples: examples/304-using-css-grid
+examples: examples/index
 layout: home
 nav_order: 304
 target_minutes: 15

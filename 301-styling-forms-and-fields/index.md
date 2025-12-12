@@ -1,5 +1,5 @@
 ---
-examples: examples/301-styling-forms-and-fields
+examples: examples/index
 layout: home
 nav_order: 301
 target_minutes: 15

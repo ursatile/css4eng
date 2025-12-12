@@ -1,5 +1,5 @@
 ---
-examples: examples/214-using-css-transforms
+examples: examples/index
 layout: home
 nav_order: 214
 target_minutes: 15

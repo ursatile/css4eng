@@ -1,6 +1,7 @@
 ---
+examples: examples/index
 layout: home
-nav_order: 102
+nav_order: 103
 target_minutes: 18
 title: "Semantic HTML"
 word_count: 2462

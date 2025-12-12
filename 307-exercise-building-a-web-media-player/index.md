@@ -1,5 +1,5 @@
 ---
-examples: examples/307-exercise-building-a-web-media-player
+examples: examples/index
 layout: home
 nav_order: 307
 target_minutes: 15

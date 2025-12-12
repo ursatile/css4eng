@@ -1,5 +1,5 @@
 ---
-examples: examples/101-course-overview
+examples: examples/index
 layout: home
 nav_exclude: true
 nav_order: 101

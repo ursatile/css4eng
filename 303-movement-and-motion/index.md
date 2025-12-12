@@ -1,5 +1,5 @@
 ---
-examples: examples/303-movement-and-motion
+examples: examples/index
 layout: home
 nav_order: 303
 target_minutes: 20
