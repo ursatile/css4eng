@@ -1,5 +1,4 @@
 ---
-examples: examples/index
 layout: home
 nav_order: 106
 target_minutes: 12

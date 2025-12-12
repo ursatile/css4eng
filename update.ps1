@@ -43,19 +43,19 @@ Get-ChildItem -Path . -Directory | Sort-Object Name | ForEach-Object {
 				Write-Host "=================================="
 				Write-Host $baseName
 				Write-Host "=================================="
-				if ($newFrontMatter -match "examples:\s*.+") {
-					$newFrontMatter = $newFrontMatter -replace "examples:\s*.+", "examples: examples/$baseName"
-				}
-				else {
-					$newFrontMatter = $newFrontMatter + "`nexamples: examples/$baseName"
-				}
-				#			Write-Host "========================================================"
-				#			Write-Host $newFrontMatter
+				# if ($newFrontMatter -match "examples:\s*.+") {
+				# 	$newFrontMatter = $newFrontMatter -replace "examples:\s*.+", "examples: examples/$baseName"
+				# }
+				# else {
+				# 	$newFrontMatter = $newFrontMatter + "`nexamples: examples/$baseName"
+				# }
+				# #			Write-Host "========================================================"
+				# #			Write-Host $newFrontMatter
 
 				$newContent = "---`r`n$newFrontMatter`r`n---`r`n$body"
 				Set-Content -NoNewline -Path $filePath -Value $newContent
 				Write-Host "Updated nav_order for $baseName to $navOrder"
-				Write-Host "Updated examples for $baseName to examples/$baseName"
+				# Write-Host "Updated examples for $baseName to examples/$baseName"
 			}
 			else {
 				Write-Host "No front matter found in $($_.Name)"

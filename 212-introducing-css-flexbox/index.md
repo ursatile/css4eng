@@ -1,5 +1,4 @@
 ---
-examples: examples/index
 layout: module
 nav_order: 212
 target_minutes: 15
