@@ -1,11 +1,11 @@
-git add .
-git commit -m "Snapshot of everything before running update.ps1"
+# git add .
+# git commit -m "Snapshot of everything before running update.ps1"
 
 $oldPartNumber = 0
 
-Get-ChildItem -Path . -Filter *.md | Sort-Object Name | ForEach-Object {
-	$oldFilename = $_.BaseName
-	if ($oldFilename -match '^(\d)(\d+)[a-z]?-(.*)$') {
+Get-ChildItem -Path . -Directory | Sort-Object Name | ForEach-Object {
+	$existingFolderName = $_.Name
+	if ($existingFolderName -match '^(\d)(\d+)[a-z]?-(.*)$') {
 		$newPartNumber = $matches[1]
 		if ($newPartNumber -eq $oldPartNumber) {
 			$newSectionNumber = $newSectionNumber + 1
@@ -15,18 +15,11 @@ Get-ChildItem -Path . -Filter *.md | Sort-Object Name | ForEach-Object {
 			$newSectionNumber = 1
 		}
 		$title = $matches[3]
-		$newFileName = "{0}{1:00}-$title" -f [int]$newPartNumber, [int]$newSectionNumber
-		Rename-Item -Path "$oldFilename.md" -NewName "$newFileName.md"
-		Write-Host "$oldFileName.md > $newFileName"
-		if (Test-Path "examples\$oldFilename") {
-			Write-Host "examples\$oldFilename > examples\$newFileName"
-			if ($oldFilename -ne $newFileName) {
-				Rename-Item -Path "examples\$oldFilename" -NewName $newFileName
-			}
+		$modifiedFolderName = "{0}{1:00}-$title" -f [int]$newPartNumber, [int]$newSectionNumber
+		Write-Host "$existingFolderName > $modifiedFolderName"
+		if ($existingFolderName -ne $modifiedFolderName) {
+			Rename-Item -Path $existingFolderName -NewName $modifiedFolderName
 		}
-	}
- else {
-		Write-Host "Filename does not match expected pattern: $($_.Name)"
 	}
 }
 
@@ -76,9 +69,9 @@ Get-ChildItem -Path . -Filter *.md | ForEach-Object {
 	if ($content -match "(?s)^---\s*(.*?)\s*---\s*(.*)") {
 		$frontMatter = $matches[1]
 		$body = $matches[2]
-		$wordCount = ($body -split '\s+') 
-		| Where-Object { $_ -match '\w' } 
-		| Measure-Object 
+		$wordCount = ($body -split '\s+')
+		| Where-Object { $_ -match '\w' }
+		| Measure-Object
 		| Select-Object -ExpandProperty Count
 
 		if ($frontMatter -match "word_count:\s*\d+") {
@@ -148,9 +141,9 @@ if ($shouldAddDataPoint) {
 		datetime  = $currentDateTime
 		wordCount = $totalWordCount
 	}
-    
+
 	$progressData += $newDataPoint
-    
+
 	# Save updated data
 	$progressData | ConvertTo-Json | Set-Content $progressFile
 	Write-Host "Progress data saved to $progressFile"
