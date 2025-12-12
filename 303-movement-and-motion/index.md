@@ -4,7 +4,7 @@ layout: home
 nav_order: 303
 target_minutes: 20
 title: "Movement and Motion"
-word_count: 1364
+word_count: 1365
 ---
 The web has always rested on three pillars: HTML controls structure, CSS controls presentation, JavaScript controls behaviour.
 

@@ -4,7 +4,7 @@ layout: home
 nav_order: 202
 target_minutes: 20
 title: "The CSS Color Model"
-word_count: 3963
+word_count: 3961
 ---
 In the last section, we looked at some examples of CSS selectors, using foreground and background colours to visualize the effects of different selectors, but so far the only colours we've seen are *named colours*.
 

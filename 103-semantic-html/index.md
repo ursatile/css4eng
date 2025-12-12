@@ -3,9 +3,8 @@ layout: home
 nav_order: 102
 target_minutes: 18
 title: "Semantic HTML"
-word_count: 3623
+word_count: 2462
 ---
-
 OK, first things first. As we've already seen, CSS, on its own, doesn't do anything. You can't build an application using only CSS; to understand how CSS works, you need to understand its relationship to HTML - the Hypertext Markup Language.
 
 Start with the basics. Almost every website and application is going to draw stuff on your screen. Words and images. The words might be there for you to read them - headings, articles, paragraphs - or they might be parts of the user interface: labels, menus, drop-down lists. Images might be content - diagrams and photographs - or they might be icons, buttons, or other interactive elements.

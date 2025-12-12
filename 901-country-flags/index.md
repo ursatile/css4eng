@@ -4,7 +4,7 @@ layout: home
 nav_order: 901
 target_minutes: 10
 title: "Exercise: Country Flags 1"
-word_count: 76
+word_count: 78
 ---
 You're going to use the CSS properties we've learned about so far to recreate some country flags.
 

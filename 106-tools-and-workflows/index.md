@@ -5,7 +5,7 @@ nav_order: 104
 target_minutes: 12
 title: "Tools and Workflows"
 typora-copy-images-to: ./images]
-word_count: 2437
+word_count: 2450
 ---
 In the previous section, we learned the rudiments of CSS syntax, and how to associate styles with our web content.
 

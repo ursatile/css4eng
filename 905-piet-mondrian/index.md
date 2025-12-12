@@ -4,10 +4,8 @@ layout: home
 nav_order: 904
 target_minutes: 5
 title: "Exercise: Piet Mondrian"
-word_count: 10
-
+word_count: 141
 ---
-
 # Exercise: Piet Mondrian
 
 Piet Mondrian (1872–1944) was a Dutch artist who moved from painting trees and landscapes to creating bold grids of lines and color. As part of the De Stijl movement, he believed that using just verticals, horizontals, and primary colors could express balance and harmony in the simplest way possible. His style went on to shape not only modern art but also design, fashion, and architecture.

@@ -6,7 +6,6 @@ target_minutes: 10
 title: "Scoping CSS"
 word_count: 16
 ---
-
 # Scoping CSS (20m)
 
 ## Course Content

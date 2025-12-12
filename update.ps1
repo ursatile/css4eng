@@ -23,47 +23,50 @@ Get-ChildItem -Path . -Directory | Sort-Object Name | ForEach-Object {
 	}
 }
 
-Get-ChildItem -Path . -Filter *.md | ForEach-Object {
-	if ($_.Name -match '^(\d+)-(.*)$') {
-		$filePath = $_.FullName
-		$baseName = $_.BaseName
-		$navOrder = $matches[1]
-		$content = Get-Content $filePath -Raw
-		if ($content -match "(?s)^---\s*(.*?)\s*---\s*(.*)") {
-			$frontMatter = $matches[1]
-			$body = $matches[2]
-			if ($frontMatter -match "nav_order:\s*.*") {
-				$newFrontMatter = $frontMatter -replace "nav_order:\s*.*", "nav_order: $navOrder"
-			}
-			else {
-				$newFrontMatter = $frontMatter + "`nnav_order: $navOrder"
-			}
-			Write-Host "=================================="
-			Write-Host $baseName
-			Write-Host "=================================="
-			if ($newFrontMatter -match "examples:\s*.+") {
-				$newFrontMatter = $newFrontMatter -replace "examples:\s*.+", "examples: examples/$baseName"
-			}
-			else {
-				$newFrontMatter = $newFrontMatter + "`nexamples: examples/$baseName"
-			}
-			#			Write-Host "========================================================"
-			#			Write-Host $newFrontMatter
+Get-ChildItem -Path . -Directory | Sort-Object Name | ForEach-Object {
+	$existingFolderName = $_.Name
 
-			$newContent = "---`r`n$newFrontMatter`r`n---`r`n$body"
-			Set-Content -NoNewline -Path $filePath -Value $newContent
-			Write-Host "Updated nav_order for $baseName to $navOrder"
-			Write-Host "Updated examples for $baseName to examples/$baseName"
-		}
-		else {
-			Write-Host "No front matter found in $($_.Name)"
+	Get-ChildItem -Path $existingFolderName -Filter *.md | ForEach-Object {
+		if ($_.Name -match '^(\d+)-(.*)$') {
+			$filePath = $_.FullName
+			$baseName = $_.BaseName
+			$navOrder = $matches[1]
+			$content = Get-Content $filePath -Raw
+			if ($content -match "(?s)^---\s*(.*?)\s*---\s*(.*)") {
+				$frontMatter = $matches[1]
+				$body = $matches[2]
+				if ($frontMatter -match "nav_order:\s*.*") {
+					$newFrontMatter = $frontMatter -replace "nav_order:\s*.*", "nav_order: $navOrder"
+				}
+				else {
+					$newFrontMatter = $frontMatter + "`nnav_order: $navOrder"
+				}
+				Write-Host "=================================="
+				Write-Host $baseName
+				Write-Host "=================================="
+				if ($newFrontMatter -match "examples:\s*.+") {
+					$newFrontMatter = $newFrontMatter -replace "examples:\s*.+", "examples: examples/$baseName"
+				}
+				else {
+					$newFrontMatter = $newFrontMatter + "`nexamples: examples/$baseName"
+				}
+				#			Write-Host "========================================================"
+				#			Write-Host $newFrontMatter
+
+				$newContent = "---`r`n$newFrontMatter`r`n---`r`n$body"
+				Set-Content -NoNewline -Path $filePath -Value $newContent
+				Write-Host "Updated nav_order for $baseName to $navOrder"
+				Write-Host "Updated examples for $baseName to examples/$baseName"
+			}
+			else {
+				Write-Host "No front matter found in $($_.Name)"
+			}
 		}
 	}
 }
 
-
 $totalWordCount = 0
-Get-ChildItem -Path . -Filter *.md | ForEach-Object {
+Get-ChildItem -Path . -Filter *.md -Recurse | ForEach-Object {
 	$file = $_.FullName
 	$content = Get-Content $file -Raw
 	if ($content -match "(?s)^---\s*(.*?)\s*---\s*(.*)") {

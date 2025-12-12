@@ -4,10 +4,8 @@ layout: home
 nav_order: 904
 target_minutes: 5
 title: "Exercise: Responsive Flags"
-word_count: 10
-
+word_count: 305
 ---
-
 ## Exercise: Responsive Flags
 
 In the Country Flags exercise, we used CSS to recreate several geometric designs of national flags, based on a fixed pixel size.
