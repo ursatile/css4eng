@@ -3,7 +3,7 @@ gem 'rouge', path: 'gems/rouge-4.6.0'
 gem "jekyll", "~> 4.4.1" # installed by `gem jekyll`
 gem "logger" # Suppress Ruby 3.5.0 deprecation warning
 
-gem "just-the-docs", "0.10.1" # pinned to the current release
+gem "just-the-docs", "0.11.1" # pinned to the current release
 # gem "just-the-docs"        # always download the latest release
 gem 'jekyll-sass-converter', '~> 3.1.0'
 
