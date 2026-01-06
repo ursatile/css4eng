@@ -35,8 +35,8 @@ module Jekyll
           page_filename = File.basename(page["path"], ".*")
           output = %(
 <figure class="iframe">
-<iframe src="./examples/#{page_filename}/#{expanded_path}" #{@html_attributes}></iframe>
-<figcaption><a href="./examples/#{page_filename}/#{expanded_path}">#{@filename}</a></figcaption>
+<iframe src="./examples/#{expanded_path}" #{@html_attributes}></iframe>
+<figcaption><a href="./examples/#{expanded_path}">#{@filename}</a></figcaption>
 </figure>)
           return output
         rescue => e

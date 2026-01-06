@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Inputs And Buttons</title>
+	<style>
+		@import url('/fonts/raleway.css');
+		@import url('/fonts/pt-sans-narrow.css');
+		@import url('/fonts/roboto-flex.css');
+
+		* { box-sizing: border-box; }
+
+		section {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 10px;
+			margin: 20px auto 0 auto;
+			max-width: 480px;
+
+			input { font-size: 1.1em; }
+			input[type="text"] { flex: 1 1 10em; }
+			input[type="submit"] { flex: 0 0 5em; }
+
+			&:nth-of-type(1) {
+				input {
+					border: 2px solid green;
+					background-color: rgb(163, 255, 163);
+					border-radius: 8px;
+					padding: 4px 8px 3px 8px;
+
+					&[type="text"] {
+						background-color: rgb(163, 255, 163);
+
+						&::placeholder {
+							color: green;
+							font-style: italic;
+						}
+					}
+
+					&[type="submit"] {
+						background-color: green;
+						color: #fff;
+					}
+				}
+			}
+
+			&:nth-of-type(2) {
+				input {
+					font-family: 'Raleway', Arial, Helvetica, sans-serif;
+					font-weight: 200;
+					border-radius: 2px;
+					padding: 4px;
+
+					&[type="text"] { border: 1px solid #369; }
+
+					&[type="submit"] {
+						background-color: #369;
+						color: #fff;
+						border: none;
+					}
+				}
+			}
+
+			&:nth-of-type(3) {
+				input {
+					font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
+					padding: 5px;
+
+					&[type="submit"] {
+						font-weight: 700;
+						border-radius: 5px;
+						border: none;
+						background: linear-gradient(#fff,
+								#7ebaff 49%,
+								#53a3ff 49%,
+								#a8d1ff 100%);
+						box-shadow: inset 0px 2px 3px 0px #53a3ff,
+							inset 0px 4px 8px 0px white,
+							2px 2px 2px 0px #999;
+					}
+
+					&[type="text"] {
+						border: 1px solid #53a3ff;
+						border-radius: 5px;
+
+						&::placeholder { color: #53a3ff; }
+					}
+				}
+			}
+
+			&:nth-of-type(4) {
+				input {
+					border-radius: 100px;
+					padding: 8px;
+					font-family: 'Roboto Flex';
+					box-shadow: 1px 1px 3px silver;
+
+					&[type="text"] {
+						border: 1px solid silver;
+						background-image: url('search.svg');
+						background-size: auto 1.6em;
+						background-position: 5px center;
+						padding-left: 2rem;
+						background-repeat: no-repeat;
+					}
+
+					&[type="submit"] {
+						background-color: silver;
+						border: 0;
+					}
+				}
+			}
+
+			&:nth-of-type(5) {
+				font-family: 'Akaya Telivigala';
+
+				input {
+					padding: 4px;
+
+					&[type="submit"] {
+						background-color: indigo;
+						border: 3px outset indigo;
+						color: white;
+					}
+
+					&[type="text"] {
+						border: 2px solid indigo;
+						box-shadow: 1px 1px 5px inset indigo;
+
+						&::placeholder { color: rgb(from indigo r g b / 0.5); }
+					}
+				}
+			}
+	</style>
+</head>
+<body>
+	<section>
+		<input type="text" placeholder="placeholder..."> <input type="submit"
+			value="Submit">
+	</section>
+	<section>
+		<input type="text" placeholder="placeholder..."> <input type="submit"
+			value="Submit">
+	</section>
+	<section>
+		<input type="text" placeholder="placeholder..."> <input type="submit"
+			value="Submit">
+	</section>
+	<section>
+		<input type="text" placeholder="placeholder..."> <input type="submit"
+			value="Submit">
+	</section>
+	<section>
+		<input type="text" placeholder="placeholder..."> <input type="submit"
+			value="Submit">
+	</section>
+</body>
+</html>

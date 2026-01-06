@@ -1,11 +1,11 @@
-git add .
-git commit -m "Snapshot of everything before running update.ps1"
+# git add .
+# git commit -m "Snapshot of everything before running update.ps1"
 
 $oldPartNumber = 0
 
-Get-ChildItem -Path . -Filter *.md | Sort-Object Name | ForEach-Object {
-	$oldFilename = $_.BaseName
-	if ($oldFilename -match '^(\d)(\d+)[a-z]?-(.*)$') {
+Get-ChildItem -Path . -Directory | Sort-Object Name | ForEach-Object {
+	$existingFolderName = $_.Name
+	if ($existingFolderName -match '^(\d)(\d+)[a-z]?-(.*)$') {
 		$newPartNumber = $matches[1]
 		if ($newPartNumber -eq $oldPartNumber) {
 			$newSectionNumber = $newSectionNumber + 1
@@ -15,70 +15,65 @@ Get-ChildItem -Path . -Filter *.md | Sort-Object Name | ForEach-Object {
 			$newSectionNumber = 1
 		}
 		$title = $matches[3]
-		$newFileName = "{0}{1:00}-$title" -f [int]$newPartNumber, [int]$newSectionNumber
-		Rename-Item -Path "$oldFilename.md" -NewName "$newFileName.md"
-		Write-Host "$oldFileName.md > $newFileName"
-		if (Test-Path "examples\$oldFilename") {
-			Write-Host "examples\$oldFilename > examples\$newFileName"
-			if ($oldFilename -ne $newFileName) {
-				Rename-Item -Path "examples\$oldFilename" -NewName $newFileName
-			}
+		$modifiedFolderName = "{0}{1:00}-$title" -f [int]$newPartNumber, [int]$newSectionNumber
+		Write-Host "$existingFolderName > $modifiedFolderName"
+		if ($existingFolderName -ne $modifiedFolderName) {
+			Rename-Item -Path $existingFolderName -NewName $modifiedFolderName
 		}
-	}
- else {
-		Write-Host "Filename does not match expected pattern: $($_.Name)"
 	}
 }
 
-Get-ChildItem -Path . -Filter *.md | ForEach-Object {
+Get-ChildItem -Path . -Directory | Sort-Object Name | ForEach-Object {
+	$existingFolderName = $_.Name
 	if ($_.Name -match '^(\d+)-(.*)$') {
-		$filePath = $_.FullName
-		$baseName = $_.BaseName
 		$navOrder = $matches[1]
-		$content = Get-Content $filePath -Raw
-		if ($content -match "(?s)^---\s*(.*?)\s*---\s*(.*)") {
-			$frontMatter = $matches[1]
-			$body = $matches[2]
-			if ($frontMatter -match "nav_order:\s*.*") {
-				$newFrontMatter = $frontMatter -replace "nav_order:\s*.*", "nav_order: $navOrder"
-			}
-			else {
-				$newFrontMatter = $frontMatter + "`nnav_order: $navOrder"
-			}
-			Write-Host "=================================="
-			Write-Host $baseName
-			Write-Host "=================================="
-			if ($newFrontMatter -match "examples:\s*.+") {
-				$newFrontMatter = $newFrontMatter -replace "examples:\s*.+", "examples: examples/$baseName"
-			}
-			else {
-				$newFrontMatter = $newFrontMatter + "`nexamples: examples/$baseName"
-			}
-			#			Write-Host "========================================================"
-			#			Write-Host $newFrontMatter
+		Get-ChildItem -Path $existingFolderName -Filter *.md | ForEach-Object {
+			$filePath = $_.FullName
+			$baseName = $_.BaseName
+			$content = Get-Content $filePath -Raw
+			if ($content -match "(?s)^---\s*(.*?)\s*---\s*(.*)") {
+				$frontMatter = $matches[1]
+				$body = $matches[2]
+				if ($frontMatter -match "nav_order:\s*.*") {
+					$newFrontMatter = $frontMatter -replace "nav_order:\s*.*", "nav_order: $navOrder"
+				}
+				else {
+					$newFrontMatter = $frontMatter + "`nnav_order: $navOrder"
+				}
+				Write-Host "=================================="
+				Write-Host $baseName
+				Write-Host "=================================="
+				# if ($newFrontMatter -match "examples:\s*.+") {
+				# 	$newFrontMatter = $newFrontMatter -replace "examples:\s*.+", "examples: examples/$baseName"
+				# }
+				# else {
+				# 	$newFrontMatter = $newFrontMatter + "`nexamples: examples/$baseName"
+				# }
+				# #			Write-Host "========================================================"
+				# #			Write-Host $newFrontMatter
 
-			$newContent = "---`r`n$newFrontMatter`r`n---`r`n$body"
-			Set-Content -NoNewline -Path $filePath -Value $newContent
-			Write-Host "Updated nav_order for $baseName to $navOrder"
-			Write-Host "Updated examples for $baseName to examples/$baseName"
-		}
-		else {
-			Write-Host "No front matter found in $($_.Name)"
+				$newContent = "---`r`n$newFrontMatter`r`n---`r`n$body"
+				Set-Content -NoNewline -Path $filePath -Value $newContent
+				Write-Host "Updated nav_order for $baseName to $navOrder"
+				# Write-Host "Updated examples for $baseName to examples/$baseName"
+			}
+			else {
+				Write-Host "No front matter found in $($_.Name)"
+			}
 		}
 	}
 }
-
 
 $totalWordCount = 0
-Get-ChildItem -Path . -Filter *.md | ForEach-Object {
+Get-ChildItem -Path . -Filter *.md -Recurse | ForEach-Object {
 	$file = $_.FullName
 	$content = Get-Content $file -Raw
 	if ($content -match "(?s)^---\s*(.*?)\s*---\s*(.*)") {
 		$frontMatter = $matches[1]
 		$body = $matches[2]
-		$wordCount = ($body -split '\s+') 
-		| Where-Object { $_ -match '\w' } 
-		| Measure-Object 
+		$wordCount = ($body -split '\s+')
+		| Where-Object { $_ -match '\w' }
+		| Measure-Object
 		| Select-Object -ExpandProperty Count
 
 		if ($frontMatter -match "word_count:\s*\d+") {
@@ -148,9 +143,9 @@ if ($shouldAddDataPoint) {
 		datetime  = $currentDateTime
 		wordCount = $totalWordCount
 	}
-    
+
 	$progressData += $newDataPoint
-    
+
 	# Save updated data
 	$progressData | ConvertTo-Json | Set-Content $progressFile
 	Write-Host "Progress data saved to $progressFile"
