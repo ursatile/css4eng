@@ -4,6 +4,8 @@ layout: home
 nav_order: 213
 target_minutes: 15
 title: "Presenting Tabular Data"
+parent: Presentation
+
 word_count: 296
 ---
 Tables are one of the web's oldest layout systems, added to HTML 3.2 way back in 1997. For many years, web developers relied extensively on tables because they were just about the only way to break out of the inline/block layout model; it was common to see tables used for everything from the website layout down to individual buttons; the 9-slice scaling technique we discussed in the last section relied on turning every button on the site into a tiny table.
@@ -23,35 +25,4 @@ More comprehensively, a table can include a `<colgroup>` containing `<col>` elem
 Tables can also include a `<caption>`, describing the contents of the table. Here's a full example of a table containing everything in the current HTML spec:
 
 {% example full-table.html elements="body" iframe_style="" %}
-
-
-
-
-
-
-
-
-
-## Course Content
-
-- Styling HTML tables
-- Working with tabular layouts: presenting rows & columns, striping, highlighting, hovering
-- CSS table tricks: rotating column headers
-- Exercise: building a data grid
-
-## Notes
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

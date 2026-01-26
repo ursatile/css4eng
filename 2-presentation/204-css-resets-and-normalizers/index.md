@@ -3,6 +3,8 @@ examples: examples/204-css-resets-and-normalizers
 layout: home
 nav_order: 204
 target_minutes: 5
+parent: Presentation
+
 title: "CSS Resets & Normalizers"
 word_count: 588
 ---

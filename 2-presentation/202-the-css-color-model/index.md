@@ -3,6 +3,7 @@ examples: examples/202-the-css-color-model
 layout: home
 nav_order: 202
 target_minutes: 20
+parent: Presentation
 title: "The CSS Color Model"
 word_count: 3963
 ---

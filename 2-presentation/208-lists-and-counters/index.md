@@ -3,6 +3,8 @@ examples: examples/208-lists-and-counters
 layout: home
 nav_order: 208
 target_minutes: 5
+parent: Presentation
+
 title: "Lists and Counters"
 word_count: 539
 ---

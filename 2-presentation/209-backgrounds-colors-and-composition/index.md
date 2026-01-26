@@ -3,6 +3,8 @@ examples: examples/209-backgrounds-colors-and-composition
 layout: home
 nav_order: 209
 target_minutes: 15
+parent: Presentation
+
 title: "Colors and Composition"
 word_count: 3039
 ---

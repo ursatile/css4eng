@@ -3,6 +3,8 @@ examples: examples/211-column-based-layouts
 layout: home
 nav_order: 211
 target_minutes: 15
+parent: Presentation
+
 title: "Column-Based Layouts"
 word_count: 2233
 ---

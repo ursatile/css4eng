@@ -3,6 +3,8 @@ examples: examples/207-text-and-typography
 layout: home
 nav_order: 207
 target_minutes: 10
+parent: Presentation
+
 title: "Text & Typography"
 word_count: 1739
 ---

@@ -4,6 +4,8 @@ layout: module
 nav_order: 212
 target_minutes: 15
 title: "Introducing CSS Flexbox"
+parent: Presentation
+
 word_count: 2354
 ---
 In this section, we're going to learn about a set of features and capabilities which are collectively known as CSS flexbox. They're defined in something called the CSS Flexible Box Layout Module, hence "flexbox"; the syntax was finalised around 2012, and achieved stable support across all mainstream browsers by 2017.

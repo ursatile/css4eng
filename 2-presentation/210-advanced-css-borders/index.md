@@ -3,6 +3,8 @@ examples: examples
 layout: home
 nav_order: 210
 target_minutes: 15
+parent: Presentation
+
 title: "Advanced CSS Borders"
 word_count: 1153
 ---
