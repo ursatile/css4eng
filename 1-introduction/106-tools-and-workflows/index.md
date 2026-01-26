@@ -2,7 +2,8 @@
 layout: home
 nav_order: 106
 target_minutes: 12
-title: "1.6 Tools and Workflows"
+title: "Tools and Workflows"
+parent: Introduction
 typora-copy-images-to: ./images]
 word_count: 2450
 ---

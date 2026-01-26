@@ -2,7 +2,8 @@
 layout: home
 nav_order: 105
 target_minutes: 6
-title: "1.5 How CSS Works"
+title: "How CSS Works"
+parent: Introduction
 word_count: 1098
 ---
 ## Properties and Values

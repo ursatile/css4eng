@@ -1,6 +1,7 @@
 ---
 layout: home
 nav_order: 103
+parent: Introduction
 target_minutes: 18
 title: "Semantic HTML"
 word_count: 2462

@@ -3,6 +3,7 @@ layout: home
 nav_order: 104
 target_minutes: 18
 title: "Introducing Web Accessibility"
+parent: Introduction
 word_count: 2462
 ---
 
@@ -17,25 +18,3 @@ What actually ends up on your user's screen is going to be a compromise between 
 One thing I want to mention while we're here: for as long as I've been developing websites, people have been talking about using tags like `strong` and `em` - instead of just making text bold or italic - because, in theory, something like screen reader software could emphasise those elements. Sounds like a good idea, right? And nobody's going to argue *against* that... but, unfortunately, it isn't actually true. Let's add a couple more paragraphs to our example page here - let's have one that's just a regular paragraph, our existing one that uses the `em` tag, and a third one that uses a `strong` tag. Now I'm going to open up the NVDA screen reader software, and listen to how it reads out that content:
 
 That's not a case *against* semantic markup - in fact, using well-structured markup is an excellent starting point when it comes to making web content accessible. But the example of `em` tags and screen readers is so ubiquitous that I thought it was worth pointing out that it's Not Actually A Thing.
-
-## Review & Recap
-
-In this section, we've discussed why CSS is so unpopular with developers:
-
-* CSS uses a declarative programming model, not a procedural one: you don't provide instructions, you describe results.
-* CSS is closely associated with visual design, and so books and training material often treat CSS as part of a design toolkit rather than an engineering capability
-* CSS is hard to test; bugs and regressions will often go unnoticed until somebody complains that "the website is broken"
-* There's a lot of very bad CSS code in the wild; many of us have ended up having to work with it at some point in our career, and that contributes a lot of negativity to developers' perception of CSS as a language.
-
-
-
-
-
-
-
-
-
-
-
-
-
