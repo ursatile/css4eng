@@ -50,7 +50,7 @@ This is where flexbox starts to get a bit gnarly, mainly because we just don't h
 
 I find it helpful to think of flexbox as three separate things - the container, the content, and the items. The container and items are the actual HTML elements, the *content* is the implied grouping created by the arrangement of the items:
 
-<img src="{{ page.examples }}/container-content-items.svg">
+<img src="images/container-content-items.svg">
 
 `justify-content` controls how elements are arranged along the main axis, **if they don't fill the container**.
 
@@ -134,23 +134,23 @@ Let's walk through that slowly.
 
 Say we have a flex container here, that's 730 pixels wide, with 5px of padding and a 5px flex gap. There are five `<div>` elements in the container, with their `flex-basis` set to 50px. Initially, they don't have a `flex-grow` property - or rather, they have the default `flex-grow` value, which is zero - so they only take up as much space as their content, and the container has a bunch of empty space at the end:
 
-<img src="{{page.examples}}/flex-grow-01.png">
+<img src="images/flex-grow-01.png">
 
 Now, let's assign the `flex-grow` property for each of our flex items - we'll set them to 1, 2, 3, 4, and 5, respectively:
 
-<img src="{{page.examples}}/flex-grow-02.png">
+<img src="images/flex-grow-02.png">
 
 The flexbox layout engine is going to add those `flex-grow` values together --- 1 + 2 + 3 + 4 + 5 = 15 --- and then divide the available free space into 15 equal parts:
 
-<img src="{{page.examples}}/flex-grow-03.png">
+<img src="images/flex-grow-03.png">
 
 Then --- this is the clever part --- it'll redistribute that space between the flex items based on their `flex-grow` values:
 
-<img src="{{page.examples}}/flex-grow-04.png"> 
+<img src="images/flex-grow-04.png"> 
 
 and then increase the size of each item to occupy the space allocated to it by that distribution:
 
-<img src="{{page.examples}}/flex-grow-05.png">
+<img src="images/flex-grow-05.png">
 
 `flex-shrink` is... more complicated.
 

@@ -44,7 +44,7 @@ and when we apply all our CSS rules, Freddie gets blue jeans because everybody g
 
 Switching from house parties back to HTML, let's take a look at an example of a page that uses all of these concepts:
 
-* [ToastMaster 9000 Instruction Manual]({{ page.examples }}/toastmaster-9000.html)
+* [ToastMaster 9000 Instruction Manual](examples/toastmaster-9000.html)
 
 {% example toastmaster-9000.html %}
 
@@ -174,7 +174,7 @@ Let's be clear: this was an edge case nobody was ever expected to find, because 
 
 ![image-20250801110506354](./images/chatgpt-4o-css-specificity-example.png)
 
-It's trivially easy to try this out for yourself. Take a look at [css-specificity-with-256-rules.html]({{page.examples}}/css-specificity-with-256-rules.html) - that's a page in which some elements have 256 separate CSS classes, from `c001` through to `c256`, and other elements are nested inside 256 `<em><em><em>...` tags.
+It's trivially easy to try this out for yourself. Take a look at [css-specificity-with-256-rules.html](examples/css-specificity-with-256-rules.html) - that's a page in which some elements have 256 separate CSS classes, from `c001` through to `c256`, and other elements are nested inside 256 `<em><em><em>...` tags.
 
 For now, and hopefully for the foreseeable future, ID selectors win over classes, and classes win over types. A T-rex always beats any number of tigers, and a tiger always beats any number of geese.
 

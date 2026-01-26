@@ -33,46 +33,46 @@ ____
 
 A couple of relatively straightforward ones to warm up. Try the flag of Madagascar:
 
-![Flag of Madagascar](images/flagpedia/mg.png)
+![Flag of Madagascar](/images/flagpedia/mg.png)
 
 The flag of Japan:
 
-![Flag of Japan](images/flagpedia/jp.png)
+![Flag of Japan](/images/flagpedia/jp.png)
 
 The flag of Maldives:
 
-![Flag of Maldives](images/flagpedia/mv.png)
+![Flag of Maldives](/images/flagpedia/mv.png)
 
 ## Medium Difficulty
 
 The flag of Seychelles:
 
-![Flag of Seychelles](images/flagpedia/sc.png)
+![Flag of Seychelles](/images/flagpedia/sc.png)
 
 Jamaica:
 
-![Flag of Jamaica](images/flagpedia/jm.png)
+![Flag of Jamaica](/images/flagpedia/jm.png)
 
 The Flag of North Macedonia:
 
-![Flag of North Macedonia](images/flagpedia/mk.png)
+![Flag of North Macedonia](/images/flagpedia/mk.png)
 
 ## Advanced Difficulty
 
 The Flag of Guyana:
 
-![Flag of Guyana](images/flagpedia/gy.png)
+![Flag of Guyana](/images/flagpedia/gy.png)
 
 The flag of St Lucia:
 
-![Flag of Saint Lucia](images/flagpedia/lc.png)
+![Flag of Saint Lucia](/images/flagpedia/lc.png)
 
 The flag of the United Kingdom:
 
-![Flag of United Kingdom](images/flagpedia/gb.png)
+![Flag of United Kingdom](/images/flagpedia/gb.png)
 
 The flag of South Africa:
 
-![Flag of South Africa](images/flagpedia/za.png)
+![Flag of South Africa](/images/flagpedia/za.png)
 
 

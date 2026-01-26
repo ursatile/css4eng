@@ -61,7 +61,7 @@ Back in the days of Netscape Navigator, HTML 3.0 defined a palette of sixteen na
 
 Over time, CSS has also adopted named colours from various sources, including the X Windows System. MDN notes that “about 150 other colours have a keyword associated to them”; [Anthony Lieuallen](https://arantius.com/anthony-lieuallen) has created this ingenious colour-wheel visualisation which you can use to explore them all:
 
-<iframe src="{{ page.examples }}/web-color-wheel/index.html" style="height: 680px;"></iframe>
+<iframe src="examples/web-color-wheel/index.html" style="height: 680px;"></iframe>
 
 There are some interesting historical details hidden in the CSS named color system... for example, there's a color called `darkgrey`, which is actually lighter than the color called `grey` - because `grey` came from the original 16-color VGA palette, and `darkgrey` was already defined by X Windows as a lighter shade than that. Many colours have two names - the hot-pink color beloved of CGA computer games and synthwave artists is called `magenta` and `fuchsia`, and you can spell `grey` with either an "a" or an "e" wherever it appears in a colour name.
 
@@ -79,15 +79,15 @@ CSS also defines a set of names for *system colours* --- the colours used by the
 
 If you're viewing this on the web, the example above is live --- so what you're seeing there is based on your own system settings. For comparison, here's two screenshots showing what that preview looks like for me running Windows 11 - first in **dark mode**:
 
-<img src="{{ page.examples}}/system-colors-dark-mode.png"
-onmouseover="this.src='{{page.examples}}/system-colors-light-mode.png';"
-onmouseout="this.src='{{page.examples}}/system-colors-dark-mode.png';">
+<img src="examples/system-colors-dark-mode.png"
+onmouseover="this.src='examples/system-colors-light-mode.png';"
+onmouseout="this.src='examples/system-colors-dark-mode.png';">
 
 and then in **light mode**:
 
-<img src="{{ page.examples}}/system-colors-light-mode.png"
-onmouseover="this.src='{{page.examples}}/system-colors-dark-mode.png';"
-onmouseout="this.src='{{page.examples}}/system-colors-light-mode.png';">
+<img src="examples/system-colors-light-mode.png"
+onmouseover="this.src='examples/system-colors-dark-mode.png';"
+onmouseout="this.src='examples/system-colors-light-mode.png';">
 
 Look closely at `ButtonFace` and `ButtonText` --- you see how in dark mode, `ButtonFace` is a dark grey and `ButtonText` is white, because dark mode has white text on dark buttons, but in light mode it's black text on pale grey buttons?
 

@@ -125,7 +125,7 @@ Unlike relative positioned elements, absolute positioned elements don't take up 
 
 You can also create styles which don't make any sense:
 
-{% example absolute-position-nonsense.html iframe_style="height: 7em;" elements="style,body" %}
+{% example absolute-position-nonsense.html iframe elements="style,body" %}
 
 There's no way an element can be 6% left, 6% right and 41% wide, because percentages have to add up to 100 - so the browser has to ignore something. If `top`, `height` and `bottom` are all specified, `bottom` is ignored. 
 
@@ -133,7 +133,7 @@ If `left`, `right` and `width` are all specified, then it depends on the reading
 
 In the example above, the absolute-positioned elements are all positioned relative to the document's body... but if you create a parent element with `position: relative`, any absolute-positioned child elements will be positioned relative to that parent. That's the superpower side-effect we talked about a moment ago; relative positioned elements create a new layout context.
 
-{% example relative-absolute-position.html iframe_style="height: 16em;" %}
+{% example relative-absolute-position.html iframe %}
 
 And yes, the terminology here can get very confusing when we talk about absolute-positioned elements being positioned relative to relative-positioned elements.
 
@@ -182,5 +182,4 @@ In this section, we've learned about viewports, element positioning, overflow, a
   - `fixed`: anchor elements to the viewport for sticky headers/footers.
   - `sticky`: elements stay visible as you scroll until their container moves out of view.
 - **Overflow**, and how to control scrollbars and content visibility with `overflow`, `overflow-x`, `overflow-y`, and `text-overflow`.
-
 

@@ -34,7 +34,7 @@ If you want to use a font which isn't widely available, you can tell the browser
 
 You'll get the option to download a subset of the font - if you know your website is only ever going to include Latin text, you can download a version of the font file that doesn't include glyphs for Greek, Cyrillic, and other alphabets. You can also choose a format: the Web Open Font Format, WOFF, is really the only one that matters these days. Hit the Download button, and you'll get a ZIP file containing your fonts, along with a load of sample sheets, notes, and the license file.
 
-All we actually need here are the WOFF files, so unzip that file and search through it for the files with .woff extension. You might want to rename them as you go - FontSquirrel's default filenames aren't terribly helpful. If you're using PT Sans, you can grab a ZIP file of just the WOFF files (and the license!) here: [pt-sans.zip]({{page.examples}}/pt-sans.zip)
+All we actually need here are the WOFF files, so unzip that file and search through it for the files with .woff extension. You might want to rename them as you go - FontSquirrel's default filenames aren't terribly helpful. If you're using PT Sans, you can grab a ZIP file of just the WOFF files (and the license!) here: [pt-sans.zip](examples/pt-sans.zip)
 
 Next, we need to create the CSS rules which will import those font files and register them with the associated `font-family` name:
 

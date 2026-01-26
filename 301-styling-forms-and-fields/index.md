@@ -26,7 +26,7 @@ Second: you have very little control over how these form inputs actually behave.
 
 and like this on Windows:
 
-![image-20250902231652183](./images/image-20250902231652183.png)
+![image-20250902231652183](./images/firefox-windows-color-picker.png)
 
 Safari on macOS has its own built-in colour picker widget:
 

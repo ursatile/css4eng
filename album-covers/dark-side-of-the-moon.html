@@ -5,87 +5,94 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Pink Floyd: The Dark Side Of The Moon</title>
 	<style>
-		* {
-			box-sizing: border-box;
-		}
-		html {
-			background-color: white;
-			background-image: url(Pink-Floyd-Dark-Side-of-the-Moon.webp);
-			background-size: 80vw 80vw;
-			background-repeat: no-repeat;
-			background-position: 10vw center;
-		}
+		:root { --size: min(80vw, 80vh); }
+		* { box-sizing: border-box; }
 
-		body {
-			opacity: 1;
-			margin: 10vw auto;
-			width: 80vw;
-			height: 80vw;
+		html {
+			background: white;
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			background-image:
-				linear-gradient(-14.2deg, #0000 0 49.9vw, white 49.9vw 50.4vw, #0000 50.4vw),
-				conic-gradient(from 0deg at -40vw 20.4vw,
-					#0000 0deg 98.8deg,
-					#f01d24 98.8deg 99.8deg,
-					#f58c30 99.8deg 100.7deg,
-					#e9e22f 100.7deg 101.6deg,
-					#8acc39 101.6deg 102.5deg,
-					#67b1f7 102.5deg 103.3deg,
-					#6e69af 103.3deg 104.1deg,
-					#0000 104.1deg),
-					linear-gradient(black);
+			height: 100vh;
+			background-image: url(Pink-Floyd-Dark-Side-of-the-Moon.webp);
+			background-size: var(--size) var(--size);
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
 
-			background-size: 40vw 80vw, 40vw 80vw, 80vw 80vw;
-			background-position: 0 0, 40vw 0;
-			background-repeat: no-repeat, no-repeat;
+		body {
+			&:hover { opacity: 0; }
+
+			opacity: 1;
+			margin: 10vw auto;
+			width: var(--size);
+			height: var(--size);
+			display: flex;
+			align-items: start;
+			justify-content: center;
+			overflow: hidden;
+			background-image: linear-gradient(165.8deg, #0000 0 42.2%, white 42.5% 42.7%, #0000 43%),
+
+			conic-gradient(from 0deg at -96% 26%,
+				#0000 0deg 98.7deg,
+				#f01d24 98.8deg 99.6deg,
+				#f7821f 99.7deg 100.5deg,
+				#fdea03 100.6deg 101.4deg,
+				#4bb846 101.5deg 102.4deg,
+				#00b6f1 102.5deg 103.2deg,
+				#6e69af 103.3deg 104.1deg,
+				#0000 104.2deg),
+			linear-gradient(black);
+			background-size: calc(var(--size) / 2) var(--size),
+			calc(var(--size) / 2) var(--size),
+			var(--size) var(--size);
+			background-position: 0 0,
+			calc(var(--size) / 2) 0;
+			background-repeat: no-repeat,
+			no-repeat;
 
 			div {
 				position: relative;
-				top: -9vw;
-				width: 0vw;
-				height: 0vw;
-				border-width: 0 12.5vw 22vw 12.5vw;
+				top: calc(var(--size) / 4.1);
+				width: calc(var(--size) / 3.2);
+				height: calc(var(--size) / 3.6);
+				border-width: 0 calc(var(--size) / 6.4) calc(var(--size) / 3.6) calc(var(--size) / 6.4);
 				border-style: solid;
-				border-color: transparent transparent rgb(212, 220, 247) transparent;
+				border-color: transparent transparent rgb(180, 248, 245) transparent;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				justify-content: flex-start;
 
 				&::before {
-					border-width: 0 11vw 21vw 11vw;
+					border-width: 0 calc(var(--size) / 7) calc(var(--size) / 3.95) calc(var(--size) / 7);
 					position: relative;
-					top: 0.5vw;
+					top: calc(var(--size) * 0.018);
 					border-style: solid;
 					border-color: transparent transparent #012 transparent;
 					content: ' ';
-					filter: blur(8px);
+					filter: blur(calc(var(--size) * 0.01));
 				}
-			}
 
-			&::before {
-				content: ' ';
-				width: 16vw;
-				height: 19.2vw;
-				position: absolute;
-				top: 30vw;
-				z-index: 2;
-				background-image:
-					conic-gradient(from 0deg at 1vw 9.75vw,
-						#000 0deg 77deg,
-						#fff 77deg 99.7deg,
-						#000 98deg 0deg
-					),
-					conic-gradient(from 0deg at 8vw -0.2vw,
-						#000 0deg 150deg,
-						#999 151deg,
-						#111 160deg 170deg,
-						#ccc 210deg,
-						#000 210deg 270deg);
-				background-blend-mode: multiply;
-				mix-blend-mode: screen;
+				&::after {
+					content: ' ';
+					width: calc(var(--size) / 3.2);
+					height: calc(var(--size) / 3.6);
+					position: absolute;
+					z-index: 2;
+					background-image:
+						conic-gradient(from 0deg at 22% 46.5%,
+							#000 0deg 76deg,
+							#fff 77deg 100deg,
+							#000 101deg 0deg),
+						conic-gradient(from 0deg at 50% 0%,
+							#000 0deg 150deg,
+							#333 150deg 155deg,
+							#9990 205deg 210deg,
+							#000 210deg 270deg);
+					background-blend-mode: multiply;
+					mix-blend-mode: screen;
+				}
 			}
 		}
 	</style>

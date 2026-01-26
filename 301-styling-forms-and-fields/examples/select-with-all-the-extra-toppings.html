@@ -8,7 +8,7 @@
 
 		select,
 		::picker(select) { appearance: base-select; }
-		img { width: 400px; }
+		img { width: 200px; }
 
 		select {
 			border-radius: 10px;
@@ -22,15 +22,13 @@
 
 			&:open {
 				&::picker(select) {
-					border-radius: 10px;
-					padding: 10px;
-					top: -440px;
-					width: 440px;
-					height: 440px;
-					gap: 10px;
-					background-color: black;
 					display: grid;
 					grid: repeat(4, 1fr) / repeat(4, 1fr);
+					cursor: pointer;
+					border-radius: 10px;
+					padding: 10px;
+					gap: 5px;
+					background-color: black;
 				}
 			}
 
@@ -60,8 +58,7 @@
 			<selectedcontent></selectedcontent>
 		</button>
 		<option value="acdc-back-in-black">
-			<img src="album-covers/acdc-back-in-black.jpg"
-				alt="AC/DC - Back in Black">
+			<img src="album-covers/acdc-back-in-black.jpg" alt="AC/DC - Back in Black">
 			<span>AC/DC - Back in Black</span>
 		</option>
 		<option value="blondie-blondie">
@@ -92,13 +89,11 @@
 			<span>Duran Duran - Rio</span>
 		</option>
 		<option value="electric-light-orchestra-time">
-			<img src="album-covers/electric-light-orchestra-time.jpg"
-				alt="Electric Light Orchestra - Time">
+			<img src="album-covers/electric-light-orchestra-time.jpg" alt="Electric Light Orchestra - Time">
 			<span>Electric Light Orchestra - Time</span>
 		</option>
 		<option value="magnum-wings-of-heave">
-			<img src="album-covers/magnum-wings-of-heaven.jpg"
-				alt="Magnum - Wings of Heaven">
+			<img src="album-covers/magnum-wings-of-heaven.jpg" alt="Magnum - Wings of Heaven">
 			<span>Magnum - Wings of Heaven</span>
 		</option>
 		<option value="marillion-brave" selected>

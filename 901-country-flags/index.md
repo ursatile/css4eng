@@ -9,15 +9,15 @@ word_count: 76
 You're going to use the CSS properties we've learned about so far to recreate some country flags.
 
 <figure>
-    <img src="./images/box-model/css-flags.png">
+    <img src="./css-flags.png" alt="CSS flag spec">
 </figure>
 
 
 The specification for each flag is above, or you can find a PDF version here:
 
-* **[css-flags.pdf](./images/box-model/css-flags.pdf)**
+* **[css-flags.pdf](./css-flags.pdf)**
 
-You'll find the HTML code in [flags.html]({{ page.examples }}/flags.html), and the linked stylesheet in [flags.css]({{page.examples}}/flags.css)
+You'll find the HTML code in [flags.html](examples/flags.html), and the linked stylesheet in [flags.css](examples/flags.css)
 
 {% example flags.html %}
 
