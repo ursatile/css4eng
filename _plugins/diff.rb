@@ -66,8 +66,9 @@ module Jekyll
         parts = @markup.split(" ", 2)
         expanded_path = Liquid::Template.parse(parts[0].strip).render(context)
         page_filename = File.basename(page["path"], ".*")
-        root_path = File.expand_path(context.registers[:site].config["source"])
-        file_path = File.join(root_path, "examples", page_filename, expanded_path)
+        root_path = File.dirname(page["path"])
+        # File.expand_path(context.registers[:site].config["source"])
+        file_path = File.join(root_path, "examples", expanded_path)
         attributes = parts.length > 1 ? parts[1] : "all"
         dir = File.dirname(file_path)
         FileUtils.mkdir_p(dir) unless Dir.exist?(dir)
@@ -76,7 +77,7 @@ module Jekyll
         # Handle baseline file for diff functionality
         baseline_code = nil
         if @baseline_filename
-          baseline_path = File.join(root_path, "examples", page_filename, @baseline_filename)
+          baseline_path = File.join(root_path, "examples", @baseline_filename)
           baseline_code = read_or_create_file(baseline_path, context) if File.exist?(baseline_path)
         end
 
@@ -173,10 +174,10 @@ module Jekyll
           output = remove_common_indentation(output)
         end
 
-        rendered_output = add_code_tag(output, expanded_path, "examples/#{page_filename}/#{expanded_path}")
+        rendered_output = add_code_tag(output, expanded_path, "examples/#{expanded_path}")
         output = prefix + rendered_output + suffix
         if @highlight_options[:iframe_style]
-          output += %(<iframe src="./examples/#{page_filename}/#{expanded_path}" style="#{@highlight_options[:iframe_style]}"></iframe>)
+          output += %(<iframe src="./examples/#{expanded_path}" style="#{@highlight_options[:iframe_style]}"></iframe>)
         end
         return output
         # rescue => e
