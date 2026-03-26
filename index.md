@@ -10,7 +10,7 @@ word_count: 43
 ### Zoom / March 2026
 
 Course Handbook
-: [https://ursatile.github.io/css4eng](https://ursatile.github.io/css4eng)
+: [https://craftingcss.com](https://craftingcss.com)
 
 VS Live Share
 : REMEMBER TO SET THIS UP!
