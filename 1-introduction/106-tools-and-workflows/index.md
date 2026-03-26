@@ -85,7 +85,7 @@ What you want is one huge web page with every single element, component, widget,
 
 The kitchen sink page should also be static HTML. Doesn't matter if your backend is built in nodeJS, .NET, Ruby on Rails, PHP; the kitchen sink should be static. It doesn't run any code, it doesn't connect to a database - and that means you can reload it instantly, so you get the benefit of that feedback loop we talked about.
 
-Here's an example of a kitchen sink page; you can find the code at [kitchen-sink.html](examples/01-04-tools-and-workflows/kitchen-sink.html):
+Here's an example of a kitchen sink page; you can find the code at [kitchen-sink.html](examples/kitchen-sink.html):
 
 {% iframe kitchen-sink.html %}
 
