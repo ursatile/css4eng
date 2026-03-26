@@ -1,11 +1,11 @@
-title: CSS for Engineers
+title: Crafting CSS
 description: Online handbook for Dylan Beattie’s course “CSS for Engineers”
 theme: just-the-docs
 host: 0.0.0.0
 
 color_scheme: midnight
 
-url: https://ursatile.github.io/css4eng
+url: https://craftingcss.com/
 
 # Suppress Sass deprecation warnings
 sass:
