@@ -34,5 +34,7 @@ Topics to Talk About
 - [ ] Radial select menus
 - [ ] Fancy lists
 - [ ] Japanese typography
+- [ ] CSS mixins (work in progress!)
+- [ ] Adaptive color models and relative colors
 
 Course by Dylan Beattie • dylan@dylanbeattie.net
